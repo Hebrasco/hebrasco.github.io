@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8f925d03.chunk.css",
+    "main.js": "/static/js/main.1045c7f6.chunk.js",
+    "main.js.map": "/static/js/main.1045c7f6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7e16fad1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7e16fad1.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.55327223.chunk.js": "/static/js/2.55327223.chunk.js",
+    "static/js/2.55327223.chunk.js.map": "/static/js/2.55327223.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5a02f6a3c33dd64cf99d700f31826393.js": "/precache-manifest.5a02f6a3c33dd64cf99d700f31826393.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.8f925d03.chunk.css.map": "/static/css/main.8f925d03.chunk.css.map",
+    "static/js/2.55327223.chunk.js.LICENSE.txt": "/static/js/2.55327223.chunk.js.LICENSE.txt",
+    "static/media/app_store.png": "/static/media/app_store.f011c90d.png",
+    "static/media/blank_icon.svg": "/static/media/blank_icon.9fa7f364.svg",
+    "static/media/logo512.png": "/static/media/logo512.c0198a1e.png",
+    "static/media/natrium_wallet.png": "/static/media/natrium_wallet.b6a3552b.png",
+    "static/media/relictus.png": "/static/media/relictus.9938d884.png",
+    "static/media/wordpress.png": "/static/media/wordpress.8eaa56e6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7e16fad1.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.55327223.chunk.js",
+    "static/css/main.8f925d03.chunk.css",
+    "static/js/main.1045c7f6.chunk.js"
+  ]
+}
