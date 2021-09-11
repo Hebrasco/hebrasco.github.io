@@ -1,26 +1,67 @@
 import { Languages } from './Languages'
 import { Frameworks } from './Frameworks'
 import { Applications } from './Applications'
-
-const BlankIcon = require('../assets/icons/blank_icon.svg') as string
-const WordpressIcon = require('../assets/icons/wordpress.png') as string
-const TankVR = require('../assets/icons/apps/tankvr.jpg') as string
-const BlueToothLocatorLogo =
-  require('../assets/icons/apps/bluetooth_locator.png') as string
-const BertramArbeitsbuehnenLogo =
-  require('../assets/icons/apps/bertram_arbeitsuehnen.png') as string
-const RelictusIcon = require('../assets/icons/apps/relictus.png') as string
-const WinzerliebeLogo =
-  require('../assets/icons/apps/winzerliebe.png') as string
-const MatchbusLogo = require('../assets/icons/apps/matchbus.png') as string
-const BloomCouplesAppIcon =
-  require('../assets/icons/apps/bloom_couples_app.png') as string
-const NatriumWalletIcon =
-  require('../assets/icons/apps/natrium_wallet.png') as string
-const LennardsFutterAppLogo =
-  require('../assets/icons/apps/lennards_futter_app.png') as string
+import BlankIcon from '../assets/icons/blank_icon.svg'
+import WordpressIcon from '../assets/icons/wordpress.png'
+import TankVR from '../assets/icons/apps/tankvr.jpg'
+import BlueToothLocatorLogo from '../assets/icons/apps/bluetooth_locator.png'
+import BertramArbeitsbuehnenLogo from '../assets/icons/apps/bertram_arbeitsuehnen.png'
+import RelictusIcon from '../assets/icons/apps/relictus.png'
+import WinzerliebeLogo from '../assets/icons/apps/winzerliebe.png'
+import MatchbusLogo from '../assets/icons/apps/matchbus.png'
+import BloomCouplesAppIcon from '../assets/icons/apps/bloom_couples_app.png'
+import NatriumWalletIcon from '../assets/icons/apps/natrium_wallet.png'
+import LennardsFutterAppLogo from '../assets/icons/apps/lennards_futter_app.png'
 
 export const Projects = [
+  {
+    pinned: true,
+    name: 'App für einen Fußballverein der 1. Bundesliga',
+    image: BlankIcon,
+    timePeriod: '04/2021 - jetzt',
+    description:
+      'In dieser App werden Nachrichten zum Verein und Region angezeigt. Natürlich gibt es auch einen Liveticker. Des weiteren gibt es einen Shop, indem Merchendise und Tickets gekauft werden können.',
+    tasks: [
+      'Entwicklung des Userinterface',
+      'Kommunikation mit einer bestehenden API',
+    ],
+    languages: [Languages.javaScript, Languages.json, Languages.css],
+    frameworks: [Frameworks.web.react, Frameworks.web.reactRedux],
+  },
+  {
+    pinned: true,
+    name: 'Admin Webapp für einen Fußballverein der 1. Bundesliga',
+    image: BlankIcon,
+    timePeriod: '04/2021 - jetzt',
+    description:
+      'Mit dieser Admin Webapp können Tickets, Verträge, Käufe, Benutzer, Umfragen, Nachrichten verwaltet werden.',
+    tasks: [
+      'Konzeption und Entwicklung',
+      'Entwicklung des Userinterface',
+      'Kommunikation mit einer bestehenden API',
+    ],
+    languages: [Languages.javaScript, Languages.json, Languages.css],
+    frameworks: [
+      Frameworks.web.react,
+      Frameworks.web.reactRedux,
+      Frameworks.web.materialUI,
+    ],
+  },
+  {
+    pinned: false,
+    name: 'Plattform für Unternehmenskommunikation',
+    image: BlankIcon,
+    timePeriod: '04/2021 - jetzt',
+    description:
+      'Entwickelt wurde eine Plattform für interne Unternehmenskommunikation. Hier können Nachrichten publiziert, Ereignisse und Benutzerinteraktionen erstellt werden.',
+    tasks: [
+      'Konzeption und Entwicklung',
+      'Entwicklung des Userinterface',
+      'Kommunikation mit einer bestehenden API',
+    ],
+    languages: [Languages.javaScript, Languages.html, Languages.css],
+    frameworks: [Frameworks.web.dotNet, Frameworks.web.angular],
+  },
   {
     pinned: true,
     name: 'Matchbus: App zum senden eines Status und verfolgen des Busses',
@@ -187,7 +228,7 @@ export const Projects = [
     onlineUrl: 'https://matchbus.tours',
   },
   {
-    pinned: true,
+    pinned: false,
     name: 'Rezepte App',
     image: BlankIcon,
     timePeriod: '03/2020 - 04/2020',
@@ -208,7 +249,7 @@ export const Projects = [
     sourceURL: 'https://github.com/Hebrasco/recipe_app',
   },
   {
-    pinned: true,
+    pinned: false,
     name: 'Relictus',
     image: RelictusIcon,
     timePeriod: '01/2019 - 04/2019',

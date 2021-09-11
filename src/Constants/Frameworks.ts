@@ -30,6 +30,9 @@ export const Frameworks = {
     reactRedux: { name: 'React Redux', variant: BadgeVariants.success },
     wordpress: { name: 'Wordpress', variant: BadgeVariants.success },
     opencart: { name: 'OpenCart', variant: BadgeVariants.success },
+    dotNet: { name: '.Net', variant: BadgeVariants.dark },
+    angular: { name: 'Angular', variant: BadgeVariants.dark },
+    materialUI: { name: 'MaterialUI', variant: BadgeVariants.success },
   },
 
   // Other
