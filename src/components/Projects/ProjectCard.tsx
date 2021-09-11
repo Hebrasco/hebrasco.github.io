@@ -1,30 +1,30 @@
-import React from "react";
-import Card from "react-bootstrap/esm/Card";
-import Col from "react-bootstrap/esm/Col";
-import Image from "react-bootstrap/esm/Image";
-import ListGroup from "react-bootstrap/esm/ListGroup";
-import ListGroupItem from "react-bootstrap/esm/ListGroupItem";
-import Row from "react-bootstrap/esm/Row";
+import React from 'react'
+import Card from 'react-bootstrap/esm/Card'
+import Col from 'react-bootstrap/esm/Col'
+import Image from 'react-bootstrap/esm/Image'
+import ListGroup from 'react-bootstrap/esm/ListGroup'
+import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
+import Row from 'react-bootstrap/esm/Row'
 
 interface Props {
-  imageUrl: string;
-  title: string;
-  timePeriod: string;
-  description: string;
-  tasks: JSX.Element;
-  languages?: JSX.Element;
-  frameworks?: JSX.Element;
-  onlineURL?: string;
-  sourceURL?: string;
+  imageUrl: string
+  title: string
+  timePeriod: string
+  description: string
+  tasks: JSX.Element
+  languages?: JSX.Element
+  frameworks?: JSX.Element
+  onlineURL?: string
+  sourceURL?: string
 }
 
 export default function ProjectCard(props: Props): JSX.Element {
-  const imageGridSizeXs = 3;
-  const imageGridSizeMd = 3;
-  const imageGridSizeLg = 2;
+  const imageGridSizeXs = 3
+  const imageGridSizeMd = 3
+  const imageGridSizeLg = 2
 
   return (
-    <Card className="mb-4 shadow border-0" style={{ width: "100%" }}>
+    <Card className="mb-4 shadow border-0" style={{ width: '100%' }}>
       <Card.Body>
         <Row className="mb-4">
           <Col
@@ -46,7 +46,7 @@ export default function ProjectCard(props: Props): JSX.Element {
           {props.description}
           <br />
           <br />
-          Zu den Aufgaben gehörten u.a.:
+          Responsibilities included:
           <br />
           {props.tasks}
         </Card.Text>
@@ -66,7 +66,7 @@ export default function ProjectCard(props: Props): JSX.Element {
             target="_blank"
             rel="noopener noreferrer"
           >
-            ansehen
+            view
           </Card.Link>
         ) : null}
         {props.sourceURL ? (
@@ -76,10 +76,10 @@ export default function ProjectCard(props: Props): JSX.Element {
             target="_blank"
             rel="noopener noreferrer"
           >
-            quellcode
+            source code
           </Card.Link>
         ) : null}
       </Card.Footer>
     </Card>
-  );
+  )
 }

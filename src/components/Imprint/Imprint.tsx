@@ -1,17 +1,17 @@
-import React from "react";
-import Col from "react-bootstrap/esm/Col";
-import Container from "react-bootstrap/esm/Container";
-import Row from "react-bootstrap/esm/Row";
-import { Routes } from "../../Constants/Routes";
+import React from 'react'
+import Col from 'react-bootstrap/esm/Col'
+import Container from 'react-bootstrap/esm/Container'
+import Row from 'react-bootstrap/esm/Row'
+import { Routes } from '../../Constants/Routes'
 
 export default function Imprint(): JSX.Element {
   return (
     <Container className="navbar-spacer">
       <Row>
         <Col>
-          <section style={{ position: "relative" }}>
+          <section style={{ position: 'relative' }}>
             <div
-              id={Routes.imprintHash.replace("/imprint#", "")}
+              id={Routes.imprintHash.replace('/imprint#', '')}
               className="top-anchor"
             ></div>
             <h1>Impressum</h1>
@@ -30,9 +30,9 @@ export default function Imprint(): JSX.Element {
               </li>
             </ul>
           </section>
-          <section style={{ position: "relative" }}>
+          <section style={{ position: 'relative' }}>
             <div
-              id={Routes.privacyPolicyHash.replace("/imprint#", "")}
+              id={Routes.privacyPolicyHash.replace('/imprint#', '')}
               className="anchor"
             ></div>
             <h1>Datenschutz</h1>
@@ -87,7 +87,7 @@ export default function Imprint(): JSX.Element {
             </ul>
             <ul className="list-unstyled">
               <li>
-                E-Mail:{" "}
+                E-Mail:{' '}
                 <a href="mailto:daniel.bedrich@icloud.com">
                   daniel.bedrich@icloud.com
                 </a>
@@ -192,5 +192,5 @@ export default function Imprint(): JSX.Element {
         </Col>
       </Row>
     </Container>
-  );
+  )
 }

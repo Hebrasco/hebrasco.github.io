@@ -1,8 +1,8 @@
-import React from "react";
-import Nav from "react-bootstrap/esm/Nav";
-import Navbar from "react-bootstrap/esm/Navbar";
-import { Routes } from "../../Constants/Routes";
-import { HashLink as Link } from "react-router-hash-link";
+import React from 'react'
+import Nav from 'react-bootstrap/esm/Nav'
+import Navbar from 'react-bootstrap/esm/Navbar'
+import { Routes } from '../../Constants/Routes'
+import { HashLink as Link } from 'react-router-hash-link'
 
 export default function NavBar(): JSX.Element {
   return (
@@ -12,17 +12,13 @@ export default function NavBar(): JSX.Element {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Link to={Routes.aboutMe} smooth className="nav-link">
-            Über mich
+            About Me
           </Link>
-          <Link
-            to={Routes.projects}
-            smooth
-            className="nav-link"
-          >
-            Projekte
+          <Link to={Routes.projects} smooth className="nav-link">
+            Projects
           </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-  );
+  )
 }
