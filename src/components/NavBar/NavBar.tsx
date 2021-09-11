@@ -12,10 +12,10 @@ export default function NavBar(): JSX.Element {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Link to={Routes.aboutMe} smooth className="nav-link">
-            Über mich
+            About Me
           </Link>
           <Link to={Routes.projects} smooth className="nav-link">
-            Projekte
+            Projects
           </Link>
         </Nav>
       </Navbar.Collapse>

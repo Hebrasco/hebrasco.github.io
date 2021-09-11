@@ -5,7 +5,7 @@ import { HashLink as Link } from 'react-router-hash-link'
 import { Routes } from '../../Constants/Routes'
 
 export default function Footer(): JSX.Element {
-  const getCurrentYear = () => {
+  function getCurrentYear() {
     return new Date().getFullYear()
   }
 
@@ -15,8 +15,8 @@ export default function Footer(): JSX.Element {
         <Row>
           <div>
             <p className="nav-link">
-              Copyright © {getCurrentYear()} Daniel Bedrich. Alle Rechte
-              vorbehalten.
+              Copyright © {getCurrentYear()} Daniel Bedrich. All rights
+              reserved.
             </p>
           </div>
           <div
@@ -28,14 +28,14 @@ export default function Footer(): JSX.Element {
               smooth
               className="nav-link text-muted"
             >
-              Impressum
+              Imprint
             </Link>
             <Link
               to={Routes.privacyPolicyHash}
               smooth
               className="nav-link text-muted"
             >
-              Datenschutz
+              Privacy Policy
             </Link>
           </div>
         </Row>

@@ -13,7 +13,7 @@ import './Projects.css'
 export default function Projects(): JSX.Element {
   const [isShowMoreProjects, setIsShowMoreProjects] = useState(false)
   const showMoreProjectsRef: React.RefObject<HTMLInputElement> = createRef()
-  const hideProjectsOffset = 4
+  const hideProjectsOffset = 6
 
   function showMoreProjectsPressed() {
     const moreProjectsWrapper = showMoreProjectsRef.current
@@ -105,13 +105,13 @@ export default function Projects(): JSX.Element {
   return (
     <Container className="mt-5 navbar-spacer">
       <div id={Routes.projects.replace('/#', '')} className="anchor"></div>
-      <h1>Gepinnte Projekte</h1>
+      <h1>Pinned projects</h1>
       <Row>
         {myProjects
           .filter((project) => project.pinned)
           .map((project, index) => getProjectCard(project, index))}
       </Row>
-      <h1>Letzte Projekte</h1>
+      <h1>{isShowMoreProjects ? 'Projects' : 'Latest projects'} </h1>
       <Row>
         {myProjects
           .filter(
@@ -126,7 +126,7 @@ export default function Projects(): JSX.Element {
             variant="outline-primary"
             className="mb-5 mx-auto"
           >
-            Alle Projekte laden
+            load all projects
           </Button>
         </Row>
       ) : null}

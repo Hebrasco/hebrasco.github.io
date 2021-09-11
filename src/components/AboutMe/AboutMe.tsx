@@ -21,9 +21,6 @@ export default function AboutMe(): JSX.Element {
     Languages.css,
     Languages.javaScript,
     Languages.typeScript,
-    Languages.dart,
-    Languages.java,
-    Languages.kotlin,
     Languages.cSharp,
   ]
 
@@ -33,7 +30,6 @@ export default function AboutMe(): JSX.Element {
     Frameworks.ios.widgetKit,
     Frameworks.ios.storeKit,
     Frameworks.web.react,
-    Frameworks.crossPlattform.flutter,
     Frameworks.crossPlattform.reactNative,
     Frameworks.web.reactRedux,
   ]
@@ -43,12 +39,6 @@ export default function AboutMe(): JSX.Element {
     Applications.gitTower,
     Applications.gitHub,
     Applications.vsCode,
-    Applications.intellijIdea,
-    Applications.androidStudio,
-    Applications.gitLab,
-    Applications.unity,
-    Applications.threeDsMax,
-    Applications.maya,
   ]
 
   return (
@@ -83,14 +73,14 @@ export default function AboutMe(): JSX.Element {
                 </div>
               </div>
               <p className="d-inline-block mt-2 mt-md-0">
-                Ich bin seit 2017 in der App- Entwicklung tätig und habe bereits
-                diverse Projekte für iOS und Android in kleinen Teams umgesetzt.
-                Am liebsten programmiere ich für iOS. Dort habe ich auch bereits
-                eine App veröffentlicht.
+                I have been working in app development since 2017 and have
+                already implemented various projects for iOS and Android in
+                small and large teams. I prefer programming for iOS, where I
+                have already published an app.
               </p>
               <Row className="mb-3">
                 <Col xs={12}>
-                  <h5>Programmiersprachen</h5>
+                  <h5>Programming languages</h5>
                   {languages.map((language) => {
                     return (
                       <Badge pill variant={language.variant}>
@@ -114,7 +104,7 @@ export default function AboutMe(): JSX.Element {
               </Row>
               <Row>
                 <Col xs={12}>
-                  <h5>Programme</h5>
+                  <h5>Programs</h5>
                   {applications.map((application) => {
                     return (
                       <Badge pill variant={application.variant}>

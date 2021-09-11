@@ -46,7 +46,7 @@ export default function ProjectCard(props: Props): JSX.Element {
           {props.description}
           <br />
           <br />
-          Zu den Aufgaben gehörten u.a.:
+          Responsibilities included:
           <br />
           {props.tasks}
         </Card.Text>
@@ -66,7 +66,7 @@ export default function ProjectCard(props: Props): JSX.Element {
             target="_blank"
             rel="noopener noreferrer"
           >
-            ansehen
+            view
           </Card.Link>
         ) : null}
         {props.sourceURL ? (
@@ -76,7 +76,7 @@ export default function ProjectCard(props: Props): JSX.Element {
             target="_blank"
             rel="noopener noreferrer"
           >
-            quellcode
+            source code
           </Card.Link>
         ) : null}
       </Card.Footer>

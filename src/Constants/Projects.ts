@@ -3,42 +3,39 @@ import { Frameworks } from './Frameworks'
 import { Applications } from './Applications'
 import BlankIcon from '../assets/icons/blank_icon.svg'
 import WordpressIcon from '../assets/icons/wordpress.png'
-import TankVR from '../assets/icons/apps/tankvr.jpg'
-import BlueToothLocatorLogo from '../assets/icons/apps/bluetooth_locator.png'
-import BertramArbeitsbuehnenLogo from '../assets/icons/apps/bertram_arbeitsuehnen.png'
-import RelictusIcon from '../assets/icons/apps/relictus.png'
-import WinzerliebeLogo from '../assets/icons/apps/winzerliebe.png'
-import MatchbusLogo from '../assets/icons/apps/matchbus.png'
-import BloomCouplesAppIcon from '../assets/icons/apps/bloom_couples_app.png'
-import NatriumWalletIcon from '../assets/icons/apps/natrium_wallet.png'
-import LennardsFutterAppLogo from '../assets/icons/apps/lennards_futter_app.png'
+import TankVR from '../assets/icons/app/tankvr.jpg'
+import BlueToothLocatorLogo from '../assets/icons/app/bluetooth_locator.png'
+import BertramArbeitsbuehnenLogo from '../assets/icons/app/bertram_arbeitsuehnen.png'
+import RelictusIcon from '../assets/icons/app/relictus.png'
+import WinzerliebeLogo from '../assets/icons/app/winzerliebe.png'
+import MatchbusLogo from '../assets/icons/app/matchbus.png'
+import BloomCouplesAppIcon from '../assets/icons/app/bloom_couples_app.png'
+import NatriumWalletIcon from '../assets/icons/app/natrium_wallet.png'
+import LennardsFutterAppLogo from '../assets/icons/app/lennards_futter_app.png'
 
 export const Projects = [
   {
     pinned: true,
-    name: 'App für einen Fußballverein der 1. Bundesliga',
+    name: 'App for a soccer club of the 1st Bundesliga',
     image: BlankIcon,
-    timePeriod: '04/2021 - jetzt',
+    timePeriod: 'April 2021 – now',
     description:
-      'In dieser App werden Nachrichten zum Verein und Region angezeigt. Natürlich gibt es auch einen Liveticker. Des weiteren gibt es einen Shop, indem Merchendise und Tickets gekauft werden können.',
-    tasks: [
-      'Entwicklung des Userinterface',
-      'Kommunikation mit einer bestehenden API',
-    ],
+      'This app displays news about the club and region. Of course, there is also a live ticker. Furthermore, there is a store where merchandise and tickets can be purchased.',
+    tasks: ['User interface development', 'Communication with an existing API'],
     languages: [Languages.javaScript, Languages.json, Languages.css],
     frameworks: [Frameworks.web.react, Frameworks.web.reactRedux],
   },
   {
     pinned: true,
-    name: 'Admin Webapp für einen Fußballverein der 1. Bundesliga',
+    name: 'Admin webapp for a soccer club of the 1st Bundesliga',
     image: BlankIcon,
-    timePeriod: '04/2021 - jetzt',
+    timePeriod: 'April 2021 – now',
     description:
-      'Mit dieser Admin Webapp können Tickets, Verträge, Käufe, Benutzer, Umfragen, Nachrichten verwaltet werden.',
+      'This admin webapp can be used to manage tickets, contracts, purchases, users, surveys, messages.',
     tasks: [
-      'Konzeption und Entwicklung',
-      'Entwicklung des Userinterface',
-      'Kommunikation mit einer bestehenden API',
+      'Conception and development',
+      'User interface development',
+      'Communication with an existing API',
     ],
     languages: [Languages.javaScript, Languages.json, Languages.css],
     frameworks: [
@@ -49,30 +46,35 @@ export const Projects = [
   },
   {
     pinned: false,
-    name: 'Plattform für Unternehmenskommunikation',
+    name: 'Platform for corporate communication',
     image: BlankIcon,
-    timePeriod: '04/2021 - jetzt',
+    timePeriod: 'April 2021 – now',
     description:
-      'Entwickelt wurde eine Plattform für interne Unternehmenskommunikation. Hier können Nachrichten publiziert, Ereignisse und Benutzerinteraktionen erstellt werden.',
+      'A platform for internal corporate communication was developed. News can be published, events and user interactions can be created here.',
     tasks: [
-      'Konzeption und Entwicklung',
-      'Entwicklung des Userinterface',
-      'Kommunikation mit einer bestehenden API',
+      'Conception and development',
+      'User interface development',
+      'Communication with an existing API',
     ],
-    languages: [Languages.javaScript, Languages.html, Languages.css],
+    languages: [
+      Languages.javaScript,
+      Languages.html,
+      Languages.css,
+      Languages.cSharp,
+    ],
     frameworks: [Frameworks.web.dotNet, Frameworks.web.angular],
   },
   {
     pinned: true,
-    name: 'Matchbus: App zum senden eines Status und verfolgen des Busses',
+    name: 'Matchbus: App to send a status and track the bus',
     image: MatchbusLogo,
-    timePeriod: '02/2021 - 03/2021',
+    timePeriod: 'February 2021 – March 2021',
     description:
-      'Entwickelt wurde eine App zum verbinden mit einem Bus. Der Standort des Handys wird als Standort des Busses verfolgt. Ebenfalls ist es möglich einen Notfall direkt an die Matchbus Plattform zu senden.',
+      'Developed an app to connect with a bus. The location of the cell phone is tracked as the location of the bus. It is also possible to send an emergency directly to the Matchbus platform.',
     tasks: [
-      'Konzeption und Entwicklung',
-      'Entwicklung des Userinterface',
-      'Kommunikation mit einer bestehenden API',
+      'Conception and development',
+      'User interface development',
+      'Communication with an existing API',
     ],
     languages: [Languages.dart, Languages.json],
     frameworks: [Frameworks.crossPlattform.flutter],
@@ -82,12 +84,12 @@ export const Projects = [
     pinned: false,
     name: 'Natrium Wallet',
     image: NatriumWalletIcon,
-    timePeriod: '12/2020 - 01/2021',
+    timePeriod: 'Dezember 2020 – January  2021',
     description:
-      'Das Natrium Wallet ist ein Wallet für die Cryptowährung Nano. Es wurde der Preis Chart für die Wertentwicklung des Portfolios hinzugefügt. Dieses Feature wurde jedoch nicht in das Projekt übernommen.',
+      'The Sodium Wallet is a wallet for the cryptocurrency Nano. The price chart for the portfolio performance was added. However, this feature was not included in the project.',
     tasks: [
-      'Konzeption und Entwicklung des Preischarts',
-      'Laden der Historischen Preise von einer API',
+      'Design and development of the price chart',
+      'Loading Historical Prices from an API',
     ],
     languages: [Languages.dart, Languages.json],
     frameworks: [Frameworks.crossPlattform.flutter],
@@ -97,12 +99,12 @@ export const Projects = [
     pinned: false,
     name: 'Lennards Futter-App',
     image: LennardsFutterAppLogo,
-    timePeriod: '12/2020 - 01/2020',
+    timePeriod: 'Dezember 2020 – January  2020',
     description:
-      'Mit dieser App können Silos verwaltet werden. Es können beliebig viele Silos erstellt werden. Diese haben einen Namen, Kapazität, Füllstand, Datum wann das Silo aufgebraucht ist und wann eine neue Bestellung aufgegeben wird. Über diese App kann das Futter für die Silo ebenfalls bestellt werden.',
+      'Silos can be managed with this app. Any number of silos can be created. These have a name, capacity, fill level, date when the silo is used up and when a new order is placed. Through this app, the feed for the silo can also be ordered.',
     tasks: [
-      'Anbindung der App an eine bestehende API zum erstellen und ändern eines Silos',
-      'Behebung eines Fehler im Layouts einer CollectionView',
+      'Connecting the app to an existing API to create and modify a silo',
+      'Fixing a bug in the layout of a CollectionView',
     ],
     languages: [Languages.swift, Languages.json],
     frameworks: [Frameworks.ios.ios, Frameworks.ios.uiKit],
@@ -112,32 +114,32 @@ export const Projects = [
     pinned: false,
     name: 'Golf Tracking App',
     image: BlankIcon,
-    timePeriod: '07/2020 - 10/2020',
+    timePeriod: 'July 2020 – October 2020',
     description:
-      'Mit dieser App können Golfspiele getrackt und analysiert werden. Mein Aufgabenbereich bestand darin, die App weiterzuentwickeln und die UI zu modernisieren. Dabei wurde unter anderem die unterstützung von Dynamic Type implementiert.',
+      'With this app golf games can be tracked and analyzed. My task was to further develop the app and modernize the UI. Among other things, the support of dynamic type was implemented.',
     tasks: [
-      'Umsetzung der Onboarding Bildschirme',
-      'Implementierung eines neuen Designs für die Einstellungen',
-      'Implementierung einer Benutzerdefinieren Schriftart',
-      'Implementierung von Dynamic Type',
+      'Implementation of onboarding screens',
+      'Implementation of a new design for the settings',
+      'Implementation of a custom font',
+      'Implementation of Dynamic Type',
     ],
     languages: [Languages.swift],
     frameworks: [Frameworks.ios.ios, Frameworks.ios.uiKit],
   },
   {
     pinned: false,
-    name: 'Weinshop',
+    name: 'Winzerliebe',
     image: WinzerliebeLogo,
-    timePeriod: '07/2020 - 10/2020',
+    timePeriod: 'July 2020 – October 2020',
     description:
-      'Auf Winzerliebe können Weine, Weinpakete und Gutscheine gekauft werden. Desweiteren ist es möglich, Weine nach belieben zu Filtern um somit den besten Wein für sich selbst zu finden.',
+      'On Winzerliebe wines, wine packages and vouchers can be purchased. Furthermore, it is possible to filter wines by preference to find the best wine for yourself.',
     tasks: [
-      'Entwicklung und Umsetzung',
-      'Entwicklung der Homepage',
-      'Aufsetzen von OpenCart',
-      'Anpassen der OpenCart API',
-      'Anpassen des Themes',
-      'Laden und Anzeigen von Produkten aus OpenCart',
+      'Development and implementation',
+      'Development of the homepage',
+      'Setting up OpenCart',
+      'Customizing the OpenCart API',
+      'Customizing the Theme',
+      'Loading and displaying products from OpenCart',
     ],
     languages: [
       Languages.typeScript,
@@ -151,17 +153,17 @@ export const Projects = [
   },
   {
     pinned: true,
-    name: 'Bloom - Couples App',
+    name: 'Bloom – Couples App',
     image: BloomCouplesAppIcon,
-    timePeriod: '04/2020 - 09/2020',
+    timePeriod: 'April 2020 – September 2020',
     description:
-      'Diese App ist eine privat entwickelte App, zur Berechnung der vergangenen Zeit seit einem bestimmten Tag. Die App bietet auch einige iOS 14 Widgets an, die täglich aktualisiert werden. Des weiteren werden an bestimmten Zeitspannen Benachrichtigungen verschickt. Zudem sind In-App Einkäufe implementiert, die Werbung entfernen.',
+      'This app is a privately developed app, for calculating the past time since a certain day. The app also offers some iOS 14 widgets that are updated daily. Furthermore, notifications are sent at certain time periods. In addition, in-app purchases are implemented to remove advertisements.',
     tasks: [
-      'Konzeption und Entwicklung',
-      'Entwicklung der Userinterface',
-      'Implementierung von In-App Käufen',
-      'Implementierung von lokalen Benachrichtigungen',
-      'Implementierung von Widgets (iOS 14+)',
+      'Conception and development',
+      'User interface development',
+      'Implementation of in-app purchases',
+      'Implementation of local notifications',
+      'Implementation of widgets (iOS 14+)',
     ],
     languages: [Languages.swift],
     frameworks: [
@@ -177,13 +179,13 @@ export const Projects = [
     pinned: false,
     name: 'Sengrid Wordpress Plugin',
     image: WordpressIcon,
-    timePeriod: '10/2020 - 10/2020',
+    timePeriod: 'October 2020 – October 2020',
     description:
-      'Wenn ein Post veröffentlicht wird, sendet das Plugin automatisch eine E-Mail mit dem Inhalt des Posts über Sendgrid an eine Liste von Abonnenten.',
+      'When a post is published, the plugin automatically sends an email with the post content to a list of subscribers via Sendgrid.',
     tasks: [
-      'Anbinden einer Wordpress Hook an das Plugin',
-      'Senden von Requests an die Sendgrid API',
-      'Hinzufügen des Post-Inhalts in ein Sendgrid Template',
+      'Connecting a wordpress hook to the plugin',
+      'Sending requests to the Sendgrid API',
+      'Adding post content to a Sendgrid template',
     ],
     languages: [Languages.php, Languages.html, Languages.css, Languages.json],
     frameworks: [Frameworks.web.wordpress],
@@ -192,10 +194,10 @@ export const Projects = [
     pinned: false,
     name: 'Matchbus Blog',
     image: MatchbusLogo,
-    timePeriod: '09/2020 - 10/2020',
+    timePeriod: 'September 2020 – October 2020',
     description:
-      'Es wurde der Blog für Matchbus erstellt und ein Plugin zum automatischem senden von E-Mails mit Sendgrid, nachdem ein Post veröffentlicht wird.',
-    tasks: ['Aufsetzen von Wordpress', 'Anpassen des Wordpress Themes'],
+      'Created the blog for Matchbus and a plugin to automatically send emails with Sendgrid after a post is published.',
+    tasks: ['Set up wordpress', 'Customize wordpress theme'],
     languages: [Languages.php, Languages.html, Languages.css],
     frameworks: [Frameworks.web.wordpress],
     onlineUrl: 'https://blog.matchbus.tours',
@@ -204,9 +206,9 @@ export const Projects = [
     pinned: false,
     name: 'Matchbus Shop',
     image: MatchbusLogo,
-    timePeriod: '08/2020 - 08/2020',
-    description: 'Es wurde der Shop für Matchbus mit OpenCart erstellt.',
-    tasks: ['Aufsetzen von OpenCart', 'Anpassen des Themes'],
+    timePeriod: 'August 2020 – August 2020',
+    description: 'The store for Matchbus was created with OpenCart.',
+    tasks: ['Setting up OpenCart', 'Customizing the theme'],
     languages: [Languages.html, Languages.css],
     frameworks: [Frameworks.web.opencart],
     onlineUrl: 'https://shop.matchbus.tours',
@@ -215,13 +217,13 @@ export const Projects = [
     pinned: false,
     name: 'Matchbus',
     image: MatchbusLogo,
-    timePeriod: '04/2020 - 08/2020',
+    timePeriod: 'April 2020 – August 2020',
     description:
-      'Matchbus ist eine Plattform, bei der sich Busunternehmer und Werbetreibende registrieren können. Schulen, Kitas, Firmen etc. können eine Mietbusanfrage stellen und sehen den Status vieler Busse (Leerstand, Notfall, Leerfahrt). Mithilfe von Matchbus sollen diese Leerstände und Leerfahrten mit Passagieren versehen werden.',
+      'Matchbus is a platform where bus operators and advertisers can register. Schools, daycare centers, companies, etc. can submit a rental bus request and see the status of many buses (empty, emergency, empty run). With the help of Matchbus, these vacancies and empty runs are to be provided with passengers.',
     tasks: [
-      'Entwicklung des DSGVO Cookie Banner',
-      'Implementierung von Google Analytics',
-      'Implementierung eines Rich-Texteditors',
+      'Development of the DSGVO Cookie Banner',
+      'Implementation of Google Analytics',
+      'Implementation of rich text editor',
     ],
     languages: [Languages.typeScript, Languages.html, Languages.css],
     frameworks: [Frameworks.web.react, Frameworks.web.reactRedux],
@@ -229,16 +231,16 @@ export const Projects = [
   },
   {
     pinned: false,
-    name: 'Rezepte App',
+    name: 'Recipes app',
     image: BlankIcon,
-    timePeriod: '03/2020 - 04/2020',
+    timePeriod: 'March 2020 – April 2020',
     description:
       'Mit der Rezepte App können spielend leicht Speisepläne erstellt werden. Hierfür stehen einige Rezepte in der App zur Auswahl. Gleichzeitig können die Zutaten auf die gewünschte Personenanzahl aufgerechnet und einer Einkaufsliste hinzugefügt werden.',
     tasks: [
-      'Konzeption und Entwicklung',
-      'Entwicklung des Userinterface',
-      'Parsen einer JSON Datei',
-      'Persistieren von Daten mit CoreData',
+      'Conception and development',
+      'User interface development',
+      'Parsing a JSON file',
+      'Persisting data with CoreData',
     ],
     languages: [Languages.swift, Languages.json],
     frameworks: [
@@ -252,14 +254,14 @@ export const Projects = [
     pinned: false,
     name: 'Relictus',
     image: RelictusIcon,
-    timePeriod: '01/2019 - 04/2019',
+    timePeriod: 'January  2019 – April 2019',
     description:
-      "Ein Jump 'n Run Spiel für den PC. Es wurde im Rahmen einer Projektarbeit in der Ausbildung erstellt.",
+      "A Jump 'n Run game for the PC. It was created as part of a project work in the training.",
     tasks: [
-      'Konzeption und Entwicklung',
-      'Erstellung 2D Grafiken',
-      'Enwticklung Collision Detection',
-      'Entwicklung Hauptmenü',
+      'Conception and development',
+      '2D graphics creation',
+      'Collision Detection Development',
+      'Development Main Menu',
     ],
     languages: [Languages.java],
     frameworks: [Frameworks.other.javaFx, Frameworks.other.fxgl],
@@ -269,14 +271,14 @@ export const Projects = [
     pinned: false,
     name: 'Bertram Arbeitsbühnen',
     image: BertramArbeitsbuehnenLogo,
-    timePeriod: '04/2019 - 02/2020',
+    timePeriod: 'April 2019 – February 2020',
     description:
-      'App zur Vermietung von Arbeitsbühnen. Es können Arbeitsbühnen gemietet und ebenfalls nach der mietzeit wieder abgegeben werden. Ein weiterer Bestandteil der App ist das anlegen und verwalten von Baustellen. Hier werden Arbeitsbühnen zugeordnet und können alle zusammen gemietet und verwaltet werden.',
+      'App for renting working platforms. Work platforms can be rented and also returned after the rental period. Another component of the app is the creation and management of construction sites. Here, working platforms are assigned and can all be rented and managed together.',
     tasks: [
-      'Neuentwicklung der App mit React-Native',
-      'Implementation des Userinterface',
-      'Laden der Maschinendaten von einer API',
-      'Senden von E-Mails mit Bildern und PDFs im Anhang',
+      'New development of the app with React-Native',
+      'Implementation of the user interface',
+      'Loading machine data from an API',
+      'Sending emails with images and PDFs attached',
     ],
     languages: [Languages.javaScript, Languages.xml],
     frameworks: [
@@ -291,32 +293,32 @@ export const Projects = [
     pinned: false,
     name: 'Bluetooth Locator',
     image: BlueToothLocatorLogo,
-    timePeriod: '03/2018 - 05/2018',
+    timePeriod: 'March 2018 – May 2018',
     description:
-      'Mit dem Bluetooth Locator können Bluetooth Signale aufgespürt werden. Sollte ein Bluetooth Gerät verloren gehen, kann man sie mit Hilfe von dieser App wiederfinden.',
+      'Bluetooth Locator can be used to track down Bluetooth signals. If a Bluetooth device is lost, you can find it again with the help of this app.',
     tasks: [
-      'Konzeption und Entwicklung',
-      'Entwicklung des Userinterface',
-      'Anzeigen des Gerätenamens und der Signalstärke',
+      'Conception and development',
+      'User interface development',
+      'Displaying the device name and signal strength',
     ],
     languages: [Languages.java],
     frameworks: [Frameworks.android.android],
     onlineUrl:
-      'https://play.google.com/store/apps/details?id=org.daubit.blescanner',
+      'https://play.google.com/store/app/details?id=org.daubit.blescanner',
   },
   {
     pinned: false,
     name: 'TankVR',
     image: TankVR,
-    timePeriod: '08/2017 - 12/2018',
+    timePeriod: 'August 2017 – Dezember 2018',
     description:
-      'TankVR ist ein Virtual Reality Arcade Panzer Spiel für die HTC Vive. In dem Spiel geht es darum, gegnerische Panzer auszuschalten. Anhand von Treffergenauigkeit und Entfernung wird ein Highscore berechnet und in einem Leaderbord geführt.',
+      'TankVR is a virtual reality arcade tank game for the HTC Vive. The object of the game is to take out enemy tanks. Based on hit accuracy and distance, a high score is calculated and kept in a leaderboard.',
     tasks: [
-      'Konzeption und Entwicklung',
-      'Erstellung aufwendiger 3D-Modelle',
-      'Bearbeiten existierender 3D-Modelle',
-      'Implementierung des Steam und SteamVR Frameworks',
-      'Implementierung eines Leaderboards',
+      'Design and development',
+      'Creation of elaborate 3D models',
+      'Editing existing 3D models',
+      'Implementation of Steam and SteamVR frameworks',
+      'Implementation of a leaderboard',
     ],
     languages: [Languages.cSharp],
     frameworks: [
