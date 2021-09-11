@@ -1,13 +1,13 @@
-import React from "react";
-import Container from "react-bootstrap/esm/Container";
-import Row from "react-bootstrap/esm/Row";
-import { HashLink as Link } from "react-router-hash-link";
-import { Routes } from "../../Constants/Routes";
+import React from 'react'
+import Container from 'react-bootstrap/esm/Container'
+import Row from 'react-bootstrap/esm/Row'
+import { HashLink as Link } from 'react-router-hash-link'
+import { Routes } from '../../Constants/Routes'
 
 export default function Footer(): JSX.Element {
   const getCurrentYear = () => {
-    return new Date().getFullYear();
-  };
+    return new Date().getFullYear()
+  }
 
   return (
     <footer className="footer bg-light text-muted">
@@ -21,7 +21,7 @@ export default function Footer(): JSX.Element {
           </div>
           <div
             className="ml-md-auto"
-            style={{ display: "flex", flexDirection: "row" }}
+            style={{ display: 'flex', flexDirection: 'row' }}
           >
             <Link
               to={Routes.imprintHash}
@@ -41,5 +41,5 @@ export default function Footer(): JSX.Element {
         </Row>
       </Container>
     </footer>
-  );
+  )
 }

@@ -1,15 +1,17 @@
-import React from "react";
-import { Routes } from "../../Constants/Routes";
-import Container from "react-bootstrap/esm/Container";
-import Row from "react-bootstrap/esm/Row";
-import Media from "react-bootstrap/esm/Media";
-import Col from "react-bootstrap/esm/Col";
-import Image from "react-bootstrap/esm/Image";
-import Logo from "../../assets/img/logo512.png";
-import Badge from "react-bootstrap/esm/Badge";
-import { Languages } from "../../Constants/Languages";
-import { Frameworks } from "../../Constants/Frameworks";
-import { Applications } from "../../Constants/Applications";
+import React from 'react'
+import { Routes } from '../../Constants/Routes'
+import Container from 'react-bootstrap/esm/Container'
+import Row from 'react-bootstrap/esm/Row'
+import Media from 'react-bootstrap/esm/Media'
+import Col from 'react-bootstrap/esm/Col'
+import Image from 'react-bootstrap/esm/Image'
+import Logo from '../../assets/images/logo.png'
+import gitHubLogo from '../../assets/icons/github.png'
+import appStoreLogo from '../../assets/icons/app_store.png'
+import Badge from 'react-bootstrap/esm/Badge'
+import { Languages } from '../../Constants/Languages'
+import { Frameworks } from '../../Constants/Frameworks'
+import { Applications } from '../../Constants/Applications'
 
 export default function AboutMe(): JSX.Element {
   const languages = [
@@ -23,7 +25,7 @@ export default function AboutMe(): JSX.Element {
     Languages.java,
     Languages.kotlin,
     Languages.cSharp,
-  ];
+  ]
 
   const frameworks = [
     Frameworks.ios.swiftUI,
@@ -34,7 +36,7 @@ export default function AboutMe(): JSX.Element {
     Frameworks.crossPlattform.flutter,
     Frameworks.crossPlattform.reactNative,
     Frameworks.web.reactRedux,
-  ];
+  ]
 
   const applications = [
     Applications.xcode,
@@ -47,14 +49,11 @@ export default function AboutMe(): JSX.Element {
     Applications.unity,
     Applications.threeDsMax,
     Applications.maya,
-  ];
-
-  const gitHubLogo = require("../../assets/img/github.png");
-  const appStoreLogo = require("../../assets/img/app_store.png");
+  ]
 
   return (
-    <Container style={{ position: "relative" }} className="navbar-spacer">
-      <div id={Routes.aboutMe.replace("/#", "")} className="top-anchor"></div>
+    <Container style={{ position: 'relative' }} className="navbar-spacer">
+      <div id={Routes.aboutMe.replace('/#', '')} className="top-anchor"></div>
       <Media>
         <Row>
           <Col xs={12} md={4} className="mb-4 mb-md-0 align-self-center">
@@ -97,7 +96,7 @@ export default function AboutMe(): JSX.Element {
                       <Badge pill variant={language.variant}>
                         {language.name}
                       </Badge>
-                    );
+                    )
                   })}
                 </Col>
               </Row>
@@ -109,7 +108,7 @@ export default function AboutMe(): JSX.Element {
                       <Badge pill variant={framework.variant}>
                         {framework.name}
                       </Badge>
-                    );
+                    )
                   })}
                 </Col>
               </Row>
@@ -121,7 +120,7 @@ export default function AboutMe(): JSX.Element {
                       <Badge pill variant={application.variant}>
                         {application.name}
                       </Badge>
-                    );
+                    )
                   })}
                 </Col>
               </Row>
@@ -130,5 +129,5 @@ export default function AboutMe(): JSX.Element {
         </Row>
       </Media>
     </Container>
-  );
+  )
 }

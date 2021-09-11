@@ -1,55 +1,55 @@
-import React, { useState, createRef } from "react";
-import Badge from "react-bootstrap/esm/Badge";
-import Col from "react-bootstrap/esm/Col";
-import Container from "react-bootstrap/esm/Container";
-import Row from "react-bootstrap/esm/Row";
-import { Routes } from "../../Constants/Routes";
-import ProjectCard from "./ProjectCard";
-import { Projects as myProjects } from "../../Constants/Projects";
-import Button from "react-bootstrap/esm/Button";
+import React, { useState, createRef } from 'react'
+import Badge from 'react-bootstrap/esm/Badge'
+import Col from 'react-bootstrap/esm/Col'
+import Container from 'react-bootstrap/esm/Container'
+import Row from 'react-bootstrap/esm/Row'
+import { Routes } from '../../Constants/Routes'
+import ProjectCard from './ProjectCard'
+import { Projects as myProjects } from '../../Constants/Projects'
+import Button from 'react-bootstrap/esm/Button'
 
-import "./Projects.css";
+import './Projects.css'
 
 export default function Projects(): JSX.Element {
-  const [isShowMoreProjects, setIsShowMoreProjects] = useState(false);
-  const showMoreProjectsRef: React.RefObject<HTMLInputElement> = createRef();
-  const hideProjectsOffset = 4;
+  const [isShowMoreProjects, setIsShowMoreProjects] = useState(false)
+  const showMoreProjectsRef: React.RefObject<HTMLInputElement> = createRef()
+  const hideProjectsOffset = 4
 
   function showMoreProjectsPressed() {
-    const moreProjectsWrapper = showMoreProjectsRef.current;
+    const moreProjectsWrapper = showMoreProjectsRef.current
 
-    setIsShowMoreProjects(true);
+    setIsShowMoreProjects(true)
 
     if (moreProjectsWrapper) {
-      moreProjectsWrapper.classList.add("showing");
+      moreProjectsWrapper.classList.add('showing')
     }
   }
 
   function getProjectCard(
     project: {
-      pinned: boolean;
-      name: string;
-      image: string;
-      timePeriod: string;
-      description: string;
-      tasks: string[];
+      pinned: boolean
+      name: string
+      image: string
+      timePeriod: string
+      description: string
+      tasks: string[]
       languages: {
-        name: string;
-        variant: string;
-      }[];
+        name: string
+        variant: string
+      }[]
       frameworks: {
-        name: string;
-        variant: string;
-      }[];
-      onlineUrl?: string;
-      sourceURL?: string;
+        name: string
+        variant: string
+      }[]
+      onlineUrl?: string
+      sourceURL?: string
     },
     index: number
   ): JSX.Element {
-    const extraLargeSize = 6;
-    const largeSize = 6;
-    const mediumSize = 6;
-    const smallSize = 12;
+    const extraLargeSize = 6
+    const largeSize = 6
+    const mediumSize = 6
+    const smallSize = 12
 
     return (
       <Col
@@ -58,7 +58,7 @@ export default function Projects(): JSX.Element {
         lg={largeSize}
         xl={extraLargeSize}
         className={`mb-4 ${
-          index % 2 ? "pl-md-4" : "pr-md-4"
+          index % 2 ? 'pl-md-4' : 'pr-md-4'
         } d-flex align-items-stretch`}
       >
         <ProjectCard
@@ -69,7 +69,7 @@ export default function Projects(): JSX.Element {
           tasks={
             <ul>
               {project.tasks.map((task: any) => {
-                return <li>{task}</li>;
+                return <li>{task}</li>
               })}
             </ul>
           }
@@ -80,7 +80,7 @@ export default function Projects(): JSX.Element {
                   <Badge pill variant={language.variant}>
                     {language.name}
                   </Badge>
-                );
+                )
               })}
             </>
           }
@@ -91,7 +91,7 @@ export default function Projects(): JSX.Element {
                   <Badge pill variant={framework.variant}>
                     {framework.name}
                   </Badge>
-                );
+                )
               })}
             </>
           }
@@ -99,19 +99,19 @@ export default function Projects(): JSX.Element {
           sourceURL={project.sourceURL}
         />
       </Col>
-    );
+    )
   }
 
   return (
     <Container className="mt-5 navbar-spacer">
-      <div id={Routes.projects.replace("/#", "")} className="anchor"></div>
+      <div id={Routes.projects.replace('/#', '')} className="anchor"></div>
       <h1>Gepinnte Projekte</h1>
       <Row>
         {myProjects
           .filter((project) => project.pinned)
           .map((project, index) => getProjectCard(project, index))}
       </Row>
-      <h1>Letze Projekte</h1>
+      <h1>Letzte Projekte</h1>
       <Row>
         {myProjects
           .filter(
@@ -141,5 +141,5 @@ export default function Projects(): JSX.Element {
           : null}
       </Row>
     </Container>
-  );
+  )
 }
