@@ -5,6 +5,7 @@ import Image from 'react-bootstrap/esm/Image'
 import ListGroup from 'react-bootstrap/esm/ListGroup'
 import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
 import Row from 'react-bootstrap/esm/Row'
+import BlankIcon from '../../assets/icons/blank_icon.svg'
 
 interface Props {
   imageUrl: string
@@ -23,6 +24,8 @@ export default function ProjectCard(props: Props): JSX.Element {
   const imageGridSizeMd = 3
   const imageGridSizeLg = 2
 
+  const isBlankIcon = props.imageUrl === BlankIcon
+
   return (
     <Card className="mb-4 shadow border-0" style={{ width: '100%' }}>
       <Card.Body>
@@ -33,7 +36,12 @@ export default function ProjectCard(props: Props): JSX.Element {
             lg={imageGridSizeLg}
             className="align-self-center"
           >
-            <Image src={props.imageUrl} width="100%" rounded />
+            <Image
+              src={props.imageUrl}
+              width="100%"
+              rounded
+              className={`${isBlankIcon ? 'invertDark' : null}`}
+            />
           </Col>
           <Col className="d-flex align-items-center lead">
             <Col className="p-0">

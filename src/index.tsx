@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import App from './components/App/App'
 import * as serviceWorker from './serviceWorker'
 
-import './index.css'
-import './bootstrap_overrides.css'
+import './bootstrap-overrides.css'
+import './dark-mode-overrides.css'
 
 ReactDOM.render(
   <React.StrictMode>

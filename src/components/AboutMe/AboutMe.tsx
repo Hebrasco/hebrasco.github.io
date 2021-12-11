@@ -68,7 +68,7 @@ export default function AboutMe(): JSX.Element {
                     rel="noopener noreferrer"
                     className="git-account-link d-block float-md-right float-left ml-2 ml-md-0"
                   >
-                    <Image src={gitHubLogo} />
+                    <Image src={gitHubLogo} className="invertDark" />
                   </a>
                 </div>
               </div>
