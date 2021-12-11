@@ -1,20 +1,20 @@
 import React from 'react'
-import { ROUTES } from 'src/constants/Routes'
+import { ROUTES } from 'constants/Routes'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import Media from 'react-bootstrap/esm/Media'
 import Col from 'react-bootstrap/esm/Col'
 import Image from 'react-bootstrap/esm/Image'
-import Logo from 'src/assets/images/logo.png'
-import gitHubLogo from 'src/assets/icons/github.png'
-import appStoreLogo from 'src/assets/icons/app_store.png'
+import Logo from 'assets/images/logo.png'
+import gitHubLogo from 'assets/icons/github.png'
+import appStoreLogo from 'assets/icons/app_store.png'
 import Badge from 'react-bootstrap/esm/Badge'
-import { APPSTORE_PROFILE_URL, GITHUB_PROFILE_URL } from 'src/constants/Config'
+import { APPSTORE_PROFILE_URL, GITHUB_PROFILE_URL } from 'constants/Config'
 import {
   SKILLS_LANGUAGES,
   SKILLS_FRAMEWORKS,
   SKILLS_APPLICATIONS,
-} from 'src/constants/Skills'
+} from 'constants/Skills'
 
 export default function AboutMe(): JSX.Element {
   return (

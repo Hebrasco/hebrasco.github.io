@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from 'react-bootstrap/esm/Nav'
 import Navbar from 'react-bootstrap/esm/Navbar'
-import { ROUTES } from 'src/constants/Routes'
+import { ROUTES } from 'constants/Routes'
 import { HashLink as Link } from 'react-router-hash-link'
 
 export default function NavBar(): JSX.Element {

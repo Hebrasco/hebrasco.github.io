@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/esm/Image'
 import ListGroup from 'react-bootstrap/esm/ListGroup'
 import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
 import Row from 'react-bootstrap/esm/Row'
-import BlankIcon from 'src/assets/icons/blank_icon.svg'
+import BlankIcon from 'assets/icons/blank_icon.svg'
 
 interface Props {
   imageUrl: string
