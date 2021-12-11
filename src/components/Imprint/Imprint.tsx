@@ -2,8 +2,8 @@ import React from 'react'
 import Col from 'react-bootstrap/esm/Col'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
-import { ROUTES } from 'constants/Routes'
-import { MAILTO_DANIEL_BEDRICH } from 'constants/Config'
+import { ROUTES } from 'src/constants/Routes'
+import { MAILTO_DANIEL_BEDRICH } from 'src/constants/Config'
 
 export default function Imprint(): JSX.Element {
   return (
