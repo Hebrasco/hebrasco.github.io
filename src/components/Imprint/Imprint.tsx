@@ -2,7 +2,8 @@ import React from 'react'
 import Col from 'react-bootstrap/esm/Col'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
-import { Routes } from '../../Constants/Routes'
+import { ROUTES } from '../../Constants/Routes'
+import { MAILTO_DANIEL_BEDRICH } from '../../Constants/Config'
 
 export default function Imprint(): JSX.Element {
   return (
@@ -11,7 +12,7 @@ export default function Imprint(): JSX.Element {
         <Col>
           <section style={{ position: 'relative' }}>
             <div
-              id={Routes.imprintHash.replace('/imprint#', '')}
+              id={ROUTES.imprintHash.replace('/imprint#', '')}
               className="top-anchor"
             ></div>
             <h1>Impressum</h1>
@@ -24,15 +25,15 @@ export default function Imprint(): JSX.Element {
             <b>Kontakt</b>
             <ul className="list-unstyled">
               <li>
-                <a href="mailto:daniel.bedrich@icloud.com">
-                  daniel.bedrich@icloud.com
+                <a href={MAILTO_DANIEL_BEDRICH}>
+                  {MAILTO_DANIEL_BEDRICH.replace('mailto:', '')}
                 </a>
               </li>
             </ul>
           </section>
           <section style={{ position: 'relative' }}>
             <div
-              id={Routes.privacyPolicyHash.replace('/imprint#', '')}
+              id={ROUTES.privacyPolicyHash.replace('/imprint#', '')}
               className="anchor"
             ></div>
             <h1>Datenschutz</h1>
@@ -88,8 +89,8 @@ export default function Imprint(): JSX.Element {
             <ul className="list-unstyled">
               <li>
                 E-Mail:{' '}
-                <a href="mailto:daniel.bedrich@icloud.com">
-                  daniel.bedrich@icloud.com
+                <a href={MAILTO_DANIEL_BEDRICH}>
+                  {MAILTO_DANIEL_BEDRICH.replace('mailto:', '')}
                 </a>
               </li>
             </ul>

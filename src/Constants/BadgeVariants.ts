@@ -1,4 +1,4 @@
-export const BadgeVariants = {
+export const BADGE_VARIANTS = {
   primary: 'primary',
   secondary: 'secondary',
   dark: 'dark',

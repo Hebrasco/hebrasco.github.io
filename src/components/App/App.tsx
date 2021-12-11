@@ -6,7 +6,7 @@ import AboutMe from '../AboutMe/AboutMe'
 import Projects from '../Projects/Projects'
 import Footer from '../Footer/Footer'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
-import { Routes } from '../../Constants/Routes'
+import { ROUTES } from '../../Constants/Routes'
 import Imprint from '../Imprint/Imprint'
 
 export default function App() {
@@ -15,11 +15,11 @@ export default function App() {
       <Router basename="/">
         <NavBar />
         <Switch>
-          <Route exact path={Routes.home}>
+          <Route exact path={ROUTES.home}>
             <AboutMe />
             <Projects />
           </Route>
-          <Route path={Routes.imprint}>
+          <Route path={ROUTES.imprint}>
             <Imprint />
           </Route>
         </Switch>

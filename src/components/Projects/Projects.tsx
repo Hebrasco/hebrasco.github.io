@@ -3,12 +3,15 @@ import Badge from 'react-bootstrap/esm/Badge'
 import Col from 'react-bootstrap/esm/Col'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
-import { Routes } from '../../Constants/Routes'
+import { ROUTES } from '../../Constants/Routes'
 import ProjectCard from './ProjectCard'
-import { Projects as myProjects } from '../../Constants/Projects'
+import { PROJECTS as myProjects } from '../../Constants/Projects'
 import Button from 'react-bootstrap/esm/Button'
 
 import './Projects.css'
+
+const PINNED_PROJECTS = myProjects.filter((project) => project.pinned)
+const UNPINNED_PROJECTS = myProjects.filter((project, index) => !project.pinned)
 
 export default function Projects(): JSX.Element {
   const [isShowMoreProjects, setIsShowMoreProjects] = useState(false)
@@ -104,20 +107,18 @@ export default function Projects(): JSX.Element {
 
   return (
     <Container className="mt-5 navbar-spacer">
-      <div id={Routes.projects.replace('/#', '')} className="anchor"></div>
+      <div id={ROUTES.projects.replace('/#', '')} className="anchor"></div>
       <h1>Pinned projects</h1>
       <Row>
-        {myProjects
-          .filter((project) => project.pinned)
-          .map((project, index) => getProjectCard(project, index))}
+        {PINNED_PROJECTS.map((project, index) =>
+          getProjectCard(project, index)
+        )}
       </Row>
       <h1>{isShowMoreProjects ? 'Projects' : 'Latest projects'} </h1>
       <Row>
-        {myProjects
-          .filter(
-            (project, index) => !project.pinned && index <= hideProjectsOffset
-          )
-          .map((project, index) => getProjectCard(project, index))}
+        {UNPINNED_PROJECTS.filter((_, index) => index < hideProjectsOffset).map(
+          (project, index) => getProjectCard(project, index)
+        )}
       </Row>
       {!isShowMoreProjects ? (
         <Row>
@@ -132,12 +133,9 @@ export default function Projects(): JSX.Element {
       ) : null}
       <Row className="more-projects" ref={showMoreProjectsRef}>
         {isShowMoreProjects
-          ? myProjects
-              .filter(
-                (project, index) =>
-                  !project.pinned && index > hideProjectsOffset
-              )
-              .map((project, index) => getProjectCard(project, index))
+          ? UNPINNED_PROJECTS.map((project, index) =>
+              getProjectCard(project, index)
+            )
           : null}
       </Row>
     </Container>

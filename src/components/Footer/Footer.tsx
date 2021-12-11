@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import { HashLink as Link } from 'react-router-hash-link'
-import { Routes } from '../../Constants/Routes'
+import { ROUTES } from '../../Constants/Routes'
 
 export default function Footer(): JSX.Element {
   function getCurrentYear() {
@@ -24,14 +24,14 @@ export default function Footer(): JSX.Element {
             style={{ display: 'flex', flexDirection: 'row' }}
           >
             <Link
-              to={Routes.imprintHash}
+              to={ROUTES.imprintHash}
               smooth
               className="nav-link text-muted"
             >
               Imprint
             </Link>
             <Link
-              to={Routes.privacyPolicyHash}
+              to={ROUTES.privacyPolicyHash}
               smooth
               className="nav-link text-muted"
             >
