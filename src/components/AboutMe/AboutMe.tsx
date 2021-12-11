@@ -1,23 +1,20 @@
 import React from 'react'
-import { ROUTES } from '../../Constants/Routes'
+import { ROUTES } from 'constants/Routes'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import Media from 'react-bootstrap/esm/Media'
 import Col from 'react-bootstrap/esm/Col'
 import Image from 'react-bootstrap/esm/Image'
-import Logo from '../../assets/images/logo.png'
-import gitHubLogo from '../../assets/icons/github.png'
-import appStoreLogo from '../../assets/icons/app_store.png'
+import Logo from 'assets/images/logo.png'
+import gitHubLogo from 'assets/icons/github.png'
+import appStoreLogo from 'assets/icons/app_store.png'
 import Badge from 'react-bootstrap/esm/Badge'
-import {
-  APPSTORE_PROFILE_URL,
-  GITHUB_PROFILE_URL,
-} from '../../Constants/Config'
+import { APPSTORE_PROFILE_URL, GITHUB_PROFILE_URL } from 'constants/Config'
 import {
   SKILLS_LANGUAGES,
   SKILLS_FRAMEWORKS,
   SKILLS_APPLICATIONS,
-} from '../../Constants/Skills'
+} from 'constants/Skills'
 
 export default function AboutMe(): JSX.Element {
   return (
@@ -62,7 +59,11 @@ export default function AboutMe(): JSX.Element {
                   <h5>Programming languages</h5>
                   {SKILLS_LANGUAGES.map((language) => {
                     return (
-                      <Badge pill variant={language.variant}>
+                      <Badge
+                        pill
+                        variant={language.variant}
+                        key={`skills-language-${language.name}`}
+                      >
                         {language.name}
                       </Badge>
                     )
@@ -73,7 +74,11 @@ export default function AboutMe(): JSX.Element {
                 <Col xs={12}>
                   <h5>Frameworks</h5>
                   {SKILLS_FRAMEWORKS.map((framework) => (
-                    <Badge pill variant={framework.variant}>
+                    <Badge
+                      pill
+                      variant={framework.variant}
+                      key={`skills-framework-${framework.name}`}
+                    >
                       {framework.name}
                     </Badge>
                   ))}
@@ -83,7 +88,11 @@ export default function AboutMe(): JSX.Element {
                 <Col xs={12}>
                   <h5>Programs</h5>
                   {SKILLS_APPLICATIONS.map((application) => (
-                    <Badge pill variant={application.variant}>
+                    <Badge
+                      pill
+                      variant={application.variant}
+                      key={`skills-application-${application.name}`}
+                    >
                       {application.name}
                     </Badge>
                   ))}

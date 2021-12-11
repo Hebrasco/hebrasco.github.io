@@ -5,10 +5,17 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "node-terminal",
       "name": "Start Debugger",
-      "command": "npm run start",
       "request": "launch",
-      "type": "node-terminal"
-  }
+      "command": "npm run start"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Start Debugger",
+      "request": "launch",
+      "command": "yarn start",
+      "cwd": "${workspaceFolder}"
+    }
   ]
 }

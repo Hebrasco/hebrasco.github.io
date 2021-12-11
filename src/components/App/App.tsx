@@ -6,8 +6,8 @@ import AboutMe from '../AboutMe/AboutMe'
 import Projects from '../Projects/Projects'
 import Footer from '../Footer/Footer'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
-import { ROUTES } from '../../Constants/Routes'
-import Imprint from '../Imprint/Imprint'
+import { ROUTES } from 'constants/Routes'
+import Imprint from 'components/Imprint/Imprint'
 
 export default function App() {
   return (

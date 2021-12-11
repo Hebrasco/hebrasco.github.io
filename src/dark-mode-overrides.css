@@ -34,7 +34,8 @@
     color: white !important;
   }
 
-  img.invertDark {
+  img.invertDark,
+  .navbar-light .navbar-toggler-icon {
     filter: invert(1);
   }
 

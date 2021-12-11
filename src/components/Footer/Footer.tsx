@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import { HashLink as Link } from 'react-router-hash-link'
-import { ROUTES } from '../../Constants/Routes'
+import { ROUTES } from 'constants/Routes'
 
 export default function Footer(): JSX.Element {
   function getCurrentYear() {

@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/esm/Image'
 import ListGroup from 'react-bootstrap/esm/ListGroup'
 import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
 import Row from 'react-bootstrap/esm/Row'
-import BlankIcon from '../../assets/icons/blank_icon.svg'
+import BlankIcon from 'assets/icons/blank_icon.svg'
 
 interface Props {
   imageUrl: string
@@ -56,8 +56,8 @@ export default function ProjectCard(props: Props): JSX.Element {
           <br />
           Responsibilities included:
           <br />
-          {props.tasks}
         </Card.Text>
+        {props.tasks}
       </Card.Body>
       <ListGroup className="list-group-flush">
         {props.languages ? (

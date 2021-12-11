@@ -3,9 +3,9 @@ import Badge from 'react-bootstrap/esm/Badge'
 import Col from 'react-bootstrap/esm/Col'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
-import { ROUTES } from '../../Constants/Routes'
+import { ROUTES } from 'constants/Routes'
 import ProjectCard from './ProjectCard'
-import { PROJECTS as myProjects } from '../../Constants/Projects'
+import { PROJECTS as myProjects } from 'constants/Projects'
 import Button from 'react-bootstrap/esm/Button'
 
 import './Projects.css'
@@ -63,6 +63,7 @@ export default function Projects(): JSX.Element {
         className={`mb-4 ${
           index % 2 ? 'pl-md-4' : 'pr-md-4'
         } d-flex align-items-stretch`}
+        key={`project-${project.name}`}
       >
         <ProjectCard
           imageUrl={project.image}
@@ -71,8 +72,10 @@ export default function Projects(): JSX.Element {
           description={project.description}
           tasks={
             <ul>
-              {project.tasks.map((task: any) => {
-                return <li>{task}</li>
+              {project.tasks.map((task: any, index) => {
+                return (
+                  <li key={`project-tasks-${project.name}-${index}`}>{task}</li>
+                )
               })}
             </ul>
           }
@@ -80,7 +83,11 @@ export default function Projects(): JSX.Element {
             <>
               {project.languages.map((language: any) => {
                 return (
-                  <Badge pill variant={language.variant}>
+                  <Badge
+                    pill
+                    variant={language.variant}
+                    key={`project-skill-language-${language.name}`}
+                  >
                     {language.name}
                   </Badge>
                 )
@@ -91,7 +98,11 @@ export default function Projects(): JSX.Element {
             <>
               {project.frameworks.map((framework: any) => {
                 return (
-                  <Badge pill variant={framework.variant}>
+                  <Badge
+                    pill
+                    variant={framework.variant}
+                    key={`project-skill-framework-${framework.name}`}
+                  >
                     {framework.name}
                   </Badge>
                 )
