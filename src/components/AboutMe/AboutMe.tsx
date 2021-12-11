@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes } from '../../Constants/Routes'
+import { ROUTES } from '../../Constants/Routes'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import Media from 'react-bootstrap/esm/Media'
@@ -9,41 +9,20 @@ import Logo from '../../assets/images/logo.png'
 import gitHubLogo from '../../assets/icons/github.png'
 import appStoreLogo from '../../assets/icons/app_store.png'
 import Badge from 'react-bootstrap/esm/Badge'
-import { Languages } from '../../Constants/Languages'
-import { Frameworks } from '../../Constants/Frameworks'
-import { Applications } from '../../Constants/Applications'
+import {
+  APPSTORE_PROFILE_URL,
+  GITHUB_PROFILE_URL,
+} from '../../Constants/Config'
+import {
+  SKILLS_LANGUAGES,
+  SKILLS_FRAMEWORKS,
+  SKILLS_APPLICATIONS,
+} from '../../Constants/Skills'
 
 export default function AboutMe(): JSX.Element {
-  const languages = [
-    Languages.swift,
-    Languages.json,
-    Languages.html,
-    Languages.css,
-    Languages.javaScript,
-    Languages.typeScript,
-    Languages.cSharp,
-  ]
-
-  const frameworks = [
-    Frameworks.ios.swiftUI,
-    Frameworks.ios.uiKit,
-    Frameworks.ios.widgetKit,
-    Frameworks.ios.storeKit,
-    Frameworks.web.react,
-    Frameworks.crossPlattform.reactNative,
-    Frameworks.web.reactRedux,
-  ]
-
-  const applications = [
-    Applications.xcode,
-    Applications.gitTower,
-    Applications.gitHub,
-    Applications.vsCode,
-  ]
-
   return (
     <Container style={{ position: 'relative' }} className="navbar-spacer">
-      <div id={Routes.aboutMe.replace('/#', '')} className="top-anchor"></div>
+      <div id={ROUTES.aboutMe.replace('/#', '')} className="top-anchor"></div>
       <Media>
         <Row>
           <Col xs={12} md={4} className="mb-4 mb-md-0 align-self-center">
@@ -55,7 +34,7 @@ export default function AboutMe(): JSX.Element {
                 <h1>Daniel Bedrich</h1>
                 <div className="ml-md-auto">
                   <a
-                    href="https://apps.apple.com/de/developer/daniel-bedrich/id1533246847?ign-itsct=apps_box&ign-itscg=30200"
+                    href={APPSTORE_PROFILE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="git-account-link d-block float-md-right float-left mr-2 mr-md-0 ml-md-2"
@@ -63,12 +42,12 @@ export default function AboutMe(): JSX.Element {
                     <Image src={appStoreLogo} />
                   </a>
                   <a
-                    href="https://github.com/hebrasco"
+                    href={GITHUB_PROFILE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="git-account-link d-block float-md-right float-left ml-2 ml-md-0"
                   >
-                    <Image src={gitHubLogo} />
+                    <Image src={gitHubLogo} className="invertDark" />
                   </a>
                 </div>
               </div>
@@ -81,7 +60,7 @@ export default function AboutMe(): JSX.Element {
               <Row className="mb-3">
                 <Col xs={12}>
                   <h5>Programming languages</h5>
-                  {languages.map((language) => {
+                  {SKILLS_LANGUAGES.map((language) => {
                     return (
                       <Badge pill variant={language.variant}>
                         {language.name}
@@ -93,25 +72,21 @@ export default function AboutMe(): JSX.Element {
               <Row className="mb-3">
                 <Col xs={12}>
                   <h5>Frameworks</h5>
-                  {frameworks.map((framework) => {
-                    return (
-                      <Badge pill variant={framework.variant}>
-                        {framework.name}
-                      </Badge>
-                    )
-                  })}
+                  {SKILLS_FRAMEWORKS.map((framework) => (
+                    <Badge pill variant={framework.variant}>
+                      {framework.name}
+                    </Badge>
+                  ))}
                 </Col>
               </Row>
               <Row>
                 <Col xs={12}>
                   <h5>Programs</h5>
-                  {applications.map((application) => {
-                    return (
-                      <Badge pill variant={application.variant}>
-                        {application.name}
-                      </Badge>
-                    )
-                  })}
+                  {SKILLS_APPLICATIONS.map((application) => (
+                    <Badge pill variant={application.variant}>
+                      {application.name}
+                    </Badge>
+                  ))}
                 </Col>
               </Row>
             </Media.Body>

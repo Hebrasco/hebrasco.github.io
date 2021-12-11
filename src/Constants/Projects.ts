@@ -1,6 +1,6 @@
-import { Languages } from './Languages'
-import { Frameworks } from './Frameworks'
-import { Applications } from './Applications'
+import { LANGUAGES } from './Languages'
+import { FRAMEWORKS } from './Frameworks'
+import { APPLICATIONS } from './Applications'
 import BlankIcon from '../assets/icons/blank_icon.svg'
 import WordpressIcon from '../assets/icons/wordpress.png'
 import TankVR from '../assets/icons/app/tankvr.jpg'
@@ -13,7 +13,7 @@ import BloomCouplesAppIcon from '../assets/icons/app/bloom_couples_app.png'
 import NatriumWalletIcon from '../assets/icons/app/natrium_wallet.png'
 import LennardsFutterAppLogo from '../assets/icons/app/lennards_futter_app.png'
 
-export const Projects = [
+export const PROJECTS = [
   {
     pinned: true,
     name: 'App for a soccer club of the 1st Bundesliga',
@@ -22,8 +22,8 @@ export const Projects = [
     description:
       'This app displays news about the club and region. Of course, there is also a live ticker. Furthermore, there is a store where merchandise and tickets can be purchased.',
     tasks: ['User interface development', 'Communication with an existing API'],
-    languages: [Languages.javaScript, Languages.json, Languages.css],
-    frameworks: [Frameworks.web.react, Frameworks.web.reactRedux],
+    languages: [LANGUAGES.javaScript, LANGUAGES.json, LANGUAGES.css],
+    frameworks: [FRAMEWORKS.web.react, FRAMEWORKS.web.reactRedux],
   },
   {
     pinned: true,
@@ -37,11 +37,11 @@ export const Projects = [
       'User interface development',
       'Communication with an existing API',
     ],
-    languages: [Languages.javaScript, Languages.json, Languages.css],
+    languages: [LANGUAGES.javaScript, LANGUAGES.json, LANGUAGES.css],
     frameworks: [
-      Frameworks.web.react,
-      Frameworks.web.reactRedux,
-      Frameworks.web.materialUI,
+      FRAMEWORKS.web.react,
+      FRAMEWORKS.web.reactRedux,
+      FRAMEWORKS.web.materialUI,
     ],
   },
   {
@@ -57,12 +57,12 @@ export const Projects = [
       'Communication with an existing API',
     ],
     languages: [
-      Languages.javaScript,
-      Languages.html,
-      Languages.css,
-      Languages.cSharp,
+      LANGUAGES.javaScript,
+      LANGUAGES.html,
+      LANGUAGES.css,
+      LANGUAGES.cSharp,
     ],
-    frameworks: [Frameworks.web.dotNet, Frameworks.web.angular],
+    frameworks: [FRAMEWORKS.web.dotNet, FRAMEWORKS.web.angular],
   },
   {
     pinned: true,
@@ -76,8 +76,8 @@ export const Projects = [
       'User interface development',
       'Communication with an existing API',
     ],
-    languages: [Languages.dart, Languages.json],
-    frameworks: [Frameworks.crossPlattform.flutter],
+    languages: [LANGUAGES.dart, LANGUAGES.json],
+    frameworks: [FRAMEWORKS.crossPlatform.flutter],
     onlineUrl: 'https://apps.apple.com/app/matchbus/id1351672034',
   },
   {
@@ -91,8 +91,8 @@ export const Projects = [
       'Design and development of the price chart',
       'Loading Historical Prices from an API',
     ],
-    languages: [Languages.dart, Languages.json],
-    frameworks: [Frameworks.crossPlattform.flutter],
+    languages: [LANGUAGES.dart, LANGUAGES.json],
+    frameworks: [FRAMEWORKS.crossPlatform.flutter],
     sourceURL: 'https://github.com/daubit/natrium_wallet_flutter',
   },
   {
@@ -106,8 +106,8 @@ export const Projects = [
       'Connecting the app to an existing API to create and modify a silo',
       'Fixing a bug in the layout of a CollectionView',
     ],
-    languages: [Languages.swift, Languages.json],
-    frameworks: [Frameworks.ios.ios, Frameworks.ios.uiKit],
+    languages: [LANGUAGES.swift, LANGUAGES.json],
+    frameworks: [FRAMEWORKS.ios.ios, FRAMEWORKS.ios.uiKit],
     onlineUrl: 'https://apps.apple.com/app/lennards-futter-app/id1459806758',
   },
   {
@@ -123,8 +123,8 @@ export const Projects = [
       'Implementation of a custom font',
       'Implementation of Dynamic Type',
     ],
-    languages: [Languages.swift],
-    frameworks: [Frameworks.ios.ios, Frameworks.ios.uiKit],
+    languages: [LANGUAGES.swift],
+    frameworks: [FRAMEWORKS.ios.ios, FRAMEWORKS.ios.uiKit],
   },
   {
     pinned: false,
@@ -142,13 +142,13 @@ export const Projects = [
       'Loading and displaying products from OpenCart',
     ],
     languages: [
-      Languages.typeScript,
-      Languages.php,
-      Languages.html,
-      Languages.css,
-      Languages.json,
+      LANGUAGES.typeScript,
+      LANGUAGES.php,
+      LANGUAGES.html,
+      LANGUAGES.css,
+      LANGUAGES.json,
     ],
-    frameworks: [Frameworks.web.react, Frameworks.web.opencart],
+    frameworks: [FRAMEWORKS.web.react, FRAMEWORKS.web.opencart],
     onlineUrl: 'https://winzerliebe.de',
   },
   {
@@ -165,13 +165,13 @@ export const Projects = [
       'Implementation of local notifications',
       'Implementation of widgets (iOS 14+)',
     ],
-    languages: [Languages.swift],
+    languages: [LANGUAGES.swift],
     frameworks: [
-      Frameworks.ios.ios,
-      Frameworks.ios.swiftUI,
-      Frameworks.ios.widgetKit,
-      Frameworks.ios.storeKit,
-      Frameworks.ios.localNotifications,
+      FRAMEWORKS.ios.ios,
+      FRAMEWORKS.ios.swiftUI,
+      FRAMEWORKS.ios.widgetKit,
+      FRAMEWORKS.ios.storeKit,
+      FRAMEWORKS.ios.localNotifications,
     ],
     onlineUrl: 'https://apps.apple.com/app/bloom-couples-app/id1533246365',
   },
@@ -187,8 +187,8 @@ export const Projects = [
       'Sending requests to the Sendgrid API',
       'Adding post content to a Sendgrid template',
     ],
-    languages: [Languages.php, Languages.html, Languages.css, Languages.json],
-    frameworks: [Frameworks.web.wordpress],
+    languages: [LANGUAGES.php, LANGUAGES.html, LANGUAGES.css, LANGUAGES.json],
+    frameworks: [FRAMEWORKS.web.wordpress],
   },
   {
     pinned: false,
@@ -198,8 +198,8 @@ export const Projects = [
     description:
       'Created the blog for Matchbus and a plugin to automatically send emails with Sendgrid after a post is published.',
     tasks: ['Set up wordpress', 'Customize wordpress theme'],
-    languages: [Languages.php, Languages.html, Languages.css],
-    frameworks: [Frameworks.web.wordpress],
+    languages: [LANGUAGES.php, LANGUAGES.html, LANGUAGES.css],
+    frameworks: [FRAMEWORKS.web.wordpress],
     onlineUrl: 'https://blog.matchbus.tours',
   },
   {
@@ -209,8 +209,8 @@ export const Projects = [
     timePeriod: 'August 2020 – August 2020',
     description: 'The store for Matchbus was created with OpenCart.',
     tasks: ['Setting up OpenCart', 'Customizing the theme'],
-    languages: [Languages.html, Languages.css],
-    frameworks: [Frameworks.web.opencart],
+    languages: [LANGUAGES.html, LANGUAGES.css],
+    frameworks: [FRAMEWORKS.web.opencart],
     onlineUrl: 'https://shop.matchbus.tours',
   },
   {
@@ -225,8 +225,8 @@ export const Projects = [
       'Implementation of Google Analytics',
       'Implementation of rich text editor',
     ],
-    languages: [Languages.typeScript, Languages.html, Languages.css],
-    frameworks: [Frameworks.web.react, Frameworks.web.reactRedux],
+    languages: [LANGUAGES.typeScript, LANGUAGES.html, LANGUAGES.css],
+    frameworks: [FRAMEWORKS.web.react, FRAMEWORKS.web.reactRedux],
     onlineUrl: 'https://matchbus.tours',
   },
   {
@@ -242,11 +242,11 @@ export const Projects = [
       'Parsing a JSON file',
       'Persisting data with CoreData',
     ],
-    languages: [Languages.swift, Languages.json],
+    languages: [LANGUAGES.swift, LANGUAGES.json],
     frameworks: [
-      Frameworks.ios.ios,
-      Frameworks.ios.swiftUI,
-      Frameworks.ios.coreData,
+      FRAMEWORKS.ios.ios,
+      FRAMEWORKS.ios.swiftUI,
+      FRAMEWORKS.ios.coreData,
     ],
     sourceURL: 'https://github.com/Hebrasco/recipe_app',
   },
@@ -263,8 +263,8 @@ export const Projects = [
       'Collision Detection Development',
       'Development Main Menu',
     ],
-    languages: [Languages.java],
-    frameworks: [Frameworks.other.javaFx, Frameworks.other.fxgl],
+    languages: [LANGUAGES.java],
+    frameworks: [FRAMEWORKS.other.javaFx, FRAMEWORKS.other.fxgl],
     sourceURL: 'https://github.com/Hebrasco/relictus',
   },
   {
@@ -280,12 +280,12 @@ export const Projects = [
       'Loading machine data from an API',
       'Sending emails with images and PDFs attached',
     ],
-    languages: [Languages.javaScript, Languages.xml],
+    languages: [LANGUAGES.javaScript, LANGUAGES.xml],
     frameworks: [
-      Frameworks.ios.ios,
-      Frameworks.android.android,
-      Frameworks.crossPlattform.reactNative,
-      Frameworks.web.reactRedux,
+      FRAMEWORKS.ios.ios,
+      FRAMEWORKS.android.android,
+      FRAMEWORKS.crossPlatform.reactNative,
+      FRAMEWORKS.web.reactRedux,
     ],
     onlineUrl: 'https://apps.apple.com/app/bertram-arbeitsbühnen/id475344882',
   },
@@ -301,8 +301,8 @@ export const Projects = [
       'User interface development',
       'Displaying the device name and signal strength',
     ],
-    languages: [Languages.java],
-    frameworks: [Frameworks.android.android],
+    languages: [LANGUAGES.java],
+    frameworks: [FRAMEWORKS.android.android],
     onlineUrl:
       'https://play.google.com/store/app/details?id=org.daubit.blescanner',
   },
@@ -320,14 +320,14 @@ export const Projects = [
       'Implementation of Steam and SteamVR frameworks',
       'Implementation of a leaderboard',
     ],
-    languages: [Languages.cSharp],
+    languages: [LANGUAGES.cSharp],
     frameworks: [
-      Applications.unity,
-      Applications.threeDsMax,
-      Applications.maya,
-      Frameworks.other.vr,
-      Frameworks.other.steam,
-      Frameworks.other.sqLite,
+      APPLICATIONS.unity,
+      APPLICATIONS.threeDsMax,
+      APPLICATIONS.maya,
+      FRAMEWORKS.other.vr,
+      FRAMEWORKS.other.steam,
+      FRAMEWORKS.other.sqLite,
     ],
     onlineUrl: 'https://store.steampowered.com/app/712150/TankVR/',
   },

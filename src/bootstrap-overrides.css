@@ -3,7 +3,7 @@
 }
 
 img.rounded {
-  border-radius: 0.6rem !important;
+  border-radius: 0.75rem !important;
 }
 
 .navbar-toggler {
@@ -16,4 +16,13 @@ img.rounded {
 
 .git-account-link img {
   width: 100%;
+}
+
+.card,
+.card-footer:last-child {
+  border-radius: 1rem;
+}
+
+.btn {
+  border-radius: 0.5rem;
 }
