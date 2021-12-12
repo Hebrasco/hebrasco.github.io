@@ -7,7 +7,7 @@ module.exports = {
         cwd: 'babelrc',
         extensions: ['.ts', '.tsx'],
         alias: {
-          '@src': './src',
+          '': './src',
         },
       },
     ],
