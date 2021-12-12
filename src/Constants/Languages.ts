@@ -1,16 +1,17 @@
 import { BADGE_VARIANTS } from './BadgeVariants'
+import Language from 'models/LanguageModel'
 
 export const LANGUAGES = {
-  dart: { name: 'Dart', variant: BADGE_VARIANTS.success },
-  swift: { name: 'Swift', variant: BADGE_VARIANTS.primary },
-  java: { name: 'Java', variant: BADGE_VARIANTS.secondary },
-  kotlin: { name: 'Kotlin', variant: BADGE_VARIANTS.secondary },
-  cSharp: { name: 'C#', variant: BADGE_VARIANTS.dark },
-  typeScript: { name: 'TypeScript', variant: BADGE_VARIANTS.success },
-  javaScript: { name: 'JavaScript', variant: BADGE_VARIANTS.success },
-  html: { name: 'HTML', variant: BADGE_VARIANTS.success },
-  css: { name: 'CSS', variant: BADGE_VARIANTS.success },
-  json: { name: 'JSON', variant: BADGE_VARIANTS.primary },
-  xml: { name: 'XML', variant: BADGE_VARIANTS.dark },
-  php: { name: 'PHP', variant: BADGE_VARIANTS.secondary },
+  dart: new Language('Dart', BADGE_VARIANTS.success),
+  swift: new Language('Swift', BADGE_VARIANTS.primary),
+  java: new Language('Java', BADGE_VARIANTS.secondary),
+  kotlin: new Language('Kotlin', BADGE_VARIANTS.secondary),
+  cSharp: new Language('C#', BADGE_VARIANTS.dark),
+  typeScript: new Language('TypeScript', BADGE_VARIANTS.success),
+  javaScript: new Language('JavaScript', BADGE_VARIANTS.success),
+  html: new Language('HTML', BADGE_VARIANTS.success),
+  css: new Language('CSS', BADGE_VARIANTS.success),
+  json: new Language('JSON', BADGE_VARIANTS.primary),
+  xml: new Language('XML', BADGE_VARIANTS.dark),
+  php: new Language('PHP', BADGE_VARIANTS.secondary),
 }
