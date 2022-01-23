@@ -10,13 +10,21 @@ import Button from 'react-bootstrap/esm/Button'
 
 import './Projects.css'
 
+const hideProjectsOffset = 6
 const PINNED_PROJECTS = myProjects.filter((project) => project.pinned)
-const UNPINNED_PROJECTS = myProjects.filter((project, index) => !project.pinned)
+const UNPINNED_PROJECTS = myProjects.filter(
+  (project) => !PINNED_PROJECTS.includes(project)
+)
+const LATEST_PROJECTS = UNPINNED_PROJECTS.filter(
+  (_, index) => index < hideProjectsOffset
+)
+const MORE_PROJECTS = UNPINNED_PROJECTS.filter(
+  (project) => !LATEST_PROJECTS.includes(project)
+)
 
 export default function Projects(): JSX.Element {
   const [isShowMoreProjects, setIsShowMoreProjects] = useState(false)
   const showMoreProjectsRef: React.RefObject<HTMLInputElement> = createRef()
-  const hideProjectsOffset = 6
 
   function showMoreProjectsPressed() {
     const moreProjectsWrapper = showMoreProjectsRef.current
@@ -120,17 +128,9 @@ export default function Projects(): JSX.Element {
     <Container className="mt-5 navbar-spacer">
       <div id={ROUTES.projects.replace('/#', '')} className="anchor"></div>
       <h1>Pinned projects</h1>
-      <Row>
-        {PINNED_PROJECTS.map((project, index) =>
-          getProjectCard(project, index)
-        )}
-      </Row>
+      <Row>{PINNED_PROJECTS.map(getProjectCard)}</Row>
       <h1>{isShowMoreProjects ? 'Projects' : 'Latest projects'} </h1>
-      <Row>
-        {UNPINNED_PROJECTS.filter((_, index) => index < hideProjectsOffset).map(
-          (project, index) => getProjectCard(project, index)
-        )}
-      </Row>
+      <Row>{LATEST_PROJECTS.map(getProjectCard)}</Row>
       {!isShowMoreProjects ? (
         <Row>
           <Button
@@ -143,11 +143,7 @@ export default function Projects(): JSX.Element {
         </Row>
       ) : null}
       <Row className="more-projects" ref={showMoreProjectsRef}>
-        {isShowMoreProjects
-          ? UNPINNED_PROJECTS.map((project, index) =>
-              getProjectCard(project, index)
-            )
-          : null}
+        {isShowMoreProjects ? MORE_PROJECTS.map(getProjectCard) : null}
       </Row>
     </Container>
   )
