@@ -58,6 +58,30 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     true,
+    'Bloom – Couples App',
+    BloomCouplesAppIcon,
+    'April 2020 – now',
+
+    'This app is a privately developed app, for calculating the past time since a certain day. The app also offers some iOS 14 widgets that are updated daily. Furthermore, notifications are sent at certain time periods. In addition, in-app purchases are implemented to remove advertisements.',
+    [
+      'Conception and development',
+      'User interface development',
+      'Implementation of in-app purchases',
+      'Implementation of local notifications',
+      'Implementation of widgets (iOS 14+)',
+    ],
+    [LANGUAGES.swift],
+    [
+      FRAMEWORKS.ios.ios,
+      FRAMEWORKS.ios.swiftUI,
+      FRAMEWORKS.ios.widgetKit,
+      FRAMEWORKS.ios.storeKit,
+      FRAMEWORKS.ios.localNotifications,
+    ],
+    'https://apps.apple.com/app/bloom-couples-app/id1533246365'
+  ),
+  new Project(
+    true,
     'Matchbus: App to send a status and track the bus',
     MatchbusLogo,
     'February 2021 – March 2021',
@@ -142,30 +166,6 @@ export const PROJECTS: Project[] = [
     ],
     [FRAMEWORKS.web.react, FRAMEWORKS.web.opencart],
     'https://winzerliebe.de'
-  ),
-  new Project(
-    true,
-    'Bloom – Couples App',
-    BloomCouplesAppIcon,
-    'April 2020 – September 2020',
-
-    'This app is a privately developed app, for calculating the past time since a certain day. The app also offers some iOS 14 widgets that are updated daily. Furthermore, notifications are sent at certain time periods. In addition, in-app purchases are implemented to remove advertisements.',
-    [
-      'Conception and development',
-      'User interface development',
-      'Implementation of in-app purchases',
-      'Implementation of local notifications',
-      'Implementation of widgets (iOS 14+)',
-    ],
-    [LANGUAGES.swift],
-    [
-      FRAMEWORKS.ios.ios,
-      FRAMEWORKS.ios.swiftUI,
-      FRAMEWORKS.ios.widgetKit,
-      FRAMEWORKS.ios.storeKit,
-      FRAMEWORKS.ios.localNotifications,
-    ],
-    'https://apps.apple.com/app/bloom-couples-app/id1533246365'
   ),
   new Project(
     false,
