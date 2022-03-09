@@ -49,7 +49,7 @@ export default function AboutMe(): JSX.Element {
                 </div>
               </div>
               <p className="d-inline-block mt-2 mt-md-0">
-                I have been working in app development since 2017 and have
+                I have been working in app development since 2015 and have
                 already implemented various projects for iOS and Android in
                 small and large teams. I prefer programming for iOS, where I
                 have already published an app.
