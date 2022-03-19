@@ -2,7 +2,7 @@ import ILanguage from './ILanguage'
 import IFramework from './IFramework'
 
 export default interface IProject {
-  pinned: boolean
+  highlighted: boolean
   name: string
   image: string
   timePeriod: string
@@ -10,6 +10,6 @@ export default interface IProject {
   tasks: string[]
   languages: ILanguage[]
   frameworks: IFramework[]
-  onlineUrl?: string
+  onlineURL?: string
   sourceURL?: string
 }

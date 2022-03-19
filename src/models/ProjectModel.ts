@@ -3,7 +3,7 @@ import ILanguage from 'interfaces/ILanguage'
 import IFramework from 'interfaces/IFramework'
 
 export default class ProjectModel implements IProject {
-  pinned: boolean
+  highlighted: boolean
   name: string
   image: string
   timePeriod: string
@@ -11,11 +11,11 @@ export default class ProjectModel implements IProject {
   tasks: string[]
   languages: ILanguage[]
   frameworks: IFramework[]
-  onlineUrl?: string
+  onlineURL?: string
   sourceURL?: string
 
   constructor(
-    pinned: boolean,
+    highlighted: boolean,
     name: string,
     image: string,
     timePeriod: string,
@@ -23,10 +23,10 @@ export default class ProjectModel implements IProject {
     tasks: string[],
     languages: ILanguage[],
     frameworks: IFramework[],
-    onlineUrl?: string,
+    onlineURL?: string,
     sourceURL?: string
   ) {
-    this.pinned = pinned
+    this.highlighted = highlighted
     this.name = name
     this.image = image
     this.timePeriod = timePeriod
@@ -34,7 +34,7 @@ export default class ProjectModel implements IProject {
     this.tasks = tasks
     this.languages = languages
     this.frameworks = frameworks
-    this.onlineUrl = onlineUrl
+    this.onlineURL = onlineURL
     this.sourceURL = sourceURL
   }
 }

@@ -6,25 +6,19 @@ import ListGroup from 'react-bootstrap/esm/ListGroup'
 import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
 import Row from 'react-bootstrap/esm/Row'
 import BlankIcon from 'assets/icons/blank_icon.svg'
+import Badge from 'react-bootstrap/esm/Badge'
+import ProjectModel from 'models/ProjectModel'
 
 interface Props {
-  imageUrl: string
-  title: string
-  timePeriod: string
-  description: string
-  tasks: JSX.Element
-  languages?: JSX.Element
-  frameworks?: JSX.Element
-  onlineURL?: string
-  sourceURL?: string
+  project: ProjectModel
 }
 
-export default function ProjectCard(props: Props): JSX.Element {
+export default function ProjectCard({ project }: Props): JSX.Element {
   const imageGridSizeXs = 3
   const imageGridSizeMd = 3
   const imageGridSizeLg = 2
 
-  const isBlankIcon = props.imageUrl === BlankIcon
+  const isBlankIcon = project.image === BlankIcon
 
   return (
     <Card className="mb-4 shadow border-0" style={{ width: '100%' }}>
@@ -37,7 +31,7 @@ export default function ProjectCard(props: Props): JSX.Element {
             className="align-self-center"
           >
             <Image
-              src={props.imageUrl}
+              src={project.image}
               width="100%"
               rounded
               className={`${isBlankIcon ? 'invertDark' : null}`}
@@ -45,41 +39,75 @@ export default function ProjectCard(props: Props): JSX.Element {
           </Col>
           <Col className="d-flex align-items-center lead">
             <Col className="p-0">
-              <Card.Title className="mb-0">{props.title}</Card.Title>
-              <small className="m-0">{props.timePeriod}</small>
+              <Card.Title className="mb-0">{project.name}</Card.Title>
+              <small className="m-0">{project.timePeriod}</small>
             </Col>
           </Col>
         </Row>
         <Card.Text>
-          {props.description}
+          {project.description}
           <br />
           <br />
           Responsibilities included:
           <br />
         </Card.Text>
-        {props.tasks}
+        <ul>
+          {project.tasks.map((task: any, index) => {
+            return (
+              <li key={`project-tasks-${project.name}-${index}`}>{task}</li>
+            )
+          })}
+        </ul>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        {props.languages ? (
-          <ListGroupItem>{props.languages}</ListGroupItem>
+        {project.languages ? (
+          <ListGroupItem>
+            <>
+              {project.languages.map((language: any) => {
+                return (
+                  <Badge
+                    pill
+                    variant={language.variant}
+                    key={`project-skill-language-${language.name}`}
+                  >
+                    {language.name}
+                  </Badge>
+                )
+              })}
+            </>
+          </ListGroupItem>
         ) : null}
-        {props.frameworks ? (
-          <ListGroupItem>{props.frameworks}</ListGroupItem>
+        {project.frameworks ? (
+          <ListGroupItem>
+            <>
+              {project.frameworks.map((framework: any) => {
+                return (
+                  <Badge
+                    pill
+                    variant={framework.variant}
+                    key={`project-skill-framework-${framework.name}`}
+                  >
+                    {framework.name}
+                  </Badge>
+                )
+              })}
+            </>
+          </ListGroupItem>
         ) : null}
       </ListGroup>
       <Card.Footer>
-        {props.onlineURL ? (
+        {project.onlineURL ? (
           <Card.Link
-            href={props.onlineURL}
+            href={project.onlineURL}
             target="_blank"
             rel="noopener noreferrer"
           >
             view
           </Card.Link>
         ) : null}
-        {props.sourceURL ? (
+        {project.sourceURL ? (
           <Card.Link
-            href={props.sourceURL}
+            href={project.sourceURL}
             className="float-right"
             target="_blank"
             rel="noopener noreferrer"
