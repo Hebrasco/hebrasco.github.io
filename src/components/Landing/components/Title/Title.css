@@ -1,0 +1,30 @@
+.landing-title-container {
+  width: 69%;
+  margin: 0 auto;
+}
+
+.landing-title-container-xs {
+  width: 90%;
+}
+
+.landing-title-container > div {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.landing-title > h1 {
+  letter-spacing: 4px;
+  font-size: 10vmin;
+  margin: 0;
+  line-height: 9vmin;
+}
+
+.landing-title > p {
+  letter-spacing: 2px;
+  font-size: 4vmin;
+  font-weight: 200;
+  margin: 0;
+  line-height: 5vmin;
+}

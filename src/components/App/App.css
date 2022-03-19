@@ -1,5 +1,8 @@
 :root {
   color-scheme: light dark;
+  --navbarHeight: 56px;
+  --primaryColor: #3498db;
+  --secondaryColor: #2c3e50;
 }
 
 body {
@@ -12,12 +15,12 @@ body {
 }
 
 .navbar-spacer {
-  margin-top: calc(56px + 3rem);
+  margin-top: var(--navbarHeight);
 }
 
 .top-anchor {
   position: absolute;
-  top: calc(-56px + -3rem);
+  top: calc(var(--navbarHeight) + -3rem);
   left: 0;
 }
 

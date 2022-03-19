@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/esm/Row'
 import Media from 'react-bootstrap/esm/Media'
 import Col from 'react-bootstrap/esm/Col'
 import Image from 'react-bootstrap/esm/Image'
-import Logo from 'assets/images/logo.png'
+import Logo from 'assets/images/me_dark.jpeg'
 import gitHubLogo from 'assets/icons/github.png'
 import appStoreLogo from 'assets/icons/app_store.png'
 import Badge from 'react-bootstrap/esm/Badge'
@@ -18,7 +18,7 @@ import {
 
 export default function AboutMe(): JSX.Element {
   return (
-    <Container style={{ position: 'relative' }} className="navbar-spacer">
+    <Container style={{ position: 'relative' }}>
       <div id={ROUTES.aboutMe.replace('/#', '')} className="top-anchor"></div>
       <Media>
         <Row>

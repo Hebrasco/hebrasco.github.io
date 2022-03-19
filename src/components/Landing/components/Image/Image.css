@@ -1,0 +1,27 @@
+.landing-image {
+  background-image: url('../../../../assets/images/me_light.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  position: absolute;
+  top: var(--navbarHeight);
+  right: 0;
+  bottom: 0;
+  left: 35%;
+  animation: landing-background 1.2s cubic-bezier(0.5, 0.6, 0.6, 1);
+  animation-fill-mode: backwards;
+}
+
+.landing-image-xs {
+  left: 19%;
+}
+
+.landing-image-sm {
+  left: 40%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .landing-image {
+    background-image: url('../../../../assets/images/me_dark.jpeg');
+  }
+}

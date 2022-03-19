@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import { ROUTES } from 'constants/Routes'
 import Imprint from 'components/Imprint/Imprint'
+import Landing from 'components/Landing/Landing'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <NavBar />
         <Switch>
           <Route exact path={ROUTES.home}>
+            <Landing />
             <AboutMe />
             <Projects />
           </Route>
