@@ -19,8 +19,7 @@ export const PROJECTS: Project[] = [
     true,
     'App for a soccer club of the 1st Bundesliga',
     BlankIcon,
-    'April 2021 – now',
-
+    'April 2021 - now',
     'This app displays news about the club and region. Of course, there is also a live ticker. Furthermore, there is a store where merchandise and tickets can be purchased.',
     ['User interface development', 'Communication with an existing API'],
     [LANGUAGES.javaScript, LANGUAGES.json, LANGUAGES.css],
@@ -30,8 +29,7 @@ export const PROJECTS: Project[] = [
     true,
     'Admin webapp for a soccer club of the 1st Bundesliga',
     BlankIcon,
-    'April 2021 – now',
-
+    'April 2021 - now',
     'This admin webapp can be used to manage tickets, contracts, purchases, users, surveys, messages.',
     [
       'Conception and development',
@@ -45,8 +43,7 @@ export const PROJECTS: Project[] = [
     false,
     'Platform for corporate communication',
     BlankIcon,
-    'April 2021 – now',
-
+    'April 2021 - now',
     'A platform for internal corporate communication was developed. News can be published, events and user interactions can be created here.',
     [
       'Conception and development',
@@ -58,10 +55,9 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     true,
-    'Bloom – Couples App',
+    'Bloom - Couples App',
     BloomCouplesAppIcon,
-    'April 2020 – now',
-
+    'April 2020 - now',
     'This app is a privately developed app, for calculating the past time since a certain day. The app also offers some iOS 14 widgets that are updated daily. Furthermore, notifications are sent at certain time periods. In addition, in-app purchases are implemented to remove advertisements.',
     [
       'Conception and development',
@@ -84,8 +80,7 @@ export const PROJECTS: Project[] = [
     true,
     'Matchbus: App to send a status and track the bus',
     MatchbusLogo,
-    'February 2021 – March 2021',
-
+    'February 2021 - March 2021',
     'Developed an app to connect with a bus. The location of the cell phone is tracked as the location of the bus. It is also possible to send an emergency directly to the Matchbus platform.',
     [
       'Conception and development',
@@ -100,8 +95,7 @@ export const PROJECTS: Project[] = [
     false,
     'Natrium Wallet',
     NatriumWalletIcon,
-    'Dezember 2020 – January  2021',
-
+    'December 2020 - January  2021',
     'The Sodium Wallet is a wallet for the cryptocurrency Nano. The price chart for the portfolio performance was added. However, this feature was not included in the project.',
     [
       'Design and development of the price chart',
@@ -115,8 +109,7 @@ export const PROJECTS: Project[] = [
     false,
     'Lennards Futter-App',
     LennardsFutterAppLogo,
-    'Dezember 2020 – January  2020',
-
+    'December 2020 - January  2020',
     'Silos can be managed with this app. Any number of silos can be created. These have a name, capacity, fill level, date when the silo is used up and when a new order is placed. Through this app, the feed for the silo can also be ordered.',
     [
       'Connecting the app to an existing API to create and modify a silo',
@@ -130,8 +123,7 @@ export const PROJECTS: Project[] = [
     false,
     'Golf Tracking App',
     BlankIcon,
-    'July 2020 – October 2020',
-
+    'July 2020 - October 2020',
     'With this app golf games can be tracked and analyzed. My task was to further develop the app and modernize the UI. Among other things, the support of dynamic type was implemented.',
     [
       'Implementation of onboarding screens',
@@ -146,8 +138,7 @@ export const PROJECTS: Project[] = [
     false,
     'Winzerliebe',
     WinzerliebeLogo,
-    'July 2020 – October 2020',
-
+    'July 2020 - October 2020',
     'On Winzerliebe wines, wine packages and vouchers can be purchased. Furthermore, it is possible to filter wines by preference to find the best wine for yourself.',
     [
       'Development and implementation',
@@ -169,10 +160,9 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
-    'Sengrid Wordpress Plugin',
+    'Sendgrid Wordpress Plugin',
     WordpressIcon,
-    'October 2020 – October 2020',
-
+    'October 2020 - October 2020',
     'When a post is published, the plugin automatically sends an email with the post content to a list of subscribers via Sendgrid.',
     [
       'Connecting a wordpress hook to the plugin',
@@ -186,8 +176,7 @@ export const PROJECTS: Project[] = [
     false,
     'Matchbus Blog',
     MatchbusLogo,
-    'September 2020 – October 2020',
-
+    'September 2020 - October 2020',
     'Created the blog for Matchbus and a plugin to automatically send emails with Sendgrid after a post is published.',
     ['Set up wordpress', 'Customize wordpress theme'],
     [LANGUAGES.php, LANGUAGES.html, LANGUAGES.css],
@@ -198,7 +187,7 @@ export const PROJECTS: Project[] = [
     false,
     'Matchbus Shop',
     MatchbusLogo,
-    'August 2020 – August 2020',
+    'August 2020 - August 2020',
     'The store for Matchbus was created with OpenCart.',
     ['Setting up OpenCart', 'Customizing the theme'],
     [LANGUAGES.html, LANGUAGES.css],
@@ -209,8 +198,7 @@ export const PROJECTS: Project[] = [
     false,
     'Matchbus',
     MatchbusLogo,
-    'April 2020 – August 2020',
-
+    'April 2020 - August 2020',
     'Matchbus is a platform where bus operators and advertisers can register. Schools, daycare centers, companies, etc. can submit a rental bus request and see the status of many buses (empty, emergency, empty run). With the help of Matchbus, these vacancies and empty runs are to be provided with passengers.',
     [
       'Development of the DSGVO Cookie Banner',
@@ -225,9 +213,8 @@ export const PROJECTS: Project[] = [
     false,
     'Recipes app',
     BlankIcon,
-    'March 2020 – April 2020',
-
-    'Mit der Rezepte App können spielend leicht Speisepläne erstellt werden. Hierfür stehen einige Rezepte in der App zur Auswahl. Gleichzeitig können die Zutaten auf die gewünschte Personenanzahl aufgerechnet und einer Einkaufsliste hinzugefügt werden.',
+    'March 2020 - April 2020',
+    `With his recipe app, you're able to create meal plans. There's a huge selection of recipes build in to choose from. Further, the ingredients can be exactly calculated based on the amount of people and can be added to a shopping list.`,
     [
       'Conception and development',
       'User interface development',
@@ -242,8 +229,7 @@ export const PROJECTS: Project[] = [
     false,
     'Relictus',
     RelictusIcon,
-    'January  2019 – April 2019',
-
+    'January  2019 - April 2019',
     "A Jump 'n Run game for the PC. It was created as part of a project work in the training.",
     [
       'Conception and development',
@@ -259,8 +245,7 @@ export const PROJECTS: Project[] = [
     false,
     'Bertram Arbeitsbühnen',
     BertramArbeitsbuehnenLogo,
-    'April 2019 – February 2020',
-
+    'April 2019 - February 2020',
     'App for renting working platforms. Work platforms can be rented and also returned after the rental period. Another component of the app is the creation and management of construction sites. Here, working platforms are assigned and can all be rented and managed together.',
     [
       'New development of the app with React-Native',
@@ -281,8 +266,7 @@ export const PROJECTS: Project[] = [
     false,
     'Bluetooth Locator',
     BlueToothLocatorLogo,
-    'March 2018 – May 2018',
-
+    'March 2018 - May 2018',
     'Bluetooth Locator can be used to track down Bluetooth signals. If a Bluetooth device is lost, you can find it again with the help of this app.',
     [
       'Conception and development',
@@ -297,15 +281,14 @@ export const PROJECTS: Project[] = [
     false,
     'TankVR',
     TankVRLogo,
-    'August 2017 – Dezember 2018',
-
-    'TankVR is a virtual reality arcade tank game for the HTC Vive. The object of the game is to take out enemy tanks. Based on hit accuracy and distance, a high score is calculated and kept in a leaderboard.',
+    'August 2017 - December 2018',
+    'TankVR is a virtual reality arcade tank game for the HTC Vive. The object of the game is to take out enemy tanks. Based on hit accuracy and distance, a high score is calculated and kept in a leader board.',
     [
       'Design and development',
       'Creation of elaborate 3D models',
       'Editing existing 3D models',
       'Implementation of Steam and SteamVR frameworks',
-      'Implementation of a leaderboard',
+      'Implementation of a leader board',
     ],
     [LANGUAGES.cSharp],
     [
@@ -317,5 +300,15 @@ export const PROJECTS: Project[] = [
       FRAMEWORKS.other.sqLite,
     ],
     'https://store.steampowered.com/app/712150/TankVR/'
+  ),
+  new Project(
+    false,
+    'Blog',
+    BlankIcon,
+    'June 2015 to January 2017',
+    'A personal blog to write about coding. Unfortunately this project got never finished.',
+    ['Conception and development', 'User interface development'],
+    [LANGUAGES.cSharp, LANGUAGES.html, LANGUAGES.css, LANGUAGES.javaScript],
+    [APPLICATIONS.vs, APPLICATIONS.vsCode, FRAMEWORKS.web.dotNet]
   ),
 ]

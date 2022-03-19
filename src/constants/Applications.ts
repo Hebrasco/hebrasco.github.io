@@ -9,6 +9,7 @@ export const APPLICATIONS = {
   androidStudio: new Application('Android Studio', BADGE_VARIANTS.secondary),
   intellijIdea: new Application('IntelliJ IDEA', BADGE_VARIANTS.secondary),
   vsCode: new Application('VS Code', BADGE_VARIANTS.success),
+  vs: new Application('Visual Studio', BADGE_VARIANTS.dark),
   unity: new Application('Unity', BADGE_VARIANTS.dark),
   threeDsMax: new Application('3DS Max', BADGE_VARIANTS.warning),
   maya: new Application('Maya', BADGE_VARIANTS.warning),
