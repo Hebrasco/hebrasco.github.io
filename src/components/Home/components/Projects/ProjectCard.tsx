@@ -67,7 +67,7 @@ export default function ProjectCard({ project }: Props): JSX.Element {
                 return (
                   <Badge
                     pill
-                    variant={language.variant}
+                    bg={language.variant}
                     key={`project-skill-language-${language.name}`}
                   >
                     {language.name}
@@ -84,7 +84,7 @@ export default function ProjectCard({ project }: Props): JSX.Element {
                 return (
                   <Badge
                     pill
-                    variant={framework.variant}
+                    bg={framework.variant}
                     key={`project-skill-framework-${framework.name}`}
                   >
                     {framework.name}

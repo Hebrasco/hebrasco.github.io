@@ -3,7 +3,7 @@ import React from 'react'
 import './Title.css'
 
 interface TitleProps {
-  isXs?: Boolean
+  isXs: boolean
 }
 
 export default function Title({ isXs = false }: TitleProps) {
@@ -15,7 +15,7 @@ export default function Title({ isXs = false }: TitleProps) {
         <div className="landing-title">
           <h1>Hi, I am</h1>
           <h1>Daniel</h1>
-          <p>Software developer</p>
+          <p className="fw-light">Software developer</p>
         </div>
       </div>
     </div>

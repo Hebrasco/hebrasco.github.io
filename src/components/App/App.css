@@ -1,8 +1,13 @@
 :root {
   color-scheme: light dark;
   --navbarHeight: 56px;
+
   --primaryColor: #3498db;
   --secondaryColor: #2c3e50;
+
+  --titleFontSize: 10vmin;
+  --subTitleFontSize: 4vmin;
+  --headingFontSize: 3vmin;
 }
 
 body {
@@ -16,12 +21,6 @@ body {
 
 .navbar-spacer {
   margin-top: var(--navbarHeight);
-}
-
-.top-anchor {
-  position: absolute;
-  top: calc(var(--navbarHeight) * -1 - 3rem);
-  left: 0;
 }
 
 .anchor {

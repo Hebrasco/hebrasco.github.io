@@ -1,30 +1,22 @@
 import React from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import NavBar from '../NavBar/NavBar'
-import AboutMe from '../AboutMe/AboutMe'
-import Projects from '../Projects/Projects'
-import Footer from '../Footer/Footer'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import { ROUTES } from 'constants/Routes'
+import NavBar from '../NavBar/NavBar'
+import Footer from '../Footer/Footer'
+import Home from 'components/Home/Home'
 import Imprint from 'components/Imprint/Imprint'
-import Landing from 'components/Landing/Landing'
 
 export default function App() {
   return (
     <React.Fragment>
       <Router basename="/">
         <NavBar />
-        <Switch>
-          <Route exact path={ROUTES.home}>
-            <Landing />
-            <AboutMe />
-            <Projects />
-          </Route>
-          <Route path={ROUTES.imprint}>
-            <Imprint />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path={ROUTES.home} element={<Home />} />
+          <Route path={ROUTES.imprint} element={<Imprint />} />
+        </Routes>
         <Footer />
       </Router>
     </React.Fragment>

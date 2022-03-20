@@ -96,7 +96,7 @@ export const PROJECTS: Project[] = [
     'Natrium Wallet',
     NatriumWalletIcon,
     'December 2020 - January  2021',
-    'The Sodium Wallet is a wallet for the cryptocurrency Nano. The price chart for the portfolio performance was added. However, this feature was not included in the project.',
+    'The Natrium Wallet is a wallet for the cryptocurrency Nano. The price chart for the portfolio performance was added. However, this feature was not included in the project.',
     [
       'Design and development of the price chart',
       'Loading Historical Prices from an API',
