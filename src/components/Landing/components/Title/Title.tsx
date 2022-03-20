@@ -8,12 +8,9 @@ interface TitleProps {
 
 export default function Title({ isXs = false }: TitleProps) {
   const baseStyle = 'landing-title-container'
-  let styles = 'd-none d-sm-block'
-
-  if (isXs) styles = `${baseStyle}-xs d-block d-sm-none`
 
   return (
-    <div className={`${baseStyle} ${styles}`}>
+    <div className={`${baseStyle} ${isXs && `${baseStyle}-xs`}`}>
       <div>
         <div className="landing-title">
           <h1>Hi, I am</h1>

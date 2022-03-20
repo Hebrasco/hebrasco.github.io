@@ -4,12 +4,7 @@ import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import Media from 'react-bootstrap/esm/Media'
 import Col from 'react-bootstrap/esm/Col'
-import Image from 'react-bootstrap/esm/Image'
-import Logo from 'assets/images/me_dark.jpeg'
-import gitHubLogo from 'assets/icons/github.png'
-import appStoreLogo from 'assets/icons/app_store.png'
 import Badge from 'react-bootstrap/esm/Badge'
-import { APPSTORE_PROFILE_URL, GITHUB_PROFILE_URL } from 'constants/Config'
 import {
   SKILLS_LANGUAGES,
   SKILLS_FRAMEWORKS,
@@ -22,32 +17,8 @@ export default function AboutMe(): JSX.Element {
       <div id={ROUTES.aboutMe.replace('/#', '')} className="top-anchor"></div>
       <Media>
         <Row>
-          <Col xs={12} md={4} className="mb-4 mb-md-0 align-self-center">
-            <Image src={Logo} roundedCircle width="100%" />
-          </Col>
-          <Col xs={12} md={8} className="align-self-center">
+          <Col xs={12} className="align-self-center">
             <Media.Body>
-              <div className="d-md-flex align-items-center mb-sm-5 mb-md-0">
-                <h1>Daniel Bedrich</h1>
-                <div className="ml-md-auto">
-                  <a
-                    href={APPSTORE_PROFILE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="git-account-link d-block float-md-right float-left mr-2 mr-md-0 ml-md-2"
-                  >
-                    <Image src={appStoreLogo} />
-                  </a>
-                  <a
-                    href={GITHUB_PROFILE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="git-account-link d-block float-md-right float-left ml-2 ml-md-0"
-                  >
-                    <Image src={gitHubLogo} className="invertDark" />
-                  </a>
-                </div>
-              </div>
               <p className="d-inline-block mt-2 mt-md-0">
                 I have been working in app development since 2015 and have
                 already implemented various projects for iOS and Android in

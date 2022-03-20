@@ -10,14 +10,6 @@ img.rounded {
   border: none !important;
 }
 
-.git-account-link {
-  width: 2em;
-}
-
-.git-account-link img {
-  width: 100%;
-}
-
 .card,
 .card-footer:last-child {
   border-radius: 1rem;

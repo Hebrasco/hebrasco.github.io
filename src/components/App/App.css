@@ -20,7 +20,7 @@ body {
 
 .top-anchor {
   position: absolute;
-  top: calc(var(--navbarHeight) + -3rem);
+  top: calc(var(--navbarHeight) * -1 - 3rem);
   left: 0;
 }
 
