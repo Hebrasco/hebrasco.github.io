@@ -70,7 +70,7 @@ export default function Projects(): JSX.Element {
           <Button
             onClick={showMoreProjectsPressed}
             variant="outline-primary"
-            className="mb-5 mx-auto"
+            className="show-more-projects-button mb-5 mx-auto"
           >
             load all projects
           </Button>
