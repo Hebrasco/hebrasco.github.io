@@ -4,6 +4,7 @@ import Image from './components/Image/Image'
 import { useWindowSize } from 'utils/hooks'
 
 import './Landing.css'
+import ScrollDownIcon from './components/ScrollDownIcon/ScrollDownIcon'
 
 export default function Landing() {
   const { isXs, isSm } = useWindowSize()
@@ -12,6 +13,8 @@ export default function Landing() {
     <div className="landing-container">
       <Title isXs={isXs} />
       <Image isXs={isXs} isSm={isSm} />
+
+      <ScrollDownIcon />
     </div>
   )
 }

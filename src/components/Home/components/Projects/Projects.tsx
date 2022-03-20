@@ -1,4 +1,4 @@
-import React, { useState, createRef } from 'react'
+import React from 'react'
 import { ROUTES } from 'constants/Routes'
 import { PROJECTS as myProjects } from 'constants/Projects'
 import ProjectModel from 'models/ProjectModel'
@@ -14,8 +14,6 @@ const NON_HIGHLIGHTED_PROJECTS = myProjects.filter(
 )
 
 export default function Projects(): JSX.Element {
-  const showMoreProjectsRef: React.RefObject<HTMLInputElement> = createRef()
-
   function getProjectApp(project: ProjectModel, index: number): JSX.Element {
     const extraLargeSize = 2
     const largeSize = 2
