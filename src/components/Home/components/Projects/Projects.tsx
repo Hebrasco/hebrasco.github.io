@@ -3,12 +3,12 @@ import Col from 'react-bootstrap/esm/Col'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import { ROUTES } from 'constants/Routes'
-import ProjectCard from './ProjectCard'
 import { PROJECTS as myProjects } from 'constants/Projects'
 import Button from 'react-bootstrap/esm/Button'
 import ProjectModel from 'models/ProjectModel'
 
 import './Projects.css'
+import ProjectApp from './components/ProjectApp/ProjectApp'
 
 const hideProjectsOffset = 6
 const HIGHLIGHTED_PROJECTS = myProjects.filter((project) => project.highlighted)
@@ -36,11 +36,11 @@ export default function Projects(): JSX.Element {
     }
   }
 
-  function getProjectCard(project: ProjectModel, index: number): JSX.Element {
-    const extraLargeSize = 6
-    const largeSize = 6
-    const mediumSize = 6
-    const smallSize = 12
+  function getProjectApp(project: ProjectModel, index: number): JSX.Element {
+    const extraLargeSize = 2
+    const largeSize = 2
+    const mediumSize = 3
+    const smallSize = 3
 
     return (
       <Col
@@ -50,10 +50,10 @@ export default function Projects(): JSX.Element {
         xl={extraLargeSize}
         className={`mb-4 ${
           index % 2 ? 'pl-md-4' : 'pr-md-4'
-        } d-flex align-items-stretch`}
+        } d-flex align-items-stretch justify-content-center`}
         key={`project-${project.name}`}
       >
-        <ProjectCard project={project} />
+        <ProjectApp project={project} />
       </Col>
     )
   }
@@ -62,9 +62,9 @@ export default function Projects(): JSX.Element {
     <Container className="mt-5 navbar-spacer">
       <div id={ROUTES.projects.replace('/#', '')} className="anchor"></div>
       <h1>Highlighted projects</h1>
-      <Row>{HIGHLIGHTED_PROJECTS.map(getProjectCard)}</Row>
+      <Row>{HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
       <h1>{isShowMoreProjects ? 'Projects' : 'Latest projects'} </h1>
-      <Row>{LATEST_PROJECTS.map(getProjectCard)}</Row>
+      <Row>{LATEST_PROJECTS.map(getProjectApp)}</Row>
       {!isShowMoreProjects ? (
         <Row>
           <Button
@@ -77,7 +77,7 @@ export default function Projects(): JSX.Element {
         </Row>
       ) : null}
       <Row className="more-projects" ref={showMoreProjectsRef}>
-        {isShowMoreProjects ? MORE_PROJECTS.map(getProjectCard) : null}
+        {isShowMoreProjects ? MORE_PROJECTS.map(getProjectApp) : null}
       </Row>
     </Container>
   )

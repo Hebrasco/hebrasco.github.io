@@ -1,0 +1,7 @@
+.project-app-container img {
+  max-width: 4rem;
+}
+
+.project-app-container p.project-app-name-xs {
+  font-size: 0.875rem;
+}

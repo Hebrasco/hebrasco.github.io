@@ -4,6 +4,7 @@ import IFramework from 'interfaces/IFramework'
 
 export default class ProjectModel implements IProject {
   highlighted: boolean
+  shortName: string
   name: string
   image: string
   timePeriod: string
@@ -16,6 +17,7 @@ export default class ProjectModel implements IProject {
 
   constructor(
     highlighted: boolean,
+    shortName: string | null,
     name: string,
     image: string,
     timePeriod: string,
@@ -27,6 +29,7 @@ export default class ProjectModel implements IProject {
     sourceURL?: string
   ) {
     this.highlighted = highlighted
+    this.shortName = shortName ?? name
     this.name = name
     this.image = image
     this.timePeriod = timePeriod

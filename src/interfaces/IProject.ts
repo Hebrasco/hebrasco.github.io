@@ -3,6 +3,7 @@ import IFramework from './IFramework'
 
 export default interface IProject {
   highlighted: boolean
+  shortName: string
   name: string
   image: string
   timePeriod: string

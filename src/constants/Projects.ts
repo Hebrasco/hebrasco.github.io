@@ -17,6 +17,7 @@ import Project from 'models/ProjectModel'
 export const PROJECTS: Project[] = [
   new Project(
     true,
+    'Soccer club app',
     'App for a soccer club of the 1st Bundesliga',
     BlankIcon,
     'April 2021 - now',
@@ -27,6 +28,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     true,
+    'Soccer club admin',
     'Admin webapp for a soccer club of the 1st Bundesliga',
     BlankIcon,
     'April 2021 - now',
@@ -41,6 +43,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    'Corporate Communication',
     'Platform for corporate communication',
     BlankIcon,
     'April 2021 - now',
@@ -55,6 +58,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     true,
+    'Bloom',
     'Bloom - Couples App',
     BloomCouplesAppIcon,
     'April 2020 - now',
@@ -78,6 +82,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     true,
+    'Matchbus',
     'Matchbus: App to send a status and track the bus',
     MatchbusLogo,
     'February 2021 - March 2021',
@@ -93,6 +98,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Natrium Wallet',
     NatriumWalletIcon,
     'December 2020 - January  2021',
@@ -107,6 +113,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Lennards Futter-App',
     LennardsFutterAppLogo,
     'December 2020 - January  2020',
@@ -121,6 +128,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    'Golf Tracker',
     'Golf Tracking App',
     BlankIcon,
     'July 2020 - October 2020',
@@ -136,6 +144,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Winzerliebe',
     WinzerliebeLogo,
     'July 2020 - October 2020',
@@ -160,6 +169,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Sendgrid Wordpress Plugin',
     WordpressIcon,
     'October 2020 - October 2020',
@@ -174,6 +184,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Matchbus Blog',
     MatchbusLogo,
     'September 2020 - October 2020',
@@ -185,6 +196,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Matchbus Shop',
     MatchbusLogo,
     'August 2020 - August 2020',
@@ -196,7 +208,8 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
-    'Matchbus',
+    null,
+    'Matchbus Platform',
     MatchbusLogo,
     'April 2020 - August 2020',
     'Matchbus is a platform where bus operators and advertisers can register. Schools, daycare centers, companies, etc. can submit a rental bus request and see the status of many buses (empty, emergency, empty run). With the help of Matchbus, these vacancies and empty runs are to be provided with passengers.',
@@ -211,6 +224,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Recipes app',
     BlankIcon,
     'March 2020 - April 2020',
@@ -227,6 +241,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Relictus',
     RelictusIcon,
     'January  2019 - April 2019',
@@ -243,6 +258,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Bertram Arbeitsbühnen',
     BertramArbeitsbuehnenLogo,
     'April 2019 - February 2020',
@@ -264,6 +280,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Bluetooth Locator',
     BlueToothLocatorLogo,
     'March 2018 - May 2018',
@@ -279,6 +296,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'TankVR',
     TankVRLogo,
     'August 2017 - December 2018',
@@ -303,6 +321,7 @@ export const PROJECTS: Project[] = [
   ),
   new Project(
     false,
+    null,
     'Blog',
     BlankIcon,
     'June 2015 to January 2017',
