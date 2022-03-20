@@ -12,6 +12,7 @@ interface Props {
   xl?: boolean
   bottomPadding?: boolean
   title?: string
+  anchor?: string
 }
 
 export default function Section({
@@ -23,6 +24,7 @@ export default function Section({
   xl = false,
   bottomPadding = false,
   title,
+  anchor,
 }: Props) {
   return (
     <div
@@ -35,6 +37,7 @@ export default function Section({
     ${conditionalStyle(!bottomPadding, 'section-ignore-bottom')}
     `}
     >
+      {anchor && <div id={anchor} className="anchor"></div>}
       {title && <h1 className="mb-5">{title}</h1>}
       {Array.isArray(children) ? children.map((child) => child) : children}
     </div>
