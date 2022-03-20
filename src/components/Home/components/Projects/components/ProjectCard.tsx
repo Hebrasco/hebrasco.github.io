@@ -1,13 +1,15 @@
 import React from 'react'
-import Card from 'react-bootstrap/esm/Card'
-import Col from 'react-bootstrap/esm/Col'
-import Image from 'react-bootstrap/esm/Image'
-import ListGroup from 'react-bootstrap/esm/ListGroup'
-import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
-import Row from 'react-bootstrap/esm/Row'
 import BlankIcon from 'assets/icons/blank_icon.svg'
-import Badge from 'react-bootstrap/esm/Badge'
 import ProjectModel from 'models/ProjectModel'
+import {
+  Badge,
+  Card,
+  Col,
+  Image,
+  ListGroup,
+  ListGroupItem,
+  Row,
+} from 'react-bootstrap'
 
 interface Props {
   project: ProjectModel
@@ -59,7 +61,7 @@ export default function ProjectCard({ project }: Props): JSX.Element {
           })}
         </ul>
       </Card.Body>
-      <ListGroup className="list-group-flush">
+      <ListGroupItem className="list-group-flush">
         {project.languages ? (
           <ListGroupItem>
             <>
@@ -94,7 +96,7 @@ export default function ProjectCard({ project }: Props): JSX.Element {
             </>
           </ListGroupItem>
         ) : null}
-      </ListGroup>
+      </ListGroupItem>
       <Card.Footer>
         {project.onlineURL ? (
           <Card.Link

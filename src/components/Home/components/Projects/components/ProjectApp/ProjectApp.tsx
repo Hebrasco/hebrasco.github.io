@@ -1,7 +1,6 @@
 import React from 'react'
 import BlankIcon from 'assets/icons/blank_icon.svg'
 import ProjectModel from 'models/ProjectModel'
-import Image from 'react-bootstrap/esm/Image'
 import { useWindowSize } from 'utils/hooks'
 import { conditionalStyle } from 'utils/helpers'
 import './ProjectApp.css'

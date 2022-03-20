@@ -1,8 +1,7 @@
 import React from 'react'
-import Container from 'react-bootstrap/esm/Container'
 import { HashLink as Link } from 'react-router-hash-link'
 import { ROUTES } from 'constants/Routes'
-import { Col, Row } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 
 import './Footer.css'
 

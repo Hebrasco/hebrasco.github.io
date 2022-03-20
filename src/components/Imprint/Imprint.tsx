@@ -1,9 +1,7 @@
 import React from 'react'
-import Col from 'react-bootstrap/esm/Col'
-import Container from 'react-bootstrap/esm/Container'
-import Row from 'react-bootstrap/esm/Row'
 import { ROUTES } from 'constants/Routes'
 import { MAILTO_DANIEL_BEDRICH } from 'constants/Config'
+import { Col, Container, Row } from 'react-bootstrap'
 
 export default function Imprint(): JSX.Element {
   return (

@@ -1,25 +1,15 @@
 import React, { useState, createRef } from 'react'
-import Col from 'react-bootstrap/esm/Col'
-import Container from 'react-bootstrap/esm/Container'
-import Row from 'react-bootstrap/esm/Row'
 import { ROUTES } from 'constants/Routes'
 import { PROJECTS as myProjects } from 'constants/Projects'
-import Button from 'react-bootstrap/esm/Button'
 import ProjectModel from 'models/ProjectModel'
+import ProjectApp from './components/ProjectApp/ProjectApp'
+import { Col, Container, Row } from 'react-bootstrap'
 
 import './Projects.css'
-import ProjectApp from './components/ProjectApp/ProjectApp'
 
-const hideProjectsOffset = 6
 const HIGHLIGHTED_PROJECTS = myProjects.filter((project) => project.highlighted)
-const UNPINNED_PROJECTS = myProjects.filter(
+const NON_HIGHLIGHTED_PROJECTS = myProjects.filter(
   (project) => !HIGHLIGHTED_PROJECTS.includes(project)
-)
-const LATEST_PROJECTS = UNPINNED_PROJECTS.filter(
-  (_, index) => index < hideProjectsOffset
-)
-const MORE_PROJECTS = UNPINNED_PROJECTS.filter(
-  (project) => !LATEST_PROJECTS.includes(project)
 )
 
 export default function Projects(): JSX.Element {
@@ -64,21 +54,7 @@ export default function Projects(): JSX.Element {
       <h1>Highlighted projects</h1>
       <Row>{HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
       <h1>{isShowMoreProjects ? 'Projects' : 'Latest projects'} </h1>
-      <Row>{LATEST_PROJECTS.map(getProjectApp)}</Row>
-      {!isShowMoreProjects ? (
-        <Row>
-          <Button
-            onClick={showMoreProjectsPressed}
-            variant="outline-primary"
-            className="show-more-projects-button mb-5 mx-auto"
-          >
-            load all projects
-          </Button>
-        </Row>
-      ) : null}
-      <Row className="more-projects" ref={showMoreProjectsRef}>
-        {isShowMoreProjects ? MORE_PROJECTS.map(getProjectApp) : null}
-      </Row>
+      <Row>{NON_HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
     </Container>
   )
 }

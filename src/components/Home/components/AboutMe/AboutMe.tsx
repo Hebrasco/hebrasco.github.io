@@ -1,14 +1,11 @@
 import React from 'react'
 import { ROUTES } from 'constants/Routes'
-import Container from 'react-bootstrap/esm/Container'
-import Row from 'react-bootstrap/esm/Row'
-import Col from 'react-bootstrap/esm/Col'
-import Badge from 'react-bootstrap/esm/Badge'
 import {
   SKILLS_LANGUAGES,
   SKILLS_FRAMEWORKS,
   SKILLS_APPLICATIONS,
 } from 'constants/Skills'
+import { Badge, Col, Container, Row } from 'react-bootstrap'
 
 export default function AboutMe(): JSX.Element {
   return (
