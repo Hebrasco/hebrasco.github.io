@@ -9,7 +9,7 @@ export default function Landing() {
   const { isXs, isSm } = useWindowSize()
 
   return (
-    <div className="landing-container navbar-spacer">
+    <div className="landing-container">
       <Title isXs={isXs} />
       <Image isXs={isXs} isSm={isSm} />
     </div>

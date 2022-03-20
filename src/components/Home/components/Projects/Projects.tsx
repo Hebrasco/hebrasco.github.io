@@ -4,6 +4,7 @@ import { PROJECTS as myProjects } from 'constants/Projects'
 import ProjectModel from 'models/ProjectModel'
 import ProjectApp from './components/ProjectApp/ProjectApp'
 import { Col, Container, Row } from 'react-bootstrap'
+import Section from 'common/Section/Section'
 
 import './Projects.css'
 
@@ -49,12 +50,16 @@ export default function Projects(): JSX.Element {
   }
 
   return (
-    <Container className="mt-5 navbar-spacer">
-      <div id={ROUTES.projects.replace('/#', '')} className="anchor"></div>
-      <h1>Highlighted projects</h1>
-      <Row>{HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
-      <h1>{isShowMoreProjects ? 'Projects' : 'Latest projects'} </h1>
-      <Row>{NON_HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
-    </Container>
+    <Section lg>
+      <Container className="mt-5 navbar-spacer">
+        <div id={ROUTES.projects.replace('/#', '')} className="anchor"></div>
+        <Section title="Highlighted projects">
+          <Row>{HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
+        </Section>
+        <Section xs title={isShowMoreProjects ? 'Projects' : 'Latest projects'}>
+          <Row>{NON_HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
+        </Section>
+      </Container>
+    </Section>
   )
 }

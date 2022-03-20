@@ -3,6 +3,8 @@ import BlankIcon from 'assets/icons/blank_icon.svg'
 import ProjectModel from 'models/ProjectModel'
 import { useWindowSize } from 'utils/hooks'
 import { conditionalStyle } from 'utils/helpers'
+import { Image } from 'react-bootstrap'
+
 import './ProjectApp.css'
 
 interface Props {
