@@ -14,18 +14,7 @@ const NON_HIGHLIGHTED_PROJECTS = myProjects.filter(
 )
 
 export default function Projects(): JSX.Element {
-  const [isShowMoreProjects, setIsShowMoreProjects] = useState(false)
   const showMoreProjectsRef: React.RefObject<HTMLInputElement> = createRef()
-
-  function showMoreProjectsPressed() {
-    const moreProjectsWrapper = showMoreProjectsRef.current
-
-    setIsShowMoreProjects(true)
-
-    if (moreProjectsWrapper) {
-      moreProjectsWrapper.classList.add('showing')
-    }
-  }
 
   function getProjectApp(project: ProjectModel, index: number): JSX.Element {
     const extraLargeSize = 2
@@ -55,7 +44,7 @@ export default function Projects(): JSX.Element {
         <Section title="Highlighted projects">
           <Row>{HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
         </Section>
-        <Section xs title={isShowMoreProjects ? 'Projects' : 'Latest projects'}>
+        <Section xs title="Projects">
           <Row>{NON_HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
         </Section>
       </Container>
