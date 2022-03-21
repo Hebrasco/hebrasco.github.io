@@ -18,7 +18,7 @@ export default function Title({ isXs = false }: TitleProps) {
         <div className="landing-title">
           <h1>Hi, I am</h1>
           <h1>Daniel</h1>
-          <p className="fw-light">Software developer</p>
+          <p className="fw-light">Front-End developer</p>
         </div>
       </div>
     </div>
