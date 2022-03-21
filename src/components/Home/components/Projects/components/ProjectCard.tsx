@@ -42,7 +42,7 @@ export default function ProjectCard({ project }: Props): JSX.Element {
           <Col className="d-flex align-items-center lead">
             <Col className="p-0">
               <Card.Title className="mb-0">{project.name}</Card.Title>
-              <small className="m-0">{project.timePeriod}</small>
+              {/* <small className="m-0">{project.timePeriod}</small> */}
             </Col>
           </Col>
         </Row>

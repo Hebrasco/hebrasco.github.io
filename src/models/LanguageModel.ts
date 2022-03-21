@@ -1,6 +1,6 @@
-import ILanguage from 'interfaces/ILanguage'
+import ISkill from 'interfaces/ISkill'
 
-export default class LanguageModel implements ILanguage {
+export default class LanguageModel implements ISkill {
   name: string
   variant: string
 

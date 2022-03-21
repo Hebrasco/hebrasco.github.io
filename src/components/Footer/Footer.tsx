@@ -1,7 +1,7 @@
 import React from 'react'
-import { HashLink as Link } from 'react-router-hash-link'
 import { ROUTES } from 'constants/Routes'
 import { Col, Container, Row } from 'react-bootstrap'
+import Link from 'common/Link/Link'
 
 import './Footer.css'
 
@@ -11,31 +11,19 @@ export default function Footer(): JSX.Element {
   }
 
   return (
-    <Container fluid className="footer bg-light text-muted">
+    <Container fluid className="footer bg-light">
       <footer className="py-3">
         <Row>
           <Col>
-            <p className="nav-link align-items-center m-0">
+            <p className="nav-link align-items-center m-0 text-muted">
               Copyright © {getCurrentYear()} Daniel Bedrich. All rights
               reserved.
             </p>
           </Col>
           <Col xs="12" md="auto">
             <div className="d-flex">
-              <Link
-                to={ROUTES.imprintHash}
-                smooth
-                className="nav-link text-muted"
-              >
-                Imprint
-              </Link>
-              <Link
-                to={ROUTES.privacyPolicyHash}
-                smooth
-                className="nav-link text-muted"
-              >
-                Privacy Policy
-              </Link>
+              <Link to={ROUTES.imprintHash} label="Imprint" />
+              <Link to={ROUTES.privacyPolicyHash} label="Privacy Policy" />
             </div>
           </Col>
         </Row>

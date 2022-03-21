@@ -19,24 +19,13 @@ export const FRAMEWORKS = {
 
   crossPlatform: {
     reactNative: new Framework('React Native', BADGE_VARIANTS.success),
-    flutter: new Framework('Flutter', BADGE_VARIANTS.success),
   },
 
   web: {
     react: new Framework('React', BADGE_VARIANTS.success),
     reactRedux: new Framework('React Redux', BADGE_VARIANTS.success),
-    wordpress: new Framework('Wordpress', BADGE_VARIANTS.success),
-    opencart: new Framework('OpenCart', BADGE_VARIANTS.success),
     dotNet: new Framework('.Net', BADGE_VARIANTS.dark),
     angular: new Framework('Angular', BADGE_VARIANTS.dark),
     materialUI: new Framework('MaterialUI', BADGE_VARIANTS.success),
-  },
-
-  other: {
-    vr: new Framework('VR', BADGE_VARIANTS.dark),
-    javaFx: new Framework('Java FX', BADGE_VARIANTS.secondary),
-    fxgl: new Framework('FXGL', BADGE_VARIANTS.secondary),
-    steam: new Framework('Steam', BADGE_VARIANTS.dark),
-    sqLite: new Framework('SQLite', BADGE_VARIANTS.warning),
   },
 }

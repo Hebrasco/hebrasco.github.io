@@ -1,6 +1,6 @@
-import IFramework from 'interfaces/IFramework'
+import ISkill from 'interfaces/ISkill'
 
-export default class FrameworkModel implements IFramework {
+export default class FrameworkModel implements ISkill {
   name: string
   variant: string
 

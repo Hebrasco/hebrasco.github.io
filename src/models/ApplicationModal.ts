@@ -1,6 +1,6 @@
-import IApplication from 'interfaces/IApplication'
+import ISkill from 'interfaces/ISkill'
 
-export default class ApplicationModel implements IApplication {
+export default class ApplicationModel implements ISkill {
   name: string
   variant: string
 
