@@ -14,9 +14,10 @@
   max-width: var(--projectImageSize);
   max-height: var(--projectImageSize);
   transition: max-width max-height 200ms ease 200ms;
+  cursor: pointer;
 }
 
-.project-app-container:hover > .project-app-image-container > img {
+.project-app-image-container > img:hover {
   max-width: var(--projectImageSizeHovered);
   max-height: var(--projectImageSizeHovered);
 }
