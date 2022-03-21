@@ -4,6 +4,7 @@ import ProjectModel from 'models/ProjectModel'
 import ProjectApp from './components/ProjectApp/ProjectApp'
 import { Col, Container, Row } from 'react-bootstrap'
 import Section from 'common/Section/Section'
+import { ROUTES } from 'constants/Routes'
 
 import './Projects.css'
 
@@ -32,7 +33,7 @@ export default function Projects(): JSX.Element {
 
   return (
     <Container className="mt-5 navbar-spacer">
-      <Section lg title="Projects">
+      <Section lg title="Projects" anchor={ROUTES.projects}>
         <Row>{PROJECTS.map(getProjectApp)}</Row>
       </Section>
     </Container>
