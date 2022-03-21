@@ -8,6 +8,9 @@
   --titleFontSize: 10vmin;
   --subTitleFontSize: 4vmin;
   --headingFontSize: 3vmin;
+
+  --projectImageSize: 4rem;
+  --projectImageSizeHovered: 4.5rem;
 }
 
 body {

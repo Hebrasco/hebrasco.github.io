@@ -1,7 +1,22 @@
-.project-app-container img {
-  max-width: 4rem;
-}
-
 .project-app-container p.project-app-name-xs {
   font-size: 0.875rem;
+}
+
+.project-app-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--projectImageSizeHovered);
+  height: var(--projectImageSizeHovered);
+}
+
+.project-app-image-container > img {
+  max-width: var(--projectImageSize);
+  max-height: var(--projectImageSize);
+  transition: max-width max-height 200ms ease 200ms;
+}
+
+.project-app-container:hover > .project-app-image-container > img {
+  max-width: var(--projectImageSizeHovered);
+  max-height: var(--projectImageSizeHovered);
 }

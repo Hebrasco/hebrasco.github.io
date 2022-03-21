@@ -17,14 +17,16 @@ export default function ProjectApp({ project }: Props) {
 
   return (
     <div className="project-app-container d-flex flex-column align-items-center">
-      <Image
-        src={project.image}
-        width="100%"
-        rounded
-        className={`${isBlankIcon ? 'invertDark' : null}`}
-      />
+      <div className="project-app-image-container">
+        <Image
+          src={project.image}
+          width="100%"
+          rounded
+          className={`${isBlankIcon ? 'invertDark' : null}`}
+        />
+      </div>
       <p
-        className={`text-break text-center mt-2 lh-sm
+        className={`text-break text-center mt-1 lh-sm
           ${conditionalStyle(isXs, 'project-app-name-xs')}
         `}
       >
