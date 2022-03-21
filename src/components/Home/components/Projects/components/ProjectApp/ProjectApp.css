@@ -13,7 +13,7 @@
 .project-app-image-container > img {
   max-width: var(--projectImageSize);
   max-height: var(--projectImageSize);
-  transition: max-width max-height 200ms ease 200ms;
+  transition: max-width 100ms ease 100ms, max-height 100ms ease 100ms;
   cursor: pointer;
 }
 
