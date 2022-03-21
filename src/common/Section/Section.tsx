@@ -13,6 +13,7 @@ interface Props {
   bottomPadding?: boolean
   title?: string
   anchor?: string
+  anchorReplace?: string
 }
 
 export default function Section({
@@ -25,6 +26,7 @@ export default function Section({
   bottomPadding = false,
   title,
   anchor,
+  anchorReplace = '/#',
 }: Props) {
   return (
     <div
@@ -37,7 +39,9 @@ export default function Section({
     ${conditionalStyle(!bottomPadding, 'section-ignore-bottom')}
     `}
     >
-      {anchor && <div id={anchor.replace('/#', '')} className="anchor"></div>}
+      {anchor && (
+        <div id={anchor.replace(anchorReplace, '')} className="anchor"></div>
+      )}
       {title && <h1 className="mb-5 text-uppercase">{title}</h1>}
       {Array.isArray(children) ? children.map((child) => child) : children}
     </div>

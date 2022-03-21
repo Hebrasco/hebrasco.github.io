@@ -37,15 +37,13 @@ export default function Projects(): JSX.Element {
   }
 
   return (
-    <Section lg anchor={ROUTES.projects}>
-      <Container className="mt-5 navbar-spacer">
-        <Section title="Highlighted projects">
-          <Row>{HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
-        </Section>
-        <Section xs title="Projects">
-          <Row>{NON_HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
-        </Section>
-      </Container>
-    </Section>
+    <Container className="mt-5 navbar-spacer">
+      <Section lg title="Highlighted projects">
+        <Row>{HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
+      </Section>
+      <Section lg title="Projects">
+        <Row>{NON_HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>
+      </Section>
+    </Container>
   )
 }
