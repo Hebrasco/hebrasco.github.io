@@ -1,7 +1,7 @@
 import React from 'react'
 import { ROUTES } from 'constants/Routes'
-import { MAILTO_DANIEL_BEDRICH } from 'constants/Config'
 import { Col, Container, Row } from 'react-bootstrap'
+import Email from 'common/Email/Email'
 
 export default function Imprint(): JSX.Element {
   return (
@@ -23,9 +23,7 @@ export default function Imprint(): JSX.Element {
             <b>Kontakt</b>
             <ul className="list-unstyled">
               <li>
-                <a href={MAILTO_DANIEL_BEDRICH}>
-                  {MAILTO_DANIEL_BEDRICH.replace('mailto:', '')}
-                </a>
+                <Email />
               </li>
             </ul>
           </section>
@@ -86,10 +84,7 @@ export default function Imprint(): JSX.Element {
             </ul>
             <ul className="list-unstyled">
               <li>
-                E-Mail:{' '}
-                <a href={MAILTO_DANIEL_BEDRICH}>
-                  {MAILTO_DANIEL_BEDRICH.replace('mailto:', '')}
-                </a>
+                E-Mail: <Email />
               </li>
             </ul>
           </section>

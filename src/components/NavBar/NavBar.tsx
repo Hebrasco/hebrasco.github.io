@@ -7,6 +7,7 @@ import appStoreLogo from 'assets/icons/app_store.png'
 import { Container, Image, Nav, Navbar } from 'react-bootstrap'
 
 import './NavBar.css'
+import ExternalLink from 'common/ExternalLink/ExternalLink'
 
 export default function NavBar(): JSX.Element {
   return (
@@ -22,22 +23,21 @@ export default function NavBar(): JSX.Element {
             <Link to={ROUTES.projects} smooth className="nav-link">
               Projects
             </Link>
-            <a
-              href={APPSTORE_PROFILE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link to={ROUTES.contact} smooth className="nav-link">
+              Contact
+            </Link>
+            <ExternalLink
+              to={APPSTORE_PROFILE_URL}
               className="nav-link d-md-flex align-items-center external-account-link d-block"
             >
               <Image src={appStoreLogo} />
-            </a>
-            <a
-              href={GITHUB_PROFILE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            </ExternalLink>
+            <ExternalLink
+              to={GITHUB_PROFILE_URL}
               className="nav-link d-md-flex align-items-center external-account-link d-block ml-md-2"
             >
               <Image src={gitHubLogo} className="invertDark" />
-            </a>
+            </ExternalLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -37,7 +37,7 @@ export default function Section({
     ${conditionalStyle(!bottomPadding, 'section-ignore-bottom')}
     `}
     >
-      {anchor && <div id={anchor} className="anchor"></div>}
+      {anchor && <div id={anchor.replace('/#', '')} className="anchor"></div>}
       {title && <h1 className="mb-5 text-uppercase">{title}</h1>}
       {Array.isArray(children) ? children.map((child) => child) : children}
     </div>

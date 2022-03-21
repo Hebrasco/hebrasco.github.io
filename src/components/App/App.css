@@ -25,6 +25,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  color: var(--primaryColor) !important;
+}
+
 .navbar-spacer {
   margin-top: var(--navbarHeight);
 }

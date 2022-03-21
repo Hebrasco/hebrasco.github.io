@@ -37,7 +37,7 @@ export default function Projects(): JSX.Element {
   }
 
   return (
-    <Section lg anchor={ROUTES.projects.replace('/#', '')}>
+    <Section lg anchor={ROUTES.projects}>
       <Container className="mt-5 navbar-spacer">
         <Section title="Highlighted projects">
           <Row>{HIGHLIGHTED_PROJECTS.map(getProjectApp)}</Row>

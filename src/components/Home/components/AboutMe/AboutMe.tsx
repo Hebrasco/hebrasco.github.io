@@ -11,7 +11,7 @@ import Section from 'common/Section/Section'
 export default function AboutMe(): JSX.Element {
   return (
     <Container>
-      <Section lg title="About me" anchor={ROUTES.aboutMe.replace('/#', '')}>
+      <Section lg title="About me" anchor={ROUTES.aboutMe}>
         <Row>
           <Col xs={12} className="align-self-center">
             <p className="d-inline-block mt-2 mt-md-0 fs-5">
