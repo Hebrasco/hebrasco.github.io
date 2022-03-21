@@ -1,3 +1,7 @@
+.section h1 {
+  letter-spacing: var(--letterSpacingLg);
+}
+
 .section-xs {
   padding: 1rem 0;
 }

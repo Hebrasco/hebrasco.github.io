@@ -14,7 +14,7 @@ export default function AboutMe(): JSX.Element {
       <Section lg title="About me" anchor={ROUTES.aboutMe.replace('/#', '')}>
         <Row>
           <Col xs={12} className="align-self-center">
-            <p className="d-inline-block mt-2 mt-md-0 fs-4">
+            <p className="d-inline-block mt-2 mt-md-0 fs-5">
               I have been working in app development since 2015 and have already
               implemented various projects for iOS and Android in small and
               large teams. I prefer programming for iOS, where I have already

@@ -15,16 +15,15 @@
 }
 
 .landing-title > h1 {
-  letter-spacing: 4px;
+  letter-spacing: var(--letterSpacingLg);
   font-size: var(--titleFontSize);
   margin: 0;
   line-height: 9vmin;
 }
 
 .landing-title > p {
-  letter-spacing: 2px;
+  letter-spacing: var(--letterSpacingSm);
   font-size: var(--subTitleFontSize);
-  /* font-weight: 200; */
   margin: 0;
   line-height: 5vmin;
 }

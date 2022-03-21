@@ -28,7 +28,7 @@ export default function Section({
 }: Props) {
   return (
     <div
-      className={`
+      className={`section
     ${conditionalStyle(xs, 'section-xs')}
     ${conditionalStyle(sm, 'section-sm')}
     ${conditionalStyle(md, 'section-md')}
