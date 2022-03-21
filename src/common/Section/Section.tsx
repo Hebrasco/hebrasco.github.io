@@ -38,7 +38,7 @@ export default function Section({
     `}
     >
       {anchor && <div id={anchor} className="anchor"></div>}
-      {title && <h1 className="mb-5">{title}</h1>}
+      {title && <h1 className="mb-5 text-uppercase">{title}</h1>}
       {Array.isArray(children) ? children.map((child) => child) : children}
     </div>
   )
