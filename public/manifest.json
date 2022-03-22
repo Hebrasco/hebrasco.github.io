@@ -1,6 +1,7 @@
 {
   "short_name": "Daniel Bedrich",
-  "name": "Portfolio von Daniel Bedrich",
+  "name": "Portfolio of Daniel Bedrich",
+  "description": "View my work and get in touch with me.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,5 +22,7 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "lang": "en-US",
+  "categories": ["front end", "developer", "portfolio"]
 }
