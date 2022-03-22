@@ -8,7 +8,7 @@ interface Props {
   to: string
   className?: string
   fullWidth?: boolean
-  navLink?: boolean
+  navItem?: boolean
   button?: boolean
 }
 
@@ -17,7 +17,7 @@ export default function ExternalLink({
   to,
   className = '',
   fullWidth = true,
-  navLink = false,
+  navItem = false,
   button = false,
 }: Props) {
   return (
@@ -26,7 +26,7 @@ export default function ExternalLink({
       target="_blank"
       rel="noopener noreferrer"
       className={`text-decoration-none 
-      ${conditionalStyle(navLink, 'nav-item nav-link')} 
+      ${conditionalStyle(navItem, 'nav-item nav-link')} 
       ${conditionalStyle(!fullWidth, 'external-account-link')}
       ${conditionalStyle(button, 'btn')}
       ${className}`}

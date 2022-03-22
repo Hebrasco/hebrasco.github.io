@@ -4,6 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Link from 'common/Link/Link'
 
 import './Footer.css'
+import SocialLinks from 'common/SocialLinks/SocialLinks'
 
 export default function Footer(): JSX.Element {
   function getCurrentYear() {
@@ -28,6 +29,7 @@ export default function Footer(): JSX.Element {
                 label="Privacy Policy"
                 navItem
               />
+              <SocialLinks />
             </div>
           </Col>
         </Row>
