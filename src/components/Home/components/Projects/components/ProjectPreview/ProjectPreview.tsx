@@ -16,12 +16,7 @@ export default function ProjectPreview({ project }: Props) {
 
   function MyBadge({ skill }: { skill: ISkill }): JSX.Element {
     return (
-      <Badge
-        pill
-        bg="dark"
-        key={`project-skill-${skill.name}`}
-        className="py-2 px-3 mb-3"
-      >
+      <Badge pill bg="dark" className="py-2 px-3 mb-3">
         {skill.name}
       </Badge>
     )
@@ -36,10 +31,16 @@ export default function ProjectPreview({ project }: Props) {
               <h3>{project.name}</h3>
               <div className="mt-4 mb-1">
                 {project.languages.map((language: any) => (
-                  <MyBadge skill={language} />
+                  <MyBadge
+                    skill={language}
+                    key={`project-skill-language-${language.name}`}
+                  />
                 ))}
                 {project.frameworks.map((framework: any) => (
-                  <MyBadge skill={framework} />
+                  <MyBadge
+                    skill={framework}
+                    key={`project-skill-framework-${framework.name}`}
+                  />
                 ))}
               </div>
               <p>{project.description}</p>
