@@ -4,7 +4,7 @@ export function conditionalStyle(show: boolean, value: string): string {
 }
 
 export function renderChildren(
-  children: ReactElement | ReactElement[]
-): ReactElement | ReactElement[] {
+  children: ReactElement | ReactElement[] | string
+): ReactElement | ReactElement[] | string {
   return Array.isArray(children) ? children.map((child) => child) : children
 }

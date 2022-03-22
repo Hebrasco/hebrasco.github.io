@@ -80,6 +80,7 @@ export const PROJECTS: Project[] = [
     ],
     [LANGUAGES.swift, LANGUAGES.json],
     [FRAMEWORKS.ios.ios, FRAMEWORKS.ios.swiftUI, FRAMEWORKS.ios.coreData],
+    undefined,
     'https://github.com/Hebrasco/recipe_app'
   ),
 ]

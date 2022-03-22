@@ -1,14 +1,15 @@
 import React, { ReactElement } from 'react'
-import { renderChildren } from 'utils/helpers'
+import { conditionalStyle, renderChildren } from 'utils/helpers'
 
 import './ExternalLink.css'
 
 interface Props {
-  children: ReactElement | ReactElement[]
+  children: ReactElement | ReactElement[] | string
   to: string
   className?: string
   fullWidth?: boolean
   navLink?: boolean
+  button?: boolean
 }
 
 export default function ExternalLink({
@@ -17,6 +18,7 @@ export default function ExternalLink({
   className = '',
   fullWidth = true,
   navLink = false,
+  button = false,
 }: Props) {
   return (
     <a
@@ -24,8 +26,10 @@ export default function ExternalLink({
       target="_blank"
       rel="noopener noreferrer"
       className={`text-decoration-none 
-      ${navLink && 'nav-item nav-link'} 
-      ${!fullWidth && 'external-account-link'} ${className}`}
+      ${conditionalStyle(navLink, 'nav-item nav-link')} 
+      ${conditionalStyle(!fullWidth, 'external-account-link')}
+      ${conditionalStyle(button, 'btn')}
+      ${className}`}
     >
       {renderChildren(children)}
     </a>

@@ -1,56 +1,18 @@
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: black !important;
+  :root {
+    --primaryColor: #000000;
+    --secondaryColor: #ffffff;
+    --accentColor: #0f0f0f;
+
+    --primaryTextColor: rgb(248, 249, 250);
+    --secondaryTextColor: rgb(33, 37, 41);
+
+    --primaryBorderColor: var(--primaryTextColor);
+    --secondaryBorderColor: var(--secondaryTextColor);
   }
 
-  .bg-light {
-    background-color: #0f0f0f !important;
-  }
-
-  .bg-dark,
-  .btn-dark {
-    background-color: white !important;
-    color: black !important;
-  }
-
-  .btn-outline-dark {
-    border-color: white !important;
-    color: white !important;
-  }
-
-  .card-footer {
-    background-color: #1b1b1b;
-  }
-
-  .card,
-  .list-group-item {
-    background-color: #1f1f1f;
-  }
-
-  .list-group-item {
-    border: 1px solid #2f2f2f;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  div,
-  a,
-  .navbar-light .navbar-brand,
-  .navbar-light .navbar-nav .nav-link {
-    color: white !important;
-  }
-
-  img.invertDark,
+  img.invertedColor,
   .navbar-light .navbar-toggler-icon {
     filter: invert(1);
-  }
-
-  .shadow {
-    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.075) !important;
   }
 }

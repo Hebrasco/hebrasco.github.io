@@ -2,8 +2,15 @@
   color-scheme: light dark;
   --navbarHeight: 56px;
 
-  --primaryColor: #3498db;
-  --secondaryColor: #2c3e50;
+  --primaryColor: #ffffff;
+  --secondaryColor: #000000;
+  --accentColor: rgb(248, 249, 250);
+
+  --primaryTextColor: rgb(33, 37, 41);
+  --secondaryTextColor: rgb(248, 249, 250);
+
+  --primaryBorderColor: var(--primaryTextColor);
+  --secondaryBorderColor: var(--secondaryTextColor);
 
   --titleFontSize: 10vmin;
   --subTitleFontSize: 4vmin;
@@ -25,10 +32,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--primaryColor) !important;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
 a {
-  color: var(--primaryColor) !important;
+  color: var(--primaryTextColor) !important;
 }
 
 .navbar-spacer {

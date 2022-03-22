@@ -19,3 +19,28 @@ img.rounded {
 .btn {
   border-radius: 0.5rem;
 }
+
+.bg-light {
+  background-color: var(--accentColor) !important;
+}
+
+.bg-dark,
+.btn-dark {
+  background-color: var(--primaryTextColor) !important;
+  color: var(--primaryTextColor) !important;
+}
+
+.btn,
+.badge {
+  color: var(--secondaryTextColor) !important;
+}
+
+.btn-outline-dark {
+  border-color: var(--primaryBorderColor) !important;
+  color: var(--primaryTextColor) !important;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+  color: var(--primaryTextColor) !important;
+}

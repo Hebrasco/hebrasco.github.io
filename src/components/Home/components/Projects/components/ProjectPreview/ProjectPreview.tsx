@@ -1,6 +1,6 @@
 import ProjectModel from 'models/ProjectModel'
 import React from 'react'
-import { Badge, Col, Image, Row } from 'react-bootstrap'
+import { Badge, Button, Col, Image, Row } from 'react-bootstrap'
 import BlankIcon from 'assets/icons/blank_icon.svg'
 import ExternalLink from 'common/ExternalLink/ExternalLink'
 import DeviceFrame, { DEVICE_TYPES } from 'common/DeviceFrame/DeviceFrame'
@@ -19,6 +19,34 @@ export default function ProjectPreview({ project }: Props) {
       <Badge pill bg="dark" className="py-2 px-3 mb-3">
         {skill.name}
       </Badge>
+    )
+  }
+
+  function Action({
+    to,
+    label,
+    className = '',
+  }: {
+    to: string | undefined
+    label: string
+    className?: string
+  }): JSX.Element {
+    if (to) {
+      return (
+        <ExternalLink
+          button
+          to={to}
+          className={`btn-outline-dark ${className}`}
+        >
+          {label}
+        </ExternalLink>
+      )
+    }
+
+    return (
+      <Button variant="outline-dark" disabled className={className}>
+        {label}
+      </Button>
     )
   }
 
@@ -54,19 +82,13 @@ export default function ProjectPreview({ project }: Props) {
                   )
                 })}
               </ul>
-              <div>
-                {project.onlineURL && (
-                  <ExternalLink to={project.onlineURL}>
-                    <p className="text-primary">view</p>
-                  </ExternalLink>
-                )}
-              </div>
-              <div>
-                {project.sourceURL && (
-                  <ExternalLink to={project.sourceURL}>
-                    <p className="text-primary">source code</p>
-                  </ExternalLink>
-                )}
+              <div className="mt-5">
+                <Action to={project.onlineURL} label="view" className="m-0" />
+                <Action
+                  to={project.sourceURL}
+                  label="source code"
+                  className="ms-3"
+                />
               </div>
             </Col>
             <Col>
@@ -78,7 +100,7 @@ export default function ProjectPreview({ project }: Props) {
           src={project.image}
           width="100%"
           rounded
-          className={`${isBlankIcon ? 'invertDark' : null}`}
+          className={`${isBlankIcon ? 'invertedColor' : null}`}
         /> */}
             </Col>
           </Row>

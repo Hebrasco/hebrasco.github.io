@@ -1,5 +1,6 @@
 import React from 'react'
 import { HashLink } from 'react-router-hash-link'
+import { conditionalStyle } from 'utils/helpers'
 
 interface Props {
   to: string
@@ -20,9 +21,10 @@ export default function Link({
     <HashLink
       to={to}
       smooth
-      className={`${navItem && 'nav-item nav-link'} ${
-        button && 'btn mx-3'
-      } text-decoration-none ${className && className}`}
+      className={`
+      ${conditionalStyle(navItem, 'nav-item nav-link')} 
+      ${conditionalStyle(button, 'btn')} 
+      text-decoration-none ${className}`}
     >
       {label}
     </HashLink>

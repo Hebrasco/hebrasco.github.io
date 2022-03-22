@@ -32,7 +32,7 @@ export default function NavBar(): JSX.Element {
               fullWidth={false}
               navLink
             >
-              <Image src={gitHubLogo} className="invertDark" />
+              <Image src={gitHubLogo} className="invertedColor" />
             </ExternalLink>
           </Nav>
         </Navbar.Collapse>
