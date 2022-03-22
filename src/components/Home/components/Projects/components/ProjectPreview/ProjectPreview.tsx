@@ -26,17 +26,19 @@ export default function ProjectPreview({ project }: Props) {
     to,
     label,
     className = '',
+    filled = false,
   }: {
     to: string | undefined
     label: string
     className?: string
+    filled?: boolean
   }): JSX.Element {
     if (to) {
       return (
         <ExternalLink
           button
           to={to}
-          className={`btn-outline-dark ${className}`}
+          className={`${filled ? 'btn-dark' : 'btn-outline-dark'} ${className}`}
         >
           {label}
         </ExternalLink>
@@ -44,7 +46,11 @@ export default function ProjectPreview({ project }: Props) {
     }
 
     return (
-      <Button variant="outline-dark" disabled className={className}>
+      <Button
+        variant={`${filled ? 'dark' : 'outline-dark'}`}
+        disabled
+        className={className}
+      >
         {label}
       </Button>
     )
@@ -83,7 +89,12 @@ export default function ProjectPreview({ project }: Props) {
                 })}
               </ul>
               <div className="mt-5">
-                <Action to={project.onlineURL} label="view" className="m-0" />
+                <Action
+                  to={project.onlineURL}
+                  label="view"
+                  className="m-0"
+                  filled
+                />
                 <Action
                   to={project.sourceURL}
                   label="source code"
