@@ -9,6 +9,12 @@
 
     --primaryBorderColor: var(--primaryTextColor);
     --secondaryBorderColor: var(--secondaryTextColor);
+
+    --primaryBackgroundColor: var(--primaryTextColor);
+    --secondaryBackgroundColor: var(--secondaryTextColor);
+
+    --primaryHoverColor: var(--secondaryTextColor);
+    --secondaryHoverColor: var(--primaryTextColor);
   }
 
   img.invertedColor,

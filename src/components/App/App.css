@@ -12,6 +12,12 @@
   --primaryBorderColor: var(--primaryTextColor);
   --secondaryBorderColor: var(--secondaryTextColor);
 
+  --primaryBackgroundColor: var(--primaryTextColor);
+  --secondaryBackgroundColor: var(--secondaryTextColor);
+
+  --primaryHoverColor: var(--secondaryTextColor);
+  --secondaryHoverColor: var(--primaryTextColor);
+
   --titleFontSize: 10vmin;
   --subTitleFontSize: 4vmin;
   --headingFontSize: 3vmin;

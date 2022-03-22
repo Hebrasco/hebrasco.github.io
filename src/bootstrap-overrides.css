@@ -26,7 +26,7 @@ img.rounded {
 
 .bg-dark,
 .btn-dark {
-  background-color: var(--primaryTextColor) !important;
+  background-color: var(--primaryBackgroundColor) !important;
   color: var(--primaryTextColor) !important;
 }
 
@@ -38,6 +38,11 @@ img.rounded {
 .btn-outline-dark {
   border-color: var(--primaryBorderColor) !important;
   color: var(--primaryTextColor) !important;
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--primaryBackgroundColor) !important;
+  color: var(--primaryHoverColor) !important;
 }
 
 .navbar-light .navbar-brand,
