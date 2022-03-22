@@ -12,7 +12,6 @@ export const SKILLS_LANGUAGES: Language[] = [
   LANGUAGES.css,
   LANGUAGES.javaScript,
   LANGUAGES.typeScript,
-  LANGUAGES.cSharp,
 ]
 
 export const SKILLS_FRAMEWORKS: Framework[] = [
@@ -30,4 +29,5 @@ export const SKILLS_APPLICATIONS: Application[] = [
   APPLICATIONS.gitTower,
   APPLICATIONS.gitHub,
   APPLICATIONS.vsCode,
+  APPLICATIONS.jira,
 ]
