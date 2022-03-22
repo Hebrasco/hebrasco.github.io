@@ -1,0 +1,28 @@
+.device-frame-ipad {
+  height: 72.25%;
+}
+
+.device-frame-iphone {
+  height: 91.25%;
+  top: 48.5% !important;
+  left: 50.075% !important;
+}
+
+.device-frame-iphoneSE {
+  height: 67.75%;
+  left: 49.85% !important;
+}
+
+.device-frame-macbook {
+  height: 76%;
+  top: 46.75% !important;
+}
+
+.device-frame-web {
+  height: 98.3%;
+  top: 61.75% !important;
+}
+
+.device-frame-default {
+  height: 100%;
+}

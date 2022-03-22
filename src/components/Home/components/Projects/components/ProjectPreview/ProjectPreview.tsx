@@ -5,6 +5,8 @@ import BlankIcon from 'assets/icons/blank_icon.svg'
 import ExternalLink from 'common/ExternalLink/ExternalLink'
 import DeviceFrame, { DEVICE_TYPES } from 'common/DeviceFrame/DeviceFrame'
 import iphoneSEScreen from 'assets/images/screenshots/recipe/iphoneSE.png'
+import iphoneScreen from 'assets/images/screenshots/recipe/iphone.png'
+import ipadScreen from 'assets/images/screenshots/recipe/ipad.png'
 import ISkill from 'interfaces/ISkill'
 
 interface Props {
@@ -99,7 +101,9 @@ export default function ProjectPreview({ project }: Props) {
           </div>
         </Col>
         <Col>
+          <DeviceFrame image={ipadScreen} type={DEVICE_TYPES.ipad} />
           <DeviceFrame image={iphoneSEScreen} type={DEVICE_TYPES.iphoneSE} />
+          <DeviceFrame image={iphoneScreen} type={DEVICE_TYPES.iphone} />
           {/* <Image
           src={project.image}
           fluid
