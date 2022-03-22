@@ -11,24 +11,26 @@ export default function NavBar(): JSX.Element {
   return (
     <Navbar bg="light" expand="md" fixed="top">
       <Container fluid>
-        <Navbar.Brand href={ROUTES.home} className="text-muted">
-          Daniel Bedrich
-        </Navbar.Brand>
+        <Navbar.Brand href={ROUTES.home}>Daniel Bedrich</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="ms-auto ">
-            <Link to={ROUTES.aboutMe} label="About Me" />
-            <Link to={ROUTES.projects} label="Projects" />
-            <Link to={ROUTES.contact} label="Contact" />
+            <Link to={ROUTES.aboutMe} label="About Me" navItem />
+            <Link to={ROUTES.projects} label="Projects" navItem />
+            <Link to={ROUTES.contact} label="Contact" navItem />
             <ExternalLink
               to={APPSTORE_PROFILE_URL}
               className="d-md-flex align-items-center"
+              fullWidth={false}
+              navLink
             >
               <Image src={appStoreLogo} />
             </ExternalLink>
             <ExternalLink
               to={GITHUB_PROFILE_URL}
               className="d-md-flex align-items-center ml-md-2"
+              fullWidth={false}
+              navLink
             >
               <Image src={gitHubLogo} className="invertDark" />
             </ExternalLink>

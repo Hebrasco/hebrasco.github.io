@@ -7,15 +7,25 @@ interface Props {
   children: ReactElement | ReactElement[]
   to: string
   className?: string
+  fullWidth?: boolean
+  navLink?: boolean
 }
 
-export default function ExternalLink({ children, to, className = '' }: Props) {
+export default function ExternalLink({
+  children,
+  to,
+  className = '',
+  fullWidth = true,
+  navLink = false,
+}: Props) {
   return (
     <a
       href={to}
       target="_blank"
       rel="noopener noreferrer"
-      className={`nav-item nav-link text-muted external-account-link ${className}`}
+      className={`text-decoration-none 
+      ${navLink && 'nav-item nav-link'} 
+      ${!fullWidth && 'external-account-link'} ${className}`}
     >
       {renderChildren(children)}
     </a>

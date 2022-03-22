@@ -5,13 +5,14 @@ import {
   SKILLS_FRAMEWORKS,
   SKILLS_APPLICATIONS,
 } from 'constants/Skills'
-import { Container, Row } from 'react-bootstrap'
+import { Button, Container, Row } from 'react-bootstrap'
 import Section from 'common/Section/Section'
 import SkillColumn from './components/SkillColumn'
 import { conditionalStyle } from 'utils/helpers'
 import { useWindowSize } from 'utils/hooks'
 
 import './AboutMe.css'
+import Link from 'common/Link/Link'
 
 export default function AboutMe(): JSX.Element {
   const baseStyle = 'about-me-text'
@@ -30,8 +31,15 @@ export default function AboutMe(): JSX.Element {
           already implemented various projects for web, Android and iOS in small
           and large teams.
         </p>
+        <Button variant="dark">Download CV</Button>
+        <Link
+          button
+          to={ROUTES.contact}
+          label="Let's Talk"
+          className="btn-outline-dark ms-3"
+        />
         <Section sm title="Skills">
-          <Row className="justify-content-between">
+          <Row>
             <SkillColumn title="Languages" data={SKILLS_LANGUAGES} />
             <SkillColumn title="Frameworks" data={SKILLS_FRAMEWORKS} />
             <SkillColumn title="Programs" data={SKILLS_APPLICATIONS} />

@@ -15,15 +15,19 @@ export default function Footer(): JSX.Element {
       <footer className="py-3">
         <Row>
           <Col>
-            <p className="nav-link align-items-center m-0 text-muted">
+            <p className="nav-link align-items-center m-0">
               Copyright © {getCurrentYear()} Daniel Bedrich. All rights
               reserved.
             </p>
           </Col>
           <Col xs="12" md="auto">
             <div className="d-flex">
-              <Link to={ROUTES.imprintHash} label="Imprint" />
-              <Link to={ROUTES.privacyPolicyHash} label="Privacy Policy" />
+              <Link to={ROUTES.imprintHash} label="Imprint" navItem />
+              <Link
+                to={ROUTES.privacyPolicyHash}
+                label="Privacy Policy"
+                navItem
+              />
             </div>
           </Col>
         </Row>

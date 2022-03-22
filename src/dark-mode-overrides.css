@@ -7,6 +7,17 @@
     background-color: #0f0f0f !important;
   }
 
+  .bg-dark,
+  .btn-dark {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .btn-outline-dark {
+    border-color: white !important;
+    color: white !important;
+  }
+
   .card-footer {
     background-color: #1b1b1b;
   }
@@ -28,9 +39,9 @@
   h6,
   p,
   div,
+  a,
   .navbar-light .navbar-brand,
-  .navbar-light .navbar-nav .nav-link,
-  .text-muted {
+  .navbar-light .navbar-nav .nav-link {
     color: white !important;
   }
 

@@ -11,8 +11,9 @@ img.rounded {
 }
 
 .card,
-.card-footer:last-child {
-  border-radius: var(--borderRadius);
+.card-footer:last-child,
+.rounded {
+  border-radius: var(--borderRadius) !important;
 }
 
 .btn {
