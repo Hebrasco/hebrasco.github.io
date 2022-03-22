@@ -16,6 +16,7 @@ export const FRAMEWORKS = {
   },
 
   web: {
+    bootstrap: new Framework('Bootstrap'),
     react: new Framework('React'),
     reactRedux: new Framework('React Redux'),
     dotNet: new Framework('.Net'),

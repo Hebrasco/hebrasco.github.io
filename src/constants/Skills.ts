@@ -22,6 +22,7 @@ export const SKILLS_FRAMEWORKS: Framework[] = [
   FRAMEWORKS.web.react,
   FRAMEWORKS.crossPlatform.reactNative,
   FRAMEWORKS.web.reactRedux,
+  FRAMEWORKS.web.bootstrap,
 ]
 
 export const SKILLS_APPLICATIONS: Application[] = [

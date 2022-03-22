@@ -57,66 +57,57 @@ export default function ProjectPreview({ project }: Props) {
   }
 
   return (
-    <Row className="mb-5">
-      <Col>
-        <div className="p-5 bg-light rounded">
-          <Row>
-            <Col md={6}>
-              <h3>{project.name}</h3>
-              <div className="mt-4 mb-1">
-                {project.languages.map((language: any) => (
-                  <MyBadge
-                    skill={language}
-                    key={`project-skill-language-${language.name}`}
-                  />
-                ))}
-                {project.frameworks.map((framework: any) => (
-                  <MyBadge
-                    skill={framework}
-                    key={`project-skill-framework-${framework.name}`}
-                  />
-                ))}
-              </div>
-              <p>{project.description}</p>
-              <p>Responsibilities included:</p>
-              <ul>
-                {project.tasks.map((task: any, index) => {
-                  return (
-                    <li key={`project-tasks-${project.name}-${index}`}>
-                      {task}
-                    </li>
-                  )
-                })}
-              </ul>
-              <div className="mt-5">
-                <Action
-                  to={project.onlineURL}
-                  label="view"
-                  className="m-0"
-                  filled
-                />
-                <Action
-                  to={project.sourceURL}
-                  label="source code"
-                  className="ms-3"
-                />
-              </div>
-            </Col>
-            <Col>
-              <DeviceFrame
-                image={iphoneSEScreen}
-                type={DEVICE_TYPES.iphoneSE}
+    <div className="p-5 bg-light rounded">
+      <Row>
+        <Col md={6}>
+          <h3>{project.name}</h3>
+          <div className="mt-4 mb-1">
+            {project.languages.map((language: any) => (
+              <MyBadge
+                skill={language}
+                key={`project-skill-language-${language.name}`}
               />
-              {/* <Image
+            ))}
+            {project.frameworks.map((framework: any) => (
+              <MyBadge
+                skill={framework}
+                key={`project-skill-framework-${framework.name}`}
+              />
+            ))}
+          </div>
+          <p>{project.description}</p>
+          <p>Responsibilities included:</p>
+          <ul>
+            {project.tasks.map((task: any, index) => {
+              return (
+                <li key={`project-tasks-${project.name}-${index}`}>{task}</li>
+              )
+            })}
+          </ul>
+          <div className="mt-5">
+            <Action
+              to={project.onlineURL}
+              label="view"
+              className="m-0"
+              filled
+            />
+            <Action
+              to={project.sourceURL}
+              label="source code"
+              className="ms-3"
+            />
+          </div>
+        </Col>
+        <Col>
+          <DeviceFrame image={iphoneSEScreen} type={DEVICE_TYPES.iphoneSE} />
+          {/* <Image
           src={project.image}
-          width="100%"
+          fluid
           rounded
           className={`${isBlankIcon ? 'invertedColor' : null}`}
         /> */}
-            </Col>
-          </Row>
-        </div>
-      </Col>
-    </Row>
+        </Col>
+      </Row>
+    </div>
   )
 }

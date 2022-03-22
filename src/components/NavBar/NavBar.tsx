@@ -24,7 +24,7 @@ export default function NavBar(): JSX.Element {
               fullWidth={false}
               navLink
             >
-              <Image src={appStoreLogo} />
+              <Image src={appStoreLogo} fluid />
             </ExternalLink>
             <ExternalLink
               to={GITHUB_PROFILE_URL}
@@ -32,7 +32,7 @@ export default function NavBar(): JSX.Element {
               fullWidth={false}
               navLink
             >
-              <Image src={gitHubLogo} className="invertedColor" />
+              <Image src={gitHubLogo} fluid className="invertedColor" />
             </ExternalLink>
           </Nav>
         </Navbar.Collapse>
