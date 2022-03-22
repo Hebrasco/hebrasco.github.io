@@ -1,27 +1,8 @@
 .skills-column > div {
   border-radius: var(--borderRadius);
-  background-color: black;
   width: 100%;
-}
-
-.skills-column h4,
-li {
-  background-color: black;
-  color: white !important;
 }
 
 .skills-column > ul > li:last-child {
   margin: 0 !important;
-}
-
-@media (prefers-color-scheme: dark) {
-  .skills-column > div {
-    background-color: white;
-  }
-
-  .skills-column h4,
-  li {
-    background-color: white;
-    color: black !important;
-  }
 }
