@@ -1,11 +1,6 @@
 import { LANGUAGES } from './Languages'
 import { FRAMEWORKS } from './Frameworks'
-import { APPLICATIONS } from './Applications'
 import BlankIcon from 'assets/icons/blank_icon.svg'
-import TankVRLogo from 'assets/icons/app/tankvr.jpg'
-import BertramArbeitsbuehnenLogo from 'assets/icons/app/bertram_arbeitsuehnen.png'
-import RelictusIcon from 'assets/icons/app/relictus.png'
-import MatchbusLogo from 'assets/icons/app/matchbus.png'
 import BloomCouplesAppIcon from 'assets/icons/app/bloom_couples_app.png'
 import Project from 'models/ProjectModel'
 
@@ -74,21 +69,6 @@ export const PROJECTS: Project[] = [
   new Project(
     false,
     null,
-    'Matchbus Platform',
-    MatchbusLogo,
-    'Matchbus is a platform where bus operators and advertisers can register. Schools, daycare centers, companies, etc. can submit a rental bus request and see the status of many buses (empty, emergency, empty run). With the help of Matchbus, these vacancies and empty runs are to be provided with passengers.',
-    [
-      'Development of the DSGVO Cookie Banner',
-      'Implementation of Google Analytics',
-      'Implementation of rich text editor',
-    ],
-    [LANGUAGES.typeScript, LANGUAGES.html, LANGUAGES.css],
-    [FRAMEWORKS.web.react, FRAMEWORKS.web.reactRedux],
-    'https://matchbus.tours'
-  ),
-  new Project(
-    false,
-    null,
     'Recipes app',
     BlankIcon,
     `With his recipe app, you're able to create meal plans. There's a huge selection of recipes build in to choose from. Further, the ingredients can be exactly calculated based on the amount of people and can be added to a shopping list.`,
@@ -101,26 +81,5 @@ export const PROJECTS: Project[] = [
     [LANGUAGES.swift, LANGUAGES.json],
     [FRAMEWORKS.ios.ios, FRAMEWORKS.ios.swiftUI, FRAMEWORKS.ios.coreData],
     'https://github.com/Hebrasco/recipe_app'
-  ),
-  new Project(
-    false,
-    null,
-    'Bertram Arbeitsbühnen',
-    BertramArbeitsbuehnenLogo,
-    'App for renting working platforms. Work platforms can be rented and also returned after the rental period. Another component of the app is the creation and management of construction sites. Here, working platforms are assigned and can all be rented and managed together.',
-    [
-      'New development of the app with React-Native',
-      'Implementation of the user interface',
-      'Loading machine data from an API',
-      'Sending emails with images and PDFs attached',
-    ],
-    [LANGUAGES.javaScript, LANGUAGES.xml],
-    [
-      FRAMEWORKS.ios.ios,
-      FRAMEWORKS.android.android,
-      FRAMEWORKS.crossPlatform.reactNative,
-      FRAMEWORKS.web.reactRedux,
-    ],
-    'https://apps.apple.com/app/bertram-arbeitsbühnen/id475344882'
   ),
 ]

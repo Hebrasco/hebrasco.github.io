@@ -15,8 +15,6 @@ export const FRAMEWORKS = {
     coreData: new Framework('Core Data', BADGE_VARIANTS.primary),
   },
 
-  android: { android: new Framework('Android', BADGE_VARIANTS.secondary) },
-
   crossPlatform: {
     reactNative: new Framework('React Native', BADGE_VARIANTS.success),
   },
