@@ -11,4 +11,5 @@ export default interface IProject {
   frameworks: ISkill[]
   onlineURL?: string
   sourceURL?: string
+  preview?: Function
 }

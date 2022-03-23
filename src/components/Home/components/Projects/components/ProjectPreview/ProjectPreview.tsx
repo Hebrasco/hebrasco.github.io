@@ -1,12 +1,7 @@
 import ProjectModel from 'models/ProjectModel'
 import React from 'react'
 import { Badge, Button, Col, Image, Row } from 'react-bootstrap'
-import BlankIcon from 'assets/icons/blank_icon.svg'
 import ExternalLink from 'common/ExternalLink/ExternalLink'
-import DeviceFrame, { DEVICE_TYPES } from 'common/DeviceFrame/DeviceFrame'
-import iphoneSEScreen from 'assets/images/screenshots/recipe/iphoneSE.png'
-import iphoneScreen from 'assets/images/screenshots/recipe/iphone.png'
-import ipadScreen from 'assets/images/screenshots/recipe/ipad.png'
 import ISkill from 'interfaces/ISkill'
 
 interface Props {
@@ -14,8 +9,6 @@ interface Props {
 }
 
 export default function ProjectPreview({ project }: Props) {
-  const isBlankIcon = project.image === BlankIcon
-
   function MyBadge({ skill }: { skill: ISkill }): JSX.Element {
     return (
       <Badge pill bg="dark" className="py-2 px-3 mb-3">
@@ -77,6 +70,9 @@ export default function ProjectPreview({ project }: Props) {
               />
             ))}
           </div>
+          <div className="d-flex d-sm-none mt-4 mb-5">
+            {project.preview && project.preview()}
+          </div>
           <p>{project.description}</p>
           <p>Responsibilities included:</p>
           <ul>
@@ -100,17 +96,11 @@ export default function ProjectPreview({ project }: Props) {
             />
           </div>
         </Col>
-        <Col>
-          <DeviceFrame image={ipadScreen} type={DEVICE_TYPES.ipad} />
-          <DeviceFrame image={iphoneSEScreen} type={DEVICE_TYPES.iphoneSE} />
-          <DeviceFrame image={iphoneScreen} type={DEVICE_TYPES.iphone} />
-          {/* <Image
-          src={project.image}
-          fluid
-          rounded
-          className={`${isBlankIcon ? 'invertedColor' : null}`}
-        /> */}
-        </Col>
+        {project.preview && (
+          <Col className="align-items-center d-none d-sm-flex">
+            {project.preview()}
+          </Col>
+        )}
       </Row>
     </div>
   )

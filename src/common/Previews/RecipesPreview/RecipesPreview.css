@@ -1,0 +1,23 @@
+.preview-recipes-ipad {
+  width: 50%;
+  height: auto;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.preview-recipes-iphone {
+  width: 25%;
+  height: auto;
+  left: 5%;
+  bottom: 0;
+  z-index: 2;
+}
+
+.preview-recipes-iphoneSE {
+  width: 20%;
+  height: auto;
+  left: 8%;
+  bottom: 0;
+  z-index: 3;
+}

@@ -3,6 +3,7 @@ import { FRAMEWORKS } from './Frameworks'
 import BlankIcon from 'assets/icons/blank_icon.svg'
 import BloomCouplesAppIcon from 'assets/icons/app/bloom_couples_app.png'
 import Project from 'models/ProjectModel'
+import RecipesPreview from 'common/Previews/RecipesPreview/RecipesPreview'
 
 export const PROJECTS: Project[] = [
   new Project(
@@ -81,6 +82,7 @@ export const PROJECTS: Project[] = [
     [LANGUAGES.swift, LANGUAGES.json],
     [FRAMEWORKS.ios.ios, FRAMEWORKS.ios.swiftUI, FRAMEWORKS.ios.coreData],
     undefined,
-    'https://github.com/Hebrasco/recipe_app'
+    'https://github.com/Hebrasco/recipe_app',
+    RecipesPreview
   ),
 ]

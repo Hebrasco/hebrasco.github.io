@@ -12,6 +12,7 @@ export default class ProjectModel implements IProject {
   frameworks: ISkill[]
   onlineURL?: string
   sourceURL?: string
+  preview?: Function
 
   constructor(
     highlighted: boolean,
@@ -23,7 +24,8 @@ export default class ProjectModel implements IProject {
     languages: ISkill[],
     frameworks: ISkill[],
     onlineURL?: string,
-    sourceURL?: string
+    sourceURL?: string,
+    preview?: Function
   ) {
     this.highlighted = highlighted
     this.shortName = shortName ?? name
@@ -35,5 +37,6 @@ export default class ProjectModel implements IProject {
     this.frameworks = frameworks
     this.onlineURL = onlineURL
     this.sourceURL = sourceURL
+    this.preview = preview
   }
 }
