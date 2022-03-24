@@ -1,6 +1,7 @@
+import { useLayoutEffect, useState, useEffect } from 'react'
 import { gridSizes } from 'constants/bootstrapGrid'
 import IWindowSize from 'interfaces/IWindowSize'
-import { useLayoutEffect, useState } from 'react'
+import { COLOR_SCHEMES } from 'constants/constants'
 
 export function useWindowSize(): IWindowSize {
   const [size, setSize] = useState({ width: 0, height: 0 })
@@ -24,4 +25,30 @@ export function useWindowSize(): IWindowSize {
   }, [])
 
   return { size, isXs, isSm, isMd, isLg, isXl, isXxl }
+}
+
+export function useColorScheme(): string {
+  const [colorScheme, setColorScheme] = useState<string>(
+    window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? COLOR_SCHEMES.dark
+      : COLOR_SCHEMES.light
+  )
+
+  useEffect(() => {
+    const updateColorScheme = (e: any) => {
+      setColorScheme(e.matches ? COLOR_SCHEMES.dark : COLOR_SCHEMES.light)
+    }
+
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', updateColorScheme)
+
+    return () =>
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .removeEventListener('change', updateColorScheme)
+  }, [])
+
+  return colorScheme
 }

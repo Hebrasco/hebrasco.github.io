@@ -2,6 +2,7 @@ import { LANGUAGES } from './Languages'
 import { FRAMEWORKS } from './Frameworks'
 import Project from 'models/ProjectModel'
 import RecipesPreview from 'common/Previews/RecipesPreview/RecipesPreview'
+import BloomPreview from 'common/Previews/BloomPreview/BloomPreview'
 
 export const PROJECTS: Project[] = [
   new Project(
@@ -51,7 +52,9 @@ export const PROJECTS: Project[] = [
       FRAMEWORKS.ios.storeKit,
       FRAMEWORKS.ios.localNotifications,
     ],
-    'https://apps.apple.com/app/bloom-couples-app/id1533246365'
+    'https://apps.apple.com/app/bloom-couples-app/id1533246365',
+    undefined,
+    BloomPreview
   ),
   new Project(
     'Recipes app',

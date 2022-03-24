@@ -1,13 +1,4 @@
-import React, {
-  Component,
-  createRef,
-  MutableRefObject,
-  Ref,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import React from 'react'
 import PreviewImage from 'models/PreviewImageModel'
 import IpadImage from 'assets/images/screenshots/recipes/ipad.png'
 import IphoneImage from 'assets/images/screenshots/recipes/iphone.png'

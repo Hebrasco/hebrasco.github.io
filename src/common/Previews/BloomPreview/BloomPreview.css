@@ -1,0 +1,23 @@
+.preview-bloom-ipad {
+  width: 54%;
+  height: auto;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.preview-bloom-iphone {
+  width: 30%;
+  height: auto;
+  left: 5%;
+  bottom: 0;
+  z-index: 2;
+}
+
+.preview-bloom-iphoneSE {
+  width: 25%;
+  height: auto;
+  left: 9%;
+  bottom: 0;
+  z-index: 3;
+}
