@@ -70,7 +70,7 @@ export default function ProjectPreview({ project }: Props) {
               />
             ))}
           </div>
-          <div className="d-flex d-sm-none mt-4 mb-5">
+          <div className="d-flex d-md-none mt-4 mb-5">
             {project.preview && project.preview()}
           </div>
           <p>{project.description}</p>
@@ -97,7 +97,7 @@ export default function ProjectPreview({ project }: Props) {
           </div>
         </Col>
         {project.preview && (
-          <Col className="align-items-center d-none d-sm-flex">
+          <Col className="align-items-center align-items-lg-end d-none d-md-flex">
             {project.preview()}
           </Col>
         )}
