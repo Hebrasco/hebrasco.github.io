@@ -1,5 +1,5 @@
 .preview-recipes-ipad {
-  width: 50%;
+  width: 54%;
   height: auto;
   right: 0;
   bottom: 0;
@@ -7,7 +7,7 @@
 }
 
 .preview-recipes-iphone {
-  width: 25%;
+  width: 30%;
   height: auto;
   left: 5%;
   bottom: 0;
@@ -15,9 +15,9 @@
 }
 
 .preview-recipes-iphoneSE {
-  width: 20%;
+  width: 25%;
   height: auto;
-  left: 8%;
+  left: 9%;
   bottom: 0;
   z-index: 3;
 }

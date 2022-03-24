@@ -32,10 +32,7 @@ export default function RecipesPreview(): JSX.Element {
   ]
 
   return (
-    <div
-      className="d-flex align-items-end justify-content-end"
-      style={{ width: '100%' }}
-    >
+    <div className="d-flex align-items-end justify-content-end">
       {images.map(({ id, source, className }) => (
         <Image
           key={id}
