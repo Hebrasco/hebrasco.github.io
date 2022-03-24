@@ -40,7 +40,9 @@ img.rounded {
   color: var(--primaryTextColor) !important;
 }
 
-.btn-outline-dark:hover {
+.btn-outline-dark:hover,
+.btn-outline-dark:active,
+.btn-outline-dark:focus {
   background-color: var(--primaryBackgroundColor) !important;
   color: var(--primaryHoverColor) !important;
 }
