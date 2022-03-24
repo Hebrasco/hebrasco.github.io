@@ -1,7 +1,7 @@
 import Framework from 'models/FrameworkModel'
 
 export const FRAMEWORKS = {
-  ios: {
+  apple: {
     ios: new Framework('iOS'),
     uiKit: new Framework('UIKit'),
     swiftUI: new Framework('SwiftUI'),
@@ -9,6 +9,10 @@ export const FRAMEWORKS = {
     widgetKit: new Framework('WidgetKit'),
     storeKit: new Framework('StoreKit'),
     coreData: new Framework('Core Data'),
+    metal: new Framework('Metal'),
+    coreImage: new Framework('Core Image'),
+    macOS: new Framework('macOS'),
+    cloudKit: new Framework('CloutKit'),
   },
 
   crossPlatform: {

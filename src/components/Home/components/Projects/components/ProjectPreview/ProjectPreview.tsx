@@ -56,6 +56,7 @@ export default function ProjectPreview({ project }: Props) {
       <Row>
         <Col md={6}>
           <h3>{project.name}</h3>
+          {project.isComingSoon && <p className="text-muted">Coming Soon</p>}
           <div className="mt-4 mb-1">
             {project.languages.map((language: any) => (
               <MyBadge
@@ -70,9 +71,11 @@ export default function ProjectPreview({ project }: Props) {
               />
             ))}
           </div>
-          <div className="d-flex d-md-none mt-4 mb-5">
-            {project.preview && project.preview()}
-          </div>
+          {project.preview && (
+            <div className="d-flex d-md-none mt-4 mb-5">
+              {project.preview()}
+            </div>
+          )}
           <p>{project.description}</p>
           <p>Responsibilities included:</p>
           <ul>

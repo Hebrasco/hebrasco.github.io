@@ -24,7 +24,7 @@ export default function BloomPreview(): JSX.Element {
     ),
     new PreviewImage(
       'preview-bloom-iphone',
-      isLightScheme ? IphoneImageLight : IphoneImageDark,
+      isLightScheme ? IphoneImageDark : IphoneImageLight,
       'preview-bloom-iphone'
     ),
     new PreviewImage(

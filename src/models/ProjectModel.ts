@@ -10,6 +10,7 @@ export default class ProjectModel implements IProject {
   onlineURL?: string
   sourceURL?: string
   preview?: Function
+  isComingSoon: boolean
 
   constructor(
     name: string,
@@ -19,7 +20,8 @@ export default class ProjectModel implements IProject {
     frameworks: ISkill[],
     onlineURL?: string,
     sourceURL?: string,
-    preview?: Function
+    preview?: Function,
+    isComingSoon: boolean = false
   ) {
     this.name = name
     this.description = description
@@ -29,5 +31,6 @@ export default class ProjectModel implements IProject {
     this.onlineURL = onlineURL
     this.sourceURL = sourceURL
     this.preview = preview
+    this.isComingSoon = isComingSoon
   }
 }

@@ -51,3 +51,7 @@ img.rounded {
 .navbar-light .navbar-nav .nav-link {
   color: var(--primaryTextColor) !important;
 }
+
+.text-muted {
+  color: var(--mutedTextColor) !important;
+}

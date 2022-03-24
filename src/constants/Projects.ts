@@ -6,33 +6,47 @@ import BloomPreview from 'common/Previews/BloomPreview/BloomPreview'
 
 export const PROJECTS: Project[] = [
   new Project(
-    'App for a soccer club of the 1st Bundesliga',
-    'This app displays news about the club and region. Of course, there is also a live ticker. Furthermore, there is a store where merchandise and tickets can be purchased.',
-    ['User interface development', 'Communication with an existing API'],
-    [LANGUAGES.javaScript, LANGUAGES.json, LANGUAGES.css],
-    [FRAMEWORKS.web.react, FRAMEWORKS.web.reactRedux]
-  ),
-  new Project(
-    'Admin webapp for a soccer club of the 1st Bundesliga',
-    'This admin webapp can be used to manage tickets, contracts, purchases, users, surveys, messages.',
+    'Task Management Tool',
+    'This app is an task management tool. You can create and manage tasks of different projects. Tasks are managed in you self managed boards, sprints and milestones. A label, due date, milestone, estimated and actual time, priority and more can be added to a task.',
     [
       'Conception and development',
       'User interface development',
-      'Communication with an existing API',
+      'Persisting data with CoreData',
+      'Synchronizing data with iCloud',
     ],
-    [LANGUAGES.javaScript, LANGUAGES.json, LANGUAGES.css],
-    [FRAMEWORKS.web.react, FRAMEWORKS.web.reactRedux, FRAMEWORKS.web.materialUI]
+    [LANGUAGES.swift],
+    [
+      FRAMEWORKS.apple.macOS,
+      FRAMEWORKS.apple.ios,
+      FRAMEWORKS.apple.swiftUI,
+      FRAMEWORKS.apple.coreData,
+      FRAMEWORKS.apple.cloudKit,
+    ],
+    undefined,
+    undefined,
+    undefined,
+    true
   ),
   new Project(
-    'Platform for corporate communication',
-    'A platform for internal corporate communication was developed. News can be published, events and user interactions can be created here.',
+    'Photo Filter App',
+    'This is a photo filer app. You can import images from you photo library and choose from a variety of color filters to apply to you image. If applied one of the filters, you can export the photo back to your library.',
     [
       'Conception and development',
       'User interface development',
-      'Communication with an existing API',
+      'Implementation of in-app purchases',
+      'Color adjustment algorithms',
     ],
-    [LANGUAGES.javaScript, LANGUAGES.html, LANGUAGES.css, LANGUAGES.cSharp],
-    [FRAMEWORKS.web.dotNet, FRAMEWORKS.web.angular]
+    [LANGUAGES.swift, LANGUAGES.metal],
+    [
+      FRAMEWORKS.apple.ios,
+      FRAMEWORKS.apple.swiftUI,
+      FRAMEWORKS.apple.storeKit,
+      FRAMEWORKS.apple.coreImage,
+    ],
+    undefined,
+    undefined,
+    undefined,
+    true
   ),
   new Project(
     'Bloom - Couples App',
@@ -46,11 +60,11 @@ export const PROJECTS: Project[] = [
     ],
     [LANGUAGES.swift],
     [
-      FRAMEWORKS.ios.ios,
-      FRAMEWORKS.ios.swiftUI,
-      FRAMEWORKS.ios.widgetKit,
-      FRAMEWORKS.ios.storeKit,
-      FRAMEWORKS.ios.localNotifications,
+      FRAMEWORKS.apple.ios,
+      FRAMEWORKS.apple.swiftUI,
+      FRAMEWORKS.apple.widgetKit,
+      FRAMEWORKS.apple.storeKit,
+      FRAMEWORKS.apple.localNotifications,
     ],
     'https://apps.apple.com/app/bloom-couples-app/id1533246365',
     undefined,
@@ -66,7 +80,7 @@ export const PROJECTS: Project[] = [
       'Persisting data with CoreData',
     ],
     [LANGUAGES.swift, LANGUAGES.json],
-    [FRAMEWORKS.ios.ios, FRAMEWORKS.ios.swiftUI, FRAMEWORKS.ios.coreData],
+    [FRAMEWORKS.apple.ios, FRAMEWORKS.apple.swiftUI, FRAMEWORKS.apple.coreData],
     undefined,
     'https://github.com/Hebrasco/recipe_app',
     RecipesPreview

@@ -9,4 +9,5 @@ export default interface IProject {
   onlineURL?: string
   sourceURL?: string
   preview?: Function
+  isComingSoon: boolean
 }

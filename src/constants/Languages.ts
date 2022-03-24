@@ -8,4 +8,5 @@ export const LANGUAGES = {
   html: new Language('HTML'),
   css: new Language('CSS'),
   json: new Language('JSON'),
+  metal: new Language('MSL'),
 }
