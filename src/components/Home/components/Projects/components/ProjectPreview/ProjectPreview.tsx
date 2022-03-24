@@ -85,13 +85,13 @@ export default function ProjectPreview({ project }: Props) {
           <div className="mt-5">
             <Action
               to={project.onlineURL}
-              label="view"
+              label="View"
               className="m-0"
               filled
             />
             <Action
               to={project.sourceURL}
-              label="source code"
+              label="Source Code"
               className="ms-3"
             />
           </div>
