@@ -13,6 +13,7 @@ import { useWindowSize } from 'utils/hooks'
 
 import './AboutMe.css'
 import Link from 'common/Link/Link'
+import ExternalLink from 'common/ExternalLink/ExternalLink'
 
 export default function AboutMe(): JSX.Element {
   const baseStyle = 'about-me-text'
@@ -27,11 +28,17 @@ export default function AboutMe(): JSX.Element {
           ${conditionalStyle(isSm, `${baseStyle}-sm`)}
           fs-5`}
         >
-          I have been working in Front-End development since 2015 and have
-          already implemented various projects for web, Android and iOS in small
-          and large teams.
+          I have been working in Front-End and Mobile development since 2015 and
+          have already implemented various projects for web, Android and iOS in
+          small and large teams.
         </p>
-        <Button variant="dark">Download CV</Button>
+        <ExternalLink
+          to="/daniel_bedrich_resume.pdf"
+          className="btn-dark"
+          button
+        >
+          Download Resume
+        </ExternalLink>
         <Link
           button
           to={ROUTES.contact}
