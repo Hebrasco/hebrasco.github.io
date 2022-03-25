@@ -100,3 +100,46 @@ input:-webkit-autofill:focus {
 input:not(input:-webkit-autofill)::-webkit-contacts-auto-fill-button {
   background-color: var(--secondaryColor);
 }
+
+.toast-container {
+  z-index: 100;
+}
+
+.toast {
+  border: none;
+  box-shadow: none;
+}
+
+.toast,
+.toast-body,
+.toast-header {
+  background-color: var(--primaryBackgroundColor);
+}
+
+.toast-header,
+.toast-header > button,
+.toast-body {
+  color: var(--secondaryTextColor) !important;
+}
+
+.toast-header > img {
+  height: 1rem;
+  width: 1rem;
+}
+
+.toast-header {
+  border-radius: 1rem 1rem 0 0;
+  padding: 0.75rem;
+}
+
+.toast-body {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.toast-header .btn-close {
+  margin-right: 0;
+}

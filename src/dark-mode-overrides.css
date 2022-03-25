@@ -22,4 +22,8 @@
   .navbar-light .navbar-toggler-icon {
     filter: invert(1);
   }
+
+  .btn-close {
+    filter: none;
+  }
 }

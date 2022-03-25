@@ -1,29 +1,38 @@
 import Email from 'common/Email/Email'
 import Section from 'common/Section/Section'
 import React, { FormEvent, useState } from 'react'
-import { Button, Col, Container, Form, InputGroup, Row } from 'react-bootstrap'
+import {
+  Button,
+  Col,
+  Container,
+  Form,
+  Image,
+  InputGroup,
+  Row,
+  Toast,
+  ToastContainer,
+} from 'react-bootstrap'
 import { ROUTES } from 'constants/Routes'
 import emailjs from '@emailjs/browser'
-import { conditionalStyle } from 'utils/helpers'
 
 export default function Contact() {
-  const [validated, setValidated] = useState(false)
+  const [validated, setValidated] = useState<boolean>(false)
   const [isEmailSuccess, setIsEmailSuccess] = useState<boolean | null>(null)
   const [isEmailSending, setIsEmailSending] = useState<boolean>(false)
+  const [showEmailSuccessToast, setShowEmailSuccessToast] =
+    useState<boolean>(false)
   const emailSuccessMessage =
     "Thank you for contacting me. I'll respond to your massage soon."
   const emailErrorMessage =
     'Something went wrong. Please try again later. Alternative, you can send me an email.'
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    event.stopPropagation()
+
     const form = event.currentTarget
 
-    if (form.checkValidity()) {
-      sendEmail(form)
-    } else {
-      event.preventDefault()
-      event.stopPropagation()
-    }
+    if (form.checkValidity()) sendEmail(form)
 
     setValidated(true)
   }
@@ -118,21 +127,9 @@ export default function Contact() {
                   </div>
                 )}
               </div>
-              <div
-                className={`mt-3 ${conditionalStyle(
-                  !!isEmailSuccess,
-                  'visible',
-                  'invisible'
-                )}`}
-              >
-                <p className="mb-0">
-                  {isEmailSuccess ? emailSuccessMessage : emailErrorMessage}
-                </p>
-              </div>
             </Col>
           </Row>
         </Form>
-
         <Row>
           <Col>
             <p className="mb-0">Email me</p>
@@ -140,6 +137,22 @@ export default function Contact() {
           </Col>
         </Row>
       </Section>
+      <ToastContainer position="bottom-end" className="p-3 position-fixed">
+        <Toast
+          onClose={() => setShowEmailSuccessToast(false)}
+          show={showEmailSuccessToast}
+          delay={7000}
+          autohide
+        >
+          <Toast.Header>
+            <Image src="/favicon.ico" className="rounded me-2" />
+            <strong className="me-auto">Daniel Bedrich</strong>
+          </Toast.Header>
+          <Toast.Body>
+            {isEmailSuccess ? emailSuccessMessage : emailErrorMessage}
+          </Toast.Body>
+        </Toast>
+      </ToastContainer>
     </Container>
   )
 }
