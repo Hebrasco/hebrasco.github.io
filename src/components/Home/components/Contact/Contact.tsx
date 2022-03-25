@@ -54,6 +54,7 @@ export default function Contact() {
       .then(
         (result: any) => {
           setIsEmailSuccess(result.status === 200)
+          setShowEmailSuccessToast(true)
         },
         (error: any) => {
           setIsEmailSuccess(false)
