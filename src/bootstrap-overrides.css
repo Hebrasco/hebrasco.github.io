@@ -2,7 +2,8 @@
   margin-right: 0.5rem !important;
 }
 
-img.rounded {
+img.rounded,
+.form-control {
   border-radius: 0.75rem !important;
 }
 
@@ -56,6 +57,10 @@ img.rounded {
   color: var(--mutedTextColor) !important;
 }
 
+.form-control {
+  padding: 0.75rem;
+}
+
 .form-control,
 .form-control:focus {
   background-color: var(--accentColor);
@@ -80,25 +85,13 @@ img.rounded {
 .form-control.is-invalid:focus,
 .was-validated .form-control:invalid:focus {
   border-color: var(--accentColor);
-  box-shadow: 0 0 0 0.25rem rgba(var(--primaryTextColorValues), 0.75);
+  box-shadow: 0 0 0 0.25rem rgba(var(--accentColorValues), 0.5);
 }
 
 .form-control::placeholder,
 .form-control::-webkit-contacts-auto-fill-button {
   color: var(--mutedTextColor);
   opacity: 1;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--primaryTextColor);
-  box-shadow: 0 0 0px 1000px var(--accentColor) inset;
-  transition: background-color 1000s ease-in-out 0s;
-}
-
-input:not(input:-webkit-autofill)::-webkit-contacts-auto-fill-button {
-  background-color: var(--secondaryColor);
 }
 
 .toast-container {
