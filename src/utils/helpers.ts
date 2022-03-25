@@ -1,6 +1,10 @@
 import { ReactElement } from 'react'
-export function conditionalStyle(show: boolean, value: string): string {
-  return show ? value : ''
+export function conditionalStyle(
+  show: boolean,
+  value: string,
+  elseValue: string = ''
+): string {
+  return show ? value : elseValue
 }
 
 export function renderChildren(

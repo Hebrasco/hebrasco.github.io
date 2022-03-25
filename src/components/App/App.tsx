@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
@@ -7,8 +7,13 @@ import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer'
 import Home from 'components/Home/Home'
 import Imprint from 'components/Imprint/Imprint'
+import { init } from '@emailjs/browser'
 
 export default function App() {
+  useEffect(() => {
+    init('rmcaHWu76GpKh7M_8')
+  }, [])
+
   return (
     <React.Fragment>
       <Router basename="/">

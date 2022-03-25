@@ -3,21 +3,54 @@ import Section from 'common/Section/Section'
 import React, { FormEvent, useState } from 'react'
 import { Button, Col, Container, Form, InputGroup, Row } from 'react-bootstrap'
 import { ROUTES } from 'constants/Routes'
-
-import './Contact.css'
+import emailjs from '@emailjs/browser'
+import { conditionalStyle } from 'utils/helpers'
 
 export default function Contact() {
   const [validated, setValidated] = useState(false)
+  const [isEmailSuccess, setIsEmailSuccess] = useState<boolean | null>(null)
+  const [isEmailSending, setIsEmailSending] = useState<boolean>(false)
+  const emailSuccessMessage =
+    "Thank you for contacting me. I'll respond to your massage soon."
+  const emailErrorMessage =
+    'Something went wrong. Please try again later. Alternative, you can send me an email.'
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     const form = event.currentTarget
 
-    if (!form.checkValidity()) {
+    if (form.checkValidity()) {
+      sendEmail(form)
+    } else {
       event.preventDefault()
       event.stopPropagation()
     }
 
     setValidated(true)
+  }
+
+  function handleReset() {
+    setValidated(false)
+    setIsEmailSuccess(null)
+  }
+
+  function sendEmail(form: HTMLFormElement) {
+    setIsEmailSending(true)
+    emailjs
+      .send('service_w4iza8l', 'template_hc62tmb', {
+        fromName: form.fromName.value,
+        email: form.email.value,
+        subject: form.subject.value,
+        message: form.message.value,
+      })
+      .then(
+        (result: any) => {
+          setIsEmailSuccess(result.status === 200)
+        },
+        (error: any) => {
+          setIsEmailSuccess(false)
+        }
+      )
+      .finally(() => setIsEmailSending(false))
   }
 
   return (
@@ -29,24 +62,35 @@ export default function Contact() {
           validated={validated}
           onSubmit={handleSubmit}
           className="my-5"
+          onReset={handleReset}
         >
           <Row>
             <Col xs={12} md={6}>
               <Row>
                 <Col>
                   <InputGroup className="mb-3">
-                    <Form.Control placeholder="Name" type="name" required />
+                    <Form.Control
+                      id="fromName"
+                      placeholder="Name"
+                      type="name"
+                      required
+                    />
                   </InputGroup>
                 </Col>
                 <Col>
                   <InputGroup className="mb-3">
-                    <Form.Control placeholder="Email" type="email" required />
+                    <Form.Control
+                      id="email"
+                      placeholder="Email"
+                      type="email"
+                      required
+                    />
                   </InputGroup>
                 </Col>
               </Row>
               <InputGroup className="mb-3">
                 <Form.Control
-                  id="exampleFormControlTextarea1"
+                  id="subject"
                   placeholder="Subject"
                   type="text"
                   required
@@ -55,19 +99,35 @@ export default function Contact() {
               <InputGroup>
                 <Form.Control
                   as="textarea"
-                  id="exampleFormControlTextarea1"
+                  id="message"
                   placeholder="Message"
                   type="text"
                   required
                 />
               </InputGroup>
-              <div className="mt-4">
+              <div className="mt-4 d-flex">
                 <Button variant="dark" type="submit">
                   Submit Form
                 </Button>
                 <Button variant="outline-dark" type="reset" className="ms-3">
                   Reset
                 </Button>
+                {isEmailSending && (
+                  <div className="d-flex flex-grow-1 justify-content-end align-items-center">
+                    <div className="spinner-border" role="status"></div>
+                  </div>
+                )}
+              </div>
+              <div
+                className={`mt-3 ${conditionalStyle(
+                  !!isEmailSuccess,
+                  'visible',
+                  'invisible'
+                )}`}
+              >
+                <p className="mb-0">
+                  {isEmailSuccess ? emailSuccessMessage : emailErrorMessage}
+                </p>
               </div>
             </Col>
           </Row>
