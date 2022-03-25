@@ -5,8 +5,6 @@ import Section from 'common/Section/Section'
 import { ROUTES } from 'constants/Routes'
 import ProjectPreview from './components/ProjectPreview/ProjectPreview'
 
-import './Projects.css'
-
 export default function Projects(): JSX.Element {
   return (
     <Container className="mt-5 navbar-spacer">

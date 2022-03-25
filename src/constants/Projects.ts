@@ -3,10 +3,12 @@ import { FRAMEWORKS } from './Frameworks'
 import Project from 'models/ProjectModel'
 import RecipesPreview from 'common/Previews/RecipesPreview/RecipesPreview'
 import BloomPreview from 'common/Previews/BloomPreview/BloomPreview'
+import UmbrellaPreview from 'common/Previews/UmbrellaPreview/UmbrellaPreview'
+import InstersPreview from 'common/Previews/InstersPreview/InstersPreview'
 
 export const PROJECTS: Project[] = [
   new Project(
-    'Task Management Tool',
+    'Umbrella',
     'This app is an task management tool. You can create and manage tasks of different projects. Tasks are managed in you self managed boards, sprints and milestones. A label, due date, milestone, estimated and actual time, priority and more can be added to a task.',
     [
       'Conception and development',
@@ -24,12 +26,12 @@ export const PROJECTS: Project[] = [
     ],
     undefined,
     undefined,
-    undefined,
+    UmbrellaPreview,
     true
   ),
   new Project(
-    'Photo Filter App',
-    'This is a photo filer app. You can import images from you photo library and choose from a variety of color filters to apply to you image. If applied one of the filters, you can export the photo back to your library.',
+    'Insters',
+    'Insters is a photo filer app. You can import images from you photo library and choose from a variety of color filters to apply to you image. If applied one of the filters, you can export the photo back to your library.',
     [
       'Conception and development',
       'User interface development',
@@ -45,7 +47,7 @@ export const PROJECTS: Project[] = [
     ],
     undefined,
     undefined,
-    undefined,
+    InstersPreview,
     true
   ),
   new Project(

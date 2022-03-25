@@ -1,8 +1,8 @@
 import React from 'react'
 import PreviewImage from 'models/PreviewImageModel'
-import IpadImage from 'assets/images/screenshots/recipes/ipad.png'
-import IphoneImage from 'assets/images/screenshots/recipes/iphone.png'
-import IphoneSEImage from 'assets/images/screenshots/recipes/iphoneSE.png'
+import IpadImage from 'assets/images/previews/recipes/ipad.png'
+import IphoneImage from 'assets/images/previews/recipes/iphone.png'
+import IphoneSEImage from 'assets/images/previews/recipes/iphoneSE.png'
 import { Image } from 'react-bootstrap'
 
 import './RecipesPreview.css'

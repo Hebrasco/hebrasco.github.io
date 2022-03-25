@@ -6,6 +6,7 @@
 
     --primaryTextColor: rgb(248, 249, 250);
     --secondaryTextColor: rgb(33, 37, 41);
+    --mutedTextColor: rgba(255, 255, 255, 0.7);
 
     --primaryBorderColor: var(--primaryTextColor);
     --secondaryBorderColor: var(--secondaryTextColor);

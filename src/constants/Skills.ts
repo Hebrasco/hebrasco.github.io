@@ -15,10 +15,9 @@ export const SKILLS_LANGUAGES: Language[] = [
 ]
 
 export const SKILLS_FRAMEWORKS: Framework[] = [
+  FRAMEWORKS.apple.ios,
   FRAMEWORKS.apple.swiftUI,
   FRAMEWORKS.apple.uiKit,
-  FRAMEWORKS.apple.widgetKit,
-  FRAMEWORKS.apple.storeKit,
   FRAMEWORKS.web.react,
   FRAMEWORKS.crossPlatform.reactNative,
   FRAMEWORKS.web.reactRedux,
