@@ -77,7 +77,7 @@ export default function Contact() {
           <Row>
             <Col xs={12} md={6}>
               <Row>
-                <Col>
+                <Col xs={12} lg={6}>
                   <InputGroup className="mb-3">
                     <Form.Control
                       id="fromName"
@@ -87,7 +87,7 @@ export default function Contact() {
                     />
                   </InputGroup>
                 </Col>
-                <Col>
+                <Col xs={12} lg={6}>
                   <InputGroup className="mb-3">
                     <Form.Control
                       id="email"
