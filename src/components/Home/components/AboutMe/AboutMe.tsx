@@ -1,10 +1,10 @@
 import React from 'react'
-import { ROUTES } from 'constants/Routes'
+import { ROUTES } from 'constants/routes'
 import {
   SKILLS_LANGUAGES,
   SKILLS_FRAMEWORKS,
   SKILLS_APPLICATIONS,
-} from 'constants/Skills'
+} from 'constants/skills'
 import { Button, Container, Row } from 'react-bootstrap'
 import Section from 'common/Section/Section'
 import SkillColumn from './components/SkillColumn'

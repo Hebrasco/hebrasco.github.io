@@ -1,5 +1,5 @@
 import React from 'react'
-import { ROUTES } from 'constants/Routes'
+import { ROUTES } from 'constants/routes'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import Link from 'common/Link/Link'
 import SocialLinks from 'common/SocialLinks/SocialLinks'

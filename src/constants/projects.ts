@@ -1,5 +1,5 @@
-import { LANGUAGES } from './Languages'
-import { FRAMEWORKS } from './Frameworks'
+import { LANGUAGES } from './languages'
+import { FRAMEWORKS } from './frameworks'
 import Project from 'models/ProjectModel'
 import RecipesPreview from 'common/Previews/RecipesPreview/RecipesPreview'
 import BloomPreview from 'common/Previews/BloomPreview/BloomPreview'

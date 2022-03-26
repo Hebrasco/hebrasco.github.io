@@ -1,8 +1,8 @@
 import React from 'react'
-import { PROJECTS } from 'constants/Projects'
+import { PROJECTS } from 'constants/projects'
 import { Container, Stack } from 'react-bootstrap'
 import Section from 'common/Section/Section'
-import { ROUTES } from 'constants/Routes'
+import { ROUTES } from 'constants/routes'
 import ProjectPreview from './components/ProjectPreview/ProjectPreview'
 
 export default function Projects(): JSX.Element {

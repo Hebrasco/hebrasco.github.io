@@ -1,6 +1,6 @@
 import React from 'react'
 import ExternalLink from 'common/ExternalLink/ExternalLink'
-import { APPSTORE_PROFILE_URL, GITHUB_PROFILE_URL } from 'constants/Config'
+import { APPSTORE_PROFILE_URL, GITHUB_PROFILE_URL } from 'constants/config'
 import gitHubLogo from 'assets/icons/github.png'
 import appStoreLogo from 'assets/icons/app_store.png'
 import { Image } from 'react-bootstrap'

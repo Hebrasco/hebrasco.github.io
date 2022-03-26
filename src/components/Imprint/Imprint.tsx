@@ -1,5 +1,5 @@
 import React from 'react'
-import { ROUTES } from 'constants/Routes'
+import { ROUTES } from 'constants/routes'
 import { Col, Container, Row } from 'react-bootstrap'
 import Email from 'common/Email/Email'
 import Section from 'common/Section/Section'

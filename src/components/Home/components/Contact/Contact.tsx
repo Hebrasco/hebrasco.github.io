@@ -12,7 +12,7 @@ import {
   Toast,
   ToastContainer,
 } from 'react-bootstrap'
-import { ROUTES } from 'constants/Routes'
+import { ROUTES } from 'constants/routes'
 import emailjs from '@emailjs/browser'
 
 export default function Contact() {
