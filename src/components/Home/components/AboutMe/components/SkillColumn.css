@@ -1,0 +1,7 @@
+.skills-column > div {
+  width: 100%;
+}
+
+.skills-column > ul > li:last-child {
+  margin: 0 !important;
+}

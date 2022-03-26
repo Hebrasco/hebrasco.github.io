@@ -1,15 +1,13 @@
-import ILanguage from './ILanguage'
-import IFramework from './IFramework'
+import ISkill from './ISkill'
 
 export default interface IProject {
-  pinned: boolean
   name: string
-  image: string
-  timePeriod: string
   description: string
   tasks: string[]
-  languages: ILanguage[]
-  frameworks: IFramework[]
-  onlineUrl?: string
+  languages: ISkill[]
+  frameworks: ISkill[]
+  onlineURL?: string
   sourceURL?: string
+  preview?: Function
+  isComingSoon: boolean
 }

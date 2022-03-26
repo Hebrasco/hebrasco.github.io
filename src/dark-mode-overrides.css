@@ -1,45 +1,34 @@
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: black !important;
+  :root {
+    --primaryColor: #000000;
+    --secondaryColor: #ffffff;
+    --accentColorValues: 15, 15, 15;
+    --accentColor: rgb(var(--accentColorValues));
+
+    --primaryTextColor: rgb(248, 249, 250);
+    --secondaryTextColor: rgb(33, 37, 41);
+    --mutedTextColor: rgba(255, 255, 255, 0.7);
+
+    --primaryBorderColor: var(--primaryTextColor);
+    --secondaryBorderColor: var(--secondaryTextColor);
+
+    --primaryBackgroundColor: var(--primaryTextColor);
+    --secondaryBackgroundColor: var(--secondaryTextColor);
+
+    --primaryHoverColor: var(--secondaryTextColor);
+    --secondaryHoverColor: var(--primaryTextColor);
   }
 
-  .bg-light {
-    background-color: #0f0f0f !important;
-  }
-
-  .card-footer {
-    background-color: #1b1b1b;
-  }
-
-  .card,
-  .list-group-item {
-    background-color: #1f1f1f;
-  }
-
-  .list-group-item {
-    border: 1px solid #2f2f2f;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  div,
-  .navbar-light .navbar-brand,
-  .navbar-light .navbar-nav .nav-link,
-  .text-muted {
-    color: white !important;
-  }
-
-  img.invertDark,
+  img.invertedColor,
   .navbar-light .navbar-toggler-icon {
     filter: invert(1);
   }
 
-  .shadow {
-    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.075) !important;
+  .btn-close {
+    filter: none;
+  }
+
+  textarea::-webkit-resizer {
+    border-color: rgba(255, 255, 255, 0.1);
   }
 }

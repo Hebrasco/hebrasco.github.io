@@ -2,7 +2,8 @@
   margin-right: 0.5rem !important;
 }
 
-img.rounded {
+img.rounded,
+.form-control {
   border-radius: 0.75rem !important;
 }
 
@@ -10,19 +11,129 @@ img.rounded {
   border: none !important;
 }
 
-.git-account-link {
-  width: 2em;
-}
-
-.git-account-link img {
-  width: 100%;
-}
-
 .card,
-.card-footer:last-child {
-  border-radius: 1rem;
+.card-footer:last-child,
+.rounded {
+  border-radius: var(--borderRadius) !important;
 }
 
 .btn {
   border-radius: 0.5rem;
+}
+
+.bg-light {
+  background-color: var(--accentColor) !important;
+}
+
+.bg-dark,
+.btn-dark {
+  background-color: var(--primaryBackgroundColor) !important;
+  color: var(--primaryTextColor) !important;
+}
+
+.btn,
+.badge {
+  color: var(--secondaryTextColor) !important;
+}
+
+.btn-outline-dark {
+  border-color: var(--primaryBorderColor) !important;
+  color: var(--primaryTextColor) !important;
+}
+
+.btn-outline-dark:hover,
+.btn-outline-dark:active,
+.btn-outline-dark:focus {
+  background-color: var(--primaryBackgroundColor) !important;
+  color: var(--primaryHoverColor) !important;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+  color: var(--primaryTextColor) !important;
+}
+
+.text-muted {
+  color: var(--mutedTextColor) !important;
+}
+
+.form-control {
+  padding: 0.75rem;
+}
+
+.form-control,
+.form-control:focus {
+  background-color: var(--accentColor);
+  border: none;
+  color: var(--primaryTextColor);
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid,
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  border-color: var(--accentColor);
+}
+
+.was-validated .form-control:valid {
+  background-image: none;
+  padding-right: 0.75rem;
+}
+
+.form-control:focus,
+.form-control.is-valid:focus,
+.was-validated .form-control:valid:focus,
+.form-control.is-invalid:focus,
+.was-validated .form-control:invalid:focus {
+  border-color: var(--accentColor);
+  box-shadow: 0 0 0 0.25rem rgba(var(--accentColorValues), 0.5);
+}
+
+.form-control::placeholder,
+.form-control::-webkit-contacts-auto-fill-button {
+  color: var(--mutedTextColor);
+  opacity: 1;
+}
+
+.toast-container {
+  z-index: 100;
+}
+
+.toast {
+  border: none;
+  box-shadow: none;
+}
+
+.toast,
+.toast-body,
+.toast-header {
+  background-color: var(--primaryBackgroundColor);
+}
+
+.toast-header,
+.toast-header > button,
+.toast-body {
+  color: var(--secondaryTextColor) !important;
+}
+
+.toast-header > img {
+  height: 1rem;
+  width: 1rem;
+}
+
+.toast-header {
+  border-radius: 1rem 1rem 0 0;
+  padding: 0.75rem;
+}
+
+.toast-body {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.toast-header .btn-close {
+  margin-right: 0;
 }

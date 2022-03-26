@@ -1,15 +1,11 @@
-import { BADGE_VARIANTS } from './BadgeVariants'
 import Application from 'models/ApplicationModal'
 
 export const APPLICATIONS = {
-  xcode: new Application('Xcode', BADGE_VARIANTS.primary),
-  gitTower: new Application('GitTower', BADGE_VARIANTS.primary),
-  gitHub: new Application('GitHub', BADGE_VARIANTS.primary),
-  gitLab: new Application('GitLab', BADGE_VARIANTS.secondary),
-  androidStudio: new Application('Android Studio', BADGE_VARIANTS.secondary),
-  intellijIdea: new Application('IntelliJ IDEA', BADGE_VARIANTS.secondary),
-  vsCode: new Application('VS Code', BADGE_VARIANTS.success),
-  unity: new Application('Unity', BADGE_VARIANTS.dark),
-  threeDsMax: new Application('3DS Max', BADGE_VARIANTS.warning),
-  maya: new Application('Maya', BADGE_VARIANTS.warning),
+  xcode: new Application('Xcode'),
+  git: new Application('Git'),
+  gitTower: new Application('GitTower'),
+  gitHub: new Application('GitHub'),
+  vsCode: new Application('VS Code'),
+  vs: new Application('Visual Studio'),
+  jira: new Application('Jira'),
 }

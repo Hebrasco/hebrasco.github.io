@@ -1,5 +1,37 @@
 :root {
   color-scheme: light dark;
+  --navbarHeight: 56px;
+
+  --primaryColor: #ffffff;
+  --secondaryColor: #000000;
+  --accentColorValues: 248, 249, 250;
+  --accentColor: rgb(var(--accentColorValues));
+
+  --primaryTextColor: rgb(33, 37, 41);
+  --secondaryTextColorValues: 248, 249, 250;
+  --secondaryTextColor: rgb(var(--secondaryTextColorValues));
+  --mutedTextColor: rgba(0, 0, 0, 0.7);
+
+  --primaryBorderColor: var(--primaryTextColor);
+  --secondaryBorderColor: var(--secondaryTextColor);
+
+  --primaryBackgroundColor: var(--primaryTextColor);
+  --secondaryBackgroundColor: var(--secondaryTextColor);
+
+  --primaryHoverColor: var(--secondaryTextColor);
+  --secondaryHoverColor: var(--primaryTextColor);
+
+  --titleFontSize: 10vmin;
+  --subTitleFontSize: 4vmin;
+  --headingFontSize: 3vmin;
+
+  --projectImageSize: 4rem;
+  --projectImageSizeHovered: 4.5rem;
+
+  --letterSpacingSm: 2px;
+  --letterSpacingLg: 4px;
+
+  --borderRadius: 1rem;
 }
 
 body {
@@ -9,20 +41,48 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--primaryColor) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+a {
+  color: var(--primaryTextColor) !important;
 }
 
 .navbar-spacer {
-  margin-top: calc(56px + 3rem);
-}
-
-.top-anchor {
-  position: absolute;
-  top: calc(-56px + -3rem);
-  left: 0;
+  margin-top: var(--navbarHeight);
 }
 
 .anchor {
   position: relative;
   top: -75px;
   left: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--primaryTextColor);
+  box-shadow: 0 0 0px 1000px var(--accentColor) inset;
+  transition: background-color 1000s ease-in-out 0s;
+}
+
+input:not(input:-webkit-autofill)::-webkit-contacts-auto-fill-button {
+  background-color: var(--primaryTextColor);
+}
+
+textarea::-webkit-resizer {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-style: solid;
+  border-width: 1rem 0 0 1rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-right-radius: 1rem;
 }

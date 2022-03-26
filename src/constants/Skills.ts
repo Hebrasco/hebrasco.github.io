@@ -12,22 +12,23 @@ export const SKILLS_LANGUAGES: Language[] = [
   LANGUAGES.css,
   LANGUAGES.javaScript,
   LANGUAGES.typeScript,
-  LANGUAGES.cSharp,
 ]
 
 export const SKILLS_FRAMEWORKS: Framework[] = [
-  FRAMEWORKS.ios.swiftUI,
-  FRAMEWORKS.ios.uiKit,
-  FRAMEWORKS.ios.widgetKit,
-  FRAMEWORKS.ios.storeKit,
+  FRAMEWORKS.apple.ios,
+  FRAMEWORKS.apple.swiftUI,
+  FRAMEWORKS.apple.uiKit,
   FRAMEWORKS.web.react,
   FRAMEWORKS.crossPlatform.reactNative,
   FRAMEWORKS.web.reactRedux,
+  FRAMEWORKS.web.bootstrap,
 ]
 
 export const SKILLS_APPLICATIONS: Application[] = [
   APPLICATIONS.xcode,
+  APPLICATIONS.git,
   APPLICATIONS.gitTower,
   APPLICATIONS.gitHub,
   APPLICATIONS.vsCode,
+  APPLICATIONS.jira,
 ]

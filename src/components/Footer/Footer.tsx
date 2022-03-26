@@ -1,45 +1,43 @@
 import React from 'react'
-import Container from 'react-bootstrap/esm/Container'
-import Row from 'react-bootstrap/esm/Row'
-import { HashLink as Link } from 'react-router-hash-link'
 import { ROUTES } from 'constants/Routes'
+import { Col, Container, Row } from 'react-bootstrap'
+import Link from 'common/Link/Link'
+import SocialLinks from 'common/SocialLinks/SocialLinks'
+import { conditionalStyle } from 'utils/helpers'
+import { useWindowSize } from 'utils/hooks'
+
+import './Footer.css'
 
 export default function Footer(): JSX.Element {
+  const { isXs, isSm } = useWindowSize()
+
   function getCurrentYear() {
     return new Date().getFullYear()
   }
 
   return (
-    <footer className="footer bg-light text-muted">
-      <Container>
+    <Container fluid className="footer bg-light">
+      <footer className="py-3">
         <Row>
-          <div>
-            <p className="nav-link">
+          <Col>
+            <p className="align-items-center m-0 py-2">
               Copyright © {getCurrentYear()} Daniel Bedrich. All rights
               reserved.
             </p>
-          </div>
-          <div
-            className="ml-md-auto"
-            style={{ display: 'flex', flexDirection: 'row' }}
-          >
-            <Link
-              to={ROUTES.imprintHash}
-              smooth
-              className="nav-link text-muted"
-            >
-              Imprint
-            </Link>
-            <Link
-              to={ROUTES.privacyPolicyHash}
-              smooth
-              className="nav-link text-muted"
-            >
-              Privacy Policy
-            </Link>
-          </div>
+          </Col>
+          <Col xs="12" md="auto">
+            <div className="d-flex">
+              <Link to={ROUTES.imprintHash} label="Imprint" />
+              <Link
+                to={ROUTES.privacyPolicyHash}
+                label="Privacy Policy"
+                className={`${conditionalStyle(isXs || isSm, 'me-auto')}`}
+              />
+              <SocialLinks useIcons />
+            </div>
+          </Col>
         </Row>
-      </Container>
-    </footer>
+      </footer>
+    </Container>
   )
 }

@@ -1,21 +1,22 @@
 import React from 'react'
-import Col from 'react-bootstrap/esm/Col'
-import Container from 'react-bootstrap/esm/Container'
-import Row from 'react-bootstrap/esm/Row'
 import { ROUTES } from 'constants/Routes'
-import { MAILTO_DANIEL_BEDRICH } from 'constants/Config'
+import { Col, Container, Row } from 'react-bootstrap'
+import Email from 'common/Email/Email'
+import Section from 'common/Section/Section'
 
 export default function Imprint(): JSX.Element {
+  const anchorReplace = '/imprint#'
+
   return (
     <Container className="navbar-spacer">
       <Row>
         <Col>
-          <section style={{ position: 'relative' }}>
-            <div
-              id={ROUTES.imprintHash.replace('/imprint#', '')}
-              className="top-anchor"
-            ></div>
-            <h1>Impressum</h1>
+          <Section
+            lg
+            title="Impressum"
+            anchor={ROUTES.imprintHash}
+            anchorReplace={anchorReplace}
+          >
             <b>Inhaber der Seite</b>
             <ul className="list-unstyled">
               <li>Daniel Bedrich</li>
@@ -25,18 +26,16 @@ export default function Imprint(): JSX.Element {
             <b>Kontakt</b>
             <ul className="list-unstyled">
               <li>
-                <a href={MAILTO_DANIEL_BEDRICH}>
-                  {MAILTO_DANIEL_BEDRICH.replace('mailto:', '')}
-                </a>
+                <Email />
               </li>
             </ul>
-          </section>
-          <section style={{ position: 'relative' }}>
-            <div
-              id={ROUTES.privacyPolicyHash.replace('/imprint#', '')}
-              className="anchor"
-            ></div>
-            <h1>Datenschutz</h1>
+          </Section>
+          <Section
+            lg
+            title="Datenschutz"
+            anchor={ROUTES.privacyPolicyHash}
+            anchorReplace={anchorReplace}
+          >
             <p>
               Personenbezogene Daten (nachfolgend zumeist nur „Daten“ genannt)
               werden von uns nur im Rahmen der Erforderlichkeit sowie zum Zwecke
@@ -74,9 +73,8 @@ export default function Imprint(): JSX.Element {
               <br />
               III. Informationen zur Datenverarbeitung
             </p>
-          </section>
-          <section className="mb-5">
-            <h2>I. Informationen über uns als Verantwortliche</h2>
+          </Section>
+          <Section md title="I. Informationen über uns als Verantwortliche">
             <p>
               Verantwortlicher Anbieter dieses Internetauftritts im
               datenschutzrechtlichen Sinne ist:
@@ -88,15 +86,11 @@ export default function Imprint(): JSX.Element {
             </ul>
             <ul className="list-unstyled">
               <li>
-                E-Mail:{' '}
-                <a href={MAILTO_DANIEL_BEDRICH}>
-                  {MAILTO_DANIEL_BEDRICH.replace('mailto:', '')}
-                </a>
+                E-Mail: <Email />
               </li>
             </ul>
-          </section>
-          <section className="mb-5">
-            <h2>II. Rechte der Nutzer und Betroffenen</h2>
+          </Section>
+          <Section md title="II. Rechte der Nutzer und Betroffenen">
             <p>
               Mit Blick auf die nachfolgend noch näher beschriebene
               Datenverarbeitung haben die Nutzer und Betroffenen das Recht
@@ -150,9 +144,12 @@ export default function Imprint(): JSX.Element {
                 Zwecke der Direktwerbung statthaft.
               </b>
             </p>
-          </section>
-          <section className="mb-5">
-            <h2>III. Informationen zur Datenverarbeitung</h2>
+          </Section>
+          <Section
+            md
+            title="III. Informationen zur Datenverarbeitung"
+            bottomPadding
+          >
             <p>
               Ihre bei Nutzung unseres Internetauftritts verarbeiteten Daten
               werden gelöscht oder gesperrt, sobald der Zweck der Speicherung
@@ -161,15 +158,13 @@ export default function Imprint(): JSX.Element {
               anderslautenden Angaben zu einzelnen Verarbeitungsverfahren
               gemacht werden.
             </p>
-            <section className="mb-5">
-              <h2>Cookies</h2>
+            <Section sm title="Cookies">
               <p>
                 Wir verwenden mit unserem Internetauftritt <u>keine</u> sog.
                 Cookies.
               </p>
-            </section>
-            <section className="mb-5">
-              <h2>Kontaktanfragen / Kontaktmöglichkeit</h2>
+            </Section>
+            <Section sm title="Kontaktanfragen / Kontaktmöglichkeit">
               <p>
                 Sofern Sie per Kontaktformular oder E-Mail mit uns in Kontakt
                 treten, werden die dabei von Ihnen angegebenen Daten zur
@@ -188,8 +183,8 @@ export default function Imprint(): JSX.Element {
                 Aufbewahrungspflichten entgegenstehen, wie bspw. bei einer sich
                 etwaig anschließenden Vertragsabwicklung.
               </p>
-            </section>
-          </section>
+            </Section>
+          </Section>
         </Col>
       </Row>
     </Container>

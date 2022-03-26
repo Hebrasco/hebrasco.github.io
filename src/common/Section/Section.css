@@ -1,0 +1,47 @@
+.section > h1 {
+  letter-spacing: var(--letterSpacingLg);
+  font-size: 2.5rem;
+}
+
+.section-xs > h1 {
+  font-size: 1rem;
+}
+
+.section-sm > h1 {
+  font-size: 1.5rem;
+}
+
+.section-md > h1 {
+  font-size: 2rem;
+}
+
+.section-lg > h1 {
+  font-size: 2.5rem;
+}
+
+.section-xl > h1 {
+  font-size: 3rem;
+}
+
+.section-xs {
+  padding: 1rem 0;
+}
+
+.section-sm {
+  padding: 2rem 0;
+}
+
+.section-md {
+  padding: 4rem 0;
+}
+
+.section-lg {
+  padding: 6rem 0;
+}
+
+.section-xl {
+  padding: 12rem 0;
+}
+.section-ignore-bottom {
+  padding-bottom: 0;
+}
