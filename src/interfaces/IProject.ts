@@ -1,4 +1,5 @@
 import ISkill from './ISkill'
+import PreviewImage from 'models/PreviewImageModel'
 
 export default interface IProject {
   name: string
@@ -8,6 +9,6 @@ export default interface IProject {
   frameworks: ISkill[]
   onlineURL?: string
   sourceURL?: string
-  preview?: Function
+  previewImages?: PreviewImage[]
   isComingSoon: boolean
 }

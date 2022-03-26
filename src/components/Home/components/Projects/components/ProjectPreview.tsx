@@ -19,7 +19,7 @@ export default function ProjectPreview({ project }: Props) {
             languages={project.languages}
             frameworks={project.frameworks}
           />
-          <ProjectImages previewRender={project.preview} mobileOnly />
+          <ProjectImages images={project.previewImages} mobileOnly />
           <p>{project.description}</p>
           <Responsibilities tasks={project.tasks} projectName={project.name} />
           <Actions
@@ -27,7 +27,7 @@ export default function ProjectPreview({ project }: Props) {
             sourceURL={project.sourceURL}
           />
         </Col>
-        <ProjectImages previewRender={project.preview} />
+        <ProjectImages images={project.previewImages} />
       </Row>
     </div>
   )
