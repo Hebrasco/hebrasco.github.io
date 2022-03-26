@@ -123,7 +123,7 @@ export default function Contact() {
                   Reset
                 </Button>
                 {isEmailSending && (
-                  <div className="d-flex flex-grow-1 justify-content-end align-items-center">
+                  <div className="ms-auto">
                     <div className="spinner-border" role="status"></div>
                   </div>
                 )}

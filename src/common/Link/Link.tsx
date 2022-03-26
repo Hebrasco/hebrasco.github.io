@@ -22,7 +22,7 @@ export default function Link({
       to={to}
       smooth
       className={`
-      ${conditionalStyle(navItem, 'nav-item nav-link')} 
+      ${conditionalStyle(navItem, 'nav-item nav-link', 'pe-3 py-2')} 
       ${conditionalStyle(button, 'btn')} 
       text-decoration-none ${className}`}
     >

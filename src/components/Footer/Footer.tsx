@@ -2,11 +2,15 @@ import React from 'react'
 import { ROUTES } from 'constants/Routes'
 import { Col, Container, Row } from 'react-bootstrap'
 import Link from 'common/Link/Link'
+import SocialLinks from 'common/SocialLinks/SocialLinks'
+import { conditionalStyle } from 'utils/helpers'
+import { useWindowSize } from 'utils/hooks'
 
 import './Footer.css'
-import SocialLinks from 'common/SocialLinks/SocialLinks'
 
 export default function Footer(): JSX.Element {
+  const { isXs, isSm } = useWindowSize()
+
   function getCurrentYear() {
     return new Date().getFullYear()
   }
@@ -16,20 +20,20 @@ export default function Footer(): JSX.Element {
       <footer className="py-3">
         <Row>
           <Col>
-            <p className="nav-link align-items-center m-0">
+            <p className="align-items-center m-0 py-2">
               Copyright © {getCurrentYear()} Daniel Bedrich. All rights
               reserved.
             </p>
           </Col>
           <Col xs="12" md="auto">
             <div className="d-flex">
-              <Link to={ROUTES.imprintHash} label="Imprint" navItem />
+              <Link to={ROUTES.imprintHash} label="Imprint" />
               <Link
                 to={ROUTES.privacyPolicyHash}
                 label="Privacy Policy"
-                navItem
+                className={`${conditionalStyle(isXs || isSm, 'me-auto')}`}
               />
-              <SocialLinks />
+              <SocialLinks useIcons />
             </div>
           </Col>
         </Row>

@@ -8,32 +8,40 @@ import { conditionalStyle } from 'utils/helpers'
 
 interface Props {
   navItem?: boolean
+  useIcons?: boolean
 }
 
-export default function SocialLinks({ navItem = false }: Props): JSX.Element {
+export default function SocialLinks({
+  navItem = false,
+  useIcons = false,
+}: Props): JSX.Element {
   return (
     <>
       <ExternalLink
         to={APPSTORE_PROFILE_URL}
         className={`d-md-flex align-items-center ${conditionalStyle(
           !navItem,
-          'p-2'
+          'py-2 pe-3'
         )}`}
-        fullWidth={false}
+        fullWidth={!useIcons}
         navItem={navItem}
       >
-        <Image src={appStoreLogo} fluid />
+        {useIcons ? <Image src={appStoreLogo} fluid /> : 'AppStore'}
       </ExternalLink>
       <ExternalLink
         to={GITHUB_PROFILE_URL}
         className={`d-md-flex align-items-center ml-md-2 ${conditionalStyle(
           !navItem,
-          'p-2'
+          'py-2 pe-3'
         )}`}
-        fullWidth={false}
+        fullWidth={!useIcons}
         navItem={navItem}
       >
-        <Image src={gitHubLogo} fluid className="invertedColor" />
+        {useIcons ? (
+          <Image src={gitHubLogo} fluid className="invertedColor" />
+        ) : (
+          'GitHub'
+        )}
       </ExternalLink>
     </>
   )
