@@ -26,7 +26,7 @@ export default function AboutMe(): JSX.Element {
           className={`${baseStyle}
           ${conditionalStyle(isXs, `${baseStyle}-xs`)}
           ${conditionalStyle(isSm, `${baseStyle}-sm`)}
-          fs-5`}
+          `}
         >
           I have been working in Front-End and Mobile development since 2015 and
           have already implemented various projects for web, Android and iOS in
