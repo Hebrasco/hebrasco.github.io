@@ -26,6 +26,7 @@ export const SKILLS_FRAMEWORKS: Framework[] = [
 
 export const SKILLS_APPLICATIONS: Application[] = [
   APPLICATIONS.xcode,
+  APPLICATIONS.git,
   APPLICATIONS.gitTower,
   APPLICATIONS.gitHub,
   APPLICATIONS.vsCode,
