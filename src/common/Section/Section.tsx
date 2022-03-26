@@ -1,7 +1,7 @@
+import './Section.css'
+
 import React, { ReactElement } from 'react'
 import { conditionalStyle } from 'utils/helpers'
-
-import './Section.css'
 
 interface Props {
   children: ReactElement | ReactElement[]
@@ -31,13 +31,13 @@ export default function Section({
   return (
     <div
       className={`section
-    ${conditionalStyle(xs, 'section-xs')}
-    ${conditionalStyle(sm, 'section-sm')}
-    ${conditionalStyle(md, 'section-md')}
-    ${conditionalStyle(lg, 'section-lg')}
-    ${conditionalStyle(xl, 'section-xl')}
-    ${conditionalStyle(!bottomPadding, 'section-ignore-bottom')}
-    `}
+        ${conditionalStyle(xs, 'section-xs')}
+        ${conditionalStyle(sm, 'section-sm')}
+        ${conditionalStyle(md, 'section-md')}
+        ${conditionalStyle(lg, 'section-lg')}
+        ${conditionalStyle(xl, 'section-xl')}
+        ${conditionalStyle(!bottomPadding, 'section-ignore-bottom')}
+      `}
     >
       {anchor && (
         <div id={anchor.replace(anchorReplace, '')} className="anchor"></div>

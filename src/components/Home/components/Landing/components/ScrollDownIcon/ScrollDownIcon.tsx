@@ -1,6 +1,6 @@
-import React from 'react'
-
 import './ScrollDownIcon.css'
+
+import React from 'react'
 
 export default function ScrollDownIcon() {
   return (

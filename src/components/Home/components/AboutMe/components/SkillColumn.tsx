@@ -1,15 +1,15 @@
+import './SkillColumn.css'
+
 import ISkill from 'interfaces/ISkill'
 import React from 'react'
 import { Col } from 'react-bootstrap'
-
-import './SkillColumn.css'
 
 interface Props {
   title: string
   data: ISkill[]
 }
 
-export default function SkillColumn({ title, data }: Props) {
+export default function SkillColumn({ title, data }: Props): JSX.Element {
   return (
     <Col
       xs={12}

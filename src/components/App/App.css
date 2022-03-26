@@ -32,6 +32,8 @@
   --letterSpacingLg: 4px;
 
   --borderRadius: 1rem;
+
+  --landingBackgroundImage: url('../../assets/images/me_light.jpeg');
 }
 
 body {
@@ -57,16 +59,6 @@ a {
   color: var(--primaryTextColor) !important;
 }
 
-.navbar-spacer {
-  margin-top: var(--navbarHeight);
-}
-
-.anchor {
-  position: relative;
-  top: -75px;
-  left: 0;
-}
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
@@ -85,4 +77,14 @@ textarea::-webkit-resizer {
   border-width: 1rem 0 0 1rem;
   border-top-left-radius: 0.5rem;
   border-bottom-right-radius: 1rem;
+}
+
+.navbar-spacer {
+  margin-top: var(--navbarHeight);
+}
+
+.anchor {
+  position: relative;
+  top: -75px;
+  left: 0;
 }

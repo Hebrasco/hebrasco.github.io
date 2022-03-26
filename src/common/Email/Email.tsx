@@ -1,5 +1,5 @@
 import React from 'react'
-import { MAILTO_DANIEL_BEDRICH } from 'constants/Config'
+import { MAILTO_DANIEL_BEDRICH } from 'constants/config'
 
 export default function Email() {
   return (

@@ -1,5 +1,6 @@
 import IProject from 'interfaces/IProject'
 import ISkill from 'interfaces/ISkill'
+import PreviewImage from './PreviewImageModel'
 
 export default class ProjectModel implements IProject {
   name: string
@@ -9,7 +10,7 @@ export default class ProjectModel implements IProject {
   frameworks: ISkill[]
   onlineURL?: string
   sourceURL?: string
-  preview?: Function
+  previewImages?: PreviewImage[]
   isComingSoon: boolean
 
   constructor(
@@ -20,7 +21,7 @@ export default class ProjectModel implements IProject {
     frameworks: ISkill[],
     onlineURL?: string,
     sourceURL?: string,
-    preview?: Function,
+    previewImages?: PreviewImage[],
     isComingSoon: boolean = false
   ) {
     this.name = name
@@ -30,7 +31,7 @@ export default class ProjectModel implements IProject {
     this.frameworks = frameworks
     this.onlineURL = onlineURL
     this.sourceURL = sourceURL
-    this.preview = preview
+    this.previewImages = previewImages
     this.isComingSoon = isComingSoon
   }
 }
