@@ -21,6 +21,7 @@ export default function App() {
         <Routes>
           <Route path={ROUTES.home} element={<Home />} />
           <Route path={ROUTES.imprint} element={<Imprint />} />
+          <Route path="*" element={<Home />} />
         </Routes>
         <Footer />
       </Router>
