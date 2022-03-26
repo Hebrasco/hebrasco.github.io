@@ -13,7 +13,6 @@ export default function Landing(): JSX.Element {
     <div className="landing-container">
       <Title isXs={isXs} />
       <Image isXs={isXs} isSm={isSm} />
-
       <ScrollDownIcon />
     </div>
   )

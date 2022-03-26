@@ -62,17 +62,19 @@ export default function Contact() {
 
   return (
     <Container>
-      <Section lg title="Let's talk" bottomPadding anchor={ROUTES.contact}>
-        <p className="m-0">New projects, freelance inquiry or even a coffee.</p>
-        <Form
-          noValidate
-          validated={validated}
-          onSubmit={handleFormSubmit}
-          onReset={handleFormReset}
-          className="my-5"
-        >
-          <Row>
-            <Col xs={12} md={6}>
+      <Row>
+        <Section lg title="Let's talk" bottomPadding anchor={ROUTES.contact}>
+          <p className="m-0">
+            New projects, freelance inquiry or even a coffee.
+          </p>
+          <Col xs={12} md={6}>
+            <Form
+              noValidate
+              validated={validated}
+              onSubmit={handleFormSubmit}
+              onReset={handleFormReset}
+              className="my-5"
+            >
               <Row>
                 <FormName />
                 <FormEmail />
@@ -80,16 +82,14 @@ export default function Contact() {
                 <FormMessage />
                 <FormActions showSpinner={isEmailSending} />
               </Row>
-            </Col>
-          </Row>
-        </Form>
-        <Row>
+            </Form>
+          </Col>
           <Col>
             <p className="mb-0">Email me</p>
             <Email />
           </Col>
-        </Row>
-      </Section>
+        </Section>
+      </Row>
       <EmailSuccessToast
         show={showEmailSuccessToast}
         isSuccessful={isEmailSuccess}
