@@ -13,7 +13,7 @@ export const PROJECTS: Project[] = [
     [
       'Conception and development',
       'User interface development',
-      'Persisting data with CoreData',
+      'Persisting data with Core Data',
       'Synchronizing data with iCloud',
     ],
     [LANGUAGES.swift],
@@ -79,7 +79,7 @@ export const PROJECTS: Project[] = [
       'Conception and development',
       'User interface development',
       'Parsing a JSON file',
-      'Persisting data with CoreData',
+      'Persisting data with Core Data',
     ],
     [LANGUAGES.swift, LANGUAGES.json],
     [FRAMEWORKS.apple.ios, FRAMEWORKS.apple.swiftUI, FRAMEWORKS.apple.coreData],

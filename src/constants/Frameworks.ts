@@ -12,7 +12,7 @@ export const FRAMEWORKS = {
     metal: new Framework('Metal'),
     coreImage: new Framework('Core Image'),
     macOS: new Framework('macOS'),
-    cloudKit: new Framework('CloutKit'),
+    cloudKit: new Framework('CloudKit'),
   },
 
   crossPlatform: {
