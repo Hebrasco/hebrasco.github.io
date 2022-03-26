@@ -1,32 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.14f83b74.chunk.css",
-    "main.js": "/static/js/main.ba896ca8.chunk.js",
-    "main.js.map": "/static/js/main.ba896ca8.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.7e16fad1.js",
-    "runtime-main.js.map": "/static/js/runtime-main.7e16fad1.js.map",
-    "static/css/2.3661fc73.chunk.css": "/static/css/2.3661fc73.chunk.css",
-    "static/js/2.4ea52af5.chunk.js": "/static/js/2.4ea52af5.chunk.js",
-    "static/js/2.4ea52af5.chunk.js.map": "/static/js/2.4ea52af5.chunk.js.map",
+    "main.css": "/static/css/main.c6a5c5b1.css",
+    "main.js": "/static/js/main.75621256.js",
+    "static/media/me_dark.jpeg": "/static/media/me_dark.e1fba58d8dd25e60c447.jpeg",
+    "static/media/me_light.jpeg": "/static/media/me_light.0ea97c96191341ca6961.jpeg",
+    "static/media/ipad_dark.png": "/static/media/ipad_dark.aa2a3e8929f9b4a0c5dc.png",
+    "static/media/ipad_light.png": "/static/media/ipad_light.a49471c2c842b8869d30.png",
+    "static/media/iphone_dark.png": "/static/media/iphone_dark.140df54a99ff60b583c1.png",
+    "static/media/iphone_light.png": "/static/media/iphone_light.38d1bbf5ed2199ed7f64.png",
+    "static/media/app_store.png": "/static/media/app_store.ef8c3ce984b6aaad35b6.png",
+    "static/media/ipad.png": "/static/media/ipad.a85afec1ce1dabb0b14e.png",
+    "static/media/iphoneSE_widgets_dark.png": "/static/media/iphoneSE_widgets_dark.38636cc0d275efb2dd6b.png",
+    "static/media/iphoneSE_widgets_light.png": "/static/media/iphoneSE_widgets_light.d9d8ea12265e2dfa4a65.png",
+    "static/media/macbook_dark.png": "/static/media/macbook_dark.fae19e9a9d8332ed215e.png",
+    "static/media/iphone.png": "/static/media/iphone.9e0c1135ca0a122968c5.png",
+    "static/media/macbook_light.png": "/static/media/macbook_light.4f45dbc849ef72252c22.png",
+    "static/media/iphoneSE.png": "/static/media/iphoneSE.f440f7b419c5279a780e.png",
+    "static/media/iphoneSE_universal.png": "/static/media/iphoneSE_universal.12c234f9eb2de63d8378.png",
     "index.html": "/index.html",
-    "precache-manifest.14c098eda2568cb96529a70e2bfe54af.js": "/precache-manifest.14c098eda2568cb96529a70e2bfe54af.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.3661fc73.chunk.css.map": "/static/css/2.3661fc73.chunk.css.map",
-    "static/css/main.14f83b74.chunk.css.map": "/static/css/main.14f83b74.chunk.css.map",
-    "static/js/2.4ea52af5.chunk.js.LICENSE.txt": "/static/js/2.4ea52af5.chunk.js.LICENSE.txt",
-    "static/media/app_store.png": "/static/media/app_store.f011c90d.png",
-    "static/media/blank_icon.svg": "/static/media/blank_icon.9fa7f364.svg",
-    "static/media/logo.png": "/static/media/logo.c0198a1e.png",
-    "static/media/natrium_wallet.png": "/static/media/natrium_wallet.b6a3552b.png",
-    "static/media/relictus.png": "/static/media/relictus.9938d884.png",
-    "static/media/winzerliebe.png": "/static/media/winzerliebe.8afff557.png",
-    "static/media/wordpress.png": "/static/media/wordpress.8eaa56e6.png"
+    "main.c6a5c5b1.css.map": "/static/css/main.c6a5c5b1.css.map",
+    "main.75621256.js.map": "/static/js/main.75621256.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.7e16fad1.js",
-    "static/css/2.3661fc73.chunk.css",
-    "static/js/2.4ea52af5.chunk.js",
-    "static/css/main.14f83b74.chunk.css",
-    "static/js/main.ba896ca8.chunk.js"
+    "static/css/main.c6a5c5b1.css",
+    "static/js/main.75621256.js"
   ]
 }
