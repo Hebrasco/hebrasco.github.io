@@ -1,5 +1,5 @@
 .landing-image {
-  background-image: url('../../../../../../assets/images/me_light.jpeg');
+  background-image: var(--landingBackgroundImage);
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
@@ -16,10 +16,4 @@
 
 .landing-image-sm {
   left: 40%;
-}
-
-@media (prefers-color-scheme: dark) {
-  .landing-image {
-    background-image: url('../../../../../../assets/images/me_dark.jpeg');
-  }
 }

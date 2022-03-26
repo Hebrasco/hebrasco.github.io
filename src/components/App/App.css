@@ -32,6 +32,8 @@
   --letterSpacingLg: 4px;
 
   --borderRadius: 1rem;
+
+  --landingBackgroundImage: url('../../assets/images/me_light.jpeg');
 }
 
 body {

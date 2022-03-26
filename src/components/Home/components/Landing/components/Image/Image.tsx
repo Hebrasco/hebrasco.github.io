@@ -1,7 +1,7 @@
+import './Image.css'
+
 import React from 'react'
 import { conditionalStyle } from 'utils/helpers'
-
-import './Image.css'
 
 interface ImageProps {
   isXs: boolean
