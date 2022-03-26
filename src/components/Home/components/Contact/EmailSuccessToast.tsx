@@ -14,7 +14,7 @@ export default function EmailSuccessToast({
   isSuccessful,
 }: Props): JSX.Element {
   const emailSuccessMessage =
-    "Thank you for contacting me. I'll respond to your massage soon."
+    "Thank you for contacting me. I'll respond to your message soon."
   const emailErrorMessage =
     'Something went wrong. Please try again later. Alternative, you can send me an email.'
 
