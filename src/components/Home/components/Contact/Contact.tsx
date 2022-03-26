@@ -14,6 +14,7 @@ import {
 } from 'react-bootstrap'
 import { ROUTES } from 'constants/routes'
 import emailjs from '@emailjs/browser'
+import { PORTFOLIO_NAME } from 'constants/config'
 
 export default function Contact() {
   const [validated, setValidated] = useState<boolean>(false)
@@ -147,7 +148,7 @@ export default function Contact() {
         >
           <Toast.Header>
             <Image src="/favicon.ico" className="rounded me-2" />
-            <strong className="me-auto">Daniel Bedrich</strong>
+            <strong className="me-auto">{PORTFOLIO_NAME}</strong>
           </Toast.Header>
           <Toast.Body>
             {isEmailSuccess ? emailSuccessMessage : emailErrorMessage}

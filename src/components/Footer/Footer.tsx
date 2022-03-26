@@ -5,8 +5,7 @@ import Link from 'common/Link/Link'
 import SocialLinks from 'common/SocialLinks/SocialLinks'
 import { conditionalStyle } from 'utils/helpers'
 import { useWindowSize } from 'utils/hooks'
-
-import './Footer.css'
+import { PORTFOLIO_NAME } from 'constants/config'
 
 export default function Footer(): JSX.Element {
   const { isXs, isSm } = useWindowSize()
@@ -21,7 +20,7 @@ export default function Footer(): JSX.Element {
         <Row>
           <Col>
             <p className="align-items-center m-0 py-2">
-              Copyright © {getCurrentYear()} Daniel Bedrich. All rights
+              Copyright © {getCurrentYear()} {PORTFOLIO_NAME}. All rights
               reserved.
             </p>
           </Col>

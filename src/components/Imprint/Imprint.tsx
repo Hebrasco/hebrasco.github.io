@@ -3,6 +3,7 @@ import { ROUTES } from 'constants/routes'
 import { Col, Container, Row } from 'react-bootstrap'
 import Email from 'common/Email/Email'
 import Section from 'common/Section/Section'
+import SiteOwnerInfo from './components/SiteOwnerInfo/SiteOwnerInfo'
 
 export default function Imprint(): JSX.Element {
   const anchorReplace = '/imprint#'
@@ -18,17 +19,7 @@ export default function Imprint(): JSX.Element {
             anchorReplace={anchorReplace}
           >
             <b>Inhaber der Seite</b>
-            <ul className="list-unstyled">
-              <li>Daniel Bedrich</li>
-              <li>Schlesienstraße 2</li>
-              <li>65597 Hünfelden</li>
-            </ul>
-            <b>Kontakt</b>
-            <ul className="list-unstyled">
-              <li>
-                <Email />
-              </li>
-            </ul>
+            <SiteOwnerInfo />
           </Section>
           <Section
             lg
@@ -79,16 +70,7 @@ export default function Imprint(): JSX.Element {
               Verantwortlicher Anbieter dieses Internetauftritts im
               datenschutzrechtlichen Sinne ist:
             </p>
-            <ul className="list-unstyled">
-              <li>Daniel Bedrich</li>
-              <li>Schlesienstraße 2</li>
-              <li>65597 Hünfelden</li>
-            </ul>
-            <ul className="list-unstyled">
-              <li>
-                E-Mail: <Email />
-              </li>
-            </ul>
+            <SiteOwnerInfo />
           </Section>
           <Section md title="II. Rechte der Nutzer und Betroffenen">
             <p>
