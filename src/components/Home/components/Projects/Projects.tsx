@@ -3,7 +3,7 @@ import { PROJECTS } from 'constants/projects'
 import { Container, Stack } from 'react-bootstrap'
 import Section from 'common/Section/Section'
 import { ROUTES } from 'constants/routes'
-import ProjectPreview from './components/ProjectPreview/ProjectPreview'
+import ProjectPreview from './components/ProjectPreview'
 
 export default function Projects(): JSX.Element {
   return (

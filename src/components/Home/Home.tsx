@@ -4,7 +4,7 @@ import Contact from './components/Contact/Contact'
 import Landing from './components/Landing/Landing'
 import Projects from './components/Projects/Projects'
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
       <Landing />
