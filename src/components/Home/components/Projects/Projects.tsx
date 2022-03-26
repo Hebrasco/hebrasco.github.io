@@ -8,8 +8,8 @@ import ProjectPreview from './components/ProjectPreview'
 export default function Projects(): JSX.Element {
   return (
     <Container className="mt-5 navbar-spacer">
-      <Row>
-        <Section lg title="Projects" anchor={ROUTES.projects}>
+      <Section lg title="Projects" anchor={ROUTES.projects}>
+        <Row>
           <Stack gap={5}>
             {PROJECTS.map((project) => (
               <ProjectPreview
@@ -18,8 +18,8 @@ export default function Projects(): JSX.Element {
               />
             ))}
           </Stack>
-        </Section>
-      </Row>
+        </Row>
+      </Section>
     </Container>
   )
 }

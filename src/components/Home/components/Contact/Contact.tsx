@@ -62,34 +62,30 @@ export default function Contact() {
 
   return (
     <Container>
-      <Row>
-        <Section lg title="Let's talk" bottomPadding anchor={ROUTES.contact}>
-          <p className="m-0">
-            New projects, freelance inquiry or even a coffee.
-          </p>
-          <Col xs={12} md={6}>
-            <Form
-              noValidate
-              validated={validated}
-              onSubmit={handleFormSubmit}
-              onReset={handleFormReset}
-              className="my-5"
-            >
-              <Row>
-                <FormName />
-                <FormEmail />
-                <FormSubject />
-                <FormMessage />
-                <FormActions showSpinner={isEmailSending} />
-              </Row>
-            </Form>
-          </Col>
-          <Col>
-            <p className="mb-0">Email me</p>
-            <Email />
-          </Col>
-        </Section>
-      </Row>
+      <Section lg title="Let's talk" bottomPadding anchor={ROUTES.contact}>
+        <p className="m-0">New projects, freelance inquiry or even a coffee.</p>
+        <Col xs={12} md={6}>
+          <Form
+            noValidate
+            validated={validated}
+            onSubmit={handleFormSubmit}
+            onReset={handleFormReset}
+            className="my-5"
+          >
+            <Row>
+              <FormName />
+              <FormEmail />
+              <FormSubject />
+              <FormMessage />
+              <FormActions showSpinner={isEmailSending} />
+            </Row>
+          </Form>
+        </Col>
+        <Col>
+          <p className="mb-0">Email me</p>
+          <Email />
+        </Col>
+      </Section>
       <EmailSuccessToast
         show={showEmailSuccessToast}
         isSuccessful={isEmailSuccess}
