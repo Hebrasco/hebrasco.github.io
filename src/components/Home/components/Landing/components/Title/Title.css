@@ -26,4 +26,6 @@
   font-size: var(--subTitleFontSize);
   margin: 0;
   line-height: 5vmin;
+  margin-left: 1.25%;
+  width: max-content;
 }
