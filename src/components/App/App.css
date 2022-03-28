@@ -21,8 +21,8 @@
   --primaryHoverColor: var(--secondaryTextColor);
   --secondaryHoverColor: var(--primaryTextColor);
 
-  --titleFontSize: 10vmin;
-  --subTitleFontSize: 4vmin;
+  --titleFontSize: max(3.5rem, 10vmin);
+  --subTitleFontSize: max(1.5rem, 4vmin);
   --headingFontSize: 3vmin;
 
   --projectImageSize: 4rem;

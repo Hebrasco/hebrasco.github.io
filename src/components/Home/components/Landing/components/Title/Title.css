@@ -18,14 +18,14 @@
   letter-spacing: var(--letterSpacingLg);
   font-size: var(--titleFontSize);
   margin: 0;
-  line-height: 9vmin;
+  line-height: max(3rem, 9vmin);
 }
 
 .landing-title > p {
   letter-spacing: var(--letterSpacingSm);
   font-size: var(--subTitleFontSize);
   margin: 0;
-  line-height: 5vmin;
   margin-left: 1.25%;
+  line-height: max(2rem, 5vmin);
   width: max-content;
 }
