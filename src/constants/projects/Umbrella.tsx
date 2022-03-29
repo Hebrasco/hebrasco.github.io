@@ -11,7 +11,7 @@ import MacbookImageDark from 'assets/images/previews/umbrella/macbook_dark.png'
 
 export default new Project(
   'Umbrella',
-  'This app is an task management tool. You can create and manage tasks of different projects. Tasks are managed in you self managed boards, sprints and milestones. A label, due date, milestone, estimated and actual time, priority and more can be added to a task.',
+  'This app is an task management tool. You can create and manage tasks of different projects. Tasks are managed in your self managed boards, sprints and milestones. A label, due date, milestone, estimated and actual time, priority and more can be added to a task.',
   [
     'Conception and development',
     'User interface development',

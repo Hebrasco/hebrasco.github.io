@@ -10,7 +10,7 @@ import IphoneSEImage from 'assets/images/previews/insters/iphoneSE_universal.png
 
 export default new Project(
   'Insters',
-  'Insters is a photo filer app. You can import images from you photo library and choose from a variety of color filters to apply to you image. If applied one of the filters, you can export the photo back to your library.',
+  'Insters is a photo filter app. You can import photos from your photo library and choose from a variety of color filters to apply to your photo. If one of the filters is applied, you can export the photo back to your library.',
   [
     'Conception and development',
     'User interface development',
