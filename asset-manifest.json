@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a70ad853.css",
-    "main.js": "/static/js/main.a47367df.js",
+    "main.js": "/static/js/main.7b00772a.js",
     "static/media/me_dark.jpeg": "/static/media/me_dark.e71e03a5a41578c5d4f3.jpeg",
     "static/media/me_light.jpeg": "/static/media/me_light.68ebd991e2ba6392eeef.jpeg",
     "static/media/ipad_dark.png": "/static/media/ipad_dark.06c436965da450e75333.png",
@@ -11,17 +11,17 @@
     "static/media/macbook_dark.png": "/static/media/macbook_dark.2042a96e0b212a1c4c9e.png",
     "static/media/macbook_light.png": "/static/media/macbook_light.39e268cfc1565d675a64.png",
     "static/media/ipad.png": "/static/media/ipad.ef13133487eca25222e4.png",
+    "static/media/iphoneSE_universal.png": "/static/media/iphoneSE_universal.5198924398b3c0b528fd.png",
     "static/media/iphone.png": "/static/media/iphone.2b14aee3bcd7d1d59a1e.png",
-    "static/media/iphoneSE_universal.png": "/static/media/iphoneSE_universal.fde6e6f899cdc19d484d.png",
     "static/media/iphoneSE_widgets_dark.png": "/static/media/iphoneSE_widgets_dark.eb8bf9c2507a4dfa3d2f.png",
     "static/media/iphoneSE_widgets_light.png": "/static/media/iphoneSE_widgets_light.d50ed3d3e9df1b071396.png",
     "static/media/iphoneSE.png": "/static/media/iphoneSE.71881b12daf92c3ee996.png",
     "index.html": "/index.html",
     "main.a70ad853.css.map": "/static/css/main.a70ad853.css.map",
-    "main.a47367df.js.map": "/static/js/main.a47367df.js.map"
+    "main.7b00772a.js.map": "/static/js/main.7b00772a.js.map"
   },
   "entrypoints": [
     "static/css/main.a70ad853.css",
-    "static/js/main.a47367df.js"
+    "static/js/main.7b00772a.js"
   ]
 }
