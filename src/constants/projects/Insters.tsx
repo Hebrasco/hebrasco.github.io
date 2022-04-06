@@ -24,7 +24,7 @@ export default new Project(
     FRAMEWORKS.apple.storeKit,
     FRAMEWORKS.apple.coreImage,
   ],
-  undefined,
+  'https://apps.apple.com/app/insters/id1561338805',
   undefined,
   [
     new PreviewImage('preview-insters-iphoneSE', IphoneSEImage, IphoneSEImage),
@@ -34,6 +34,5 @@ export default new Project(
       IphoneImageLight
     ),
     new PreviewImage('preview-insters-ipad', IpadImageLight, IpadImageDark),
-  ],
-  true
+  ]
 )
