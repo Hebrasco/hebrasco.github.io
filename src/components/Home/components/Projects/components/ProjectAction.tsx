@@ -1,4 +1,4 @@
-import ExternalLink from 'common/ExternalLink/ExternalLink'
+import ExternalLink from 'common/ExternalLink'
 import React from 'react'
 import { Button } from 'react-bootstrap'
 

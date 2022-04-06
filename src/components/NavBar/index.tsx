@@ -1,8 +1,8 @@
 import React from 'react'
 import { ROUTES } from 'constants/routes'
 import { Container, Nav, Navbar } from 'react-bootstrap'
-import Link from 'common/Link/Link'
-import SocialLinks from 'common/SocialLinks/SocialLinks'
+import Link from 'common/Link'
+import SocialLinks from 'common/SocialLinks'
 import { useWindowSize } from 'utils/hooks'
 import { PORTFOLIO_NAME } from 'constants/config'
 

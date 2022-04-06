@@ -1,5 +1,5 @@
 import React from 'react'
-import ExternalLink from 'common/ExternalLink/ExternalLink'
+import ExternalLink from 'common/ExternalLink'
 import { Image } from 'react-bootstrap'
 import { conditionalStyle } from 'utils/helpers'
 

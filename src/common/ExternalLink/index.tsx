@@ -1,4 +1,4 @@
-import './ExternalLink.css'
+import './styles.css'
 
 import React, { ReactElement } from 'react'
 import { conditionalStyle, renderChildren } from 'utils/helpers'

@@ -6,10 +6,10 @@ import {
 } from 'constants/skills'
 import { ROUTES } from 'constants/routes'
 import { Row, Col } from 'react-bootstrap'
-import Section from 'common/Section/Section'
-import SkillColumn from './components/SkillColumn'
-import ExternalLink from 'common/ExternalLink/ExternalLink'
-import Link from 'common/Link/Link'
+import Section from 'common/Section'
+import SkillColumn from './components'
+import ExternalLink from 'common/ExternalLink'
+import Link from 'common/Link'
 
 export function Skills(): JSX.Element {
   return (

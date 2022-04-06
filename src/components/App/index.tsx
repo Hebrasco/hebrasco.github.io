@@ -1,13 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
+import './styles.css'
 
 import React, { useEffect } from 'react'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import { ROUTES } from 'constants/routes'
-import NavBar from '../NavBar/NavBar'
-import Footer from '../Footer/Footer'
-import Home from 'components/Home/Home'
-import Imprint from 'components/Imprint/Imprint'
+import NavBar from '../NavBar'
+import Footer from '../Footer'
+import Home from 'components/Home'
+import Imprint from 'components/Imprint'
 import { init } from '@emailjs/browser'
 
 export default function App() {

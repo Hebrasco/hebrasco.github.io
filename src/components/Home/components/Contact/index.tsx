@@ -1,5 +1,5 @@
-import Email from 'common/Email/Email'
-import Section from 'common/Section/Section'
+import Email from 'common/Email'
+import Section from 'common/Section'
 import React, { FormEvent, useState } from 'react'
 import { Col, Container, Form, Row } from 'react-bootstrap'
 import { ROUTES } from 'constants/routes'

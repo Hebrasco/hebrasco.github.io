@@ -1,4 +1,4 @@
-import './Image.css'
+import './styles.css'
 
 import React from 'react'
 import { conditionalStyle } from 'utils/helpers'

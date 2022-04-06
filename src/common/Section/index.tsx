@@ -1,4 +1,4 @@
-import './Section.css'
+import './styles.css'
 
 import React, { ReactElement } from 'react'
 import { conditionalStyle } from 'utils/helpers'

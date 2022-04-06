@@ -1,7 +1,7 @@
 import React from 'react'
 import { PROJECTS } from 'constants/projects'
 import { Container, Row, Stack } from 'react-bootstrap'
-import Section from 'common/Section/Section'
+import Section from 'common/Section'
 import { ROUTES } from 'constants/routes'
 import ProjectPreview from './components/ProjectPreview'
 

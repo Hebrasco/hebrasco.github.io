@@ -1,4 +1,4 @@
-import './SkillColumn.css'
+import './styles.css'
 
 import ISkill from 'interfaces/ISkill'
 import React from 'react'

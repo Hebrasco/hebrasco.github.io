@@ -1,8 +1,8 @@
 import React from 'react'
 import { ROUTES } from 'constants/routes'
 import { Col, Container, Row } from 'react-bootstrap'
-import Section from 'common/Section/Section'
-import SiteOwnerInfo from './components/SiteOwnerInfo/SiteOwnerInfo'
+import Section from 'common/Section'
+import SiteOwnerInfo from './components/SiteOwnerInfo'
 
 export default function Imprint(): JSX.Element {
   const anchorReplace = '/imprint#'
