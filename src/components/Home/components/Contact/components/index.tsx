@@ -1,2 +1,1 @@
-export * from './Form'
-export { default as EmailSuccessToast } from './EmailSuccessToast'
+export { default as Form } from './Form'
