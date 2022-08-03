@@ -10,7 +10,7 @@ import { useColorScheme } from 'utils/hooks'
 import { COLOR_SCHEMES } from 'constants/constants'
 
 interface Props {
-  images: PreviewImage[]
+  images: readonly PreviewImage[]
 }
 
 export default function PreviewRenderer({ images }: Props): JSX.Element {

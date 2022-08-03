@@ -8,4 +8,4 @@ export const APPLICATIONS = {
   vsCode: new Application('VS Code'),
   vs: new Application('Visual Studio'),
   jira: new Application('Jira'),
-}
+} as const

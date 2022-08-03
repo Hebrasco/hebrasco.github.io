@@ -6,4 +6,4 @@ export const ROUTES = {
   imprint: '/imprint',
   imprintHash: '/imprint#imprint',
   privacyPolicyHash: '/imprint#privacy-policy',
-}
+} as const

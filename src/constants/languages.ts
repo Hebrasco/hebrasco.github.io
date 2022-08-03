@@ -9,4 +9,4 @@ export const LANGUAGES = {
   css: new Language('CSS'),
   json: new Language('JSON'),
   metal: new Language('MSL'),
-}
+} as const

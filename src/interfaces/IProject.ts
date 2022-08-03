@@ -4,11 +4,11 @@ import PreviewImage from 'models/PreviewImageModel'
 export default interface IProject {
   name: string
   description: string
-  tasks: string[]
-  languages: ISkill[]
-  frameworks: ISkill[]
+  tasks: readonly string[]
+  languages: readonly ISkill[]
+  frameworks: readonly ISkill[]
   onlineURL?: string
   sourceURL?: string
-  previewImages?: PreviewImage[]
+  previewImages?: readonly PreviewImage[]
   isComingSoon: boolean
 }

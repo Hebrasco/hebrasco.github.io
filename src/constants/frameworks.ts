@@ -27,4 +27,4 @@ export const FRAMEWORKS = {
     angular: new Framework('Angular'),
     materialUI: new Framework('MaterialUI'),
   },
-}
+} as const

@@ -6,7 +6,7 @@ import { Col } from 'react-bootstrap'
 
 interface Props {
   title: string
-  data: ISkill[]
+  data: readonly ISkill[]
 }
 
 export default function SkillColumn({ title, data }: Props): JSX.Element {

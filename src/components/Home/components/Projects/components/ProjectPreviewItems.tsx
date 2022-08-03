@@ -5,8 +5,8 @@ import Action from './ProjectAction'
 import Badge from './ProjectBadge'
 
 interface BadgesProps {
-  languages: Language[]
-  frameworks: Framework[]
+  languages: readonly Language[]
+  frameworks: readonly Framework[]
 }
 
 export function Badges({ languages, frameworks }: BadgesProps): JSX.Element {
@@ -30,7 +30,7 @@ export function Badges({ languages, frameworks }: BadgesProps): JSX.Element {
 
 interface ResponsibilitiesProps {
   projectName: string
-  tasks: string[]
+  tasks: readonly string[]
 }
 
 export function Responsibilities({

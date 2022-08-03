@@ -4,7 +4,7 @@ import { Col } from 'react-bootstrap'
 import PreviewRenderer from './Previews/PreviewRenderer'
 
 interface Props {
-  images?: PreviewImage[]
+  images?: readonly PreviewImage[]
   mobileOnly?: boolean
 }
 

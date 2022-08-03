@@ -5,12 +5,12 @@ import PreviewImage from './PreviewImageModel'
 export default class ProjectModel implements IProject {
   name: string
   description: string
-  tasks: string[]
-  languages: ISkill[]
-  frameworks: ISkill[]
+  tasks: readonly string[]
+  languages: readonly ISkill[]
+  frameworks: readonly ISkill[]
   onlineURL?: string
   sourceURL?: string
-  previewImages?: PreviewImage[]
+  previewImages?: readonly PreviewImage[]
   isComingSoon: boolean
 
   constructor(
