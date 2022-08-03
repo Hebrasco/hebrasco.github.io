@@ -1,7 +1,7 @@
 import React from 'react'
 import PreviewImage from 'models/PreviewImageModel'
 import { Col } from 'react-bootstrap'
-import PreviewRenderer from './Previews/PreviewRenderer'
+import PreviewRenderer from './PreviewRenderer'
 
 interface Props {
   images?: readonly PreviewImage[]

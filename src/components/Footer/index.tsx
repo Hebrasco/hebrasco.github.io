@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
-import { Copyright, Links } from './FooterItems'
+import { Copyright, Links } from './components'
 
 export default function Footer(): JSX.Element {
   return (

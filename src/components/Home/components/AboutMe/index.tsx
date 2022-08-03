@@ -1,8 +1,8 @@
 import React from 'react'
 import { ROUTES } from 'constants/routes'
 import { Container } from 'react-bootstrap'
-import Section from 'common/Section'
-import { AboutText, Actions, Skills } from './AboutMeItems'
+import { Section } from 'common'
+import { AboutText, Actions, Skills } from './components'
 
 export default function AboutMe(): JSX.Element {
   return (

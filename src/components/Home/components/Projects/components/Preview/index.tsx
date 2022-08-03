@@ -1,20 +1,20 @@
 import React from 'react'
 import ProjectModel from 'models/ProjectModel'
 import { Col, Row } from 'react-bootstrap'
-import ProjectImages from './ProjectImages'
-import { Badges, Responsibilities, Actions } from './ProjectPreviewItems'
+import ProjectImages from '../ProjectImages'
+import { Badges, Actions, ComingSoon, Responsibilities } from './components'
 
 interface Props {
   project: ProjectModel
 }
 
-export default function ProjectPreview({ project }: Props) {
+export default function Preview({ project }: Props) {
   return (
     <div className="p-5 bg-light rounded">
       <Row>
         <Col md={6}>
           <h3>{project.name}</h3>
-          {project.isComingSoon && <p className="text-muted">Coming Soon</p>}
+          <ComingSoon isComingSoon={project.isComingSoon} />
           <Badges
             languages={project.languages}
             frameworks={project.frameworks}

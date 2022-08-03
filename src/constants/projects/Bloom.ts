@@ -1,13 +1,8 @@
-import { LANGUAGES } from '../languages'
-import { FRAMEWORKS } from '../frameworks'
+import { LANGUAGES } from 'constants/profile/languages'
+import { FRAMEWORKS } from 'constants/profile/frameworks'
 import Project from 'models/ProjectModel'
 import PreviewImage from 'models/PreviewImageModel'
-import IpadImageLight from 'assets/images/previews/bloom/ipad_light.png'
-import IphoneImageLight from 'assets/images/previews/bloom/iphone_light.png'
-import IphoneSEImageLight from 'assets/images/previews/bloom/iphoneSE_widgets_light.png'
-import IpadImageDark from 'assets/images/previews/bloom/ipad_dark.png'
-import IphoneImageDark from 'assets/images/previews/bloom/iphone_dark.png'
-import IphoneSEImageDark from 'assets/images/previews/bloom/iphoneSE_widgets_dark.png'
+import { BloomPreviews } from 'assets/images/previews'
 
 export default new Project(
   'Bloom - Couples App',
@@ -32,10 +27,18 @@ export default new Project(
   [
     new PreviewImage(
       'preview-bloom-iphoneSE',
-      IphoneSEImageLight,
-      IphoneSEImageDark
+      BloomPreviews.iphoneSEImageLight,
+      BloomPreviews.iphoneSEImageDark
     ),
-    new PreviewImage('preview-bloom-iphone', IphoneImageDark, IphoneImageLight),
-    new PreviewImage('preview-bloom-ipad', IpadImageLight, IpadImageDark),
+    new PreviewImage(
+      'preview-bloom-iphone',
+      BloomPreviews.iphoneImageDark,
+      BloomPreviews.iphoneImageLight
+    ),
+    new PreviewImage(
+      'preview-bloom-ipad',
+      BloomPreviews.ipadImageLight,
+      BloomPreviews.ipadImageDark
+    ),
   ]
 )

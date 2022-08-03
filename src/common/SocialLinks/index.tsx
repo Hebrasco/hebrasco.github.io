@@ -1,7 +1,6 @@
 import React from 'react'
 import { APPSTORE_PROFILE_URL, GITHUB_PROFILE_URL } from 'constants/config'
-import gitHubLogo from 'assets/icons/github.png'
-import appStoreLogo from 'assets/icons/app_store.png'
+import { AppStoreIcon, GitHubIcon } from 'assets/icons'
 import SocialLink from './SocialLink'
 
 interface Props {
@@ -17,14 +16,14 @@ export default function SocialLinks({
     <>
       <SocialLink
         label="AppStore"
-        src={appStoreLogo}
+        src={AppStoreIcon}
         to={APPSTORE_PROFILE_URL}
         useIcon={useIcons}
         navItem={navItem}
       />
       <SocialLink
         label="GitHub"
-        src={gitHubLogo}
+        src={GitHubIcon}
         to={GITHUB_PROFILE_URL}
         useIcon={useIcons}
         navItem={navItem}

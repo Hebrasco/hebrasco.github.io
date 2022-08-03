@@ -3,11 +3,11 @@ import './styles/RecipesStyles.css'
 import './styles/InstersStyles.css'
 import './styles/UmbrellaStyles.css'
 
-import PreviewImage from 'models/PreviewImageModel'
 import React from 'react'
+import PreviewImage from 'models/PreviewImageModel'
 import { Image } from 'react-bootstrap'
 import { useColorScheme } from 'utils/hooks'
-import { COLOR_SCHEMES } from 'constants/constants'
+import { COLOR_SCHEMES } from 'constants/misc/colorSchemes'
 
 interface Props {
   images: readonly PreviewImage[]
@@ -24,6 +24,7 @@ export default function PreviewRenderer({ images }: Props): JSX.Element {
           key={id}
           src={isLightScheme ? sourceLight : sourceDark}
           className={`position-relative ${id}`}
+          loading="lazy"
         />
       ))}
     </div>

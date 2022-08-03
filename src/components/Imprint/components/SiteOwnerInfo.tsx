@@ -1,5 +1,5 @@
 import React from 'react'
-import Email from 'common/Email'
+import { Email } from 'common'
 import { CITY, PORTFOLIO_NAME, STREET, ZIP } from 'constants/config'
 
 export default function SiteOwnerInfo(): JSX.Element {

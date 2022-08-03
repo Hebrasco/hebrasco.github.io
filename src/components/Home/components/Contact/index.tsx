@@ -1,17 +1,15 @@
-import Email from 'common/Email'
-import Section from 'common/Section'
 import React, { FormEvent, useState } from 'react'
+import { Email, Section } from 'common'
 import { Col, Container, Form, Row } from 'react-bootstrap'
 import { ROUTES } from 'constants/routes'
 import emailjs from '@emailjs/browser'
-import EmailSuccessToast from './EmailSuccessToast'
 import {
-  FormName,
-  FormEmail,
-  FormSubject,
-  FormMessage,
-  FormActions,
-} from './FormItems'
+  Name,
+  Subject,
+  Message,
+  Actions,
+  EmailSuccessToast,
+} from './components'
 
 export default function Contact() {
   const [validated, setValidated] = useState<boolean>(false)
@@ -73,11 +71,11 @@ export default function Contact() {
             className="my-5"
           >
             <Row>
-              <FormName />
-              <FormEmail />
-              <FormSubject />
-              <FormMessage />
-              <FormActions showSpinner={isEmailSending} />
+              <Name />
+              <Email />
+              <Subject />
+              <Message />
+              <Actions showSpinner={isEmailSending} />
             </Row>
           </Form>
         </Col>

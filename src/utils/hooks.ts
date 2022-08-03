@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState, useEffect } from 'react'
-import { gridSizes } from 'constants/bootstrapGrid'
+import { gridSizes } from 'constants/misc/bootstrapGrid'
 import IWindowSize from 'interfaces/IWindowSize'
-import { COLOR_SCHEMES } from 'constants/constants'
+import { COLOR_SCHEMES } from 'constants/misc/colorSchemes'
 
 export function useWindowSize(): IWindowSize {
   const [size, setSize] = useState({ width: 0, height: 0 })

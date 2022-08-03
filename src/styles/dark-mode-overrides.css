@@ -18,7 +18,7 @@
     --primaryHoverColor: var(--secondaryTextColor);
     --secondaryHoverColor: var(--primaryTextColor);
 
-    --landingBackgroundImage: url('./assets/images/me_dark.jpeg');
+    --landingBackgroundImage: url('../assets/images/me_dark.jpeg');
   }
 
   img.invertedColor,

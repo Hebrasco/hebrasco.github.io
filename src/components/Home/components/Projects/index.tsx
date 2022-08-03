@@ -1,9 +1,9 @@
 import React from 'react'
-import { PROJECTS } from 'constants/projects'
+import { PROJECTS } from 'constants/profile/projects'
 import { Container, Row, Stack } from 'react-bootstrap'
-import Section from 'common/Section'
+import { Section } from 'common'
 import { ROUTES } from 'constants/routes'
-import ProjectPreview from './components/ProjectPreview'
+import { Preview } from './components'
 
 export default function Projects(): JSX.Element {
   return (
@@ -12,10 +12,7 @@ export default function Projects(): JSX.Element {
         <Row>
           <Stack gap={5}>
             {PROJECTS.map((project) => (
-              <ProjectPreview
-                project={project}
-                key={`project-${project.name}`}
-              />
+              <Preview project={project} key={`project-${project.name}`} />
             ))}
           </Stack>
         </Row>

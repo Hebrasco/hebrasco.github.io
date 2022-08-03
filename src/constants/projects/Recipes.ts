@@ -1,10 +1,8 @@
-import { LANGUAGES } from '../languages'
-import { FRAMEWORKS } from '../frameworks'
+import { LANGUAGES } from 'constants/profile/languages'
+import { FRAMEWORKS } from 'constants/profile/frameworks'
 import Project from 'models/ProjectModel'
 import PreviewImage from 'models/PreviewImageModel'
-import IpadImage from 'assets/images/previews/recipes/ipad.png'
-import IphoneImage from 'assets/images/previews/recipes/iphone.png'
-import IphoneSEImage from 'assets/images/previews/recipes/iphoneSE.png'
+import { RecipesPreviews } from 'assets/images/previews'
 
 export default new Project(
   'Recipes app',
@@ -20,8 +18,20 @@ export default new Project(
   undefined,
   'https://github.com/Hebrasco/recipe_app',
   [
-    new PreviewImage('preview-recipes-iphoneSE', IphoneSEImage, IphoneSEImage),
-    new PreviewImage('preview-recipes-iphone', IphoneImage, IphoneImage),
-    new PreviewImage('preview-recipes-ipad', IpadImage, IpadImage),
+    new PreviewImage(
+      'preview-recipes-iphoneSE',
+      RecipesPreviews.IphoneSEImage,
+      RecipesPreviews.IphoneSEImage
+    ),
+    new PreviewImage(
+      'preview-recipes-iphone',
+      RecipesPreviews.IphoneImage,
+      RecipesPreviews.IphoneImage
+    ),
+    new PreviewImage(
+      'preview-recipes-ipad',
+      RecipesPreviews.IpadImage,
+      RecipesPreviews.IpadImage
+    ),
   ]
 )

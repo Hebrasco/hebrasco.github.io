@@ -1,13 +1,8 @@
-import { LANGUAGES } from '../languages'
-import { FRAMEWORKS } from '../frameworks'
+import { LANGUAGES } from 'constants/profile/languages'
+import { FRAMEWORKS } from 'constants/profile/frameworks'
 import Project from 'models/ProjectModel'
 import PreviewImage from 'models/PreviewImageModel'
-import IpadImageLight from 'assets/images/previews/umbrella/ipad_light.png'
-import IphoneImageLight from 'assets/images/previews/umbrella/iphone_light.png'
-import MacbookImageLight from 'assets/images/previews/umbrella/macbook_light.png'
-import IpadImageDark from 'assets/images/previews/umbrella/ipad_dark.png'
-import IphoneImageDark from 'assets/images/previews/umbrella/iphone_dark.png'
-import MacbookImageDark from 'assets/images/previews/umbrella/macbook_dark.png'
+import { UmbrellaPreviews } from 'assets/images/previews'
 
 export default new Project(
   'Umbrella',
@@ -31,15 +26,19 @@ export default new Project(
   [
     new PreviewImage(
       'preview-umbrella-iphone',
-      IphoneImageDark,
-      IphoneImageLight
+      UmbrellaPreviews.iphoneImageDark,
+      UmbrellaPreviews.iphoneImageLight
     ),
     new PreviewImage(
       'preview-umbrella-macbook',
-      MacbookImageLight,
-      MacbookImageDark
+      UmbrellaPreviews.macbookImageLight,
+      UmbrellaPreviews.macbookImageDark
     ),
-    new PreviewImage('preview-umbrella-ipad', IpadImageLight, IpadImageDark),
+    new PreviewImage(
+      'preview-umbrella-ipad',
+      UmbrellaPreviews.ipadImageLight,
+      UmbrellaPreviews.ipadImageDark
+    ),
   ],
   true
 )

@@ -1,12 +1,8 @@
-import { LANGUAGES } from '../languages'
-import { FRAMEWORKS } from '../frameworks'
+import { LANGUAGES } from 'constants/profile/languages'
+import { FRAMEWORKS } from 'constants/profile/frameworks'
 import Project from 'models/ProjectModel'
 import PreviewImage from 'models/PreviewImageModel'
-import IpadImageLight from 'assets/images/previews/insters/ipad_light.png'
-import IphoneImageLight from 'assets/images/previews/insters/iphone_light.png'
-import IpadImageDark from 'assets/images/previews/insters/ipad_dark.png'
-import IphoneImageDark from 'assets/images/previews/insters/iphone_dark.png'
-import IphoneSEImage from 'assets/images/previews/insters/iphoneSE_universal.png'
+import { InstersPreviews } from 'assets/images/previews'
 
 export default new Project(
   'Insters',
@@ -27,12 +23,20 @@ export default new Project(
   'https://apps.apple.com/app/insters/id1561338805',
   undefined,
   [
-    new PreviewImage('preview-insters-iphoneSE', IphoneSEImage, IphoneSEImage),
+    new PreviewImage(
+      'preview-insters-iphoneSE',
+      InstersPreviews.iphoneSEImage,
+      InstersPreviews.iphoneSEImage
+    ),
     new PreviewImage(
       'preview-insters-iphone',
-      IphoneImageDark,
-      IphoneImageLight
+      InstersPreviews.iphoneImageDark,
+      InstersPreviews.iphoneImageLight
     ),
-    new PreviewImage('preview-insters-ipad', IpadImageLight, IpadImageDark),
+    new PreviewImage(
+      'preview-insters-ipad',
+      InstersPreviews.ipadImageLight,
+      InstersPreviews.ipadImageDark
+    ),
   ]
 )
