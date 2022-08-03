@@ -1,4 +1,4 @@
-import './styles.css'
+import styles from './index.module.css'
 
 import React from 'react'
 import { conditionalStyle } from 'utils/helpers'
@@ -13,10 +13,11 @@ export default function Image({ isXs = false, isSm = false }: ImageProps) {
 
   return (
     <div
-      className={`${baseStyle}
-        ${conditionalStyle(isXs, `${baseStyle}-xs`)}
-        ${conditionalStyle(isSm, `${baseStyle}-sm`)}
-        `}
+      className={`
+        ${styles[baseStyle]}
+        ${conditionalStyle(isXs, styles[`${baseStyle}-xs`])}
+        ${conditionalStyle(isSm, styles[`${baseStyle}-sm`])}
+      `}
     />
   )
 }

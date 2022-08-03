@@ -1,4 +1,4 @@
-import './styles.css'
+import styles from './index.module.css'
 
 import React, { ReactElement } from 'react'
 import { conditionalStyle } from 'utils/helpers'
@@ -33,12 +33,12 @@ export default function Section({
       {anchor && <div id={anchor.replace(anchorReplace, '')}></div>}
       <div
         className={`section
-        ${conditionalStyle(xs, 'section-xs')}
-        ${conditionalStyle(sm, 'section-sm')}
-        ${conditionalStyle(md, 'section-md')}
-        ${conditionalStyle(lg, 'section-lg')}
-        ${conditionalStyle(xl, 'section-xl')}
-        ${conditionalStyle(!bottomPadding, 'section-ignore-bottom')}
+        ${conditionalStyle(xs, styles['section-xs'])}
+        ${conditionalStyle(sm, styles['section-sm'])}
+        ${conditionalStyle(md, styles['section-md'])}
+        ${conditionalStyle(lg, styles['section-lg'])}
+        ${conditionalStyle(xl, styles['section-xl'])}
+        ${conditionalStyle(!bottomPadding, styles['section-ignore-bottom'])}
       `}
       >
         {title && <h1 className="mb-5 text-uppercase">{title}</h1>}

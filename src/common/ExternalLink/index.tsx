@@ -1,4 +1,4 @@
-import './styles.css'
+import styles from './index.module.css'
 
 import React, { ReactElement } from 'react'
 import { conditionalStyle, renderChildren } from 'utils/helpers'
@@ -27,7 +27,7 @@ export default function ExternalLink({
       rel="noopener noreferrer"
       className={`text-decoration-none 
         ${conditionalStyle(navItem, 'nav-item nav-link')} 
-        ${conditionalStyle(!fullWidth, 'external-account-link')}
+        ${conditionalStyle(!fullWidth, styles['external-account-link'])}
         ${conditionalStyle(button, 'btn')}
         ${className}
       `}

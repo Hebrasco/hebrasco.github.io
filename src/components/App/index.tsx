@@ -1,6 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './styles.css'
-
 import React, { useEffect } from 'react'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import { ROUTES } from 'constants/routes'

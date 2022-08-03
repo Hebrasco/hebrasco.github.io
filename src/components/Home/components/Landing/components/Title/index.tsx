@@ -1,4 +1,4 @@
-import './styles.css'
+import styles from './index.module.css'
 
 import React from 'react'
 import { conditionalStyle } from 'utils/helpers'
@@ -14,10 +14,13 @@ export default function Title({ isXs = false }: TitleProps) {
 
   return (
     <div
-      className={`${baseStyle} ${conditionalStyle(isXs, `${baseStyle}-xs`)}`}
+      className={`
+        ${styles[baseStyle]}
+        ${conditionalStyle(isXs, styles[`${baseStyle}-xs`])}
+      `}
     >
       <div>
-        <div className="landing-title">
+        <div className={styles['landing-title']}>
           <h1>Hi, I am</h1>
           <h1>{name}</h1>
           <p className="fw-light">{JOB_NAME}</p>

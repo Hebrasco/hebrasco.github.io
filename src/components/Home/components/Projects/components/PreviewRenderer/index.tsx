@@ -1,7 +1,4 @@
-import './styles/BloomStyles.css'
-import './styles/RecipesStyles.css'
-import './styles/InstersStyles.css'
-import './styles/UmbrellaStyles.css'
+import styles from './styles'
 
 import React from 'react'
 import PreviewImage from 'models/PreviewImageModel'
@@ -23,7 +20,7 @@ export default function PreviewRenderer({ images }: Props): JSX.Element {
         <Image
           key={id}
           src={isLightScheme ? sourceLight : sourceDark}
-          className={`position-relative ${id}`}
+          className={`position-relative ${styles[id]}`}
           loading="lazy"
         />
       ))}
