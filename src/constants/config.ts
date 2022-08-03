@@ -8,3 +8,4 @@ export const CITY = 'Hünfelden'
 // Don't forget to change  these values in the public/index.html too.
 export const PORTFOLIO_NAME = 'Daniel Bedrich'
 export const JOB_NAME = 'Mobile Developer'
+export const EMAILJS_KEY = 'rmcaHWu76GpKh7M_8'

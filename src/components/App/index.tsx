@@ -9,10 +9,11 @@ import Footer from '../Footer'
 import Home from 'components/Home'
 import Imprint from 'components/Imprint'
 import { init } from '@emailjs/browser'
+import { EMAILJS_KEY } from 'constants/config'
 
 export default function App() {
   useEffect(() => {
-    init('rmcaHWu76GpKh7M_8')
+    init(EMAILJS_KEY)
   }, [])
 
   return (
