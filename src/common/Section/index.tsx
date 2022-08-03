@@ -29,8 +29,10 @@ export default function Section({
   anchorReplace = '/#',
 }: Props) {
   return (
-    <div
-      className={`section
+    <>
+      {anchor && <div id={anchor.replace(anchorReplace, '')}></div>}
+      <div
+        className={`section
         ${conditionalStyle(xs, 'section-xs')}
         ${conditionalStyle(sm, 'section-sm')}
         ${conditionalStyle(md, 'section-md')}
@@ -38,12 +40,10 @@ export default function Section({
         ${conditionalStyle(xl, 'section-xl')}
         ${conditionalStyle(!bottomPadding, 'section-ignore-bottom')}
       `}
-    >
-      {anchor && (
-        <div id={anchor.replace(anchorReplace, '')} className="anchor"></div>
-      )}
-      {title && <h1 className="mb-5 text-uppercase">{title}</h1>}
-      {Array.isArray(children) ? children.map((child) => child) : children}
-    </div>
+      >
+        {title && <h1 className="mb-5 text-uppercase">{title}</h1>}
+        {Array.isArray(children) ? children.map((child) => child) : children}
+      </div>
+    </>
   )
 }
