@@ -1,11 +1,10 @@
 import React from 'react'
-import Framework from 'models/FrameworkModel'
-import Language from 'models/LanguageModel'
 import Badge from '../../ProjectBadge'
+import Skill from 'types/Skill'
 
 interface Props {
-  languages: readonly Language[]
-  frameworks: readonly Framework[]
+  languages: readonly Skill[]
+  frameworks: readonly Skill[]
 }
 
 export default function Badges({ languages, frameworks }: Props): JSX.Element {

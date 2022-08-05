@@ -1,11 +1,11 @@
-import Application from 'components/models/ApplicationModal'
+import ApplicationCollection from 'types/ApplicationCollection'
 
-export const APPLICATIONS = {
-  xcode: new Application('Xcode'),
-  git: new Application('Git'),
-  gitTower: new Application('GitTower'),
-  gitHub: new Application('GitHub'),
-  vsCode: new Application('VS Code'),
-  vs: new Application('Visual Studio'),
-  jira: new Application('Jira'),
+export const APPLICATIONS: ApplicationCollection = {
+  xcode: { name: 'Xcode' },
+  git: { name: 'Git' },
+  gitTower: { name: 'GitTower' },
+  gitHub: { name: 'GitHub' },
+  vsCode: { name: 'VS Code' },
+  vs: { name: 'Visual Studio' },
+  jira: { name: 'Jira' },
 } as const

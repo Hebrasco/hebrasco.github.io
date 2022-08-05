@@ -1,30 +1,30 @@
-import Framework from 'components/models/FrameworkModel'
+import FrameworkCollection from 'types/FrameworkCollection'
 
-export const FRAMEWORKS = {
+export const FRAMEWORKS: FrameworkCollection = {
   apple: {
-    ios: new Framework('iOS'),
-    uiKit: new Framework('UIKit'),
-    swiftUI: new Framework('SwiftUI'),
-    localNotifications: new Framework('Local Notifications'),
-    widgetKit: new Framework('WidgetKit'),
-    storeKit: new Framework('StoreKit'),
-    coreData: new Framework('Core Data'),
-    metal: new Framework('Metal'),
-    coreImage: new Framework('Core Image'),
-    macOS: new Framework('macOS'),
-    cloudKit: new Framework('CloudKit'),
+    ios: { name: 'iOS' },
+    uiKit: { name: 'UIKit' },
+    swiftUI: { name: 'SwiftUI' },
+    localNotifications: { name: 'Local Notifications' },
+    widgetKit: { name: 'WidgetKit' },
+    storeKit: { name: 'StoreKit' },
+    coreData: { name: 'Core Data' },
+    metal: { name: 'Metal' },
+    coreImage: { name: 'Core Image' },
+    macOS: { name: 'macOS' },
+    cloudKit: { name: 'CloudKit' },
   },
 
   crossPlatform: {
-    reactNative: new Framework('React Native'),
+    reactNative: { name: 'React Native' },
   },
 
   web: {
-    bootstrap: new Framework('Bootstrap'),
-    react: new Framework('React'),
-    reactRedux: new Framework('React Redux'),
-    dotNet: new Framework('.Net'),
-    angular: new Framework('Angular'),
-    materialUI: new Framework('MaterialUI'),
+    bootstrap: { name: 'Bootstrap' },
+    react: { name: 'React' },
+    reactRedux: { name: 'React Redux' },
+    dotNet: { name: '.Net' },
+    angular: { name: 'Angular' },
+    materialUI: { name: 'MaterialUI' },
   },
 } as const

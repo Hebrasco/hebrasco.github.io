@@ -1,12 +1,12 @@
 import styles from './index.module.css'
 
 import React from 'react'
-import ISkill from 'components/interfaces/ISkill'
+import Skill from 'types/Skill'
 import { Col } from 'react-bootstrap'
 
 interface Props {
   title: string
-  data: readonly ISkill[]
+  data: readonly Skill[]
 }
 
 export default function SkillColumn({ title, data }: Props): JSX.Element {

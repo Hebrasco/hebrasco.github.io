@@ -1,4 +1,4 @@
-export default interface IWindowSize {
+type WindowSize = {
   size: { width: number; height: number }
   isXs: boolean
   isSm: boolean
@@ -7,3 +7,5 @@ export default interface IWindowSize {
   isXl: boolean
   isXxl: boolean
 }
+
+export default WindowSize

@@ -1,37 +1,43 @@
 import { LANGUAGES } from 'data/profile/languages'
 import { FRAMEWORKS } from 'data/profile/frameworks'
-import Project from 'components/models/ProjectModel'
-import PreviewImage from 'components/models/PreviewImageModel'
 import { RecipesPreviews } from 'assets/images/previews'
+import Project from 'types/Project'
 
-export default new Project(
-  'Recipes app',
-  `With his recipe app, you're able to create meal plans. There's a huge selection of recipes build in to choose from. Further, the ingredients can be exactly calculated based on the amount of people and can be added to a shopping list.`,
-  [
+const Recipes: Project = {
+  name: 'Recipes app',
+  description: `With his recipe app, you're able to create meal plans. There's a huge selection of recipes build in to choose from. Further, the ingredients can be exactly calculated based on the amount of people and can be added to a shopping list.`,
+  tasks: [
     'Conception and development',
     'User interface development',
     'Parsing a JSON file',
     'Persisting data with Core Data',
   ],
-  [LANGUAGES.swift, LANGUAGES.json],
-  [FRAMEWORKS.apple.ios, FRAMEWORKS.apple.swiftUI, FRAMEWORKS.apple.coreData],
-  undefined,
-  'https://github.com/Hebrasco/recipe_app',
-  [
-    new PreviewImage(
-      'preview-recipes-iphoneSE',
-      RecipesPreviews.IphoneSEImage,
-      RecipesPreviews.IphoneSEImage
-    ),
-    new PreviewImage(
-      'preview-recipes-iphone',
-      RecipesPreviews.IphoneImage,
-      RecipesPreviews.IphoneImage
-    ),
-    new PreviewImage(
-      'preview-recipes-ipad',
-      RecipesPreviews.IpadImage,
-      RecipesPreviews.IpadImage
-    ),
-  ]
-)
+  languages: [LANGUAGES.swift, LANGUAGES.json],
+  frameworks: [
+    FRAMEWORKS.apple.ios,
+    FRAMEWORKS.apple.swiftUI,
+    FRAMEWORKS.apple.coreData,
+  ],
+  onlineURL: undefined,
+  sourceURL: 'https://github.com/Hebrasco/recipe_app',
+  previewImages: [
+    {
+      id: 'preview-recipes-iphoneSE',
+      sourceLight: RecipesPreviews.IphoneSEImage,
+      sourceDark: RecipesPreviews.IphoneSEImage,
+    },
+    {
+      id: 'preview-recipes-iphone',
+      sourceLight: RecipesPreviews.IphoneImage,
+      sourceDark: RecipesPreviews.IphoneImage,
+    },
+    {
+      id: 'preview-recipes-ipad',
+      sourceLight: RecipesPreviews.IpadImage,
+      sourceDark: RecipesPreviews.IpadImage,
+    },
+  ],
+  isComingSoon: false,
+} as const
+
+export default Recipes

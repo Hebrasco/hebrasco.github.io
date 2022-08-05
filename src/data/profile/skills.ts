@@ -1,11 +1,9 @@
 import { LANGUAGES } from './languages'
 import { FRAMEWORKS } from './frameworks'
 import { APPLICATIONS } from './applications'
-import Language from 'models/LanguageModel'
-import Framework from 'models/FrameworkModel'
-import Application from 'models/ApplicationModal'
+import Skill from 'types/Skill'
 
-export const SKILLS_LANGUAGES: readonly Language[] = [
+export const SKILLS_LANGUAGES: readonly Skill[] = [
   LANGUAGES.swift,
   LANGUAGES.json,
   LANGUAGES.html,
@@ -14,7 +12,7 @@ export const SKILLS_LANGUAGES: readonly Language[] = [
   LANGUAGES.typeScript,
 ] as const
 
-export const SKILLS_FRAMEWORKS: readonly Framework[] = [
+export const SKILLS_FRAMEWORKS: readonly Skill[] = [
   FRAMEWORKS.apple.ios,
   FRAMEWORKS.apple.swiftUI,
   FRAMEWORKS.apple.uiKit,
@@ -24,7 +22,7 @@ export const SKILLS_FRAMEWORKS: readonly Framework[] = [
   FRAMEWORKS.web.bootstrap,
 ] as const
 
-export const SKILLS_APPLICATIONS: readonly Application[] = [
+export const SKILLS_APPLICATIONS: readonly Skill[] = [
   APPLICATIONS.xcode,
   APPLICATIONS.git,
   APPLICATIONS.gitTower,

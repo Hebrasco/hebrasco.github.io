@@ -1,12 +1,12 @@
-import Language from 'components/models/LanguageModel'
+import LanguageCollection from 'types/LanguageCollection'
 
-export const LANGUAGES = {
-  swift: new Language('Swift'),
-  cSharp: new Language('C#'),
-  typeScript: new Language('TypeScript'),
-  javaScript: new Language('JavaScript'),
-  html: new Language('HTML'),
-  css: new Language('CSS'),
-  json: new Language('JSON'),
-  metal: new Language('MSL'),
+export const LANGUAGES: LanguageCollection = {
+  swift: { name: 'Swift' },
+  cSharp: { name: 'C#' },
+  typeScript: { name: 'TypeScript' },
+  javaScript: { name: 'JavaScript' },
+  html: { name: 'HTML' },
+  css: { name: 'CSS' },
+  json: { name: 'JSON' },
+  metal: { name: 'MSL' },
 } as const

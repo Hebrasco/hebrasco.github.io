@@ -1,11 +1,11 @@
 import React from 'react'
-import ProjectModel from 'models/ProjectModel'
 import { Col, Row } from 'react-bootstrap'
+import Project from 'types/Project'
 import ProjectImages from '../ProjectImages'
 import { Badges, Actions, ComingSoon, Responsibilities } from './components'
 
 interface Props {
-  project: ProjectModel
+  project: Project
 }
 
 export default function Preview({ project }: Props) {
