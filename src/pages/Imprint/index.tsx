@@ -1,7 +1,7 @@
-import React from 'react'
-import { ROUTES } from 'data'
-import { Col, Container, Row } from 'react-bootstrap'
 import { Section } from 'components/ui'
+import { ROUTES } from 'data'
+import React from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
 import { SiteOwnerInfo } from './components'
 
 export default function Imprint(): JSX.Element {

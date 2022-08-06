@@ -1,8 +1,8 @@
-import styles from './index.module.css'
-
+import { CONFIG } from 'data'
 import React from 'react'
 import { conditionalStyle } from 'utils'
-import { CONFIG } from 'data'
+
+import styles from './index.module.css'
 
 interface TitleProps {
   isXs: boolean

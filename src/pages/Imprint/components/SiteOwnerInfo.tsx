@@ -1,6 +1,6 @@
-import React from 'react'
 import { Email } from 'components/ui'
 import { CONFIG } from 'data'
+import React from 'react'
 
 export default function SiteOwnerInfo(): JSX.Element {
   return (

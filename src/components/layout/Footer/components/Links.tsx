@@ -1,9 +1,9 @@
+import { Link, SocialLinks } from 'components/ui'
+import { ROUTES } from 'data'
+import { useWindowSize } from 'hooks'
 import React from 'react'
 import { Col } from 'react-bootstrap'
-import { ROUTES } from 'data'
-import { Link, SocialLinks } from 'components/ui'
 import { conditionalStyle } from 'utils'
-import { useWindowSize } from 'hooks'
 
 export default function Links(): JSX.Element {
   const { isXs, isSm } = useWindowSize()

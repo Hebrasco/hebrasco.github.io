@@ -1,8 +1,8 @@
+import { init } from '@emailjs/browser'
+import { Footer, NavBar } from 'components/layout'
+import { CONFIG } from 'data'
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { NavBar, Footer } from 'components/layout'
-import { init } from '@emailjs/browser'
-import { CONFIG } from 'data'
 import Routes from 'routes'
 
 export default function App() {

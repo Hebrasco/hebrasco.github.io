@@ -1,7 +1,7 @@
-import React from 'react'
-import { ROUTES } from 'data'
-import { Container } from 'react-bootstrap'
 import { Section } from 'components/ui'
+import { ROUTES } from 'data'
+import React from 'react'
+import { Container } from 'react-bootstrap'
 import { AboutText, Actions, Skills } from './components'
 
 export default function AboutMe(): JSX.Element {

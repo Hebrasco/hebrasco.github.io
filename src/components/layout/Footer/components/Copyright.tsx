@@ -1,6 +1,6 @@
+import { CONFIG } from 'data'
 import React from 'react'
 import { Col } from 'react-bootstrap'
-import { CONFIG } from 'data'
 
 export default function Copyright(): JSX.Element {
   function getCurrentYear() {

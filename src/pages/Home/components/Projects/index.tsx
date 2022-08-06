@@ -1,8 +1,7 @@
-import React from 'react'
-import { PROFILE } from 'data'
-import { Container, Row, Stack } from 'react-bootstrap'
 import { Section } from 'components/ui'
-import { ROUTES } from 'data'
+import { PROFILE, ROUTES } from 'data'
+import React from 'react'
+import { Container, Row, Stack } from 'react-bootstrap'
 import { Preview } from './components'
 
 export default function Projects(): JSX.Element {

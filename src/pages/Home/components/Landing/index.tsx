@@ -1,8 +1,8 @@
-import styles from './index.module.css'
-
-import React from 'react'
 import { useWindowSize } from 'hooks'
-import { Title, Image, ScrollDownIcon } from './components'
+import React from 'react'
+import { Image, ScrollDownIcon, Title } from './components'
+
+import styles from './index.module.css'
 
 export default function Landing(): JSX.Element {
   const { isXs, isSm } = useWindowSize()

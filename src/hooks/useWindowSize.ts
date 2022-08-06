@@ -1,5 +1,5 @@
-import { useLayoutEffect, useState } from 'react'
 import { MISC } from 'data'
+import { useLayoutEffect, useState } from 'react'
 import { WindowSize } from 'types'
 
 export default function useWindowSize(): WindowSize {

@@ -1,7 +1,7 @@
-import React from 'react'
 import { Email, Section } from 'components/ui'
-import { Col, Container } from 'react-bootstrap'
 import { ROUTES } from 'data'
+import React from 'react'
+import { Col, Container } from 'react-bootstrap'
 import Form from './components/Form'
 
 export default function Contact() {

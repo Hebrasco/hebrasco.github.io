@@ -1,9 +1,15 @@
+import emailjs from '@emailjs/browser'
+import { CONFIG } from 'data'
 import React, { FormEvent, useState } from 'react'
 import { Form, Row } from 'react-bootstrap'
-import { Name, Email, Subject, Message, Actions } from './components'
-import emailjs from '@emailjs/browser'
-import { EmailSuccessToast } from './components'
-import { CONFIG } from 'data'
+import {
+  Actions,
+  Email,
+  EmailSuccessToast,
+  Message,
+  Name,
+  Subject,
+} from './components'
 
 export default function ContactForm() {
   const [validated, setValidated] = useState<boolean>(false)

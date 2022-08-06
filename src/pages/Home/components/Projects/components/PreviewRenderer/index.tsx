@@ -1,10 +1,9 @@
-import styles from './styles'
-
+import { MISC } from 'data'
+import { useColorScheme } from 'hooks'
 import React from 'react'
 import { Image } from 'react-bootstrap'
-import { useColorScheme } from 'hooks'
-import { MISC } from 'data'
 import { PreviewImage } from 'types'
+import styles from './styles'
 
 interface Props {
   images: readonly PreviewImage[]

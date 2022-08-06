@@ -1,5 +1,5 @@
-import React from 'react'
 import Badge from 'pages/Home/components/Projects/components/ProjectBadge'
+import React from 'react'
 import { Skill } from 'types'
 
 interface Props {

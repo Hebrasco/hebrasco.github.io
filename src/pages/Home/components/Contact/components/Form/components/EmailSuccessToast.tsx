@@ -1,6 +1,6 @@
+import { CONFIG } from 'data'
 import React from 'react'
 import { Image, Toast, ToastContainer } from 'react-bootstrap'
-import { CONFIG } from 'data'
 
 interface Props {
   show: boolean

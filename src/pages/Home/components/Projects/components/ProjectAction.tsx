@@ -1,5 +1,5 @@
-import React from 'react'
 import { ExternalLink } from 'components/ui'
+import React from 'react'
 import { Button } from 'react-bootstrap'
 
 interface Props {

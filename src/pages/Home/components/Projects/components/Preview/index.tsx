@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import { Project } from 'types'
 import ProjectImages from '../ProjectImages'
-import { Badges, Actions, ComingSoon, Responsibilities } from './components'
+import { Actions, Badges, ComingSoon, Responsibilities } from './components'
 
 interface Props {
   project: Project

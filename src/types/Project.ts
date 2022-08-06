@@ -1,5 +1,5 @@
-import Skill from './Skill'
 import PreviewImage from './PreviewImage'
+import Skill from './Skill'
 
 type Project = {
   name: string

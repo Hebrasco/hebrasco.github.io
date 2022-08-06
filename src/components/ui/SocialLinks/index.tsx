@@ -1,6 +1,6 @@
-import React from 'react'
-import { CONFIG } from 'data'
 import { AppStoreIcon, GitHubIcon } from 'assets/icons'
+import { CONFIG } from 'data'
+import React from 'react'
 import SocialLink from './SocialLink'
 
 interface Props {

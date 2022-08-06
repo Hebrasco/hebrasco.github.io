@@ -1,5 +1,5 @@
-import { PROFILE } from 'data'
 import { InstersPreviews } from 'assets/images/previews'
+import { PROFILE } from 'data'
 import { Project } from 'types'
 
 const Insters: Project = {

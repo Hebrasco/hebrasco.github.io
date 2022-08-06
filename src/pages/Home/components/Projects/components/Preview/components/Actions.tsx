@@ -1,5 +1,5 @@
+import Action from 'pages/Home/components/Projects/components/ProjectAction'
 import React from 'react'
-import Action from '../../ProjectAction'
 
 interface Props {
   onlineURL?: string

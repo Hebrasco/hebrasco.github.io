@@ -1,7 +1,7 @@
-import React from 'react'
-import { ROUTES } from 'data'
-import { Row, Col } from 'react-bootstrap'
 import { ExternalLink, Link } from 'components/ui'
+import { ROUTES } from 'data'
+import React from 'react'
+import { Col, Row } from 'react-bootstrap'
 
 export default function Actions(): JSX.Element {
   return (

@@ -1,8 +1,8 @@
-import React from 'react'
-import { CONFIG, ROUTES } from 'data'
-import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link, SocialLinks } from 'components/ui'
+import { CONFIG, ROUTES } from 'data'
 import { useWindowSize } from 'hooks'
+import React from 'react'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 
 export default function NavBar(): JSX.Element {
   const { isXs, isSm } = useWindowSize()

@@ -1,5 +1,5 @@
-import { PROFILE } from 'data'
 import { BloomPreviews } from 'assets/images/previews'
+import { PROFILE } from 'data'
 import { Project } from 'types'
 
 const Bloom: Project = {
