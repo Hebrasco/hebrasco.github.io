@@ -1,4 +1,4 @@
-import ApplicationCollection from 'types/ApplicationCollection'
+import { ApplicationCollection } from 'types'
 
 export const APPLICATIONS: ApplicationCollection = {
   xcode: { name: 'Xcode' },

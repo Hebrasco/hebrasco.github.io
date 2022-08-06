@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
-import Project from 'types/Project'
+import { Project } from 'types'
 import ProjectImages from '../ProjectImages'
 import { Badges, Actions, ComingSoon, Responsibilities } from './components'
 

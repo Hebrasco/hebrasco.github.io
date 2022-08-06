@@ -1,7 +1,7 @@
 import React from 'react'
 import { ExternalLink } from 'components/ui'
 import { Image } from 'react-bootstrap'
-import conditionalStyle from 'utils/conditionalStyle'
+import { conditionalStyle } from 'utils'
 
 interface Props {
   label: string

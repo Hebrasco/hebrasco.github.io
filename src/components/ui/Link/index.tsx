@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link as RouterLink } from 'react-router-dom'
-import conditionalStyle from 'utils/conditionalStyle'
+import { conditionalStyle } from 'utils'
 
 interface Props {
   to: string

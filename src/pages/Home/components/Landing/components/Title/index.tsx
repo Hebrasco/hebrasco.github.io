@@ -1,7 +1,7 @@
 import styles from './index.module.css'
 
 import React from 'react'
-import conditionalStyle from 'utils/conditionalStyle'
+import { conditionalStyle } from 'utils'
 import { JOB_NAME, PORTFOLIO_NAME } from 'data/config'
 
 interface TitleProps {

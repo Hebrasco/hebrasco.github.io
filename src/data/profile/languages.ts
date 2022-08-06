@@ -1,4 +1,4 @@
-import LanguageCollection from 'types/LanguageCollection'
+import { LanguageCollection } from 'types'
 
 export const LANGUAGES: LanguageCollection = {
   swift: { name: 'Swift' },

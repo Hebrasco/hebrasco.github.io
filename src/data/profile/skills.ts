@@ -1,7 +1,7 @@
 import { LANGUAGES } from './languages'
 import { FRAMEWORKS } from './frameworks'
 import { APPLICATIONS } from './applications'
-import Skill from 'types/Skill'
+import { Skill } from 'types'
 
 export const SKILLS_LANGUAGES: readonly Skill[] = [
   LANGUAGES.swift,

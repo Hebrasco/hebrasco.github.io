@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
-import PreviewImage from 'types/PreviewImage'
+import { PreviewImage } from 'types'
 import PreviewRenderer from './PreviewRenderer'
 
 interface Props {

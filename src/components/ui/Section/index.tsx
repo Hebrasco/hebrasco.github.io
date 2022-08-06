@@ -1,7 +1,7 @@
 import styles from './index.module.css'
 
 import React, { ReactElement } from 'react'
-import conditionalStyle from 'utils/conditionalStyle'
+import { conditionalStyle } from 'utils'
 
 interface Props {
   children: ReactElement | ReactElement[]

@@ -1,4 +1,4 @@
-import FrameworkCollection from 'types/FrameworkCollection'
+import { FrameworkCollection } from 'types'
 
 export const FRAMEWORKS: FrameworkCollection = {
   apple: {

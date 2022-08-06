@@ -1,7 +1,6 @@
-import { LANGUAGES } from 'data/profile/languages'
-import { FRAMEWORKS } from 'data/profile/frameworks'
+import { LANGUAGES, FRAMEWORKS } from 'data/profile'
 import { RecipesPreviews } from 'assets/images/previews'
-import Project from 'types/Project'
+import { Project } from 'types'
 
 const Recipes: Project = {
   name: 'Recipes app',

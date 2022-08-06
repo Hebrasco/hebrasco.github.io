@@ -1,7 +1,6 @@
-import { LANGUAGES } from 'data/profile/languages'
-import { FRAMEWORKS } from 'data/profile/frameworks'
+import { LANGUAGES, FRAMEWORKS } from 'data/profile'
 import { BloomPreviews } from 'assets/images/previews'
-import Project from 'types/Project'
+import { Project } from 'types'
 
 const Bloom: Project = {
   name: 'Bloom - Couples App',

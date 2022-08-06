@@ -1,8 +1,5 @@
-import Recipes from 'data/projects/Recipes'
-import Bloom from 'data/projects/Bloom'
-import Insters from 'data/projects/Insters'
-import Umbrella from 'data/projects/Umbrella'
-import Project from 'types/Project'
+import { Bloom, Insters, Recipes, Umbrella } from 'data/projects'
+import { Project } from 'types'
 
 export const PROJECTS: readonly Project[] = [
   Umbrella,

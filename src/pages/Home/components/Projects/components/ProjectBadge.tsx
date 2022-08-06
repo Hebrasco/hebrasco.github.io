@@ -1,5 +1,5 @@
 import React from 'react'
-import Skill from 'types/Skill'
+import { Skill } from 'types'
 import { Badge } from 'react-bootstrap'
 
 interface Props {

@@ -2,7 +2,7 @@ import React from 'react'
 import { ROUTES } from 'data/routes'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link, SocialLinks } from 'components/ui'
-import useWindowSize from 'hooks/useWindowSize'
+import { useWindowSize } from 'hooks'
 import { PORTFOLIO_NAME } from 'data/config'
 
 export default function NavBar(): JSX.Element {

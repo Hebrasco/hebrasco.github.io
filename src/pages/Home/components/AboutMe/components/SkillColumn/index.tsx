@@ -1,7 +1,7 @@
 import styles from './index.module.css'
 
 import React from 'react'
-import Skill from 'types/Skill'
+import { Skill } from 'types'
 import { Col } from 'react-bootstrap'
 
 interface Props {

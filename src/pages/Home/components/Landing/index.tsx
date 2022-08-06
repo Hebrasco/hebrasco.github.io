@@ -1,7 +1,7 @@
 import styles from './index.module.css'
 
 import React from 'react'
-import useWindowSize from 'hooks/useWindowSize'
+import { useWindowSize } from 'hooks'
 import { Title, Image, ScrollDownIcon } from './components'
 
 export default function Landing(): JSX.Element {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PROJECTS } from 'data/profile/projects'
+import { PROJECTS } from 'data/profile'
 import { Container, Row, Stack } from 'react-bootstrap'
 import { Section } from 'components/ui'
 import { ROUTES } from 'data/routes'

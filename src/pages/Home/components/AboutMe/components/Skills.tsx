@@ -3,7 +3,7 @@ import {
   SKILLS_LANGUAGES,
   SKILLS_FRAMEWORKS,
   SKILLS_APPLICATIONS,
-} from 'data/profile/skills'
+} from 'data/profile'
 import { Row } from 'react-bootstrap'
 import { Section } from 'components/ui'
 import SkillColumn from './SkillColumn'
