@@ -1,9 +1,8 @@
 import React from 'react'
-import { ROUTES } from 'data/routes'
+import { CONFIG, ROUTES } from 'data'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link, SocialLinks } from 'components/ui'
 import { useWindowSize } from 'hooks'
-import { PORTFOLIO_NAME } from 'data/config'
 
 export default function NavBar(): JSX.Element {
   const { isXs, isSm } = useWindowSize()
@@ -11,7 +10,7 @@ export default function NavBar(): JSX.Element {
   return (
     <Navbar bg="light" expand="md" fixed="top">
       <Container fluid>
-        <Navbar.Brand href={ROUTES.home}>{PORTFOLIO_NAME}</Navbar.Brand>
+        <Navbar.Brand href={ROUTES.home}>{CONFIG.profile.name}</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="ms-auto ">

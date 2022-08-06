@@ -1,4 +1,4 @@
-import { LANGUAGES, FRAMEWORKS } from 'data/profile'
+import { PROFILE } from 'data'
 import { InstersPreviews } from 'assets/images/previews'
 import { Project } from 'types'
 
@@ -12,12 +12,12 @@ const Insters: Project = {
     'Implementation of in-app purchases',
     'Color adjustment algorithms',
   ],
-  languages: [LANGUAGES.swift, LANGUAGES.metal],
+  languages: [PROFILE.languages.swift, PROFILE.languages.metal],
   frameworks: [
-    FRAMEWORKS.apple.ios,
-    FRAMEWORKS.apple.swiftUI,
-    FRAMEWORKS.apple.storeKit,
-    FRAMEWORKS.apple.coreImage,
+    PROFILE.frameworks.apple.ios,
+    PROFILE.frameworks.apple.swiftUI,
+    PROFILE.frameworks.apple.storeKit,
+    PROFILE.frameworks.apple.coreImage,
   ],
   onlineURL: 'https://apps.apple.com/app/insters/id1561338805',
   sourceURL: undefined,

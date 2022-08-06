@@ -1,5 +1,5 @@
 import React from 'react'
-import { ROUTES } from 'data/routes'
+import { ROUTES } from 'data'
 import { Row, Col } from 'react-bootstrap'
 import { ExternalLink, Link } from 'components/ui'
 

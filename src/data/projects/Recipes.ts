@@ -1,4 +1,4 @@
-import { LANGUAGES, FRAMEWORKS } from 'data/profile'
+import { PROFILE } from 'data'
 import { RecipesPreviews } from 'assets/images/previews'
 import { Project } from 'types'
 
@@ -11,11 +11,11 @@ const Recipes: Project = {
     'Parsing a JSON file',
     'Persisting data with Core Data',
   ],
-  languages: [LANGUAGES.swift, LANGUAGES.json],
+  languages: [PROFILE.languages.swift, PROFILE.languages.json],
   frameworks: [
-    FRAMEWORKS.apple.ios,
-    FRAMEWORKS.apple.swiftUI,
-    FRAMEWORKS.apple.coreData,
+    PROFILE.frameworks.apple.ios,
+    PROFILE.frameworks.apple.swiftUI,
+    PROFILE.frameworks.apple.coreData,
   ],
   onlineURL: undefined,
   sourceURL: 'https://github.com/Hebrasco/recipe_app',

@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { NavBar, Footer } from 'components/layout'
 import { init } from '@emailjs/browser'
-import { EMAILJS_KEY } from 'data/config'
+import { CONFIG } from 'data'
 import Routes from 'routes'
 
 export default function App() {
   useEffect(() => {
-    init(EMAILJS_KEY)
+    init(CONFIG.emailJs.apiKey)
   }, [])
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import { APPSTORE_PROFILE_URL, GITHUB_PROFILE_URL } from 'data/config'
+import { CONFIG } from 'data'
 import { AppStoreIcon, GitHubIcon } from 'assets/icons'
 import SocialLink from './SocialLink'
 
@@ -17,14 +17,14 @@ export default function SocialLinks({
       <SocialLink
         label="AppStore"
         src={AppStoreIcon}
-        to={APPSTORE_PROFILE_URL}
+        to={CONFIG.references.appStoreUrl}
         useIcon={useIcons}
         navItem={navItem}
       />
       <SocialLink
         label="GitHub"
         src={GitHubIcon}
-        to={GITHUB_PROFILE_URL}
+        to={CONFIG.references.gitHubUrl}
         useIcon={useIcons}
         navItem={navItem}
         invertImage

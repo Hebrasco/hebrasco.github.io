@@ -3,7 +3,7 @@ import styles from './styles'
 import React from 'react'
 import { Image } from 'react-bootstrap'
 import { useColorScheme } from 'hooks'
-import { COLOR_SCHEMES } from 'data/misc'
+import { MISC } from 'data'
 import { PreviewImage } from 'types'
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 
 export default function PreviewRenderer({ images }: Props): JSX.Element {
   const colorScheme = useColorScheme()
-  const isLightScheme = colorScheme === COLOR_SCHEMES.light
+  const isLightScheme = colorScheme === MISC.COLOR_SCHEMES.light
 
   return (
     <div className="d-flex align-items-end justify-content-end">

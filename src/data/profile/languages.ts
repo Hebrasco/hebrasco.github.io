@@ -1,6 +1,6 @@
 import { LanguageCollection } from 'types'
 
-export const LANGUAGES: LanguageCollection = {
+const LANGUAGES: LanguageCollection = {
   swift: { name: 'Swift' },
   cSharp: { name: 'C#' },
   typeScript: { name: 'TypeScript' },
@@ -10,3 +10,5 @@ export const LANGUAGES: LanguageCollection = {
   json: { name: 'JSON' },
   metal: { name: 'MSL' },
 } as const
+
+export default LANGUAGES

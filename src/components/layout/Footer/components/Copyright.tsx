@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
-import { PORTFOLIO_NAME } from 'data/config'
+import { CONFIG } from 'data'
 
 export default function Copyright(): JSX.Element {
   function getCurrentYear() {
@@ -10,7 +10,8 @@ export default function Copyright(): JSX.Element {
   return (
     <Col>
       <p className="align-items-center m-0 py-2">
-        Copyright © {getCurrentYear()} {PORTFOLIO_NAME}. All rights reserved.
+        Copyright © {getCurrentYear()} {CONFIG.profile.name}. All rights
+        reserved.
       </p>
     </Col>
   )

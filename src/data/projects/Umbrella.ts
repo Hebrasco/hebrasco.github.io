@@ -1,4 +1,4 @@
-import { LANGUAGES, FRAMEWORKS } from 'data/profile'
+import { PROFILE } from 'data'
 import { UmbrellaPreviews } from 'assets/images/previews'
 import { Project } from 'types'
 
@@ -12,13 +12,13 @@ const Umbrella: Project = {
     'Persisting data with Core Data',
     'Synchronizing data with iCloud',
   ],
-  languages: [LANGUAGES.swift],
+  languages: [PROFILE.languages.swift],
   frameworks: [
-    FRAMEWORKS.apple.macOS,
-    FRAMEWORKS.apple.ios,
-    FRAMEWORKS.apple.swiftUI,
-    FRAMEWORKS.apple.coreData,
-    FRAMEWORKS.apple.cloudKit,
+    PROFILE.frameworks.apple.macOS,
+    PROFILE.frameworks.apple.ios,
+    PROFILE.frameworks.apple.swiftUI,
+    PROFILE.frameworks.apple.coreData,
+    PROFILE.frameworks.apple.cloudKit,
   ],
   onlineURL: undefined,
   sourceURL: undefined,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
-import { ROUTES } from 'data/routes'
+import { ROUTES } from 'data'
 import { Link, SocialLinks } from 'components/ui'
 import { conditionalStyle } from 'utils'
 import { useWindowSize } from 'hooks'

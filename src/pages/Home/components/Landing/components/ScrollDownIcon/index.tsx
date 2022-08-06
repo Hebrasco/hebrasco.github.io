@@ -2,7 +2,7 @@ import styles from './index.module.css'
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ROUTES } from 'data/routes'
+import { ROUTES } from 'data'
 
 export default function ScrollDownIcon() {
   return (

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Route, Routes as BrowserRoutes, useLocation } from 'react-router-dom'
-import { ROUTES } from 'data/routes'
+import { ROUTES } from 'data'
 import { Home, Imprint } from 'pages'
 
 export default function Routes() {

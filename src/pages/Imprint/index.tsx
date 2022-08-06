@@ -1,5 +1,5 @@
 import React from 'react'
-import { ROUTES } from 'data/routes'
+import { ROUTES } from 'data'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Section } from 'components/ui'
 import { SiteOwnerInfo } from './components'

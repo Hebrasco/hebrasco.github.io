@@ -1,9 +1,11 @@
-import { Bloom, Insters, Recipes, Umbrella } from 'data/projects'
+import { PROJECTS as PROFILE_PROJECTS } from 'data'
 import { Project } from 'types'
 
-export const PROJECTS: readonly Project[] = [
-  Umbrella,
-  Insters,
-  Bloom,
-  Recipes,
+const PROJECTS: readonly Project[] = [
+  PROFILE_PROJECTS.Umbrella,
+  PROFILE_PROJECTS.Insters,
+  PROFILE_PROJECTS.Bloom,
+  PROFILE_PROJECTS.Recipes,
 ] as const
+
+export default PROJECTS

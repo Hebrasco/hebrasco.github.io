@@ -3,7 +3,7 @@ import { Form, Row } from 'react-bootstrap'
 import { Name, Email, Subject, Message, Actions } from './components'
 import emailjs from '@emailjs/browser'
 import { EmailSuccessToast } from './components'
-import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from 'data/config'
+import { CONFIG } from 'data'
 
 export default function ContactForm() {
   const [validated, setValidated] = useState<boolean>(false)
@@ -42,7 +42,7 @@ export default function ContactForm() {
 
   function sendEmail(form: HTMLFormElement, onFinally: () => void) {
     emailjs
-      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      .send(CONFIG.emailJs.serviceId, CONFIG.emailJs.templateId, {
         fromName: form.fromName.value,
         email: form.email.value,
         subject: form.subject.value,

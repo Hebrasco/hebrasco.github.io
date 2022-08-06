@@ -1,4 +1,4 @@
-import { LANGUAGES, FRAMEWORKS } from 'data/profile'
+import { PROFILE } from 'data'
 import { BloomPreviews } from 'assets/images/previews'
 import { Project } from 'types'
 
@@ -13,13 +13,13 @@ const Bloom: Project = {
     'Implementation of local notifications',
     'Implementation of widgets (iOS 14+)',
   ],
-  languages: [LANGUAGES.swift],
+  languages: [PROFILE.languages.swift],
   frameworks: [
-    FRAMEWORKS.apple.ios,
-    FRAMEWORKS.apple.swiftUI,
-    FRAMEWORKS.apple.widgetKit,
-    FRAMEWORKS.apple.storeKit,
-    FRAMEWORKS.apple.localNotifications,
+    PROFILE.frameworks.apple.ios,
+    PROFILE.frameworks.apple.swiftUI,
+    PROFILE.frameworks.apple.widgetKit,
+    PROFILE.frameworks.apple.storeKit,
+    PROFILE.frameworks.apple.localNotifications,
   ],
   onlineURL: 'https://apps.apple.com/app/bloom-couples-app/id1533246365',
   sourceURL: undefined,

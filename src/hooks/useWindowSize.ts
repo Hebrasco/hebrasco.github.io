@@ -1,9 +1,11 @@
 import { useLayoutEffect, useState } from 'react'
-import { BOOTSTRAP_GRID_SIZES } from 'data/misc'
+import { MISC } from 'data'
 import { WindowSize } from 'types'
 
 export default function useWindowSize(): WindowSize {
   const [size, setSize] = useState({ width: 0, height: 0 })
+  const { BOOTSTRAP_GRID_SIZES } = MISC
+
   const isXs = size.width < BOOTSTRAP_GRID_SIZES.sm
   const isSm =
     size.width >= BOOTSTRAP_GRID_SIZES.sm &&

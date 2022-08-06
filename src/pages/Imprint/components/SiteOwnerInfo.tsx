@@ -1,15 +1,15 @@
 import React from 'react'
 import { Email } from 'components/ui'
-import { CITY, PORTFOLIO_NAME, STREET, ZIP } from 'data/config'
+import { CONFIG } from 'data'
 
 export default function SiteOwnerInfo(): JSX.Element {
   return (
     <>
       <ul className="list-unstyled">
-        <li>{PORTFOLIO_NAME}</li>
-        <li>{STREET}</li>
+        <li>{CONFIG.profile.name}</li>
+        <li>{CONFIG.profile.street}</li>
         <li>
-          {ZIP} {CITY}
+          {CONFIG.profile.zip} {CONFIG.profile.city}
         </li>
       </ul>
       <b>Kontakt</b>

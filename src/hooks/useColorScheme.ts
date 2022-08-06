@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
-import { COLOR_SCHEMES } from 'data/misc'
+import { MISC } from 'data'
+
+const { COLOR_SCHEMES } = MISC
 
 export default function useColorScheme(): string {
   const [colorScheme, setColorScheme] = useState<string>(

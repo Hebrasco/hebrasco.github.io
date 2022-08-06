@@ -1,9 +1,9 @@
-import { LANGUAGES } from './languages'
-import { FRAMEWORKS } from './frameworks'
-import { APPLICATIONS } from './applications'
-import { Skill } from 'types'
+import LANGUAGES from './languages'
+import FRAMEWORKS from './frameworks'
+import APPLICATIONS from './applications'
+import { Skill, SkillCollection } from 'types'
 
-export const SKILLS_LANGUAGES: readonly Skill[] = [
+const SKILLS_LANGUAGES: readonly Skill[] = [
   LANGUAGES.swift,
   LANGUAGES.json,
   LANGUAGES.html,
@@ -12,7 +12,7 @@ export const SKILLS_LANGUAGES: readonly Skill[] = [
   LANGUAGES.typeScript,
 ] as const
 
-export const SKILLS_FRAMEWORKS: readonly Skill[] = [
+const SKILLS_FRAMEWORKS: readonly Skill[] = [
   FRAMEWORKS.apple.ios,
   FRAMEWORKS.apple.swiftUI,
   FRAMEWORKS.apple.uiKit,
@@ -22,7 +22,7 @@ export const SKILLS_FRAMEWORKS: readonly Skill[] = [
   FRAMEWORKS.web.bootstrap,
 ] as const
 
-export const SKILLS_APPLICATIONS: readonly Skill[] = [
+const SKILLS_APPLICATIONS: readonly Skill[] = [
   APPLICATIONS.xcode,
   APPLICATIONS.git,
   APPLICATIONS.gitTower,
@@ -30,3 +30,11 @@ export const SKILLS_APPLICATIONS: readonly Skill[] = [
   APPLICATIONS.vsCode,
   APPLICATIONS.jira,
 ] as const
+
+const SKILLS: SkillCollection = {
+  applications: SKILLS_APPLICATIONS,
+  frameworks: SKILLS_FRAMEWORKS,
+  languages: SKILLS_LANGUAGES,
+} as const
+
+export default SKILLS

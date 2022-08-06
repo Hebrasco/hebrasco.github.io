@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image, Toast, ToastContainer } from 'react-bootstrap'
-import { PORTFOLIO_NAME } from 'data/config'
+import { CONFIG } from 'data'
 
 interface Props {
   show: boolean
@@ -23,7 +23,7 @@ export default function EmailSuccessToast({
       <Toast onClose={() => onClose()} show={show} delay={7000} autohide>
         <Toast.Header>
           <Image src="/favicon.ico" className="rounded me-2" />
-          <strong className="me-auto">{PORTFOLIO_NAME}</strong>
+          <strong className="me-auto">{CONFIG.profile.name}</strong>
         </Toast.Header>
         <Toast.Body>
           {isSuccessful ? emailSuccessMessage : emailErrorMessage}
