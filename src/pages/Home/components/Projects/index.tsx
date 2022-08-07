@@ -1,8 +1,10 @@
 import { Section } from 'components/ui'
-import { PROFILE, ROUTES } from 'data'
+import { PROJECTS, ROUTES } from 'data'
 import React from 'react'
 import { Container, Row, Stack } from 'react-bootstrap'
 import { Preview } from './components'
+
+const projects = Object.values(PROJECTS)
 
 export function Projects(): JSX.Element {
   return (
@@ -10,7 +12,7 @@ export function Projects(): JSX.Element {
       <Section lg title="Projects" anchor={ROUTES.projects}>
         <Row>
           <Stack gap={5}>
-            {PROFILE.projects.map((project) => (
+            {projects.map((project) => (
               <Preview project={project} key={`project-${project.name}`} />
             ))}
           </Stack>
