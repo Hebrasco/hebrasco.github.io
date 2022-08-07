@@ -1,6 +1,6 @@
 import { FrameworkCollection } from 'types'
 
-const FRAMEWORKS: FrameworkCollection = {
+export const FRAMEWORKS: FrameworkCollection = {
   apple: {
     ios: { name: 'iOS' },
     uiKit: { name: 'UIKit' },
@@ -28,5 +28,3 @@ const FRAMEWORKS: FrameworkCollection = {
     materialUI: { name: 'MaterialUI' },
   },
 } as const
-
-export default FRAMEWORKS

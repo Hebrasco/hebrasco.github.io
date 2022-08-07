@@ -3,7 +3,7 @@ import { Home, Imprint } from 'pages'
 import React, { useEffect } from 'react'
 import { Route, Routes as BrowserRoutes, useLocation } from 'react-router-dom'
 
-export default function Routes() {
+export function Routes() {
   const { pathname, hash, key } = useLocation()
 
   useEffect(() => {

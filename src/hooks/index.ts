@@ -1,2 +1,2 @@
-export { default as useColorScheme } from './useColorScheme'
-export { default as useWindowSize } from './useWindowSize'
+export { useColorScheme } from './useColorScheme'
+export { useWindowSize } from './useWindowSize'

@@ -4,7 +4,7 @@ import { Image, ScrollDownIcon, Title } from './components'
 
 import styles from './index.module.css'
 
-export default function Landing(): JSX.Element {
+export function Landing(): JSX.Element {
   const { isXs, isSm } = useWindowSize()
 
   return (

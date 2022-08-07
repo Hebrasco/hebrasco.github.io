@@ -2,24 +2,20 @@ import { MISC } from 'data'
 import { useLayoutEffect, useState } from 'react'
 import { WindowSize } from 'types'
 
-export default function useWindowSize(): WindowSize {
+export function useWindowSize(): WindowSize {
   const [size, setSize] = useState({ width: 0, height: 0 })
-  const { BOOTSTRAP_GRID_SIZES } = MISC
+  const { bootstrapGridSizes } = MISC
 
-  const isXs = size.width < BOOTSTRAP_GRID_SIZES.sm
+  const isXs = size.width < bootstrapGridSizes.sm
   const isSm =
-    size.width >= BOOTSTRAP_GRID_SIZES.sm &&
-    size.width < BOOTSTRAP_GRID_SIZES.md
+    size.width >= bootstrapGridSizes.sm && size.width < bootstrapGridSizes.md
   const isMd =
-    size.width >= BOOTSTRAP_GRID_SIZES.md &&
-    size.width < BOOTSTRAP_GRID_SIZES.lg
+    size.width >= bootstrapGridSizes.md && size.width < bootstrapGridSizes.lg
   const isLg =
-    size.width >= BOOTSTRAP_GRID_SIZES.lg &&
-    size.width < BOOTSTRAP_GRID_SIZES.xl
+    size.width >= bootstrapGridSizes.lg && size.width < bootstrapGridSizes.xl
   const isXl =
-    size.width >= BOOTSTRAP_GRID_SIZES.xl &&
-    size.width < BOOTSTRAP_GRID_SIZES.xxl
-  const isXxl = size.width >= BOOTSTRAP_GRID_SIZES.xxl
+    size.width >= bootstrapGridSizes.xl && size.width < bootstrapGridSizes.xxl
+  const isXxl = size.width >= bootstrapGridSizes.xxl
 
   useLayoutEffect(() => {
     function updateSize() {

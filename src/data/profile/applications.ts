@@ -1,6 +1,6 @@
 import { ApplicationCollection } from 'types'
 
-const APPLICATIONS: ApplicationCollection = {
+export const APPLICATIONS: ApplicationCollection = {
   xcode: { name: 'Xcode' },
   git: { name: 'Git' },
   gitTower: { name: 'GitTower' },
@@ -9,5 +9,3 @@ const APPLICATIONS: ApplicationCollection = {
   vs: { name: 'Visual Studio' },
   jira: { name: 'Jira' },
 } as const
-
-export default APPLICATIONS

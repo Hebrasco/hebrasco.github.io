@@ -1,4 +1,4 @@
-export default function conditionalStyle(
+export function conditionalStyle(
   show: boolean,
   value: string,
   elseValue: string = ''

@@ -1,4 +1,4 @@
-type WindowSize = {
+export type WindowSize = {
   size: { width: number; height: number }
   isXs: boolean
   isSm: boolean
@@ -7,5 +7,3 @@ type WindowSize = {
   isXl: boolean
   isXxl: boolean
 }
-
-export default WindowSize

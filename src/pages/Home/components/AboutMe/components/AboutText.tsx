@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 
-export default function AboutText(): JSX.Element {
+export function AboutText(): JSX.Element {
   return (
     <Row>
       <Col xs={12} sm={10} md={6}>

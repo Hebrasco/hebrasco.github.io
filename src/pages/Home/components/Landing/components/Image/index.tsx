@@ -8,7 +8,7 @@ interface ImageProps {
   isSm: boolean
 }
 
-export default function Image({ isXs = false, isSm = false }: ImageProps) {
+export function Image({ isXs = false, isSm = false }: ImageProps) {
   const baseStyle = 'landing-image'
 
   return (

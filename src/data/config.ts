@@ -1,4 +1,4 @@
-const CONFIG = {
+export const CONFIG = {
   // Don't forget to change  these values in the public/index.html too.
   profile: {
     name: 'Daniel Bedrich',
@@ -19,5 +19,3 @@ const CONFIG = {
     templateId: 'template_hc62tmb',
   },
 } as const
-
-export default CONFIG

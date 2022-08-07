@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import styles from './index.module.css'
 
-export default function ScrollDownIcon() {
+export function ScrollDownIcon() {
   return (
     <div className={styles['scroll-down-icon-container']}>
       <Link to={ROUTES.aboutMe}>

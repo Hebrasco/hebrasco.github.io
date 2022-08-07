@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button, Col } from 'react-bootstrap'
-import LoadingSpinner from './LoadingSpinner'
+import { LoadingSpinner } from './LoadingSpinner'
 
 interface Props {
   showSpinner: boolean
 }
 
-export default function Actions({ showSpinner }: Props): JSX.Element {
+export function Actions({ showSpinner }: Props): JSX.Element {
   return (
     <Col xs={12}>
       <div className="mt-4 d-flex">

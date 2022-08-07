@@ -1,4 +1,4 @@
-const ROUTES = {
+export const ROUTES = {
   home: '/',
   aboutMe: '/#about-me',
   projects: '/#projects',
@@ -7,5 +7,3 @@ const ROUTES = {
   imprintHash: '/imprint#imprint',
   privacyPolicyHash: '/imprint#privacy-policy',
 } as const
-
-export default ROUTES

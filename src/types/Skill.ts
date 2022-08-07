@@ -1,5 +1,3 @@
-type Skill = {
+export type Skill = {
   name: string
 }
-
-export default Skill

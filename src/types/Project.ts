@@ -1,7 +1,7 @@
-import PreviewImage from './PreviewImage'
-import Skill from './Skill'
+import { PreviewImage } from './PreviewImage'
+import { Skill } from './Skill'
 
-type Project = {
+export type Project = {
   name: string
   description: string
   tasks: readonly string[]
@@ -12,5 +12,3 @@ type Project = {
   previewImages?: readonly PreviewImage[]
   isComingSoon: boolean
 }
-
-export default Project

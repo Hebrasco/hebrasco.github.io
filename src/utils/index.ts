@@ -1,2 +1,2 @@
-export { default as conditionalStyle } from './conditionalStyle'
-export { default as renderChildren } from './renderChildren'
+export { conditionalStyle } from './conditionalStyle'
+export { renderChildren } from './renderChildren'

@@ -1,1 +1,1 @@
-export { default as SiteOwnerInfo } from './SiteOwnerInfo'
+export { SiteOwnerInfo } from './SiteOwnerInfo'

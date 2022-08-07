@@ -13,7 +13,7 @@ interface Props {
   invertImage?: boolean
 }
 
-export default function SocialLink({
+export function SocialLink({
   label,
   to,
   src,

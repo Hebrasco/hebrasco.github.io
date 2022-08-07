@@ -9,7 +9,7 @@ interface Props {
   filled?: boolean
 }
 
-export default function Action({
+export function Action({
   to,
   label,
   className = '',

@@ -11,7 +11,7 @@ import {
   Subject,
 } from './components'
 
-export default function ContactForm() {
+export function ContactForm() {
   const [validated, setValidated] = useState<boolean>(false)
   const [isEmailSuccess, setIsEmailSuccess] = useState<boolean | null>(null)
   const [isEmailSending, setIsEmailSending] = useState<boolean>(false)

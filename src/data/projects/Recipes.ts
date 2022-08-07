@@ -2,7 +2,7 @@ import { RecipesPreviews } from 'assets/images/previews'
 import { PROFILE } from 'data'
 import { Project } from 'types'
 
-const Recipes: Project = {
+export const RECIPES: Project = {
   name: 'Recipes app',
   description: `With his recipe app, you're able to create meal plans. There's a huge selection of recipes build in to choose from. Further, the ingredients can be exactly calculated based on the amount of people and can be added to a shopping list.`,
   tasks: [
@@ -38,5 +38,3 @@ const Recipes: Project = {
   ],
   isComingSoon: false,
 } as const
-
-export default Recipes

@@ -2,9 +2,9 @@ import { Section } from 'components/ui'
 import { PROFILE } from 'data'
 import React from 'react'
 import { Row } from 'react-bootstrap'
-import SkillColumn from './SkillColumn'
+import { SkillColumn } from './SkillColumn'
 
-export default function Skills(): JSX.Element {
+export function Skills(): JSX.Element {
   return (
     <Section sm title="Skills">
       <Row>

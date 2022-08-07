@@ -1,4 +1,4 @@
-export { default as Actions } from './Actions'
-export { default as Badges } from './Badges'
-export { default as ComingSoon } from './ComingSoon'
-export { default as Responsibilities } from './Responsibilities'
+export { Actions } from './Actions'
+export { Badges } from './Badges'
+export { ComingSoon } from './ComingSoon'
+export { Responsibilities } from './Responsibilities'

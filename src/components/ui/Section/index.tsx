@@ -16,7 +16,7 @@ interface Props {
   anchorReplace?: string
 }
 
-export default function Section({
+export function Section({
   children,
   xs = false,
   sm = false,

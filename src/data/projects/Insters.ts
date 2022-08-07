@@ -2,7 +2,7 @@ import { InstersPreviews } from 'assets/images/previews'
 import { PROFILE } from 'data'
 import { Project } from 'types'
 
-const Insters: Project = {
+export const INSTERS: Project = {
   name: 'Insters',
   description:
     'Insters is a photo filter app. You can import photos from your photo library and choose from a variety of color filters to apply to your photo. If one of the filters is applied, you can export the photo back to your library.',
@@ -40,5 +40,3 @@ const Insters: Project = {
   ],
   isComingSoon: false,
 } as const
-
-export default Insters

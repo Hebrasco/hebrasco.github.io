@@ -2,9 +2,9 @@ import { Email, Section } from 'components/ui'
 import { ROUTES } from 'data'
 import React from 'react'
 import { Col, Container } from 'react-bootstrap'
-import Form from './components/Form'
+import { Form } from './components'
 
-export default function Contact() {
+export function Contact() {
   return (
     <Container>
       <Section lg title="Let's talk" bottomPadding anchor={ROUTES.contact}>

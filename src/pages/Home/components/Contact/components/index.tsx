@@ -1,1 +1,1 @@
-export { default as Form } from './Form'
+export { ContactForm as Form } from './Form'

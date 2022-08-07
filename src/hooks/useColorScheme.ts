@@ -1,19 +1,19 @@
 import { MISC } from 'data'
 import { useEffect, useState } from 'react'
 
-const { COLOR_SCHEMES } = MISC
+const { colorSchemes } = MISC
 
-export default function useColorScheme(): string {
+export function useColorScheme(): string {
   const [colorScheme, setColorScheme] = useState<string>(
     window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? COLOR_SCHEMES.dark
-      : COLOR_SCHEMES.light
+      ? colorSchemes.dark
+      : colorSchemes.light
   )
 
   useEffect(() => {
     const updateColorScheme = (e: any) => {
-      setColorScheme(e.matches ? COLOR_SCHEMES.dark : COLOR_SCHEMES.light)
+      setColorScheme(e.matches ? colorSchemes.dark : colorSchemes.light)
     }
 
     window

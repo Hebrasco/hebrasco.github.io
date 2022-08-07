@@ -10,7 +10,7 @@ interface Props {
   className?: string
 }
 
-export default function Link({
+export function Link({
   to,
   label,
   navItem = false,

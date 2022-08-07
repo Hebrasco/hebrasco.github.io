@@ -1,14 +1,14 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
 import { PreviewImage } from 'types'
-import PreviewRenderer from './PreviewRenderer'
+import { PreviewRenderer } from './PreviewRenderer'
 
 interface Props {
   images?: readonly PreviewImage[]
   mobileOnly?: boolean
 }
 
-export default function ProjectImages({
+export function ProjectImages({
   images,
   mobileOnly = false,
 }: Props): JSX.Element | null {

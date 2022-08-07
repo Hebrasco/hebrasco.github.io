@@ -1,2 +1,2 @@
-export { default as BOOTSTRAP_GRID_SIZES } from './bootstrapGridSizes'
-export { default as COLOR_SCHEMES } from './colorSchemes'
+export { BOOTSTRAP_GRID_SIZES as bootstrapGridSizes } from './bootstrapGridSizes'
+export { COLOR_SCHEMES as colorSchemes } from './colorSchemes'

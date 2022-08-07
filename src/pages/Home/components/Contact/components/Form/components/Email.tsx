@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Form, InputGroup } from 'react-bootstrap'
 
-export default function Email(): JSX.Element {
+export function Email(): JSX.Element {
   return (
     <Col xs={12} lg={6}>
       <InputGroup className="mb-3">

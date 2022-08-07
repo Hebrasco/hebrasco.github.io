@@ -2,7 +2,7 @@ import { BloomPreviews } from 'assets/images/previews'
 import { PROFILE } from 'data'
 import { Project } from 'types'
 
-const Bloom: Project = {
+export const BLOOM: Project = {
   name: 'Bloom - Couples App',
   description:
     'This app is a privately developed app, for calculating the past time since a certain day. The app also offers some iOS 14 widgets that are updated daily. Furthermore, notifications are sent at certain time periods. In addition, in-app purchases are implemented to remove advertisements.',
@@ -42,5 +42,3 @@ const Bloom: Project = {
   ],
   isComingSoon: false,
 } as const
-
-export default Bloom

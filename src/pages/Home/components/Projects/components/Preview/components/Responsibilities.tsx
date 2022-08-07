@@ -5,10 +5,7 @@ interface Props {
   tasks: readonly string[]
 }
 
-export default function Responsibilities({
-  tasks,
-  projectName,
-}: Props): JSX.Element {
+export function Responsibilities({ tasks, projectName }: Props): JSX.Element {
   return (
     <>
       <p>Responsibilities included:</p>

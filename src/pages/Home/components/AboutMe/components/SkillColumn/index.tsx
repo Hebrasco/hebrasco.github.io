@@ -9,7 +9,7 @@ interface Props {
   data: readonly Skill[]
 }
 
-export default function SkillColumn({ title, data }: Props): JSX.Element {
+export function SkillColumn({ title, data }: Props): JSX.Element {
   return (
     <Col
       xs={12}

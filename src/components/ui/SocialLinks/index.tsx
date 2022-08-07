@@ -1,14 +1,14 @@
 import { AppStoreIcon, GitHubIcon } from 'assets/icons'
 import { CONFIG } from 'data'
 import React from 'react'
-import SocialLink from './SocialLink'
+import { SocialLink } from './SocialLink'
 
 interface Props {
   navItem?: boolean
   useIcons?: boolean
 }
 
-export default function SocialLinks({
+export function SocialLinks({
   navItem = false,
   useIcons = false,
 }: Props): JSX.Element {

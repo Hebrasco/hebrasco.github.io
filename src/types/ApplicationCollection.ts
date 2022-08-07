@@ -1,6 +1,6 @@
-import Skill from './Skill'
+import { Skill } from './Skill'
 
-type ProfileApplicationSkill = {
+export type ApplicationCollection = {
   xcode: Skill
   git: Skill
   gitTower: Skill
@@ -9,5 +9,3 @@ type ProfileApplicationSkill = {
   vs: Skill
   jira: Skill
 }
-
-export default ProfileApplicationSkill

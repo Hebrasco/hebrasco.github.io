@@ -8,7 +8,7 @@ interface Props {
   onClose: Function
 }
 
-export default function EmailSuccessToast({
+export function EmailSuccessToast({
   show,
   onClose,
   isSuccessful,

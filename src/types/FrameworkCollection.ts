@@ -27,10 +27,8 @@ type WebFrameworkCollection = {
   materialUI: Skill
 }
 
-type FrameworkCollection = {
+export type FrameworkCollection = {
   apple: AppleFrameworkCollection
   crossPlatform: CrossPlatformFrameworkCollection
   web: WebFrameworkCollection
 }
-
-export default FrameworkCollection

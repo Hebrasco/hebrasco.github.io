@@ -1,4 +1,4 @@
-export { default as Bloom } from './Bloom'
-export { default as Insters } from './Insters'
-export { default as Recipes } from './Recipes'
-export { default as Umbrella } from './Umbrella'
+export { BLOOM as bloom } from './Bloom'
+export { INSTERS as insters } from './Insters'
+export { RECIPES as recipes } from './Recipes'
+export { UMBRELLA as umbrella } from './Umbrella'

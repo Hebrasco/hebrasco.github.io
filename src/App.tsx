@@ -3,9 +3,9 @@ import { Footer, NavBar } from 'components/layout'
 import { CONFIG } from 'data'
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import Routes from 'routes'
+import { Routes } from 'routes'
 
-export default function App() {
+export function App() {
   useEffect(() => {
     init(CONFIG.emailJs.apiKey)
   }, [])

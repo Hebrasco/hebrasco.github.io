@@ -4,7 +4,7 @@ interface Props {
   show: boolean
 }
 
-export default function LoadingSpinner({ show }: Props): JSX.Element | null {
+export function LoadingSpinner({ show }: Props): JSX.Element | null {
   if (!show) return null
 
   return (

@@ -12,7 +12,7 @@ interface Props {
   button?: boolean
 }
 
-export default function ExternalLink({
+export function ExternalLink({
   children,
   to,
   className = '',

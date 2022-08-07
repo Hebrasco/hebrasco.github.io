@@ -8,7 +8,7 @@ interface TitleProps {
   isXs: boolean
 }
 
-export default function Title({ isXs = false }: TitleProps) {
+export function Title({ isXs = false }: TitleProps) {
   const baseStyle = 'landing-title-container'
   const name = CONFIG.profile.name.split(' ')[0]
 

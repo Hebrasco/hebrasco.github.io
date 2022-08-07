@@ -2,7 +2,7 @@ import { Email } from 'components/ui'
 import { CONFIG } from 'data'
 import React from 'react'
 
-export default function SiteOwnerInfo(): JSX.Element {
+export function SiteOwnerInfo(): JSX.Element {
   return (
     <>
       <ul className="list-unstyled">

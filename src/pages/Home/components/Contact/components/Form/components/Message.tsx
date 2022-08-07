@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Form, InputGroup } from 'react-bootstrap'
 
-export default function Message(): JSX.Element {
+export function Message(): JSX.Element {
   return (
     <Col xs={12}>
       <InputGroup>

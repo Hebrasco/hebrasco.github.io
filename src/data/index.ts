@@ -1,5 +1,5 @@
-export { default as CONFIG } from './config'
+export { CONFIG } from './config'
 export * as MISC from './misc'
 export * as PROFILE from './profile'
 export * as PROJECTS from './projects'
-export { default as ROUTES } from './routes'
+export { ROUTES } from './routes'

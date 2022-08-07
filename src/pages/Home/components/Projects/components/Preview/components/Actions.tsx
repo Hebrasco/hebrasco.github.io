@@ -1,4 +1,4 @@
-import Action from 'pages/Home/components/Projects/components/ProjectAction'
+import { Action } from 'pages/Home/components/Projects/components/ProjectAction'
 import React from 'react'
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   sourceURL?: string
 }
 
-export default function Actions({ onlineURL, sourceURL }: Props): JSX.Element {
+export function Actions({ onlineURL, sourceURL }: Props): JSX.Element {
   return (
     <div className="mt-5">
       <Action to={onlineURL} label="View" className="m-0" filled />

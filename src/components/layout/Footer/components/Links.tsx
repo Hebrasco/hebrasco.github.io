@@ -5,7 +5,7 @@ import React from 'react'
 import { Col } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 
-export default function Links(): JSX.Element {
+export function Links(): JSX.Element {
   const { isXs, isSm } = useWindowSize()
 
   return (

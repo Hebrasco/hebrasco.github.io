@@ -4,7 +4,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { SiteOwnerInfo } from './components'
 
-export default function Imprint(): JSX.Element {
+export function Imprint(): JSX.Element {
   const anchorReplace = '/imprint#'
 
   return (

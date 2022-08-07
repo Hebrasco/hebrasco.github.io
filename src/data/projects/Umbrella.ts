@@ -2,7 +2,7 @@ import { UmbrellaPreviews } from 'assets/images/previews'
 import { PROFILE } from 'data'
 import { Project } from 'types'
 
-const Umbrella: Project = {
+export const UMBRELLA: Project = {
   name: 'Umbrella',
   description:
     'This app is an task management tool. You can create and manage tasks of different projects. Tasks are managed in your self managed boards, sprints and milestones. A label, due date, milestone, estimated and actual time, priority and more can be added to a task.',
@@ -41,5 +41,3 @@ const Umbrella: Project = {
   ],
   isComingSoon: true,
 } as const
-
-export default Umbrella

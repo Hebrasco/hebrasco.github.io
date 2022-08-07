@@ -4,7 +4,7 @@ import { useWindowSize } from 'hooks'
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 
-export default function NavBar(): JSX.Element {
+export function NavBar(): JSX.Element {
   const { isXs, isSm } = useWindowSize()
 
   return (

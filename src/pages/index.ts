@@ -1,2 +1,2 @@
-export { default as Home } from './Home'
-export { default as Imprint } from './Imprint'
+export { Home } from './Home'
+export { Imprint } from './Imprint'

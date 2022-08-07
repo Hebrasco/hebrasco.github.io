@@ -1,4 +1,4 @@
-import Badge from 'pages/Home/components/Projects/components/ProjectBadge'
+import { ProjectBadge as Badge } from 'pages/Home/components/Projects/components/ProjectBadge'
 import React from 'react'
 import { Skill } from 'types'
 
@@ -7,7 +7,7 @@ interface Props {
   frameworks: readonly Skill[]
 }
 
-export default function Badges({ languages, frameworks }: Props): JSX.Element {
+export function Badges({ languages, frameworks }: Props): JSX.Element {
   return (
     <div className="mt-4 mb-1">
       {languages.map((language: any) => (

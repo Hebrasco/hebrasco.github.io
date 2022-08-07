@@ -1,14 +1,14 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import { Project } from 'types'
-import ProjectImages from '../ProjectImages'
+import { ProjectImages } from '../ProjectImages'
 import { Actions, Badges, ComingSoon, Responsibilities } from './components'
 
 interface Props {
   project: Project
 }
 
-export default function Preview({ project }: Props) {
+export function Preview({ project }: Props) {
   return (
     <div className="p-5 bg-light rounded">
       <Row>

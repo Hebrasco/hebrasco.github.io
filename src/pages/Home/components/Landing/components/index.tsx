@@ -1,3 +1,3 @@
-export { default as Image } from './Image'
-export { default as ScrollDownIcon } from './ScrollDownIcon'
-export { default as Title } from './Title'
+export { Image } from './Image'
+export { ScrollDownIcon } from './ScrollDownIcon'
+export { Title } from './Title'

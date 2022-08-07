@@ -1,7 +1,7 @@
 import { Skill, SkillCollection } from 'types'
-import APPLICATIONS from './applications'
-import FRAMEWORKS from './frameworks'
-import LANGUAGES from './languages'
+import { APPLICATIONS } from './applications'
+import { FRAMEWORKS } from './frameworks'
+import { LANGUAGES } from './languages'
 
 const SKILLS_LANGUAGES: readonly Skill[] = [
   LANGUAGES.swift,
@@ -31,10 +31,8 @@ const SKILLS_APPLICATIONS: readonly Skill[] = [
   APPLICATIONS.jira,
 ] as const
 
-const SKILLS: SkillCollection = {
+export const SKILLS: SkillCollection = {
   applications: SKILLS_APPLICATIONS,
   frameworks: SKILLS_FRAMEWORKS,
   languages: SKILLS_LANGUAGES,
 } as const
-
-export default SKILLS

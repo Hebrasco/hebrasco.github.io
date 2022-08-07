@@ -3,7 +3,7 @@ import { ROUTES } from 'data'
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 
-export default function Actions(): JSX.Element {
+export function Actions(): JSX.Element {
   return (
     <Row>
       <Col xs={12}>

@@ -1,2 +1,2 @@
-export { default as Copyright } from './Copyright'
-export { default as Links } from './Links'
+export { Copyright } from './Copyright'
+export { Links } from './Links'

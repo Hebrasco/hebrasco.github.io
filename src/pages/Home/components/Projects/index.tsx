@@ -4,7 +4,7 @@ import React from 'react'
 import { Container, Row, Stack } from 'react-bootstrap'
 import { Preview } from './components'
 
-export default function Projects(): JSX.Element {
+export function Projects(): JSX.Element {
   return (
     <Container className="mt-5 navbar-spacer">
       <Section lg title="Projects" anchor={ROUTES.projects}>
