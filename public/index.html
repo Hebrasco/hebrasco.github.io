@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta name="application-name" content="Daniel Bedrich" />
     <meta
@@ -21,13 +21,30 @@
       media="(prefers-color-scheme: dark)"
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="%PUBLIC_URL%/apple-touch-icon.png"
     />
+    <script type="text/javascript">
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          )
+        }
+      })(window.location)
+    </script>
     <title>Daniel Bedrich - Mobile Developer</title>
   </head>
   <body>

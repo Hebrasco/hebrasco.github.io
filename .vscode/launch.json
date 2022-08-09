@@ -8,12 +8,6 @@
       "type": "node-terminal",
       "name": "Start Debugger",
       "request": "launch",
-      "command": "npm run start"
-    },
-    {
-      "type": "node-terminal",
-      "name": "Start Debugger",
-      "request": "launch",
       "command": "yarn start",
       "cwd": "${workspaceFolder}"
     }
