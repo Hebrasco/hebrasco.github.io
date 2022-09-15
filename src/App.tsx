@@ -2,7 +2,7 @@ import { init } from '@emailjs/browser'
 import { Footer, NavBar } from 'components/layout'
 import { CONFIG } from 'data'
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import { Routes } from 'routes'
 
 export function App() {
