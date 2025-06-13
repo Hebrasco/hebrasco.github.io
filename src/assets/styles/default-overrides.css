@@ -33,7 +33,7 @@
 
   --borderRadius: 1rem;
 
-  --landingBackgroundImage: url('../images/me_light.jpeg');
+  --landingBackgroundImage: url('../images/me.png');
 }
 
 html {
