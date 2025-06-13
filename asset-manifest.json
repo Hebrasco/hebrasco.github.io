@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.1bc4c04b.css",
+    "main.css": "/static/css/main.00f0b9e7.css",
     "main.js": "/static/js/main.cee0c0bf.js",
-    "static/media/me_dark.jpeg": "/static/media/me_dark.e71e03a5a41578c5d4f3.jpeg",
-    "static/media/me_light.jpeg": "/static/media/me_light.68ebd991e2ba6392eeef.jpeg",
+    "static/media/me.png": "/static/media/me.05ad0da9de45553370ff.png",
     "static/media/ipad_dark.png": "/static/media/ipad_dark.06c436965da450e75333.png",
     "static/media/ipad_light.png": "/static/media/ipad_light.af130a7cf9f81a52e9e7.png",
     "static/media/iphone_light.png": "/static/media/iphone_light.df9a405e48aa86c0f898.png",
@@ -17,11 +16,11 @@
     "static/media/iphoneSE_widgets_light.png": "/static/media/iphoneSE_widgets_light.d50ed3d3e9df1b071396.png",
     "static/media/iphoneSE.png": "/static/media/iphoneSE.71881b12daf92c3ee996.png",
     "index.html": "/index.html",
-    "main.1bc4c04b.css.map": "/static/css/main.1bc4c04b.css.map",
+    "main.00f0b9e7.css.map": "/static/css/main.00f0b9e7.css.map",
     "main.cee0c0bf.js.map": "/static/js/main.cee0c0bf.js.map"
   },
   "entrypoints": [
-    "static/css/main.1bc4c04b.css",
+    "static/css/main.00f0b9e7.css",
     "static/js/main.cee0c0bf.js"
   ]
 }
