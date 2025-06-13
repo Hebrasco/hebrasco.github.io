@@ -4,12 +4,14 @@ import { useWindowSize } from 'hooks'
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 
+import styles from './index.module.css'
+
 export function NavBar(): JSX.Element {
   const { isXs, isSm } = useWindowSize()
 
   return (
-    <Navbar bg="light" expand="md" fixed="top">
-      <Container fluid>
+    <Navbar expand="md" className={`${styles['navbar-glass']} shadow`}>
+      <Container>
         <Navbar.Brand href={ROUTES.home}>{CONFIG.profile.name}</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>

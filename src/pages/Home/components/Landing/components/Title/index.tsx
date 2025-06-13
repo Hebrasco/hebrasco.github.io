@@ -23,7 +23,7 @@ export function Title({ isXs = false }: TitleProps) {
         <div className={styles['landing-title']}>
           <h1>Hi, I am</h1>
           <h1>{name}</h1>
-          <p className="fw-light">{CONFIG.profile.jobTitle}</p>
+          <p>{CONFIG.profile.jobTitle}</p>
         </div>
       </div>
     </div>

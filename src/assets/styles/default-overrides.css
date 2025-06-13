@@ -34,6 +34,9 @@
   --borderRadius: 1rem;
 
   --landingBackgroundImage: url('../images/me.png');
+
+  --glassBackground: rgb(255 255 255 / 10%);
+  --glassBlur: 4px;
 }
 
 html {
