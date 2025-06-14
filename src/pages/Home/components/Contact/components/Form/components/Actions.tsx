@@ -11,7 +11,7 @@ export function Actions({ showSpinner }: Props): JSX.Element {
     <Col xs={12}>
       <div className="mt-4 d-flex">
         <Button variant="dark" type="submit">
-          Submit Form
+          Send
         </Button>
         <Button variant="outline-dark" type="reset" className="ms-3">
           Reset
