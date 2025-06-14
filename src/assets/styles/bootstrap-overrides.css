@@ -55,6 +55,10 @@ img.rounded,
   color: var(--primaryTextColor) !important;
 }
 
+.navbar-brand {
+  padding-left: 8px;
+}
+
 .text-muted {
   color: var(--mutedTextColor) !important;
 }
