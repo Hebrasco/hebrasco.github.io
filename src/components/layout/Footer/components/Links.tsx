@@ -11,10 +11,11 @@ export function Links(): JSX.Element {
   return (
     <Col xs="12" md="auto">
       <div className="d-flex">
-        <Link to={ROUTES.imprintHash} label="Imprint" />
+        <Link to={ROUTES.imprintHash} label="Imprint" footerItem />
         <Link
           to={ROUTES.privacyPolicyHash}
           label="Privacy Policy"
+          footerItem
           className={`${conditionalStyle(isXs || isSm, 'me-auto')}`}
         />
         <SocialLinks useIcons />

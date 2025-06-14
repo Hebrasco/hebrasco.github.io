@@ -6,6 +6,7 @@ interface Props {
   to: string
   label: string
   navItem?: boolean
+  footerItem?: boolean
   button?: boolean
   className?: string
 }
@@ -14,16 +15,17 @@ export function Link({
   to,
   label,
   navItem = false,
+  footerItem = false,
   button = false,
   className = '',
 }: Props) {
   return (
     <RouterLink
       to={to}
-      // smooth
       className={`
-        ${conditionalStyle(navItem, 'nav-item nav-link', 'pe-3 py-2')} 
-        ${conditionalStyle(button, 'btn')} 
+        ${conditionalStyle(navItem, 'nav-item nav-link')}
+        ${conditionalStyle(footerItem, 'pe-3 py-2')}
+        ${conditionalStyle(button, 'btn')}
         text-decoration-none ${className}
       `}
     >
