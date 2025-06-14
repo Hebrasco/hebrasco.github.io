@@ -10,7 +10,7 @@ interface Props {
 
 export function Preview({ project }: Props) {
   return (
-    <div className="p-5 bg-light rounded">
+    <div className="p-5 bg-light rounded shadow">
       <Row>
         <Col md={6}>
           <h3>{project.name}</h3>
