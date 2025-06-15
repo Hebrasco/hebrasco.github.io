@@ -6,7 +6,7 @@
   border-radius: 28px;
   border-width: 2px;
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--glassBorder);
   left: unset;
   position: fixed !important;
   top: 0;

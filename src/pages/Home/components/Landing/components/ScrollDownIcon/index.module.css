@@ -16,13 +16,14 @@
   -webkit-animation: down 2s infinite;
   backdrop-filter: blur(var(--glassBlur));
   background-color: var(--glassBackground);
+  border: 1px solid var(--glassBorder);
 }
 
 .scroll-down-icon::before {
   content: '';
   position: absolute;
   top: 0.75rem;
-  left: 1rem;
+  left: 0.95rem;
   width: 1rem;
   height: 1rem;
   border-left: 2px solid black;

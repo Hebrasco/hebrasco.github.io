@@ -35,7 +35,8 @@
 
   --landingBackgroundImage: url('../images/me.png');
 
-  --glassBackground: rgb(255 255 255 / 10%);
+  --glassBackground: rgba(255, 255, 255, 0.1);
+  --glassBorder: rgba(255, 255, 255, 0.1);
   --glassBlur: 4px;
 }
 
