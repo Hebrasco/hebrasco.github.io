@@ -3,7 +3,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 
 interface Props {
-  to: string | undefined
+  to?: string
   label: string
   className?: string
   filled?: boolean

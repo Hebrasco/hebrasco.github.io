@@ -1,0 +1,9 @@
+.preview-scroll-container {
+  overflow: hidden;
+}
+
+.preview-container {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}

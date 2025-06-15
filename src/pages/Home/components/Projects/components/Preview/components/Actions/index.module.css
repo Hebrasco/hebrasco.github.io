@@ -1,0 +1,12 @@
+.preview-action-button-mobile {
+  width: 2rem;
+  height: 2rem;
+  line-height: 0px !important;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large !important;
+  padding: 0;
+  border: none;
+  margin-left: auto;
+  cursor: pointer;
+}
