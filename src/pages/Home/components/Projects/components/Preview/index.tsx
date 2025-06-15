@@ -11,10 +11,9 @@ interface Props {
   hasMarginRight: boolean
 }
 
-const width = 400
-
 export function Preview({ project, hasMarginRight }: Props) {
   const { isXs, isSm } = useWindowSize()
+  const width = isXs || isSm ? '85vw' : 400
 
   return (
     <div
@@ -25,16 +24,14 @@ export function Preview({ project, hasMarginRight }: Props) {
       }}
     >
       <div
-        className={`${conditionalStyle(
-          hasMarginRight,
-          'me-4'
-        )} p-5 bg-light rounded shadow`}
+        className={`p-5 bg-light rounded shadow`}
         style={{
           transform: conditionalStyle(
             isXs || isSm,
-            'translateX(20px)',
-            'translateX(225px)'
+            'translateX(30px)',
+            'translateX(245px)'
           ),
+          marginRight: conditionalStyle(hasMarginRight, '20px', '60px'),
           height: '100%',
           width,
         }}
