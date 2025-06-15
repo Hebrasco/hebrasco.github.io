@@ -1,10 +1,9 @@
-import React, { ReactElement } from 'react'
+import React, { PropsWithChildren, ReactElement } from 'react'
 import { conditionalStyle } from 'utils'
 
 import styles from './index.module.css'
 
-interface Props {
-  children: ReactElement | ReactElement[]
+interface Props extends PropsWithChildren {
   xs?: boolean
   sm?: boolean
   md?: boolean
