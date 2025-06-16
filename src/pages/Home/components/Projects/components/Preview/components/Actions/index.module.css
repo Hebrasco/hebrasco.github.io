@@ -1,6 +1,6 @@
-.preview-action-button-mobile {
-  width: 2rem;
-  height: 2rem;
+.preview-action-button-details {
+  width: 2.375rem;
+  height: 2.375rem;
   line-height: 0px !important;
   justify-content: center;
   align-items: center;
@@ -9,4 +9,13 @@
   border-radius: 50%;
   margin-left: auto;
   cursor: pointer;
+  display: flex;
+}
+
+.preview-action-button-details:before {
+  transition: transform 0.15s ease-in-out 0.15s;
+}
+
+.preview-action-button-details-active:before {
+  transform: rotate(45deg);
 }

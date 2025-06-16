@@ -1,5 +1,5 @@
 import { ROUTES } from 'data'
-import { Home, Imprint } from 'pages'
+import { Home, Imprint, Project } from 'pages'
 import React, { useEffect } from 'react'
 import { Route, Routes as BrowserRoutes, useLocation } from 'react-router-dom'
 
@@ -21,6 +21,7 @@ export function Routes() {
     <BrowserRoutes>
       <Route path={ROUTES.home} element={<Home />} />
       <Route path={ROUTES.imprint} element={<Imprint />} />
+      <Route path={ROUTES.project} element={<Project />} />
       <Route path="*" element={<Home />} />
     </BrowserRoutes>
   )

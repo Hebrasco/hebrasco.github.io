@@ -3,6 +3,7 @@ import { PROFILE } from 'data'
 import { Project } from 'types'
 
 export const BLOOM: Project = {
+  id: 'bloom',
   name: 'Bloom - Couples App',
   description:
     'This app is a privately developed app, for calculating the past time since a certain day. The app also offers some iOS 14 widgets that are updated daily. Furthermore, notifications are sent at certain time periods. In addition, in-app purchases are implemented to remove advertisements.',

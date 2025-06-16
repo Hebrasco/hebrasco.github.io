@@ -1,11 +1,17 @@
 .preview-container {
-  padding: 30px;
   height: 100%;
 }
 
 .preview-content-container {
+  padding: 30px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  transition: transform 0.15s linear 0.15s;
+}
+
+.preview-content-container-desktop:hover {
+  transform: perspective(1px) scale(1.025);
+  cursor: pointer;
 }

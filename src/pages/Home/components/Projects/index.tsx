@@ -31,7 +31,7 @@ export function Projects(): JSX.Element {
           }}
         >
           <div
-            className={`d-flex flex-row flex-nowrap pb-5 ${styles['preview-container']}`}
+            className={`d-flex flex-row flex-nowrap pt-3 pb-5 ${styles['preview-container']}`}
           >
             {PROJECTS.map((project, index) => (
               <Preview

@@ -2,6 +2,7 @@ import { PreviewImage } from './PreviewImage'
 import { Skill } from './Skill'
 
 export type Project = {
+  id: string
   name: string
   description: string
   tasks: readonly string[]
