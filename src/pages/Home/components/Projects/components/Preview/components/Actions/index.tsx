@@ -1,23 +1,25 @@
 import { Action } from 'pages/Home/components/Projects/components/ProjectAction'
 import React from 'react'
 
-import { conditionalStyle } from 'utils'
 import { useWindowSize } from 'hooks'
 
 import styles from './index.module.css'
-import { Button } from 'react-bootstrap'
 
 interface Props {
   onlineURL?: string
   sourceURL?: string
+  colors: {
+    foreground: string
+    background: string
+  }
 }
 
-export function Actions({ onlineURL, sourceURL }: Props): JSX.Element {
+export function Actions({ onlineURL, sourceURL, colors }: Props): JSX.Element {
   const { isXs, isSm } = useWindowSize()
   const isMobile = isXs || isSm
 
   return (
-    <div className="mt-5 d-flex">
+    <div className="mt-5 d-flex gap-3">
       {isMobile ? (
         <i
           className={`bi bi-plus-circle-fill ${styles['preview-action-button-mobile']}`}
@@ -25,8 +27,8 @@ export function Actions({ onlineURL, sourceURL }: Props): JSX.Element {
         />
       ) : (
         <>
-          <Action to={onlineURL} label="View" className={'m-0'} filled />
-          <Action to={sourceURL} label="Source Code" className={'ms-3'} />
+          <Action to={onlineURL} label="View" colors={colors} filled />
+          <Action to={sourceURL} label="Source Code" colors={colors} />
         </>
       )}
     </div>

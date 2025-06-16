@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import React, { CSSProperties, PropsWithChildren } from 'react'
 import { conditionalStyle } from 'utils'
 
 import styles from './index.module.css'
@@ -9,6 +9,7 @@ interface Props extends PropsWithChildren {
   fullWidth?: boolean
   navItem?: boolean
   button?: boolean
+  style?: CSSProperties
 }
 
 export function ExternalLink({
@@ -18,6 +19,7 @@ export function ExternalLink({
   fullWidth = true,
   navItem = false,
   button = false,
+  style,
 }: Props) {
   return (
     <a
@@ -30,6 +32,7 @@ export function ExternalLink({
         ${conditionalStyle(button, 'btn')}
         ${className}
       `}
+      style={style}
     >
       {children}
     </a>

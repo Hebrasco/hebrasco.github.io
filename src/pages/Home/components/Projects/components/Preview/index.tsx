@@ -34,7 +34,7 @@ export function Preview({ project, hasMarginRight }: Props) {
       }}
     >
       <div
-        className={`bg-light rounded shadow ${styles['preview-container']}`}
+        className={`rounded shadow ${styles['preview-container']}`}
         style={{
           transform: conditionalStyle(
             isXs || isSm,
@@ -43,17 +43,25 @@ export function Preview({ project, hasMarginRight }: Props) {
           ),
           marginRight: conditionalStyle(hasMarginRight, '20px', '60px'),
           width,
+          backgroundColor: project.previewColors.backgroundGradient.end,
+          background: `linear-gradient(180deg,${project.previewColors.backgroundGradient.start} 20%, ${project.previewColors.backgroundGradient.end} 80%)`,
         }}
       >
         <div className={styles['preview-content-container']}>
           <div className="mb-auto">
-            <h3>{project.name}</h3>
-            <ComingSoon isComingSoon={project.isComingSoon} />
+            <h3 style={{ color: project.previewColors.title }}>
+              {project.name}
+            </h3>
+            <ComingSoon
+              isComingSoon={project.isComingSoon}
+              color={project.previewColors.subtitle}
+            />
           </div>
           <ProjectImages images={project.previewImages} />
           <Actions
             onlineURL={project.onlineURL}
             sourceURL={project.sourceURL}
+            colors={project.previewColors.actions}
           />
         </div>
       </div>

@@ -39,4 +39,16 @@ export const INSTERS: Project = {
     },
   ],
   isComingSoon: false,
+  previewColors: {
+    backgroundGradient: {
+      start: '#662d91',
+      end: '#4B0082',
+    },
+    title: '#FFFFFF',
+    subtitle: '#fafafc',
+    actions: {
+      foreground: '#000000',
+      background: '#FFFFFF',
+    },
+  },
 } as const

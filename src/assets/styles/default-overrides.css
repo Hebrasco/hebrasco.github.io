@@ -64,7 +64,7 @@ h6,
 p,
 div,
 a {
-  color: var(--primaryTextColor) !important;
+  color: var(--primaryTextColor);
 }
 
 input:-webkit-autofill,

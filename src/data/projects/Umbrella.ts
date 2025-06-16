@@ -40,4 +40,16 @@ export const UMBRELLA: Project = {
     },
   ],
   isComingSoon: true,
+  previewColors: {
+    backgroundGradient: {
+      start: '#6495ED',
+      end: '#4169E1',
+    },
+    title: '#FFFFFF',
+    subtitle: '#fafafc',
+    actions: {
+      foreground: '#000000',
+      background: '#FFFFFF',
+    },
+  },
 } as const

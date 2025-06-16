@@ -41,4 +41,16 @@ export const BLOOM: Project = {
     },
   ],
   isComingSoon: false,
+  previewColors: {
+    backgroundGradient: {
+      start: '#DC143C',
+      end: '#C40233',
+    },
+    title: '#FFFFFF',
+    subtitle: '#fafafc',
+    actions: {
+      foreground: '#000000',
+      background: '#FFFFFF',
+    },
+  },
 } as const

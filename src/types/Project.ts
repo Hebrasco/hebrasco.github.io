@@ -11,4 +11,16 @@ export type Project = {
   sourceURL?: string
   previewImages?: readonly PreviewImage[]
   isComingSoon: boolean
+  previewColors: {
+    backgroundGradient: {
+      start: string
+      end: string
+    }
+    title: string
+    subtitle: string
+    actions: {
+      foreground: string
+      background: string
+    }
+  }
 }

@@ -37,4 +37,16 @@ export const RECIPES: Project = {
     },
   ],
   isComingSoon: false,
+  previewColors: {
+    backgroundGradient: {
+      start: '#20B2AA',
+      end: '#008B8B',
+    },
+    title: '#FFFFFF',
+    subtitle: '#fafafc',
+    actions: {
+      foreground: '#000000',
+      background: '#FFFFFF',
+    },
+  },
 } as const
