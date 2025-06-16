@@ -4,8 +4,7 @@
 
   --primaryColor: #ffffff;
   --secondaryColor: #000000;
-  --accentColorValues: 250, 250, 252;
-  --accentColor: rgb(var(--accentColorValues));
+  --accentColor: #fafafc;
 
   --primaryTextColor: rgb(33, 37, 41);
   --secondaryTextColorValues: 248, 249, 250;
