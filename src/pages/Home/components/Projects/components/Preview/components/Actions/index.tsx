@@ -19,10 +19,14 @@ export function Actions({ onlineURL, sourceURL, colors }: Props): JSX.Element {
   const isMobile = isXs || isSm
 
   return (
-    <div className="mt-5 d-flex gap-3">
+    <div className="mt-4 mt-md-5 d-flex gap-3" style={{ height: 38 }}>
       {isMobile ? (
         <i
-          className={`bi bi-plus-circle-fill ${styles['preview-action-button-mobile']}`}
+          style={{
+            backgroundColor: colors.background,
+            color: colors.foreground,
+          }}
+          className={`bi bi-plus ${styles['preview-action-button-mobile']}`}
           onClick={() => console.log('aa')}
         />
       ) : (
