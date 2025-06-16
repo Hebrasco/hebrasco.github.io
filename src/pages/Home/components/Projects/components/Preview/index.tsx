@@ -34,7 +34,7 @@ export function Preview({ project, hasMarginRight }: Props) {
       }}
     >
       <div
-        className={`rounded shadow ${styles['preview-container']}`}
+        className={`rounded ${styles['preview-container']}`}
         style={{
           transform: conditionalStyle(
             isXs || isSm,
