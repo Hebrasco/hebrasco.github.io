@@ -2,7 +2,7 @@ import React from 'react'
 
 interface Props {
   isComingSoon: boolean
-  color: string
+  color?: string
 }
 
 export function ComingSoon({ isComingSoon, color }: Props): JSX.Element | null {

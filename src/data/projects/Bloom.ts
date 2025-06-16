@@ -24,21 +24,47 @@ export const BLOOM: Project = {
   ],
   onlineURL: 'https://apps.apple.com/app/bloom-couples-app/id1533246365',
   sourceURL: undefined,
+  previewImageMain: {
+    id: 'preview-bloom-iphone',
+    sourceLight: BloomPreviews.iphoneImageDark,
+    sourceDark: BloomPreviews.iphoneImageLight,
+  },
   previewImages: [
     {
       id: 'preview-bloom-iphoneSE',
       sourceLight: BloomPreviews.iphoneSEImageLight,
       sourceDark: BloomPreviews.iphoneSEImageDark,
+      style: {
+        width: '25%',
+        height: 'auto',
+        left: '9%',
+        bottom: 0,
+        zIndex: 3,
+      },
     },
     {
       id: 'preview-bloom-iphone',
       sourceLight: BloomPreviews.iphoneImageDark,
       sourceDark: BloomPreviews.iphoneImageLight,
+      style: {
+        width: '30%',
+        height: 'auto',
+        left: '5%',
+        bottom: 0,
+        zIndex: 2,
+      },
     },
     {
       id: 'preview-bloom-ipad',
       sourceLight: BloomPreviews.ipadImageLight,
       sourceDark: BloomPreviews.ipadImageDark,
+      style: {
+        width: '54%',
+        height: 'auto',
+        right: 0,
+        bottom: 0,
+        zIndex: 1,
+      },
     },
   ],
   isComingSoon: false,

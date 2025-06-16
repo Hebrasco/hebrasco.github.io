@@ -10,7 +10,8 @@ export type Project = {
   frameworks: readonly Skill[]
   onlineURL?: string
   sourceURL?: string
-  previewImages?: readonly PreviewImage[]
+  previewImages: readonly PreviewImage[]
+  previewImageMain: PreviewImage
   isComingSoon: boolean
   previewColors: {
     backgroundGradient: {

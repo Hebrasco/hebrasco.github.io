@@ -6,13 +6,13 @@ import { PreviewImage } from 'types'
 import styles from './index.module.css'
 
 interface Props {
-  images: readonly PreviewImage[]
+  image: PreviewImage
 }
 
-export function PreviewRenderer({ images }: Props): JSX.Element {
+export function ProjectPreviewImage({ image }: Props): JSX.Element {
   const colorScheme = useColorScheme()
   const isLightScheme = colorScheme === MISC.colorSchemes.light
-  const { id, sourceLight, sourceDark } = images[1]
+  const { id, sourceLight, sourceDark, style } = image
 
   return (
     <div className="d-flex justify-content-center">
@@ -20,6 +20,7 @@ export function PreviewRenderer({ images }: Props): JSX.Element {
         key={id}
         src={isLightScheme ? sourceLight : sourceDark}
         className={styles['preview-image']}
+        style={style}
         loading="lazy"
       />
     </div>

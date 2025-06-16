@@ -1,13 +1,7 @@
-import React, {
-  MouseEvent,
-  MouseEventHandler,
-  useState,
-  useTransition,
-} from 'react'
-import { Row } from 'react-bootstrap'
+import React, { MouseEvent, useState } from 'react'
+
 import { Project } from 'types'
-import { ProjectImages } from '../ProjectImages'
-import { Actions, Badges, ComingSoon, Responsibilities } from './components'
+import { Actions, ComingSoon } from './components'
 import { conditionalStyle } from 'utils'
 import { useWindowSize } from 'hooks'
 import { PROJECT_CONTAINER_SIZE } from 'pages/Home/components/Projects/constants'
@@ -15,13 +9,14 @@ import { PROJECT_CONTAINER_SIZE } from 'pages/Home/components/Projects/constants
 import styles from './index.module.css'
 import { useNavigate } from 'react-router-dom'
 import { ROUTES } from 'data'
+import { ProjectPreviewImage } from 'pages/Home/components/Projects/components/ProjectPreviewImage'
 
 interface Props {
   project: Project
   hasMarginRight: boolean
 }
 
-export function Preview({ project, hasMarginRight }: Props) {
+export function Preview({ project, hasMarginRight }: Props): JSX.Element {
   const [isDetailShown, setIsDetailShown] = useState<boolean>(false)
   const navigate = useNavigate()
   const { isXs, isSm } = useWindowSize()
@@ -93,7 +88,9 @@ export function Preview({ project, hasMarginRight }: Props) {
               {project.description}
             </p>
           ) : (
-            <ProjectImages images={project.previewImages} />
+            <>
+              <ProjectPreviewImage image={project.previewImageMain} />
+            </>
           )}
           <Actions
             projectId={project.id}

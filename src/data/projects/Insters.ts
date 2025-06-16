@@ -22,21 +22,47 @@ export const INSTERS: Project = {
   ],
   onlineURL: 'https://apps.apple.com/app/insters/id1561338805',
   sourceURL: undefined,
+  previewImageMain: {
+    id: 'preview-insters-iphone',
+    sourceLight: InstersPreviews.iphoneImageDark,
+    sourceDark: InstersPreviews.iphoneImageLight,
+  },
   previewImages: [
     {
       id: 'preview-insters-iphoneSE',
       sourceLight: InstersPreviews.iphoneSEImage,
       sourceDark: InstersPreviews.iphoneSEImage,
+      style: {
+        width: '25%',
+        height: 'auto',
+        left: '9%',
+        bottom: 0,
+        zIndex: 3,
+      },
     },
     {
       id: 'preview-insters-iphone',
       sourceLight: InstersPreviews.iphoneImageDark,
       sourceDark: InstersPreviews.iphoneImageLight,
+      style: {
+        width: '30%',
+        height: 'auto',
+        left: '5%',
+        bottom: 0,
+        zIndex: 2,
+      },
     },
     {
       id: 'preview-insters-ipad',
       sourceLight: InstersPreviews.ipadImageLight,
       sourceDark: InstersPreviews.ipadImageDark,
+      style: {
+        width: '54%',
+        height: 'auto',
+        right: 0,
+        bottom: 0,
+        zIndex: 1,
+      },
     },
   ],
   isComingSoon: false,

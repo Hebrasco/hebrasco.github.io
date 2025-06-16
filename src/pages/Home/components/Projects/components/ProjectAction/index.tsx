@@ -8,7 +8,7 @@ interface Props {
   label: string
   className?: string
   filled?: boolean
-  colors: {
+  colors?: {
     foreground: string
     background: string
   }
@@ -21,19 +21,19 @@ export function Action({
   colors,
   className,
 }: Props): JSX.Element | null {
-  const colorStyles = useMemo(
-    () =>
-      filled
-        ? {
-            backgroundColor: colors.background,
-            color: colors.foreground,
-          }
-        : {
-            borderColor: colors.background,
-            color: colors.background,
-          },
-    [filled, colors]
-  )
+  const colorStyles = useMemo(() => {
+    if (!colors) return
+
+    if (filled)
+      return {
+        backgroundColor: colors.background,
+        color: colors.foreground,
+      }
+    return {
+      borderColor: colors.background,
+      color: colors.background,
+    }
+  }, [filled, colors])
 
   const buttonClass = useMemo(
     () =>
