@@ -4,7 +4,7 @@ const PROJECT_CONTAINER_SIZE = {
     width: 260,
   },
   md: {
-    height: 810,
+    height: 772,
     width: 405,
   },
 }
