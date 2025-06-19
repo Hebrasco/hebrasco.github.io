@@ -14,7 +14,7 @@ interface Props {
 export function ProjectBadge({ skill, colors }: Props): JSX.Element {
   return (
     <span
-      className={`${styles['badge']} py-2 px-3 mb-3`}
+      className={`${styles['badge']} py-2 px-3`}
       style={{
         backgroundColor: colors?.background,
         color: colors?.foreground,

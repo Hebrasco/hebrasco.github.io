@@ -14,15 +14,13 @@ import { Badges } from 'pages/Project/components/Badges'
 
 interface Props {
   project: Project
-  hasMarginRight: boolean
 }
 
-export function Preview({ project, hasMarginRight }: Props): JSX.Element {
+export function Preview({ project }: Props): JSX.Element {
   const [isDetailShown, setIsDetailShown] = useState<boolean>(false)
   const navigate = useNavigate()
   const { isXs, isSm } = useWindowSize()
   const isMobile = isXs || isSm
-
   const width = isMobile
     ? PROJECT_CONTAINER_SIZE.xs.width
     : PROJECT_CONTAINER_SIZE.md.width
@@ -41,73 +39,53 @@ export function Preview({ project, hasMarginRight }: Props): JSX.Element {
 
   return (
     <div
+      className={`rounded ${
+        styles['preview-content-container']
+      } ${conditionalStyle(
+        !isMobile,
+        styles['preview-content-container-desktop']
+      )}`}
       style={{
-        width: `calc(${width}px + 1.5rem)`,
+        backgroundColor: project.previewColors.backgroundGradient.end,
+        background: `linear-gradient(180deg,${project.previewColors.backgroundGradient.start} 20%, ${project.previewColors.backgroundGradient.end} 80%)`,
+        width,
         height,
         scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
       }}
+      onClick={handleNavigateToDetails}
     >
-      <div
-        className={styles['preview-container']}
-        style={{
-          transform: conditionalStyle(
-            isMobile,
-            'translateX(12px)',
-            'translateX(245px)'
-          ),
-          marginRight: conditionalStyle(hasMarginRight, '20px', '60px'),
-          width,
-        }}
-      >
-        <div
-          className={`rounded ${
-            styles['preview-content-container']
-          } ${conditionalStyle(
-            !isMobile,
-            styles['preview-content-container-desktop']
-          )}`}
-          style={{
-            backgroundColor: project.previewColors.backgroundGradient.end,
-            background: `linear-gradient(180deg,${project.previewColors.backgroundGradient.start} 20%, ${project.previewColors.backgroundGradient.end} 80%)`,
-          }}
-          onClick={handleNavigateToDetails}
-        >
-          <div className="mb-auto">
-            <h3 style={{ color: project.previewColors.title }}>
-              {project.name}
-            </h3>
-            <ComingSoon
-              isComingSoon={project.isComingSoon}
-              color={project.previewColors.subtitle}
-            />
-            {!isMobile && isDetailShown ? (
-              <Badges
-                colors={project.previewColors.actions}
-                languages={project.languages}
-                frameworks={project.frameworks}
-              />
-            ) : null}
-          </div>
-          {isDetailShown ? (
-            <p
-              style={{ color: project.previewColors.title }}
-              className={conditionalStyle(!isMobile, 'h4')}
-            >
-              {project.description}
-            </p>
-          ) : (
-            <>
-              <ProjectPreviewImage image={project.previewImageMain} />
-            </>
-          )}
-          <Actions
-            projectId={project.id}
+      <div className="mb-auto">
+        <h3 style={{ color: project.previewColors.title }}>{project.name}</h3>
+        <ComingSoon
+          isComingSoon={project.isComingSoon}
+          color={project.previewColors.subtitle}
+        />
+        {!isMobile && isDetailShown ? (
+          <Badges
             colors={project.previewColors.actions}
-            onToggleDetails={handleToggleDetails}
-            isDetailShown={isDetailShown}
+            languages={project.languages}
+            frameworks={project.frameworks}
           />
-        </div>
+        ) : null}
       </div>
+      {isDetailShown ? (
+        <p
+          style={{ color: project.previewColors.title }}
+          className={conditionalStyle(!isMobile, 'h4')}
+        >
+          {project.description}
+        </p>
+      ) : (
+        <>
+          <ProjectPreviewImage image={project.previewImageMain} />
+        </>
+      )}
+      <Actions
+        projectId={project.id}
+        colors={project.previewColors.actions}
+        onToggleDetails={handleToggleDetails}
+        isDetailShown={isDetailShown}
+      />
     </div>
   )
 }

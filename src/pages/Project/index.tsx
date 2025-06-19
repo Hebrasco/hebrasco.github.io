@@ -46,7 +46,7 @@ export function Project(): JSX.Element {
             />
           </Col>
         </Row>
-        <div className="p-5 bg-light my-5 rounded d-flex">
+        <div className="p-5 bg-light rounded d-flex">
           <Row>
             <Col md={6} className="d-flex flex-column">
               <Col className="d-flex d-md-none mt-4 mb-5">
@@ -89,21 +89,16 @@ export function Project(): JSX.Element {
           </Row>
         </div>
       </Container>
-      <Container fluid className="p-0">
-        <div>
-          <div
-            className={projectStyles['preview-scroll-container']}
-            style={{
-              height: `${height + PROJECT_CONTAINER_HEIGHT_OFFSET}px`,
-            }}
-          >
-            <div
-              className={`d-flex flex-row flex-nowrap pt-3 pb-5 ${projectStyles['preview-container']}`}
-            >
+      <Container fluid className="p-0 my-5">
+        <div className={projectStyles['preview-scroll-container']}>
+          <div className={projectStyles['preview-container']}>
+            <div className={projectStyles['preview-container-card-set']}>
               {project.features.map((feature, index) => (
                 <div
+                  className={`rounded ${previewStyles['preview-content-container']} bg-light`}
                   style={{
-                    width: `calc(${width}px + 1.5rem)`,
+                    justifyContent: 'flex-start',
+                    width,
                     height,
                     scrollSnapAlign: conditionalStyle(
                       isMobile,
@@ -112,44 +107,20 @@ export function Project(): JSX.Element {
                     ),
                   }}
                 >
-                  <div
-                    className={previewStyles['preview-container']}
-                    style={{
-                      transform: conditionalStyle(
-                        isMobile,
-                        'translateX(12px)',
-                        'translateX(245px)'
-                      ),
-                      marginRight: conditionalStyle(
-                        index === project.tasks.length - 1,
-                        '20px',
-                        '60px'
-                      ),
-                      width,
-                    }}
+                  <i
+                    className={`${feature.icon} h1`}
+                    style={{ marginBottom: 15 }}
+                  ></i>
+                  <p
+                    className={`${conditionalStyle(
+                      isMobile,
+                      'h4',
+                      'h3'
+                    )} fw-bold`}
                   >
-                    <div
-                      className={`rounded ${previewStyles['preview-content-container']} bg-light`}
-                      style={{
-                        justifyContent: 'flex-start',
-                      }}
-                    >
-                      <i
-                        className={`${feature.icon} h1`}
-                        style={{ marginBottom: 15 }}
-                      ></i>
-                      <p
-                        className={`${conditionalStyle(
-                          isMobile,
-                          'h4',
-                          'h3'
-                        )} fw-bold`}
-                      >
-                        {feature.title}
-                      </p>
-                      <p>{feature.description}</p>
-                    </div>
-                  </div>
+                    {feature.title}
+                  </p>
+                  <p>{feature.description}</p>
                 </div>
               ))}
             </div>

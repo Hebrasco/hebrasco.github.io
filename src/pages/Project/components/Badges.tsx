@@ -13,7 +13,7 @@ interface Props {
 
 export function Badges({ languages, frameworks, colors }: Props): JSX.Element {
   return (
-    <div className="d-flex flex-wrap mt-4 mb-1" style={{ gap: '0 1rem' }}>
+    <div className="d-flex flex-wrap mt-4" style={{ gap: '1rem' }}>
       {languages.map((language: any) => (
         <Badge
           colors={colors}
