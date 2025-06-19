@@ -22,6 +22,54 @@ export const BLOOM: Project = {
     PROFILE.frameworks.apple.storeKit,
     PROFILE.frameworks.apple.localNotifications,
   ],
+  features: [
+    {
+      icon: 'bi bi-bell',
+      title: 'Notifications',
+      description:
+        'The user will get a notification when a specific anniversary was met, like 1, 3 and 6 months and every year.',
+    },
+    {
+      icon: 'bi bi-person',
+      title: 'Photos',
+      description:
+        'One or Two photos can be imported from the users photo library to be shown on the home screen.',
+    },
+    {
+      icon: 'bi bi-calendar-date',
+      title: 'Important Dates',
+      description:
+        'The special dates of a relationship can be set and are shown on the home screen. These are couple, engaged and married.',
+    },
+    {
+      icon: 'bi bi-cake2',
+      title: 'Anniversaries',
+      description:
+        'On the how screen the remaining days of your next anniversary.',
+    },
+    {
+      icon: 'bi bi-clock',
+      title: 'Time',
+      description:
+        "On the how screen the years, months and days you've been together will be shown.",
+    },
+    {
+      icon: 'bi bi-app',
+      title: 'Widgets',
+      description:
+        'Various widgets of the core features are available, like next anniversary and time together.',
+    },
+    {
+      icon: 'bi bi-badge-ad',
+      title: 'Ads',
+      description: 'A ad banner is shown on the home screen.',
+    },
+    {
+      icon: 'bi bi-cash-coin',
+      title: 'In-App Purchases',
+      description: 'The ads can be removed through an in-app purchase.',
+    },
+  ],
   onlineURL: 'https://apps.apple.com/app/bloom-couples-app/id1533246365',
   sourceURL: undefined,
   previewImageMain: {

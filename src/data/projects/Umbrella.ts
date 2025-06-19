@@ -21,6 +21,36 @@ export const UMBRELLA: Project = {
     PROFILE.frameworks.apple.coreData,
     PROFILE.frameworks.apple.cloudKit,
   ],
+  features: [
+    {
+      icon: 'bi bi-list-task',
+      title: 'Tasks',
+      description:
+        'Tasks can managed in a backlog. A task has various settings and attributes that can be set.',
+    },
+    {
+      icon: 'bi bi-kanban',
+      title: 'Board',
+      description:
+        'A project has a board with columns where the assigned tasks are moved through different stages.',
+    },
+    {
+      icon: 'bi bi-bar-chart-steps',
+      title: 'Sprints',
+      description: 'Sprints have their own boards and tasks.',
+    },
+    {
+      icon: 'bi bi-signpost',
+      title: 'Milestones',
+      description:
+        'Milestones contain tasks for a specific goal and make it easier to see progress on that goal.',
+    },
+    {
+      icon: 'bi bi-cloud',
+      title: 'Cloud Sync',
+      description: 'All projects and tasks are synced with iCloud in realtime.',
+    },
+  ],
   onlineURL: undefined,
   sourceURL: undefined,
   previewImageMain: {

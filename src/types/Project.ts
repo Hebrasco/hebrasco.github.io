@@ -1,3 +1,4 @@
+import { Feature } from 'types/Feature'
 import { PreviewImage } from './PreviewImage'
 import { Skill } from './Skill'
 
@@ -8,6 +9,7 @@ export type Project = {
   tasks: readonly string[]
   languages: readonly Skill[]
   frameworks: readonly Skill[]
+  features: readonly Feature[]
   onlineURL?: string
   sourceURL?: string
   previewImages: readonly PreviewImage[]

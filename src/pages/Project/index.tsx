@@ -100,7 +100,7 @@ export function Project(): JSX.Element {
             <div
               className={`d-flex flex-row flex-nowrap pt-3 pb-5 ${projectStyles['preview-container']}`}
             >
-              {project.tasks.map((task, index) => (
+              {project.features.map((feature, index) => (
                 <div
                   style={{
                     width: `calc(${width}px + 1.5rem)`,
@@ -135,8 +135,8 @@ export function Project(): JSX.Element {
                       }}
                     >
                       <i
-                        className="bi bi-bell h1"
-                        style={{ marginBottom: 30 }}
+                        className={`${feature.icon} h1`}
+                        style={{ marginBottom: 15 }}
                       ></i>
                       <p
                         className={`${conditionalStyle(
@@ -145,12 +145,9 @@ export function Project(): JSX.Element {
                           'h3'
                         )} fw-bold`}
                       >
-                        Notifications
+                        {feature.title}
                       </p>
-                      <p>
-                        Get a notification on you anniversary and other special
-                        dates.
-                      </p>
+                      <p>{feature.description}</p>
                     </div>
                   </div>
                 </div>

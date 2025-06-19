@@ -20,6 +20,23 @@ export const INSTERS: Project = {
     PROFILE.frameworks.apple.storeKit,
     PROFILE.frameworks.apple.coreImage,
   ],
+  features: [
+    {
+      icon: 'bi bi-image',
+      title: 'Image Filters',
+      description: 'Various color filters can be applied to a photo.',
+    },
+    {
+      icon: 'bi bi-badge-ad',
+      title: 'Ads',
+      description: 'A ad banner is shown while the user is editing an photo.',
+    },
+    {
+      icon: 'bi bi-cash-coin',
+      title: 'In-App Purchases',
+      description: 'The ads can be removed through an in-app purchase.',
+    },
+  ],
   onlineURL: 'https://apps.apple.com/app/insters/id1561338805',
   sourceURL: undefined,
   previewImageMain: {

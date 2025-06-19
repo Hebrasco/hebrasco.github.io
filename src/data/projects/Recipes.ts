@@ -18,6 +18,44 @@ export const RECIPES: Project = {
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.coreData,
   ],
+  features: [
+    {
+      icon: 'bi bi-fork-knife',
+      title: 'Recipes',
+      description:
+        'Various recipes are available in the app with ingredients and step by step guides.',
+    },
+    {
+      icon: 'bi bi-calculator',
+      title: 'Calculate Ingredients',
+      description:
+        'All ingredients can be recalculated based on the portions needed.',
+    },
+    {
+      icon: 'bi bi-calendar-week',
+      title: 'Meal Plan',
+      description:
+        'A meal plan for a whole week can be created by selecting any amount of recipes for each day.',
+    },
+    {
+      icon: 'bi bi-search',
+      title: 'Search',
+      description:
+        'Search for recipes and/or filter for specific attributes like intolerances.',
+    },
+    {
+      icon: 'bi bi-basket',
+      title: 'Groceries List',
+      description:
+        'Based on the meal plan and calculated portions the groceries list is populated with all ingredients.',
+    },
+    {
+      icon: 'bi bi-heart',
+      title: 'Favorites',
+      description:
+        "Recipes can be favored and they'll appear in a separated list.",
+    },
+  ],
   onlineURL: undefined,
   sourceURL: 'https://github.com/Hebrasco/recipe_app',
   previewImageMain: {
