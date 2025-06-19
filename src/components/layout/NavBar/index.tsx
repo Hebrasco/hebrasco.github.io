@@ -12,7 +12,7 @@ export function NavBar(): JSX.Element {
 
   return (
     <Navbar expand="md" className={`${styles['navbar-glass']} shadow`}>
-      <Container className={conditionalStyle(isXs || isSm, 'd-block')}>
+      <Container fluid className={conditionalStyle(isXs || isSm, 'd-block')}>
         <Navbar.Brand
           href={ROUTES.home}
           className={conditionalStyle(!isXs && !isSm, 'pe-4', 'pe-0')}
