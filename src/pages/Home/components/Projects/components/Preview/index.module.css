@@ -9,9 +9,10 @@
   flex-direction: column;
   justify-content: flex-end;
   transition: transform 0.15s linear 0.15s;
+  backface-visibility: hidden;
 }
 
 .preview-content-container-desktop:hover {
-  transform: perspective(1px) scale(1.025);
+  transform: translateZ(0) scale(1.015);
   cursor: pointer;
 }
