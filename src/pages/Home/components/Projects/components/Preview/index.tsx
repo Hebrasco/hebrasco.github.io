@@ -10,6 +10,7 @@ import styles from './index.module.css'
 import { useNavigate } from 'react-router-dom'
 import { ROUTES } from 'data'
 import { ProjectPreviewImage } from 'pages/Home/components/Projects/components/ProjectPreviewImage'
+import { Badges } from 'pages/Project/components/Badges'
 
 interface Props {
   project: Project
@@ -79,6 +80,13 @@ export function Preview({ project, hasMarginRight }: Props): JSX.Element {
               isComingSoon={project.isComingSoon}
               color={project.previewColors.subtitle}
             />
+            {!isMobile && isDetailShown ? (
+              <Badges
+                colors={project.previewColors.actions}
+                languages={project.languages}
+                frameworks={project.frameworks}
+              />
+            ) : null}
           </div>
           {isDetailShown ? (
             <p
