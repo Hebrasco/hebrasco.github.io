@@ -55,14 +55,14 @@ export const UMBRELLA: Project = {
   sourceURL: undefined,
   previewImageMain: {
     id: 'preview-umbrella-iphone',
-    sourceLight: UmbrellaPreviews.iphoneImageDark,
-    sourceDark: UmbrellaPreviews.iphoneImageLight,
+    sourceLight: UmbrellaPreviews.iphoneImageLight,
+    sourceDark: UmbrellaPreviews.iphoneImageDark,
   },
   previewImages: [
     {
       id: 'preview-umbrella-iphone',
-      sourceLight: UmbrellaPreviews.iphoneImageDark,
-      sourceDark: UmbrellaPreviews.iphoneImageLight,
+      sourceLight: UmbrellaPreviews.iphoneImageLight,
+      sourceDark: UmbrellaPreviews.iphoneImageDark,
       style: {
         width: '20%',
         height: 'auto',

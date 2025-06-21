@@ -41,8 +41,8 @@ export const INSTERS: Project = {
   sourceURL: undefined,
   previewImageMain: {
     id: 'preview-insters-iphone',
-    sourceLight: InstersPreviews.iphoneImageDark,
-    sourceDark: InstersPreviews.iphoneImageLight,
+    sourceLight: InstersPreviews.iphoneImageLight,
+    sourceDark: InstersPreviews.iphoneImageDark,
   },
   previewImages: [
     {
@@ -59,8 +59,8 @@ export const INSTERS: Project = {
     },
     {
       id: 'preview-insters-iphone',
-      sourceLight: InstersPreviews.iphoneImageDark,
-      sourceDark: InstersPreviews.iphoneImageLight,
+      sourceLight: InstersPreviews.iphoneImageLight,
+      sourceDark: InstersPreviews.iphoneImageDark,
       style: {
         width: '30%',
         height: 'auto',

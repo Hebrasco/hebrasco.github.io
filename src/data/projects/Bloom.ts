@@ -74,8 +74,8 @@ export const BLOOM: Project = {
   sourceURL: undefined,
   previewImageMain: {
     id: 'preview-bloom-iphone',
-    sourceLight: BloomPreviews.iphoneImageDark,
-    sourceDark: BloomPreviews.iphoneImageLight,
+    sourceLight: BloomPreviews.iphoneImageLight,
+    sourceDark: BloomPreviews.iphoneImageDark,
   },
   previewImages: [
     {
@@ -92,8 +92,8 @@ export const BLOOM: Project = {
     },
     {
       id: 'preview-bloom-iphone',
-      sourceLight: BloomPreviews.iphoneImageDark,
-      sourceDark: BloomPreviews.iphoneImageLight,
+      sourceLight: BloomPreviews.iphoneImageLight,
+      sourceDark: BloomPreviews.iphoneImageDark,
       style: {
         width: '30%',
         height: 'auto',
