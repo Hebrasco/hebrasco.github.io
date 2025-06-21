@@ -10,7 +10,7 @@
 
 .preview-container {
   overflow: visible;
-  --gallery-column-gap: 45px;
+  --gallery-column-gap: 3rem;
   display: grid;
   grid-template-rows: repeat(1, auto);
   grid-template-columns: max-content;
