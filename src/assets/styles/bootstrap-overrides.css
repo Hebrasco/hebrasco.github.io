@@ -147,6 +147,8 @@ img.rounded,
   width: unset;
   max-width: unset;
   margin: 0px calc(50vw - min(1680px, 87.5vw) / 2) !important;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .navbar-brand {
