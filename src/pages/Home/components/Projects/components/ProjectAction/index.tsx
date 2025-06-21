@@ -1,4 +1,4 @@
-import { Link } from 'components/ui'
+import { ExternalLink, Link } from 'components/ui'
 import React, { useMemo } from 'react'
 
 import styles from './index.module.css'
@@ -8,6 +8,7 @@ interface Props {
   label: string
   className?: string
   filled?: boolean
+  externalLink?: boolean
   colors?: {
     foreground: string
     background: string
@@ -20,6 +21,7 @@ export function Action({
   filled = false,
   colors,
   className,
+  externalLink = false,
 }: Props): JSX.Element | null {
   const colorStyles = useMemo(() => {
     if (!colors) return
@@ -45,6 +47,17 @@ export function Action({
 
   if (!to) return null
 
+  if (externalLink) {
+    return (
+      <ExternalLink
+        to={to}
+        className={`${buttonClass} ${className}`}
+        style={colorStyles}
+      >
+        {label}
+      </ExternalLink>
+    )
+  }
   return (
     <Link
       to={to}

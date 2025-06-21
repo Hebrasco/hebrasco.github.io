@@ -2,6 +2,7 @@ import React, { CSSProperties, PropsWithChildren } from 'react'
 import { conditionalStyle } from 'utils'
 
 import styles from './index.module.css'
+import buttonStyles from 'src/pages/Home/components/Projects/components/ProjectAction/index.module.css'
 
 interface Props extends PropsWithChildren {
   to: string

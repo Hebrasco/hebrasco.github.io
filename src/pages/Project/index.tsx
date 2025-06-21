@@ -12,6 +12,7 @@ import previewStyles from 'pages/Home/components/Projects/components/Preview/ind
 import { useWindowSize } from 'hooks'
 import { PROJECT_CONTAINER_HEIGHT_OFFSET } from 'pages/Home/components/Projects/constants'
 import { conditionalStyle } from 'utils'
+import { ExternalLink } from 'components/ui'
 
 export function Project(): JSX.Element {
   const { projectId } = useParams()
@@ -61,23 +62,32 @@ export function Project(): JSX.Element {
                 className="mt-auto d-flex justify-content-space-between"
                 style={{ height: 38 }}
               >
-                <Action
-                  to={project.onlineURL}
-                  label="App Store"
-                  filled
-                  colors={{
-                    background: project.previewColors.backgroundGradient.start,
-                    foreground: project.previewColors.title,
-                  }}
-                />
-                <Action
-                  to={project.sourceURL}
-                  label="Source Code"
-                  colors={{
-                    background: project.previewColors.backgroundGradient.start,
-                    foreground: project.previewColors.backgroundGradient.start,
-                  }}
-                />
+                {project.onlineURL && (
+                  <Action
+                    externalLink
+                    filled
+                    to={project.onlineURL}
+                    colors={{
+                      background:
+                        project.previewColors.backgroundGradient.start,
+                      foreground: project.previewColors.title,
+                    }}
+                    label={'App Store'}
+                  />
+                )}
+                {project.sourceURL && (
+                  <Action
+                    externalLink
+                    to={project.sourceURL}
+                    colors={{
+                      background:
+                        project.previewColors.backgroundGradient.start,
+                      foreground:
+                        project.previewColors.backgroundGradient.start,
+                    }}
+                    label="Source Code"
+                  />
+                )}
               </div>
             </Col>
             <Col
