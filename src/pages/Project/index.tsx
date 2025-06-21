@@ -31,7 +31,7 @@ export function Project(): JSX.Element {
   if (!projectId || !project) return <div>Project not found</div>
 
   return (
-    <>
+    <div style={{ marginTop: 'var(--containerMargin)' }}>
       <Container>
         <Row className="my-5">
           <Col>
@@ -137,6 +137,6 @@ export function Project(): JSX.Element {
           </div>
         </div>
       </Container>
-    </>
+    </div>
   )
 }
