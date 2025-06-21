@@ -9,13 +9,12 @@ export function Links(): JSX.Element {
   const { isXs, isSm } = useWindowSize()
 
   return (
-    <Col xs="12" md="auto">
-      <div className="d-flex">
-        <Link to={ROUTES.imprintHash} label="Imprint" footerItem />
+    <Col xs="12" md="auto" className="align-content-center">
+      <div className="d-flex gap-4">
+        <Link to={ROUTES.imprintHash} label="Imprint" />
         <Link
           to={ROUTES.privacyPolicyHash}
           label="Privacy Policy"
-          footerItem
           className={`${conditionalStyle(isXs || isSm, 'me-auto')}`}
         />
         <SocialLinks useIcons />

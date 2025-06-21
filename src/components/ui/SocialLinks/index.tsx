@@ -4,14 +4,10 @@ import React from 'react'
 import { SocialLink } from './SocialLink'
 
 interface Props {
-  navItem?: boolean
   useIcons?: boolean
 }
 
-export function SocialLinks({
-  navItem = false,
-  useIcons = false,
-}: Props): JSX.Element {
+export function SocialLinks({ useIcons = false }: Props): JSX.Element {
   return (
     <>
       <SocialLink
@@ -19,14 +15,12 @@ export function SocialLinks({
         src={AppStoreIcon}
         to={CONFIG.references.appStoreUrl}
         useIcon={useIcons}
-        navItem={navItem}
       />
       <SocialLink
         label="GitHub"
         src={GitHubIcon}
         to={CONFIG.references.gitHubUrl}
         useIcon={useIcons}
-        navItem={navItem}
         invertImage
       />
     </>

@@ -4,13 +4,13 @@ import { Copyright, Links } from './components'
 
 export function Footer(): JSX.Element {
   return (
-    <Container fluid className="footer bg-light">
-      <footer className="py-3">
+    <footer className="bg-light">
+      <Container className="footer py-3">
         <Row>
           <Copyright />
           <Links />
         </Row>
-      </footer>
-    </Container>
+      </Container>
+    </footer>
   )
 }

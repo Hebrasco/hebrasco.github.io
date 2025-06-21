@@ -2,13 +2,12 @@ import React, { CSSProperties, PropsWithChildren } from 'react'
 import { conditionalStyle } from 'utils'
 
 import styles from './index.module.css'
-import buttonStyles from 'src/pages/Home/components/Projects/components/ProjectAction/index.module.css'
 
 interface Props extends PropsWithChildren {
   to: string
   className?: string
   fullWidth?: boolean
-  navItem?: boolean
+
   button?: boolean
   style?: CSSProperties
 }
@@ -18,7 +17,6 @@ export function ExternalLink({
   to,
   className = '',
   fullWidth = true,
-  navItem = false,
   button = false,
   style,
 }: Props) {
@@ -28,7 +26,6 @@ export function ExternalLink({
       target="_blank"
       rel="noopener noreferrer"
       className={`text-decoration-none
-        ${conditionalStyle(navItem, 'nav-item nav-link')}
         ${conditionalStyle(!fullWidth, styles['external-account-link'])}
         ${conditionalStyle(button, 'btn')}
         ${className}

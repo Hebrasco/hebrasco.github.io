@@ -5,8 +5,6 @@ import { conditionalStyle } from 'utils'
 interface Props {
   to: string
   label: string
-  navItem?: boolean
-  footerItem?: boolean
   button?: boolean
   className?: string
   style?: CSSProperties
@@ -15,8 +13,6 @@ interface Props {
 export function Link({
   to,
   label,
-  navItem = false,
-  footerItem = false,
   button = false,
   className = '',
   style,
@@ -29,8 +25,6 @@ export function Link({
     <RouterLink
       to={to}
       className={`
-        ${conditionalStyle(navItem, 'nav-item nav-link')}
-        ${conditionalStyle(footerItem, 'pe-3 py-2')}
         ${conditionalStyle(button, 'btn')}
         text-decoration-none ${className}
       `}
