@@ -25,7 +25,7 @@ export function ExternalLink({
       href={to}
       target="_blank"
       rel="noopener noreferrer"
-      className={`text-decoration-none
+      className={`
         ${conditionalStyle(!fullWidth, styles['external-account-link'])}
         ${conditionalStyle(button, 'btn')}
         ${className}

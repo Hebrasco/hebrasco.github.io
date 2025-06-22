@@ -29,6 +29,7 @@ img.rounded,
 
 .btn {
   border-radius: 0.5rem;
+  text-decoration: none !important;
 }
 
 .btn:hover,

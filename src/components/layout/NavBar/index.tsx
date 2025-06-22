@@ -24,7 +24,7 @@ export function NavBar(): JSX.Element {
         className={conditionalStyle(isMobile, 'd-block')}
         style={{ padding: '0.5rem 1rem' }}
       >
-        <Navbar.Brand href={ROUTES.home} className={'pe-4'}>
+        <Navbar.Brand href={ROUTES.home} className="pe-4 text-decoration-none">
           {CONFIG.profile.name}
         </Navbar.Brand>
         <Navbar.Toggle />

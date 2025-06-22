@@ -1,12 +1,12 @@
-import { ExternalLink, Link } from 'components/ui'
-import { ROUTES } from 'data'
+import { ExternalLink } from 'components/ui'
+import { CONFIG } from 'data'
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 
 export function Actions(): JSX.Element {
   return (
     <Row>
-      <Col xs={12}>
+      <Col xs={12} className="d-flex align-items-center">
         <ExternalLink
           to="/daniel_bedrich_resume.pdf"
           className="btn-dark"
@@ -15,8 +15,10 @@ export function Actions(): JSX.Element {
           Download Resume
         </ExternalLink>
         <span className="d-inline-flex align-items-center">
-          <Link to={ROUTES.contact} label="Let's Talk" className="ms-3" />
-          <i className="bi bi-chevron-right d-flex"></i>
+          <ExternalLink to={`mailto:${CONFIG.profile.email}`} className="ms-3">
+            Let's Talk
+          </ExternalLink>
+          <i className="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
         </span>
       </Col>
     </Row>

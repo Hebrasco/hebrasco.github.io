@@ -10,6 +10,7 @@ interface Props extends PropsWithChildren {
   lg?: boolean
   xl?: boolean
   bottomPadding?: boolean
+  fluidContainer?: boolean
   title?: string
   anchor?: string
   anchorReplace?: string
@@ -23,6 +24,7 @@ export function Section({
   lg = false,
   xl = false,
   bottomPadding = false,
+  fluidContainer = false,
   title,
   anchor,
   anchorReplace = '/#',
@@ -40,7 +42,14 @@ export function Section({
         ${conditionalStyle(!bottomPadding, styles['section-ignore-bottom'])}
       `}
       >
-        {title && <h1 className="mb-5 text-uppercase">{title}</h1>}
+        {title && (
+          <h1
+            className={`mb-5 text-uppercase
+        ${conditionalStyle(fluidContainer, styles['section-fluid'])}`}
+          >
+            {title}
+          </h1>
+        )}
         {Array.isArray(children) ? children.map((child) => child) : children}
       </div>
     </>
