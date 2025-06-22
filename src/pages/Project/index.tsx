@@ -38,10 +38,6 @@ export function Project(): JSX.Element {
             <h1 className="fw-bold">{project.name}</h1>
             <ComingSoon isComingSoon={project.isComingSoon} />
             <Badges
-              colors={{
-                background: project.previewColors.backgroundGradient.start,
-                foreground: project.previewColors.title,
-              }}
               languages={project.languages}
               frameworks={project.frameworks}
             />
@@ -58,35 +54,12 @@ export function Project(): JSX.Element {
                 projectName={project.name}
                 tasks={project.tasks}
               />
-              <div
-                className="mt-auto d-flex justify-content-space-between"
-                style={{ height: 38 }}
-              >
+              <div className="mt-auto d-flex justify-content-space-between">
                 {project.onlineURL && (
-                  <Action
-                    externalLink
-                    filled
-                    to={project.onlineURL}
-                    colors={{
-                      background:
-                        project.previewColors.backgroundGradient.start,
-                      foreground: project.previewColors.title,
-                    }}
-                    label={'App Store'}
-                  />
+                  <Action filled to={project.onlineURL} label={'App Store'} />
                 )}
                 {project.sourceURL && (
-                  <Action
-                    externalLink
-                    to={project.sourceURL}
-                    colors={{
-                      background:
-                        project.previewColors.backgroundGradient.start,
-                      foreground:
-                        project.previewColors.backgroundGradient.start,
-                    }}
-                    label="Source Code"
-                  />
+                  <Action to={project.sourceURL} label="Source Code" />
                 )}
               </div>
             </Col>

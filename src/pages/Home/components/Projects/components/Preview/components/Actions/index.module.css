@@ -10,6 +10,8 @@
   margin-left: auto;
   cursor: pointer;
   display: flex;
+  background-color: var(--primaryBackgroundColor);
+  color: var(--primaryColor);
 }
 
 .preview-action-button-details:before {

@@ -39,15 +39,13 @@ export function Preview({ project }: Props): JSX.Element {
 
   return (
     <div
-      className={`rounded ${
+      className={`bg-light rounded ${
         styles['preview-content-container']
       } ${conditionalStyle(
         !isMobile,
         styles['preview-content-container-desktop']
       )}`}
       style={{
-        backgroundColor: project.previewColors.backgroundGradient.end,
-        background: `linear-gradient(180deg,${project.previewColors.backgroundGradient.start} 20%, ${project.previewColors.backgroundGradient.end} 80%)`,
         width,
         height,
         scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
@@ -55,24 +53,20 @@ export function Preview({ project }: Props): JSX.Element {
       onClick={handleNavigateToDetails}
     >
       <div className="mb-auto">
-        <h3 style={{ color: project.previewColors.title }}>{project.name}</h3>
+        <h3>{project.name}</h3>
         <ComingSoon
           isComingSoon={project.isComingSoon}
           color={project.previewColors.subtitle}
         />
         {!isMobile && isDetailShown ? (
           <Badges
-            colors={project.previewColors.actions}
             languages={project.languages}
             frameworks={project.frameworks}
           />
         ) : null}
       </div>
       {isDetailShown ? (
-        <p
-          style={{ color: project.previewColors.title }}
-          className={conditionalStyle(!isMobile, 'h4')}
-        >
+        <p className={conditionalStyle(!isMobile, 'h4')}>
           {project.description}
         </p>
       ) : (
@@ -81,8 +75,6 @@ export function Preview({ project }: Props): JSX.Element {
         </>
       )}
       <Actions
-        projectId={project.id}
-        colors={project.previewColors.actions}
         onToggleDetails={handleToggleDetails}
         isDetailShown={isDetailShown}
       />

@@ -48,7 +48,7 @@ img.rounded,
   background-color: var(--primaryBackgroundColor) !important;
   color: var(--primaryTextColor) !important;
   border-radius: var(--borderRadius);
-  border-width: 3px;
+  border-width: 2px;
 }
 
 .btn,
@@ -60,7 +60,7 @@ img.rounded,
   border-color: var(--primaryBorderColor) !important;
   color: var(--primaryTextColor) !important;
   border-radius: var(--borderRadius);
-  border-width: 3px;
+  border-width: 2px;
   transition-property: background-color color;
   transition-duration: 350ms;
   transition-timing-function: ease-in-out;
