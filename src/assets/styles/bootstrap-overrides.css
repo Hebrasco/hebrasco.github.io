@@ -1,6 +1,11 @@
 a,
 a:hover {
   color: var(--primaryTextColor);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--primaryTextColor);
+  text-decoration: underline;
 }
 
 .badge {
@@ -26,6 +31,13 @@ img.rounded,
   border-radius: 0.5rem;
 }
 
+.btn:hover,
+.btn:active,
+.btn:focus {
+  background-color: var(--primaryButtonHoverBackground) !important;
+  border-color: var(--primaryButtonHoverBackground) !important;
+}
+
 .bg-light {
   background-color: var(--accentColor) !important;
 }
@@ -35,6 +47,7 @@ img.rounded,
   background-color: var(--primaryBackgroundColor) !important;
   color: var(--primaryTextColor) !important;
   border-radius: var(--borderRadius);
+  border-width: 3px;
 }
 
 .btn,
@@ -46,12 +59,16 @@ img.rounded,
   border-color: var(--primaryBorderColor) !important;
   color: var(--primaryTextColor) !important;
   border-radius: var(--borderRadius);
+  border-width: 3px;
+  transition-property: background-color color;
+  transition-duration: 350ms;
+  transition-timing-function: ease-in-out;
 }
 
 .btn-outline-dark:hover,
 .btn-outline-dark:active,
 .btn-outline-dark:focus {
-  background-color: var(--primaryBackgroundColor) !important;
+  background-color: var(--secondaryButtonHoverBackground) !important;
   color: var(--primaryHoverColor) !important;
 }
 

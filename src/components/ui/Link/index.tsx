@@ -5,7 +5,7 @@ import { conditionalStyle } from 'utils'
 interface Props {
   to: string
   label: string
-  button?: boolean
+  navItem?: boolean
   className?: string
   style?: CSSProperties
 }
@@ -13,7 +13,7 @@ interface Props {
 export function Link({
   to,
   label,
-  button = false,
+  navItem = false,
   className = '',
   style,
 }: Props) {
@@ -24,10 +24,10 @@ export function Link({
   return (
     <RouterLink
       to={to}
-      className={`
-        ${conditionalStyle(button, 'btn')}
-        text-decoration-none ${className}
-      `}
+      className={`${conditionalStyle(
+        navItem,
+        'text-decoration-none'
+      )} ${className}`}
       style={style}
       onClick={handleClick}
     >

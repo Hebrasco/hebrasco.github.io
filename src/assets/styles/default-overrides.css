@@ -6,7 +6,7 @@
   --secondaryColor: #000000;
   --accentColor: #f7f7f7;
 
-  --primaryTextColor: rgb(33, 37, 41);
+  --primaryTextColor: #1d1d1f;
   --secondaryTextColorValues: 248, 249, 250;
   --secondaryTextColor: rgb(var(--secondaryTextColorValues));
   --mutedTextColor: rgba(0, 0, 0, 0.7);
@@ -16,6 +16,9 @@
 
   --primaryBackgroundColor: var(--primaryTextColor);
   --secondaryBackgroundColor: var(--secondaryTextColor);
+
+  --primaryButtonHoverBackground: rgb(45, 45, 45);
+  --secondaryButtonHoverBackground: var(--primaryTextColor);
 
   --primaryHoverColor: var(--secondaryTextColor);
   --secondaryHoverColor: var(--primaryTextColor);

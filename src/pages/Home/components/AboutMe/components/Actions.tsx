@@ -14,12 +14,10 @@ export function Actions(): JSX.Element {
         >
           Download Resume
         </ExternalLink>
-        <Link
-          button
-          to={ROUTES.contact}
-          label="Let's Talk"
-          className="btn-outline-dark ms-3"
-        />
+        <span className="d-inline-flex align-items-center">
+          <Link to={ROUTES.contact} label="Let's Talk" className="ms-3" />
+          <i className="bi bi-chevron-right d-flex"></i>
+        </span>
       </Col>
     </Row>
   )

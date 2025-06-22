@@ -36,9 +36,9 @@ export function NavBar(): JSX.Element {
               'align-items-center'
             )}`}
           >
-            <Link to={ROUTES.aboutMe} label="About Me" />
-            <Link to={ROUTES.projects} label="Projects" />
-            <Link to={ROUTES.contact} label="Contact" />
+            <Link to={ROUTES.aboutMe} label="About Me" navItem />
+            <Link to={ROUTES.projects} label="Projects" navItem />
+            <Link to={ROUTES.contact} label="Contact" navItem />
             <SocialLinks useIcons={!isMobile} />
           </Nav>
         </Navbar.Collapse>
