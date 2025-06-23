@@ -2,10 +2,9 @@ import React from 'react'
 
 interface Props {
   isComingSoon: boolean
-  color?: string
 }
 
-export function ComingSoon({ isComingSoon, color }: Props): JSX.Element | null {
+export function ComingSoon({ isComingSoon }: Props): JSX.Element | null {
   if (!isComingSoon) return null
-  return <p style={{ color }}>Coming Soon</p>
+  return <p>Coming Soon</p>
 }

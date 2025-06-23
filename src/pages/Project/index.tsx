@@ -10,9 +10,9 @@ import { useParams } from 'react-router-dom'
 import projectStyles from 'pages/Home/components/Projects/index.module.css'
 import previewStyles from 'pages/Home/components/Projects/components/Preview/index.module.css'
 import { useWindowSize } from 'hooks'
-import { PROJECT_CONTAINER_HEIGHT_OFFSET } from 'pages/Home/components/Projects/constants'
 import { conditionalStyle } from 'utils'
-import { ExternalLink } from 'components/ui'
+
+import styles from './index.module.css'
 
 export function Project(): JSX.Element {
   const { projectId } = useParams()
@@ -31,7 +31,7 @@ export function Project(): JSX.Element {
   if (!projectId || !project) return <div>Project not found</div>
 
   return (
-    <div style={{ marginTop: 'var(--containerMargin)' }}>
+    <div className={styles['project-container']}>
       <Container>
         <Row className="my-5">
           <Col>

@@ -15,16 +15,4 @@ export type Project = {
   previewImages: readonly PreviewImage[]
   previewImageMain: PreviewImage
   isComingSoon: boolean
-  previewColors: {
-    backgroundGradient: {
-      start: string
-      end: string
-    }
-    title: string
-    subtitle: string
-    actions: {
-      foreground: string
-      background: string
-    }
-  }
 }

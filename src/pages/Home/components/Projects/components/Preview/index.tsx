@@ -54,10 +54,7 @@ export function Preview({ project }: Props): JSX.Element {
     >
       <div className="mb-auto">
         <h3>{project.name}</h3>
-        <ComingSoon
-          isComingSoon={project.isComingSoon}
-          color={project.previewColors.subtitle}
-        />
+        <ComingSoon isComingSoon={project.isComingSoon} />
         {!isMobile && isDetailShown ? (
           <Badges
             languages={project.languages}
