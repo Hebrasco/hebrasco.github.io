@@ -9,7 +9,7 @@ interface Props {
 
 export function Badges({ languages, frameworks }: Props): JSX.Element {
   return (
-    <div className="d-flex flex-wrap mt-4" style={{ gap: '1rem' }}>
+    <div className="d-flex flex-wrap mt-4 gap-3">
       {languages.map((language: any) => (
         <Badge
           skill={language}
