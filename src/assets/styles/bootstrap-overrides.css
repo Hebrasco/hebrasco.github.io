@@ -163,10 +163,13 @@ img.rounded,
 }
 
 .container {
-  width: unset;
-  max-width: unset;
   margin-left: var(--containerMargin) !important;
   margin-right: var(--containerMargin) !important;
+}
+.container,
+.container-fluid {
+  width: unset;
+  max-width: unset;
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -177,4 +180,26 @@ img.rounded,
 
 .navbar-toggler {
   padding: var(--bs-navbar-toggler-padding-y) 0px;
+}
+
+.mt-5 {
+  margin-top: 5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 5rem !important;
+}
+
+.my-5 {
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
+}
+
+.p-5 {
+  padding: 5rem !important;
+}
+
+.py-5 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
 }
