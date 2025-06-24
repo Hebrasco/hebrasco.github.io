@@ -12,6 +12,7 @@ import { ProjectPreviewImage } from 'pages/Home/components/Projects/components/P
 import { Badges } from 'pages/Project/components/Badges'
 import { Col, Image, Row } from 'react-bootstrap'
 import { BlankAppIcon } from 'assets/images/appIcons'
+import { Link } from 'react-router-dom'
 
 interface Props {
   project: Project
@@ -31,8 +32,8 @@ export function Preview({ project }: Props): JSX.Element {
     : PROJECT_CONTAINER_SIZE.md.height
 
   return (
-    <a
-      href={ROUTES.project.replace(':projectId', project.id)}
+    <Link
+      to={ROUTES.project.replace(':projectId', project.id)}
       className={`rounded ${
         styles['preview-content-container']
       } ${conditionalStyle(
@@ -70,6 +71,6 @@ export function Preview({ project }: Props): JSX.Element {
       </div>
       <Badges languages={project.languages} frameworks={project.frameworks} />
       <ProjectPreviewImage image={project.previewImageMain} />
-    </a>
+    </Link>
   )
 }
