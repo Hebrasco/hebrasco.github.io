@@ -1,7 +1,8 @@
 import { InstersAppIcons } from 'assets/images/appIcons'
 import { InstersPreviews } from 'assets/images/previews'
 import { PROFILE } from 'data'
-import { Platform } from 'data/platform'
+import { PLATFORM } from 'data/platform'
+import { PROJECT_STATUS } from 'data/projectStatus'
 import { Project } from 'types'
 
 export const INSTERS: Project = {
@@ -15,7 +16,7 @@ export const INSTERS: Project = {
     'Implementation of in-app purchases',
     'Color adjustment algorithms',
   ],
-  platforms: [Platform.iPhone, Platform.iPadOS],
+  platforms: [PLATFORM.iPhone, PLATFORM.iPadOS],
   languages: [PROFILE.languages.swift, PROFILE.languages.metal],
   frameworks: [
     PROFILE.frameworks.apple.ios,
@@ -23,6 +24,10 @@ export const INSTERS: Project = {
     PROFILE.frameworks.apple.storeKit,
     PROFILE.frameworks.apple.coreImage,
   ],
+  status: {
+    type: PROJECT_STATUS.launched,
+    date: new Date('2022-04-06'),
+  },
   features: [
     {
       icon: 'bi bi-image',
@@ -89,5 +94,4 @@ export const INSTERS: Project = {
       },
     },
   ],
-  isComingSoon: false,
 } as const

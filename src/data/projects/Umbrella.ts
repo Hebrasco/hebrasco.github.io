@@ -1,6 +1,7 @@
 import { UmbrellaPreviews } from 'assets/images/previews'
 import { PROFILE } from 'data'
-import { Platform } from 'data/platform'
+import { PLATFORM } from 'data/platform'
+import { PROJECT_STATUS } from 'data/projectStatus'
 import { Project } from 'types'
 
 export const UMBRELLA: Project = {
@@ -14,7 +15,7 @@ export const UMBRELLA: Project = {
     'Persisting data with Core Data',
     'Synchronizing data with iCloud',
   ],
-  platforms: [Platform.iPhone, Platform.iPadOS, Platform.macOS],
+  platforms: [PLATFORM.iPhone, PLATFORM.iPadOS, PLATFORM.macOS],
   languages: [PROFILE.languages.swift],
   frameworks: [
     PROFILE.frameworks.apple.macOS,
@@ -23,6 +24,9 @@ export const UMBRELLA: Project = {
     PROFILE.frameworks.apple.coreData,
     PROFILE.frameworks.apple.cloudKit,
   ],
+  status: {
+    type: PROJECT_STATUS.comingSoon,
+  },
   features: [
     {
       icon: 'bi bi-list-task',
@@ -98,5 +102,4 @@ export const UMBRELLA: Project = {
       },
     },
   ],
-  isComingSoon: true,
 } as const

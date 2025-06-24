@@ -2,7 +2,8 @@ import { BloomAppIcons } from 'assets/images/appIcons'
 import { BloomPreviews } from 'assets/images/previews'
 import { BloomScreenshots } from 'assets/images/screenshots'
 import { PROFILE } from 'data'
-import { Platform } from 'data/platform'
+import { PLATFORM } from 'data/platform'
+import { PROJECT_STATUS } from 'data/projectStatus'
 import { Project } from 'types'
 
 export const BLOOM: Project = {
@@ -17,7 +18,7 @@ export const BLOOM: Project = {
     'Implementation of local notifications',
     'Implementation of widgets',
   ],
-  platforms: [Platform.iPhone, Platform.iPadOS],
+  platforms: [PLATFORM.iPhone, PLATFORM.iPadOS],
   languages: [PROFILE.languages.swift],
   frameworks: [
     PROFILE.frameworks.apple.ios,
@@ -26,6 +27,10 @@ export const BLOOM: Project = {
     PROFILE.frameworks.apple.storeKit,
     PROFILE.frameworks.apple.notifications,
   ],
+  status: {
+    type: PROJECT_STATUS.launched,
+    date: new Date('2020-09-26'),
+  },
   features: [
     {
       icon: 'bi bi-bell',
@@ -130,5 +135,4 @@ export const BLOOM: Project = {
     BloomScreenshots.Bloom4,
     BloomScreenshots.Bloom5,
   ],
-  isComingSoon: false,
 } as const

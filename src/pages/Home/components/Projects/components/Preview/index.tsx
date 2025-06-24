@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Project } from 'types'
-import { ComingSoon } from './components'
 import { conditionalStyle } from 'utils'
 import { useColorScheme, useWindowSize } from 'hooks'
 import { PROJECT_CONTAINER_SIZE } from 'pages/Home/components/Projects/constants'
@@ -63,7 +62,6 @@ export function Preview({ project }: Props): JSX.Element {
             </div>
             <div>
               <h3 className="m-0">{project.name}</h3>
-              <ComingSoon isComingSoon={project.isComingSoon} />
             </div>
             <i className="bi bi-chevron-right ms-auto"></i>
           </Col>

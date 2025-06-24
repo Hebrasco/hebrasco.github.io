@@ -1,4 +1,4 @@
-export const Platform = {
+export const PLATFORM = {
   iPhone: 'iPhone',
   iPadOS: 'iPadOS',
   macOS: 'macOS',

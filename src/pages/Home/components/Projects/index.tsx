@@ -10,7 +10,7 @@ export function Projects(): JSX.Element {
   return (
     <Container
       fluid
-      className={`my-5 navbar-spacer bg-light ${styles['preview-container-container']}`}
+      className={`mt-5 navbar-spacer bg-light ${styles['preview-container-container']}`}
     >
       <Section lg title="Projects" anchor={ROUTES.projects} fluidContainer>
         <div className={styles['preview-scroll-container']}>

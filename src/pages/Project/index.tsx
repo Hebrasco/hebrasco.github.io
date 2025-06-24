@@ -1,11 +1,8 @@
 import { PROJECTS } from 'data'
-import { ComingSoon } from 'pages/Home/components/Projects/components/Preview/components'
-import { Action } from 'pages/Home/components/Projects/components/ProjectAction'
-import { Badges } from 'pages/Project/components/Badges'
 import ProjectImages from 'pages/Project/components/ProjectImages'
 import { Responsibilities } from 'pages/Project/components/Responsibilities'
 import React, { useMemo } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Container, Image, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import projectStyles from 'pages/Home/components/Projects/index.module.css'
 import previewStyles from 'pages/Home/components/Projects/components/Preview/index.module.css'
@@ -13,15 +10,23 @@ import { useWindowSize } from 'hooks'
 import { conditionalStyle } from 'utils'
 
 import styles from './index.module.css'
+import { ExternalLink, Section } from 'components/ui'
+import { ProjectBadge } from 'pages/Home/components/Projects/components/ProjectBadge'
+import { PROJECT_STATUS } from 'data/projectStatus'
+import FEATURE_CONTAINER_SIZE from 'pages/Home/components/Projects/constants/FeatureContainerSize'
 
 export function Project(): JSX.Element {
   const { projectId } = useParams()
   const { isXs, isSm } = useWindowSize()
   const isMobile = isXs || isSm
 
-  const width = isMobile ? 260 : 350
+  const width = isMobile
+    ? FEATURE_CONTAINER_SIZE.xs.width
+    : FEATURE_CONTAINER_SIZE.md.width
 
-  const height = isMobile ? 281 : 256
+  const height = isMobile
+    ? FEATURE_CONTAINER_SIZE.xs.height
+    : FEATURE_CONTAINER_SIZE.md.height
 
   const project = useMemo(
     () => PROJECTS.find(({ id }) => id === projectId),
@@ -32,84 +37,175 @@ export function Project(): JSX.Element {
 
   return (
     <div className={styles['project-container']}>
-      <Container>
-        <Row className="my-5">
-          <Col>
-            <h1 className="fw-bold">{project.name}</h1>
-            <ComingSoon isComingSoon={project.isComingSoon} />
-            <Badges
-              languages={project.languages}
-              frameworks={project.frameworks}
-            />
-          </Col>
-        </Row>
-        <div className="p-5 bg-light rounded d-flex">
-          <Row>
-            <Col md={6} className="d-flex flex-column">
-              <Col className="d-flex d-md-none mt-4 mb-5">
+      <Container className="mb-5">
+        <Section>
+          <div className="p-5 bg-light rounded d-flex">
+            <Row>
+              <Col md={6} className="d-flex flex-column justify-content-center">
+                <h1 className="fw-bold">{project.name}</h1>
+                <div className="my-2 d-flex justify-content-space-between">
+                  {project.onlineURL && (
+                    <span className="d-inline-flex align-items-center">
+                      <ExternalLink to={project.onlineURL}>
+                        App Store
+                      </ExternalLink>
+                      <i className="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
+                    </span>
+                  )}
+                  {project.sourceURL && (
+                    <span className="d-inline-flex align-items-center">
+                      <ExternalLink to={project.sourceURL}>
+                        Source Code
+                      </ExternalLink>
+                      <i className="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
+                    </span>
+                  )}
+                </div>
+                <Col className="d-flex d-md-none my-5">
+                  <ProjectImages images={project.previewImages} />
+                </Col>
+              </Col>
+              <Col
+                md={6}
+                className="align-items-center align-items-lg-end d-none d-md-flex"
+              >
                 <ProjectImages images={project.previewImages} />
               </Col>
-              <p>{project.description}</p>
+            </Row>
+          </div>
+        </Section>
+      </Container>
+      <Container className="my-5">
+        <Row>
+          <Col md={3} xs={6}>
+            <Section xs title="Frameworks">
+              <div className="d-flex flex-wrap gap-2">
+                {project.frameworks.map((framework: any) => (
+                  <ProjectBadge
+                    skill={framework}
+                    key={`project-skill-framework-${framework.name}`}
+                  />
+                ))}
+              </div>
+            </Section>
+          </Col>
+          <Col md={3} xs={6}>
+            <Section xs title="Languages">
+              <div className="d-flex flex-wrap gap-2">
+                {project.languages.map((language: any) => (
+                  <ProjectBadge
+                    skill={language}
+                    key={`project-skill-language-${language.name}`}
+                  />
+                ))}
+              </div>
+            </Section>
+          </Col>
+          {/* <Col md={3}>
+            <Section xs title="Responsibilities">
               <Responsibilities
                 projectName={project.name}
                 tasks={project.tasks}
               />
-              <div className="mt-auto d-flex justify-content-space-between">
-                {project.onlineURL && (
-                  <Action filled to={project.onlineURL} label={'App Store'} />
-                )}
-                {project.sourceURL && (
-                  <Action to={project.sourceURL} label="Source Code" />
-                )}
-              </div>
-            </Col>
-            <Col
-              md={6}
-              className="align-items-center align-items-lg-end d-none d-md-flex"
+            </Section>
+          </Col> */}
+          <Col md={3} xs={6}>
+            <Section xs title="Platforms">
+              <p>{project.platforms.join(', ')}</p>
+            </Section>
+          </Col>
+          <Col md={3} xs={6}>
+            <Section
+              xs
+              title={
+                project.status.type === PROJECT_STATUS.comingSoon
+                  ? PROJECT_STATUS.launched
+                  : project.status.type
+              }
             >
-              <ProjectImages images={project.previewImages} />
-            </Col>
-          </Row>
-        </div>
+              <p>
+                {project.status.date?.toLocaleDateString() ??
+                  project.status.type}
+              </p>
+            </Section>
+          </Col>
+        </Row>
       </Container>
-      <Container fluid className="p-0 my-5">
-        <div className={projectStyles['preview-scroll-container']}>
-          <div className={projectStyles['preview-container']}>
-            <div className={projectStyles['preview-container-card-set']}>
-              {project.features.map((feature, index) => (
-                <div
-                  className={`rounded ${previewStyles['preview-content-container']} bg-light`}
-                  style={{
-                    justifyContent: 'flex-start',
-                    width,
-                    height,
-                    scrollSnapAlign: conditionalStyle(
-                      isMobile,
-                      'center',
-                      'start'
-                    ),
-                  }}
-                >
-                  <i
-                    className={`${feature.icon} h1`}
-                    style={{ marginBottom: 15 }}
-                  ></i>
-                  <p
-                    className={`${conditionalStyle(
-                      isMobile,
-                      'h4',
-                      'h3'
-                    )} fw-bold`}
+      <Container className="my-5">
+        <Section title="Summary">
+          <p>{project.description}</p>
+        </Section>
+      </Container>
+      <Container fluid className="my-5">
+        <Section title="Features" fluidContainer>
+          <div className={projectStyles['preview-scroll-container']}>
+            <div className={projectStyles['preview-container']}>
+              <div className={projectStyles['preview-container-card-set']}>
+                {project.features.map((feature, index) => (
+                  <div
+                    key={index}
+                    className={`rounded ${previewStyles['preview-content-container']} bg-light`}
+                    style={{
+                      justifyContent: 'flex-start',
+                      width,
+                      height,
+                      scrollSnapAlign: conditionalStyle(
+                        isMobile,
+                        'center',
+                        'start'
+                      ),
+                    }}
                   >
-                    {feature.title}
-                  </p>
-                  <p>{feature.description}</p>
-                </div>
-              ))}
+                    <i
+                      className={`${feature.icon} h1`}
+                      style={{ marginBottom: 15 }}
+                    ></i>
+                    <p
+                      className={`${conditionalStyle(
+                        isMobile,
+                        'h4',
+                        'h3'
+                      )} fw-bold`}
+                    >
+                      {feature.title}
+                    </p>
+                    <p>{feature.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </Section>
       </Container>
+      {project.screenshots && (
+        <Container fluid className="py-5 my-5 bg-light">
+          <Section fluidContainer>
+            <div className={projectStyles['preview-scroll-container']}>
+              <div className={projectStyles['preview-container']}>
+                <div className={projectStyles['preview-container-card-set']}>
+                  {project.screenshots?.map((screenshot, index) => (
+                    <div
+                      key={index}
+                      className={`rounded ${previewStyles['preview-content-container']} p-0`}
+                      style={{
+                        justifyContent: 'flex-start',
+                        width,
+                        scrollSnapAlign: conditionalStyle(
+                          isMobile,
+                          'center',
+                          'start'
+                        ),
+                      }}
+                    >
+                      <Image src={screenshot} style={{ borderRadius: 38 }} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Section>
+        </Container>
+      )}
     </div>
   )
 }

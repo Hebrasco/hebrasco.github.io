@@ -1,6 +1,7 @@
 import { RecipesPreviews } from 'assets/images/previews'
 import { PROFILE } from 'data'
-import { Platform } from 'data/platform'
+import { PLATFORM } from 'data/platform'
+import { PROJECT_STATUS } from 'data/projectStatus'
 import { Project } from 'types'
 
 export const RECIPES: Project = {
@@ -13,13 +14,17 @@ export const RECIPES: Project = {
     'Parsing a JSON file',
     'Persisting data with Core Data',
   ],
-  platforms: [Platform.iPhone, Platform.iPadOS],
+  platforms: [PLATFORM.iPhone, PLATFORM.iPadOS],
   languages: [PROFILE.languages.swift, PROFILE.languages.json],
   frameworks: [
     PROFILE.frameworks.apple.ios,
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.coreData,
   ],
+  status: {
+    type: PROJECT_STATUS.archived,
+    date: new Date('2020-04-30'),
+  },
   features: [
     {
       icon: 'bi bi-fork-knife',
@@ -103,5 +108,4 @@ export const RECIPES: Project = {
       },
     },
   ],
-  isComingSoon: false,
 } as const

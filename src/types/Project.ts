@@ -3,6 +3,7 @@ import { PreviewImage } from './PreviewImage'
 import { Skill } from './Skill'
 import { AppIcon } from './AppIcon'
 import { Platform } from './Platform'
+import { ProjectStatus } from 'types/ProjectStatus'
 
 export type Project = {
   id: string
@@ -17,5 +18,7 @@ export type Project = {
   appIcon?: AppIcon
   previewImages: readonly PreviewImage[]
   previewImageMain: PreviewImage
-  isComingSoon: boolean
+  status: ProjectStatus
+  screenshots?: readonly string[]
+  platforms: readonly Platform[]
 }

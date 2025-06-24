@@ -1,0 +1,5 @@
+export { default as Bloom1 } from './bloom1.jpg'
+export { default as Bloom2 } from './bloom2.jpg'
+export { default as Bloom3 } from './bloom3.jpg'
+export { default as Bloom4 } from './bloom4.jpg'
+export { default as Bloom5 } from './bloom5.jpg'

@@ -1,3 +1,3 @@
-import { Platform as PlatformType } from 'data/platform'
+import { PLATFORM } from 'data/platform'
 
-export type Platform = (typeof PlatformType)[keyof typeof PlatformType]
+export type Platform = (typeof PLATFORM)[keyof typeof PLATFORM]
