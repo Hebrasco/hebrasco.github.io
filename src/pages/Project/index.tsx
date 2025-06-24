@@ -76,7 +76,7 @@ export function Project(): JSX.Element {
         </Section>
       </Container>
       <Container className="my-5">
-        <Row>
+        <Row className="g-4">
           <Col md={3} xs={6}>
             <Section xs title="Frameworks">
               <div className="d-flex flex-wrap gap-2">
