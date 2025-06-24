@@ -43,12 +43,12 @@ export function Section({
       `}
       >
         {title && (
-          <h1
-            className={`mb-5 text-uppercase
+          <h2
+            className={`mb-3 fw-bold text-uppercase
         ${conditionalStyle(fluidContainer, styles['section-fluid'])}`}
           >
             {title}
-          </h1>
+          </h2>
         )}
         {Array.isArray(children) ? children.map((child) => child) : children}
       </div>
