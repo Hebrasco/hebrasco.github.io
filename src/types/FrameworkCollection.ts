@@ -4,7 +4,7 @@ type AppleFrameworkCollection = {
   ios: Skill
   uiKit: Skill
   swiftUI: Skill
-  localNotifications: Skill
+  notifications: Skill
   widgetKit: Skill
   storeKit: Skill
   coreData: Skill

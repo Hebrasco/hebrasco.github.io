@@ -1,6 +1,7 @@
 import { Feature } from 'types/Feature'
 import { PreviewImage } from './PreviewImage'
 import { Skill } from './Skill'
+import AppIcon from './AppIcon'
 
 export type Project = {
   id: string
@@ -12,6 +13,7 @@ export type Project = {
   features: readonly Feature[]
   onlineURL?: string
   sourceURL?: string
+  appIcon?: AppIcon
   previewImages: readonly PreviewImage[]
   previewImageMain: PreviewImage
   isComingSoon: boolean

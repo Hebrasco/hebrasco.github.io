@@ -1,3 +1,4 @@
+import { InstersAppIcons } from 'assets/images/appIcons'
 import { InstersPreviews } from 'assets/images/previews'
 import { PROFILE } from 'data'
 import { Project } from 'types'
@@ -39,6 +40,10 @@ export const INSTERS: Project = {
   ],
   onlineURL: 'https://apps.apple.com/app/insters/id1561338805',
   sourceURL: undefined,
+  appIcon: {
+    light: InstersAppIcons.light,
+    dark: InstersAppIcons.light,
+  },
   previewImageMain: {
     id: 'preview-insters-iphone',
     sourceLight: InstersPreviews.iphoneImageLight,

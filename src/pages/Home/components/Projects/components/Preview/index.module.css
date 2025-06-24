@@ -6,9 +6,35 @@
   justify-content: flex-end;
   transition: transform 0.15s linear 0.15s;
   backface-visibility: hidden;
+  justify-content: flex-start;
+  background-color: var(--primaryColor);
 }
 
 .preview-content-container-desktop:hover {
   transform: translateZ(0) scale(1.015);
   cursor: pointer;
+}
+
+.preview-content-app-icon {
+  min-width: 4rem;
+  max-width: 4rem;
+  border-radius: 14px;
+  border: 1px solid var(--appIconBorderColor);
+  overflow: hidden;
+}
+
+.preview-content-app-icon > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview-content-app-icon {
+    background: #1c1c1c;
+    background: linear-gradient(
+      180deg,
+      rgba(28, 28, 28, 1) 20%,
+      rgba(15, 15, 15, 1) 80%
+    );
+  }
 }

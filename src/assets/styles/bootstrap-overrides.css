@@ -165,7 +165,8 @@ img.rounded,
 .container {
   width: unset;
   max-width: unset;
-  margin: 0px var(--containerMargin) !important;
+  margin-left: var(--containerMargin) !important;
+  margin-right: var(--containerMargin) !important;
   padding-left: 0px;
   padding-right: 0px;
 }

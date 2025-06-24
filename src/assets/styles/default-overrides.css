@@ -16,6 +16,7 @@
 
   --primaryBackgroundColor: var(--primaryTextColor);
   --secondaryBackgroundColor: var(--secondaryTextColor);
+  --appIconBorderColor: rgb(237, 235, 235);
 
   --primaryButtonHoverBackground: rgb(45, 45, 45);
   --secondaryButtonHoverBackground: var(--primaryTextColor);

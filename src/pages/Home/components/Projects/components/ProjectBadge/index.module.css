@@ -7,6 +7,6 @@
   vertical-align: baseline;
   font-weight: 700;
   line-height: 1;
-  background-color: var(--primaryBackgroundColor);
-  color: var(--primaryColor);
+  background-color: var(--accentColor);
+  color: var(--secondaryColor);
 }

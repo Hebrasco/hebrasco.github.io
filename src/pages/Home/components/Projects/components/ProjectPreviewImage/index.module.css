@@ -1,3 +1,8 @@
+.preview-image-container {
+  position: relative;
+  bottom: -100px;
+}
+
 .preview-image {
-  width: 75%;
+  width: 100%;
 }

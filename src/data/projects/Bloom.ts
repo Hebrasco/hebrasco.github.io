@@ -1,4 +1,6 @@
+import { BloomAppIcons } from 'assets/images/appIcons'
 import { BloomPreviews } from 'assets/images/previews'
+import { BloomScreenshots } from 'assets/images/screenshots'
 import { PROFILE } from 'data'
 import { Project } from 'types'
 
@@ -6,13 +8,13 @@ export const BLOOM: Project = {
   id: 'bloom',
   name: 'Bloom - Couples App',
   description:
-    'This app is a privately developed app, for calculating the past time since a certain day. The app also offers some iOS 14 widgets that are updated daily. Furthermore, notifications are sent at certain time periods. In addition, in-app purchases are implemented to remove advertisements.',
+    'This app is for calculating the past time since a specific day. The app also offers widgets. Furthermore, notifications are sent at certain time periods. In addition, in-app purchases are implemented to remove advertisements.',
   tasks: [
     'Conception and development',
     'User interface development',
     'Implementation of in-app purchases',
     'Implementation of local notifications',
-    'Implementation of widgets (iOS 14+)',
+    'Implementation of widgets',
   ],
   languages: [PROFILE.languages.swift],
   frameworks: [
@@ -20,7 +22,7 @@ export const BLOOM: Project = {
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.widgetKit,
     PROFILE.frameworks.apple.storeKit,
-    PROFILE.frameworks.apple.localNotifications,
+    PROFILE.frameworks.apple.notifications,
   ],
   features: [
     {
@@ -72,6 +74,10 @@ export const BLOOM: Project = {
   ],
   onlineURL: 'https://apps.apple.com/app/bloom-couples-app/id1533246365',
   sourceURL: undefined,
+  appIcon: {
+    light: BloomAppIcons.light,
+    dark: BloomAppIcons.dark,
+  },
   previewImageMain: {
     id: 'preview-bloom-iphone',
     sourceLight: BloomPreviews.iphoneImageLight,
@@ -114,6 +120,13 @@ export const BLOOM: Project = {
         zIndex: 1,
       },
     },
+  ],
+  screenshots: [
+    BloomScreenshots.Bloom1,
+    BloomScreenshots.Bloom2,
+    BloomScreenshots.Bloom3,
+    BloomScreenshots.Bloom4,
+    BloomScreenshots.Bloom5,
   ],
   isComingSoon: false,
 } as const

@@ -16,6 +16,8 @@
 
     --primaryHoverColor: var(--secondaryTextColor);
     --secondaryHoverColor: var(--primaryTextColor);
+
+    --appIconBorderColor: rgb(22, 20, 20);
   }
 
   img.invertedColor,
