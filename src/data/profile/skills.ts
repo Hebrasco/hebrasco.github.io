@@ -13,13 +13,10 @@ const SKILLS_LANGUAGES: readonly Skill[] = [
 ] as const
 
 const SKILLS_FRAMEWORKS: readonly Skill[] = [
-  FRAMEWORKS.apple.ios,
   FRAMEWORKS.apple.swiftUI,
-  FRAMEWORKS.apple.uiKit,
   FRAMEWORKS.web.react,
   FRAMEWORKS.crossPlatform.reactNative,
   FRAMEWORKS.web.reactRedux,
-  FRAMEWORKS.web.bootstrap,
 ] as const
 
 const SKILLS_APPLICATIONS: readonly Skill[] = [

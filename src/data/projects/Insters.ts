@@ -19,7 +19,6 @@ export const INSTERS: Project = {
   platforms: [PLATFORM.iPhone, PLATFORM.iPadOS],
   languages: [PROFILE.languages.swift, PROFILE.languages.metal],
   frameworks: [
-    PROFILE.frameworks.apple.ios,
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.storeKit,
     PROFILE.frameworks.apple.coreImage,

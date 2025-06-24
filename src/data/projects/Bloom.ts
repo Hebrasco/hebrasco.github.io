@@ -21,7 +21,6 @@ export const BLOOM: Project = {
   platforms: [PLATFORM.iPhone, PLATFORM.iPadOS],
   languages: [PROFILE.languages.swift],
   frameworks: [
-    PROFILE.frameworks.apple.ios,
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.widgetKit,
     PROFILE.frameworks.apple.storeKit,

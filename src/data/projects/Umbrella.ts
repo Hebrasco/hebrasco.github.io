@@ -18,8 +18,6 @@ export const UMBRELLA: Project = {
   platforms: [PLATFORM.iPhone, PLATFORM.iPadOS, PLATFORM.macOS],
   languages: [PROFILE.languages.swift],
   frameworks: [
-    PROFILE.frameworks.apple.macOS,
-    PROFILE.frameworks.apple.ios,
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.coreData,
     PROFILE.frameworks.apple.cloudKit,

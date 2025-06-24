@@ -2,7 +2,6 @@ import { FrameworkCollection } from 'types'
 
 export const FRAMEWORKS: FrameworkCollection = {
   apple: {
-    ios: { name: 'iOS' },
     uiKit: { name: 'UIKit' },
     swiftUI: { name: 'SwiftUI' },
     notifications: { name: 'Notifications' },
@@ -11,7 +10,6 @@ export const FRAMEWORKS: FrameworkCollection = {
     coreData: { name: 'Core Data' },
     metal: { name: 'Metal' },
     coreImage: { name: 'Core Image' },
-    macOS: { name: 'macOS' },
     cloudKit: { name: 'CloudKit' },
   },
   crossPlatform: {

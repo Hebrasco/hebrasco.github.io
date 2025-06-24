@@ -17,7 +17,6 @@ export const RECIPES: Project = {
   platforms: [PLATFORM.iPhone, PLATFORM.iPadOS],
   languages: [PROFILE.languages.swift, PROFILE.languages.json],
   frameworks: [
-    PROFILE.frameworks.apple.ios,
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.coreData,
   ],
