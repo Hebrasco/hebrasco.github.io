@@ -6,7 +6,7 @@ import { SkillColumn } from './SkillColumn'
 
 export function Skills(): JSX.Element {
   return (
-    <Section sm title="Skills">
+    <Section md title="Skills">
       <Row className="g-5">
         <SkillColumn title="Languages" data={PROFILE.skills.languages} />
         <SkillColumn title="Frameworks" data={PROFILE.skills.frameworks} />
