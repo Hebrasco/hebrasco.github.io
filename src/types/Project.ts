@@ -1,7 +1,8 @@
 import { Feature } from 'types/Feature'
 import { PreviewImage } from './PreviewImage'
 import { Skill } from './Skill'
-import AppIcon from './AppIcon'
+import { AppIcon } from './AppIcon'
+import { Platform } from './Platform'
 
 export type Project = {
   id: string

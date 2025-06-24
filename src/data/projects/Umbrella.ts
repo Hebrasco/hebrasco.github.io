@@ -1,5 +1,6 @@
 import { UmbrellaPreviews } from 'assets/images/previews'
 import { PROFILE } from 'data'
+import { Platform } from 'data/platform'
 import { Project } from 'types'
 
 export const UMBRELLA: Project = {
@@ -13,6 +14,7 @@ export const UMBRELLA: Project = {
     'Persisting data with Core Data',
     'Synchronizing data with iCloud',
   ],
+  platforms: [Platform.iPhone, Platform.iPadOS, Platform.macOS],
   languages: [PROFILE.languages.swift],
   frameworks: [
     PROFILE.frameworks.apple.macOS,

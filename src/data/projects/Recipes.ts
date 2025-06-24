@@ -1,5 +1,6 @@
 import { RecipesPreviews } from 'assets/images/previews'
 import { PROFILE } from 'data'
+import { Platform } from 'data/platform'
 import { Project } from 'types'
 
 export const RECIPES: Project = {
@@ -12,6 +13,7 @@ export const RECIPES: Project = {
     'Parsing a JSON file',
     'Persisting data with Core Data',
   ],
+  platforms: [Platform.iPhone, Platform.iPadOS],
   languages: [PROFILE.languages.swift, PROFILE.languages.json],
   frameworks: [
     PROFILE.frameworks.apple.ios,

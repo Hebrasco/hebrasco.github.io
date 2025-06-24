@@ -2,6 +2,7 @@ import { BloomAppIcons } from 'assets/images/appIcons'
 import { BloomPreviews } from 'assets/images/previews'
 import { BloomScreenshots } from 'assets/images/screenshots'
 import { PROFILE } from 'data'
+import { Platform } from 'data/platform'
 import { Project } from 'types'
 
 export const BLOOM: Project = {
@@ -16,6 +17,7 @@ export const BLOOM: Project = {
     'Implementation of local notifications',
     'Implementation of widgets',
   ],
+  platforms: [Platform.iPhone, Platform.iPadOS],
   languages: [PROFILE.languages.swift],
   frameworks: [
     PROFILE.frameworks.apple.ios,
