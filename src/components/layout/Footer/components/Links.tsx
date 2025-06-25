@@ -9,10 +9,11 @@ export function Links(): JSX.Element {
   const { isXs, isSm } = useWindowSize()
 
   return (
-    <Col xs="12" md="auto">
-      <div className="d-flex">
-        <Link to={ROUTES.imprintHash} label="Imprint" />
+    <Col xs="12" md="auto" className="align-content-center">
+      <div className="d-flex gap-4">
+        <Link to={ROUTES.imprintHash} label="Imprint" navItem />
         <Link
+          navItem
           to={ROUTES.privacyPolicyHash}
           label="Privacy Policy"
           className={`${conditionalStyle(isXs || isSm, 'me-auto')}`}

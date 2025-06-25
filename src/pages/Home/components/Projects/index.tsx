@@ -1,20 +1,27 @@
 import { Section } from 'components/ui'
 import { PROJECTS, ROUTES } from 'data'
 import React from 'react'
-import { Container, Row, Stack } from 'react-bootstrap'
-import { Preview } from './components'
+import { Container } from 'react-bootstrap'
+import { Preview } from 'pages/Home/components/Projects/components/Preview'
+
+import styles from './index.module.css'
 
 export function Projects(): JSX.Element {
   return (
-    <Container className="mt-5 navbar-spacer">
-      <Section lg title="Projects" anchor={ROUTES.projects}>
-        <Row>
-          <Stack gap={5}>
-            {PROJECTS.map((project) => (
-              <Preview project={project} key={`project-${project.name}`} />
-            ))}
-          </Stack>
-        </Row>
+    <Container
+      fluid
+      className={`mt-5 navbar-spacer bg-light ${styles['preview-container-container']}`}
+    >
+      <Section lg title="Projects" anchor={ROUTES.projects} fluidContainer>
+        <div className={styles['preview-scroll-container']}>
+          <div className={styles['preview-container']}>
+            <div className={styles['preview-container-card-set']}>
+              {PROJECTS.map((project) => (
+                <Preview project={project} key={`project-${project.name}`} />
+              ))}
+            </div>
+          </div>
+        </div>
       </Section>
     </Container>
   )

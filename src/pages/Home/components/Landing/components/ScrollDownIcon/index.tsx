@@ -8,7 +8,7 @@ export function ScrollDownIcon() {
   return (
     <div className={styles['scroll-down-icon-container']}>
       <Link to={ROUTES.aboutMe}>
-        <div className={styles['scroll-down-icon']}></div>
+        <div className={`${styles['scroll-down-icon']} shadow`}></div>
       </Link>
     </div>
   )

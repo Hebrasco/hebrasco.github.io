@@ -3,6 +3,8 @@ import { Col } from 'react-bootstrap'
 import { Skill } from 'types'
 
 import styles from './index.module.css'
+import { ProjectBadge } from 'pages/Home/components/Projects/components/ProjectBadge'
+import { Section } from 'components/ui'
 
 interface Props {
   title: string
@@ -11,21 +13,16 @@ interface Props {
 
 export function SkillColumn({ title, data }: Props): JSX.Element {
   return (
-    <Col
-      xs={12}
-      md={4}
-      className={`${styles['skills-column']} mb-3 mb-md-0 d-flex align-items-stretch justify-content-center`}
-    >
-      <div className="p-4 py-5 bg-light rounded">
-        <h4 className="text-center mb-4">{title}</h4>
-        <ul className="list-unstyled mb-0">
+    <Col xs={12} md={4} className={`${styles['skills-column']} d-flex`}>
+      <Section title={title} xs>
+        <ul className="list-unstyled mb-0 d-flex flex-wrap gap-2">
           {data.map((skill) => (
-            <li key={`skill-${skill.name}`} className="text-center mb-1">
-              {skill.name}
+            <li key={`skill-${skill.name}`} className="mb-1 d-flex">
+              <ProjectBadge skill={skill} />
             </li>
           ))}
         </ul>
-      </div>
+      </Section>
     </Col>
   )
 }

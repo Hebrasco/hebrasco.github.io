@@ -1,3 +1,13 @@
+a,
+a:hover {
+  color: var(--primaryTextColor);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--primaryTextColor);
+  text-decoration: underline;
+}
+
 .badge {
   margin-right: 0.5rem !important;
 }
@@ -19,6 +29,14 @@ img.rounded,
 
 .btn {
   border-radius: 0.5rem;
+  text-decoration: none !important;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  background-color: var(--primaryButtonHoverBackground) !important;
+  border-color: var(--primaryButtonHoverBackground) !important;
 }
 
 .bg-light {
@@ -29,6 +47,8 @@ img.rounded,
 .btn-dark {
   background-color: var(--primaryBackgroundColor) !important;
   color: var(--primaryTextColor) !important;
+  border-radius: var(--borderRadius);
+  border-width: 2px;
 }
 
 .btn,
@@ -39,12 +59,17 @@ img.rounded,
 .btn-outline-dark {
   border-color: var(--primaryBorderColor) !important;
   color: var(--primaryTextColor) !important;
+  border-radius: var(--borderRadius);
+  border-width: 2px;
+  transition-property: background-color color;
+  transition-duration: 350ms;
+  transition-timing-function: ease-in-out;
 }
 
 .btn-outline-dark:hover,
 .btn-outline-dark:active,
 .btn-outline-dark:focus {
-  background-color: var(--primaryBackgroundColor) !important;
+  background-color: var(--secondaryButtonHoverBackground) !important;
   color: var(--primaryHoverColor) !important;
 }
 
@@ -86,7 +111,6 @@ img.rounded,
 .form-control.is-invalid:focus,
 .was-validated .form-control:invalid:focus {
   border-color: var(--accentColor);
-  box-shadow: 0 0 0 0.25rem rgba(var(--accentColorValues), 0.5);
 }
 
 .form-control::placeholder,
@@ -136,4 +160,46 @@ img.rounded,
 
 .toast-header .btn-close {
   margin-right: 0;
+}
+
+.container {
+  margin-left: var(--containerMargin) !important;
+  margin-right: var(--containerMargin) !important;
+}
+.container,
+.container-fluid {
+  width: unset;
+  max-width: unset;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.navbar-brand {
+  vertical-align: middle;
+}
+
+.navbar-toggler {
+  padding: var(--bs-navbar-toggler-padding-y) 0px;
+}
+
+.mt-5 {
+  margin-top: 5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 5rem !important;
+}
+
+.my-5 {
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
+}
+
+.p-5 {
+  padding: 5rem !important;
+}
+
+.py-5 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
 }

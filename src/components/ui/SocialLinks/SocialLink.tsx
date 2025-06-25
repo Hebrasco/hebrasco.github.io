@@ -7,9 +7,7 @@ interface Props {
   label: string
   to: string
   src: string
-  navItem?: boolean
   useIcon?: boolean
-  useMarginLeft?: boolean
   invertImage?: boolean
 }
 
@@ -17,20 +15,15 @@ export function SocialLink({
   label,
   to,
   src,
-  navItem,
   useIcon,
-  useMarginLeft = true,
   invertImage = false,
 }: Props): JSX.Element {
   return (
     <ExternalLink
       to={to}
-      className={`d-md-flex align-items-center 
-        ${conditionalStyle(useMarginLeft, 'ml-md-2')}
-        ${conditionalStyle(!navItem, 'py-2 pe-3')}
-      `}
+      className={`d-md-flex align-items-center`}
       fullWidth={!useIcon}
-      navItem={navItem}
+      style={{ width: useIcon ? '1.5rem' : undefined }}
     >
       {useIcon ? (
         <Image

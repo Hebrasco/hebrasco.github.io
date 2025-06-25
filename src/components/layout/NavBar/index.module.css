@@ -1,0 +1,19 @@
+.navbar-glass {
+  background-color: var(--glassBackground);
+  backdrop-filter: blur(var(--glassBlur));
+  width: fit-content;
+  margin: 12px;
+  border-radius: 30px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--glassBorder);
+  left: unset;
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar-glass-mobile {
+  border-radius: 29px;
+}

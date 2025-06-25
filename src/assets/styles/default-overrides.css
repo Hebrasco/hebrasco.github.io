@@ -4,10 +4,9 @@
 
   --primaryColor: #ffffff;
   --secondaryColor: #000000;
-  --accentColorValues: 248, 249, 250;
-  --accentColor: rgb(var(--accentColorValues));
+  --accentColor: rgb(245, 245, 247);
 
-  --primaryTextColor: rgb(33, 37, 41);
+  --primaryTextColor: #1d1d1f;
   --secondaryTextColorValues: 248, 249, 250;
   --secondaryTextColor: rgb(var(--secondaryTextColorValues));
   --mutedTextColor: rgba(0, 0, 0, 0.7);
@@ -17,6 +16,10 @@
 
   --primaryBackgroundColor: var(--primaryTextColor);
   --secondaryBackgroundColor: var(--secondaryTextColor);
+  --appIconBorderColor: rgb(237, 235, 235);
+
+  --primaryButtonHoverBackground: rgb(45, 45, 45);
+  --secondaryButtonHoverBackground: var(--primaryTextColor);
 
   --primaryHoverColor: var(--secondaryTextColor);
   --secondaryHoverColor: var(--primaryTextColor);
@@ -31,9 +34,15 @@
   --letterSpacingSm: 2px;
   --letterSpacingLg: 4px;
 
-  --borderRadius: 1rem;
+  --borderRadius: 44px;
 
   --landingBackgroundImage: url('../images/me.png');
+
+  --glassBackground: rgba(255, 255, 255, 0.1);
+  --glassBorder: rgba(255, 255, 255, 0.1);
+  --glassBlur: 4px;
+
+  --containerMargin: calc(50vw - min(1680px, 87.5vw) / 2);
 }
 
 html {
@@ -60,7 +69,7 @@ h6,
 p,
 div,
 a {
-  color: var(--primaryTextColor) !important;
+  color: var(--primaryTextColor);
 }
 
 input:-webkit-autofill,
@@ -68,7 +77,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--primaryTextColor);
   box-shadow: 0 0 0px 1000px var(--accentColor) inset;
-  transition: background-color 1000s ease-in-out 0s;
+  transition: background-color 1000ms ease-in-out 0s;
 }
 
 input:not(input:-webkit-autofill)::-webkit-contacts-auto-fill-button {

@@ -1,0 +1,12 @@
+.badge {
+  border-radius: var(--borderRadius);
+  font-size: 0.75em;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  vertical-align: baseline;
+  font-weight: 700;
+  line-height: 1;
+  background-color: var(--accentColor);
+  color: var(--secondaryColor);
+}

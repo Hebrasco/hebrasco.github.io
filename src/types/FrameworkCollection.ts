@@ -1,16 +1,14 @@
 import { Skill } from 'types'
 
 type AppleFrameworkCollection = {
-  ios: Skill
   uiKit: Skill
   swiftUI: Skill
-  localNotifications: Skill
+  notifications: Skill
   widgetKit: Skill
   storeKit: Skill
   coreData: Skill
   metal: Skill
   coreImage: Skill
-  macOS: Skill
   cloudKit: Skill
 }
 
