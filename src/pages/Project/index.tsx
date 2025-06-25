@@ -181,7 +181,7 @@ export function Project(): JSX.Element {
       </Container>
       {project.screenshots && (
         <Container fluid className="my-5">
-          <Section fluidContainer>
+          <Section fluidContainer title="Screenshots">
             <div className={projectStyles['preview-scroll-container']}>
               <div className={projectStyles['preview-container']}>
                 <div className={projectStyles['preview-container-card-set']}>
