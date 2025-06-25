@@ -1,8 +1,8 @@
 import { BloomAppIcons } from 'assets/images/appIcons'
 import { BloomPreviews } from 'assets/images/previews'
 import {
-  BloomScreenshotsDark,
-  BloomScreenshotsLight,
+  ScreenshotsDark,
+  ScreenshotsLight,
 } from 'assets/images/screenshots/bloom'
 import { PROFILE } from 'data'
 import { PLATFORM } from 'data/platform'
@@ -131,7 +131,55 @@ export const BLOOM: Project = {
     },
   ],
   screenshots: {
-    light: [...Object.values(BloomScreenshotsLight)],
-    dark: [...Object.values(BloomScreenshotsDark)],
+    light: [
+      {
+        src: ScreenshotsLight.DualImage,
+        altText: 'Screenshot of app in light mode with dual image option',
+      },
+      {
+        src: ScreenshotsLight.SingleImageCouple,
+        altText:
+          'Screenshot of app in light mode with single image option and relationship status couple',
+      },
+      {
+        src: ScreenshotsLight.SingleImageEngaged,
+        altText:
+          'Screenshot of app in light mode with single image option and relationship status engaged',
+      },
+      {
+        src: ScreenshotsLight.SingleImageMarried,
+        altText:
+          'Screenshot of app in light mode with single image option and relationship status married',
+      },
+      {
+        src: ScreenshotsLight.Widgets,
+        altText: 'Screenshot of app widgets in light mode',
+      },
+    ],
+    dark: [
+      {
+        src: ScreenshotsDark.DualImage,
+        altText: 'Screenshot of app in dark mode with dual image option',
+      },
+      {
+        src: ScreenshotsDark.SingleImageCouple,
+        altText:
+          'Screenshot of app in dark mode with single image option and relationship status couple',
+      },
+      {
+        src: ScreenshotsDark.SingleImageEngaged,
+        altText:
+          'Screenshot of app in dark mode with single image option and relationship status engaged',
+      },
+      {
+        src: ScreenshotsDark.SingleImageMarried,
+        altText:
+          'Screenshot of app in dark mode with single image option and relationship status married',
+      },
+      {
+        src: ScreenshotsDark.Widgets,
+        altText: 'Screenshot of app widgets in dark mode',
+      },
+    ],
   },
 } as const

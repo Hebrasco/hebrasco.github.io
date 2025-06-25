@@ -201,7 +201,11 @@ export function Project(): JSX.Element {
                           backgroundColor: 'unset',
                         }}
                       >
-                        <Image src={screenshot} loading="lazy" />
+                        <Image
+                          src={screenshot.src}
+                          alt={screenshot.altText}
+                          loading="lazy"
+                        />
                       </div>
                     )
                   )}

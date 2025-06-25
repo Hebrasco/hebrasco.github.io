@@ -1,10 +1,10 @@
-import { Feature } from 'types/Feature'
+import { Feature } from './Feature'
 import { PreviewImage } from './PreviewImage'
 import { Skill } from './Skill'
 import { AppIcon } from './AppIcon'
 import { Platform } from './Platform'
-import { ProjectStatus } from 'types/ProjectStatus'
-import { Screenshots } from 'types/Screenshots'
+import { ProjectStatus } from './ProjectStatus'
+import { Screenshot } from './Screenshot'
 
 export type Project = {
   id: string
@@ -20,6 +20,9 @@ export type Project = {
   previewImages: readonly PreviewImage[]
   previewImageMain: PreviewImage
   status: ProjectStatus
-  screenshots?: Screenshots
+  screenshots?: {
+    light: readonly Screenshot[]
+    dark: readonly Screenshot[]
+  }
   platforms: readonly Platform[]
 }
