@@ -15,7 +15,9 @@ export function ProjectPreviewImage({ image }: Props): JSX.Element {
   const { id, sourceLight, sourceDark, style } = image
 
   return (
-    <div className="d-flex justify-content-center mt-5">
+    <div
+      className={`d-flex justify-content-center ${styles['preview-image-container']}`}
+    >
       <Image
         key={id}
         src={isLightScheme ? sourceLight : sourceDark}

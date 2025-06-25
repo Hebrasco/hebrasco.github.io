@@ -1,0 +1,5 @@
+export { default as Bloom1 } from './bloom1.webp'
+export { default as Bloom2 } from './bloom2.webp'
+export { default as Bloom3 } from './bloom3.webp'
+export { default as Bloom4 } from './bloom4.webp'
+export { default as Bloom5 } from './bloom5.webp'

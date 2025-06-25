@@ -1,6 +1,9 @@
 import { BloomAppIcons } from 'assets/images/appIcons'
 import { BloomPreviews } from 'assets/images/previews'
-import { BloomScreenshots } from 'assets/images/screenshots'
+import {
+  BloomScreenshotsDark,
+  BloomScreenshotsLight,
+} from 'assets/images/screenshots/bloom'
 import { PROFILE } from 'data'
 import { PLATFORM } from 'data/platform'
 import { PROJECT_STATUS } from 'data/projectStatus'
@@ -127,11 +130,8 @@ export const BLOOM: Project = {
       },
     },
   ],
-  screenshots: [
-    BloomScreenshots.Bloom1,
-    BloomScreenshots.Bloom2,
-    BloomScreenshots.Bloom3,
-    BloomScreenshots.Bloom4,
-    BloomScreenshots.Bloom5,
-  ],
+  screenshots: {
+    light: [...Object.values(BloomScreenshotsLight)],
+    dark: [...Object.values(BloomScreenshotsDark)],
+  },
 } as const

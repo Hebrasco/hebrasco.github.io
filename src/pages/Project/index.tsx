@@ -1,4 +1,4 @@
-import { PROJECTS } from 'data'
+import { MISC, PROJECTS } from 'data'
 import ProjectImages from 'pages/Project/components/ProjectImages'
 import { Responsibilities } from 'pages/Project/components/Responsibilities'
 import React, { useMemo } from 'react'
@@ -6,17 +6,19 @@ import { Col, Container, Image, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import projectStyles from 'pages/Home/components/Projects/index.module.css'
 import previewStyles from 'pages/Home/components/Projects/components/Preview/index.module.css'
-import { useWindowSize } from 'hooks'
+import { useColorScheme, useWindowSize } from 'hooks'
 import { conditionalStyle } from 'utils'
-
-import styles from './index.module.css'
 import { ExternalLink, Section } from 'components/ui'
 import { ProjectBadge } from 'pages/Home/components/Projects/components/ProjectBadge'
 import { PROJECT_STATUS } from 'data/projectStatus'
 import FEATURE_CONTAINER_SIZE from 'pages/Home/components/Projects/constants/FeatureContainerSize'
 
+import styles from './index.module.css'
+
 export function Project(): JSX.Element {
   const { projectId } = useParams()
+  const colorScheme = useColorScheme()
+  const isLightScheme = colorScheme === MISC.colorSchemes.light
   const { isXs, isSm } = useWindowSize()
   const isMobile = isXs || isSm
 
@@ -178,28 +180,31 @@ export function Project(): JSX.Element {
         </Section>
       </Container>
       {project.screenshots && (
-        <Container fluid className="py-5 my-5 bg-light">
+        <Container fluid className="my-5">
           <Section fluidContainer>
             <div className={projectStyles['preview-scroll-container']}>
               <div className={projectStyles['preview-container']}>
                 <div className={projectStyles['preview-container-card-set']}>
-                  {project.screenshots?.map((screenshot, index) => (
-                    <div
-                      key={index}
-                      className={`rounded ${previewStyles['preview-content-container']} p-0`}
-                      style={{
-                        justifyContent: 'flex-start',
-                        width,
-                        scrollSnapAlign: conditionalStyle(
-                          isMobile,
-                          'center',
-                          'start'
-                        ),
-                      }}
-                    >
-                      <Image src={screenshot} style={{ borderRadius: 38 }} />
-                    </div>
-                  ))}
+                  {project.screenshots?.[isLightScheme ? 'light' : 'dark'].map(
+                    (screenshot, index) => (
+                      <div
+                        key={index}
+                        className={`${previewStyles['preview-content-container']} p-0`}
+                        style={{
+                          justifyContent: 'flex-start',
+                          width,
+                          scrollSnapAlign: conditionalStyle(
+                            isMobile,
+                            'center',
+                            'start'
+                          ),
+                          backgroundColor: 'unset',
+                        }}
+                      >
+                        <Image src={screenshot} loading="lazy" />
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
             </div>

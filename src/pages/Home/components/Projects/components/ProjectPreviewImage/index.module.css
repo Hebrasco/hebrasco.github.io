@@ -1,6 +1,5 @@
 .preview-image-container {
-  position: relative;
-  bottom: -100px;
+  margin-top: 3rem;
 }
 
 .preview-image {

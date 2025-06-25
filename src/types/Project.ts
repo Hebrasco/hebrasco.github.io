@@ -4,6 +4,7 @@ import { Skill } from './Skill'
 import { AppIcon } from './AppIcon'
 import { Platform } from './Platform'
 import { ProjectStatus } from 'types/ProjectStatus'
+import { Screenshots } from 'types/Screenshots'
 
 export type Project = {
   id: string
@@ -19,6 +20,6 @@ export type Project = {
   previewImages: readonly PreviewImage[]
   previewImageMain: PreviewImage
   status: ProjectStatus
-  screenshots?: readonly string[]
+  screenshots?: Screenshots
   platforms: readonly Platform[]
 }
