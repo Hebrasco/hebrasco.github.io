@@ -89,11 +89,11 @@ export const BLOOM: Project = {
   },
   previewImage: {
     light: {
-      src: BloomPreviews.previewLight,
+      src: ScreenshotsLight.SingleImageMarried,
       altText: 'Preview screenshot of Bloom in light mode',
     },
     dark: {
-      src: BloomPreviews.previewDark,
+      src: ScreenshotsDark.SingleImageMarried,
       altText: 'Preview screenshot of Bloom in dark mode',
     },
   },
