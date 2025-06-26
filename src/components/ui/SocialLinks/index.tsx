@@ -15,6 +15,7 @@ export function SocialLinks({ useIcons = false }: Props): JSX.Element {
         src={AppStoreIcon}
         to={CONFIG.references.appStoreUrl}
         useIcon={useIcons}
+        altText="AppStore Logo"
       />
       <SocialLink
         label="GitHub"
@@ -22,6 +23,7 @@ export function SocialLinks({ useIcons = false }: Props): JSX.Element {
         to={CONFIG.references.gitHubUrl}
         useIcon={useIcons}
         invertImage
+        altText="GitHub Logo"
       />
     </>
   )

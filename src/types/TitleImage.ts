@@ -1,6 +1,6 @@
 import { Screenshot } from 'types/Screenshot'
 
-export type PreviewImage = {
+export type TitleImage = {
   light: Screenshot
   dark: Screenshot
 }

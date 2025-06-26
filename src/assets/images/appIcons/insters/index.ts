@@ -1,1 +1,1 @@
-export { default as light } from './app-icon-light.png'
+export { default as light } from './app-icon-light.webp'

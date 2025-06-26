@@ -64,47 +64,24 @@ export const RECIPES: Project = {
   ],
   onlineURL: undefined,
   sourceURL: 'https://github.com/Hebrasco/recipe_app',
-  previewImageMain: {
-    id: 'preview-recipes-iphone',
-    sourceLight: RecipesPreviews.IphoneImage,
-    sourceDark: RecipesPreviews.IphoneImage,
+  previewImage: {
+    light: {
+      src: RecipesPreviews.previewLight,
+      altText: 'Preview screenshot of Recipes in light mode',
+    },
+    dark: {
+      src: RecipesPreviews.previewLight,
+      altText: 'Preview screenshot of Recipes in light mode',
+    },
   },
-  previewImages: [
-    {
-      id: 'preview-recipes-iphoneSE',
-      sourceLight: RecipesPreviews.IphoneSEImage,
-      sourceDark: RecipesPreviews.IphoneSEImage,
-      style: {
-        width: '25%',
-        height: 'auto',
-        left: '9%',
-        bottom: 0,
-        zIndex: 3,
-      },
+  titleImage: {
+    light: {
+      src: RecipesPreviews.titleLight,
+      altText: 'Title image in light mode',
     },
-    {
-      id: 'preview-recipes-iphone',
-      sourceLight: RecipesPreviews.IphoneImage,
-      sourceDark: RecipesPreviews.IphoneImage,
-      style: {
-        width: '30%',
-        height: 'auto',
-        left: '5%',
-        bottom: 0,
-        zIndex: 2,
-      },
+    dark: {
+      src: RecipesPreviews.titleLight,
+      altText: 'Title image in light mode',
     },
-    {
-      id: 'preview-recipes-ipad',
-      sourceLight: RecipesPreviews.IpadImage,
-      sourceDark: RecipesPreviews.IpadImage,
-      style: {
-        width: '54%',
-        height: 'auto',
-        right: 0,
-        bottom: 0,
-        zIndex: 1,
-      },
-    },
-  ],
+  },
 } as const

@@ -1,2 +1,2 @@
-export { default as AppStoreIcon } from './app_store.png'
-export { default as GitHubIcon } from './github.png'
+export { default as AppStoreIcon } from './app-store.webp'
+export { default as GitHubIcon } from './github.webp'
