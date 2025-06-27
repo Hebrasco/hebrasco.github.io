@@ -58,6 +58,7 @@ export function Preview({ project }: Props): JSX.Element {
                   !isLightScheme && !project.appIcon,
                   'invertedColor'
                 )}`}
+                alt={`App icon of ${project.id}`}
               />
             </div>
             <div>
@@ -68,7 +69,7 @@ export function Preview({ project }: Props): JSX.Element {
         </Row>
       </div>
       <Badges languages={project.languages} frameworks={project.frameworks} />
-      <ProjectPreviewImage image={project.previewImageMain} />
+      <ProjectPreviewImage image={project.previewImage} />
     </Link>
   )
 }

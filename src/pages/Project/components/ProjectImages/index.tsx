@@ -7,28 +7,21 @@ import { PreviewImage } from 'types'
 import styles from './index.module.css'
 
 interface Props {
-  images: readonly PreviewImage[]
+  image: PreviewImage
 }
 
-function ProjectImages({ images }: Props): JSX.Element {
+function ProjectImages({ image }: Props): JSX.Element {
   const colorScheme = useColorScheme()
   const isLightScheme = colorScheme === MISC.colorSchemes.light
 
   return (
     <div className="d-flex align-items-end justify-content-end">
-      {images.map((image) => {
-        const { id, sourceLight, sourceDark, style } = image
-
-        return (
-          <Image
-            key={id}
-            src={isLightScheme ? sourceLight : sourceDark}
-            style={style}
-            className={styles['project-image']}
-            loading="lazy"
-          />
-        )
-      })}
+      <Image
+        src={isLightScheme ? image.light.src : image.dark.src}
+        alt={isLightScheme ? image.light.altText : image.dark.altText}
+        className={styles['project-image']}
+        loading="lazy"
+      />
     </div>
   )
 }

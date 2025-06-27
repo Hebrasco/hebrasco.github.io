@@ -7,6 +7,7 @@ interface Props {
   label: string
   to: string
   src: string
+  altText: string
   useIcon?: boolean
   invertImage?: boolean
 }
@@ -15,6 +16,7 @@ export function SocialLink({
   label,
   to,
   src,
+  altText,
   useIcon,
   invertImage = false,
 }: Props): JSX.Element {
@@ -30,6 +32,7 @@ export function SocialLink({
           src={src}
           fluid
           className={`${conditionalStyle(invertImage, 'invertedColor')}`}
+          alt={altText}
         />
       ) : (
         label

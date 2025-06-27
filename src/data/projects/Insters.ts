@@ -50,47 +50,24 @@ export const INSTERS: Project = {
     light: InstersAppIcons.light,
     dark: InstersAppIcons.light,
   },
-  previewImageMain: {
-    id: 'preview-insters-iphone',
-    sourceLight: InstersPreviews.iphoneImageLight,
-    sourceDark: InstersPreviews.iphoneImageDark,
+  previewImage: {
+    light: {
+      src: InstersPreviews.previewLight,
+      altText: 'Preview screenshot of Insters in light mode',
+    },
+    dark: {
+      src: InstersPreviews.previewDark,
+      altText: 'Preview screenshot of Insters in dark mode',
+    },
   },
-  previewImages: [
-    {
-      id: 'preview-insters-iphoneSE',
-      sourceLight: InstersPreviews.iphoneSEImage,
-      sourceDark: InstersPreviews.iphoneSEImage,
-      style: {
-        width: '25%',
-        height: 'auto',
-        left: '9%',
-        bottom: 0,
-        zIndex: 3,
-      },
+  titleImage: {
+    light: {
+      src: InstersPreviews.titleLight,
+      altText: 'Title image in light mode',
     },
-    {
-      id: 'preview-insters-iphone',
-      sourceLight: InstersPreviews.iphoneImageLight,
-      sourceDark: InstersPreviews.iphoneImageDark,
-      style: {
-        width: '30%',
-        height: 'auto',
-        left: '5%',
-        bottom: 0,
-        zIndex: 2,
-      },
+    dark: {
+      src: InstersPreviews.titleDark,
+      altText: 'Title image in dark mode',
     },
-    {
-      id: 'preview-insters-ipad',
-      sourceLight: InstersPreviews.ipadImageLight,
-      sourceDark: InstersPreviews.ipadImageDark,
-      style: {
-        width: '54%',
-        height: 'auto',
-        right: 0,
-        bottom: 0,
-        zIndex: 1,
-      },
-    },
-  ],
+  },
 } as const

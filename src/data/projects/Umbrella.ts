@@ -57,47 +57,24 @@ export const UMBRELLA: Project = {
   ],
   onlineURL: undefined,
   sourceURL: undefined,
-  previewImageMain: {
-    id: 'preview-umbrella-iphone',
-    sourceLight: UmbrellaPreviews.iphoneImageLight,
-    sourceDark: UmbrellaPreviews.iphoneImageDark,
+  previewImage: {
+    light: {
+      src: UmbrellaPreviews.previewLight,
+      altText: 'Preview screenshot of Umbrella in light mode',
+    },
+    dark: {
+      src: UmbrellaPreviews.previewDark,
+      altText: 'Preview screenshot of Umbrella in dark mode',
+    },
   },
-  previewImages: [
-    {
-      id: 'preview-umbrella-iphone',
-      sourceLight: UmbrellaPreviews.iphoneImageLight,
-      sourceDark: UmbrellaPreviews.iphoneImageDark,
-      style: {
-        width: '20%',
-        height: 'auto',
-        left: '43%',
-        bottom: 0,
-        zIndex: 3,
-      },
+  titleImage: {
+    light: {
+      src: UmbrellaPreviews.titleLight,
+      altText: 'Title image in light mode',
     },
-    {
-      id: 'preview-umbrella-macbook',
-      sourceLight: UmbrellaPreviews.macbookImageLight,
-      sourceDark: UmbrellaPreviews.macbookImageDark,
-      style: {
-        width: '83%',
-        height: 'auto',
-        left: '27%',
-        bottom: 0,
-        zIndex: 2,
-      },
+    dark: {
+      src: UmbrellaPreviews.titleDark,
+      altText: 'Title image in dark mode',
     },
-    {
-      id: 'preview-umbrella-ipad',
-      sourceLight: UmbrellaPreviews.ipadImageLight,
-      sourceDark: UmbrellaPreviews.ipadImageDark,
-      style: {
-        width: '40%',
-        height: 'auto',
-        right: 0,
-        bottom: '1px',
-        zIndex: 1,
-      },
-    },
-  ],
+  },
 } as const

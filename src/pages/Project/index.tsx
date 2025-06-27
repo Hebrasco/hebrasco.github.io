@@ -64,14 +64,14 @@ export function Project(): JSX.Element {
                   )}
                 </div>
                 <Col className="d-flex d-md-none my-5">
-                  <ProjectImages images={project.previewImages} />
+                  <ProjectImages image={project.titleImage} />
                 </Col>
               </Col>
               <Col
                 md={6}
                 className="align-items-center align-items-lg-end d-none d-md-flex"
               >
-                <ProjectImages images={project.previewImages} />
+                <ProjectImages image={project.titleImage} />
               </Col>
             </Row>
           </div>

@@ -87,49 +87,26 @@ export const BLOOM: Project = {
     light: BloomAppIcons.light,
     dark: BloomAppIcons.dark,
   },
-  previewImageMain: {
-    id: 'preview-bloom-iphone',
-    sourceLight: BloomPreviews.iphoneImageLight,
-    sourceDark: BloomPreviews.iphoneImageDark,
+  previewImage: {
+    light: {
+      src: ScreenshotsLight.SingleImageMarried,
+      altText: 'Preview screenshot of Bloom in light mode',
+    },
+    dark: {
+      src: ScreenshotsDark.SingleImageMarried,
+      altText: 'Preview screenshot of Bloom in dark mode',
+    },
   },
-  previewImages: [
-    {
-      id: 'preview-bloom-iphoneSE',
-      sourceLight: BloomPreviews.iphoneSEImageLight,
-      sourceDark: BloomPreviews.iphoneSEImageDark,
-      style: {
-        width: '25%',
-        height: 'auto',
-        left: '9%',
-        bottom: 0,
-        zIndex: 3,
-      },
+  titleImage: {
+    light: {
+      src: BloomPreviews.titleLight,
+      altText: 'Title image in light mode',
     },
-    {
-      id: 'preview-bloom-iphone',
-      sourceLight: BloomPreviews.iphoneImageLight,
-      sourceDark: BloomPreviews.iphoneImageDark,
-      style: {
-        width: '30%',
-        height: 'auto',
-        left: '5%',
-        bottom: 0,
-        zIndex: 2,
-      },
+    dark: {
+      src: BloomPreviews.titleDark,
+      altText: 'Title image in dark mode',
     },
-    {
-      id: 'preview-bloom-ipad',
-      sourceLight: BloomPreviews.ipadImageLight,
-      sourceDark: BloomPreviews.ipadImageDark,
-      style: {
-        width: '54%',
-        height: 'auto',
-        right: 0,
-        bottom: 0,
-        zIndex: 1,
-      },
-    },
-  ],
+  },
   screenshots: {
     light: [
       {
