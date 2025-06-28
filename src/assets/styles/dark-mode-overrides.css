@@ -2,7 +2,7 @@
   :root {
     --primaryColor: #000000;
     --secondaryColor: #ffffff;
-    --accentColor: #0f0f0f;
+    --accentColor: rgb(12, 12, 10);
 
     --primaryTextColor: rgb(248, 249, 250);
     --secondaryTextColor: rgb(33, 37, 41);
