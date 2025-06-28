@@ -25,4 +25,7 @@ export const FRAMEWORKS: FrameworkCollection = {
     angular: { name: 'Angular' },
     materialUI: { name: 'MaterialUI' },
   },
+  other: {
+    ci: { name: 'CI/CD' },
+  },
 } as const

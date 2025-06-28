@@ -17,6 +17,7 @@ const SKILLS_FRAMEWORKS: readonly Skill[] = [
   FRAMEWORKS.web.react,
   FRAMEWORKS.crossPlatform.reactNative,
   FRAMEWORKS.web.reactRedux,
+  FRAMEWORKS.other.ci,
 ] as const
 
 const SKILLS_APPLICATIONS: readonly Skill[] = [
