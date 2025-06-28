@@ -1,4 +1,8 @@
 import { UmbrellaPreviews } from 'assets/images/previews'
+import {
+  ScreenshotsDark,
+  ScreenshotsLight,
+} from 'assets/images/screenshots/umbrella'
 import { PROFILE } from 'data'
 import { PLATFORM } from 'data/platform'
 import { PROJECT_STATUS } from 'data/projectStatus'
@@ -59,11 +63,11 @@ export const UMBRELLA: Project = {
   sourceURL: undefined,
   previewImage: {
     light: {
-      src: UmbrellaPreviews.previewLight,
+      src: ScreenshotsLight.Backlog,
       altText: 'Preview screenshot of Umbrella in light mode',
     },
     dark: {
-      src: UmbrellaPreviews.previewDark,
+      src: ScreenshotsDark.Backlog,
       altText: 'Preview screenshot of Umbrella in dark mode',
     },
   },
@@ -76,5 +80,27 @@ export const UMBRELLA: Project = {
       src: UmbrellaPreviews.titleDark,
       altText: 'Title image in dark mode',
     },
+  },
+  screenshots: {
+    light: [
+      {
+        src: ScreenshotsLight.Backlog,
+        altText: 'Screenshot of app in light mode of the issue backlog screen',
+      },
+      {
+        src: ScreenshotsLight.IssueDetails,
+        altText: 'Screenshot of app in light mode of the issue detail screen',
+      },
+    ],
+    dark: [
+      {
+        src: ScreenshotsDark.Backlog,
+        altText: 'Screenshot of app in dark mode of the issue backlog screen',
+      },
+      {
+        src: ScreenshotsDark.IssueDetails,
+        altText: 'Screenshot of app in dark mode of the issue detail screen',
+      },
+    ],
   },
 } as const

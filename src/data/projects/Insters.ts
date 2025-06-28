@@ -1,5 +1,9 @@
 import { InstersAppIcons } from 'assets/images/appIcons'
 import { InstersPreviews } from 'assets/images/previews'
+import {
+  ScreenshotsDark,
+  ScreenshotsLight,
+} from 'assets/images/screenshots/insters'
 import { PROFILE } from 'data'
 import { PLATFORM } from 'data/platform'
 import { PROJECT_STATUS } from 'data/projectStatus'
@@ -52,11 +56,11 @@ export const INSTERS: Project = {
   },
   previewImage: {
     light: {
-      src: InstersPreviews.previewLight,
+      src: ScreenshotsLight.EditImage,
       altText: 'Preview screenshot of Insters in light mode',
     },
     dark: {
-      src: InstersPreviews.previewDark,
+      src: ScreenshotsDark.EditImage,
       altText: 'Preview screenshot of Insters in dark mode',
     },
   },
@@ -69,5 +73,19 @@ export const INSTERS: Project = {
       src: InstersPreviews.titleDark,
       altText: 'Title image in dark mode',
     },
+  },
+  screenshots: {
+    light: [
+      {
+        src: ScreenshotsLight.EditImage,
+        altText: 'Screenshot of app in light mode of the edit image screen',
+      },
+    ],
+    dark: [
+      {
+        src: ScreenshotsDark.EditImage,
+        altText: 'Screenshot of app in light mode of the edit image screen',
+      },
+    ],
   },
 } as const
