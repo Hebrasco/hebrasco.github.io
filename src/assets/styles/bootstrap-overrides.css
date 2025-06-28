@@ -72,8 +72,8 @@ img.rounded,
   color: var(--primaryHoverColor) !important;
 }
 
-.navbar-light .navbar-brand,
-.navbar-light .navbar-nav .nav-link {
+.navbar-brand,
+.nav-link {
   color: var(--primaryTextColor) !important;
 }
 
