@@ -3,6 +3,8 @@ import { Skill } from 'types'
 type AppleFrameworkCollection = {
   uiKit: Skill
   swiftUI: Skill
+  swiftCharts: Skill
+  swiftData: Skill
   notifications: Skill
   widgetKit: Skill
   storeKit: Skill
