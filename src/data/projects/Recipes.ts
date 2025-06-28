@@ -1,4 +1,5 @@
 import { RecipesPreviews } from 'assets/images/previews'
+import { ScreenshotsLight } from 'assets/images/screenshots/recipes'
 import { PROFILE } from 'data'
 import { PLATFORM } from 'data/platform'
 import { PROJECT_STATUS } from 'data/projectStatus'
@@ -66,11 +67,11 @@ export const RECIPES: Project = {
   sourceURL: 'https://github.com/Hebrasco/recipe_app',
   previewImage: {
     light: {
-      src: RecipesPreviews.previewLight,
+      src: ScreenshotsLight.RecipeDetails,
       altText: 'Preview screenshot of Recipes in light mode',
     },
     dark: {
-      src: RecipesPreviews.previewLight,
+      src: ScreenshotsLight.RecipeDetails,
       altText: 'Preview screenshot of Recipes in light mode',
     },
   },
@@ -83,5 +84,19 @@ export const RECIPES: Project = {
       src: RecipesPreviews.titleLight,
       altText: 'Title image in light mode',
     },
+  },
+  screenshots: {
+    light: [
+      {
+        src: ScreenshotsLight.RecipeDetails,
+        altText: 'Screenshot of app in light mode of the recipe detail screen',
+      },
+    ],
+    dark: [
+      {
+        src: ScreenshotsLight.RecipeDetails,
+        altText: 'Screenshot of app in light mode of the recipe detail screen',
+      },
+    ],
   },
 } as const
