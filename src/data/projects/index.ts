@@ -7,8 +7,8 @@ import { INVEST_CALC as investCalc } from './InvestCalc'
 
 export const PROJECTS: Project[] = [
   investCalc,
+  bloom,
   umbrella,
   insters,
-  bloom,
   recipes,
 ]
