@@ -4,6 +4,8 @@ export const FRAMEWORKS: FrameworkCollection = {
   apple: {
     uiKit: { name: 'UIKit' },
     swiftUI: { name: 'SwiftUI' },
+    swiftCharts: { name: 'Swift Charts' },
+    swiftData: { name: 'SwiftData' },
     notifications: { name: 'Notifications' },
     widgetKit: { name: 'WidgetKit' },
     storeKit: { name: 'StoreKit' },
