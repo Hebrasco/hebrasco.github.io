@@ -51,8 +51,7 @@ img.rounded,
   border-width: 2px;
 }
 
-.btn,
-.badge {
+.btn {
   color: var(--secondaryTextColor) !important;
 }
 

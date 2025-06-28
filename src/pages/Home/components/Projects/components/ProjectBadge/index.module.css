@@ -8,5 +8,5 @@
   font-weight: 700;
   line-height: 1;
   background-color: var(--accentColor);
-  color: var(--secondaryColor);
+  color: var(--primaryTextColor);
 }
