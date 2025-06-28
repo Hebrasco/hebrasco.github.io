@@ -54,10 +54,6 @@ export function Preview({ project }: Props): JSX.Element {
                   project.appIcon?.[isLightScheme ? 'light' : 'dark'] ??
                   BlankAppIcon
                 }
-                className={`${conditionalStyle(
-                  !isLightScheme && !project.appIcon,
-                  'invertedColor'
-                )}`}
                 alt={`App icon of ${project.id}`}
               />
             </div>
