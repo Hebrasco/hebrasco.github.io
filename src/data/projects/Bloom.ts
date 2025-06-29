@@ -1,6 +1,11 @@
 import { BloomAppIcons } from 'assets/images/appIcons'
 import { BloomPreviews } from 'assets/images/previews'
-import { ScreenshotsDark, ScreenshotsLight } from 'assets/images/screenshots/bloom'
+import {
+  ScreenshotsIpadDark,
+  ScreenshotsIpadLight,
+  ScreenshotsIphoneDark,
+  ScreenshotsIphoneLight,
+} from 'assets/images/screenshots/bloom'
 import { PROFILE } from 'data'
 import { PLATFORM } from 'data/platform'
 import { PROJECT_STATUS } from 'data/projectStatus'
@@ -74,64 +79,118 @@ export const BLOOM: Project = {
   previewImage: {
     dark: {
       altText: 'Preview screenshot of Bloom in dark mode',
-      src: ScreenshotsDark.SingleImageMarried,
+      src: ScreenshotsIphoneDark.SingleImageMarried,
     },
     light: {
       altText: 'Preview screenshot of Bloom in light mode',
-      src: ScreenshotsLight.SingleImageMarried,
+      src: ScreenshotsIphoneLight.SingleImageMarried,
     },
   },
   screenshots: {
-    dark: [
-      {
-        altText: 'Screenshot of app in dark mode with dual image option',
-        src: ScreenshotsDark.DualImage,
-      },
-      {
-        altText:
-          'Screenshot of app in dark mode with single image option and relationship status couple',
-        src: ScreenshotsDark.SingleImageCouple,
-      },
-      {
-        altText:
-          'Screenshot of app in dark mode with single image option and relationship status engaged',
-        src: ScreenshotsDark.SingleImageEngaged,
-      },
-      {
-        altText:
-          'Screenshot of app in dark mode with single image option and relationship status married',
-        src: ScreenshotsDark.SingleImageMarried,
-      },
-      {
-        altText: 'Screenshot of app widgets in dark mode',
-        src: ScreenshotsDark.Widgets,
-      },
-    ],
-    light: [
-      {
-        altText: 'Screenshot of app in light mode with dual image option',
-        src: ScreenshotsLight.DualImage,
-      },
-      {
-        altText:
-          'Screenshot of app in light mode with single image option and relationship status couple',
-        src: ScreenshotsLight.SingleImageCouple,
-      },
-      {
-        altText:
-          'Screenshot of app in light mode with single image option and relationship status engaged',
-        src: ScreenshotsLight.SingleImageEngaged,
-      },
-      {
-        altText:
-          'Screenshot of app in light mode with single image option and relationship status married',
-        src: ScreenshotsLight.SingleImageMarried,
-      },
-      {
-        altText: 'Screenshot of app widgets in light mode',
-        src: ScreenshotsLight.Widgets,
-      },
-    ],
+    ipad: {
+      dark: [
+        {
+          altText: 'Screenshot of ipad app in dark mode with dual image option',
+          src: ScreenshotsIpadDark.DualImage,
+        },
+        {
+          altText:
+            'Screenshot of ipad app in dark mode with single image option and relationship status couple',
+          src: ScreenshotsIpadDark.SingleImageCouple,
+        },
+        {
+          altText:
+            'Screenshot of ipad app in dark mode with single image option and relationship status engaged',
+          src: ScreenshotsIpadDark.SingleImageEngaged,
+        },
+        {
+          altText:
+            'Screenshot of ipad app in dark mode with single image option and relationship status married',
+          src: ScreenshotsIpadDark.SingleImageMarried,
+        },
+        {
+          altText: 'Screenshot of ipad app widgets in dark mode',
+          src: ScreenshotsIpadDark.Widgets,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of ipad app in light mode with dual image option',
+          src: ScreenshotsIpadLight.DualImage,
+        },
+        {
+          altText:
+            'Screenshot of ipad app in light mode with single image option and relationship status couple',
+          src: ScreenshotsIpadLight.SingleImageCouple,
+        },
+        {
+          altText:
+            'Screenshot of ipad app in light mode with single image option and relationship status engaged',
+          src: ScreenshotsIpadLight.SingleImageEngaged,
+        },
+        {
+          altText:
+            'Screenshot of ipad app in light mode with single image option and relationship status married',
+          src: ScreenshotsIpadLight.SingleImageMarried,
+        },
+        {
+          altText: 'Screenshot of ipad app widgets in light mode',
+          src: ScreenshotsIpadLight.Widgets,
+        },
+      ],
+    },
+    iphone: {
+      dark: [
+        {
+          altText: 'Screenshot of iphone app in dark mode with dual image option',
+          src: ScreenshotsIphoneDark.DualImage,
+        },
+        {
+          altText:
+            'Screenshot of iphone app in dark mode with single image option and relationship status couple',
+          src: ScreenshotsIphoneDark.SingleImageCouple,
+        },
+        {
+          altText:
+            'Screenshot of iphone app in dark mode with single image option and relationship status engaged',
+          src: ScreenshotsIphoneDark.SingleImageEngaged,
+        },
+        {
+          altText:
+            'Screenshot of iphone app in dark mode with single image option and relationship status married',
+          src: ScreenshotsIphoneDark.SingleImageMarried,
+        },
+        {
+          altText: 'Screenshot of iphone app widgets in dark mode',
+          src: ScreenshotsIphoneDark.Widgets,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of iphone app in light mode with dual image option',
+          src: ScreenshotsIphoneLight.DualImage,
+        },
+        {
+          altText:
+            'Screenshot of iphone app in light mode with single image option and relationship status couple',
+          src: ScreenshotsIphoneLight.SingleImageCouple,
+        },
+        {
+          altText:
+            'Screenshot of iphone app in light mode with single image option and relationship status engaged',
+          src: ScreenshotsIphoneLight.SingleImageEngaged,
+        },
+        {
+          altText:
+            'Screenshot of iphone app in light mode with single image option and relationship status married',
+          src: ScreenshotsIphoneLight.SingleImageMarried,
+        },
+        {
+          altText: 'Screenshot of iphone app widgets in light mode',
+          src: ScreenshotsIphoneLight.Widgets,
+        },
+      ],
+    },
   },
   sourceURL: undefined,
   status: {

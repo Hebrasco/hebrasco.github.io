@@ -59,18 +59,20 @@ export const RECIPES: Project = {
     },
   },
   screenshots: {
-    dark: [
-      {
-        altText: 'Screenshot of app in light mode of the recipe detail screen',
-        src: ScreenshotsLight.RecipeDetails,
-      },
-    ],
-    light: [
-      {
-        altText: 'Screenshot of app in light mode of the recipe detail screen',
-        src: ScreenshotsLight.RecipeDetails,
-      },
-    ],
+    iphone: {
+      dark: [
+        {
+          altText: 'Screenshot of app in light mode of the recipe detail screen',
+          src: ScreenshotsLight.RecipeDetails,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of app in light mode of the recipe detail screen',
+          src: ScreenshotsLight.RecipeDetails,
+        },
+      ],
+    },
   },
   sourceURL: 'https://github.com/Hebrasco/recipe_app',
   status: {

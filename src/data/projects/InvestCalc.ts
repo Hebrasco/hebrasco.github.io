@@ -78,54 +78,56 @@ export const INVEST_CALC: Project = {
     },
   },
   screenshots: {
-    dark: [
-      {
-        altText: 'Screenshot of app in dark mode showing all saved calculations',
-        src: ScreenshotsDark.Calculations,
-      },
-      {
-        altText: 'Screenshot of app in dark mode showing the create calculation modal',
-        src: ScreenshotsDark.CreateCalculation,
-      },
-      {
-        altText:
-          'Screenshot of app in dark mode showing calculation details with a chart and list of each year',
-        src: ScreenshotsDark.CalculationDetails,
-      },
-      {
-        altText:
-          'Screenshot of app in dark mode showing the list of years and the possibility to assign a status to them',
-        src: ScreenshotsDark.CalculationYearlyGoals,
-      },
-      {
-        altText: 'Screenshot of app in dark mode showing the edit calculation year modal',
-        src: ScreenshotsDark.EditCalculationYear,
-      },
-    ],
-    light: [
-      {
-        altText: 'Screenshot of app in light mode showing all saved calculations',
-        src: ScreenshotsLight.Calculations,
-      },
-      {
-        altText: 'Screenshot of app in light mode showing the create calculation modal',
-        src: ScreenshotsLight.CreateCalculation,
-      },
-      {
-        altText:
-          'Screenshot of app in light mode showing calculation details with a chart and list of each year',
-        src: ScreenshotsLight.CalculationDetails,
-      },
-      {
-        altText:
-          'Screenshot of app in light mode showing the list of years and the possibility to assign a status to them',
-        src: ScreenshotsLight.CalculationYearlyGoals,
-      },
-      {
-        altText: 'Screenshot of app in light mode showing the edit calculation year modal',
-        src: ScreenshotsLight.EditCalculationYear,
-      },
-    ],
+    iphone: {
+      dark: [
+        {
+          altText: 'Screenshot of app in dark mode showing all saved calculations',
+          src: ScreenshotsDark.Calculations,
+        },
+        {
+          altText: 'Screenshot of app in dark mode showing the create calculation modal',
+          src: ScreenshotsDark.CreateCalculation,
+        },
+        {
+          altText:
+            'Screenshot of app in dark mode showing calculation details with a chart and list of each year',
+          src: ScreenshotsDark.CalculationDetails,
+        },
+        {
+          altText:
+            'Screenshot of app in dark mode showing the list of years and the possibility to assign a status to them',
+          src: ScreenshotsDark.CalculationYearlyGoals,
+        },
+        {
+          altText: 'Screenshot of app in dark mode showing the edit calculation year modal',
+          src: ScreenshotsDark.EditCalculationYear,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of app in light mode showing all saved calculations',
+          src: ScreenshotsLight.Calculations,
+        },
+        {
+          altText: 'Screenshot of app in light mode showing the create calculation modal',
+          src: ScreenshotsLight.CreateCalculation,
+        },
+        {
+          altText:
+            'Screenshot of app in light mode showing calculation details with a chart and list of each year',
+          src: ScreenshotsLight.CalculationDetails,
+        },
+        {
+          altText:
+            'Screenshot of app in light mode showing the list of years and the possibility to assign a status to them',
+          src: ScreenshotsLight.CalculationYearlyGoals,
+        },
+        {
+          altText: 'Screenshot of app in light mode showing the edit calculation year modal',
+          src: ScreenshotsLight.EditCalculationYear,
+        },
+      ],
+    },
   },
   status: {
     date: new Date('2025-05-18'),

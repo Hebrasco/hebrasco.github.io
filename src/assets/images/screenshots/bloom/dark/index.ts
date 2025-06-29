@@ -1,5 +1,0 @@
-export { default as DualImage } from './bloom-dual-image.webp'
-export { default as SingleImageCouple } from './bloom-single-image-couple.webp'
-export { default as SingleImageEngaged } from './bloom-single-image-engaged.webp'
-export { default as SingleImageMarried } from './bloom-single-image-married.webp'
-export { default as Widgets } from './bloom-widgets.webp'

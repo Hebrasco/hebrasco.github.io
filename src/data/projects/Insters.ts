@@ -51,18 +51,20 @@ export const INSTERS: Project = {
     },
   },
   screenshots: {
-    dark: [
-      {
-        altText: 'Screenshot of app in light mode of the edit image screen',
-        src: ScreenshotsDark.EditImage,
-      },
-    ],
-    light: [
-      {
-        altText: 'Screenshot of app in light mode of the edit image screen',
-        src: ScreenshotsLight.EditImage,
-      },
-    ],
+    iphone: {
+      dark: [
+        {
+          altText: 'Screenshot of app in light mode of the edit image screen',
+          src: ScreenshotsDark.EditImage,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of app in light mode of the edit image screen',
+          src: ScreenshotsLight.EditImage,
+        },
+      ],
+    },
   },
   sourceURL: undefined,
   status: {

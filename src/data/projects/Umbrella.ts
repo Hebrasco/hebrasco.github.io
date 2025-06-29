@@ -59,26 +59,28 @@ export const UMBRELLA: Project = {
     },
   },
   screenshots: {
-    dark: [
-      {
-        altText: 'Screenshot of app in dark mode of the issue backlog screen',
-        src: ScreenshotsDark.Backlog,
-      },
-      {
-        altText: 'Screenshot of app in dark mode of the issue detail screen',
-        src: ScreenshotsDark.IssueDetails,
-      },
-    ],
-    light: [
-      {
-        altText: 'Screenshot of app in light mode of the issue backlog screen',
-        src: ScreenshotsLight.Backlog,
-      },
-      {
-        altText: 'Screenshot of app in light mode of the issue detail screen',
-        src: ScreenshotsLight.IssueDetails,
-      },
-    ],
+    iphone: {
+      dark: [
+        {
+          altText: 'Screenshot of app in dark mode of the issue backlog screen',
+          src: ScreenshotsDark.Backlog,
+        },
+        {
+          altText: 'Screenshot of app in dark mode of the issue detail screen',
+          src: ScreenshotsDark.IssueDetails,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of app in light mode of the issue backlog screen',
+          src: ScreenshotsLight.Backlog,
+        },
+        {
+          altText: 'Screenshot of app in light mode of the issue detail screen',
+          src: ScreenshotsLight.IssueDetails,
+        },
+      ],
+    },
   },
   sourceURL: undefined,
   status: {
