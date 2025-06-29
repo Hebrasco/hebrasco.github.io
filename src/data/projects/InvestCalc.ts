@@ -1,6 +1,11 @@
 import { InvestCalcAppIcons } from 'assets/images/appIcons'
 import { InvestCalcPreviews } from 'assets/images/previews'
-import { ScreenshotsDark, ScreenshotsLight } from 'assets/images/screenshots/investCalc'
+import {
+  ScreenshotsIpadDark,
+  ScreenshotsIpadLight,
+  ScreenshotsIphoneDark,
+  ScreenshotsIphoneLight,
+} from 'assets/images/screenshots/investCalc'
 import { PROFILE } from 'data'
 import { PLATFORM } from 'data/platform'
 import { PROJECT_STATUS } from 'data/projectStatus'
@@ -70,61 +75,111 @@ export const INVEST_CALC: Project = {
   previewImage: {
     dark: {
       altText: 'Preview screenshot of Invest Calc in dark mode',
-      src: ScreenshotsDark.CalculationDetails,
+      src: ScreenshotsIphoneDark.CalculationDetails,
     },
     light: {
       altText: 'Preview screenshot of Invest Calc in light mode',
-      src: ScreenshotsLight.CalculationDetails,
+      src: ScreenshotsIphoneLight.CalculationDetails,
     },
   },
   screenshots: {
-    iphone: {
+    ipad: {
       dark: [
         {
-          altText: 'Screenshot of app in dark mode showing all saved calculations',
-          src: ScreenshotsDark.Calculations,
+          altText: 'Screenshot of ipad app in dark mode showing all saved calculations',
+          src: ScreenshotsIpadDark.Calculations,
         },
         {
-          altText: 'Screenshot of app in dark mode showing the create calculation modal',
-          src: ScreenshotsDark.CreateCalculation,
-        },
-        {
-          altText:
-            'Screenshot of app in dark mode showing calculation details with a chart and list of each year',
-          src: ScreenshotsDark.CalculationDetails,
+          altText: 'Screenshot of ipad app in dark mode showing the create calculation modal',
+          src: ScreenshotsIpadDark.CreateCalculation,
         },
         {
           altText:
-            'Screenshot of app in dark mode showing the list of years and the possibility to assign a status to them',
-          src: ScreenshotsDark.CalculationYearlyGoals,
+            'Screenshot of ipad app in dark mode showing calculation details with a chart and list of each year',
+          src: ScreenshotsIpadDark.CalculationDetails,
         },
         {
-          altText: 'Screenshot of app in dark mode showing the edit calculation year modal',
-          src: ScreenshotsDark.EditCalculationYear,
+          altText:
+            'Screenshot of ipad app in dark mode showing the list of years and the possibility to assign a status to them',
+          src: ScreenshotsIpadDark.CalculationYearlyGoals,
+        },
+        {
+          altText: 'Screenshot of ipad app in dark mode showing the edit calculation year modal',
+          src: ScreenshotsIpadDark.EditCalculationYear,
         },
       ],
       light: [
         {
-          altText: 'Screenshot of app in light mode showing all saved calculations',
-          src: ScreenshotsLight.Calculations,
+          altText: 'Screenshot of ipad app in light mode showing all saved calculations',
+          src: ScreenshotsIpadLight.Calculations,
         },
         {
-          altText: 'Screenshot of app in light mode showing the create calculation modal',
-          src: ScreenshotsLight.CreateCalculation,
-        },
-        {
-          altText:
-            'Screenshot of app in light mode showing calculation details with a chart and list of each year',
-          src: ScreenshotsLight.CalculationDetails,
+          altText: 'Screenshot of ipad app in light mode showing the create calculation modal',
+          src: ScreenshotsIpadLight.CreateCalculation,
         },
         {
           altText:
-            'Screenshot of app in light mode showing the list of years and the possibility to assign a status to them',
-          src: ScreenshotsLight.CalculationYearlyGoals,
+            'Screenshot of ipad app in light mode showing calculation details with a chart and list of each year',
+          src: ScreenshotsIpadLight.CalculationDetails,
         },
         {
-          altText: 'Screenshot of app in light mode showing the edit calculation year modal',
-          src: ScreenshotsLight.EditCalculationYear,
+          altText:
+            'Screenshot of ipad app in light mode showing the list of years and the possibility to assign a status to them',
+          src: ScreenshotsIpadLight.CalculationYearlyGoals,
+        },
+        {
+          altText: 'Screenshot of ipad app in light mode showing the edit calculation year modal',
+          src: ScreenshotsIpadLight.EditCalculationYear,
+        },
+      ],
+    },
+    iphone: {
+      dark: [
+        {
+          altText: 'Screenshot of iphone app in dark mode showing all saved calculations',
+          src: ScreenshotsIphoneDark.Calculations,
+        },
+        {
+          altText: 'Screenshot of iphone app in dark mode showing the create calculation modal',
+          src: ScreenshotsIphoneDark.CreateCalculation,
+        },
+        {
+          altText:
+            'Screenshot of iphone app in dark mode showing calculation details with a chart and list of each year',
+          src: ScreenshotsIphoneDark.CalculationDetails,
+        },
+        {
+          altText:
+            'Screenshot of iphone app in dark mode showing the list of years and the possibility to assign a status to them',
+          src: ScreenshotsIphoneDark.CalculationYearlyGoals,
+        },
+        {
+          altText: 'Screenshot of iphone app in dark mode showing the edit calculation year modal',
+          src: ScreenshotsIphoneDark.EditCalculationYear,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of iphone app in light mode showing all saved calculations',
+          src: ScreenshotsIphoneLight.Calculations,
+        },
+        {
+          altText: 'Screenshot of iphone app in light mode showing the create calculation modal',
+          src: ScreenshotsIphoneLight.CreateCalculation,
+        },
+        {
+          altText:
+            'Screenshot of iphone app in light mode showing calculation details with a chart and list of each year',
+          src: ScreenshotsIphoneLight.CalculationDetails,
+        },
+        {
+          altText:
+            'Screenshot of iphone app in light mode showing the list of years and the possibility to assign a status to them',
+          src: ScreenshotsIphoneLight.CalculationYearlyGoals,
+        },
+        {
+          altText: 'Screenshot of iphone app in light mode showing the edit calculation year modal',
+          src: ScreenshotsIphoneLight.EditCalculationYear,
         },
       ],
     },
