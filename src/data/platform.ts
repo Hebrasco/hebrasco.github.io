@@ -1,5 +1,5 @@
 export const PLATFORM = {
-  iPhone: 'iPhone',
   iPadOS: 'iPadOS',
+  iPhone: 'iPhone',
   macOS: 'macOS',
 } as const

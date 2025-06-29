@@ -1,10 +1,8 @@
-import React from 'react'
-import { Col } from 'react-bootstrap'
-import { Skill } from 'types'
-
-import styles from './index.module.css'
-import { ProjectBadge } from 'pages/Home/components/Projects/components/ProjectBadge'
 import { Section } from 'components/ui'
+import { ProjectBadge } from 'pages/Home/components/Projects/components/ProjectBadge'
+import { Col } from 'react-bootstrap'
+import styles from './index.module.css'
+import type { Skill } from 'types'
 
 interface Props {
   title: string
@@ -13,11 +11,11 @@ interface Props {
 
 export function SkillColumn({ title, data }: Props): JSX.Element {
   return (
-    <Col xs={12} md={4} className={`${styles['skills-column']} d-flex`}>
+    <Col className={`${styles['skills-column']} d-flex`} md={4} xs={12}>
       <Section title={title} xs>
         <ul className="list-unstyled mb-0 d-flex flex-wrap gap-2">
           {data.map((skill) => (
-            <li key={`skill-${skill.name}`} className="mb-1 d-flex">
+            <li className="mb-1 d-flex" key={`skill-${skill.name}`}>
               <ProjectBadge skill={skill} />
             </li>
           ))}

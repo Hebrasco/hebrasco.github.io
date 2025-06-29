@@ -1,2 +1,2 @@
-export * as ScreenshotsLight from './light'
 export * as ScreenshotsDark from './dark'
+export * as ScreenshotsLight from './light'

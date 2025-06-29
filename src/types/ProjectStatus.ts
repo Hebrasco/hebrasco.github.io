@@ -1,5 +1,5 @@
-import { PROJECT_STATUS } from 'data/projectStatus'
-import { ProjectStatusType } from 'types/ProjectStatusType'
+import type { PROJECT_STATUS } from 'data/projectStatus'
+import type { ProjectStatusType } from 'types/ProjectStatusType'
 
 export type ProjectStatus =
   | {

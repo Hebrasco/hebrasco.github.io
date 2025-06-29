@@ -1,4 +1,4 @@
-import { Screenshot } from 'types/Screenshot'
+import type { Screenshot } from 'types/Screenshot'
 
 export type PreviewImage = {
   light: Screenshot

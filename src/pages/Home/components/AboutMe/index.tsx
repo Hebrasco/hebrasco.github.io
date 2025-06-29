@@ -1,13 +1,12 @@
 import { Section } from 'components/ui'
 import { ROUTES } from 'data'
-import React from 'react'
 import { Container } from 'react-bootstrap'
 import { AboutText, Actions, Skills } from './components'
 
 export function AboutMe(): JSX.Element {
   return (
     <Container>
-      <Section lg title="About me" anchor={ROUTES.aboutMe}>
+      <Section anchor={ROUTES.aboutMe} lg title="About me">
         <AboutText />
         <Actions />
         <Skills />

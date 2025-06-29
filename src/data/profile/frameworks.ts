@@ -1,31 +1,31 @@
-import { FrameworkCollection } from 'types'
+import type { FrameworkCollection } from 'types'
 
 export const FRAMEWORKS: FrameworkCollection = {
   apple: {
-    uiKit: { name: 'UIKit' },
-    swiftUI: { name: 'SwiftUI' },
+    cloudKit: { name: 'CloudKit' },
+    coreData: { name: 'Core Data' },
+    coreImage: { name: 'Core Image' },
+    metal: { name: 'Metal' },
+    notifications: { name: 'Notifications' },
+    storeKit: { name: 'StoreKit' },
     swiftCharts: { name: 'Swift Charts' },
     swiftData: { name: 'SwiftData' },
-    notifications: { name: 'Notifications' },
+    swiftUI: { name: 'SwiftUI' },
+    uiKit: { name: 'UIKit' },
     widgetKit: { name: 'WidgetKit' },
-    storeKit: { name: 'StoreKit' },
-    coreData: { name: 'Core Data' },
-    metal: { name: 'Metal' },
-    coreImage: { name: 'Core Image' },
-    cloudKit: { name: 'CloudKit' },
   },
   crossPlatform: {
     reactNative: { name: 'React Native' },
   },
-  web: {
-    bootstrap: { name: 'Bootstrap' },
-    react: { name: 'React' },
-    reactRedux: { name: 'React Redux' },
-    dotNet: { name: '.Net' },
-    angular: { name: 'Angular' },
-    materialUI: { name: 'MaterialUI' },
-  },
   other: {
     ci: { name: 'CI/CD' },
+  },
+  web: {
+    angular: { name: 'Angular' },
+    bootstrap: { name: 'Bootstrap' },
+    dotNet: { name: '.Net' },
+    materialUI: { name: 'MaterialUI' },
+    react: { name: 'React' },
+    reactRedux: { name: 'React Redux' },
   },
 } as const

@@ -21,5 +21,6 @@
     "tankvr",
     "wght",
     "winzerliebe"
-  ]
+  ],
+  "editor.defaultFormatter": "biomejs.biome"
 }

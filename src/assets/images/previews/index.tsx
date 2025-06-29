@@ -1,5 +1,5 @@
 export * as BloomPreviews from './bloom'
 export * as InstersPreviews from './insters'
+export * as InvestCalcPreviews from './investCalc'
 export * as RecipesPreviews from './recipes'
 export * as UmbrellaPreviews from './umbrella'
-export * as InvestCalcPreviews from './investCalc'

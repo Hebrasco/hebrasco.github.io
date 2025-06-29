@@ -1,12 +1,12 @@
 export const CONFIG = {
   // Don't forget to change  these values in the public/index.html too.
   profile: {
-    name: 'Daniel Bedrich',
-    jobTitle: 'Mobile Developer',
-    street: 'Schlesienstraße 2',
-    zip: '65597',
     city: 'Hünfelden',
     email: 'info@daniel-bedrich.dev',
+    jobTitle: 'Mobile Developer',
+    name: 'Daniel Bedrich',
+    street: 'Schlesienstraße 2',
+    zip: '65597',
   },
   references: {
     appStoreUrl:

@@ -1,17 +1,14 @@
-import React from 'react'
-
-import { Project } from 'types'
-import { conditionalStyle } from 'utils'
-import { useColorScheme, useWindowSize } from 'hooks'
-import { PROJECT_CONTAINER_SIZE } from 'pages/Home/components/Projects/constants'
-
-import styles from './index.module.css'
+import { BlankAppIcon } from 'assets/images/appIcons'
 import { MISC, ROUTES } from 'data'
+import { useColorScheme, useWindowSize } from 'hooks'
 import { ProjectPreviewImage } from 'pages/Home/components/Projects/components/ProjectPreviewImage'
+import { PROJECT_CONTAINER_SIZE } from 'pages/Home/components/Projects/constants'
 import { Badges } from 'pages/Project/components/Badges'
 import { Col, Image, Row } from 'react-bootstrap'
-import { BlankAppIcon } from 'assets/images/appIcons'
 import { Link } from 'react-router-dom'
+import { conditionalStyle } from 'utils'
+import styles from './index.module.css'
+import type { Project } from 'types'
 
 interface Props {
   project: Project
@@ -23,38 +20,29 @@ export function Preview({ project }: Props): JSX.Element {
 
   const { isXs, isSm } = useWindowSize()
   const isMobile = isXs || isSm
-  const width = isMobile
-    ? PROJECT_CONTAINER_SIZE.xs.width
-    : PROJECT_CONTAINER_SIZE.md.width
-  const height = isMobile
-    ? PROJECT_CONTAINER_SIZE.xs.height
-    : PROJECT_CONTAINER_SIZE.md.height
+  const width = isMobile ? PROJECT_CONTAINER_SIZE.xs.width : PROJECT_CONTAINER_SIZE.md.width
+  const height = isMobile ? PROJECT_CONTAINER_SIZE.xs.height : PROJECT_CONTAINER_SIZE.md.height
 
   return (
     <Link
-      to={ROUTES.project.replace(':projectId', project.id)}
-      className={`rounded ${
-        styles['preview-content-container']
-      } ${conditionalStyle(
+      className={`rounded ${styles['preview-content-container']} ${conditionalStyle(
         !isMobile,
         styles['preview-content-container-desktop']
       )} overflow-hidden text-decoration-none`}
       style={{
-        width,
         height,
         scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
+        width,
       }}
+      to={ROUTES.project.replace(':projectId', project.id)}
     >
       <div className="mb-auto">
         <Row>
           <Col className="d-flex align-items-center">
             <div className={`${styles['preview-content-app-icon']} me-3`}>
               <Image
-                src={
-                  project.appIcon?.[isLightScheme ? 'light' : 'dark'] ??
-                  BlankAppIcon
-                }
                 alt={`App icon of ${project.id}`}
+                src={project.appIcon?.[isLightScheme ? 'light' : 'dark'] ?? BlankAppIcon}
               />
             </div>
             <div>
@@ -64,7 +52,7 @@ export function Preview({ project }: Props): JSX.Element {
           </Col>
         </Row>
       </div>
-      <Badges languages={project.languages} frameworks={project.frameworks} />
+      <Badges frameworks={project.frameworks} languages={project.languages} />
       <ProjectPreviewImage image={project.previewImage} />
     </Link>
   )
