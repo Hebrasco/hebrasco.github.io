@@ -1,1 +1,2 @@
-export * as ScreenshotsLight from './light'
+export * as ScreenshotsIpadLight from './ipad/light'
+export * as ScreenshotsIphoneLight from './iphone/light'
