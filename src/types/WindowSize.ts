@@ -1,5 +1,8 @@
 export type WindowSize = {
-  size: { width: number; height: number }
+  size: {
+    width: number
+    height: number
+  }
   isXs: boolean
   isSm: boolean
   isMd: boolean

@@ -1,4 +1,4 @@
-import { Skill } from './Skill'
+import type { Skill } from './Skill'
 
 export type LanguageCollection = {
   swift: Skill

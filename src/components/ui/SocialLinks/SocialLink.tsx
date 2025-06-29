@@ -1,5 +1,4 @@
 import { ExternalLink } from 'components/ui'
-import React from 'react'
 import { Image } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 
@@ -22,17 +21,17 @@ export function SocialLink({
 }: Props): JSX.Element {
   return (
     <ExternalLink
-      to={to}
       className={`d-md-flex align-items-center`}
       fullWidth={!useIcon}
       style={{ width: useIcon ? '1.5rem' : undefined }}
+      to={to}
     >
       {useIcon ? (
         <Image
-          src={src}
-          fluid
-          className={`${conditionalStyle(invertImage, 'invertedColor')}`}
           alt={altText}
+          className={`${conditionalStyle(invertImage, 'invertedColor')}`}
+          fluid
+          src={src}
         />
       ) : (
         label

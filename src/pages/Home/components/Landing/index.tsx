@@ -1,7 +1,5 @@
 import { useWindowSize } from 'hooks'
-import React from 'react'
 import { Image, ScrollDownIcon, Title } from './components'
-
 import styles from './index.module.css'
 
 export function Landing(): JSX.Element {
@@ -10,7 +8,7 @@ export function Landing(): JSX.Element {
   return (
     <div className={styles.landingContainer}>
       <Title isXs={isXs} />
-      <Image isXs={isXs} isSm={isSm} />
+      <Image isSm={isSm} isXs={isXs} />
       <ScrollDownIcon />
     </div>
   )

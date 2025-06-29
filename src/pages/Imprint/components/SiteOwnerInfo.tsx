@@ -1,6 +1,5 @@
 import { Email } from 'components/ui'
 import { CONFIG } from 'data'
-import React from 'react'
 
 export function SiteOwnerInfo(): JSX.Element {
   return (

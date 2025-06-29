@@ -1,6 +1,5 @@
 import { AppStoreIcon, GitHubIcon } from 'assets/icons'
 import { CONFIG } from 'data'
-import React from 'react'
 import { SocialLink } from './SocialLink'
 
 interface Props {
@@ -11,19 +10,19 @@ export function SocialLinks({ useIcons = false }: Props): JSX.Element {
   return (
     <>
       <SocialLink
+        altText="AppStore Logo"
         label="AppStore"
         src={AppStoreIcon}
         to={CONFIG.references.appStoreUrl}
         useIcon={useIcons}
-        altText="AppStore Logo"
       />
       <SocialLink
+        altText="GitHub Logo"
+        invertImage
         label="GitHub"
         src={GitHubIcon}
         to={CONFIG.references.gitHubUrl}
         useIcon={useIcons}
-        invertImage
-        altText="GitHub Logo"
       />
     </>
   )

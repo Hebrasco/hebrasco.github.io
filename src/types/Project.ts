@@ -1,11 +1,11 @@
-import { Feature } from './Feature'
-import { Skill } from './Skill'
-import { AppIcon } from './AppIcon'
-import { Platform } from './Platform'
-import { ProjectStatus } from './ProjectStatus'
-import { Screenshot } from './Screenshot'
-import { PreviewImage } from 'types/PreviewImage'
-import { TitleImage } from 'types/TitleImage'
+import type { PreviewImage } from 'types/PreviewImage'
+import type { TitleImage } from 'types/TitleImage'
+import type { AppIcon } from './AppIcon'
+import type { Feature } from './Feature'
+import type { Platform } from './Platform'
+import type { ProjectStatus } from './ProjectStatus'
+import type { Screenshot } from './Screenshot'
+import type { Skill } from './Skill'
 
 export type Project = {
   id: string

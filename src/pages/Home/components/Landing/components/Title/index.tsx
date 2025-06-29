@@ -1,7 +1,5 @@
 import { CONFIG } from 'data'
-import React from 'react'
 import { conditionalStyle } from 'utils'
-
 import styles from './index.module.css'
 
 interface TitleProps {
