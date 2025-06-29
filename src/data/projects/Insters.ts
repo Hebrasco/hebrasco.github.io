@@ -1,6 +1,11 @@
 import { InstersAppIcons } from 'assets/images/appIcons'
 import { InstersPreviews } from 'assets/images/previews'
-import { ScreenshotsDark, ScreenshotsLight } from 'assets/images/screenshots/insters'
+import {
+  ScreenshotsIpadDark,
+  ScreenshotsIpadLight,
+  ScreenshotsIphoneDark,
+  ScreenshotsIphoneLight,
+} from 'assets/images/screenshots/insters'
 import { PROFILE } from 'data'
 import { PLATFORM } from 'data/platform'
 import { PROJECT_STATUS } from 'data/projectStatus'
@@ -43,25 +48,39 @@ export const INSTERS: Project = {
   previewImage: {
     dark: {
       altText: 'Preview screenshot of Insters in dark mode',
-      src: ScreenshotsDark.EditImage,
+      src: ScreenshotsIphoneDark.EditImage,
     },
     light: {
       altText: 'Preview screenshot of Insters in light mode',
-      src: ScreenshotsLight.EditImage,
+      src: ScreenshotsIphoneLight.EditImage,
     },
   },
   screenshots: {
-    iphone: {
+    ipad: {
       dark: [
         {
-          altText: 'Screenshot of app in light mode of the edit image screen',
-          src: ScreenshotsDark.EditImage,
+          altText: 'Screenshot of ipad app in light mode of the edit image screen',
+          src: ScreenshotsIpadDark.EditImage,
         },
       ],
       light: [
         {
-          altText: 'Screenshot of app in light mode of the edit image screen',
-          src: ScreenshotsLight.EditImage,
+          altText: 'Screenshot of ipad app in light mode of the edit image screen',
+          src: ScreenshotsIpadLight.EditImage,
+        },
+      ],
+    },
+    iphone: {
+      dark: [
+        {
+          altText: 'Screenshot of iphone app in light mode of the edit image screen',
+          src: ScreenshotsIphoneDark.EditImage,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of iphone app in light mode of the edit image screen',
+          src: ScreenshotsIphoneLight.EditImage,
         },
       ],
     },
