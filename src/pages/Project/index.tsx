@@ -27,6 +27,12 @@ export function Project(): JSX.Element {
   const screenshotIpadWidth = isMobile
     ? SCREENSHOT_CONTAINER_SIZE.ipad.xs.width
     : SCREENSHOT_CONTAINER_SIZE.ipad.md.width
+  const screenshotMacWidth = isMobile
+    ? SCREENSHOT_CONTAINER_SIZE.mac.xs.width
+    : SCREENSHOT_CONTAINER_SIZE.mac.md.width
+  const screenshotWebWidth = isMobile
+    ? SCREENSHOT_CONTAINER_SIZE.web.xs.width
+    : SCREENSHOT_CONTAINER_SIZE.web.md.width
   const featureWidth = isMobile ? FEATURE_CONTAINER_SIZE.xs.width : FEATURE_CONTAINER_SIZE.md.width
   const featureHeight = isMobile
     ? FEATURE_CONTAINER_SIZE.xs.height
@@ -225,7 +231,7 @@ export function Project(): JSX.Element {
                               backgroundColor: 'unset',
                               justifyContent: 'flex-start',
                               scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
-                              width: screenshotIpadWidth,
+                              width: screenshotMacWidth,
                             }}
                           >
                             <Image alt={screenshot.altText} loading="lazy" src={screenshot.src} />
@@ -252,7 +258,7 @@ export function Project(): JSX.Element {
                               backgroundColor: 'unset',
                               justifyContent: 'flex-start',
                               scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
-                              width: screenshotIpadWidth,
+                              width: screenshotWebWidth,
                             }}
                           >
                             <Image alt={screenshot.altText} loading="lazy" src={screenshot.src} />

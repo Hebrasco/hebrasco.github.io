@@ -1,8 +1,8 @@
 const SCREENSHOT_CONTAINER_SIZE = {
   ipad: {
     md: {
-      height: 727,
-      width: 557,
+      height: 709,
+      width: 546,
     },
     xs: {
       height: 373,
@@ -11,12 +11,32 @@ const SCREENSHOT_CONTAINER_SIZE = {
   },
   iphone: {
     md: {
-      height: 727,
+      height: 709,
       width: 350,
     },
     xs: {
       height: 540,
       width: 260,
+    },
+  },
+  mac: {
+    md: {
+      height: 709,
+      width: 1060,
+    },
+    xs: {
+      height: 373,
+      width: 286,
+    },
+  },
+  web: {
+    md: {
+      height: 709,
+      width: 1060,
+    },
+    xs: {
+      height: 373,
+      width: 286,
     },
   },
 }
