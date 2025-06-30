@@ -46,7 +46,7 @@ export function Project(): JSX.Element {
     <div className={styles['project-container']}>
       <Container className="mb-5">
         <Section>
-          <div className="p-5 bg-light rounded d-flex">
+          <div className="p-4 p-md-5 bg-light rounded d-flex">
             <Row>
               <Col className="d-flex flex-column justify-content-center" md={6}>
                 <h1 className="fw-bold">{project.name}</h1>
