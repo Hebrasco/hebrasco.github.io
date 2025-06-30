@@ -8,37 +8,42 @@ import FEATURE_CONTAINER_SIZE from 'pages/Home/components/Projects/constants/Fea
 import SCREENSHOT_CONTAINER_SIZE from 'pages/Home/components/Projects/constants/ScreenshotContainerSize'
 import projectStyles from 'pages/Home/components/Projects/index.module.css'
 import ProjectImages from 'pages/Project/components/ProjectImages'
-import { useMemo } from 'react'
+import { useLayoutEffect, useMemo, useState } from 'react'
 import { Col, Container, Image, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { conditionalStyle } from 'utils'
 import styles from './index.module.css'
 
 export function Project(): JSX.Element {
+  const [scrollSnapAlign, setScrollSnapAlign] = useState('start')
   const { projectId } = useParams()
   const colorScheme = useColorScheme()
   const isLightScheme = colorScheme === MISC.colorSchemes.light
   const { isXs, isSm } = useWindowSize()
-  const isMobile = isXs || isSm
+  const isMobile = useMemo(() => isXs || isSm, [isXs, isSm])
 
-  const screenshotIphoneWidth = isMobile
-    ? SCREENSHOT_CONTAINER_SIZE.iphone.xs.width
-    : SCREENSHOT_CONTAINER_SIZE.iphone.md.width
-  const screenshotIpadWidth = isMobile
-    ? SCREENSHOT_CONTAINER_SIZE.ipad.xs.width
-    : SCREENSHOT_CONTAINER_SIZE.ipad.md.width
-  const screenshotMacWidth = isMobile
-    ? SCREENSHOT_CONTAINER_SIZE.mac.xs.width
-    : SCREENSHOT_CONTAINER_SIZE.mac.md.width
-  const screenshotWebWidth = isMobile
-    ? SCREENSHOT_CONTAINER_SIZE.web.xs.width
-    : SCREENSHOT_CONTAINER_SIZE.web.md.width
+  const screenshotIphoneSize = isMobile
+    ? SCREENSHOT_CONTAINER_SIZE.iphone.xs
+    : SCREENSHOT_CONTAINER_SIZE.iphone.md
+  const screenshotIpadSize = isMobile
+    ? SCREENSHOT_CONTAINER_SIZE.ipad.xs
+    : SCREENSHOT_CONTAINER_SIZE.ipad.md
+  const screenshotMacSize = isMobile
+    ? SCREENSHOT_CONTAINER_SIZE.mac.xs
+    : SCREENSHOT_CONTAINER_SIZE.mac.md
+  const screenshotWebSize = isMobile
+    ? SCREENSHOT_CONTAINER_SIZE.web.xs
+    : SCREENSHOT_CONTAINER_SIZE.web.md
   const featureWidth = isMobile ? FEATURE_CONTAINER_SIZE.xs.width : FEATURE_CONTAINER_SIZE.md.width
   const featureHeight = isMobile
     ? FEATURE_CONTAINER_SIZE.xs.height
     : FEATURE_CONTAINER_SIZE.md.height
 
   const project = useMemo(() => PROJECTS.find(({ id }) => id === projectId), [projectId])
+
+  useLayoutEffect(() => {
+    setScrollSnapAlign(conditionalStyle(isMobile, 'center', 'start'))
+  }, [isMobile])
 
   if (!projectId || !project) return <div>Project not found</div>
 
@@ -143,7 +148,7 @@ export function Project(): JSX.Element {
                     style={{
                       height: featureHeight,
                       justifyContent: 'flex-start',
-                      scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
+                      scrollSnapAlign,
                       width: featureWidth,
                     }}
                   >
@@ -175,9 +180,10 @@ export function Project(): JSX.Element {
                             key={`iphone-screenshot-${index}`}
                             style={{
                               backgroundColor: 'unset',
+                              height: screenshotIphoneSize.height,
                               justifyContent: 'flex-start',
-                              scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
-                              width: screenshotIphoneWidth,
+                              scrollSnapAlign,
+                              width: screenshotIphoneSize.width,
                             }}
                           >
                             <Image alt={screenshot.altText} loading="lazy" src={screenshot.src} />
@@ -202,9 +208,10 @@ export function Project(): JSX.Element {
                             key={`ipad-screenshot-${index}`}
                             style={{
                               backgroundColor: 'unset',
+                              height: screenshotIpadSize.height,
                               justifyContent: 'flex-start',
-                              scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
-                              width: screenshotIpadWidth,
+                              scrollSnapAlign,
+                              width: screenshotIpadSize.width,
                             }}
                           >
                             <Image alt={screenshot.altText} loading="lazy" src={screenshot.src} />
@@ -229,9 +236,10 @@ export function Project(): JSX.Element {
                             key={`mac-screenshot-${index}`}
                             style={{
                               backgroundColor: 'unset',
+                              height: screenshotMacSize.height,
                               justifyContent: 'flex-start',
-                              scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
-                              width: screenshotMacWidth,
+                              scrollSnapAlign,
+                              width: screenshotMacSize.width,
                             }}
                           >
                             <Image alt={screenshot.altText} loading="lazy" src={screenshot.src} />
@@ -256,9 +264,10 @@ export function Project(): JSX.Element {
                             key={`web-screenshot-${index}`}
                             style={{
                               backgroundColor: 'unset',
+                              height: screenshotWebSize.height,
                               justifyContent: 'flex-start',
-                              scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
-                              width: screenshotWebWidth,
+                              scrollSnapAlign,
+                              width: screenshotWebSize.width,
                             }}
                           >
                             <Image alt={screenshot.altText} loading="lazy" src={screenshot.src} />

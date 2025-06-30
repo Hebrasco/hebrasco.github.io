@@ -11,7 +11,7 @@ const SCREENSHOT_CONTAINER_SIZE = {
   },
   iphone: {
     md: {
-      height: 709,
+      height: 727,
       width: 350,
     },
     xs: {
