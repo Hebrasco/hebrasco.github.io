@@ -1,10 +1,10 @@
 import type { PreviewImage } from 'types/PreviewImage'
+import type { ScreenshotSet } from 'types/ScreenshotSet'
 import type { TitleImage } from 'types/TitleImage'
 import type { AppIcon } from './AppIcon'
 import type { Feature } from './Feature'
 import type { Platform } from './Platform'
 import type { ProjectStatus } from './ProjectStatus'
-import type { Screenshot } from './Screenshot'
 import type { Skill } from './Skill'
 
 export type Project = {
@@ -22,8 +22,10 @@ export type Project = {
   previewImage: PreviewImage
   status: ProjectStatus
   screenshots?: {
-    light: readonly Screenshot[]
-    dark: readonly Screenshot[]
+    iphone?: ScreenshotSet
+    ipad?: ScreenshotSet
+    mac?: ScreenshotSet
+    web?: ScreenshotSet
   }
   platforms: readonly Platform[]
 }

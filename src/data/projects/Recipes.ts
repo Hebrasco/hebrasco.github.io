@@ -1,5 +1,5 @@
 import { RecipesPreviews } from 'assets/images/previews'
-import { ScreenshotsLight } from 'assets/images/screenshots/recipes'
+import { ScreenshotsIpadLight, ScreenshotsIphoneLight } from 'assets/images/screenshots/recipes'
 import { PROFILE } from 'data'
 import { PLATFORM } from 'data/platform'
 import { PROJECT_STATUS } from 'data/projectStatus'
@@ -51,26 +51,42 @@ export const RECIPES: Project = {
   previewImage: {
     dark: {
       altText: 'Preview screenshot of Recipes in light mode',
-      src: ScreenshotsLight.RecipeDetails,
+      src: ScreenshotsIphoneLight.RecipeDetails,
     },
     light: {
       altText: 'Preview screenshot of Recipes in light mode',
-      src: ScreenshotsLight.RecipeDetails,
+      src: ScreenshotsIphoneLight.RecipeDetails,
     },
   },
   screenshots: {
-    dark: [
-      {
-        altText: 'Screenshot of app in light mode of the recipe detail screen',
-        src: ScreenshotsLight.RecipeDetails,
-      },
-    ],
-    light: [
-      {
-        altText: 'Screenshot of app in light mode of the recipe detail screen',
-        src: ScreenshotsLight.RecipeDetails,
-      },
-    ],
+    ipad: {
+      dark: [
+        {
+          altText: 'Screenshot of ipad app in light mode of the recipe detail screen',
+          src: ScreenshotsIpadLight.RecipeDetails,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of ipad app in light mode of the recipe detail screen',
+          src: ScreenshotsIpadLight.RecipeDetails,
+        },
+      ],
+    },
+    iphone: {
+      dark: [
+        {
+          altText: 'Screenshot of iphone app in light mode of the recipe detail screen',
+          src: ScreenshotsIphoneLight.RecipeDetails,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of iphone app in light mode of the recipe detail screen',
+          src: ScreenshotsIphoneLight.RecipeDetails,
+        },
+      ],
+    },
   },
   sourceURL: 'https://github.com/Hebrasco/recipe_app',
   status: {

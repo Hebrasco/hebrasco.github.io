@@ -1,5 +1,12 @@
 import { UmbrellaPreviews } from 'assets/images/previews'
-import { ScreenshotsDark, ScreenshotsLight } from 'assets/images/screenshots/umbrella'
+import {
+  ScreenshotsIpadDark,
+  ScreenshotsIpadLight,
+  ScreenshotsIphoneDark,
+  ScreenshotsIphoneLight,
+  ScreenshotsMacDark,
+  ScreenshotsMacLight,
+} from 'assets/images/screenshots/umbrella'
 import { PROFILE } from 'data'
 import { PLATFORM } from 'data/platform'
 import { PROJECT_STATUS } from 'data/projectStatus'
@@ -51,34 +58,72 @@ export const UMBRELLA: Project = {
   previewImage: {
     dark: {
       altText: 'Preview screenshot of Umbrella in dark mode',
-      src: ScreenshotsDark.Backlog,
+      src: ScreenshotsIphoneDark.Backlog,
     },
     light: {
       altText: 'Preview screenshot of Umbrella in light mode',
-      src: ScreenshotsLight.Backlog,
+      src: ScreenshotsIphoneLight.Backlog,
     },
   },
   screenshots: {
-    dark: [
-      {
-        altText: 'Screenshot of app in dark mode of the issue backlog screen',
-        src: ScreenshotsDark.Backlog,
-      },
-      {
-        altText: 'Screenshot of app in dark mode of the issue detail screen',
-        src: ScreenshotsDark.IssueDetails,
-      },
-    ],
-    light: [
-      {
-        altText: 'Screenshot of app in light mode of the issue backlog screen',
-        src: ScreenshotsLight.Backlog,
-      },
-      {
-        altText: 'Screenshot of app in light mode of the issue detail screen',
-        src: ScreenshotsLight.IssueDetails,
-      },
-    ],
+    ipad: {
+      dark: [
+        {
+          altText: 'Screenshot of ipad app in dark mode of the issue detail screen',
+          src: ScreenshotsIpadDark.IssueDetails,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of ipad app in light mode of the issue detail screen',
+          src: ScreenshotsIpadLight.IssueDetails,
+        },
+      ],
+    },
+    iphone: {
+      dark: [
+        {
+          altText: 'Screenshot of iphone app in dark mode of the issue backlog screen',
+          src: ScreenshotsIphoneDark.Backlog,
+        },
+        {
+          altText: 'Screenshot of iphone app in dark mode of the issue detail screen',
+          src: ScreenshotsIphoneDark.IssueDetails,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of iphone app in light mode of the issue backlog screen',
+          src: ScreenshotsIphoneLight.Backlog,
+        },
+        {
+          altText: 'Screenshot of iphone app in light mode of the issue detail screen',
+          src: ScreenshotsIphoneLight.IssueDetails,
+        },
+      ],
+    },
+    mac: {
+      dark: [
+        {
+          altText: 'Screenshot of iphone app in dark mode of the board screen',
+          src: ScreenshotsMacDark.Board,
+        },
+        {
+          altText: 'Screenshot of iphone app in dark mode of the issue detail screen',
+          src: ScreenshotsMacDark.IssueDetails,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of iphone app in light mode of the board screen',
+          src: ScreenshotsMacLight.Board,
+        },
+        {
+          altText: 'Screenshot of iphone app in light mode of the issue detail screen',
+          src: ScreenshotsMacLight.IssueDetails,
+        },
+      ],
+    },
   },
   sourceURL: undefined,
   status: {
