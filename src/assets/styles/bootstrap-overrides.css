@@ -110,25 +110,25 @@ img.rounded,
 }
 
 .mt-6 {
-  margin-top: 5rem;
+  margin-top: 5rem !important;
 }
 
 .mb-6 {
-  margin-bottom: 5rem;
+  margin-bottom: 5rem !important;
 }
 
 .my-6 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
 }
 
 .p-6 {
-  padding: 5rem;
+  padding: 5rem !important;
 }
 
 .py-6 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
 }
 
 .section-gap {
