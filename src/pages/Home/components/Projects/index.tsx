@@ -7,7 +7,7 @@ import styles from './index.module.css'
 export function Projects(): JSX.Element {
   return (
     <Container
-      className={`mt-5 navbar-spacer bg-light ${styles['preview-container-container']}`}
+      className={`mt-6 navbar-spacer bg-light ${styles['preview-container-container']}`}
       fluid
     >
       <Section anchor={ROUTES.projects} fluidContainer lg title="Projects">

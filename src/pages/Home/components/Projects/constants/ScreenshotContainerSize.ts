@@ -15,7 +15,7 @@ const SCREENSHOT_CONTAINER_SIZE = {
       width: 350,
     },
     xs: {
-      height: 540,
+      height: 539,
       width: 260,
     },
   },
@@ -25,7 +25,7 @@ const SCREENSHOT_CONTAINER_SIZE = {
       width: 1060,
     },
     xs: {
-      height: 373,
+      height: 191,
       width: 286,
     },
   },
@@ -35,7 +35,7 @@ const SCREENSHOT_CONTAINER_SIZE = {
       width: 1060,
     },
     xs: {
-      height: 373,
+      height: 191,
       width: 286,
     },
   },

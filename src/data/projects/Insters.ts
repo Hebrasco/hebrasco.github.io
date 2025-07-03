@@ -44,7 +44,7 @@ export const INSTERS: Project = {
   languages: [PROFILE.languages.swift, PROFILE.languages.metal],
   name: 'Insters',
   onlineURL: 'https://apps.apple.com/app/insters/id1561338805',
-  platforms: [PLATFORM.iPhone, PLATFORM.iPadOS],
+  platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
     dark: {
       altText: 'Preview screenshot of Insters in dark mode',

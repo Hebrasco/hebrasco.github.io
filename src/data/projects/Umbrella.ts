@@ -54,7 +54,7 @@ export const UMBRELLA: Project = {
   languages: [PROFILE.languages.swift],
   name: 'Umbrella',
   onlineURL: undefined,
-  platforms: [PLATFORM.iPhone, PLATFORM.iPadOS, PLATFORM.macOS],
+  platforms: [PLATFORM.iphone, PLATFORM.ipad, PLATFORM.mac],
   previewImage: {
     dark: {
       altText: 'Preview screenshot of Umbrella in dark mode',

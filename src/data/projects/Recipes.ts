@@ -47,7 +47,7 @@ export const RECIPES: Project = {
   languages: [PROFILE.languages.swift, PROFILE.languages.json],
   name: 'Recipes app',
   onlineURL: undefined,
-  platforms: [PLATFORM.iPhone, PLATFORM.iPadOS],
+  platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
     dark: {
       altText: 'Preview screenshot of Recipes in light mode',

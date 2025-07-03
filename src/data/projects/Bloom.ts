@@ -75,7 +75,7 @@ export const BLOOM: Project = {
   languages: [PROFILE.languages.swift],
   name: 'Bloom - Couples App',
   onlineURL: 'https://apps.apple.com/app/bloom-couples-app/id1533246365',
-  platforms: [PLATFORM.iPhone, PLATFORM.iPadOS],
+  platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
     dark: {
       altText: 'Preview screenshot of Bloom in dark mode',

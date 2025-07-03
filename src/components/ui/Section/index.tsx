@@ -1,6 +1,6 @@
+import { createElement, type PropsWithChildren, type ReactNode, useMemo } from 'react'
 import { conditionalStyle } from 'utils'
 import styles from './index.module.css'
-import type { PropsWithChildren } from 'react'
 
 interface Props extends PropsWithChildren {
   xs?: boolean
@@ -13,6 +13,7 @@ interface Props extends PropsWithChildren {
   title?: string
   anchor?: string
   anchorReplace?: string
+  Action?: () => ReactNode
 }
 
 export function Section({
@@ -27,7 +28,26 @@ export function Section({
   title,
   anchor,
   anchorReplace = '/#',
+  Action,
 }: Props) {
+  const TitleComponent = useMemo(() => {
+    let element = 'h1'
+
+    if (xl) element = 'h1'
+    if (lg) element = 'h2'
+    if (md) element = 'h3'
+    if (sm) element = 'h4'
+    if (xs) element = 'h5'
+
+    return createElement(
+      element,
+      {
+        className: `fw-bold text-uppercase`,
+      },
+      title
+    )
+  }, [sm, md, lg, xl, xs, title])
+
   return (
     <>
       {anchor && <div id={anchor.replace(anchorReplace, '')}></div>}
@@ -41,14 +61,12 @@ export function Section({
         ${conditionalStyle(!bottomPadding, styles['section-ignore-bottom'])}
       `}
       >
-        {title && (
-          <h2
-            className={`mb-3 fw-bold text-uppercase
-        ${conditionalStyle(fluidContainer, styles['section-fluid'])}`}
-          >
-            {title}
-          </h2>
-        )}
+        <div
+          className={`d-flex justify-content-between ${conditionalStyle(fluidContainer, styles['section-fluid'])} mb-3`}
+        >
+          {title && TitleComponent}
+          {Action && <Action />}
+        </div>
         {Array.isArray(children) ? children.map((child) => child) : children}
       </div>
     </>

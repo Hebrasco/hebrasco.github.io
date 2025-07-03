@@ -1,3 +1,4 @@
+import type { PLATFORM } from 'data/platform'
 import type { PreviewImage } from 'types/PreviewImage'
 import type { ScreenshotSet } from 'types/ScreenshotSet'
 import type { TitleImage } from 'types/TitleImage'
@@ -22,10 +23,7 @@ export type Project = {
   previewImage: PreviewImage
   status: ProjectStatus
   screenshots?: {
-    iphone?: ScreenshotSet
-    ipad?: ScreenshotSet
-    mac?: ScreenshotSet
-    web?: ScreenshotSet
+    [K in keyof typeof PLATFORM]?: ScreenshotSet
   }
   platforms: readonly Platform[]
 }
