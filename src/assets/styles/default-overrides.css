@@ -1,6 +1,6 @@
 :root {
   color-scheme: light dark;
-  --navbarHeight: 56px;
+  --navbarHeight: 6rem;
 
   --primaryColor: #ffffff;
   --secondaryColor: #000000;
@@ -43,6 +43,8 @@
   --glassBlur: 4px;
 
   --containerMargin: calc(50vw - min(1680px, 87.5vw) / 2);
+
+  --sectionGap: 5rem;
 }
 
 html {
@@ -94,4 +96,8 @@ textarea::-webkit-resizer {
 
 .navbar-spacer {
   margin-top: var(--navbarHeight);
+}
+
+footer {
+  margin-top: var(--sectionGap);
 }

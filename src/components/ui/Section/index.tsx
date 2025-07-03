@@ -8,7 +8,6 @@ interface Props extends PropsWithChildren {
   md?: boolean
   lg?: boolean
   xl?: boolean
-  bottomPadding?: boolean
   fluidContainer?: boolean
   title?: string
   anchor?: string
@@ -23,7 +22,6 @@ export function Section({
   md = false,
   lg = false,
   xl = false,
-  bottomPadding = false,
   fluidContainer = false,
   title,
   anchor,
@@ -58,7 +56,6 @@ export function Section({
         ${conditionalStyle(md, styles['section-md'])}
         ${conditionalStyle(lg, styles['section-lg'])}
         ${conditionalStyle(xl, styles['section-xl'])}
-        ${conditionalStyle(!bottomPadding, styles['section-ignore-bottom'])}
       `}
       >
         <div

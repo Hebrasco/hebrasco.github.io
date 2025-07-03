@@ -131,6 +131,10 @@ img.rounded,
   padding-bottom: 5rem;
 }
 
+.section-gap {
+  gap: var(--sectionGap);
+}
+
 .dropdown-toggle {
   color: var(--primaryTextColor) !important;
   border: unset !important;

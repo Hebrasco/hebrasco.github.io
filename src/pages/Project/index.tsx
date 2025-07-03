@@ -13,7 +13,6 @@ import { useLayoutEffect, useMemo, useState } from 'react'
 import { Col, Container, Dropdown, Image, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { conditionalStyle } from 'utils'
-import styles from './index.module.css'
 
 export function Project(): JSX.Element {
   const [scrollSnapAlign, setScrollSnapAlign] = useState('start')
@@ -50,8 +49,8 @@ export function Project(): JSX.Element {
   if (!projectId || !project) return <div>Project not found</div>
 
   return (
-    <div className={styles['project-container']}>
-      <Container className="mb-6">
+    <div className="navbar-spacer">
+      <Container>
         <Section>
           <div className="p-4 p-md-5 bg-light rounded d-flex">
             <Row>
@@ -82,10 +81,13 @@ export function Project(): JSX.Element {
           </div>
         </Section>
       </Container>
-      <Container className="my-6">
-        <Row className="g-4">
-          <Col md={3} xs={6}>
-            <Section title="Frameworks" xs>
+      <Container>
+        <Section md>
+          <Row className="g-4">
+            <Col md={3} xs={6}>
+              <p className="fw-bold" style={{ fontSize: 20, marginBottom: '0.5rem' }}>
+                Frameworks
+              </p>
               <div className="d-flex flex-wrap gap-2">
                 {project.frameworks.map((framework) => (
                   <ProjectBadge
@@ -94,18 +96,18 @@ export function Project(): JSX.Element {
                   />
                 ))}
               </div>
-            </Section>
-          </Col>
-          <Col md={3} xs={6}>
-            <Section title="Languages" xs>
+            </Col>
+            <Col md={3} xs={6}>
+              <p className="fw-bold" style={{ fontSize: 20, marginBottom: '0.5rem' }}>
+                Languages
+              </p>
               <div className="d-flex flex-wrap gap-2">
                 {project.languages.map((language) => (
                   <ProjectBadge key={`project-skill-language-${language.name}`} skill={language} />
                 ))}
               </div>
-            </Section>
-          </Col>
-          {/* <Col md={3}>
+            </Col>
+            {/* <Col md={3}>
             <Section xs title="Responsibilities">
               <Responsibilities
                 projectName={project.name}
@@ -113,32 +115,30 @@ export function Project(): JSX.Element {
               />
             </Section>
           </Col> */}
-          <Col md={3} xs={6}>
-            <Section title="Platforms" xs>
+            <Col md={3} xs={6}>
+              <p className="fw-bold" style={{ fontSize: 20, marginBottom: '0.5rem' }}>
+                Platforms
+              </p>
               <p>{project.platforms.join(', ')}</p>
-            </Section>
-          </Col>
-          <Col md={3} xs={6}>
-            <Section
-              title={
-                project.status.type === PROJECT_STATUS.comingSoon
+            </Col>
+            <Col md={3} xs={6}>
+              <p className="fw-bold" style={{ fontSize: 20, marginBottom: '0.5rem' }}>
+                {project.status.type === PROJECT_STATUS.comingSoon
                   ? PROJECT_STATUS.launched
-                  : project.status.type
-              }
-              xs
-            >
+                  : project.status.type}
+              </p>
               <p>{project.status.date?.toLocaleDateString() ?? project.status.type}</p>
-            </Section>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        </Section>
       </Container>
-      <Container className="my-6">
-        <Section title="Summary">
+      <Container>
+        <Section lg title="Summary">
           <p>{project.description}</p>
         </Section>
       </Container>
-      <Container className="my-6" fluid>
-        <Section fluidContainer title="Features">
+      <Container fluid>
+        <Section fluidContainer lg title="Features">
           <div className={projectStyles['preview-scroll-container']}>
             <div className={projectStyles['preview-container']}>
               <div className={projectStyles['preview-container-card-set']}>
@@ -167,7 +167,7 @@ export function Project(): JSX.Element {
         </Section>
       </Container>
       {project.screenshots && !!Object.values(project.screenshots).filter(Boolean).length && (
-        <Container className="my-6" fluid>
+        <Container fluid>
           <Section
             Action={() =>
               Object.values(project.screenshots ?? {}).filter(Boolean).length > 1 ? (
@@ -205,6 +205,7 @@ export function Project(): JSX.Element {
               ) : null
             }
             fluidContainer
+            lg
             title="Screenshots"
           >
             <div className={projectStyles['preview-scroll-container']}>
