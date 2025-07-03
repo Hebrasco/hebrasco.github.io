@@ -208,7 +208,10 @@ export function Project(): JSX.Element {
             lg
             title="Screenshots"
           >
-            <div className={projectStyles['preview-scroll-container']}>
+            <div
+              className={projectStyles['preview-scroll-container']}
+              key={`screenshot-container-${platformScreenshots}`}
+            >
               <div className={projectStyles['preview-container']}>
                 <div className={projectStyles['preview-container-card-set']}>
                   {project.screenshots[platformScreenshots]?.[isLightScheme ? 'light' : 'dark'].map(
