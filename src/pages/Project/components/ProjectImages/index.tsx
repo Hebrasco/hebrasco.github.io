@@ -8,7 +8,7 @@ interface Props {
   image: PreviewImage
 }
 
-function ProjectImages({ image }: Props): JSX.Element {
+function ProjectImages({ image }: Props) {
   const colorScheme = useColorScheme()
   const isLightScheme = colorScheme === MISC.colorSchemes.light
 

@@ -4,7 +4,7 @@ import { Preview } from 'pages/Home/components/Projects/components/Preview'
 import { Container } from 'react-bootstrap'
 import styles from './index.module.css'
 
-export function Projects(): JSX.Element {
+export function Projects() {
   return (
     <Container className={`bg-light ${styles['preview-container-container']}`} fluid>
       <Section anchor={ROUTES.projects} fluidContainer lg title="Projects">

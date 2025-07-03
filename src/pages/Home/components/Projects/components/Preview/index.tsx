@@ -14,7 +14,7 @@ interface Props {
   project: Project
 }
 
-export function Preview({ project }: Props): JSX.Element {
+export function Preview({ project }: Props) {
   const colorScheme = useColorScheme()
   const isLightScheme = colorScheme === MISC.colorSchemes.light
 

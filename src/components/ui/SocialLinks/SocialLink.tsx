@@ -11,14 +11,7 @@ interface Props {
   invertImage?: boolean
 }
 
-export function SocialLink({
-  label,
-  to,
-  src,
-  altText,
-  useIcon,
-  invertImage = false,
-}: Props): JSX.Element {
+export function SocialLink({ label, to, src, altText, useIcon, invertImage = false }: Props) {
   return (
     <ExternalLink
       className={`d-md-flex align-items-center`}

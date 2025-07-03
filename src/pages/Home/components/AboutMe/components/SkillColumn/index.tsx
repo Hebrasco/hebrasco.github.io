@@ -8,7 +8,7 @@ interface Props {
   data: readonly Skill[]
 }
 
-export function SkillColumn({ title, data }: Props): JSX.Element {
+export function SkillColumn({ title, data }: Props) {
   return (
     <Col className={`${styles['skills-column']}`} md={4} xs={12}>
       <p className="fw-bold text-uppercase" style={{ fontSize: 20, marginBottom: '0.5rem' }}>

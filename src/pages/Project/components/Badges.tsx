@@ -6,7 +6,7 @@ interface Props {
   frameworks: readonly Skill[]
 }
 
-export function Badges({ languages, frameworks }: Props): JSX.Element {
+export function Badges({ languages, frameworks }: Props) {
   return (
     <div className="d-flex flex-wrap mt-4 gap-2">
       {languages.map((language) => (
