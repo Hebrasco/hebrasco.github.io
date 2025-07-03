@@ -3,7 +3,7 @@ import { ROUTES } from 'data'
 import { Col, Container, Row } from 'react-bootstrap'
 import { SiteOwnerInfo } from './components'
 
-export function Imprint(): JSX.Element {
+export function Imprint() {
   const anchorReplace = '/imprint#'
 
   return (

@@ -3,7 +3,7 @@ interface Props {
   tasks: readonly string[]
 }
 
-export function Responsibilities({ tasks, projectName }: Props): JSX.Element {
+export function Responsibilities({ tasks, projectName }: Props) {
   return (
     <ul>
       {tasks.map((task) => (

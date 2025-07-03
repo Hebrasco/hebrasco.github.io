@@ -1,6 +1,6 @@
 import { Col, Row } from 'react-bootstrap'
 
-export function AboutText(): JSX.Element {
+export function AboutText() {
   return (
     <Row>
       <Col md={5} sm={10} xs={12}>

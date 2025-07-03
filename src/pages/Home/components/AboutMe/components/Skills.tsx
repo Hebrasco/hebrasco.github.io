@@ -3,7 +3,7 @@ import { PROFILE } from 'data'
 import { Row } from 'react-bootstrap'
 import { SkillColumn } from './SkillColumn'
 
-export function Skills(): JSX.Element {
+export function Skills() {
   return (
     <Section md title="Skills">
       <Row className="g-4">

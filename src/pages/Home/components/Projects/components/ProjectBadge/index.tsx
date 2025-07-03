@@ -5,6 +5,6 @@ interface Props {
   skill: Skill
 }
 
-export function ProjectBadge({ skill }: Props): JSX.Element {
+export function ProjectBadge({ skill }: Props) {
   return <span className={`${styles.badge} py-2 px-3`}>{skill.name}</span>
 }

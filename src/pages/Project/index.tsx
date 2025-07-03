@@ -14,7 +14,7 @@ import { Col, Container, Dropdown, Image, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { conditionalStyle } from 'utils'
 
-export function Project(): JSX.Element {
+export function Project() {
   const [scrollSnapAlign, setScrollSnapAlign] = useState('start')
   const [platformScreenshots, setPlatformScreenshots] = useState<keyof typeof PLATFORM>('iphone')
   const { projectId } = useParams()

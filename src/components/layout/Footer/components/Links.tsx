@@ -4,7 +4,7 @@ import { useWindowSize } from 'hooks'
 import { Col } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 
-export function Links(): JSX.Element {
+export function Links() {
   const { isXs, isSm } = useWindowSize()
 
   return (

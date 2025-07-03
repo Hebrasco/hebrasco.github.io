@@ -6,7 +6,7 @@ interface Props {
   filled?: boolean
 }
 
-export function Action({ to, label, filled = false }: Props): JSX.Element | null {
+export function Action({ to, label, filled = false }: Props) {
   if (!to) return null
 
   return (

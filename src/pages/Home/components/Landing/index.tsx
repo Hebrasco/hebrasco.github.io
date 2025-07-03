@@ -2,7 +2,7 @@ import { useWindowSize } from 'hooks'
 import { Image, ScrollDownIcon, Title } from './components'
 import styles from './index.module.css'
 
-export function Landing(): JSX.Element {
+export function Landing() {
   const { isXs, isSm } = useWindowSize()
 
   return (

@@ -5,7 +5,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 import styles from './index.module.css'
 
-export function NavBar(): JSX.Element {
+export function NavBar() {
   const { isXs, isSm } = useWindowSize()
   const isMobile = isXs || isSm
 

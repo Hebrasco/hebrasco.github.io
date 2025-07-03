@@ -1,7 +1,7 @@
 import { CONFIG } from 'data'
 import { Col } from 'react-bootstrap'
 
-export function Copyright(): JSX.Element {
+export function Copyright() {
   function getCurrentYear() {
     return new Date().getFullYear()
   }
