@@ -111,7 +111,7 @@ export function Imprint(): JSX.Element {
               </b>
             </p>
           </Section>
-          <Section bottomPadding md title="III. Informationen zur Datenverarbeitung">
+          <Section md title="III. Informationen zur Datenverarbeitung">
             <p>
               Ihre bei Nutzung unseres Internetauftritts verarbeiteten Daten werden gelöscht oder
               gesperrt, sobald der Zweck der Speicherung entfällt, der Löschung der Daten keine

@@ -1,5 +1,4 @@
-a,
-a:hover {
+a {
   color: var(--primaryTextColor);
   text-decoration: none;
 }
@@ -81,78 +80,6 @@ img.rounded,
   color: var(--mutedTextColor) !important;
 }
 
-.form-control {
-  padding: 0.75rem;
-}
-
-.form-control,
-.form-control:focus {
-  background-color: var(--accentColor);
-  border: none;
-  color: var(--primaryTextColor);
-}
-
-.form-control.is-invalid,
-.was-validated .form-control:invalid,
-.form-control.is-valid,
-.was-validated .form-control:valid {
-  border-color: var(--accentColor);
-}
-
-.was-validated .form-control:valid {
-  background-image: none;
-  padding-right: 0.75rem;
-}
-
-.form-control:focus,
-.form-control.is-valid:focus,
-.was-validated .form-control:valid:focus,
-.form-control.is-invalid:focus,
-.was-validated .form-control:invalid:focus {
-  border-color: var(--accentColor);
-}
-
-.form-control::placeholder,
-.form-control::-webkit-contacts-auto-fill-button {
-  color: var(--mutedTextColor);
-  opacity: 1;
-}
-
-.toast-container {
-  z-index: 100;
-}
-
-.toast {
-  border: none;
-  box-shadow: none;
-}
-
-.toast,
-.toast-body,
-.toast-header {
-  background-color: var(--primaryBackgroundColor);
-}
-
-.toast-header,
-.toast-header > button,
-.toast-body {
-  color: var(--secondaryTextColor) !important;
-}
-
-.toast-header > img {
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
-.toast-header {
-  border-radius: 1rem 1rem 0 0;
-  padding: 0.75rem;
-}
-
-.toast-body {
-  border-radius: 0 0 1rem 1rem;
-}
-
 .btn-close {
   filter: invert(1);
 }
@@ -165,6 +92,7 @@ img.rounded,
   margin-left: var(--containerMargin) !important;
   margin-right: var(--containerMargin) !important;
 }
+
 .container,
 .container-fluid {
   width: unset;
@@ -181,24 +109,74 @@ img.rounded,
   padding: var(--bs-navbar-toggler-padding-y) 0px;
 }
 
-.mt-5 {
+.mt-6 {
   margin-top: 5rem !important;
 }
 
-.mb-5 {
+.mb-6 {
   margin-bottom: 5rem !important;
 }
 
-.my-5 {
+.my-6 {
   margin-top: 5rem !important;
   margin-bottom: 5rem !important;
 }
 
-.p-5 {
+.p-6 {
   padding: 5rem !important;
 }
 
-.py-5 {
+.py-6 {
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
+}
+
+.section-gap {
+  gap: var(--sectionGap);
+}
+
+.dropdown-toggle {
+  color: var(--primaryTextColor) !important;
+  border: unset !important;
+}
+
+.dropdown-toggle::after {
+  all: unset !important;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:active,
+.dropdown-toggle:focus {
+  background-color: unset !important;
+}
+
+.dropdown-menu {
+  padding: 0.5rem 0px !important;
+  border-radius: 22px !important;
+  overflow: hidden;
+  background-color: var(--primaryColor) !important;
+  border-color: var(--accentColor);
+}
+
+.dropdown-menu > p {
+  margin: 0;
+}
+
+.dropdown-menu > p,
+.dropdown-item {
+  padding: 0.5rem 1rem !important;
+}
+
+.dropdown-item {
+  color: var(--primaryTextColor) !important;
+}
+
+.dropdown-item:active {
+  background-color: unset !important;
+  color: var(--primaryTextColor) !important;
+}
+
+.dropdown-item:hover {
+  background-color: var(--accentColor) !important;
+  color: var(--primaryTextColor) !important;
 }

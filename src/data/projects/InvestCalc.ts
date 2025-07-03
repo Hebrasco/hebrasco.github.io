@@ -71,7 +71,7 @@ export const INVEST_CALC: Project = {
   languages: [PROFILE.languages.swift],
   name: 'Invest. Calc',
   onlineURL: 'https://apps.apple.com/app/id6746040739',
-  platforms: [PLATFORM.iPhone, PLATFORM.iPadOS],
+  platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
     dark: {
       altText: 'Preview screenshot of Invest Calc in dark mode',

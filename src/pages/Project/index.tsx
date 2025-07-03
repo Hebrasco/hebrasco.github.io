@@ -1,5 +1,6 @@
 import { ExternalLink, Section } from 'components/ui'
 import { MISC, PROJECTS } from 'data'
+import { PLATFORM } from 'data/platform'
 import { PROJECT_STATUS } from 'data/projectStatus'
 import { useColorScheme, useWindowSize } from 'hooks'
 import previewStyles from 'pages/Home/components/Projects/components/Preview/index.module.css'
@@ -8,31 +9,32 @@ import FEATURE_CONTAINER_SIZE from 'pages/Home/components/Projects/constants/Fea
 import SCREENSHOT_CONTAINER_SIZE from 'pages/Home/components/Projects/constants/ScreenshotContainerSize'
 import projectStyles from 'pages/Home/components/Projects/index.module.css'
 import ProjectImages from 'pages/Project/components/ProjectImages'
-import { useMemo } from 'react'
-import { Col, Container, Image, Row } from 'react-bootstrap'
+import { useLayoutEffect, useMemo, useState } from 'react'
+import { Col, Container, Dropdown, Image, Row } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { conditionalStyle } from 'utils'
-import styles from './index.module.css'
 
 export function Project(): JSX.Element {
+  const [scrollSnapAlign, setScrollSnapAlign] = useState('start')
+  const [platformScreenshots, setPlatformScreenshots] = useState<keyof typeof PLATFORM>('iphone')
   const { projectId } = useParams()
   const colorScheme = useColorScheme()
   const isLightScheme = colorScheme === MISC.colorSchemes.light
   const { isXs, isSm } = useWindowSize()
-  const isMobile = isXs || isSm
+  const isMobile = useMemo(() => isXs || isSm, [isXs, isSm])
 
-  const screenshotIphoneWidth = isMobile
-    ? SCREENSHOT_CONTAINER_SIZE.iphone.xs.width
-    : SCREENSHOT_CONTAINER_SIZE.iphone.md.width
-  const screenshotIpadWidth = isMobile
-    ? SCREENSHOT_CONTAINER_SIZE.ipad.xs.width
-    : SCREENSHOT_CONTAINER_SIZE.ipad.md.width
-  const screenshotMacWidth = isMobile
-    ? SCREENSHOT_CONTAINER_SIZE.mac.xs.width
-    : SCREENSHOT_CONTAINER_SIZE.mac.md.width
-  const screenshotWebWidth = isMobile
-    ? SCREENSHOT_CONTAINER_SIZE.web.xs.width
-    : SCREENSHOT_CONTAINER_SIZE.web.md.width
+  const screenshotSizes: {
+    [K in keyof typeof PLATFORM]: {
+      height: number
+      width: number
+    }
+  } = {
+    ipad: isMobile ? SCREENSHOT_CONTAINER_SIZE.ipad.xs : SCREENSHOT_CONTAINER_SIZE.ipad.md,
+    iphone: isMobile ? SCREENSHOT_CONTAINER_SIZE.iphone.xs : SCREENSHOT_CONTAINER_SIZE.iphone.md,
+    mac: isMobile ? SCREENSHOT_CONTAINER_SIZE.mac.xs : SCREENSHOT_CONTAINER_SIZE.mac.md,
+    web: isMobile ? SCREENSHOT_CONTAINER_SIZE.web.xs : SCREENSHOT_CONTAINER_SIZE.web.md,
+  }
+
   const featureWidth = isMobile ? FEATURE_CONTAINER_SIZE.xs.width : FEATURE_CONTAINER_SIZE.md.width
   const featureHeight = isMobile
     ? FEATURE_CONTAINER_SIZE.xs.height
@@ -40,17 +42,21 @@ export function Project(): JSX.Element {
 
   const project = useMemo(() => PROJECTS.find(({ id }) => id === projectId), [projectId])
 
+  useLayoutEffect(() => {
+    setScrollSnapAlign(conditionalStyle(isMobile, 'center', 'start'))
+  }, [isMobile])
+
   if (!projectId || !project) return <div>Project not found</div>
 
   return (
-    <div className={styles['project-container']}>
-      <Container className="mb-5">
+    <div className="navbar-spacer">
+      <Container>
         <Section>
           <div className="p-5 bg-light rounded d-flex">
             <Row>
               <Col className="d-flex flex-column justify-content-center" md={6}>
                 <h1 className="fw-bold">{project.name}</h1>
-                <div className="my-2 d-flex justify-content-space-between">
+                <div className="my-2 d-flex">
                   {project.onlineURL && (
                     <span className="d-inline-flex align-items-center">
                       <ExternalLink to={project.onlineURL}>App Store</ExternalLink>
@@ -64,7 +70,7 @@ export function Project(): JSX.Element {
                     </span>
                   )}
                 </div>
-                <Col className="d-flex d-md-none my-5">
+                <Col className="d-flex d-md-none mt-4">
                   <ProjectImages image={project.titleImage} />
                 </Col>
               </Col>
@@ -75,10 +81,16 @@ export function Project(): JSX.Element {
           </div>
         </Section>
       </Container>
-      <Container className="my-5">
-        <Row className="g-4">
-          <Col md={3} xs={6}>
-            <Section title="Frameworks" xs>
+      <Container>
+        <Section md>
+          <Row className="g-4">
+            <Col md={3} xs={6}>
+              <p
+                className="fw-bold text-uppercase"
+                style={{ fontSize: 20, marginBottom: '0.5rem' }}
+              >
+                Frameworks
+              </p>
               <div className="d-flex flex-wrap gap-2">
                 {project.frameworks.map((framework) => (
                   <ProjectBadge
@@ -87,18 +99,21 @@ export function Project(): JSX.Element {
                   />
                 ))}
               </div>
-            </Section>
-          </Col>
-          <Col md={3} xs={6}>
-            <Section title="Languages" xs>
+            </Col>
+            <Col md={3} xs={6}>
+              <p
+                className="fw-bold text-uppercase"
+                style={{ fontSize: 20, marginBottom: '0.5rem' }}
+              >
+                Languages
+              </p>
               <div className="d-flex flex-wrap gap-2">
                 {project.languages.map((language) => (
                   <ProjectBadge key={`project-skill-language-${language.name}`} skill={language} />
                 ))}
               </div>
-            </Section>
-          </Col>
-          {/* <Col md={3}>
+            </Col>
+            {/* <Col md={3}>
             <Section xs title="Responsibilities">
               <Responsibilities
                 projectName={project.name}
@@ -106,32 +121,36 @@ export function Project(): JSX.Element {
               />
             </Section>
           </Col> */}
-          <Col md={3} xs={6}>
-            <Section title="Platforms" xs>
+            <Col md={3} xs={6}>
+              <p
+                className="fw-bold text-uppercase"
+                style={{ fontSize: 20, marginBottom: '0.5rem' }}
+              >
+                Platforms
+              </p>
               <p>{project.platforms.join(', ')}</p>
-            </Section>
-          </Col>
-          <Col md={3} xs={6}>
-            <Section
-              title={
-                project.status.type === PROJECT_STATUS.comingSoon
+            </Col>
+            <Col md={3} xs={6}>
+              <p
+                className="fw-bold text-uppercase"
+                style={{ fontSize: 20, marginBottom: '0.5rem' }}
+              >
+                {project.status.type === PROJECT_STATUS.comingSoon
                   ? PROJECT_STATUS.launched
-                  : project.status.type
-              }
-              xs
-            >
+                  : project.status.type}
+              </p>
               <p>{project.status.date?.toLocaleDateString() ?? project.status.type}</p>
-            </Section>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        </Section>
       </Container>
-      <Container className="my-5">
-        <Section title="Summary">
+      <Container>
+        <Section lg title="Summary">
           <p>{project.description}</p>
         </Section>
       </Container>
-      <Container className="my-5" fluid>
-        <Section fluidContainer title="Features">
+      <Container fluid>
+        <Section fluidContainer lg title="Features">
           <div className={projectStyles['preview-scroll-container']}>
             <div className={projectStyles['preview-container']}>
               <div className={projectStyles['preview-container-card-set']}>
@@ -143,7 +162,7 @@ export function Project(): JSX.Element {
                     style={{
                       height: featureHeight,
                       justifyContent: 'flex-start',
-                      scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
+                      scrollSnapAlign,
                       width: featureWidth,
                     }}
                   >
@@ -160,116 +179,74 @@ export function Project(): JSX.Element {
         </Section>
       </Container>
       {project.screenshots && !!Object.values(project.screenshots).filter(Boolean).length && (
-        <Container className="my-5" fluid>
-          <Section fluidContainer title="Screenshots">
-            {project.screenshots?.iphone && (
-              <Section fluidContainer sm title="iPhone">
-                <div className={projectStyles['preview-scroll-container']}>
-                  <div className={projectStyles['preview-container']}>
-                    <div className={projectStyles['preview-container-card-set']}>
-                      {project.screenshots.iphone[isLightScheme ? 'light' : 'dark'].map(
-                        (screenshot, index) => (
-                          <div
-                            className={`${previewStyles['preview-content-container']} p-0`}
-                            // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
-                            key={`iphone-screenshot-${index}`}
-                            style={{
-                              backgroundColor: 'unset',
-                              justifyContent: 'flex-start',
-                              scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
-                              width: screenshotIphoneWidth,
-                            }}
-                          >
-                            <Image alt={screenshot.altText} loading="lazy" src={screenshot.src} />
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
+        <Container fluid>
+          <Section
+            Action={() =>
+              Object.values(project.screenshots ?? {}).filter(Boolean).length > 1 ? (
+                <Dropdown>
+                  <Dropdown.Toggle className="btn-link">
+                    {PLATFORM[platformScreenshots]}
+                    <i className="bi bi-chevron-down ms-1"></i>
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu align="end" className="shadow">
+                    <p className="text-muted">Platform</p>
+                    {(Object.keys(project.screenshots ?? {}) as [keyof typeof PLATFORM])
+                      .sort((a) => {
+                        if (a === 'iphone') return -1
+                        if (a === 'ipad') return 1
+                        if (a === 'mac') return 1
+                        if (a === 'web') return 1
+
+                        return 0
+                      })
+                      .map((platform) => (
+                        <Dropdown.Item
+                          as="button"
+                          key={`platform-dropdown-item-${platform}`}
+                          onClick={() => setPlatformScreenshots(platform)}
+                        >
+                          <i
+                            className={`bi bi-check-circle-fill me-2 ${conditionalStyle(platformScreenshots === platform, 'visible', 'invisible')}`}
+                          ></i>
+                          {PLATFORM[platform]}
+                        </Dropdown.Item>
+                      ))}
+                  </Dropdown.Menu>
+                </Dropdown>
+              ) : null
+            }
+            fluidContainer
+            lg
+            title="Screenshots"
+          >
+            <div
+              className={projectStyles['preview-scroll-container']}
+              key={`screenshot-container-${platformScreenshots}`}
+            >
+              <div className={projectStyles['preview-container']}>
+                <div className={projectStyles['preview-container-card-set']}>
+                  {project.screenshots[platformScreenshots]?.[isLightScheme ? 'light' : 'dark'].map(
+                    (screenshot, index) => (
+                      <div
+                        className={`${previewStyles['preview-content-container']} p-0`}
+                        // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
+                        key={`${platformScreenshots}-screenshot-${index}`}
+                        style={{
+                          backgroundColor: 'unset',
+                          height: screenshotSizes[platformScreenshots].height,
+                          justifyContent: 'flex-start',
+                          scrollSnapAlign,
+                          width: screenshotSizes[platformScreenshots].width,
+                        }}
+                      >
+                        <Image alt={screenshot.altText} src={screenshot.src} />
+                      </div>
+                    )
+                  )}
                 </div>
-              </Section>
-            )}
-            {project.screenshots?.ipad && (
-              <Section fluidContainer sm title="iPad">
-                <div className={projectStyles['preview-scroll-container']}>
-                  <div className={projectStyles['preview-container']}>
-                    <div className={projectStyles['preview-container-card-set']}>
-                      {project.screenshots.ipad[isLightScheme ? 'light' : 'dark'].map(
-                        (screenshot, index) => (
-                          <div
-                            className={`${previewStyles['preview-content-container']} p-0`}
-                            // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
-                            key={`ipad-screenshot-${index}`}
-                            style={{
-                              backgroundColor: 'unset',
-                              justifyContent: 'flex-start',
-                              scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
-                              width: screenshotIpadWidth,
-                            }}
-                          >
-                            <Image alt={screenshot.altText} loading="lazy" src={screenshot.src} />
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </Section>
-            )}
-            {project.screenshots?.mac && (
-              <Section fluidContainer sm title="Mac">
-                <div className={projectStyles['preview-scroll-container']}>
-                  <div className={projectStyles['preview-container']}>
-                    <div className={projectStyles['preview-container-card-set']}>
-                      {project.screenshots.mac[isLightScheme ? 'light' : 'dark'].map(
-                        (screenshot, index) => (
-                          <div
-                            className={`${previewStyles['preview-content-container']} p-0`}
-                            // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
-                            key={`mac-screenshot-${index}`}
-                            style={{
-                              backgroundColor: 'unset',
-                              justifyContent: 'flex-start',
-                              scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
-                              width: screenshotMacWidth,
-                            }}
-                          >
-                            <Image alt={screenshot.altText} loading="lazy" src={screenshot.src} />
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </Section>
-            )}
-            {project.screenshots?.web && (
-              <Section fluidContainer sm title="Web">
-                <div className={projectStyles['preview-scroll-container']}>
-                  <div className={projectStyles['preview-container']}>
-                    <div className={projectStyles['preview-container-card-set']}>
-                      {project.screenshots.web[isLightScheme ? 'light' : 'dark'].map(
-                        (screenshot, index) => (
-                          <div
-                            className={`${previewStyles['preview-content-container']} p-0`}
-                            // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
-                            key={`web-screenshot-${index}`}
-                            style={{
-                              backgroundColor: 'unset',
-                              justifyContent: 'flex-start',
-                              scrollSnapAlign: conditionalStyle(isMobile, 'center', 'start'),
-                              width: screenshotWebWidth,
-                            }}
-                          >
-                            <Image alt={screenshot.altText} loading="lazy" src={screenshot.src} />
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </Section>
-            )}
+              </div>
+            </div>
           </Section>
         </Container>
       )}
