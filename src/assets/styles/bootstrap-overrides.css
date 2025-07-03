@@ -3,6 +3,7 @@ a {
   text-decoration: none;
 }
 a:hover {
+  color: var(--primaryTextColor);
   text-decoration: underline;
 }
 
