@@ -8,7 +8,7 @@ import type { Platform } from './Platform'
 import type { ProjectStatus } from './ProjectStatus'
 import type { Skill } from './Skill'
 
-export type Project = {
+type Project = {
   id: string
   name: string
   description: string
@@ -27,3 +27,5 @@ export type Project = {
   }
   platforms: readonly Platform[]
 }
+
+export type { Project }

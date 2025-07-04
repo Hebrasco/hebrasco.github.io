@@ -1,6 +1,8 @@
 import type { Screenshot } from 'types/Screenshot'
 
-export type ScreenshotSet = {
+type ScreenshotSet = {
   light: readonly Screenshot[]
   dark: readonly Screenshot[]
 }
+
+export type { ScreenshotSet }

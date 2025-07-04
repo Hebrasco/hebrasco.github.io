@@ -1,7 +1,7 @@
 import type { PROJECT_STATUS } from 'data/projectStatus'
 import type { ProjectStatusType } from 'types/ProjectStatusType'
 
-export type ProjectStatus =
+type ProjectStatus =
   | {
       type: Exclude<ProjectStatusType, 'Coming Soon'>
       date: Date
@@ -10,3 +10,5 @@ export type ProjectStatus =
       type: typeof PROJECT_STATUS.comingSoon
       date?: never
     }
+
+export type { ProjectStatus }

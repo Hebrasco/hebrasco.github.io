@@ -31,9 +31,11 @@ type OtherFrameworkCollection = {
   ci: Skill
 }
 
-export type FrameworkCollection = {
+type FrameworkCollection = {
   apple: AppleFrameworkCollection
   crossPlatform: CrossPlatformFrameworkCollection
   web: WebFrameworkCollection
   other: OtherFrameworkCollection
 }
+
+export type { FrameworkCollection }

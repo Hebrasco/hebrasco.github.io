@@ -1,6 +1,6 @@
 import type { Skill } from './Skill'
 
-export type ApplicationCollection = {
+type ApplicationCollection = {
   xcode: Skill
   git: Skill
   gitTower: Skill
@@ -9,3 +9,5 @@ export type ApplicationCollection = {
   vs: Skill
   jira: Skill
 }
+
+export type { ApplicationCollection }
