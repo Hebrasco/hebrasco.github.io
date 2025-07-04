@@ -2,7 +2,7 @@ import { MISC } from 'data'
 import { useLayoutEffect, useState } from 'react'
 import type { WindowSize } from 'types'
 
-export function useWindowSize(): WindowSize {
+function useWindowSize(): WindowSize {
   const [gridSizes, setGridSizes] = useState<WindowSize>({
     isLg: false,
     isMd: false,
@@ -44,3 +44,5 @@ export function useWindowSize(): WindowSize {
 
   return gridSizes
 }
+
+export { useWindowSize }

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 const { colorSchemes } = MISC
 
-export function useColorScheme(): string {
+function useColorScheme(): string {
   const [colorScheme, setColorScheme] = useState<string>(
     window.matchMedia?.('(prefers-color-scheme: dark)').matches
       ? colorSchemes.dark
@@ -25,3 +25,5 @@ export function useColorScheme(): string {
 
   return colorScheme
 }
+
+export { useColorScheme }
