@@ -1,6 +1,6 @@
 import { createElement, type PropsWithChildren, type ReactNode, useMemo } from 'react'
 import { conditionalStyle } from 'utils'
-import styles from './index.module.css'
+import styles from './Section.module.css'
 
 interface Props extends PropsWithChildren {
   xs?: boolean
@@ -15,7 +15,7 @@ interface Props extends PropsWithChildren {
   Action?: () => ReactNode
 }
 
-export function Section({
+function Section({
   children,
   xs = false,
   sm = false,
@@ -37,13 +37,7 @@ export function Section({
     if (sm) element = 'h4'
     if (xs) element = 'h5'
 
-    return createElement(
-      element,
-      {
-        className: `fw-bold`,
-      },
-      title
-    )
+    return createElement(element, { className: `fw-bold` }, title)
   }, [sm, md, lg, xl, xs, title])
 
   return (
@@ -69,3 +63,5 @@ export function Section({
     </>
   )
 }
+
+export { Section }

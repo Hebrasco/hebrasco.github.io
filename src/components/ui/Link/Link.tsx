@@ -10,7 +10,7 @@ interface Props {
   style?: CSSProperties
 }
 
-export function Link({ to, label, navItem = false, className = '', style }: Props) {
+function Link({ to, label, navItem = false, className = '', style }: Props) {
   function handleClick(event: MouseEvent<HTMLElement>) {
     event.stopPropagation()
   }
@@ -26,3 +26,5 @@ export function Link({ to, label, navItem = false, className = '', style }: Prop
     </RouterLink>
   )
 }
+
+export { Link }

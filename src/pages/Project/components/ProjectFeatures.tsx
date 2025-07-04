@@ -4,15 +4,14 @@ import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.mo
 import { useScrollSnapAlign, useWindowSize } from 'hooks'
 import { FEATURE_CONTAINER_SIZE } from 'pages/Project/constants'
 import { useProject } from 'pages/Project/hooks/useProject'
-import { useMemo } from 'react'
 import { Container } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 
 function ProjectFeatures() {
   const { project } = useProject()
   const scrollSnapAlign = useScrollSnapAlign()
-  const { isXs, isSm } = useWindowSize()
-  const isMobile = useMemo(() => isXs || isSm, [isXs, isSm])
+  const { isMobile } = useWindowSize()
+
   const featureWidth = isMobile ? FEATURE_CONTAINER_SIZE.xs.width : FEATURE_CONTAINER_SIZE.md.width
   const featureHeight = isMobile
     ? FEATURE_CONTAINER_SIZE.xs.height

@@ -1,6 +1,6 @@
 import { CONFIG } from 'data'
 
-export function Email() {
+function Email() {
   return (
     <span className="d-inline-flex align-items-center">
       <a href={`mailto:${CONFIG.profile.email}`}>{CONFIG.profile.email}</a>
@@ -8,3 +8,5 @@ export function Email() {
     </span>
   )
 }
+
+export { Email }

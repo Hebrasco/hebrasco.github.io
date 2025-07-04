@@ -3,11 +3,10 @@ import { CONFIG, ROUTES } from 'data'
 import { useWindowSize } from 'hooks'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
-import styles from './index.module.css'
+import styles from './NavBar.module.css'
 
-export function NavBar() {
-  const { isXs, isSm } = useWindowSize()
-  const isMobile = isXs || isSm
+function NavBar() {
+  const { isMobile } = useWindowSize()
 
   return (
     <Navbar
@@ -38,3 +37,5 @@ export function NavBar() {
     </Navbar>
   )
 }
+
+export { NavBar }

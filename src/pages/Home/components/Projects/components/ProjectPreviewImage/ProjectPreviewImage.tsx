@@ -1,4 +1,3 @@
-import { MISC } from 'data'
 import { useColorScheme } from 'hooks'
 import { Image } from 'react-bootstrap'
 import styles from './ProjectPreviewImage.module.css'
@@ -9,17 +8,15 @@ interface Props {
 }
 
 function ProjectPreviewImage({ image }: Props) {
-  const colorScheme = useColorScheme()
-  const isLightScheme = colorScheme === MISC.colorSchemes.light
-  const { dark, light } = image
+  const { colorScheme } = useColorScheme()
 
   return (
     <div className={`d-flex justify-content-center ${styles['preview-image-container']}`}>
       <Image
-        alt={isLightScheme ? light.altText : dark.altText}
+        alt={image[colorScheme].altText}
         className={styles['preview-image']}
         loading="lazy"
-        src={isLightScheme ? light.src : dark.src}
+        src={image[colorScheme].src}
       />
     </div>
   )

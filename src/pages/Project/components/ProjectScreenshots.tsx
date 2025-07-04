@@ -1,12 +1,11 @@
 import { Section } from 'components/ui'
 import { HorizontalList } from 'components/ui/HorizontalList'
 import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.module.css'
-import { MISC } from 'data'
 import { PLATFORM } from 'data/platform'
 import { useColorScheme, useScrollSnapAlign, useWindowSize } from 'hooks'
 import { SCREENSHOT_CONTAINER_SIZE } from 'pages/Project/constants'
 import { useProject } from 'pages/Project/hooks/useProject'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { Container, Dropdown, Image } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 
@@ -14,10 +13,8 @@ function ProjectScreenshots() {
   const [platformScreenshots, setPlatformScreenshots] = useState<keyof typeof PLATFORM>('iphone')
   const { project } = useProject()
   const scrollSnapAlign = useScrollSnapAlign()
-  const colorScheme = useColorScheme()
-  const isLightScheme = colorScheme === MISC.colorSchemes.light
-  const { isXs, isSm } = useWindowSize()
-  const isMobile = useMemo(() => isXs || isSm, [isXs, isSm])
+  const { colorScheme } = useColorScheme()
+  const { isMobile } = useWindowSize()
 
   const screenshotSizes: {
     [K in keyof typeof PLATFORM]: {
@@ -78,24 +75,22 @@ function ProjectScreenshots() {
         title="Screenshots"
       >
         <HorizontalList key={`screenshot-container-${platformScreenshots}`}>
-          {project.screenshots[platformScreenshots]?.[isLightScheme ? 'light' : 'dark'].map(
-            (screenshot, index) => (
-              <li
-                className={`${horizontalListStyles['horizontal-list-content-container']} p-0`}
-                // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
-                key={`${platformScreenshots}-screenshot-${index}`}
-                style={{
-                  backgroundColor: 'unset',
-                  height: screenshotSizes[platformScreenshots].height,
-                  justifyContent: 'flex-start',
-                  scrollSnapAlign,
-                  width: screenshotSizes[platformScreenshots].width,
-                }}
-              >
-                <Image alt={screenshot.altText} src={screenshot.src} />
-              </li>
-            )
-          )}
+          {project.screenshots[platformScreenshots]?.[colorScheme].map((screenshot, index) => (
+            <li
+              className={`${horizontalListStyles['horizontal-list-content-container']} p-0`}
+              // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
+              key={`${platformScreenshots}-screenshot-${index}`}
+              style={{
+                backgroundColor: 'unset',
+                height: screenshotSizes[platformScreenshots].height,
+                justifyContent: 'flex-start',
+                scrollSnapAlign,
+                width: screenshotSizes[platformScreenshots].width,
+              }}
+            >
+              <Image alt={screenshot.altText} src={screenshot.src} />
+            </li>
+          ))}
         </HorizontalList>
       </Section>
     </Container>

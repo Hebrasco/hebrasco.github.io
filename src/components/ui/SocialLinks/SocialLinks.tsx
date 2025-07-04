@@ -6,7 +6,7 @@ interface Props {
   useIcons?: boolean
 }
 
-export function SocialLinks({ useIcons = false }: Props) {
+function SocialLinks({ useIcons = false }: Props) {
   return (
     <>
       <SocialLink
@@ -27,3 +27,5 @@ export function SocialLinks({ useIcons = false }: Props) {
     </>
   )
 }
+
+export { SocialLinks }

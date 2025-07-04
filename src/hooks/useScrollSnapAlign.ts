@@ -1,10 +1,9 @@
 import { useWindowSize } from 'hooks/useWindowSize'
-import { useLayoutEffect, useMemo, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 
 function useScrollSnapAlign() {
   const [scrollSnapAlign, setScrollSnapAlign] = useState('start')
-  const { isXs, isSm } = useWindowSize()
-  const isMobile = useMemo(() => isXs || isSm, [isXs, isSm])
+  const { isMobile } = useWindowSize()
 
   useLayoutEffect(() => {
     setScrollSnapAlign(isMobile ? 'center' : 'start')

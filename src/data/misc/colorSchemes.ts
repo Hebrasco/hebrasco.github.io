@@ -1,4 +1,4 @@
 export const COLOR_SCHEMES = {
-  dark: 'DARK',
-  light: 'LIGHT',
+  dark: 'dark',
+  light: 'light',
 } as const

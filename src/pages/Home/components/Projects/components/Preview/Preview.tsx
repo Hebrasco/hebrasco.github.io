@@ -1,6 +1,6 @@
 import { BlankAppIcon } from 'assets/images/appIcons'
 import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.module.css'
-import { MISC, ROUTES } from 'data'
+import { ROUTES } from 'data'
 import { useColorScheme, useWindowSize } from 'hooks'
 import { Badges } from 'pages/Home/components/Projects/components/Preview/Badges'
 import { ProjectPreviewImage } from 'pages/Home/components/Projects/components/ProjectPreviewImage'
@@ -16,11 +16,9 @@ interface Props {
 }
 
 function Preview({ project }: Props) {
-  const colorScheme = useColorScheme()
-  const isLightScheme = colorScheme === MISC.colorSchemes.light
+  const { colorScheme } = useColorScheme()
 
-  const { isXs, isSm } = useWindowSize()
-  const isMobile = isXs || isSm
+  const { isMobile } = useWindowSize()
   const width = isMobile ? PROJECT_CONTAINER_SIZE.xs.width : PROJECT_CONTAINER_SIZE.md.width
   const height = isMobile ? PROJECT_CONTAINER_SIZE.xs.height : PROJECT_CONTAINER_SIZE.md.height
 
@@ -45,7 +43,7 @@ function Preview({ project }: Props) {
             <div className={`${styles['preview-content-app-icon']} me-3`}>
               <Image
                 alt={`App icon of ${project.id}`}
-                src={project.appIcon?.[isLightScheme ? 'light' : 'dark'] ?? BlankAppIcon}
+                src={project.appIcon?.[colorScheme] ?? BlankAppIcon}
               />
             </div>
             <span className="m-0 h4">{project.name}</span>
