@@ -7,7 +7,7 @@ function ScrollDownIcon() {
     <div className={styles['scroll-down-icon-container']}>
       <Link to={ROUTES.aboutMe}>
         <span className="sr-only">Scroll to about me</span>
-        <div className={`${styles['scroll-down-icon']} shadow d-flex justify-content-center`}>
+        <div className={`${styles['scroll-down-icon']} shadow`}>
           <i className="bi bi-chevron-down"></i>
         </div>
       </Link>
