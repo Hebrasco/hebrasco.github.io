@@ -1,5 +1,4 @@
 import { ExternalLink } from 'components/ui'
-import { Image } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 
 interface Props {
@@ -20,11 +19,12 @@ export function SocialLink({ label, to, src, altText, useIcon, invertImage = fal
       to={to}
     >
       {useIcon ? (
-        <Image
+        <img
           alt={altText}
           className={`${conditionalStyle(invertImage, 'invertedColor')}`}
-          fluid
+          height="100%"
           src={src}
+          width="100%"
         />
       ) : (
         label

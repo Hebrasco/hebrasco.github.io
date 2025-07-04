@@ -1,3 +1,8 @@
+.navbar-container {
+  padding: 0.5rem 1rem;
+  display: flex;
+}
+
 .navbar-glass {
   background-color: var(--glassBackground);
   backdrop-filter: blur(var(--glassBlur));

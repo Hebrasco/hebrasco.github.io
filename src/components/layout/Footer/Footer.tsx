@@ -1,4 +1,4 @@
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row } from 'components/layout'
 import { Copyright, Links } from './components'
 
 function Footer() {

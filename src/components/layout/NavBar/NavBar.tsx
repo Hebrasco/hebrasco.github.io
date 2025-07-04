@@ -1,7 +1,8 @@
+import { Container } from 'components/layout/Container'
 import { Link, SocialLinks } from 'components/ui'
 import { CONFIG, ROUTES } from 'data'
 import { useWindowSize } from 'hooks'
-import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Nav, Navbar } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 import styles from './NavBar.module.css'
 
@@ -17,9 +18,8 @@ function NavBar() {
       expand="md"
     >
       <Container
-        className={conditionalStyle(isMobile, 'd-block')}
+        className={`${conditionalStyle(isMobile, 'd-block')} ${styles['navbar-container']}`}
         fluid
-        style={{ padding: '0.5rem 1rem' }}
       >
         <Navbar.Brand className="me-5 text-decoration-none" href={ROUTES.home}>
           {CONFIG.profile.name}

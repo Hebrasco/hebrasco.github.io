@@ -1,8 +1,8 @@
+import { Container } from 'components/layout'
 import { Section } from 'components/ui'
 import { HorizontalList } from 'components/ui/HorizontalList'
 import { PROJECTS, ROUTES } from 'data'
 import { Preview } from 'pages/Home/components/Projects/components/Preview'
-import { Container } from 'react-bootstrap'
 import styles from './Projects.module.css'
 
 function Projects() {

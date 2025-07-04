@@ -1,11 +1,11 @@
 import { BlankAppIcon } from 'assets/images/appIcons'
+import { Column, Row } from 'components/layout'
 import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.module.css'
 import { ROUTES } from 'data'
 import { useColorScheme, useWindowSize } from 'hooks'
 import { Badges } from 'pages/Home/components/Projects/components/Preview/Badges'
 import { ProjectPreviewImage } from 'pages/Home/components/Projects/components/ProjectPreviewImage'
 import { PROJECT_CONTAINER_SIZE } from 'pages/Home/components/Projects/constants'
-import { Col, Image, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { conditionalStyle } from 'utils'
 import styles from './Preview.module.css'
@@ -37,18 +37,20 @@ function Preview({ project }: Props) {
     >
       <div className="mb-auto">
         <Row>
-          <Col
+          <Column
             className={`d-flex align-items-center ${styles['preview-content-header-container']}`}
           >
             <div className={`${styles['preview-content-app-icon']} me-3`}>
-              <Image
+              <img
                 alt={`App icon of ${project.id}`}
+                height="100%"
                 src={project.appIcon?.[colorScheme] ?? BlankAppIcon}
+                width="100%"
               />
             </div>
             <span className="m-0 h4">{project.name}</span>
             <i className="bi bi-chevron-right ms-auto"></i>
-          </Col>
+          </Column>
         </Row>
       </div>
       <Badges frameworks={project.frameworks} languages={project.languages} />

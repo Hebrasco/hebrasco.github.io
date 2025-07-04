@@ -1,3 +1,4 @@
+import { Container } from 'components/layout'
 import { Section } from 'components/ui'
 import { HorizontalList } from 'components/ui/HorizontalList'
 import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.module.css'
@@ -6,7 +7,7 @@ import { useColorScheme, useScrollSnapAlign, useWindowSize } from 'hooks'
 import { SCREENSHOT_CONTAINER_SIZE } from 'pages/Project/constants'
 import { useProject } from 'pages/Project/hooks/useProject'
 import { useState } from 'react'
-import { Container, Dropdown, Image } from 'react-bootstrap'
+import { Dropdown } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 
 function ProjectScreenshots() {
@@ -88,7 +89,12 @@ function ProjectScreenshots() {
                 width: screenshotSizes[platformScreenshots].width,
               }}
             >
-              <Image alt={screenshot.altText} src={screenshot.src} />
+              <img
+                alt={screenshot.altText}
+                height={screenshotSizes[platformScreenshots].height}
+                src={screenshot.src}
+                width={screenshotSizes[platformScreenshots].width}
+              />
             </li>
           ))}
         </HorizontalList>

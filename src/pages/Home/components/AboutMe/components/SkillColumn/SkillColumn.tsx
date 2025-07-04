@@ -1,4 +1,4 @@
-import { Column } from 'components/layout/Column'
+import { Column } from 'components/layout'
 import { KeyInfoTitle } from 'components/ui/KeyInfoTitle'
 import { ProjectBadge } from 'pages/Home/components/Projects/components/ProjectBadge'
 import styles from './SkillColumn.module.css'

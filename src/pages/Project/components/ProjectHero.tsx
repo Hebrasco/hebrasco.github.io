@@ -1,7 +1,7 @@
+import { Column, Container, Row } from 'components/layout'
 import { ExternalLink, Section } from 'components/ui'
 import { ProjectTitleImage } from 'pages/Project/components/ProjectTitleImage'
 import { useProject } from 'pages/Project/hooks/useProject'
-import { Col, Container, Row } from 'react-bootstrap'
 
 function ProjectHero() {
   const { project } = useProject()
@@ -11,7 +11,7 @@ function ProjectHero() {
       <Section>
         <div className="p-5 bg-light rounded d-flex">
           <Row>
-            <Col className="d-flex flex-column justify-content-center" md={6}>
+            <Column className="d-flex flex-column justify-content-center" md={6}>
               <h1 className="fw-bold">{project.name}</h1>
               <div className="my-2 d-flex">
                 {project.onlineURL && (
@@ -27,13 +27,13 @@ function ProjectHero() {
                   </span>
                 )}
               </div>
-              <Col className="d-flex d-md-none mt-4">
+              <Column className="d-flex d-md-none mt-4">
                 <ProjectTitleImage />
-              </Col>
-            </Col>
-            <Col className="d-none d-md-flex" md={6}>
+              </Column>
+            </Column>
+            <Column className="d-none d-md-flex" md={6}>
               <ProjectTitleImage />
-            </Col>
+            </Column>
           </Row>
         </div>
       </Section>

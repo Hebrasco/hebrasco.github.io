@@ -1,10 +1,10 @@
+import { Container } from 'components/layout'
 import { Section } from 'components/ui'
 import { HorizontalList } from 'components/ui/HorizontalList'
 import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.module.css'
 import { useScrollSnapAlign, useWindowSize } from 'hooks'
 import { FEATURE_CONTAINER_SIZE } from 'pages/Project/constants'
 import { useProject } from 'pages/Project/hooks/useProject'
-import { Container } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 
 function ProjectFeatures() {
