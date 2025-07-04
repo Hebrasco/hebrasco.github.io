@@ -11,7 +11,7 @@ interface Props {
 export function SkillColumn({ title, data }: Props) {
   return (
     <Col className={`${styles['skills-column']}`} md={4} xs={12}>
-      <p className="fw-bold text-uppercase" style={{ fontSize: 20, marginBottom: '0.5rem' }}>
+      <p className="fw-bold" style={{ fontSize: 20, marginBottom: '0.5rem' }}>
         {title}
       </p>
       <ul className="list-unstyled mb-0 d-flex flex-wrap gap-2">

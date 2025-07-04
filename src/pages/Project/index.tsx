@@ -85,10 +85,7 @@ export function Project() {
         <Section md>
           <Row className="g-4">
             <Col md={3} xs={6}>
-              <p
-                className="fw-bold text-uppercase"
-                style={{ fontSize: 20, marginBottom: '0.5rem' }}
-              >
+              <p className="fw-bold" style={{ fontSize: 20, marginBottom: '0.5rem' }}>
                 Frameworks
               </p>
               <div className="d-flex flex-wrap gap-2">
@@ -101,10 +98,7 @@ export function Project() {
               </div>
             </Col>
             <Col md={3} xs={6}>
-              <p
-                className="fw-bold text-uppercase"
-                style={{ fontSize: 20, marginBottom: '0.5rem' }}
-              >
+              <p className="fw-bold" style={{ fontSize: 20, marginBottom: '0.5rem' }}>
                 Languages
               </p>
               <div className="d-flex flex-wrap gap-2">
@@ -122,19 +116,13 @@ export function Project() {
             </Section>
           </Col> */}
             <Col md={3} xs={6}>
-              <p
-                className="fw-bold text-uppercase"
-                style={{ fontSize: 20, marginBottom: '0.5rem' }}
-              >
+              <p className="fw-bold" style={{ fontSize: 20, marginBottom: '0.5rem' }}>
                 Platforms
               </p>
               <p>{project.platforms.join(', ')}</p>
             </Col>
             <Col md={3} xs={6}>
-              <p
-                className="fw-bold text-uppercase"
-                style={{ fontSize: 20, marginBottom: '0.5rem' }}
-              >
+              <p className="fw-bold" style={{ fontSize: 20, marginBottom: '0.5rem' }}>
                 {project.status.type === PROJECT_STATUS.comingSoon
                   ? PROJECT_STATUS.launched
                   : project.status.type}

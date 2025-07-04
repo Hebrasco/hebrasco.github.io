@@ -40,7 +40,7 @@ export function Section({
     return createElement(
       element,
       {
-        className: `fw-bold text-uppercase`,
+        className: `fw-bold`,
       },
       title
     )
