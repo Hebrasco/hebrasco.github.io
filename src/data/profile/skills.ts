@@ -29,8 +29,10 @@ const SKILLS_APPLICATIONS: readonly Skill[] = [
   APPLICATIONS.jira,
 ] as const
 
-export const SKILLS: SkillCollection = {
+const SKILLS: SkillCollection = {
   applications: SKILLS_APPLICATIONS,
   frameworks: SKILLS_FRAMEWORKS,
   languages: SKILLS_LANGUAGES,
 } as const
+
+export { SKILLS }

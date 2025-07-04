@@ -6,12 +6,11 @@ import {
   ScreenshotsIphoneDark,
   ScreenshotsIphoneLight,
 } from 'assets/images/screenshots/investCalc'
-import { PROFILE } from 'data'
+import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
-import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
-export const INVEST_CALC: Project = {
+const INVEST_CALC: Project = {
   appIcon: {
     dark: InvestCalcAppIcons.dark,
     light: InvestCalcAppIcons.light,
@@ -200,3 +199,5 @@ export const INVEST_CALC: Project = {
     },
   },
 } as const
+
+export { INVEST_CALC }

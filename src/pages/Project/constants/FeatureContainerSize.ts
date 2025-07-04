@@ -7,6 +7,6 @@ const FEATURE_CONTAINER_SIZE = {
     height: 281,
     width: 286,
   },
-}
+} as const
 
 export { FEATURE_CONTAINER_SIZE }

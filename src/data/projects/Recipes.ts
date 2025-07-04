@@ -1,11 +1,10 @@
 import { RecipesPreviews } from 'assets/images/previews'
 import { ScreenshotsIpadLight, ScreenshotsIphoneLight } from 'assets/images/screenshots/recipes'
-import { PROFILE } from 'data'
+import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
-import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
-export const RECIPES: Project = {
+const RECIPES: Project = {
   description: `With his recipe app, you're able to create meal plans. There's a huge selection of recipes build in to choose from. Further, the ingredients can be exactly calculated based on the amount of people and can be added to a shopping list.`,
   features: [
     {
@@ -110,3 +109,5 @@ export const RECIPES: Project = {
     },
   },
 } as const
+
+export { RECIPES }

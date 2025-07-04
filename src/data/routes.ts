@@ -1,4 +1,4 @@
-export const ROUTES = {
+const ROUTES = {
   aboutMe: '/#about-me',
   contact: '/#contact',
   home: '/',
@@ -8,3 +8,5 @@ export const ROUTES = {
   project: '/projects/:projectId',
   projects: '/#projects',
 } as const
+
+export { ROUTES }

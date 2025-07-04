@@ -39,6 +39,6 @@ const SCREENSHOT_CONTAINER_SIZE = {
       width: 286,
     },
   },
-}
+} as const
 
 export { SCREENSHOT_CONTAINER_SIZE }

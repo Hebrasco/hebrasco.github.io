@@ -7,6 +7,6 @@ const PROJECT_CONTAINER_SIZE = {
     height: 539,
     width: 282,
   },
-}
+} as const
 
 export { PROJECT_CONTAINER_SIZE }

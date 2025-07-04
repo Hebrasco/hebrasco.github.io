@@ -6,12 +6,11 @@ import {
   ScreenshotsIphoneDark,
   ScreenshotsIphoneLight,
 } from 'assets/images/screenshots/insters'
-import { PROFILE } from 'data'
+import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
-import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
-export const INSTERS: Project = {
+const INSTERS: Project = {
   appIcon: {
     dark: InstersAppIcons.light,
     light: InstersAppIcons.light,
@@ -107,3 +106,5 @@ export const INSTERS: Project = {
     },
   },
 } as const
+
+export { INSTERS }

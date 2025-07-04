@@ -1,6 +1,6 @@
 import { Section } from 'components/ui'
 import { KeyInfoTitle } from 'components/ui/KeyInfoTitle'
-import { PROJECT_STATUS } from 'data/projectStatus'
+import { PROJECT_STATUS } from 'data'
 import { ProjectBadge } from 'pages/Home/components/Projects/components/ProjectBadge'
 import { useProject } from 'pages/Project/hooks/useProject'
 import { Col, Container, Row } from 'react-bootstrap'

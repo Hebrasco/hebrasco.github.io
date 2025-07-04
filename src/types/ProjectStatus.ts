@@ -1,4 +1,4 @@
-import type { PROJECT_STATUS } from 'data/projectStatus'
+import type { PROJECT_STATUS } from 'data'
 import type { ProjectStatusType } from 'types/ProjectStatusType'
 
 type ProjectStatus =

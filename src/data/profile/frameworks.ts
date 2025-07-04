@@ -1,6 +1,6 @@
 import type { FrameworkCollection } from 'types'
 
-export const FRAMEWORKS: FrameworkCollection = {
+const FRAMEWORKS: FrameworkCollection = {
   apple: {
     cloudKit: { name: 'CloudKit' },
     coreData: { name: 'Core Data' },
@@ -29,3 +29,5 @@ export const FRAMEWORKS: FrameworkCollection = {
     reactRedux: { name: 'React Redux' },
   },
 } as const
+
+export { FRAMEWORKS }
