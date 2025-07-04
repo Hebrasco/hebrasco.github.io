@@ -1,7 +1,15 @@
+a,
+p,
+span {
+  letter-spacing: 0.01em;
+  line-height: 1.3334133333;
+}
+
 a {
   color: var(--primaryTextColor);
   text-decoration: none;
 }
+
 a:hover {
   color: var(--primaryTextColor);
   text-decoration: underline;

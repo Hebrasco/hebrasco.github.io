@@ -3,7 +3,7 @@
 }
 
 .section > h2 {
-  letter-spacing: var(--letterSpacingLg);
+  letter-spacing: -5% !important;
   word-break: break-word;
 }
 
