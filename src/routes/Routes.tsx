@@ -3,7 +3,7 @@ import { Home, Imprint, Project } from 'pages'
 import { useEffect } from 'react'
 import { Routes as BrowserRoutes, Route, useLocation } from 'react-router-dom'
 
-export function Routes() {
+function Routes() {
   const { pathname, hash } = useLocation()
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: pathname is needed for navigation and scrolling to the top of the page
@@ -32,3 +32,5 @@ export function Routes() {
     </BrowserRoutes>
   )
 }
+
+export { Routes }
