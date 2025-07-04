@@ -96,19 +96,6 @@ img.rounded,
   margin-right: 0;
 }
 
-.container {
-  margin-left: var(--containerMargin) !important;
-  margin-right: var(--containerMargin) !important;
-}
-
-.container,
-.container-fluid {
-  width: unset;
-  max-width: unset;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
 .navbar-brand {
   vertical-align: middle;
 }
