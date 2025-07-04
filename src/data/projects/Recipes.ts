@@ -45,7 +45,7 @@ export const RECIPES: Project = {
   frameworks: [PROFILE.frameworks.apple.swiftUI, PROFILE.frameworks.apple.coreData],
   id: 'recipes',
   languages: [PROFILE.languages.swift, PROFILE.languages.json],
-  name: 'Recipes app',
+  name: 'Recipes',
   onlineURL: undefined,
   platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
