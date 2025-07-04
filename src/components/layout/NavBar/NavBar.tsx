@@ -21,7 +21,7 @@ function NavBar() {
         fluid
         style={{ padding: '0.5rem 1rem' }}
       >
-        <Navbar.Brand className="pe-4 text-decoration-none" href={ROUTES.home}>
+        <Navbar.Brand className="me-5 text-decoration-none" href={ROUTES.home}>
           {CONFIG.profile.name}
         </Navbar.Brand>
         <Navbar.Toggle />
