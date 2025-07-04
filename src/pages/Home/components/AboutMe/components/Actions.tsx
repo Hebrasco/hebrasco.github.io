@@ -2,7 +2,7 @@ import { ExternalLink } from 'components/ui'
 import { CONFIG } from 'data'
 import { Col, Row } from 'react-bootstrap'
 
-export function Actions() {
+function Actions() {
   return (
     <Row>
       <Col className="d-flex align-items-center gap-3" xs={12}>
@@ -17,3 +17,5 @@ export function Actions() {
     </Row>
   )
 }
+
+export { Actions }

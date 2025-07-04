@@ -1,4 +1,6 @@
-export const COLOR_SCHEMES = {
-  dark: 'DARK',
-  light: 'LIGHT',
+const COLOR_SCHEMES = {
+  dark: 'dark',
+  light: 'light',
 } as const
+
+export { COLOR_SCHEMES }

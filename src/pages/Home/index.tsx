@@ -1,6 +1,6 @@
 import { AboutMe, Contact, Landing, Projects } from './components'
 
-export function Home() {
+function Home() {
   return (
     <>
       <Landing />
@@ -10,3 +10,5 @@ export function Home() {
     </>
   )
 }
+
+export { Home }

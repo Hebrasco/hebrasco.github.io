@@ -6,12 +6,11 @@ import {
   ScreenshotsIphoneDark,
   ScreenshotsIphoneLight,
 } from 'assets/images/screenshots/bloom'
-import { PROFILE } from 'data'
+import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
-import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
-export const BLOOM: Project = {
+const BLOOM: Project = {
   appIcon: {
     dark: BloomAppIcons.dark,
     light: BloomAppIcons.light,
@@ -215,3 +214,5 @@ export const BLOOM: Project = {
     },
   },
 } as const
+
+export { BLOOM }

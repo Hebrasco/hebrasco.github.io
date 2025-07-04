@@ -7,12 +7,11 @@ import {
   ScreenshotsMacDark,
   ScreenshotsMacLight,
 } from 'assets/images/screenshots/umbrella'
-import { PROFILE } from 'data'
+import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
-import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
-export const UMBRELLA: Project = {
+const UMBRELLA: Project = {
   description:
     'This app is a task management tool. You can create and manage tasks of different projects. Tasks are managed in your self managed boards, sprints and milestones. A label, milestone, estimated and actual time, priority and more can be added to a task.',
   features: [
@@ -146,3 +145,5 @@ export const UMBRELLA: Project = {
     },
   },
 } as const
+
+export { UMBRELLA }

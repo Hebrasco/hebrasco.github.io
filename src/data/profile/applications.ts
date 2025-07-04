@@ -1,6 +1,6 @@
 import type { ApplicationCollection } from 'types'
 
-export const APPLICATIONS: ApplicationCollection = {
+const APPLICATIONS: ApplicationCollection = {
   git: { name: 'Git' },
   gitHub: { name: 'GitHub' },
   gitTower: { name: 'GitTower' },
@@ -9,3 +9,5 @@ export const APPLICATIONS: ApplicationCollection = {
   vsCode: { name: 'VS Code' },
   xcode: { name: 'Xcode' },
 } as const
+
+export { APPLICATIONS }

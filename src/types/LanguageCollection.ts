@@ -1,6 +1,6 @@
 import type { Skill } from './Skill'
 
-export type LanguageCollection = {
+type LanguageCollection = {
   swift: Skill
   cSharp: Skill
   typeScript: Skill
@@ -10,3 +10,5 @@ export type LanguageCollection = {
   json: Skill
   metal: Skill
 }
+
+export type { LanguageCollection }

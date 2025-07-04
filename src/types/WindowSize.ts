@@ -1,4 +1,4 @@
-export type WindowSize = {
+type WindowSize = {
   size: {
     width: number
     height: number
@@ -9,4 +9,7 @@ export type WindowSize = {
   isLg: boolean
   isXl: boolean
   isXxl: boolean
+  isMobile: boolean
 }
+
+export type { WindowSize }

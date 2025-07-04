@@ -1,0 +1,22 @@
+.preview-content-header-container {
+  height: 4rem;
+}
+
+.preview-content-app-icon {
+  min-width: 4rem;
+  max-width: 4rem;
+  border-radius: 14px;
+  border: 1px solid var(--appIconBorderColor);
+  overflow: hidden;
+}
+
+.preview-content-app-icon > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preview-content-app-icon {
+    background: linear-gradient(180deg, rgba(28, 28, 28, 1) 20%, rgba(15, 15, 15, 1) 80%);
+  }
+}
