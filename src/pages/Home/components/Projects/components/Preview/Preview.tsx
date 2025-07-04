@@ -1,4 +1,5 @@
 import { BlankAppIcon } from 'assets/images/appIcons'
+import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.module.css'
 import { MISC, ROUTES } from 'data'
 import { useColorScheme, useWindowSize } from 'hooks'
 import { Badges } from 'pages/Home/components/Projects/components/Preview/Badges'
@@ -7,14 +8,14 @@ import { PROJECT_CONTAINER_SIZE } from 'pages/Home/components/Projects/constants
 import { Col, Image, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { conditionalStyle } from 'utils'
-import styles from './index.module.css'
+import styles from './Preview.module.css'
 import type { Project } from 'types'
 
 interface Props {
   project: Project
 }
 
-export function Preview({ project }: Props) {
+function Preview({ project }: Props) {
   const colorScheme = useColorScheme()
   const isLightScheme = colorScheme === MISC.colorSchemes.light
 
@@ -25,9 +26,9 @@ export function Preview({ project }: Props) {
 
   return (
     <Link
-      className={`rounded ${styles['preview-content-container']} ${conditionalStyle(
+      className={`rounded ${horizontalListStyles['horizontal-list-content-container']} ${conditionalStyle(
         !isMobile,
-        styles['preview-content-container-desktop']
+        horizontalListStyles['horizontal-list-content-container-desktop']
       )} overflow-hidden text-decoration-none`}
       style={{
         height,
@@ -38,16 +39,16 @@ export function Preview({ project }: Props) {
     >
       <div className="mb-auto">
         <Row>
-          <Col className="d-flex align-items-center">
+          <Col
+            className={`d-flex align-items-center ${styles['preview-content-header-container']}`}
+          >
             <div className={`${styles['preview-content-app-icon']} me-3`}>
               <Image
                 alt={`App icon of ${project.id}`}
                 src={project.appIcon?.[isLightScheme ? 'light' : 'dark'] ?? BlankAppIcon}
               />
             </div>
-            <div>
-              <h3 className="m-0">{project.name}</h3>
-            </div>
+            <span className="m-0 h4">{project.name}</span>
             <i className="bi bi-chevron-right ms-auto"></i>
           </Col>
         </Row>
@@ -57,3 +58,5 @@ export function Preview({ project }: Props) {
     </Link>
   )
 }
+
+export { Preview }

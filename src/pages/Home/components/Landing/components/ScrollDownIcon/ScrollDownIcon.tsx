@@ -1,8 +1,8 @@
 import { ROUTES } from 'data'
 import { Link } from 'react-router-dom'
-import styles from './index.module.css'
+import styles from './ScrollDownIcon.module.css'
 
-export function ScrollDownIcon() {
+function ScrollDownIcon() {
   return (
     <div className={styles['scroll-down-icon-container']}>
       <Link to={ROUTES.aboutMe}>
@@ -14,3 +14,5 @@ export function ScrollDownIcon() {
     </div>
   )
 }
+
+export { ScrollDownIcon }

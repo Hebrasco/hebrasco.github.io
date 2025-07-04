@@ -3,7 +3,7 @@ import { ROUTES } from 'data'
 import { Container } from 'react-bootstrap'
 import { AboutText, Actions, Skills } from './components'
 
-export function AboutMe() {
+function AboutMe() {
   return (
     <Container>
       <Section anchor={ROUTES.aboutMe} lg title="About me">
@@ -14,3 +14,5 @@ export function AboutMe() {
     </Container>
   )
 }
+
+export { AboutMe }

@@ -1,8 +1,8 @@
 import { Section } from 'components/ui'
+import { HorizontalList } from 'components/ui/HorizontalList'
+import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.module.css'
 import { useScrollSnapAlign, useWindowSize } from 'hooks'
-import previewStyles from 'pages/Home/components/Projects/components/Preview/index.module.css'
-import FEATURE_CONTAINER_SIZE from 'pages/Home/components/Projects/constants/FeatureContainerSize'
-import projectStyles from 'pages/Home/components/Projects/index.module.css'
+import { FEATURE_CONTAINER_SIZE } from 'pages/Project/constants'
 import { useProject } from 'pages/Project/hooks/useProject'
 import { useMemo } from 'react'
 import { Container } from 'react-bootstrap'
@@ -21,31 +21,25 @@ function ProjectFeatures() {
   return (
     <Container fluid>
       <Section fluidContainer lg title="Features">
-        <div className={projectStyles['preview-scroll-container']}>
-          <div className={projectStyles['preview-container']}>
-            <div className={projectStyles['preview-container-card-set']}>
-              {project.features.map((feature, index) => (
-                <div
-                  className={`rounded ${previewStyles['preview-content-container']} bg-light`}
-                  // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
-                  key={index}
-                  style={{
-                    height: featureHeight,
-                    justifyContent: 'flex-start',
-                    scrollSnapAlign,
-                    width: featureWidth,
-                  }}
-                >
-                  <i className={`${feature.icon} h1`} style={{ marginBottom: 15 }}></i>
-                  <p className={`${conditionalStyle(isMobile, 'h4', 'h3')} fw-bold`}>
-                    {feature.title}
-                  </p>
-                  <p>{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <HorizontalList>
+          {project.features.map((feature, index) => (
+            <li
+              className={`rounded ${horizontalListStyles['horizontal-list-content-container']} bg-light`}
+              // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
+              key={index}
+              style={{
+                height: featureHeight,
+                justifyContent: 'flex-start',
+                scrollSnapAlign,
+                width: featureWidth,
+              }}
+            >
+              <i className={`${feature.icon} h1`} style={{ marginBottom: 15 }}></i>
+              <p className={`${conditionalStyle(isMobile, 'h4', 'h3')} fw-bold`}>{feature.title}</p>
+              <p>{feature.description}</p>
+            </li>
+          ))}
+        </HorizontalList>
       </Section>
     </Container>
   )

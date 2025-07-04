@@ -1,10 +1,10 @@
 import { Section } from 'components/ui'
+import { HorizontalList } from 'components/ui/HorizontalList'
+import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.module.css'
 import { MISC } from 'data'
 import { PLATFORM } from 'data/platform'
 import { useColorScheme, useScrollSnapAlign, useWindowSize } from 'hooks'
-import previewStyles from 'pages/Home/components/Projects/components/Preview/index.module.css'
-import SCREENSHOT_CONTAINER_SIZE from 'pages/Home/components/Projects/constants/ScreenshotContainerSize'
-import projectStyles from 'pages/Home/components/Projects/index.module.css'
+import { SCREENSHOT_CONTAINER_SIZE } from 'pages/Project/constants'
 import { useProject } from 'pages/Project/hooks/useProject'
 import { useMemo, useState } from 'react'
 import { Container, Dropdown, Image } from 'react-bootstrap'
@@ -77,33 +77,26 @@ function ProjectScreenshots() {
         lg
         title="Screenshots"
       >
-        <div
-          className={projectStyles['preview-scroll-container']}
-          key={`screenshot-container-${platformScreenshots}`}
-        >
-          <div className={projectStyles['preview-container']}>
-            <div className={projectStyles['preview-container-card-set']}>
-              {project.screenshots[platformScreenshots]?.[isLightScheme ? 'light' : 'dark'].map(
-                (screenshot, index) => (
-                  <div
-                    className={`${previewStyles['preview-content-container']} p-0`}
-                    // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
-                    key={`${platformScreenshots}-screenshot-${index}`}
-                    style={{
-                      backgroundColor: 'unset',
-                      height: screenshotSizes[platformScreenshots].height,
-                      justifyContent: 'flex-start',
-                      scrollSnapAlign,
-                      width: screenshotSizes[platformScreenshots].width,
-                    }}
-                  >
-                    <Image alt={screenshot.altText} src={screenshot.src} />
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-        </div>
+        <HorizontalList key={`screenshot-container-${platformScreenshots}`}>
+          {project.screenshots[platformScreenshots]?.[isLightScheme ? 'light' : 'dark'].map(
+            (screenshot, index) => (
+              <li
+                className={`${horizontalListStyles['horizontal-list-content-container']} p-0`}
+                // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
+                key={`${platformScreenshots}-screenshot-${index}`}
+                style={{
+                  backgroundColor: 'unset',
+                  height: screenshotSizes[platformScreenshots].height,
+                  justifyContent: 'flex-start',
+                  scrollSnapAlign,
+                  width: screenshotSizes[platformScreenshots].width,
+                }}
+              >
+                <Image alt={screenshot.altText} src={screenshot.src} />
+              </li>
+            )
+          )}
+        </HorizontalList>
       </Section>
     </Container>
   )

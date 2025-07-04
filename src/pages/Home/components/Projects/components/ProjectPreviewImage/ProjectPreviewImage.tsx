@@ -1,14 +1,14 @@
 import { MISC } from 'data'
 import { useColorScheme } from 'hooks'
 import { Image } from 'react-bootstrap'
-import styles from './index.module.css'
+import styles from './ProjectPreviewImage.module.css'
 import type { PreviewImage } from 'types/PreviewImage'
 
 interface Props {
   image: PreviewImage
 }
 
-export function ProjectPreviewImage({ image }: Props) {
+function ProjectPreviewImage({ image }: Props) {
   const colorScheme = useColorScheme()
   const isLightScheme = colorScheme === MISC.colorSchemes.light
   const { dark, light } = image
@@ -24,3 +24,5 @@ export function ProjectPreviewImage({ image }: Props) {
     </div>
   )
 }
+
+export { ProjectPreviewImage }

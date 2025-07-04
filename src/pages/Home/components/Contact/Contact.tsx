@@ -2,7 +2,7 @@ import { Email, Section } from 'components/ui'
 import { ROUTES } from 'data'
 import { Col, Container } from 'react-bootstrap'
 
-export function Contact() {
+function Contact() {
   return (
     <Container>
       <Section anchor={ROUTES.contact} lg title="Contact">
@@ -14,3 +14,5 @@ export function Contact() {
     </Container>
   )
 }
+
+export { Contact }

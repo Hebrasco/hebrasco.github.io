@@ -1,17 +1,5 @@
-.preview-content-container {
-  padding: 30px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.15s linear 0.15s;
-  backface-visibility: hidden;
-  justify-content: flex-start;
-  background-color: var(--primaryColor);
-}
-
-.preview-content-container-desktop:hover {
-  transform: translateZ(0) scale(1.015);
-  cursor: pointer;
+.preview-content-header-container {
+  height: 4rem;
 }
 
 .preview-content-app-icon {

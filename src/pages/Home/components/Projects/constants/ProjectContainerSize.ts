@@ -4,9 +4,9 @@ const PROJECT_CONTAINER_SIZE = {
     width: 350,
   },
   xs: {
-    height: 505,
-    width: 260,
+    height: 539,
+    width: 282,
   },
 }
 
-export default PROJECT_CONTAINER_SIZE
+export { PROJECT_CONTAINER_SIZE }

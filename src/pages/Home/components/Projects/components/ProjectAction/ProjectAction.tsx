@@ -6,7 +6,7 @@ interface Props {
   filled?: boolean
 }
 
-export function Action({ to, label, filled = false }: Props) {
+function ProjectAction({ to, label, filled = false }: Props) {
   if (!to) return null
 
   return (
@@ -15,3 +15,5 @@ export function Action({ to, label, filled = false }: Props) {
     </ExternalLink>
   )
 }
+
+export { ProjectAction }

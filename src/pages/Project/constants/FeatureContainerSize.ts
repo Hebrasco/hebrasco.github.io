@@ -5,8 +5,8 @@ const FEATURE_CONTAINER_SIZE = {
   },
   xs: {
     height: 281,
-    width: 260,
+    width: 286,
   },
 }
 
-export default FEATURE_CONTAINER_SIZE
+export { FEATURE_CONTAINER_SIZE }

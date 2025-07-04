@@ -1,4 +1,4 @@
-.preview-scroll-container {
+.horizontal-list-scroll-container {
   position: relative;
   overflow-x: scroll;
   scrollbar-width: none;
@@ -8,7 +8,7 @@
   margin: -10px 0;
 }
 
-.preview-container {
+.horizontal-list-container {
   overflow: visible;
   --gallery-column-gap: 2rem;
   display: grid;
@@ -23,7 +23,7 @@
   scrollbar-width: none;
 }
 
-.preview-container-card-set {
+.horizontal-list-container-card-set {
   display: grid;
   grid-template-rows: repeat(1, auto);
   grid-template-columns: max-content;
@@ -38,7 +38,18 @@
   padding: 0px calc(50vw - min(1680px, 87.5vw) / 2);
 }
 
-.preview-container-container {
-  padding: 0px 0px var(--sectionGap) 0px;
-  margin-top: var(--sectionGap);
+.horizontal-list-content-container {
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s linear 0.15s;
+  backface-visibility: hidden;
+  justify-content: flex-start;
+  background-color: var(--primaryColor);
+}
+
+.horizontal-list-content-container-desktop:hover {
+  transform: translateZ(0) scale(1.015);
+  cursor: pointer;
 }
