@@ -3,7 +3,7 @@ import { ROUTES } from 'data'
 import { Col, Container, Row } from 'react-bootstrap'
 import { SiteOwnerInfo } from './components'
 
-export function Imprint() {
+function Imprint() {
   const anchorReplace = '/imprint#'
 
   return (
@@ -144,3 +144,5 @@ export function Imprint() {
     </Container>
   )
 }
+
+export { Imprint }

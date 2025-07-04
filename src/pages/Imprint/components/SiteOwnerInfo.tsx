@@ -1,7 +1,7 @@
 import { Email } from 'components/ui'
 import { CONFIG } from 'data'
 
-export function SiteOwnerInfo() {
+function SiteOwnerInfo() {
   return (
     <>
       <ul className="list-unstyled">
@@ -20,3 +20,5 @@ export function SiteOwnerInfo() {
     </>
   )
 }
+
+export { SiteOwnerInfo }
