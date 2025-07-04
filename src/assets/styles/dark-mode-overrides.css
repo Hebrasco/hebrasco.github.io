@@ -18,6 +18,9 @@
     --secondaryHoverColor: var(--primaryTextColor);
 
     --appIconBorderColor: rgb(22, 20, 20);
+
+    --glassBackground: rgba(255, 255, 255, 0.05);
+    --glassBorder: rgba(255, 255, 255, 0.025);
   }
 
   img.invertedColor,

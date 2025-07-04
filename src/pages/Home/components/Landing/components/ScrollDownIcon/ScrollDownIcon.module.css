@@ -19,7 +19,7 @@
   -webkit-animation: down 2s infinite;
   backdrop-filter: blur(var(--glassBlur));
   background-color: var(--glassBackground);
-  border: 1px solid var(--glassBorder);
+  border: 2px solid var(--glassBorder);
 }
 
 .scroll-down-icon::before {
@@ -56,16 +56,5 @@
   }
   40% {
     transform: translate(0);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .scroll-down-icon {
-    border: 2px solid white;
-  }
-
-  .scroll-down-icon::before {
-    border-left: 2px solid white;
-    border-bottom: 2px solid white;
   }
 }

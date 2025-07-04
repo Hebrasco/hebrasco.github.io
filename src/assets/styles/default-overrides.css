@@ -36,7 +36,7 @@
   --landingBackgroundImage: url("../images/me.webp");
 
   --glassBackground: rgba(255, 255, 255, 0.1);
-  --glassBorder: rgba(255, 255, 255, 0.1);
+  --glassBorder: rgba(255, 255, 255, 0.05);
   --glassBlur: 4px;
 
   --containerMargin: calc(50vw - min(1680px, 87.5vw) / 2);
