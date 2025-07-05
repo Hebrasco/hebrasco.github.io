@@ -1,6 +1,6 @@
 :root {
   color-scheme: light dark;
-  --navbarHeight: 6rem;
+  --navbarHeight: 54px;
 
   --primaryColor: #ffffff;
   --secondaryColor: #000000;
@@ -92,7 +92,7 @@ textarea::-webkit-resizer {
 }
 
 .navbar-spacer {
-  margin-top: var(--navbarHeight);
+  margin-top: calc(var(--navbarHeight) + 2.5rem);
 }
 
 footer {

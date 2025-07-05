@@ -16,7 +16,6 @@
   justify-content: center;
   align-items: center;
   animation: down 2s infinite;
-  -webkit-animation: down 2s infinite;
   backdrop-filter: blur(var(--glassBlur));
   background-color: var(--glassBackground);
   border: 2px solid var(--glassBorder);

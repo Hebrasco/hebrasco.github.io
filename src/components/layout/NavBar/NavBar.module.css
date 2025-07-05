@@ -1,6 +1,66 @@
-.navbar-container {
-  padding: 0.5rem 1rem;
-  display: flex;
+.menu-icon {
+  --navbar-button-hitbox: -15px;
+  --menu-icon-size: 1rem;
+  --menu-icon-span-margin: 0.25rem;
+  all: unset;
+  position: relative;
+  height: var(--menu-icon-size);
+  width: var(--menu-icon-size);
+  cursor: pointer;
+}
+
+.menu-icon::after {
+  content: "";
+  left: var(--navbar-button-hitbox);
+  right: var(--navbar-button-hitbox);
+  bottom: var(--navbar-button-hitbox);
+  top: var(--navbar-button-hitbox);
+  position: absolute;
+}
+
+.menu-icon span {
+  --menu-icon-span-size: 2px;
+  --menu-icon-animation-duration-top: 150ms;
+  --menu-icon-animation-duration-transform: 250ms;
+  display: block;
+  position: absolute;
+  height: var(--menu-icon-span-size);
+  width: 100%;
+  border-radius: 3px;
+  transform: rotate(0deg);
+  transition:
+    top var(--menu-icon-animation-duration-top) ease-in-out
+    var(--menu-icon-animation-duration-transform),
+    transform var(--menu-icon-animation-duration-transform) ease-in-out;
+  background-color: var(--primaryTextColor);
+}
+
+.menu-icon.open > span {
+  transition:
+    top var(--menu-icon-animation-duration-top) ease-in-out,
+    transform var(--menu-icon-animation-duration-transform) ease-in-out
+    var(--menu-icon-animation-duration-top);
+}
+
+.menu-icon > span:nth-child(1) {
+  top: var(--menu-icon-span-margin);
+}
+
+.menu-icon > span:nth-child(2) {
+  top: calc(var(--menu-icon-size) - var(--menu-icon-span-margin) - var(--menu-icon-span-size));
+}
+
+.menu-icon.open > span:nth-child(2),
+.menu-icon.open > span:nth-child(1) {
+  top: 50%;
+}
+
+.menu-icon.open > span:nth-child(1) {
+  transform: rotate(-45deg);
+}
+
+.menu-icon.open > span:nth-child(2) {
+  transform: rotate(45deg);
 }
 
 .navbar-glass {
@@ -20,5 +80,46 @@
 }
 
 .navbar-glass-mobile {
-  border-radius: 29px;
+  border-radius: 27px;
+}
+
+.navbar-container {
+  padding: 0.75rem 1.5rem;
+  display: flex;
+}
+
+.navbar-brand-container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand-container > a {
+  font-size: 1.25em;
+}
+
+.navbar-items-container {
+  display: flex;
+}
+
+.navbar-items-container-mobile {
+  display: flex;
+  flex-direction: column;
+  transition: height 1s ease;
+  overflow: hidden;
+}
+
+.navbar-items-collapse:not(.expanded) {
+  display: none;
+}
+
+.navbar-items-collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 350ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collapsing {
+    transition: none;
+  }
 }
