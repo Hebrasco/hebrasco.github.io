@@ -119,7 +119,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .collapsing {
+  .navbar-items-collapsing {
     transition: none;
   }
 }

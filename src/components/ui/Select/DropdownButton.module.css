@@ -1,0 +1,11 @@
+.dropdown-button {
+  all: unset;
+}
+
+.dropdown-button > i.open::before {
+  transform: rotate(180deg);
+}
+
+.dropdown-button > i::before {
+  transition: transform 250ms ease-in-out;
+}

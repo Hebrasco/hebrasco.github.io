@@ -7,6 +7,10 @@
   font-family: "Default", sans-serif;
 }
 
+button {
+  all: unset;
+}
+
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;

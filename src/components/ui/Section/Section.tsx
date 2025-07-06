@@ -12,7 +12,7 @@ interface Props extends PropsWithChildren {
   title?: string
   anchor?: string
   anchorReplace?: string
-  Action?: () => ReactNode
+  Action?: ReactNode
 }
 
 function Section({
@@ -56,7 +56,7 @@ function Section({
           className={`d-flex justify-content-between ${conditionalStyle(fluidContainer, styles['section-fluid'])} mb-3`}
         >
           {title && TitleComponent}
-          {Action && <Action />}
+          {Action}
         </div>
         {Array.isArray(children) ? children.map((child) => child) : children}
       </div>

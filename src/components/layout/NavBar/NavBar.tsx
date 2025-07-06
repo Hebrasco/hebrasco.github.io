@@ -19,6 +19,7 @@ function NavBar() {
 
     element.classList.remove(styles['navbar-items-collapse'])
     element.classList.add(styles['navbar-items-collapsing'])
+
     executeAfterTransition(element, () => {
       element.classList.remove(styles['navbar-items-collapsing'])
       element.classList.add(styles['navbar-items-collapse'])
