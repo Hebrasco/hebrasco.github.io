@@ -37,7 +37,7 @@ function Section({
     if (sm) element = 'h4'
     if (xs) element = 'h5'
 
-    return createElement(element, { className: `fw-bold` }, title)
+    return createElement(element, { className: '' }, title)
   }, [sm, md, lg, xl, xs, title])
 
   return (
@@ -53,7 +53,7 @@ function Section({
       `}
       >
         <div
-          className={`d-flex justify-content-between ${conditionalStyle(fluidContainer, styles['section-fluid'])} mb-3`}
+          className={`d-flex justify-content-between ${conditionalStyle(fluidContainer, styles['section-fluid'])}`}
         >
           {title && TitleComponent}
           {Action}

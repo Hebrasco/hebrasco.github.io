@@ -11,7 +11,7 @@ function ProjectKeyInfo() {
   return (
     <Container>
       <Section md>
-        <Row className="g-4">
+        <Row className="gap-4">
           <Column md={3} xs={6}>
             <KeyInfoTitle title="Frameworks" />
             <div className="d-flex flex-wrap gap-2">

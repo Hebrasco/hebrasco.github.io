@@ -1,9 +1,9 @@
 import { Container } from 'components/layout'
 import { Section, Select } from 'components/ui'
 import { HorizontalList } from 'components/ui/HorizontalList'
-import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.module.css'
+import { ListContainer } from 'components/ui/HorizontalList/ListContainer'
 import { PLATFORM } from 'data/platform'
-import { useColorScheme, useScrollSnapAlign, useWindowSize } from 'hooks'
+import { useColorScheme, useWindowSize } from 'hooks'
 import { SCREENSHOT_CONTAINER_SIZE } from 'pages/Project/constants'
 import { useProject } from 'pages/Project/hooks/useProject'
 import { useMemo, useState } from 'react'
@@ -11,7 +11,6 @@ import { useMemo, useState } from 'react'
 function ProjectScreenshots() {
   const [platformScreenshots, setPlatformScreenshots] = useState<keyof typeof PLATFORM>('iphone')
   const { project } = useProject()
-  const scrollSnapAlign = useScrollSnapAlign()
   const { colorScheme } = useColorScheme()
   const { isMobile } = useWindowSize()
 
@@ -63,25 +62,21 @@ function ProjectScreenshots() {
       >
         <HorizontalList key={`screenshot-container-${platformScreenshots}`}>
           {project.screenshots[platformScreenshots]?.[colorScheme].map((screenshot, index) => (
-            <li
-              className={`${horizontalListStyles['horizontal-list-content-container']} p-0`}
+            <ListContainer
               // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
               key={`${platformScreenshots}-screenshot-${index}`}
-              style={{
-                backgroundColor: 'unset',
-                height: screenshotSizes[platformScreenshots].height,
-                justifyContent: 'flex-start',
-                scrollSnapAlign,
-                width: screenshotSizes[platformScreenshots].width,
-              }}
             >
               <img
                 alt={screenshot.altText}
                 height={screenshotSizes[platformScreenshots].height}
                 src={screenshot.src}
+                style={{
+                  backgroundColor: 'unset',
+                  justifyContent: 'flex-start',
+                }}
                 width={screenshotSizes[platformScreenshots].width}
               />
-            </li>
+            </ListContainer>
           ))}
         </HorizontalList>
       </Section>

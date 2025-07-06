@@ -13,7 +13,7 @@ interface Props {
 export function SocialLink({ label, to, src, altText, useIcon, invertImage = false }: Props) {
   return (
     <ExternalLink
-      className={`d-md-flex align-items-center`}
+      className="align-content-center"
       fullWidth={!useIcon}
       style={{ width: useIcon ? '1.5rem' : undefined }}
       to={to}
@@ -24,6 +24,7 @@ export function SocialLink({ label, to, src, altText, useIcon, invertImage = fal
           className={`${conditionalStyle(invertImage, 'invertedColor')}`}
           height="100%"
           src={src}
+          style={{ objectFit: 'contain' }}
           width="100%"
         />
       ) : (

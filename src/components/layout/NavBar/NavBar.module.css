@@ -32,7 +32,7 @@
     top var(--menu-icon-animation-duration-top) ease-in-out
     var(--menu-icon-animation-duration-transform),
     transform var(--menu-icon-animation-duration-transform) ease-in-out;
-  background-color: var(--primaryTextColor);
+  background-color: var(--primary-text-color);
 }
 
 .menu-icon.open > span {
@@ -86,6 +86,10 @@
 .navbar-container {
   padding: 0.75rem 1.5rem;
   display: flex;
+}
+
+.navbar-container-mobile {
+  flex-direction: column;
 }
 
 .navbar-brand-container {

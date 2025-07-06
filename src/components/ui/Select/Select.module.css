@@ -15,19 +15,17 @@
   z-index: 100;
   padding: 0.5rem;
   border-radius: 22px;
-  border: 2px solid var(--accentColor);
-  background-color: var(--primaryColor);
+  border: 2px solid var(--accent-color);
+  background-color: var(--primary-color);
 }
 
 .select-menu-arrow {
-  height: 1rem;
-  width: 1rem;
   position: absolute;
   top: -1.25rem;
   right: 1rem;
   border-top: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--accentColor);
+  border-bottom: 10px solid var(--accent-color);
   border-left: 10px solid transparent;
   z-index: -100;
 }
@@ -39,7 +37,6 @@
 
 .select-item {
   display: flex;
-  color: var(--primaryTextColor);
   padding-right: calc(
     var(--select-item-padding) +
     var(--select-item-icon-font-size) +
@@ -49,12 +46,10 @@
 }
 .select-item:active {
   background-color: unset;
-  color: var(--primaryTextColor);
 }
 
 .select-item:hover {
-  background-color: var(--accentColor);
-  color: var(--primaryTextColor);
+  background-color: var(--accent-color);
 }
 
 .select-item > i {

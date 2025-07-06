@@ -37,19 +37,3 @@
   list-style: none;
   padding: 0px calc(50vw - min(1680px, 87.5vw) / 2);
 }
-
-.horizontal-list-content-container {
-  padding: 30px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.15s linear 0.15s;
-  backface-visibility: hidden;
-  justify-content: flex-start;
-  background-color: var(--primaryColor);
-}
-
-.horizontal-list-content-container-desktop:hover {
-  transform: translateZ(0) scale(1.015);
-  cursor: pointer;
-}

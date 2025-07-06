@@ -22,7 +22,7 @@ function ExternalLink({
     <a
       className={`
         ${conditionalStyle(!fullWidth, styles['external-account-link'])}
-        ${conditionalStyle(button, 'btn')}
+        ${conditionalStyle(button, 'button')}
         ${className}
       `}
       href={to}

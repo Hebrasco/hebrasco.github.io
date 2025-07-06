@@ -5,8 +5,8 @@ import { CONFIG } from 'data'
 function Actions() {
   return (
     <Row>
-      <Column className="d-flex align-items-center gap-3" xs={12}>
-        <ExternalLink button className="btn-dark" to="/daniel_bedrich_resume.pdf">
+      <Column className="d-flex align-items-center gap-3 mt-3" xs={12}>
+        <ExternalLink button to="/daniel_bedrich_resume.pdf">
           Download Resume
         </ExternalLink>
         <span className="d-inline-flex align-items-center">

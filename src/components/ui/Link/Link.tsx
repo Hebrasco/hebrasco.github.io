@@ -17,7 +17,7 @@ function Link({ to, label, navItem = false, className = '', style }: Props) {
 
   return (
     <RouterLink
-      className={`${conditionalStyle(navItem, 'text-decoration-none')} ${className}`}
+      className={`${conditionalStyle(navItem, 'nav-item')} ${className}`}
       onClick={handleClick}
       style={style}
       to={to}

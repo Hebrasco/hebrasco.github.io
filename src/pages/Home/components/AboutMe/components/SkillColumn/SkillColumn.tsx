@@ -13,7 +13,7 @@ function SkillColumn({ title, data }: Props) {
   return (
     <Column className={`${styles['skills-column']}`} md={4} xs={12}>
       <KeyInfoTitle title={title} />
-      <ul className="list-unstyled mb-0 d-flex flex-wrap gap-2">
+      <ul className="list-unstyled d-flex flex-wrap gap-2">
         {data.map((skill) => (
           <li className="d-flex" key={`skill-${skill.name}`}>
             <ProjectBadge skill={skill} />

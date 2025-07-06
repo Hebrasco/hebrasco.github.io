@@ -1,15 +1,15 @@
 import { Container } from 'components/layout'
 import { Section } from 'components/ui'
 import { HorizontalList } from 'components/ui/HorizontalList'
-import horizontalListStyles from 'components/ui/HorizontalList/HorizontalList.module.css'
-import { useScrollSnapAlign, useWindowSize } from 'hooks'
+import { ListContainer } from 'components/ui/HorizontalList/ListContainer'
+import { useWindowSize } from 'hooks'
 import { FEATURE_CONTAINER_SIZE } from 'pages/Project/constants'
 import { useProject } from 'pages/Project/hooks/useProject'
 import { conditionalStyle } from 'utils'
+import styles from './ProjectFeatures.module.css'
 
 function ProjectFeatures() {
   const { project } = useProject()
-  const scrollSnapAlign = useScrollSnapAlign()
   const { isMobile } = useWindowSize()
 
   const featureWidth = isMobile ? FEATURE_CONTAINER_SIZE.xs.width : FEATURE_CONTAINER_SIZE.md.width
@@ -22,21 +22,27 @@ function ProjectFeatures() {
       <Section fluidContainer lg title="Features">
         <HorizontalList>
           {project.features.map((feature, index) => (
-            <li
-              className={`rounded ${horizontalListStyles['horizontal-list-content-container']} bg-light`}
+            <ListContainer
               // biome-ignore lint/suspicious/noArrayIndexKey: No other key available
               key={index}
-              style={{
-                height: featureHeight,
-                justifyContent: 'flex-start',
-                scrollSnapAlign,
-                width: featureWidth,
-              }}
             >
-              <i className={`${feature.icon} h1`} style={{ marginBottom: 15 }}></i>
-              <p className={`${conditionalStyle(isMobile, 'h4', 'h3')} fw-bold`}>{feature.title}</p>
-              <p>{feature.description}</p>
-            </li>
+              <div
+                className="rounded primary-bg"
+                style={{
+                  height: featureHeight,
+                  justifyContent: 'flex-start',
+                  width: featureWidth,
+                }}
+              >
+                <div className={styles.container}>
+                  <i className={`${feature.icon} display-1`} style={{ marginBottom: 15 }}></i>
+                  <p className={`${conditionalStyle(isMobile, 'display-4', 'display-3')} fw-bold`}>
+                    {feature.title}
+                  </p>
+                  <p>{feature.description}</p>
+                </div>
+              </div>
+            </ListContainer>
           ))}
         </HorizontalList>
       </Section>

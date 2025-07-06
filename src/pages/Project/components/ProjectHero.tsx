@@ -1,19 +1,22 @@
 import { Column, Container, Row } from 'components/layout'
 import { ExternalLink, Section } from 'components/ui'
+import { useWindowSize } from 'hooks'
 import { ProjectTitleImage } from 'pages/Project/components/ProjectTitleImage'
 import { useProject } from 'pages/Project/hooks/useProject'
+import { conditionalStyle } from 'utils'
 
 function ProjectHero() {
   const { project } = useProject()
+  const { isMobile } = useWindowSize()
 
   return (
     <Container>
       <Section>
-        <div className="p-5 bg-light rounded d-flex">
-          <Row>
+        <div className="p-5 primary-bg rounded d-flex">
+          <Row gap={isMobile ? 0 : 3}>
             <Column className="d-flex flex-column justify-content-center" md={6}>
               <h1 className="fw-bold">{project.name}</h1>
-              <div className="my-2 d-flex">
+              <div className="mv-2 d-flex">
                 {project.onlineURL && (
                   <span className="d-inline-flex align-items-center">
                     <ExternalLink to={project.onlineURL}>App Store</ExternalLink>
@@ -27,11 +30,8 @@ function ProjectHero() {
                   </span>
                 )}
               </div>
-              <Column className="d-flex d-md-none mt-4">
-                <ProjectTitleImage />
-              </Column>
             </Column>
-            <Column className="d-none d-md-flex" md={6}>
+            <Column className={conditionalStyle(isMobile, 'mt-4')} md={6}>
               <ProjectTitleImage />
             </Column>
           </Row>

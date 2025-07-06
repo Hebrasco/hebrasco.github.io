@@ -66,14 +66,14 @@ function NavBar() {
       className={`${styles['navbar-glass']} ${conditionalStyle(
         isMobile,
         styles['navbar-glass-mobile']
-      )} shadow p-0`}
+      )} shadow`}
     >
       <Container
-        className={`${conditionalStyle(isMobile, 'd-block')} ${styles['navbar-container']}`}
+        className={`${conditionalStyle(isMobile, 'd-block')} ${styles['navbar-container']} ${conditionalStyle(isMobile, styles['navbar-container-mobile'])}`}
         fluid
       >
         <div className={styles['navbar-brand-container']}>
-          <a className="me-5 text-decoration-none" href={ROUTES.home}>
+          <a className="me-5 nav-item" href={ROUTES.home}>
             {CONFIG.profile.name}
           </a>
           {isMobile && (
