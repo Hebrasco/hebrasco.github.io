@@ -1,6 +1,6 @@
+import { Column, Container, Row } from 'components/layout'
 import { Section } from 'components/ui'
 import { ROUTES } from 'data'
-import { Col, Container, Row } from 'react-bootstrap'
 import { SiteOwnerInfo } from './components'
 
 function Imprint() {
@@ -9,7 +9,7 @@ function Imprint() {
   return (
     <Container className="navbar-spacer">
       <Row>
-        <Col>
+        <Column>
           <Section anchor={ROUTES.imprintHash} anchorReplace={anchorReplace} lg title="Impressum">
             <b>Inhaber der Seite</b>
             <SiteOwnerInfo />
@@ -139,7 +139,7 @@ function Imprint() {
               </p>
             </Section>
           </Section>
-        </Col>
+        </Column>
       </Row>
     </Container>
   )

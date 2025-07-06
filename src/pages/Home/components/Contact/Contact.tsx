@@ -1,15 +1,19 @@
+import { Column, Container, Row } from 'components/layout'
 import { Email, Section } from 'components/ui'
 import { ROUTES } from 'data'
-import { Col, Container } from 'react-bootstrap'
 
 function Contact() {
   return (
     <Container>
       <Section anchor={ROUTES.contact} lg title="Contact">
-        <p>New projects, freelance inquiry or even a coffee.</p>
-        <Col>
-          <Email />
-        </Col>
+        <Row>
+          <Column>
+            <p>New projects, freelance inquiry or even a coffee.</p>
+          </Column>
+          <Column>
+            <Email />
+          </Column>
+        </Row>
       </Section>
     </Container>
   )

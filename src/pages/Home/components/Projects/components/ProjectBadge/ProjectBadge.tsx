@@ -6,7 +6,7 @@ interface Props {
 }
 
 function ProjectBadge({ skill }: Props) {
-  return <span className={`${styles.badge} py-2 px-3`}>{skill.name}</span>
+  return <span className={`${styles.badge} pv-2 ph-3`}>{skill.name}</span>
 }
 
 export { ProjectBadge }

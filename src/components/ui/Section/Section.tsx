@@ -12,7 +12,7 @@ interface Props extends PropsWithChildren {
   title?: string
   anchor?: string
   anchorReplace?: string
-  Action?: () => ReactNode
+  Action?: ReactNode
 }
 
 function Section({
@@ -37,7 +37,7 @@ function Section({
     if (sm) element = 'h4'
     if (xs) element = 'h5'
 
-    return createElement(element, { className: `fw-bold` }, title)
+    return createElement(element, { className: '' }, title)
   }, [sm, md, lg, xl, xs, title])
 
   return (
@@ -53,10 +53,10 @@ function Section({
       `}
       >
         <div
-          className={`d-flex justify-content-between ${conditionalStyle(fluidContainer, styles['section-fluid'])} mb-3`}
+          className={`d-flex justify-content-between ${conditionalStyle(fluidContainer, styles['section-fluid'])}`}
         >
           {title && TitleComponent}
-          {Action && <Action />}
+          {Action}
         </div>
         {Array.isArray(children) ? children.map((child) => child) : children}
       </div>

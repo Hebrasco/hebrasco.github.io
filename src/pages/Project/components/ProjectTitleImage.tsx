@@ -1,6 +1,5 @@
 import { useColorScheme } from 'hooks'
 import { useProject } from 'pages/Project/hooks/useProject'
-import { Image } from 'react-bootstrap'
 
 function ProjectTitleImage() {
   const {
@@ -10,8 +9,9 @@ function ProjectTitleImage() {
 
   return (
     <div className="d-flex align-items-end justify-content-end">
-      <Image
+      <img
         alt={titleImage[colorScheme].altText}
+        height="100%"
         loading="lazy"
         src={titleImage[colorScheme].src}
         width="100%"

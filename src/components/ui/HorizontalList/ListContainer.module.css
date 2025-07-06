@@ -1,0 +1,24 @@
+.list-item-container {
+  --list-item-padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s linear 0.15s;
+  backface-visibility: hidden;
+  justify-content: flex-start;
+  background-color: var(--primary-color);
+  overflow: hidden;
+}
+
+.list-item-container:hover,
+.list-item-container > a:hover {
+  text-decoration: none;
+}
+.list-item-container > a:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .list-item-container.scaling:hover {
+    transform: perspective(0px) scale(1.015);
+  }
+}

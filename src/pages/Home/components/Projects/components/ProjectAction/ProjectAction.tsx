@@ -1,4 +1,5 @@
 import { ExternalLink } from 'components/ui'
+import { conditionalStyle } from 'utils'
 
 interface Props {
   to?: string
@@ -10,7 +11,7 @@ function ProjectAction({ to, label, filled = false }: Props) {
   if (!to) return null
 
   return (
-    <ExternalLink button className={filled ? 'btn-dark' : 'btn-outline-dark'} to={to}>
+    <ExternalLink button className={conditionalStyle(!filled, 'button-outline')} to={to}>
       {label}
     </ExternalLink>
   )

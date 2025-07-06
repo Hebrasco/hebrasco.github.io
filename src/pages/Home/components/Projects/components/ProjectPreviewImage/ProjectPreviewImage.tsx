@@ -1,5 +1,4 @@
 import { useColorScheme } from 'hooks'
-import { Image } from 'react-bootstrap'
 import styles from './ProjectPreviewImage.module.css'
 import type { PreviewImage } from 'types/PreviewImage'
 
@@ -12,11 +11,13 @@ function ProjectPreviewImage({ image }: Props) {
 
   return (
     <div className={`d-flex justify-content-center ${styles['preview-image-container']}`}>
-      <Image
+      <img
         alt={image[colorScheme].altText}
         className={styles['preview-image']}
+        height="100%"
         loading="lazy"
         src={image[colorScheme].src}
+        width="100%"
       />
     </div>
   )

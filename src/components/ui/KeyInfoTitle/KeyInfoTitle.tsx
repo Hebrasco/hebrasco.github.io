@@ -1,11 +1,9 @@
-import styles from './KeyInfoTitle.module.css'
-
 interface Props {
   title: string
 }
 
 function KeyInfoTitle({ title }: Props) {
-  return <p className={styles['key-info-title']}>{title}</p>
+  return <p className="display-5 fw-bold">{title}</p>
 }
 
 export { KeyInfoTitle }

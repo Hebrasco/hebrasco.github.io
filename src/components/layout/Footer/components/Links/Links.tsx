@@ -1,14 +1,15 @@
+import { Column } from 'components/layout/Column'
 import { Link, SocialLinks } from 'components/ui'
 import { ROUTES } from 'data'
 import { useWindowSize } from 'hooks'
-import { Col } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
+import styles from './Links.module.css'
 
 function Links() {
   const { isMobile } = useWindowSize()
 
   return (
-    <Col className="align-content-center" md="auto" xs="12">
+    <Column className={conditionalStyle(!isMobile, styles['links-container'])} md={6} xs={12}>
       <div className="d-flex gap-4">
         <Link label="Imprint" navItem to={ROUTES.imprintHash} />
         <Link
@@ -19,7 +20,7 @@ function Links() {
         />
         <SocialLinks useIcons />
       </div>
-    </Col>
+    </Column>
   )
 }
 
