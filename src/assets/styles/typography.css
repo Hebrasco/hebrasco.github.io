@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Default";
+  font-family: "Varela";
   src: url("../fonts/VarelaRound-Regular.ttf") format("truetype");
   font-display: block;
 }
@@ -26,7 +26,7 @@
 }
 
 * {
-  font-family: "Default", system-ui, sans-serif;
+  font-family: "Varela", system-ui, sans-serif;
 }
 
 a,
