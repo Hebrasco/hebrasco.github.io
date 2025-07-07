@@ -82,9 +82,9 @@ function NavBar() {
               onClick={toggleIsExpanded}
               type="button"
             >
+              <span></span>
+              <span></span>
               <p className="sr-only">{isExpanded ? 'open' : 'close'} navbar</p>
-              <span></span>
-              <span></span>
             </button>
           )}
         </div>
