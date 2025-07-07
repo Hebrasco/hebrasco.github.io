@@ -11,7 +11,9 @@ function Imprint() {
       <Row>
         <Column>
           <Section anchor={ROUTES.imprintHash} anchorReplace={anchorReplace} lg title="Impressum">
-            <b>Inhaber der Seite</b>
+            <p>
+              <b>Inhaber der Seite</b>
+            </p>
             <SiteOwnerInfo />
           </Section>
           <Section

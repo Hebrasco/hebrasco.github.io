@@ -5,7 +5,9 @@ function HorizontalList({ children }: PropsWithChildren) {
   return (
     <div className={styles['horizontal-list-scroll-container']}>
       <div className={styles['horizontal-list-container']}>
-        <ul className={styles['horizontal-list-container-card-set']}>{children}</ul>
+        <ul className={`${styles['horizontal-list-container-card-set']} list-unstyled`}>
+          {children}
+        </ul>
       </div>
     </div>
   )

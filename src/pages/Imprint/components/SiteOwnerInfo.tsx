@@ -11,7 +11,9 @@ function SiteOwnerInfo() {
           {CONFIG.profile.zip} {CONFIG.profile.city}
         </li>
       </ul>
-      <b>Kontakt</b>
+      <p>
+        <b>Kontakt</b>
+      </p>
       <ul className="list-unstyled">
         <li>
           <Email />

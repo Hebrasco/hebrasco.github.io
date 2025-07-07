@@ -19,10 +19,26 @@
   padding: 0;
 }
 
+p:not(:last-child) {
+  margin-bottom: var(--spacings-3);
+}
+
+ul {
+  margin-bottom: var(--spacings-3);
+}
+
+li {
+  margin-left: var(--spacings-3);
+  margin-bottom: var(--spacings-2);
+}
+
 .navbar-spacer {
   margin-top: calc(var(--navbarHeight) + 2.5rem);
 }
 
+.m-0 {
+  margin: var(--spacings-0);
+}
 .m-1 {
   margin: var(--spacings-1);
 }

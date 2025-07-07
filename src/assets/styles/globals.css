@@ -7,7 +7,7 @@
 }
 
 html {
-  scroll-padding-top: calc(56px);
+  scroll-padding-top: calc(0px);
 }
 
 body {
@@ -132,6 +132,10 @@ button {
 
 .list-unstyled {
   list-style: none;
+}
+
+.list-unstyled > li {
+  margin: 0;
 }
 
 .shadow {
