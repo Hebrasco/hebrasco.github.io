@@ -1,3 +1,4 @@
+import Resume from 'assets/files/daniel_bedrich_resume.pdf'
 import { Column, Row } from 'components/layout'
 import { ExternalLink } from 'components/ui'
 import { CONFIG } from 'data'
@@ -6,7 +7,7 @@ function Actions() {
   return (
     <Row>
       <Column className="d-flex align-items-center gap-3 mt-3" xs={12}>
-        <ExternalLink button to="/daniel_bedrich_resume.pdf">
+        <ExternalLink button to={Resume}>
           Download Resume
         </ExternalLink>
         <span className="d-inline-flex align-items-center">
