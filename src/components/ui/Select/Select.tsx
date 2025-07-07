@@ -1,6 +1,5 @@
 import { SelectButton } from 'components/ui/Select/SelectButton'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { conditionalStyle } from 'utils'
 import styles from './Select.module.css'
 
 interface Props<T extends Record<string, string>> {
@@ -54,8 +53,9 @@ function Select<T extends Record<string, string>>({
               type="button"
             >
               <i
-                className={`bi bi-check-circle-fill ${conditionalStyle(selectedItem === item, 'visible', 'invisible')}`}
-              ></i>
+                className="bi bi-check-circle-fill"
+                style={{ visibility: selectedItem === item ? 'visible' : 'hidden' }}
+              />
               {valueMap[item]}
             </button>
           ))}

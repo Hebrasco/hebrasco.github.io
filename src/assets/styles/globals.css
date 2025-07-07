@@ -2,6 +2,10 @@
   --borderRadius: 44px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-padding-top: calc(56px);
 }
@@ -21,6 +25,7 @@ a:hover {
 
 button {
   all: unset;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .button {
@@ -127,4 +132,8 @@ button {
 
 .list-unstyled {
   list-style: none;
+}
+
+.shadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

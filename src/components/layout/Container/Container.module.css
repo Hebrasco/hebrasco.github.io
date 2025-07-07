@@ -1,4 +1,4 @@
 .container {
-  margin-left: var(--containerMargin) !important;
-  margin-right: var(--containerMargin) !important;
+  margin-left: var(--containerMargin);
+  margin-right: var(--containerMargin);
 }
