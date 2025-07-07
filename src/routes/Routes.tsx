@@ -10,17 +10,13 @@ function Routes() {
   useEffect(() => {
     const scrollToOrigin = !hash && !!window.scrollY
 
-    if (scrollToOrigin)
-      window.scrollTo({
-        behavior: 'instant' as ScrollBehavior,
-        left: 0,
-        top: 0,
-      })
+    if (!scrollToOrigin) return
 
-    const id = hash.replace('#', '')
-    const element = document.getElementById(id)
-
-    if (element) element.scrollIntoView()
+    window.scrollTo({
+      behavior: 'instant' as ScrollBehavior,
+      left: 0,
+      top: 0,
+    })
   }, [pathname, hash])
 
   return (
