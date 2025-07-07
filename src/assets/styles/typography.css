@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Default";
   src: url("../fonts/VarelaRound-Regular.ttf") format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 :root {
@@ -17,7 +17,7 @@
 }
 
 * {
-  font-family: "Default", sans-serif;
+  font-family: "Default", system-ui, sans-serif;
 }
 
 a,
