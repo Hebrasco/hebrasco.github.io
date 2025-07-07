@@ -1,16 +1,16 @@
-import React from 'react'
-import { Col, Row } from 'react-bootstrap'
+import { Column, Row } from 'components/layout'
 
-export function AboutText(): JSX.Element {
+function AboutText() {
   return (
     <Row>
-      <Col xs={12} sm={10} md={6}>
+      <Column md={5} sm={10} xs={12}>
         <p>
-          I have been working in Front-End and Mobile development since 2015 and
-          have already implemented various projects for web, Android and iOS in
-          small and large teams.
+          I have been working in Front-End and Mobile development since 2015 and have already
+          implemented various projects for web, Android and iOS in small and large teams.
         </p>
-      </Col>
+      </Column>
     </Row>
   )
 }
+
+export { AboutText }

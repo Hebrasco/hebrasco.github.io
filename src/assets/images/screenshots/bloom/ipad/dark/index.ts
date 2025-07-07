@@ -1,0 +1,5 @@
+export { default as DualImage } from './dual-image.webp'
+export { default as SingleImageCouple } from './single-image-couple.webp'
+export { default as SingleImageEngaged } from './single-image-engaged.webp'
+export { default as SingleImageMarried } from './single-image-married.webp'
+export { default as Widgets } from './widgets.webp'

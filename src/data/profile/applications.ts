@@ -1,11 +1,13 @@
-import { ApplicationCollection } from 'types'
+import type { ApplicationCollection } from 'types'
 
-export const APPLICATIONS: ApplicationCollection = {
-  xcode: { name: 'Xcode' },
+const APPLICATIONS: ApplicationCollection = {
   git: { name: 'Git' },
-  gitTower: { name: 'GitTower' },
   gitHub: { name: 'GitHub' },
-  vsCode: { name: 'VS Code' },
-  vs: { name: 'Visual Studio' },
+  gitTower: { name: 'GitTower' },
   jira: { name: 'Jira' },
+  vs: { name: 'Visual Studio' },
+  vsCode: { name: 'VS Code' },
+  xcode: { name: 'Xcode' },
 } as const
+
+export { APPLICATIONS }

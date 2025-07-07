@@ -1,16 +1,16 @@
-import { Skill } from 'types'
+import type { Skill } from 'types'
 
 type AppleFrameworkCollection = {
-  ios: Skill
   uiKit: Skill
   swiftUI: Skill
-  localNotifications: Skill
+  swiftCharts: Skill
+  swiftData: Skill
+  notifications: Skill
   widgetKit: Skill
   storeKit: Skill
   coreData: Skill
   metal: Skill
   coreImage: Skill
-  macOS: Skill
   cloudKit: Skill
 }
 
@@ -27,8 +27,15 @@ type WebFrameworkCollection = {
   materialUI: Skill
 }
 
-export type FrameworkCollection = {
+type OtherFrameworkCollection = {
+  ci: Skill
+}
+
+type FrameworkCollection = {
   apple: AppleFrameworkCollection
   crossPlatform: CrossPlatformFrameworkCollection
   web: WebFrameworkCollection
+  other: OtherFrameworkCollection
 }
+
+export type { FrameworkCollection }

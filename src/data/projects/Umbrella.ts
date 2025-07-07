@@ -1,43 +1,149 @@
 import { UmbrellaPreviews } from 'assets/images/previews'
-import { PROFILE } from 'data'
-import { Project } from 'types'
+import {
+  ScreenshotsIpadDark,
+  ScreenshotsIpadLight,
+  ScreenshotsIphoneDark,
+  ScreenshotsIphoneLight,
+  ScreenshotsMacDark,
+  ScreenshotsMacLight,
+} from 'assets/images/screenshots/umbrella'
+import { PROFILE, PROJECT_STATUS } from 'data'
+import { PLATFORM } from 'data/platform'
+import type { Project } from 'types'
 
-export const UMBRELLA: Project = {
-  name: 'Umbrella',
+const UMBRELLA: Project = {
   description:
-    'This app is an task management tool. You can create and manage tasks of different projects. Tasks are managed in your self managed boards, sprints and milestones. A label, due date, milestone, estimated and actual time, priority and more can be added to a task.',
+    'This app is a task management tool. You can create and manage tasks of different projects. Tasks are managed in your self managed boards, sprints and milestones. A label, milestone, estimated and actual time, priority and more can be added to a task.',
+  features: [
+    {
+      description:
+        'Tasks can managed in a backlog. A task has various settings and attributes that can be set.',
+      icon: 'bi bi-list-task',
+      title: 'Tasks',
+    },
+    {
+      description:
+        'A project has a board with columns where the assigned tasks are moved through different stages.',
+      icon: 'bi bi-kanban',
+      title: 'Board',
+    },
+    {
+      description: 'Sprints have their own boards and tasks.',
+      icon: 'bi bi-bar-chart-steps',
+      title: 'Sprints',
+    },
+    {
+      description:
+        'Milestones contain tasks for a specific goal and make it easier to see progress on that goal.',
+      icon: 'bi bi-signpost',
+      title: 'Milestones',
+    },
+    {
+      description: 'All projects and tasks are synced with iCloud in realtime.',
+      icon: 'bi bi-cloud',
+      title: 'Cloud Sync',
+    },
+  ],
+  frameworks: [
+    PROFILE.frameworks.apple.swiftUI,
+    PROFILE.frameworks.apple.coreData,
+    PROFILE.frameworks.apple.cloudKit,
+  ],
+  id: 'umbrella',
+  languages: [PROFILE.languages.swift],
+  name: 'Umbrella',
+  onlineURL: undefined,
+  platforms: [PLATFORM.iphone, PLATFORM.ipad, PLATFORM.mac],
+  previewImage: {
+    dark: {
+      altText: 'Preview screenshot of Umbrella in dark mode',
+      src: ScreenshotsIphoneDark.Backlog,
+    },
+    light: {
+      altText: 'Preview screenshot of Umbrella in light mode',
+      src: ScreenshotsIphoneLight.Backlog,
+    },
+  },
+  screenshots: {
+    ipad: {
+      dark: [
+        {
+          altText: 'Screenshot of ipad app in dark mode of the issue detail screen',
+          src: ScreenshotsIpadDark.IssueDetails,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of ipad app in light mode of the issue detail screen',
+          src: ScreenshotsIpadLight.IssueDetails,
+        },
+      ],
+    },
+    iphone: {
+      dark: [
+        {
+          altText: 'Screenshot of iphone app in dark mode of the issue backlog screen',
+          src: ScreenshotsIphoneDark.Backlog,
+        },
+        {
+          altText: 'Screenshot of iphone app in dark mode of the issue detail screen',
+          src: ScreenshotsIphoneDark.IssueDetails,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of iphone app in light mode of the issue backlog screen',
+          src: ScreenshotsIphoneLight.Backlog,
+        },
+        {
+          altText: 'Screenshot of iphone app in light mode of the issue detail screen',
+          src: ScreenshotsIphoneLight.IssueDetails,
+        },
+      ],
+    },
+    mac: {
+      dark: [
+        {
+          altText: 'Screenshot of iphone app in dark mode of the board screen',
+          src: ScreenshotsMacDark.Board,
+        },
+        {
+          altText: 'Screenshot of iphone app in dark mode of the issue detail screen',
+          src: ScreenshotsMacDark.IssueDetails,
+        },
+      ],
+      light: [
+        {
+          altText: 'Screenshot of iphone app in light mode of the board screen',
+          src: ScreenshotsMacLight.Board,
+        },
+        {
+          altText: 'Screenshot of iphone app in light mode of the issue detail screen',
+          src: ScreenshotsMacLight.IssueDetails,
+        },
+      ],
+    },
+  },
+  sourceURL: undefined,
+  status: {
+    type: PROJECT_STATUS.comingSoon,
+  },
   tasks: [
     'Conception and development',
     'User interface development',
     'Persisting data with Core Data',
     'Synchronizing data with iCloud',
   ],
-  languages: [PROFILE.languages.swift],
-  frameworks: [
-    PROFILE.frameworks.apple.macOS,
-    PROFILE.frameworks.apple.ios,
-    PROFILE.frameworks.apple.swiftUI,
-    PROFILE.frameworks.apple.coreData,
-    PROFILE.frameworks.apple.cloudKit,
-  ],
-  onlineURL: undefined,
-  sourceURL: undefined,
-  previewImages: [
-    {
-      id: 'preview-umbrella-iphone',
-      sourceLight: UmbrellaPreviews.iphoneImageDark,
-      sourceDark: UmbrellaPreviews.iphoneImageLight,
+  titleImage: {
+    dark: {
+      altText: 'Title image in dark mode',
+      src: UmbrellaPreviews.titleDark,
     },
-    {
-      id: 'preview-umbrella-macbook',
-      sourceLight: UmbrellaPreviews.macbookImageLight,
-      sourceDark: UmbrellaPreviews.macbookImageDark,
+    light: {
+      altText: 'Title image in light mode',
+      src: UmbrellaPreviews.titleLight,
     },
-    {
-      id: 'preview-umbrella-ipad',
-      sourceLight: UmbrellaPreviews.ipadImageLight,
-      sourceDark: UmbrellaPreviews.ipadImageDark,
-    },
-  ],
-  isComingSoon: true,
+  },
 } as const
+
+export { UMBRELLA }

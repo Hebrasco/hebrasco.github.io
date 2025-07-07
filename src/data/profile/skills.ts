@@ -1,7 +1,7 @@
-import { Skill, SkillCollection } from 'types'
 import { APPLICATIONS } from './applications'
 import { FRAMEWORKS } from './frameworks'
 import { LANGUAGES } from './languages'
+import type { Skill, SkillCollection } from 'types'
 
 const SKILLS_LANGUAGES: readonly Skill[] = [
   LANGUAGES.swift,
@@ -13,13 +13,11 @@ const SKILLS_LANGUAGES: readonly Skill[] = [
 ] as const
 
 const SKILLS_FRAMEWORKS: readonly Skill[] = [
-  FRAMEWORKS.apple.ios,
   FRAMEWORKS.apple.swiftUI,
-  FRAMEWORKS.apple.uiKit,
   FRAMEWORKS.web.react,
   FRAMEWORKS.crossPlatform.reactNative,
   FRAMEWORKS.web.reactRedux,
-  FRAMEWORKS.web.bootstrap,
+  FRAMEWORKS.other.ci,
 ] as const
 
 const SKILLS_APPLICATIONS: readonly Skill[] = [
@@ -31,8 +29,10 @@ const SKILLS_APPLICATIONS: readonly Skill[] = [
   APPLICATIONS.jira,
 ] as const
 
-export const SKILLS: SkillCollection = {
+const SKILLS: SkillCollection = {
   applications: SKILLS_APPLICATIONS,
   frameworks: SKILLS_FRAMEWORKS,
   languages: SKILLS_LANGUAGES,
 } as const
+
+export { SKILLS }

@@ -1,7 +1,6 @@
-import React from 'react'
 import { AboutMe, Contact, Landing, Projects } from './components'
 
-export function Home(): JSX.Element {
+function Home() {
   return (
     <>
       <Landing />
@@ -11,3 +10,5 @@ export function Home(): JSX.Element {
     </>
   )
 }
+
+export { Home }

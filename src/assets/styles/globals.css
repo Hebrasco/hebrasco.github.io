@@ -1,0 +1,139 @@
+:root {
+  --borderRadius: 44px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: calc(56px);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  all: unset;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--secondary-text-color);
+  border-radius: var(--borderRadius);
+  transition-property: background-color, color;
+  transition-duration: 350ms;
+  transition-timing-function: ease-in-out;
+  background-color: var(--primary-background-color);
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  background-color: var(--primary-button-hover-background);
+  color: var(--secondary-text-color);
+  border-radius: var(--borderRadius);
+  text-decoration: none;
+}
+
+.rounded {
+  border-radius: var(--borderRadius);
+}
+
+.primary-bg {
+  background-color: var(--accent-color);
+}
+
+.text-muted {
+  color: var(--muted-text-color);
+}
+
+.navbar-brand {
+  vertical-align: middle;
+}
+
+.navbar-toggler {
+  padding: var(--bs-navbar-toggler-padding-y) 0px;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.nav-item {
+  align-content: center;
+}
+
+.nav-item:hover {
+  text-decoration: none;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: end;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.list-unstyled {
+  list-style: none;
+}
+
+.shadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

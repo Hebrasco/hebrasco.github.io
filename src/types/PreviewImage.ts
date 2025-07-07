@@ -1,5 +1,8 @@
-export type PreviewImage = {
-  id: string
-  sourceLight: string
-  sourceDark: string
+import type { Screenshot } from 'types/Screenshot'
+
+type PreviewImage = {
+  light: Screenshot
+  dark: Screenshot
 }
+
+export type { PreviewImage }

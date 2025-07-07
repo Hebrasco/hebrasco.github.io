@@ -1,2 +1,5 @@
+export { Column } from './Column'
+export { Container } from './Container'
 export { Footer } from './Footer'
 export { NavBar } from './NavBar'
+export { Row } from './Row'

@@ -1,17 +1,20 @@
+import { Column, Row } from 'components/layout'
 import { Section } from 'components/ui'
 import { PROFILE } from 'data'
-import React from 'react'
-import { Row } from 'react-bootstrap'
 import { SkillColumn } from './SkillColumn'
 
-export function Skills(): JSX.Element {
+function Skills() {
   return (
-    <Section sm title="Skills">
-      <Row>
-        <SkillColumn title="Languages" data={PROFILE.skills.languages} />
-        <SkillColumn title="Frameworks" data={PROFILE.skills.frameworks} />
-        <SkillColumn title="Applications" data={PROFILE.skills.applications} />
-      </Row>
-    </Section>
+    <Column>
+      <Section md title="Skills">
+        <Row gap={1.5}>
+          <SkillColumn data={PROFILE.skills.languages} title="Languages" />
+          <SkillColumn data={PROFILE.skills.frameworks} title="Frameworks" />
+          <SkillColumn data={PROFILE.skills.applications} title="Applications" />
+        </Row>
+      </Section>
+    </Column>
   )
 }
+
+export { Skills }

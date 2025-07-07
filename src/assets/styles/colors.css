@@ -1,0 +1,56 @@
+* {
+  color: var(--primary-text-color);
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+:root {
+  color-scheme: light dark;
+
+  --primary-color: #ffffff;
+  --secondary-color: #000000;
+  --accent-color: rgb(245, 245, 247);
+
+  --primary-text-color: #1d1d1f;
+  --secondary-text-color-values: 248, 249, 250;
+  --secondary-text-color: rgb(var(--secondary-text-color-values));
+  --muted-text-color: rgba(0, 0, 0, 0.7);
+
+  --primary-background-color: var(--primary-text-color);
+  --secondary-background-color: var(--secondary-text-color);
+  --app-icon-border-color: rgb(237, 235, 235);
+
+  --primary-button-hover-background: rgb(45, 45, 45);
+
+  --glassBackground: rgba(135, 135, 135, 0.05);
+  --glassBorder: rgba(255, 255, 255, 0.1);
+  --glassBlur: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --accent-color: rgb(12, 12, 10);
+
+    --primary-text-color: rgb(248, 249, 250);
+    --secondary-text-color: rgb(33, 37, 41);
+    --muted-text-color: rgba(255, 255, 255, 0.7);
+
+    --primary-background-color: var(--primary-text-color);
+    --secondary-background-color: var(--secondary-text-color);
+
+    --app-icon-border-color: rgb(22, 20, 20);
+
+    --primary-button-hover-background: rgb(228, 229, 230);
+
+    --glassBackground: rgba(255, 255, 255, 0.05);
+    --glassBorder: rgba(255, 255, 255, 0.025);
+  }
+
+  img.invertedColor {
+    filter: invert(1);
+  }
+}

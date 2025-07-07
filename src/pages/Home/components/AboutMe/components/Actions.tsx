@@ -1,26 +1,21 @@
-import { ExternalLink, Link } from 'components/ui'
-import { ROUTES } from 'data'
-import React from 'react'
-import { Col, Row } from 'react-bootstrap'
+import { Column, Row } from 'components/layout'
+import { ExternalLink } from 'components/ui'
+import { CONFIG } from 'data'
 
-export function Actions(): JSX.Element {
+function Actions() {
   return (
     <Row>
-      <Col xs={12}>
-        <ExternalLink
-          to="/daniel_bedrich_resume.pdf"
-          className="btn-dark"
-          button
-        >
+      <Column className="d-flex align-items-center gap-3 mt-3" xs={12}>
+        <ExternalLink button to="/daniel_bedrich_resume.pdf">
           Download Resume
         </ExternalLink>
-        <Link
-          button
-          to={ROUTES.contact}
-          label="Let's Talk"
-          className="btn-outline-dark ms-3"
-        />
-      </Col>
+        <span className="d-inline-flex align-items-center">
+          <ExternalLink to={`mailto:${CONFIG.profile.email}`}>Let's Talk</ExternalLink>
+          <i className="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
+        </span>
+      </Column>
     </Row>
   )
 }
+
+export { Actions }

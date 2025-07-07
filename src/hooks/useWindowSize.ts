@@ -1,25 +1,49 @@
 import { MISC } from 'data'
 import { useLayoutEffect, useState } from 'react'
-import { WindowSize } from 'types'
+import type { WindowSize } from 'types'
 
-export function useWindowSize(): WindowSize {
-  const [size, setSize] = useState({ width: 0, height: 0 })
+function useWindowSize(): WindowSize {
+  const [gridSizes, setGridSizes] = useState<WindowSize>({
+    isLg: false,
+    isMd: false,
+    isMobile: false,
+    isSm: false,
+    isXl: false,
+    isXs: false,
+    isXxl: false,
+    size: {
+      height: 0,
+      width: 0,
+    },
+  })
   const { bootstrapGridSizes } = MISC
-
-  const isXs = size.width < bootstrapGridSizes.sm
-  const isSm =
-    size.width >= bootstrapGridSizes.sm && size.width < bootstrapGridSizes.md
-  const isMd =
-    size.width >= bootstrapGridSizes.md && size.width < bootstrapGridSizes.lg
-  const isLg =
-    size.width >= bootstrapGridSizes.lg && size.width < bootstrapGridSizes.xl
-  const isXl =
-    size.width >= bootstrapGridSizes.xl && size.width < bootstrapGridSizes.xxl
-  const isXxl = size.width >= bootstrapGridSizes.xxl
 
   useLayoutEffect(() => {
     function updateSize() {
-      setSize({ width: window.innerWidth, height: window.innerHeight })
+      const size = {
+        height: window.innerHeight,
+        width: window.innerWidth,
+      }
+
+      const isLg = size.width >= bootstrapGridSizes.lg && size.width < bootstrapGridSizes.xl
+      const isMd = size.width >= bootstrapGridSizes.md && size.width < bootstrapGridSizes.lg
+      const isSm = size.width >= bootstrapGridSizes.sm && size.width < bootstrapGridSizes.md
+      const isXl = size.width >= bootstrapGridSizes.xl && size.width < bootstrapGridSizes.xxl
+      const isXs = size.width < bootstrapGridSizes.sm
+      const isXxl = size.width >= bootstrapGridSizes.xxl
+
+      const isMobile = isXs || isSm
+
+      setGridSizes({
+        isLg,
+        isMd,
+        isMobile,
+        isSm,
+        isXl,
+        isXs,
+        isXxl,
+        size,
+      })
     }
 
     window.addEventListener('resize', updateSize)
@@ -27,7 +51,9 @@ export function useWindowSize(): WindowSize {
     updateSize()
 
     return () => window.removeEventListener('resize', updateSize)
-  }, [])
+  }, [bootstrapGridSizes])
 
-  return { size, isXs, isSm, isMd, isLg, isXl, isXxl }
+  return gridSizes
 }
+
+export { useWindowSize }

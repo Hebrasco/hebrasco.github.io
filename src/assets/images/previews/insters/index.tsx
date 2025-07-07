@@ -1,5 +1,0 @@
-export { default as ipadImageDark } from './ipad_dark.png'
-export { default as ipadImageLight } from './ipad_light.png'
-export { default as iphoneImageDark } from './iphone_dark.png'
-export { default as iphoneImageLight } from './iphone_light.png'
-export { default as iphoneSEImage } from './iphoneSE_universal.png'

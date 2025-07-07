@@ -1,42 +1,31 @@
 import { ExternalLink } from 'components/ui'
-import React from 'react'
-import { Image } from 'react-bootstrap'
 import { conditionalStyle } from 'utils'
 
 interface Props {
   label: string
   to: string
   src: string
-  navItem?: boolean
+  altText: string
   useIcon?: boolean
-  useMarginLeft?: boolean
   invertImage?: boolean
 }
 
-export function SocialLink({
-  label,
-  to,
-  src,
-  navItem,
-  useIcon,
-  useMarginLeft = true,
-  invertImage = false,
-}: Props): JSX.Element {
+export function SocialLink({ label, to, src, altText, useIcon, invertImage = false }: Props) {
   return (
     <ExternalLink
-      to={to}
-      className={`d-md-flex align-items-center 
-        ${conditionalStyle(useMarginLeft, 'ml-md-2')}
-        ${conditionalStyle(!navItem, 'py-2 pe-3')}
-      `}
+      className="align-content-center"
       fullWidth={!useIcon}
-      navItem={navItem}
+      style={{ width: useIcon ? '1.5rem' : undefined }}
+      to={to}
     >
       {useIcon ? (
-        <Image
-          src={src}
-          fluid
+        <img
+          alt={altText}
           className={`${conditionalStyle(invertImage, 'invertedColor')}`}
+          height="100%"
+          src={src}
+          style={{ objectFit: 'contain' }}
+          width="100%"
         />
       ) : (
         label

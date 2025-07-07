@@ -1,3 +1,5 @@
-export type Skill = {
+type Skill = {
   name: string
 }
+
+export type { Skill }

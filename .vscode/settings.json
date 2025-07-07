@@ -7,8 +7,10 @@
     "DSGVO",
     "futter",
     "fxgl",
+    "hitbox",
     "Hünfelden",
     "Insters",
+    "intolerances",
     "lennards",
     "matchbus",
     "natrium",
@@ -18,6 +20,8 @@
     "Schlesienstraße",
     "Sendgrid",
     "tankvr",
+    "wght",
     "winzerliebe"
-  ]
+  ],
+  "editor.defaultFormatter": "biomejs.biome"
 }

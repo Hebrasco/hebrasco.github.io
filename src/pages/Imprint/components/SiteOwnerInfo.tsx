@@ -1,8 +1,7 @@
 import { Email } from 'components/ui'
 import { CONFIG } from 'data'
-import React from 'react'
 
-export function SiteOwnerInfo(): JSX.Element {
+function SiteOwnerInfo() {
   return (
     <>
       <ul className="list-unstyled">
@@ -21,3 +20,5 @@ export function SiteOwnerInfo(): JSX.Element {
     </>
   )
 }
+
+export { SiteOwnerInfo }

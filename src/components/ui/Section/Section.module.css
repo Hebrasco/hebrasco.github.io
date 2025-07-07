@@ -1,0 +1,34 @@
+.section-fluid {
+  margin: 0px var(--containerMargin);
+}
+
+.section > h2 {
+  word-break: break-word;
+}
+
+.section-xs {
+  padding-top: 1rem;
+}
+
+.section-sm {
+  padding-top: 2rem;
+}
+
+.section-md {
+  padding-top: 4rem;
+}
+
+.section-lg {
+  padding-top: 6rem;
+}
+
+.section-xl {
+  padding-top: 12rem;
+}
+
+.action-container {
+  --button-to-heading-font-size-multiplier: 3.25;
+  align-content: end;
+  margin-bottom: var(--margin-bottom-h2);
+  line-height: calc(var(--button-to-heading-font-size-multiplier) - var(--line-height-headings));
+}
