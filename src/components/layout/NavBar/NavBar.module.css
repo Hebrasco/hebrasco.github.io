@@ -73,7 +73,7 @@
   border-style: solid;
   border-color: var(--glassBorder);
   left: unset;
-  position: fixed !important;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 1000;
