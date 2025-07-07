@@ -1,12 +1,10 @@
 import { ROUTES } from 'data'
+import { scrollIntoView } from 'utils'
 import styles from './ScrollDownIcon.module.css'
 
 function ScrollDownIcon() {
   function handleScrollDown() {
-    const id = ROUTES.aboutMe.replace('/#', '')
-    const element = document.getElementById(id)
-
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
+    scrollIntoView(ROUTES.aboutMe, '/#')
   }
 
   return (
