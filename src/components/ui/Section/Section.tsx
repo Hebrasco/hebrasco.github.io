@@ -56,7 +56,7 @@ function Section({
           className={`d-flex justify-content-between ${conditionalStyle(fluidContainer, styles['section-fluid'])}`}
         >
           {title && TitleComponent}
-          <div className={styles['action-container']}>{Action}</div>
+          {Action && <div className={styles['action-container']}>{Action}</div>}
         </div>
         {Array.isArray(children) ? children.map((child) => child) : children}
       </div>
