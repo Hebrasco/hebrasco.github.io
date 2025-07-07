@@ -3,28 +3,7 @@
 }
 
 .section > h2 {
-  letter-spacing: -5% !important;
   word-break: break-word;
-}
-
-.section-xs > h2 {
-  font-size: 1rem;
-}
-
-.section-sm > h2 {
-  font-size: 1.5rem;
-}
-
-.section-md > h2 {
-  font-size: 2rem;
-}
-
-.section-lg > h2 {
-  font-size: 2.5rem;
-}
-
-.section-xl > h2 {
-  font-size: 3rem;
 }
 
 .section-xs {

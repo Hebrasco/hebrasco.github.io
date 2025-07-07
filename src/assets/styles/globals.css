@@ -2,6 +2,10 @@
   --borderRadius: 44px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-padding-top: calc(56px);
 }
