@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.30ce6006.css",
-    "main.js": "/static/js/main.1ab48be9.js",
+    "main.js": "/static/js/main.525bfbd8.js",
     "static/media/daniel_bedrich_resume.pdf": "/static/media/daniel_bedrich_resume.d968d8216c34e8f1a9cb.pdf",
     "static/media/issue-details.webp": "/static/media/issue-details.899f686fc19699b62f16.webp",
     "static/media/edit-image.webp": "/static/media/edit-image.34ef22597ef9e052c5f4.webp",
@@ -32,10 +32,10 @@
     "static/media/github.webp": "/static/media/github.c77a3ecabe9e4212b1d1.webp",
     "index.html": "/index.html",
     "main.30ce6006.css.map": "/static/css/main.30ce6006.css.map",
-    "main.1ab48be9.js.map": "/static/js/main.1ab48be9.js.map"
+    "main.525bfbd8.js.map": "/static/js/main.525bfbd8.js.map"
   },
   "entrypoints": [
     "static/css/main.30ce6006.css",
-    "static/js/main.1ab48be9.js"
+    "static/js/main.525bfbd8.js"
   ]
 }
