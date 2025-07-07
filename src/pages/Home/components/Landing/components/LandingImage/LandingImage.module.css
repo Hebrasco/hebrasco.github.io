@@ -1,4 +1,8 @@
 .landing-image {
+  background-image: url("../../../../../../assets/images/me.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
   position: absolute;
   top: 0;
   right: 0;
