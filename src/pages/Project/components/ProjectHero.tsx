@@ -15,25 +15,45 @@ function ProjectHero() {
         <div className="p-5 primary-bg rounded d-flex">
           <Row gap={isMobile ? 0 : 3}>
             <Column className="d-flex flex-column justify-content-center" md={6}>
-              <h1 className="fw-bold">{project.name}</h1>
-              <div className="mv-2 d-flex">
-                {project.onlineURL && (
-                  <span className="d-inline-flex align-items-center">
-                    <ExternalLink to={project.onlineURL}>App Store</ExternalLink>
-                    <i className="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
-                  </span>
-                )}
-                {project.sourceURL && (
-                  <span className="d-inline-flex align-items-center">
-                    <ExternalLink to={project.sourceURL}>Source Code</ExternalLink>
-                    <i className="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
-                  </span>
-                )}
-              </div>
+              <h1 className="fw-bold mb-2">{project.name}</h1>
+              {!isMobile && (
+                <div className="d-flex">
+                  {project.onlineURL && (
+                    <span className="d-inline-flex align-items-center">
+                      <ExternalLink to={project.onlineURL}>App Store</ExternalLink>
+                      <i className="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
+                    </span>
+                  )}
+                  {project.sourceURL && (
+                    <span className="d-inline-flex align-items-center">
+                      <ExternalLink to={project.sourceURL}>Source Code</ExternalLink>
+                      <i className="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
+                    </span>
+                  )}
+                </div>
+              )}
             </Column>
             <Column className={conditionalStyle(isMobile, 'mt-4')} md={6}>
               <ProjectTitleImage />
             </Column>
+            {isMobile && (
+              <Column className="mt-5">
+                <div className="d-flex">
+                  {project.onlineURL && (
+                    <span className="d-inline-flex align-items-center">
+                      <ExternalLink to={project.onlineURL}>App Store</ExternalLink>
+                      <i className="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
+                    </span>
+                  )}
+                  {project.sourceURL && (
+                    <span className="d-inline-flex align-items-center">
+                      <ExternalLink to={project.sourceURL}>Source Code</ExternalLink>
+                      <i className="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
+                    </span>
+                  )}
+                </div>
+              </Column>
+            )}
           </Row>
         </div>
       </Section>
