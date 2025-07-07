@@ -25,3 +25,10 @@
 .section-xl {
   padding-top: 12rem;
 }
+
+.action-container {
+  --button-to-heading-font-size-multiplier: 3.25;
+  align-content: end;
+  margin-bottom: var(--margin-bottom-h2);
+  line-height: calc(var(--button-to-heading-font-size-multiplier) - var(--line-height-headings));
+}
