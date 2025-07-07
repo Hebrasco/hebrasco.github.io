@@ -43,7 +43,7 @@ function Preview({ project }: Props) {
                   width="100%"
                 />
               </div>
-              <span className="display-4">{project.name}</span>
+              <span className="display-4 m-0">{project.name}</span>
               <i className="bi bi-chevron-right ms-auto"></i>
             </Column>
           </Row>
