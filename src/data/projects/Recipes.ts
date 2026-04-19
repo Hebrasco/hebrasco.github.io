@@ -5,7 +5,7 @@ import { PLATFORM } from 'data/platform'
 import type { Project } from 'types'
 
 const RECIPES: Project = {
-  description: `With his recipe app, you're able to create meal plans. There's a huge selection of recipes build in to choose from. Further, the ingredients can be exactly calculated based on the amount of people and can be added to a shopping list.`,
+  description: `This app lets you create meal plans. There's a huge selection of built-in recipes to choose from. The ingredients can be precisely calculated based on the number of people and added directly to a shopping list.`,
   features: [
     {
       description:
@@ -48,44 +48,25 @@ const RECIPES: Project = {
   onlineURL: undefined,
   platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
-    dark: {
-      altText: 'Preview screenshot of Recipes in light mode',
-      src: ScreenshotsIphoneLight.RecipeDetails,
-    },
-    light: {
-      altText: 'Preview screenshot of Recipes in light mode',
-      src: ScreenshotsIphoneLight.RecipeDetails,
-    },
+      altText: 'Preview screenshot of Recipes',
+      light: ScreenshotsIphoneLight.RecipeDetails,
+      dark: ScreenshotsIphoneLight.RecipeDetails,
   },
   screenshots: {
-    ipad: {
-      dark: [
+    ipad:  [
         {
-          altText: 'Screenshot of ipad app in light mode of the recipe detail screen',
-          src: ScreenshotsIpadLight.RecipeDetails,
+          altText: 'Screenshot of ipad app of the recipe detail screen',
+          light: ScreenshotsIpadLight.RecipeDetails,
+          dark: ScreenshotsIpadLight.RecipeDetails,
         },
       ],
-      light: [
+    iphone: [
         {
-          altText: 'Screenshot of ipad app in light mode of the recipe detail screen',
-          src: ScreenshotsIpadLight.RecipeDetails,
+          altText: 'Screenshot of iphone app of the recipe detail screen',
+          light: ScreenshotsIphoneLight.RecipeDetails,
+          dark: ScreenshotsIphoneLight.RecipeDetails,
         },
       ],
-    },
-    iphone: {
-      dark: [
-        {
-          altText: 'Screenshot of iphone app in light mode of the recipe detail screen',
-          src: ScreenshotsIphoneLight.RecipeDetails,
-        },
-      ],
-      light: [
-        {
-          altText: 'Screenshot of iphone app in light mode of the recipe detail screen',
-          src: ScreenshotsIphoneLight.RecipeDetails,
-        },
-      ],
-    },
   },
   sourceURL: 'https://github.com/Hebrasco/recipe_app',
   status: {
@@ -99,14 +80,9 @@ const RECIPES: Project = {
     'Persisting data with Core Data',
   ],
   titleImage: {
-    dark: {
-      altText: 'Title image in light mode',
-      src: RecipesPreviews.titleLight,
-    },
-    light: {
-      altText: 'Title image in light mode',
-      src: RecipesPreviews.titleLight,
-    },
+      altText: 'Title image',
+      light: RecipesPreviews.titleLight,
+      dark: RecipesPreviews.titleLight,
   },
 } as const
 

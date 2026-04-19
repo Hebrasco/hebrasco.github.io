@@ -12,8 +12,8 @@ import type { Project } from 'types'
 
 const BLOOM: Project = {
   appIcon: {
-    dark: BloomAppIcons.dark,
     light: BloomAppIcons.light,
+    dark: BloomAppIcons.dark,
   },
   description:
     'This app is for calculating the past time since a specific day. The app also offers widgets. Furthermore, notifications are sent at certain time periods. In addition, in-app purchases are implemented to remove advertisements.',
@@ -37,13 +37,13 @@ const BLOOM: Project = {
       title: 'Important Dates',
     },
     {
-      description: 'On the how screen the remaining days of your next anniversary.',
+      description: 'On the home screen the remaining days of your next anniversary.',
       icon: 'bi bi-cake2',
       title: 'Anniversaries',
     },
     {
       description:
-        "On the how screen the years, months and days you've been together will be shown.",
+        "On the home screen the years, months and days you've been together will be shown.",
       icon: 'bi bi-clock',
       title: 'Time',
     },
@@ -54,7 +54,7 @@ const BLOOM: Project = {
       title: 'Widgets',
     },
     {
-      description: 'A ad banner is shown on the home screen.',
+      description: 'An ad banner is shown on the home screen.',
       icon: 'bi bi-badge-ad',
       title: 'Ads',
     },
@@ -76,120 +76,71 @@ const BLOOM: Project = {
   onlineURL: 'https://apps.apple.com/app/bloom-couples-app/id1533246365',
   platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
-    dark: {
-      altText: 'Preview screenshot of Bloom in dark mode',
-      src: ScreenshotsIphoneDark.SingleImageMarried,
-    },
-    light: {
-      altText: 'Preview screenshot of Bloom in light mode',
-      src: ScreenshotsIphoneLight.SingleImageMarried,
-    },
+      altText: 'Preview screenshot of Bloom',
+        light: ScreenshotsIphoneLight.SingleImageMarried,
+        dark: ScreenshotsIphoneDark.SingleImageMarried,
   },
   screenshots: {
-    ipad: {
-      dark: [
+    ipad: [
         {
-          altText: 'Screenshot of ipad app in dark mode with dual image option',
-          src: ScreenshotsIpadDark.DualImage,
+          altText: 'Screenshot of ipad app with dual image option',
+            light: ScreenshotsIpadLight.DualImage,
+            dark: ScreenshotsIpadDark.DualImage,
         },
         {
           altText:
-            'Screenshot of ipad app in dark mode with single image option and relationship status couple',
-          src: ScreenshotsIpadDark.SingleImageCouple,
+            'Screenshot of ipad app with single image option and relationship status couple',
+            light: ScreenshotsIpadLight.SingleImageCouple,
+            dark: ScreenshotsIpadDark.SingleImageCouple,
         },
         {
           altText:
-            'Screenshot of ipad app in dark mode with single image option and relationship status engaged',
-          src: ScreenshotsIpadDark.SingleImageEngaged,
+            'Screenshot of ipad app with single image option and relationship status engaged',
+            light: ScreenshotsIpadLight.SingleImageEngaged,
+            dark: ScreenshotsIpadDark.SingleImageEngaged,
         },
         {
           altText:
-            'Screenshot of ipad app in dark mode with single image option and relationship status married',
-          src: ScreenshotsIpadDark.SingleImageMarried,
+            'Screenshot of ipad app with single image option and relationship status married',
+            light: ScreenshotsIpadLight.SingleImageMarried,
+            dark: ScreenshotsIpadDark.SingleImageMarried,
         },
         {
-          altText: 'Screenshot of ipad app widgets in dark mode',
-          src: ScreenshotsIpadDark.Widgets,
+          altText: 'Screenshot of ipad app widgets',
+            light: ScreenshotsIpadLight.Widgets,
+            dark: ScreenshotsIpadDark.Widgets,
         },
       ],
-      light: [
+    iphone: [
         {
-          altText: 'Screenshot of ipad app in light mode with dual image option',
-          src: ScreenshotsIpadLight.DualImage,
+          altText: 'Screenshot of iphone app with dual image option',
+            light: ScreenshotsIphoneLight.DualImage,
+            dark: ScreenshotsIphoneDark.DualImage
         },
         {
           altText:
-            'Screenshot of ipad app in light mode with single image option and relationship status couple',
-          src: ScreenshotsIpadLight.SingleImageCouple,
+            'Screenshot of iphone app with single image option and relationship status couple',
+            light: ScreenshotsIphoneLight.SingleImageCouple,
+            dark: ScreenshotsIphoneDark.SingleImageCouple,
         },
         {
           altText:
-            'Screenshot of ipad app in light mode with single image option and relationship status engaged',
-          src: ScreenshotsIpadLight.SingleImageEngaged,
+            'Screenshot of iphone app with single image option and relationship status engaged',
+            light: ScreenshotsIphoneLight.SingleImageEngaged,
+            dark: ScreenshotsIphoneDark.SingleImageEngaged,
         },
         {
           altText:
-            'Screenshot of ipad app in light mode with single image option and relationship status married',
-          src: ScreenshotsIpadLight.SingleImageMarried,
+            'Screenshot of iphone app with single image option and relationship status married',
+            light: ScreenshotsIphoneLight.SingleImageMarried,
+            dark: ScreenshotsIphoneDark.SingleImageMarried,
         },
         {
-          altText: 'Screenshot of ipad app widgets in light mode',
-          src: ScreenshotsIpadLight.Widgets,
+          altText: 'Screenshot of iphone app widgets',
+            light: ScreenshotsIphoneLight.Widgets,
+            dark: ScreenshotsIphoneDark.Widgets,
         },
       ],
-    },
-    iphone: {
-      dark: [
-        {
-          altText: 'Screenshot of iphone app in dark mode with dual image option',
-          src: ScreenshotsIphoneDark.DualImage,
-        },
-        {
-          altText:
-            'Screenshot of iphone app in dark mode with single image option and relationship status couple',
-          src: ScreenshotsIphoneDark.SingleImageCouple,
-        },
-        {
-          altText:
-            'Screenshot of iphone app in dark mode with single image option and relationship status engaged',
-          src: ScreenshotsIphoneDark.SingleImageEngaged,
-        },
-        {
-          altText:
-            'Screenshot of iphone app in dark mode with single image option and relationship status married',
-          src: ScreenshotsIphoneDark.SingleImageMarried,
-        },
-        {
-          altText: 'Screenshot of iphone app widgets in dark mode',
-          src: ScreenshotsIphoneDark.Widgets,
-        },
-      ],
-      light: [
-        {
-          altText: 'Screenshot of iphone app in light mode with dual image option',
-          src: ScreenshotsIphoneLight.DualImage,
-        },
-        {
-          altText:
-            'Screenshot of iphone app in light mode with single image option and relationship status couple',
-          src: ScreenshotsIphoneLight.SingleImageCouple,
-        },
-        {
-          altText:
-            'Screenshot of iphone app in light mode with single image option and relationship status engaged',
-          src: ScreenshotsIphoneLight.SingleImageEngaged,
-        },
-        {
-          altText:
-            'Screenshot of iphone app in light mode with single image option and relationship status married',
-          src: ScreenshotsIphoneLight.SingleImageMarried,
-        },
-        {
-          altText: 'Screenshot of iphone app widgets in light mode',
-          src: ScreenshotsIphoneLight.Widgets,
-        },
-      ],
-    },
   },
   sourceURL: undefined,
   status: {
@@ -204,14 +155,9 @@ const BLOOM: Project = {
     'Implementation of widgets',
   ],
   titleImage: {
-    dark: {
-      altText: 'Title image in dark mode',
-      src: BloomPreviews.titleDark,
-    },
-    light: {
-      altText: 'Title image in light mode',
-      src: BloomPreviews.titleLight,
-    },
+      altText: 'Title image',
+        light: BloomPreviews.titleLight,
+        dark: BloomPreviews.titleDark,
   },
 } as const
 

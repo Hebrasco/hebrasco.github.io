@@ -1,0 +1,44 @@
+---
+import Column from 'components/layout/Column.astro'
+import Row from 'components/layout/Row.astro'
+import KeyInfoTitle from 'components/ui/KeyInfoTitle.astro'
+import ProjectBadge from 'components/ui/ProjectBadge.astro'
+import Section from 'components/ui/Section.astro'
+import { PROJECT_STATUS } from 'data'
+import type { Project } from 'types'
+
+interface Props {
+  project: Project
+}
+const { project } = Astro.props
+
+const statusLabel =
+  project.status.type === PROJECT_STATUS.comingSoon ? PROJECT_STATUS.launched : project.status.type
+const statusDate = project.status.date?.toLocaleDateString() ?? project.status.type
+---
+<div class='container'>
+  <Section md>
+    <Row class="gap-4">
+      <Column md={3} xs={6}>
+        <KeyInfoTitle title="Frameworks" />
+        <div class="d-flex flex-wrap gap-2">
+          {project.frameworks.map((fw) => <ProjectBadge skill={fw} />)}
+        </div>
+      </Column>
+      <Column md={3} xs={6}>
+        <KeyInfoTitle title="Languages" />
+        <div class="d-flex flex-wrap gap-2">
+          {project.languages.map((lang) => <ProjectBadge skill={lang} />)}
+        </div>
+      </Column>
+      <Column md={3} xs={6}>
+        <KeyInfoTitle title="Platforms" />
+        <p>{project.platforms.join(', ')}</p>
+      </Column>
+      <Column md={3} xs={6}>
+        <KeyInfoTitle title={statusLabel} />
+        <p>{statusDate}</p>
+      </Column>
+    </Row>
+  </Section>
+</div>

@@ -1,9 +1,3 @@
-@font-face {
-  font-family: "Varela";
-  src: url("../fonts/VarelaRound-Regular.ttf") format("truetype");
-  font-display: block;
-}
-
 :root {
   --font-size-h1: 3rem;
   --font-size-h2: 2.5rem;
@@ -26,15 +20,15 @@
 }
 
 * {
-  font-family: "Varela", system-ui, sans-serif;
+  font-family: var(--font-varela);
 }
 
 a,
 p,
 span,
 li {
-  letter-spacing: 0.01em;
   line-height: var(--line-height-text);
+  letter-spacing: 0.01em;
 }
 
 h1,
@@ -48,35 +42,35 @@ h5,
 
 h1,
 .display-1 {
+  margin-bottom: var(--margin-bottom-h1);
   font-size: var(--font-size-h1);
   line-height: var(--line-height-headings);
-  margin-bottom: var(--margin-bottom-h1);
 }
 
 h2,
 .display-2 {
+  margin-bottom: var(--margin-bottom-h2);
   font-size: var(--font-size-h2);
   line-height: var(--line-height-headings);
-  margin-bottom: var(--margin-bottom-h2);
 }
 
 h3,
 .display-3 {
+  margin-bottom: var(--margin-bottom-h3);
   font-size: var(--font-size-h3);
   line-height: var(--line-height-headings);
-  margin-bottom: var(--margin-bottom-h3);
 }
 
 h4,
 .display-4 {
+  margin-bottom: var(--margin-bottom-h4);
   font-size: var(--font-size-h4);
   line-height: var(--line-height-headings);
-  margin-bottom: var(--margin-bottom-h4);
 }
 
 h5,
 .display-5 {
+  margin-bottom: var(--margin-bottom-h5);
   font-size: var(--font-size-h5);
   line-height: var(--line-height-headings);
-  margin-bottom: var(--margin-bottom-h5);
 }

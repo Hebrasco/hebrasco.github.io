@@ -1,1 +1,0 @@
-export { SkillColumn } from './SkillColumn'

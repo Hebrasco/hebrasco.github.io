@@ -1,0 +1,24 @@
+---
+import Column from 'components/layout/Column.astro'
+import Row from 'components/layout/Row.astro'
+import ProjectHeroImage from 'components/project/ProjectHeroImage.astro'
+import ProjectHeroLinks from 'components/project/ProjectHeroLinks.astro'
+import type { Project } from 'types'
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+---
+<Row gap={0}>
+  <Column class="d-flex flex-column justify-content-center" md={6} xs={12}>
+    <h1 class="fw-bold mb-2">{project.name}</h1>
+  </Column>
+  <Column class="mt-4" md={6} xs={12}>
+    <ProjectHeroImage  project={project} />
+  </Column>
+  <Column class="mt-5" md={6} xs={12}>
+    <ProjectHeroLinks project={project} />
+  </Column>
+</Row>

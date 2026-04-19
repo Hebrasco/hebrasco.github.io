@@ -11,9 +11,9 @@ import { PLATFORM } from 'data/platform'
 import type { Project } from 'types'
 
 const INSTERS: Project = {
-  appIcon: {
-    dark: InstersAppIcons.light,
-    light: InstersAppIcons.light,
+appIcon: {
+  light: InstersAppIcons.light,
+  dark: InstersAppIcons.light,
   },
   description:
     'Insters is a photo filter app. You can import photos from your photo library and choose from a variety of color filters to apply to your photo. If one of the filters is applied, you can export the photo back to your library.',
@@ -24,7 +24,7 @@ const INSTERS: Project = {
       title: 'Image Filters',
     },
     {
-      description: 'A ad banner is shown while the user is editing an photo.',
+      description: 'An ad banner is shown while the user is editing a photo.',
       icon: 'bi bi-badge-ad',
       title: 'Ads',
     },
@@ -45,44 +45,25 @@ const INSTERS: Project = {
   onlineURL: 'https://apps.apple.com/app/insters/id1561338805',
   platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
-    dark: {
-      altText: 'Preview screenshot of Insters in dark mode',
-      src: ScreenshotsIphoneDark.EditImage,
-    },
-    light: {
-      altText: 'Preview screenshot of Insters in light mode',
-      src: ScreenshotsIphoneLight.EditImage,
-    },
+    altText: 'Preview screenshot of Insters',
+    light: ScreenshotsIphoneLight.EditImage,
+    dark: ScreenshotsIphoneDark.EditImage,
   },
   screenshots: {
-    ipad: {
-      dark: [
+    ipad:  [
         {
-          altText: 'Screenshot of ipad app in light mode of the edit image screen',
-          src: ScreenshotsIpadDark.EditImage,
+          altText: 'Screenshot of ipad app of the edit image screen',
+          light: ScreenshotsIpadLight.EditImage,
+          dark: ScreenshotsIpadDark.EditImage,
         },
       ],
-      light: [
+    iphone: [
         {
-          altText: 'Screenshot of ipad app in light mode of the edit image screen',
-          src: ScreenshotsIpadLight.EditImage,
+          altText: 'Screenshot of iphone app of the edit image screen',
+          light: ScreenshotsIphoneLight.EditImage,
+          dark: ScreenshotsIphoneDark.EditImage,
         },
       ],
-    },
-    iphone: {
-      dark: [
-        {
-          altText: 'Screenshot of iphone app in light mode of the edit image screen',
-          src: ScreenshotsIphoneDark.EditImage,
-        },
-      ],
-      light: [
-        {
-          altText: 'Screenshot of iphone app in light mode of the edit image screen',
-          src: ScreenshotsIphoneLight.EditImage,
-        },
-      ],
-    },
   },
   sourceURL: undefined,
   status: {
@@ -96,14 +77,9 @@ const INSTERS: Project = {
     'Color adjustment algorithms',
   ],
   titleImage: {
-    dark: {
-      altText: 'Title image in dark mode',
-      src: InstersPreviews.titleDark,
-    },
-    light: {
-      altText: 'Title image in light mode',
-      src: InstersPreviews.titleLight,
-    },
+      altText: 'Title image',
+      light: InstersPreviews.titleLight,
+      dark: InstersPreviews.titleDark,
   },
 } as const
 

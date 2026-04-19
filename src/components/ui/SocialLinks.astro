@@ -1,0 +1,30 @@
+---
+import AppStoreIcon from 'assets/icons/app-store.webp'
+import GitHubIcon from 'assets/icons/github.webp'
+import { CONFIG } from 'data'
+---
+  <a
+    href={CONFIG.references.appStoreUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-link social-link-desktop align-content-center"
+    style="width: 1.5rem"
+  >
+    <img src={AppStoreIcon.src} alt="AppStore" width="100%" height="100%" style="object-fit: contain" />
+  </a>
+  <a
+    href={CONFIG.references.gitHubUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-link social-link-desktop align-content-center"
+    style="width: 1.5rem"
+  >
+    <img src={GitHubIcon.src} alt="GitHub" width="100%" height="100%" style="object-fit: contain" class="invertedColor" />
+  </a>
+
+<style>
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+  }
+</style>

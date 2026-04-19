@@ -1,0 +1,202 @@
+---
+import HorizontalList from 'components/ui/HorizontalList.astro'
+import ListContainer from 'components/ui/ListContainer.astro'
+import Section from 'components/ui/Section.astro'
+import { SCREENSHOT_CONTAINER_SIZE } from 'data/containerSizes'
+import { PLATFORM } from 'data/platform'
+import type { Project } from 'types'
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+
+if (!project.screenshots || !Object.values(project.screenshots).some(Boolean)) {
+  return
+}
+
+type PlatformKey = keyof typeof PLATFORM
+const platforms = (Object.keys(project.screenshots) as PlatformKey[]).sort((a) =>
+  a === 'iphone' ? -1 : 1
+)
+const hasMultiplePlatforms = platforms.length > 1
+---
+<Section fluidContainer lg title="Screenshots" hasAction={hasMultiplePlatforms}>
+  {hasMultiplePlatforms && (
+    <div class="select-container" id="screenshot-select"slot="action" >
+      <button class="dropdown-button" id="select-btn" type="button">
+        {PLATFORM[platforms[0]!]}
+        <i class="bi bi-chevron-down ms-1" id="select-chevron"></i>
+      </button>
+      <div class="select-menu" hidden id="select-menu" >
+        <div class="select-menu-arrow"></div>
+        <p class="text-muted">Platforms</p>
+        {platforms.map((platform, index) => (
+          <button
+            class="select-item"
+            data-label={PLATFORM[platform]}
+            data-platform={platform}
+            type="button"
+          >
+            <i class="bi bi-check-circle-fill" style={index === 0 ? '' : 'visibility:hidden'}></i>
+            {PLATFORM[platform]}
+          </button>
+        ))}
+      </div>
+    </div>
+  )}
+  {platforms.map((platform, index) => {
+    const sizes = SCREENSHOT_CONTAINER_SIZE[platform]
+    const screenshots = project.screenshots?.[platform] ?? []
+
+    return (
+      <div
+        data-platform-group={platform}
+        hidden={index !== 0}
+      >
+        <HorizontalList>
+          {screenshots.map((screenshot) => (
+            <ListContainer>
+              <picture>
+                {project.appIcon?.dark && (
+                  <source
+                    media="(prefers-color-scheme: dark)"
+                    srcset={screenshot.dark.src}
+                  />
+                )}
+                <img
+                alt={screenshot.altText}
+                class="screenshot-img"
+                height={sizes.md.height}
+                src={screenshot.light.src}
+                style={`--w-md:${sizes.md.width}px;--h-md:${sizes.md.height}px;--w-xs:${sizes.xs.width}px;--h-xs:${sizes.xs.height}px`}
+                width={sizes.md.width}
+              />
+              </picture>
+            </ListContainer>
+          ))}
+        </HorizontalList>
+      </div>
+    )
+  })}
+</Section>
+
+<style>
+  .select-container {
+    position: relative;
+  }
+  .dropdown-button {
+    all: unset;
+    cursor: pointer;
+  }
+  .dropdown-button > .bi-chevron-down::before {
+    transition: transform 250ms ease-in-out;
+  }
+  .dropdown-button.open > .bi-chevron-down::before {
+    transform: rotate(180deg);
+  }
+  .select-menu {
+    --select-item-padding: 1rem;
+    --select-item-icon-font-size: 1em;
+    --select-item-icon-margin: 0.5rem;
+    position: absolute;
+    top: 125%;
+    right: -1.25rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 22px;
+  }
+  .select-menu[hidden] {
+    display: none;
+  }
+  .select-menu-arrow {
+    position: absolute;
+    top: -1.25rem;
+    right: 1rem;
+    z-index: -100;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--accent-color);
+    border-left: 10px solid transparent;
+  }
+  .select-menu > p,
+  .select-item {
+    padding: calc(var(--select-item-padding) / 2) var(--select-item-padding);
+  }
+  .select-item {
+    all: unset;
+    display: flex;
+    padding: calc(var(--select-item-padding) / 2) var(--select-item-padding);
+    padding-right: calc(var(--select-item-padding) + var(--select-item-icon-font-size) + var(--select-item-icon-margin));
+    cursor: pointer;
+    border-radius: 0.75rem;
+  }
+  .select-item:hover,
+  .select-item:focus-visible {
+    background-color: var(--accent-color);
+  }
+  .select-item > i {
+    margin-right: var(--select-item-icon-margin);
+    font-size: var(--select-item-icon-font-size);
+  }
+  .screenshot-img {
+    width: var(--w-xs);
+    height: var(--h-xs);
+  }
+  @media (min-width: 576px) {
+    .screenshot-img {
+      width: var(--w-md);
+      height: var(--h-md);
+    }
+  }
+</style>
+
+<script>
+  const selectButton = document.getElementById('select-btn')
+  const selectMenu = document.getElementById('select-menu')
+
+  if (selectButton && selectMenu) {
+    selectButton.addEventListener('click', () => {
+      const isOpen = !selectMenu.hidden
+      selectMenu.hidden = isOpen
+      selectButton.classList.toggle('open', !isOpen)
+    })
+
+    document.addEventListener('click', (event) => {
+      const container = document.getElementById('screenshot-select')
+      if (!container?.contains(event.target as Node)) {
+        selectMenu.hidden = true
+        selectButton.classList.remove('open')
+      }
+    })
+
+    selectMenu.querySelectorAll<HTMLElement>('[data-platform]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const platform = button.dataset.platform
+        const label = button.dataset.label
+
+        document.querySelectorAll<HTMLElement>('[data-platform-group]').forEach((group) => {
+          (group as HTMLElement).hidden = group.dataset.platformGroup !== platform
+        })
+
+        const span = selectButton.childNodes[0]
+        if (span) span.textContent = label ?? null
+
+        selectMenu.querySelectorAll<HTMLElement>('[data-platform] i').forEach((icon) => {
+          icon.style.visibility = 'hidden'
+        })
+
+        const icon = button.querySelector('i')
+        if (icon) icon.style.visibility = 'visible'
+
+        selectMenu.hidden = true
+        selectButton.classList.remove('open')
+      })
+    })
+  }
+</script>
