@@ -7,8 +7,6 @@ body {
 }
 
 :root {
-  color-scheme: light dark;
-
   --primary-color: #ffffff;
   --secondary-color: #000000;
   --accent-color: rgb(245, 245, 247);
@@ -24,9 +22,23 @@ body {
 
   --primary-button-hover-background: rgb(45, 45, 45);
 
-  --glassBackground: rgba(135, 135, 135, 0.05);
+  --box-shadow-color: rgba(0, 0, 0, 0.14);
+  --box-shadow-medium-color: rgba(0, 0, 0, 0.18);
+  --box-shadow-strong-color: rgba(0, 0, 0, 0.22);
+
+  --glassBackground: rgba(255, 255, 255, 0.3);
   --glassBorder: rgba(255, 255, 255, 0.1);
-  --glassBlur: 4px;
+  --glassBlur: 3px;
+
+  /* New design */
+  --divider-color: rgba(0, 0, 0, 0.06);
+  --eyebrow-color: rgba(29, 29, 31, 0.45);
+
+  color-scheme: light dark;
+}
+
+p.eyebrow {
+  color: var(--eyebrow-color);
 }
 
 @media (prefers-color-scheme: dark) {

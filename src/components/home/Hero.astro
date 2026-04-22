@@ -1,0 +1,54 @@
+---
+
+import ButtonLink from 'components/ui/buttons/ButtonLink.astro'
+import { ButtonType } from 'components/ui/buttons/constants/ButtonType'
+import { ButtonVariants } from 'components/ui/buttons/constants/ButtonVariants'
+import { CONFIG, ROUTES } from 'data'
+
+const nameParts = CONFIG.profile.name.split(' ')
+const firstName = nameParts[0]
+const lastName = nameParts[1]
+---
+<section class="hero" id="home">
+  <p class="eyebrow">{CONFIG.profile.jobTitle} — {CONFIG.profile.city}, Germany</p>
+  <h1 class="hero-name">{firstName}<br />{lastName}</h1>
+  <p class="hero-role">iOS · Android · Web</p>
+  <div class="hero-ctas">
+    <ButtonLink variant={ButtonVariants.filled} type={ButtonType.primary} href={ROUTES.projects}>View Projects</ButtonLink>
+    <ButtonLink variant={ButtonVariants.text} type={ButtonType.text} href={ROUTES.projects} href={ROUTES.aboutMe}>About me</ButtonLink>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 96px 32px 88px;
+    text-align: center;
+    border-bottom: 1px solid var(--divider-color);
+  }
+
+  .hero-name {
+    margin-bottom: var(--margin-bottom-hero);
+    font-size: var(--heroTitleSize);
+    font-weight: 700;
+    line-height: var(--line-height-hero);
+    color: #1d1d1f;
+    letter-spacing: -0.045em;
+  }
+
+  .hero-role {
+    margin-bottom: 34px;
+    font-size: 19px;
+    line-height: 1;
+    color: var(--eyebrow-color);
+    letter-spacing: -0.015em;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+</style>

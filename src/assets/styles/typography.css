@@ -4,15 +4,20 @@
   --font-size-h3: 1.375rem;
   --font-size-h4: 1.0625rem;
   --font-size-h5: 0.875rem;
+  --font-size-eyebrow: 0.75rem;
 
   --margin-bottom-h1: 1rem;
   --margin-bottom-h2: 0.875rem;
   --margin-bottom-h3: 0.75rem;
   --margin-bottom-h4: 0.5rem;
   --margin-bottom-h5: 0.5rem;
+  --margin-bottom-hero: 1.125rem;
+  --margin-bottom-eyebrow: 1.25rem;
 
   --line-height-headings: 1.05;
   --line-height-text: 1.65;
+  --line-height-hero: 1;
+  --line-height-eyebrow: 1;
 
   --titleFontSize: max(3rem, 8vmin);
   --subTitleFontSize: max(1rem, 2.5vmin);
@@ -40,6 +45,14 @@ p,
 span,
 li {
   line-height: var(--line-height-text);
+}
+
+p.eyebrow {
+  margin-bottom: var(--margin-bottom-eyebrow);
+  font-size: var(--font-size-eyebrow);
+  font-weight: 500;
+  line-height: var(--line-height-eyebrow);
+  letter-spacing: 0.02em;
 }
 
 h1,
