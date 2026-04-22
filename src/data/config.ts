@@ -1,9 +1,8 @@
 export const CONFIG = {
-  // Don't forget to change  these values in the public/index.html too.
   profile: {
     city: 'Hünfelden',
     email: 'info@daniel-bedrich.dev',
-    jobTitle: 'Mobile Developer',
+    jobTitle: 'App Developer',
     name: 'Daniel Bedrich',
     street: 'Schlesienstraße 2',
     zip: '65597',
