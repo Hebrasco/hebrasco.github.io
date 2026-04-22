@@ -1,0 +1,25 @@
+---
+interface Props {
+  class?: string
+  xs?: number
+  sm?: number
+  md?: number
+  lg?: number
+  xl?: number
+  xxl?: number
+}
+const { class: className = '', xs = 12, sm, md, lg, xl, xxl } = Astro.props
+
+const classes = [
+  className,
+  `col-xs-${xs}`,
+  sm !== undefined ? `col-sm-${sm}` : '',
+  md !== undefined ? `col-md-${md}` : '',
+  lg !== undefined ? `col-lg-${lg}` : '',
+  xl !== undefined ? `col-xl-${xl}` : '',
+  xxl !== undefined ? `col-xxl-${xxl}` : '',
+].filter(Boolean).join(' ')
+---
+<div class={classes}>
+  <slot />
+</div>

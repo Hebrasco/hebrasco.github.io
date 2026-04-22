@@ -1,0 +1,45 @@
+---
+import Column from 'components/layout/Column.astro'
+import Row from 'components/layout/Row.astro'
+import ProjectHeroDesktop from 'components/project/ProjectHeroDesktop.astro'
+import ProjectHeroLinks from 'components/project/ProjectHeroLinks.astro'
+import ProjectHeroMobile from 'components/project/ProjectHeroMobile.astro'
+import ExternalLink from 'components/ui/ExternalLink.astro'
+import Section from 'components/ui/Section.astro'
+import type { Project } from 'types'
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+---
+<div class='container'>
+  <Section>
+    <div class="p-5 primary-bg rounded d-flex">
+      <div class="hero-desktop">
+        <ProjectHeroDesktop project={project} />
+      </div>
+      <div class="hero-mobile">
+        <ProjectHeroMobile project={project} />
+      </div>
+    </div>
+  </Section>
+</div>
+
+<style>
+  .hero-desktop {
+    display: block;
+  }
+  .hero-mobile {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    .hero-desktop {
+      display: none;
+    }
+    .hero-mobile {
+      display: block;
+    }
+  }
+</style>

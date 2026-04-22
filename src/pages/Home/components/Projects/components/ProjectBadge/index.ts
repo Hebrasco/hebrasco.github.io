@@ -1,1 +1,0 @@
-export { ProjectBadge } from './ProjectBadge'

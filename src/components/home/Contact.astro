@@ -1,0 +1,19 @@
+---
+import Column from 'components/layout/Column.astro'
+import Row from 'components/layout/Row.astro'
+import Email from 'components/ui/Email.astro'
+import Section from 'components/ui/Section.astro'
+import { ROUTES } from 'data'
+---
+<div class='container'>
+  <Section anchor={ROUTES.contact} md title="Contact">
+    <Row>
+      <Column>
+        <p>New projects, freelance inquiry or even a coffee.</p>
+      </Column>
+      <Column>
+        <Email />
+      </Column>
+    </Row>
+  </Section>
+</div>

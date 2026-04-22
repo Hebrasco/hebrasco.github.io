@@ -1,0 +1,40 @@
+---
+
+import SocialLinks from 'components/ui/SocialLinks.astro'
+import { CONFIG, ROUTES } from 'data'
+import Column from './Column.astro'
+import Row from './Row.astro'
+---
+<footer class="primary-bg footer">
+  <div class="container pv-4">
+    <Row>
+      <Column md={6} xs={12}>
+        <p class="pv-2">
+          Copyright &copy; {new Date().getFullYear()} {CONFIG.profile.name}. All rights reserved.
+        </p>
+      </Column>
+      <Column md={6} xs={12}>
+        <div class="links-container d-flex gap-4">
+          <a class="nav-item" href={ROUTES.imprintHash}>Imprint</a>
+          <a class="nav-item" href={ROUTES.privacyPolicyHash}>Privacy Policy</a>
+          <SocialLinks useIcons />
+        </div>
+      </Column>
+    </Row>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    margin-top: var(--sectionGap);
+  }
+  .links-container {
+    align-content: center;
+    justify-content: end;
+  }
+  @media (max-width: 768px) {
+    .links-container {
+      justify-content: start;
+    }
+  }
+</style>

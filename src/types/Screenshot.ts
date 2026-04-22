@@ -1,5 +1,6 @@
 type Screenshot = {
-  src: string
+  light: ImageMetadata
+  dark: ImageMetadata
   altText: string
 }
 

@@ -1,6 +1,0 @@
-export { Email } from './Email'
-export { ExternalLink } from './ExternalLink'
-export { Link } from './Link'
-export { Section } from './Section'
-export { Select } from './Select'
-export { SocialLinks } from './SocialLinks'

@@ -1,6 +1,6 @@
 type AppIcon = {
-  dark: string
-  light: string
+  dark: ImageMetadata
+  light: ImageMetadata
 }
 
 export type { AppIcon }

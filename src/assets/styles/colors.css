@@ -16,7 +16,7 @@ body {
   --primary-text-color: #1d1d1f;
   --secondary-text-color-values: 248, 249, 250;
   --secondary-text-color: rgb(var(--secondary-text-color-values));
-  --muted-text-color: rgba(0, 0, 0, 0.7);
+  --muted-text-color: rgba(0, 0, 0, 0.48);
 
   --primary-background-color: var(--primary-text-color);
   --secondary-background-color: var(--secondary-text-color);
@@ -37,7 +37,7 @@ body {
 
     --primary-text-color: rgb(248, 249, 250);
     --secondary-text-color: rgb(33, 37, 41);
-    --muted-text-color: rgba(255, 255, 255, 0.7);
+    --muted-text-color: rgba(255, 255, 255, 0.48);
 
     --primary-background-color: var(--primary-text-color);
     --secondary-background-color: var(--secondary-text-color);

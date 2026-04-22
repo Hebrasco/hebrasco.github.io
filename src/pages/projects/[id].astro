@@ -1,0 +1,27 @@
+---
+import ProjectDescription from 'components/project/ProjectDescription.astro'
+import ProjectFeatures from 'components/project/ProjectFeatures.astro'
+import ProjectHero from 'components/project/ProjectHero.astro'
+import ProjectKeyInfo from 'components/project/ProjectKeyInfo.astro'
+import ProjectScreenshots from 'components/project/ProjectScreenshots.astro'
+import { PROJECTS } from 'data'
+import Layout from 'layouts/Layout.astro'
+
+export function getStaticPaths() {
+  return PROJECTS.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }))
+}
+
+const { project } = Astro.props
+---
+<Layout title={`${project.name} – Daniel Bedrich`}>
+  <div class="navbar-spacer">
+    <ProjectHero project={project} />
+    <ProjectKeyInfo project={project} />
+    <ProjectDescription project={project} />
+    <ProjectFeatures project={project} />
+    <ProjectScreenshots project={project} />
+  </div>
+</Layout>

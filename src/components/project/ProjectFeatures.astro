@@ -1,0 +1,47 @@
+---
+import HorizontalList from 'components/ui/HorizontalList.astro'
+import ListContainer from 'components/ui/ListContainer.astro'
+import Section from 'components/ui/Section.astro'
+import type { Project } from 'types'
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+---
+<Section fluidContainer lg title="Features">
+  <HorizontalList>
+    {project.features.map((feature) => (
+      <ListContainer>
+        <div class="feature-card rounded primary-bg">
+          <div class="feature-content">
+            <i class={`${feature.icon} display-1`} style="margin-bottom: 15px"></i>
+            <p class="display-3 fw-bold">{feature.title}</p>
+            <p>{feature.description}</p>
+          </div>
+        </div>
+      </ListContainer>
+    ))}
+  </HorizontalList>
+</Section>
+
+<style>
+  .feature-card {
+    justify-content: flex-start;
+    width: 286px;
+    height: 281px;
+  }
+  .feature-content {
+    padding: var(--list-item-padding);
+  }
+  @media (min-width: 576px) {
+    .feature-card {
+      width: 350px;
+      height: 256px;
+    }
+    .feature-card .display-3 {
+      font-size: var(--font-size-h3);
+    }
+  }
+</style>

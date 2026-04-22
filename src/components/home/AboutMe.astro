@@ -1,0 +1,69 @@
+---
+import Resume from 'assets/files/daniel_bedrich_resume.pdf'
+import Column from 'components/layout/Column.astro'
+import Row from 'components/layout/Row.astro'
+import ExternalLink from 'components/ui/ExternalLink.astro'
+import KeyInfoTitle from 'components/ui/KeyInfoTitle.astro'
+import ProjectBadge from 'components/ui/ProjectBadge.astro'
+import Section from 'components/ui/Section.astro'
+import { CONFIG, PROFILE, ROUTES } from 'data'
+---
+<div class='container'>
+  <Section anchor={ROUTES.aboutMe} lg title="About me">
+    <Row>
+      <Column md={5} sm={10} xs={12}>
+        <p>
+          I have been working in Front-End and Mobile development since 2015 and have already
+          implemented various projects for web, Android and iOS in small and large teams.
+        </p>
+      </Column>
+    </Row>
+
+    <Row>
+      <Column class="d-flex align-items-center gap-3 mt-3" xs={12}>
+        <ExternalLink button to={Resume}>Download Resume</ExternalLink>
+        <span class="d-inline-flex align-items-center">
+          <ExternalLink to={`mailto:${CONFIG.profile.email}`}>Let's Talk</ExternalLink>
+          <i class="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
+        </span>
+      </Column>
+    </Row>
+
+    <Column>
+      <Section md title="Skills">
+        <Row gap={1.5}>
+          <Column class="skills-column" md={4} xs={12}>
+            <KeyInfoTitle title="Languages" />
+            <ul class="list-unstyled d-flex flex-wrap gap-2">
+              {PROFILE.skills.languages.map((skill) => (
+                <li class="d-flex"><ProjectBadge skill={skill} /></li>
+              ))}
+            </ul>
+          </Column>
+          <Column class="skills-column" md={4} xs={12}>
+            <KeyInfoTitle title="Frameworks" />
+            <ul class="list-unstyled d-flex flex-wrap gap-2">
+              {PROFILE.skills.frameworks.map((skill) => (
+                <li class="d-flex"><ProjectBadge skill={skill} /></li>
+              ))}
+            </ul>
+          </Column>
+          <Column class="skills-column" md={4} xs={12}>
+            <KeyInfoTitle title="Applications" />
+            <ul class="list-unstyled d-flex flex-wrap gap-2">
+              {PROFILE.skills.applications.map((skill) => (
+                <li class="d-flex"><ProjectBadge skill={skill} /></li>
+              ))}
+            </ul>
+          </Column>
+        </Row>
+      </Section>
+    </Column>
+  </Section>
+</div>
+
+<style>
+  .skills-column > :global(div) {
+    width: 100%;
+  }
+</style>

@@ -17,34 +17,35 @@ Checkout my skills, recent and favorite projects and get in touch with me!
 ## Folder Structure
 
 - assets
+  - files
+  - fonts
   - icons
   - images
   - styles
 - components
+  - home
   - layout
+  - project
   - ui
 - data
   - misc
   - profile
   - projects
-- hooks
-  - home
-  - imprint
+- layouts
 - pages
-- routes
 - types
-- utils
 
 ## Tech Stack
 
-- React
+- Astro
 - Typescript
-- Bootstrap
+- HTML
+- CSS
 
 ## Development Environment
 
 - VS Code
-  - Prettier
+  - Biome
 - Git
 - GitHub
 - GitHub Actions

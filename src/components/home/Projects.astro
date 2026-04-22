@@ -1,0 +1,144 @@
+---
+import { BlankAppIcon } from 'assets/images/appIcons'
+import Column from 'components/layout/Column.astro'
+import Row from 'components/layout/Row.astro'
+import HorizontalList from 'components/ui/HorizontalList.astro'
+import ListContainer from 'components/ui/ListContainer.astro'
+import ProjectBadge from 'components/ui/ProjectBadge.astro'
+import Section from 'components/ui/Section.astro'
+import { PROJECTS, ROUTES } from 'data'
+---
+<div class={`primary-bg preview-container-container`}>
+  <Section anchor={ROUTES.projects} fluidContainer lg title="Projects">
+    <HorizontalList>
+      {PROJECTS.map((project) => (
+        <ListContainer class="rounded" enableScaling>
+          <a
+            class="preview-link rounded bg-primary"
+            href={`/projects/${project.id}`}
+          >
+            <div class="preview-container">
+              <div class="mb-auto">
+                <Row>
+                  <Column class="d-flex align-items-center preview-content-header-container">
+                    <div class="preview-content-app-icon me-3">
+                      <picture>
+                        {project.appIcon?.dark && (
+                          <source
+                            media="(prefers-color-scheme: dark)"
+                            srcset={project.appIcon.dark.src}
+                          />
+                        )}
+                        <img
+                          alt={`App icon of ${project.id}`}
+                          height="100%"
+                          src={project.appIcon?.light.src ?? BlankAppIcon.src}
+                          width="100%"
+                        />
+                      </picture>
+                    </div>
+                    <span class="display-4 m-0">{project.name}</span>
+                    <i class="bi bi-chevron-right ms-auto"></i>
+                  </Column>
+                </Row>
+              </div>
+
+              <div class="d-flex flex-wrap mt-4 gap-2">
+                {project.languages.map((lang) => (
+                  <ProjectBadge skill={lang} />
+                ))}
+                {project.frameworks.map((fw) => (
+                  <ProjectBadge skill={fw} />
+                ))}
+              </div>
+
+              <div class="d-flex justify-content-center preview-image-container">
+                <picture class="preview-image">
+                  {project.previewImage.dark && (
+                    <source
+                      media="(prefers-color-scheme: dark)"
+                      srcset={project.previewImage.dark.src}
+                    />
+                  )}
+                  <img
+                    alt={project.previewImage.altText}
+                    height="100%"
+                    loading="lazy"
+                    src={project.previewImage.light.src}
+                    width="100%"
+                  />
+                </picture>
+              </div>
+            </div>
+          </a>
+        </ListContainer>
+      ))}
+    </HorizontalList>
+  </Section>
+</div>
+
+<style>
+  .preview-container-container {
+    padding: 0 0 var(--sectionGap) 0;
+    margin-top: var(--sectionGap);
+  }
+  .preview-link {
+    display: block;
+    width: 282px;
+    height: 539px;
+  }
+  .preview-link:hover {
+    text-decoration: none;
+  }
+  .preview-link:hover {
+    cursor: pointer;
+  }
+  @media (min-width: 576px) {
+    .preview-link {
+      width: 350px;
+      height: 667px;
+    }
+  }
+  .preview-container {
+    padding: var(--list-item-padding);
+  }
+  .preview-content-header-container {
+    height: 4rem;
+  }
+  .preview-content-app-icon {
+    --app-icon-size: 4rem;
+    width: var(--app-icon-size);
+    min-width: var(--app-icon-size);
+    max-width: var(--app-icon-size);
+    height: var(--app-icon-size);
+    min-height: var(--app-icon-size);
+    max-height: var(--app-icon-size);
+    overflow: hidden;
+    border: 1px solid var(--app-icon-border-color);
+    border-radius: 14px;
+  }
+  .preview-content-app-icon > picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .preview-content-app-icon img {
+    width: 100%;
+    object-fit: cover;
+  }
+  @media (prefers-color-scheme: dark) {
+    .preview-content-app-icon {
+      background: linear-gradient(180deg, rgba(28, 28, 28, 1) 20%, rgba(15, 15, 15, 1) 80%);
+    }
+  }
+  .preview-image-container {
+    margin-top: 3rem;
+  }
+  .preview-image {
+    display: block;
+    width: 100%;
+  }
+  .preview-image img {
+    width: 100%;
+  }
+</style>
