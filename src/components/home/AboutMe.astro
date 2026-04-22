@@ -1,5 +1,4 @@
 ---
-import Resume from 'assets/files/daniel_bedrich_resume.pdf'
 import Column from 'components/layout/Column.astro'
 import Row from 'components/layout/Row.astro'
 import ExternalLink from 'components/ui/ExternalLink.astro'
@@ -7,28 +6,34 @@ import KeyInfoTitle from 'components/ui/KeyInfoTitle.astro'
 import ProjectBadge from 'components/ui/ProjectBadge.astro'
 import Section from 'components/ui/Section.astro'
 import { CONFIG, PROFILE, ROUTES } from 'data'
+
+const { profile } = CONFIG
 ---
 <div class='container'>
   <Section anchor={ROUTES.aboutMe} lg title="About me">
     <Row>
       <Column md={5} sm={10} xs={12}>
         <p>
-          I have been working in Front-End and Mobile development since 2015 and have already
-          implemented various projects for web, Android and iOS in small and large teams.
+          I've been building for the web for over ten years, not because I fell into it, but because I actually love the work.
+          I care about alle the little details and write code I'm not embarrassed to look at later. I've shipped production apps used by hundreds
+          of thousands of users and I keep a growing collection of personal project going on the side, mostly because I can't stop
+          coming up with things to build.
         </p>
+        <!-- <p>
+          Based in Limburg a.d. Lahn, Germany.
+        </p> -->
       </Column>
-    </Row>
-
-    <Row>
-      <Column class="d-flex align-items-center gap-3 mt-3" xs={12}>
+      <Column xs={12}>
+        <p><i class="bi bi-geo-fill me-1" />Limburg a.d. Lahn, Germany</p>
+      </Column>
+      <Column class="d-flex align-items-center gap-3 mt-1" xs={12}>
         <ExternalLink button to={"/daniel_bedrich_resume.pdf"}>Download Resume</ExternalLink>
         <span class="d-inline-flex align-items-center">
-          <ExternalLink to={`mailto:${CONFIG.profile.email}`}>Let's Talk</ExternalLink>
+          <ExternalLink to={`mailto:${profile.email}`}>Let's Talk</ExternalLink>
           <i class="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
         </span>
       </Column>
     </Row>
-
     <Column>
       <Section md title="Skills">
         <Row gap={1.5}>

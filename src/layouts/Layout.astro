@@ -7,11 +7,15 @@ import 'assets/styles/globals.css'
 import { Font } from 'astro:assets'
 import Footer from 'components/layout/Footer.astro'
 import NavBar from 'components/layout/NavBar.astro'
+import { CONFIG } from 'data'
 
 interface Props {
   title?: string
 }
-const { title = 'Daniel Bedrich - Mobile Developer' } = Astro.props
+
+const { profile } = CONFIG
+
+const { title = `${profile.name} - ${profile.jobTitle}` } = Astro.props
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -22,25 +26,26 @@ const { title = 'Daniel Bedrich - Mobile Developer' } = Astro.props
     <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
-    <meta name="application-name" content="Daniel Bedrich" />
+    <meta name="application-name" content={profile.name} />
     <meta name="keywords" content="engineer, developer, coder, coding, programmer, front end, app, mobile, portfolio, ui, ux, design, ios, apple, react, swift, javascript, typescript, github" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <Font cssVariable="--font-varela" preload />
+    <Font cssVariable="--font-nunito" preload />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="primary-bg">
     <NavBar />
     <slot />
     <Footer />
-    <script is:inline>
-      console.log(
-        '%c Daniel Bedrich — iOS & macOS Developer ',
-        'background: #1d1d1f; color: #f5f5f7; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 6px; letter-spacing: 0.02em;'
-      )
-      console.log('%c Swift · SwiftUI · React · TypeScript', 'color: #86868b; font-size: 11px; padding: 2px 14px;')
-      console.log('%c github.com/Hebrasco', 'color: #0066cc; font-size: 11px; padding: 2px 14px;')
-    </script>
   </body>
 </html>
+
+<script>
+  console.log(
+    '%c Daniel Bedrich — App Developer ',
+    'background: #1d1d1f; color: #f5f5f7; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 6px; letter-spacing: 0.02em;'
+  )
+  console.log('%c Swift · SwiftUI · React · TypeScript', 'color: #86868b; font-size: 11px; padding: 2px 14px;')
+  console.log('%c https://github.com/Hebrasco', 'color: #0066cc; font-size: 11px; padding: 2px 14px;')
+</script>

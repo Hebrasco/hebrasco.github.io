@@ -57,7 +57,7 @@ const hasMultiplePlatforms = platforms.length > 1
       >
         <HorizontalList>
           {screenshots.map((screenshot) => (
-            <ListContainer>
+            <ListContainer class="primary-bg">
               <picture>
                 {project.appIcon?.dark && (
                   <source
@@ -66,13 +66,14 @@ const hasMultiplePlatforms = platforms.length > 1
                   />
                 )}
                 <img
-                alt={screenshot.altText}
-                class="screenshot-img"
-                height={sizes.md.height}
-                src={screenshot.light.src}
-                style={`--w-md:${sizes.md.width}px;--h-md:${sizes.md.height}px;--w-xs:${sizes.xs.width}px;--h-xs:${sizes.xs.height}px`}
-                width={sizes.md.width}
-              />
+                  loading='lazy'
+                  alt={screenshot.altText}
+                  class="screenshot-img"
+                  height={sizes.md.height}
+                  src={screenshot.light.src}
+                  style={`--w-md:${sizes.md.width}px;--h-md:${sizes.md.height}px;--w-xs:${sizes.xs.width}px;--h-xs:${sizes.xs.height}px`}
+                  width={sizes.md.width}
+                />
               </picture>
             </ListContainer>
           ))}

@@ -8,13 +8,13 @@ import ProjectBadge from 'components/ui/ProjectBadge.astro'
 import Section from 'components/ui/Section.astro'
 import { PROJECTS, ROUTES } from 'data'
 ---
-<div class={`primary-bg preview-container-container`}>
+<div class="preview-container-container accent-bg">
   <Section anchor={ROUTES.projects} fluidContainer lg title="Projects">
     <HorizontalList>
       {PROJECTS.map((project) => (
-        <ListContainer class="rounded" enableScaling>
+        <ListContainer class="primary-bg rounded" enableScaling>
           <a
-            class="preview-link rounded bg-primary"
+            class="preview-link rounded"
             href={`/projects/${project.id}`}
           >
             <div class="preview-container">
@@ -30,6 +30,7 @@ import { PROJECTS, ROUTES } from 'data'
                           />
                         )}
                         <img
+                          loading='lazy'
                           alt={`App icon of ${project.id}`}
                           height="100%"
                           src={project.appIcon?.light.src ?? BlankAppIcon.src}
@@ -42,16 +43,14 @@ import { PROJECTS, ROUTES } from 'data'
                   </Column>
                 </Row>
               </div>
-
               <div class="d-flex flex-wrap mt-4 gap-2">
-                {project.languages.map((lang) => (
-                  <ProjectBadge skill={lang} />
+                {project.languages.map((language) => (
+                  <ProjectBadge skill={language} />
                 ))}
-                {project.frameworks.map((fw) => (
-                  <ProjectBadge skill={fw} />
+                {project.frameworks.map((framework) => (
+                  <ProjectBadge skill={framework} />
                 ))}
               </div>
-
               <div class="d-flex justify-content-center preview-image-container">
                 <picture class="preview-image">
                   {project.previewImage.dark && (
@@ -60,7 +59,7 @@ import { PROJECTS, ROUTES } from 'data'
                       srcset={project.previewImage.dark.src}
                     />
                   )}
-                  <img
+                <img
                     alt={project.previewImage.altText}
                     height="100%"
                     loading="lazy"

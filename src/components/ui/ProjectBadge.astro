@@ -1,22 +1,23 @@
 ---
+
 import type { Skill } from 'types'
+
 interface Props {
   skill: Skill
 }
 const { skill } = Astro.props
 ---
-<span class="badge pv-2 ph-3">{skill.name}</span>
+<span class="badge accent-bg pv-2 ph-3">{skill.name}</span>
 
 <style>
   .badge {
-    border-radius: var(--borderRadius);
-    font-size: 0.75em;
-    white-space: nowrap;
     display: inline-block;
-    text-align: center;
-    vertical-align: baseline;
+    font-size: 0.75em;
     font-weight: 700;
     line-height: 1;
-    background-color: var(--accent-color);
+    vertical-align: baseline;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: var(--border-radius);
   }
 </style>
