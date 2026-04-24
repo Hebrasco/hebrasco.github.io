@@ -5,11 +5,7 @@ interface Props {
   md?: boolean
   lg?: boolean
   xl?: boolean
-  fluidContainer?: boolean
-  title?: string
   anchor?: string
-  anchorReplace?: string
-  hasAction?: boolean
   class?: string
 }
 
@@ -19,17 +15,8 @@ const {
   md = false,
   lg = false,
   xl = false,
-  fluidContainer = false,
-  title,
   anchor,
-  anchorReplace = '/#',
-  hasAction = false,
-  class: className = '',
 } = Astro.props
-
-const headingTag = xl ? 'h1' : lg ? 'h2' : md ? 'h3' : sm ? 'h4' : xs ? 'h5' : 'h1'
-
-const anchorId = anchor ? anchor.replace(anchorReplace, '') : undefined
 
 const sectionClass = [
   'section',
@@ -38,36 +25,21 @@ const sectionClass = [
   md ? 'section-md' : '',
   lg ? 'section-lg' : '',
   xl ? 'section-xl' : '',
-  className,
 ].filter(Boolean).join(' ')
 ---
-{anchorId && <div id={anchorId}></div>}
-<div class={sectionClass}>
-  {(title || hasAction) && (
-    <div class={`d-flex justify-content-between${fluidContainer ? ' section-fluid' : ''}`}>
-      {title && <Fragment set:html={`<${headingTag}>${title}</${headingTag}>`} />}
-      {hasAction && <div class="action-container"><slot name="action" /></div>}
-    </div>
-  )}
+{anchor && <div id={anchor}></div>}
+<section class={sectionClass}>
   <slot />
-</div>
+</section>
 
 <style>
-  .section-fluid {
-    margin: 0px var(--containerMargin);
-  }
-  :global(.section > h2) {
-    word-break: break-word;
+  .section {
+    margin-right: var(--container-margin);
+    margin-left: var(--container-margin);
   }
   .section-xs { padding-top: 1rem; }
   .section-sm { padding-top: 2rem; }
   .section-md { padding-top: 4rem; }
   .section-lg { padding-top: 6rem; }
   .section-xl { padding-top: 12rem; }
-  .action-container {
-    --button-to-heading-font-size-multiplier: 3.25;
-    align-content: end;
-    margin-bottom: var(--margin-bottom-h2);
-    line-height: calc(var(--button-to-heading-font-size-multiplier) - var(--line-height-headings));
-  }
 </style>

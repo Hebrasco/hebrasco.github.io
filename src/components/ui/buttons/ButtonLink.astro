@@ -1,71 +1,95 @@
 ---
+import {ButtonVariants} from 'components/ui/buttons/constants/ButtonVariants'
 
-import { ButtonType } from 'components/ui/buttons/constants/ButtonType'
-import { ButtonVariants } from 'components/ui/buttons/constants/ButtonVariants'
+type Variant = (typeof ButtonVariants)[keyof typeof ButtonVariants]
 
 interface Props {
-  variant: (typeof ButtonVariants)[keyof typeof ButtonVariants]
-  type: (typeof ButtonType)[keyof typeof ButtonType]
+  variant?: Variant
   href: string
+  download?: boolean
+  target?: string
+  icon?: boolean
 }
 
-const { variant, href, type } = Astro.props
+const {
+  variant = ButtonVariants.filled,
+  href,
+  download,
+  target,
+  icon = false,
+} = Astro.props
 
-function getVariantClass(): string {
-  switch(variant) {
-    case ButtonVariants.filled: return 'button-filled'
-    case ButtonVariants.outline: return 'button-outline'
-    case ButtonVariants.text: return 'button-text'
-  }
+const variantClass: Record<Variant, string> = {
+  filled: 'button button-solid',
+  outline: 'button button-outline',
+  text: 'button-text',
 }
 
-function getTypeClass(): string {
-  switch(type) {
-    case ButtonType.primary: return 'button-primary'
-    case ButtonType.secondary: return 'button-secondary'
-    case ButtonType.text: return 'button-text'
-  }
-}
-
+const cls = [variantClass[variant], icon ? 'button-icon' : ''].filter(Boolean).join(' ')
+const autoRel = (target === '_blank' ? 'noopener noreferrer' : undefined)
 ---
-<a class:list={["button", getVariantClass(), getTypeClass()]} href={href}>
+<a
+  class={cls}
+  download={download || undefined}
+  href={href}
+  rel={autoRel}
+  target={target}
+>
   <slot />
 </a>
 
 <style>
   .button {
-    padding: 0.6875rem 1.375rem;
+    display: inline-block;
+    padding: 11px 22px;
     font-size: 0.8125rem;
     font-weight: 500;
     letter-spacing: -0.01em;
     text-decoration: none;
-    border-radius: var(--border-radius);
-    transition-timing-function: ease-in-out;
-    transition-duration: 350ms, 350ms, 100ms;
-    transition-property: background-color, color, transform;
+    border-radius: 980px;
+    transition-timing-function: ease;
+    transition-duration: 150ms, 100ms;
+    transition-property: background-color, transform;
   }
-
+  .button:hover,
+  .button:active,
+  .button:focus-visible {
+    text-decoration: none;
+  }
+  .button:focus-visible {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-offset: 2px;
+  }
   .button:active {
     transform: translateY(1px);
   }
 
-  .button:focus-visible {
-    outline: 2px solid var(--interactive-color);
-    outline-offset: 2px;
+  .button-solid {
+    color: #ffffff;
+    background-color: #1d1d1f;
+  }
+  .button-solid:hover,
+  .button-solid:focus-visible {
+    color: #ffffff;
+    outline-color: #0071e3;
+    background-color: #3a3a3c;
   }
 
-  .button-filled {
-
+  .button-outline {
+    color: #1d1d1f;
+    background-color: transparent;
+    border: 1px solid rgba(0,0,0,0.2);
   }
-
-  .button-outlined {
-    border-style: solid;
-    border-width: 1.5px;
-  }
-
   .button-outline:hover,
   .button-outline:focus-visible {
-    background-color: var(--accent-color);
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.04);
+  }
+
+  .button-text {
+    color: #0071e3;
+    text-decoration: none;
   }
 
   .button-text::after {
@@ -77,22 +101,9 @@ function getTypeClass(): string {
     text-decoration: underline;
   }
 
-  .button-primary {
-    color: #ffffff;
-    background: #1d1d1f;
-  }
-
-  .button-outline.button-primary {
-    color: var(--primary-text-color);
-    border-color: var(--primary-text-color);
-  }
-
-  .button-primary:hover {
-    color: #ffffff;
-    background: #3a3a3c;
-  }
-
-  .button-text {
-    color: #0071e3;
+  .button-icon {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
   }
 </style>

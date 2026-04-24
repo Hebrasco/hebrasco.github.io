@@ -1,33 +1,8 @@
-:root {
-  --font-size-h1: 2.5rem;
-  --font-size-h2: clamp(1.75rem, 3.5vw, 2.5rem);
-  --font-size-h3: 1.375rem;
-  --font-size-h4: 1.0625rem;
-  --font-size-h5: 0.875rem;
-  --font-size-eyebrow: 0.75rem;
-
-  --margin-bottom-h1: 1rem;
-  --margin-bottom-h2: 0.875rem;
-  --margin-bottom-h3: 0.75rem;
-  --margin-bottom-h4: 0.5rem;
-  --margin-bottom-h5: 0.5rem;
-  --margin-bottom-hero: 1.125rem;
-  --margin-bottom-eyebrow: 1.25rem;
-
-  --line-height-headings: 1.05;
-  --line-height-text: 1.65;
-  --line-height-hero: 1;
-  --line-height-eyebrow: 1;
-
-  --titleFontSize: max(3rem, 8vmin);
-  --subTitleFontSize: max(1rem, 2.5vmin);
-  --headingFontSize: 2.5vmin;
-
-  --heroTitleSize: clamp(52px, 10vw, 80px);
-}
-
 * {
-  font-family: var(--font-nunito);
+  /* font-family: var(--font-nunito); */
+  font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 h1,
@@ -40,52 +15,56 @@ h5,
   letter-spacing: -0.03em;
 }
 
+p.eyebrow {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
 a,
 p,
-span,
-li {
-  line-height: var(--line-height-text);
+span {
+  font-size: 1.0625em;
+  line-height: 1.65;
 }
 
 p.eyebrow {
-  margin-bottom: var(--margin-bottom-eyebrow);
-  font-size: var(--font-size-eyebrow);
-  font-weight: 500;
-  line-height: var(--line-height-eyebrow);
-  letter-spacing: 0.02em;
+  margin-bottom: 0.625rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 h1,
 .display-1 {
-  margin-bottom: var(--margin-bottom-h1);
-  font-size: var(--font-size-h1);
-  line-height: var(--line-height-headings);
+  margin-bottom: 1rem;
+  font-size: clamp(3.25em, 10vw, 5em);
+  line-height: 1.05;
 }
 
 h2,
 .display-2 {
-  margin-bottom: var(--margin-bottom-h2);
-  font-size: var(--font-size-h2);
-  line-height: var(--line-height-headings);
+  margin-bottom: 1.375rem;
+  font-size: clamp(1.75em, 3.5vw, 2.5em);
+  line-height: 1.05;
 }
 
 h3,
 .display-3 {
-  margin-bottom: var(--margin-bottom-h3);
-  font-size: var(--font-size-h3);
-  line-height: var(--line-height-headings);
+  margin-bottom: 0.75rem;
+  font-size: 1.275rem;
+  line-height: 1.05;
 }
 
 h4,
 .display-4 {
-  margin-bottom: var(--margin-bottom-h4);
-  font-size: var(--font-size-h4);
-  line-height: var(--line-height-headings);
+  margin-bottom: 0.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.05;
 }
 
 h5,
 .display-5 {
-  margin-bottom: var(--margin-bottom-h5);
-  font-size: var(--font-size-h5);
-  line-height: var(--line-height-headings);
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.05;
 }

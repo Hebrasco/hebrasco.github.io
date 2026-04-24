@@ -83,11 +83,6 @@ button {
   text-decoration: none;
 }
 
-.container {
-  margin-right: var(--containerMargin);
-  margin-left: var(--containerMargin);
-}
-
 .d-none {
   display: none;
 }

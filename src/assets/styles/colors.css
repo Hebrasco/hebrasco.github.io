@@ -32,9 +32,16 @@ body {
 
   /* New design */
   --divider-color: rgba(0, 0, 0, 0.06);
-  --eyebrow-color: rgba(29, 29, 31, 0.45);
+  --eyebrow-color: rgba(29, 29, 31, 0.4);
+
+  --badge-background: #f5f5f7;
 
   color-scheme: light dark;
+}
+
+p,
+li {
+  color: rgba(29, 29, 31, 0.6);
 }
 
 p.eyebrow {

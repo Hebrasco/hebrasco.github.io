@@ -1,9 +1,10 @@
 ---
 import Column from 'components/layout/Column.astro'
 import Row from 'components/layout/Row.astro'
+import Badge from 'components/ui/Badge.astro'
 import KeyInfoTitle from 'components/ui/KeyInfoTitle.astro'
-import ProjectBadge from 'components/ui/ProjectBadge.astro'
 import Section from 'components/ui/Section.astro'
+import SkillBadges from 'components/ui/SkillBadges.astro'
 import { PROJECT_STATUS } from 'data'
 import type { Project } from 'types'
 
@@ -21,15 +22,11 @@ const statusDate = project.status.date?.toLocaleDateString() ?? project.status.t
     <Row class="gap-4">
       <Column md={3} xs={6}>
         <KeyInfoTitle title="Frameworks" />
-        <div class="d-flex flex-wrap gap-2">
-          {project.frameworks.map((fw) => <ProjectBadge skill={fw} />)}
-        </div>
+        <SkillBadges skills={project.frameworks} />
       </Column>
       <Column md={3} xs={6}>
         <KeyInfoTitle title="Languages" />
-        <div class="d-flex flex-wrap gap-2">
-          {project.languages.map((lang) => <ProjectBadge skill={lang} />)}
-        </div>
+        <SkillBadges skills={project.languages} />
       </Column>
       <Column md={3} xs={6}>
         <KeyInfoTitle title="Platforms" />

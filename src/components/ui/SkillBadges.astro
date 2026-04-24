@@ -1,0 +1,15 @@
+---
+import Badge from 'components/ui/Badge.astro'
+import type { Skill } from 'types'
+
+interface Props {
+  skills: readonly Skill[]
+}
+
+const { skills } = Astro.props
+---
+<ul class="list-unstyled d-flex flex-wrap gap-2">
+  {skills.map((({ name}) => (
+    <Badge label={name} />
+  )))}
+</ul>

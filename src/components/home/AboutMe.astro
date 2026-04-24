@@ -1,71 +1,46 @@
 ---
 import Column from 'components/layout/Column.astro'
 import Row from 'components/layout/Row.astro'
-import ExternalLink from 'components/ui/ExternalLink.astro'
+import ButtonLink from 'components/ui/buttons/ButtonLink.astro'
+import { ButtonVariants } from 'components/ui/buttons/constants/ButtonVariants'
 import KeyInfoTitle from 'components/ui/KeyInfoTitle.astro'
-import ProjectBadge from 'components/ui/ProjectBadge.astro'
+import Badge from 'components/ui/Badge.astro'
 import Section from 'components/ui/Section.astro'
+import SectionHeader from 'components/ui/SectionHeader.astro'
 import { CONFIG, PROFILE, ROUTES } from 'data'
+import SkillBadges from 'components/ui/SkillBadges.astro'
 
 const { profile } = CONFIG
 ---
-<div class='container'>
-  <Section anchor={ROUTES.aboutMe} lg title="About me">
-    <Row>
-      <Column md={5} sm={10} xs={12}>
-        <p>
-          I've been building for the web for over ten years, not because I fell into it, but because I actually love the work.
-          I care about alle the little details and write code I'm not embarrassed to look at later. I've shipped production apps used by hundreds
-          of thousands of users and I keep a growing collection of personal project going on the side, mostly because I can't stop
-          coming up with things to build.
-        </p>
-        <!-- <p>
-          Based in Limburg a.d. Lahn, Germany.
-        </p> -->
-      </Column>
-      <Column xs={12}>
-        <p><i class="bi bi-geo-fill me-1" />Limburg a.d. Lahn, Germany</p>
-      </Column>
-      <Column class="d-flex align-items-center gap-3 mt-1" xs={12}>
-        <ExternalLink button to={"/daniel_bedrich_resume.pdf"}>Download Resume</ExternalLink>
-        <span class="d-inline-flex align-items-center">
-          <ExternalLink to={`mailto:${profile.email}`}>Let's Talk</ExternalLink>
-          <i class="bi bi-arrow-up-right-circle-fill d-flex ms-1"></i>
-        </span>
-      </Column>
-    </Row>
-    <Column>
-      <Section md title="Skills">
-        <Row gap={1.5}>
-          <Column class="skills-column" md={4} xs={12}>
-            <KeyInfoTitle title="Languages" />
-            <ul class="list-unstyled d-flex flex-wrap gap-2">
-              {PROFILE.skills.languages.map((skill) => (
-                <li class="d-flex"><ProjectBadge skill={skill} /></li>
-              ))}
-            </ul>
-          </Column>
-          <Column class="skills-column" md={4} xs={12}>
-            <KeyInfoTitle title="Frameworks" />
-            <ul class="list-unstyled d-flex flex-wrap gap-2">
-              {PROFILE.skills.frameworks.map((skill) => (
-                <li class="d-flex"><ProjectBadge skill={skill} /></li>
-              ))}
-            </ul>
-          </Column>
-          <Column class="skills-column" md={4} xs={12}>
-            <KeyInfoTitle title="Applications" />
-            <ul class="list-unstyled d-flex flex-wrap gap-2">
-              {PROFILE.skills.applications.map((skill) => (
-                <li class="d-flex"><ProjectBadge skill={skill} /></li>
-              ))}
-            </ul>
-          </Column>
-        </Row>
-      </Section>
+<Section anchor={ROUTES.aboutMe} lg>
+  <SectionHeader eyebrow='About'>Building apps<br />people actually use.</SectionHeader>
+  <Row  gap={2.25}>
+    <Column md={5} sm={10} xs={12}>
+      <p>
+        I've been building for the web for over ten years, not because I fell into it, but because I actually love the work.
+        I care about alle the little details and write code I'm not embarrassed to look at later. I've shipped production apps used by hundreds
+        of thousands of users and I keep a growing collection of personal project going on the side, mostly because I can't stop
+        coming up with things to build.
+      </p>
     </Column>
-  </Section>
-</div>
+    <Column class="d-flex align-items-center gap-3" xs={12}>
+      <ButtonLink variant={ButtonVariants.filled} href={"/daniel_bedrich_resume.pdf"} download>Download Resume</ButtonLink>
+      <ButtonLink variant={ButtonVariants.outline} href={`mailto:${profile.email}`}>Let's Talk</ButtonLink>
+    </Column>
+      <Column class="skills-column" md={4} xs={12}>
+        <KeyInfoTitle title="Languages" />
+        <SkillBadges skills={PROFILE.skills.languages} />
+      </Column>
+      <Column class="skills-column" md={4} xs={12}>
+        <KeyInfoTitle title="Frameworks" />
+        <SkillBadges skills={PROFILE.skills.frameworks} />
+      </Column>
+      <Column class="skills-column" md={4} xs={12}>
+        <KeyInfoTitle title="Applications" />
+        <SkillBadges skills={PROFILE.skills.applications} />
+      </Column>
+  </Row>
+</Section>
 
 <style>
   .skills-column > :global(div) {

@@ -1,7 +1,6 @@
 ---
 
 import ButtonLink from 'components/ui/buttons/ButtonLink.astro'
-import { ButtonType } from 'components/ui/buttons/constants/ButtonType'
 import { ButtonVariants } from 'components/ui/buttons/constants/ButtonVariants'
 import { CONFIG, ROUTES } from 'data'
 
@@ -14,8 +13,8 @@ const lastName = nameParts[1]
   <h1 class="hero-name">{firstName}<br />{lastName}</h1>
   <p class="hero-role">iOS · Android · Web</p>
   <div class="hero-ctas">
-    <ButtonLink variant={ButtonVariants.filled} type={ButtonType.primary} href={ROUTES.projects}>View Projects</ButtonLink>
-    <ButtonLink variant={ButtonVariants.text} type={ButtonType.text} href={ROUTES.projects} href={ROUTES.aboutMe}>About me</ButtonLink>
+    <ButtonLink variant={ButtonVariants.filled} href={ROUTES.projects}>View Projects</ButtonLink>
+    <ButtonLink variant={ButtonVariants.text} href={ROUTES.projects} href={ROUTES.aboutMe}>About me</ButtonLink>
   </div>
 </section>
 
@@ -30,10 +29,10 @@ const lastName = nameParts[1]
   }
 
   .hero-name {
-    margin-bottom: var(--margin-bottom-hero);
-    font-size: var(--heroTitleSize);
+    margin-bottom: 0.875rem;
+    font-size: clamp(52px, 10vw, 80px);
     font-weight: 700;
-    line-height: var(--line-height-hero);
+    line-height: 1;
     color: #1d1d1f;
     letter-spacing: -0.045em;
   }

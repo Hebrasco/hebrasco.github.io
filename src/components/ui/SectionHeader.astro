@@ -1,0 +1,15 @@
+---
+interface Props {
+  eyebrow: string
+}
+
+const {
+  eyebrow,
+} = Astro.props
+---
+<section>
+  <p class='eyebrow'>{eyebrow}</p>
+  <div class='d-flex justify-content-between'>
+    <h2><slot /></h2>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+---
+
+interface Props {
+  label: string
+}
+
+const { label } = Astro.props
+---
+<li class="badge accent-bg pv-2 ph-3">{label}</li>
+
+<style>
+  .badge {
+    padding: 4px 8px;
+    font-size: 0.6875em;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+    background: var(--badge-background);
+    border-radius: var(--border-radius);
+  }
+</style>

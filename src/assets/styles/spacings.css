@@ -3,23 +3,23 @@
   --spacings-1: 0.25rem;
   --spacings-2: 0.5rem;
   --spacings-3: 1rem;
-  --spacings-4: 1.5rem;
-  --spacings-5: 3rem;
-  --spacings-6: 5rem;
+  --spacings-4: 1.375rem;
+  --spacings-5: 2rem;
+  --spacings-6: 2.5rem;
 
   --sectionGap: 5rem;
 
-  --containerMargin: calc(50vw - min(1680px, 87.5vw) / 2);
+  --container-margin: calc(50vw - min(1680px, 87.5vw) / 2);
 
   --navbarHeight: 54px;
 }
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-p:not(:last-child) {
+p:not(:last-child):not(.eyebrow) {
   margin-bottom: var(--spacings-3);
 }
 
@@ -28,8 +28,8 @@ ul {
 }
 
 li {
-  margin-left: var(--spacings-3);
   margin-bottom: var(--spacings-2);
+  margin-left: var(--spacings-3);
 }
 
 .navbar-spacer {
@@ -160,28 +160,28 @@ li {
 }
 
 .mh-1 {
-  margin-left: var(--spacings-1);
   margin-right: var(--spacings-1);
+  margin-left: var(--spacings-1);
 }
 .mh-2 {
-  margin-left: var(--spacings-2);
   margin-right: var(--spacings-2);
+  margin-left: var(--spacings-2);
 }
 .mh-3 {
-  margin-left: var(--spacings-3);
   margin-right: var(--spacings-3);
+  margin-left: var(--spacings-3);
 }
 .mh-4 {
-  margin-left: var(--spacings-4);
   margin-right: var(--spacings-4);
+  margin-left: var(--spacings-4);
 }
 .mh-5 {
-  margin-left: var(--spacings-5);
   margin-right: var(--spacings-5);
+  margin-left: var(--spacings-5);
 }
 .mh-6 {
-  margin-left: var(--spacings-6);
   margin-right: var(--spacings-6);
+  margin-left: var(--spacings-6);
 }
 
 .p-1 {
@@ -305,28 +305,28 @@ li {
 }
 
 .ph-1 {
-  padding-left: var(--spacings-1);
   padding-right: var(--spacings-1);
+  padding-left: var(--spacings-1);
 }
 .ph-2 {
-  padding-left: var(--spacings-2);
   padding-right: var(--spacings-2);
+  padding-left: var(--spacings-2);
 }
 .ph-3 {
-  padding-left: var(--spacings-3);
   padding-right: var(--spacings-3);
+  padding-left: var(--spacings-3);
 }
 .ph-4 {
-  padding-left: var(--spacings-4);
   padding-right: var(--spacings-4);
+  padding-left: var(--spacings-4);
 }
 .ph-5 {
-  padding-left: var(--spacings-5);
   padding-right: var(--spacings-5);
+  padding-left: var(--spacings-5);
 }
 .ph-6 {
-  padding-left: var(--spacings-6);
   padding-right: var(--spacings-6);
+  padding-left: var(--spacings-6);
 }
 
 .gap-1 {
