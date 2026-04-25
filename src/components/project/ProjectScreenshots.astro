@@ -1,7 +1,23 @@
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import HorizontalList from 'components/ui/HorizontalList.astro'
 import ListContainer from 'components/ui/ListContainer.astro'
 import Section from 'components/ui/Section.astro'
+import SectionHeader from 'components/ui/SectionHeader.astro'
 import { SCREENSHOT_CONTAINER_SIZE } from 'data/containerSizes'
 import { PLATFORM } from 'data/platform'
 import type { Project } from 'types'
@@ -22,61 +38,58 @@ const platforms = (Object.keys(project.screenshots) as PlatformKey[]).sort((a) =
 )
 const hasMultiplePlatforms = platforms.length > 1
 ---
-<Section fluidContainer lg title="Screenshots" hasAction={hasMultiplePlatforms}>
-  {hasMultiplePlatforms && (
-    <div class="select-container" id="screenshot-select"slot="action" >
-      <button class="dropdown-button" id="select-btn" type="button">
-        {PLATFORM[platforms[0]!]}
-        <i class="bi bi-chevron-down ms-1" id="select-chevron"></i>
-      </button>
-      <div class="select-menu" hidden id="select-menu" >
-        <div class="select-menu-arrow"></div>
-        <p class="text-muted">Platforms</p>
-        {platforms.map((platform, index) => (
+<Section fullWidth lg>
+  <div class="screenshots-header">
+    <SectionHeader fullWidth={false} eyebrow='Screenshots'>See it in action.</SectionHeader>
+    {hasMultiplePlatforms && (
+      <div class="platform-pills" id="platform-pills">
+        {platforms.map((p, i) => (
           <button
-            class="select-item"
-            data-label={PLATFORM[platform]}
-            data-platform={platform}
+            class={`pill ${i === 0 ? 'active' : 'inactive'}`}
+            data-platform={p}
             type="button"
           >
-            <i class="bi bi-check-circle-fill" style={index === 0 ? '' : 'visibility:hidden'}></i>
-            {PLATFORM[platform]}
+            {PLATFORM[p]}
           </button>
         ))}
       </div>
-    </div>
-  )}
+    )}
+  </div>
   {platforms.map((platform, index) => {
-    const sizes = SCREENSHOT_CONTAINER_SIZE[platform]
-    const screenshots = project.screenshots?.[platform] ?? []
-
     return (
       <div
         data-platform-group={platform}
         hidden={index !== 0}
       >
         <HorizontalList>
-          {screenshots.map((screenshot) => (
-            <ListContainer class="primary-bg">
-              <picture>
-                {project.appIcon?.dark && (
-                  <source
-                    media="(prefers-color-scheme: dark)"
-                    srcset={screenshot.dark.src}
-                  />
-                )}
-                <img
-                  loading='lazy'
-                  alt={screenshot.altText}
-                  class="screenshot-img"
-                  height={sizes.md.height}
-                  src={screenshot.light.src}
-                  style={`--w-md:${sizes.md.width}px;--h-md:${sizes.md.height}px;--w-xs:${sizes.xs.width}px;--h-xs:${sizes.xs.height}px`}
-                  width={sizes.md.width}
-                />
-              </picture>
-            </ListContainer>
-          ))}
+          {platforms.map((platform, i) => {
+            const screenshots = project.screenshots[platform] ?? []
+            return screenshots.map((screenshot) => {
+              const screenshotLight = screenshot.light
+              const screenshotDark = screenshot.dark
+
+              return (
+               <ListContainer>
+                 <picture
+                    data-platform-shot={platform}
+                    style={i !== 0 ? 'display:none' : ''}
+                  >
+                    {screenshotDark && (
+                      <source media="(prefers-color-scheme: dark)" srcset={screenshotDark.src} />
+                    )}
+                    <img
+                      alt={screenshot.altText}
+                      class="screenshot-image"
+                      height={SCREENSHOT_CONTAINER_SIZE[platform].md.height}
+                      loading="lazy"
+                      src={screenshotLight.src}
+                      width={SCREENSHOT_CONTAINER_SIZE[platform].md.width}
+                    />
+                  </picture>
+               </ListContainer>
+              )
+            })
+          })}
         </HorizontalList>
       </div>
     )
@@ -149,6 +162,44 @@ const hasMultiplePlatforms = platforms.length > 1
     width: var(--w-xs);
     height: var(--h-xs);
   }
+
+  .screenshots-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: var(--container-margin);
+    margin-bottom: 1.5rem;
+  }
+
+  .platform-pills {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.375rem;
+  }
+
+  .pill {
+    all: unset;
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-base);
+  }
+
+  .pill.active {
+    color: var(--primary-color);
+    background: var(--primary-text-color);
+  }
+
+  .pill.inactive {
+    color: var(--secondary-color);
+    background: var(--secondary-background-color);
+  }
+
+  .pill.inactive:hover {
+    background: var(--accent-color);
+  }
+
   @media (min-width: 576px) {
     .screenshot-img {
       width: var(--w-md);
@@ -157,47 +208,23 @@ const hasMultiplePlatforms = platforms.length > 1
   }
 </style>
 
-<script>
-  const selectButton = document.getElementById('select-btn')
-  const selectMenu = document.getElementById('select-menu')
-
-  if (selectButton && selectMenu) {
-    selectButton.addEventListener('click', () => {
-      const isOpen = !selectMenu.hidden
-      selectMenu.hidden = isOpen
-      selectButton.classList.toggle('open', !isOpen)
-    })
-
-    document.addEventListener('click', (event) => {
-      const container = document.getElementById('screenshot-select')
-      if (!container?.contains(event.target as Node)) {
-        selectMenu.hidden = true
-        selectButton.classList.remove('open')
-      }
-    })
-
-    selectMenu.querySelectorAll<HTMLElement>('[data-platform]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const platform = button.dataset.platform
-        const label = button.dataset.label
-
-        document.querySelectorAll<HTMLElement>('[data-platform-group]').forEach((group) => {
-          (group as HTMLElement).hidden = group.dataset.platformGroup !== platform
+{hasMultiplePlatforms && (
+  <script>
+    const pills = document.querySelectorAll<HTMLDivElement>('#platform-pills .pill')
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const platform = pill.dataset.platform
+        const scroll = document.getElementById('screenshots-scroll')
+        if (scroll) scroll.scrollLeft = 0
+        pills.forEach((p) => {
+          p.classList.toggle('active', (p as HTMLElement).dataset.platform === platform)
+          p.classList.toggle('inactive', (p as HTMLElement).dataset.platform !== platform)
         })
-
-        const span = selectButton.childNodes[0]
-        if (span) span.textContent = label ?? null
-
-        selectMenu.querySelectorAll<HTMLElement>('[data-platform] i').forEach((icon) => {
-          icon.style.visibility = 'hidden'
+        document.querySelectorAll('[data-platform-shot]').forEach((img) => {
+          (img as HTMLElement).style.display =
+            (img as HTMLElement).dataset.platformShot === platform ? '' : 'none'
         })
-
-        const icon = button.querySelector('i')
-        if (icon) icon.style.visibility = 'visible'
-
-        selectMenu.hidden = true
-        selectButton.classList.remove('open')
       })
     })
-  }
-</script>
+  </script>
+)}

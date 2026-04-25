@@ -12,8 +12,8 @@ import type { Project } from 'types'
 
 const BLOOM: Project = {
   appIcon: {
-    light: BloomAppIcons.light,
     dark: BloomAppIcons.dark,
+    light: BloomAppIcons.light,
   },
   description:
     'This app is for calculating the past time since a specific day. The app also offers widgets. Furthermore, notifications are sent at certain time periods. In addition, in-app purchases are implemented to remove advertisements.',
@@ -76,77 +76,73 @@ const BLOOM: Project = {
   onlineURL: 'https://apps.apple.com/app/bloom-couples-app/id1533246365',
   platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
-      altText: 'Preview screenshot of Bloom',
-        light: ScreenshotsIphoneLight.SingleImageMarried,
-        dark: ScreenshotsIphoneDark.SingleImageMarried,
+    altText: 'Preview screenshot of Bloom',
+    dark: ScreenshotsIphoneDark.SingleImageMarried,
+    light: ScreenshotsIphoneLight.SingleImageMarried,
   },
   screenshots: {
     ipad: [
-        {
-          altText: 'Screenshot of ipad app with dual image option',
-            light: ScreenshotsIpadLight.DualImage,
-            dark: ScreenshotsIpadDark.DualImage,
-        },
-        {
-          altText:
-            'Screenshot of ipad app with single image option and relationship status couple',
-            light: ScreenshotsIpadLight.SingleImageCouple,
-            dark: ScreenshotsIpadDark.SingleImageCouple,
-        },
-        {
-          altText:
-            'Screenshot of ipad app with single image option and relationship status engaged',
-            light: ScreenshotsIpadLight.SingleImageEngaged,
-            dark: ScreenshotsIpadDark.SingleImageEngaged,
-        },
-        {
-          altText:
-            'Screenshot of ipad app with single image option and relationship status married',
-            light: ScreenshotsIpadLight.SingleImageMarried,
-            dark: ScreenshotsIpadDark.SingleImageMarried,
-        },
-        {
-          altText: 'Screenshot of ipad app widgets',
-            light: ScreenshotsIpadLight.Widgets,
-            dark: ScreenshotsIpadDark.Widgets,
-        },
-      ],
+      {
+        altText: 'Screenshot of ipad app with dual image option',
+        dark: ScreenshotsIpadDark.DualImage,
+        light: ScreenshotsIpadLight.DualImage,
+      },
+      {
+        altText: 'Screenshot of ipad app with single image option and relationship status couple',
+        dark: ScreenshotsIpadDark.SingleImageCouple,
+        light: ScreenshotsIpadLight.SingleImageCouple,
+      },
+      {
+        altText: 'Screenshot of ipad app with single image option and relationship status engaged',
+        dark: ScreenshotsIpadDark.SingleImageEngaged,
+        light: ScreenshotsIpadLight.SingleImageEngaged,
+      },
+      {
+        altText: 'Screenshot of ipad app with single image option and relationship status married',
+        dark: ScreenshotsIpadDark.SingleImageMarried,
+        light: ScreenshotsIpadLight.SingleImageMarried,
+      },
+      {
+        altText: 'Screenshot of ipad app widgets',
+        dark: ScreenshotsIpadDark.Widgets,
+        light: ScreenshotsIpadLight.Widgets,
+      },
+    ],
     iphone: [
-        {
-          altText: 'Screenshot of iphone app with dual image option',
-            light: ScreenshotsIphoneLight.DualImage,
-            dark: ScreenshotsIphoneDark.DualImage
-        },
-        {
-          altText:
-            'Screenshot of iphone app with single image option and relationship status couple',
-            light: ScreenshotsIphoneLight.SingleImageCouple,
-            dark: ScreenshotsIphoneDark.SingleImageCouple,
-        },
-        {
-          altText:
-            'Screenshot of iphone app with single image option and relationship status engaged',
-            light: ScreenshotsIphoneLight.SingleImageEngaged,
-            dark: ScreenshotsIphoneDark.SingleImageEngaged,
-        },
-        {
-          altText:
-            'Screenshot of iphone app with single image option and relationship status married',
-            light: ScreenshotsIphoneLight.SingleImageMarried,
-            dark: ScreenshotsIphoneDark.SingleImageMarried,
-        },
-        {
-          altText: 'Screenshot of iphone app widgets',
-            light: ScreenshotsIphoneLight.Widgets,
-            dark: ScreenshotsIphoneDark.Widgets,
-        },
-      ],
+      {
+        altText: 'Screenshot of iphone app with dual image option',
+        dark: ScreenshotsIphoneDark.DualImage,
+        light: ScreenshotsIphoneLight.DualImage,
+      },
+      {
+        altText: 'Screenshot of iphone app with single image option and relationship status couple',
+        dark: ScreenshotsIphoneDark.SingleImageCouple,
+        light: ScreenshotsIphoneLight.SingleImageCouple,
+      },
+      {
+        altText:
+          'Screenshot of iphone app with single image option and relationship status engaged',
+        dark: ScreenshotsIphoneDark.SingleImageEngaged,
+        light: ScreenshotsIphoneLight.SingleImageEngaged,
+      },
+      {
+        altText:
+          'Screenshot of iphone app with single image option and relationship status married',
+        dark: ScreenshotsIphoneDark.SingleImageMarried,
+        light: ScreenshotsIphoneLight.SingleImageMarried,
+      },
+      {
+        altText: 'Screenshot of iphone app widgets',
+        dark: ScreenshotsIphoneDark.Widgets,
+        light: ScreenshotsIphoneLight.Widgets,
+      },
+    ],
   },
-  sourceURL: undefined,
   status: {
     date: new Date('2020-09-26'),
     type: PROJECT_STATUS.launched,
   },
+  summaryHeading: 'Count every moment together.',
   tasks: [
     'Conception and development',
     'User interface development',
@@ -155,9 +151,9 @@ const BLOOM: Project = {
     'Implementation of widgets',
   ],
   titleImage: {
-      altText: 'Title image',
-        light: BloomPreviews.titleLight,
-        dark: BloomPreviews.titleDark,
+    altText: 'Title image',
+    dark: BloomPreviews.titleDark,
+    light: BloomPreviews.titleLight,
   },
 } as const
 

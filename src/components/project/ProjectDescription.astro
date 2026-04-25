@@ -1,6 +1,7 @@
 ---
 
 import Section from 'components/ui/Section.astro'
+import SectionHeader from 'components/ui/SectionHeader.astro'
 import type { Project } from 'types'
 
 interface Props {
@@ -8,8 +9,7 @@ interface Props {
 }
 const { project } = Astro.props
 ---
-<div class='container'>
-  <Section lg title="Summary">
-    <p>{project.description}</p>
-  </Section>
-</div>
+<Section lg>
+  <SectionHeader eyebrow='Summary'>{project.summaryHeading}</SectionHeader>
+  <p>{project.description}</p>
+</Section>

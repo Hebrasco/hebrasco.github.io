@@ -1,15 +1,16 @@
 import type { PLATFORM } from 'data/platform'
+import type { Screenshot } from 'types/Screenshot'
 import type { AppIcon } from './AppIcon'
 import type { Feature } from './Feature'
 import type { Platform } from './Platform'
 import type { ProjectStatus } from './ProjectStatus'
 import type { Skill } from './Skill'
-import type { Screenshot } from 'types/Screenshot'
 
 type Project = {
   id: string
   name: string
   description: string
+  summaryHeading: string
   tasks: readonly string[]
   languages: readonly Skill[]
   frameworks: readonly Skill[]
@@ -20,7 +21,7 @@ type Project = {
   titleImage: Screenshot
   previewImage: Screenshot
   status: ProjectStatus
-  screenshots?: {
+  screenshots: {
     [K in keyof typeof PLATFORM]?: Screenshot[]
   }
   platforms: readonly Platform[]

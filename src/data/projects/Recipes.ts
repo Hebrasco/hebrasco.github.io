@@ -45,34 +45,34 @@ const RECIPES: Project = {
   id: 'recipes',
   languages: [PROFILE.languages.swift, PROFILE.languages.json],
   name: 'Recipes',
-  onlineURL: undefined,
   platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
-      altText: 'Preview screenshot of Recipes',
-      light: ScreenshotsIphoneLight.RecipeDetails,
-      dark: ScreenshotsIphoneLight.RecipeDetails,
+    altText: 'Preview screenshot of Recipes',
+    dark: ScreenshotsIphoneLight.RecipeDetails,
+    light: ScreenshotsIphoneLight.RecipeDetails,
   },
   screenshots: {
-    ipad:  [
-        {
-          altText: 'Screenshot of ipad app of the recipe detail screen',
-          light: ScreenshotsIpadLight.RecipeDetails,
-          dark: ScreenshotsIpadLight.RecipeDetails,
-        },
-      ],
+    ipad: [
+      {
+        altText: 'Screenshot of ipad app of the recipe detail screen',
+        dark: ScreenshotsIpadLight.RecipeDetails,
+        light: ScreenshotsIpadLight.RecipeDetails,
+      },
+    ],
     iphone: [
-        {
-          altText: 'Screenshot of iphone app of the recipe detail screen',
-          light: ScreenshotsIphoneLight.RecipeDetails,
-          dark: ScreenshotsIphoneLight.RecipeDetails,
-        },
-      ],
+      {
+        altText: 'Screenshot of iphone app of the recipe detail screen',
+        dark: ScreenshotsIphoneLight.RecipeDetails,
+        light: ScreenshotsIphoneLight.RecipeDetails,
+      },
+    ],
   },
   sourceURL: 'https://github.com/Hebrasco/recipe_app',
   status: {
     date: new Date('2020-04-30'),
     type: PROJECT_STATUS.archived,
   },
+  summaryHeading: 'Meals, made simple.',
   tasks: [
     'Conception and development',
     'User interface development',
@@ -80,9 +80,9 @@ const RECIPES: Project = {
     'Persisting data with Core Data',
   ],
   titleImage: {
-      altText: 'Title image',
-      light: RecipesPreviews.titleLight,
-      dark: RecipesPreviews.titleLight,
+    altText: 'Title image',
+    dark: RecipesPreviews.titleLight,
+    light: RecipesPreviews.titleLight,
   },
 } as const
 

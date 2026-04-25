@@ -52,50 +52,49 @@ const UMBRELLA: Project = {
   id: 'umbrella',
   languages: [PROFILE.languages.swift],
   name: 'Umbrella',
-  onlineURL: undefined,
   platforms: [PLATFORM.iphone, PLATFORM.ipad, PLATFORM.mac],
   previewImage: {
-      altText: 'Preview screenshot of Umbrella',
-      light: ScreenshotsIphoneLight.Backlog,
-      dark: ScreenshotsIphoneDark.Backlog,
+    altText: 'Preview screenshot of Umbrella',
+    dark: ScreenshotsIphoneDark.Backlog,
+    light: ScreenshotsIphoneLight.Backlog,
   },
   screenshots: {
     ipad: [
-        {
-          altText: 'Screenshot of ipad app of the issue detail screen',
-          light: ScreenshotsIpadLight.IssueDetails,
-          dark: ScreenshotsIpadDark.IssueDetails,
-        },
-      ],
+      {
+        altText: 'Screenshot of ipad app of the issue detail screen',
+        dark: ScreenshotsIpadDark.IssueDetails,
+        light: ScreenshotsIpadLight.IssueDetails,
+      },
+    ],
     iphone: [
-        {
-          altText: 'Screenshot of iphone app of the issue backlog screen',
-          light: ScreenshotsIphoneLight.Backlog,
-          dark: ScreenshotsIphoneDark.Backlog,
-        },
-        {
-          altText: 'Screenshot of iphone app of the issue detail screen',
-          light: ScreenshotsIphoneLight.IssueDetails,
-          dark: ScreenshotsIphoneDark.IssueDetails,
-        },
-      ],
+      {
+        altText: 'Screenshot of iphone app of the issue backlog screen',
+        dark: ScreenshotsIphoneDark.Backlog,
+        light: ScreenshotsIphoneLight.Backlog,
+      },
+      {
+        altText: 'Screenshot of iphone app of the issue detail screen',
+        dark: ScreenshotsIphoneDark.IssueDetails,
+        light: ScreenshotsIphoneLight.IssueDetails,
+      },
+    ],
     mac: [
-        {
-          altText: 'Screenshot of mac app of the board screen',
-          light: ScreenshotsMacLight.Board,
-          dark: ScreenshotsMacDark.Board,
-        },
-        {
-          altText: 'Screenshot of mac app of the issue detail screen',
-          light: ScreenshotsMacLight.IssueDetails,
-          dark: ScreenshotsMacDark.IssueDetails,
-        },
-      ],
+      {
+        altText: 'Screenshot of mac app of the board screen',
+        dark: ScreenshotsMacDark.Board,
+        light: ScreenshotsMacLight.Board,
+      },
+      {
+        altText: 'Screenshot of mac app of the issue detail screen',
+        dark: ScreenshotsMacDark.IssueDetails,
+        light: ScreenshotsMacLight.IssueDetails,
+      },
+    ],
   },
-  sourceURL: undefined,
   status: {
     type: PROJECT_STATUS.comingSoon,
   },
+  summaryHeading: 'Your projects, structured.',
   tasks: [
     'Conception and development',
     'User interface development',
@@ -103,9 +102,9 @@ const UMBRELLA: Project = {
     'Synchronizing data with iCloud',
   ],
   titleImage: {
-      altText: 'Title image',
-      light: UmbrellaPreviews.titleLight,
-      dark: UmbrellaPreviews.titleDark,
+    altText: 'Title image',
+    dark: UmbrellaPreviews.titleDark,
+    light: UmbrellaPreviews.titleLight,
   },
 } as const
 
