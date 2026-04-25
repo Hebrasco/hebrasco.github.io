@@ -3,16 +3,16 @@ import Column from 'components/layout/Column.astro'
 import Row from 'components/layout/Row.astro'
 import Email from 'components/ui/Email.astro'
 import Section from 'components/ui/Section.astro'
+import SectionHeader from 'components/ui/SectionHeader.astro'
 import { CONFIG, ROUTES } from 'data'
 import Layout from 'layouts/Layout.astro'
-
-const anchorReplace = '/imprint#'
 ---
 <Layout title="Imprint – Daniel Bedrich">
   <div class="container navbar-spacer imprint">
     <Row>
       <Column>
-        <Section anchor={ROUTES.imprintHash} anchorReplace={anchorReplace} lg title="Impressum">
+        <Section anchor={ROUTES.imprintHash} lg>
+          <SectionHeader eyebrow=''>Impressum</SectionHeader>
           <p><b>Inhaber der Seite</b></p>
           <ul class="list-unstyled">
             <li>{CONFIG.profile.name}</li>
@@ -25,7 +25,8 @@ const anchorReplace = '/imprint#'
           </ul>
         </Section>
 
-        <Section anchor={ROUTES.privacyPolicyHash} anchorReplace={anchorReplace} lg title="Datenschutz">
+        <Section anchor={ROUTES.privacyPolicyHash} lg>
+          <SectionHeader eyebrow=''>Datenschutz</SectionHeader>
           <p>
             Personenbezogene Daten (nachfolgend zumeist nur „Daten" genannt) werden von uns nur im
             Rahmen der Erforderlichkeit sowie zum Zwecke der Bereitstellung eines funktionsfähigen
@@ -59,7 +60,8 @@ const anchorReplace = '/imprint#'
           </p>
         </Section>
 
-        <Section md title="I. Informationen über uns als Verantwortliche">
+        <Section md>
+          <SectionHeader eyebrow=''>I. Informationen über uns als Verantwortliche</SectionHeader>
           <p>Verantwortlicher Anbieter dieses Internetauftritts im datenschutzrechtlichen Sinne ist:</p>
           <ul class="list-unstyled">
             <li>{CONFIG.profile.name}</li>
@@ -72,7 +74,8 @@ const anchorReplace = '/imprint#'
           </ul>
         </Section>
 
-        <Section md title="II. Rechte der Nutzer und Betroffenen">
+        <Section md>
+          <SectionHeader eyebrow=''>II. Rechte der Nutzer und Betroffenen</SectionHeader>
           <p>Mit Blick auf die nachfolgend noch näher beschriebene Datenverarbeitung haben die Nutzer und Betroffenen das Recht</p>
           <ul>
             <li>auf Bestätigung, ob sie betreffende Daten verarbeitet werden, auf Auskunft über die verarbeiteten Daten, auf weitere Informationen über die Datenverarbeitung sowie auf Kopien der Daten (vgl. auch Art. 15 DSGVO);</li>
@@ -85,12 +88,15 @@ const anchorReplace = '/imprint#'
           <p><b>Ebenfalls haben die Nutzer und Betroffenen nach Art. 21 DSGVO das Recht auf Widerspruch gegen die künftige Verarbeitung der sie betreffenden Daten, sofern die Daten durch den Anbieter nach Maßgabe von Art. 6 Abs. 1 lit. f) DSGVO verarbeitet werden. Insbesondere ist ein Widerspruch gegen die Datenverarbeitung zum Zwecke der Direktwerbung statthaft.</b></p>
         </Section>
 
-        <Section md title="III. Informationen zur Datenverarbeitung">
+        <Section md>
+          <SectionHeader eyebrow=''>III. Informationen zur Datenverarbeitung</SectionHeader>
           <p>Ihre bei Nutzung unseres Internetauftritts verarbeiteten Daten werden gelöscht oder gesperrt, sobald der Zweck der Speicherung entfällt, der Löschung der Daten keine gesetzlichen Aufbewahrungspflichten entgegenstehen und nachfolgend keine anderslautenden Angaben zu einzelnen Verarbeitungsverfahren gemacht werden.</p>
-          <Section sm title="Cookies">
+          <Section fullWidth sm>
+            <SectionHeader eyebrow=''>Cookies</SectionHeader>
             <p>Wir verwenden mit unserem Internetauftritt <u>keine</u> sog. Cookies.</p>
           </Section>
-          <Section sm title="Kontaktanfragen / Kontaktmöglichkeit">
+          <Section fullWidth sm>
+            <SectionHeader eyebrow=''>Kontaktanfragen / Kontaktmöglichkeit</SectionHeader>
             <p>Sofern Sie per Kontaktformular oder E-Mail mit uns in Kontakt treten, werden die dabei von Ihnen angegebenen Daten zur Bearbeitung Ihrer Anfrage genutzt. Die Angabe der Daten ist zur Bearbeitung und Beantwortung Ihre Anfrage erforderlich - ohne deren Bereitstellung können wir Ihre Anfrage nicht oder allenfalls eingeschränkt beantworten.</p>
             <p>Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b) DSGVO.</p>
             <p>Ihre Daten werden gelöscht, sofern Ihre Anfrage abschließend beantwortet worden ist und der Löschung keine gesetzlichen Aufbewahrungspflichten entgegenstehen, wie bspw. bei einer sich etwaig anschließenden Vertragsabwicklung.</p>
@@ -100,9 +106,3 @@ const anchorReplace = '/imprint#'
     </Row>
   </div>
 </Layout>
-
-<style>
-  .imprint :global(p) {
-    margin-bottom: var(--spacings-3);
-  }
-</style>
