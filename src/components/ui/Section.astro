@@ -1,30 +1,29 @@
 ---
 interface Props {
-  xs?: boolean
   sm?: boolean
   md?: boolean
   lg?: boolean
-  xl?: boolean
   anchor?: string
   class?: string
+  accent?: boolean
+  fullWidth?: boolean
 }
 
 const {
-  xs = false,
   sm = false,
   md = false,
   lg = false,
-  xl = false,
   anchor,
+  accent,
+  fullWidth
 } = Astro.props
 
 const sectionClass = [
-  'section',
-  xs ? 'section-xs' : '',
+  fullWidth ? '' : 'section',
   sm ? 'section-sm' : '',
   md ? 'section-md' : '',
   lg ? 'section-lg' : '',
-  xl ? 'section-xl' : '',
+  accent ? 'accent-bg' : ''
 ].filter(Boolean).join(' ')
 ---
 {anchor && <div id={anchor}></div>}
@@ -34,12 +33,9 @@ const sectionClass = [
 
 <style>
   .section {
-    margin-right: var(--container-margin);
-    margin-left: var(--container-margin);
+    margin: 0 var(--container-margin);
   }
-  .section-xs { padding-top: 1rem; }
-  .section-sm { padding-top: 2rem; }
-  .section-md { padding-top: 4rem; }
-  .section-lg { padding-top: 6rem; }
-  .section-xl { padding-top: 12rem; }
+  .section-sm { padding: 2rem 0; }
+  .section-md { padding: 3.5rem 0; }
+  .section-lg { padding: 5rem 0; }
 </style>

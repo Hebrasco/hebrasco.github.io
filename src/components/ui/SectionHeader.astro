@@ -1,15 +1,23 @@
 ---
 interface Props {
   eyebrow: string
+  fullWidth?: boolean
 }
 
 const {
   eyebrow,
+  fullWidth = true
 } = Astro.props
 ---
-<section>
+<section class={fullWidth ? '' : 'container'}>
   <p class='eyebrow'>{eyebrow}</p>
   <div class='d-flex justify-content-between'>
     <h2><slot /></h2>
   </div>
 </section>
+
+<style>
+  .container {
+    margin: 0 var(--container-margin);
+  }
+</style>
