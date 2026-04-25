@@ -13,7 +13,7 @@ import Row from './Row.astro'
           Copyright &copy; {new Date().getFullYear()} {CONFIG.profile.name}. All rights reserved.
         </p>
       </Column>
-      <Column md={6} xs={12}>
+      <Column md={6} xs={12} class='d-flex justify-content-end'>
         <div class="links-container d-flex gap-4">
           <a class="nav-item" href={ROUTES.imprintHash}>Imprint</a>
           <a class="nav-item" href={ROUTES.privacyPolicyHash}>Privacy Policy</a>
@@ -25,13 +25,19 @@ import Row from './Row.astro'
 </footer>
 
 <style>
-  .footer {
-    margin-top: var(--sectionGap);
+  a {
+    color: rgba(29, 29, 31, 0.6);
   }
+
+  .footer {
+    padding: 0 var(--container-margin);
+  }
+
   .links-container {
     align-content: center;
     justify-content: end;
   }
+
   @media (max-width: 768px) {
     .links-container {
       justify-content: start;
