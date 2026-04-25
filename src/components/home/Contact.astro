@@ -1,19 +1,33 @@
 ---
 import Column from 'components/layout/Column.astro'
 import Row from 'components/layout/Row.astro'
-import Email from 'components/ui/Email.astro'
+import ButtonLink from 'components/ui/buttons/ButtonLink.astro'
+import { ButtonVariants } from 'components/ui/buttons/constants/ButtonVariants'
 import Section from 'components/ui/Section.astro'
-import { ROUTES } from 'data'
+import SectionHeader from 'components/ui/SectionHeader.astro'
+import { CONFIG, ROUTES } from 'data'
 ---
-<div class='container'>
-  <Section anchor={ROUTES.contact} md title="Contact">
+<Section anchor={ROUTES.contact} md>
+  <div class='contact-inner'>
+    <SectionHeader eyebrow='Contact'>Get in touch.</SectionHeader>
     <Row>
-      <Column>
-        <p>New projects, freelance inquiry or even a coffee.</p>
+      <Column class='mb-3'>
+        <p>Interested in working together or just want to say hello?</p>
       </Column>
       <Column>
-        <Email />
+        <ButtonLink href={CONFIG.profile.email} variant={ButtonVariants.outline}>{CONFIG.profile.email}</ButtonLink>
+      </Column>
+      <Column>
+        <ButtonLink href={CONFIG.references.gitHubUrl} variant={ButtonVariants.chip} target='_blank'>GitHub</ButtonLink>
+        <ButtonLink href={CONFIG.references.appStoreUrl} variant={ButtonVariants.chip} target='_blank'>App Store</ButtonLink>
+        <ButtonLink href={'/daniel_bedrich_resume.pdf'} variant={ButtonVariants.chip} download>Download Resume</ButtonLink>
       </Column>
     </Row>
-  </Section>
-</div>
+  </div>
+</Section>
+
+<style>
+  .contact-inner {
+    text-align: center;
+  }
+</style>

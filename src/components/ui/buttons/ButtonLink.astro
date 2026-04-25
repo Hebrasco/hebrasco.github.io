@@ -1,4 +1,7 @@
 ---
+
+
+
 import {ButtonVariants} from 'components/ui/buttons/constants/ButtonVariants'
 
 type Variant = (typeof ButtonVariants)[keyof typeof ButtonVariants]
@@ -20,6 +23,7 @@ const {
 } = Astro.props
 
 const variantClass: Record<Variant, string> = {
+  chip: 'button button-chip',
   filled: 'button button-solid',
   outline: 'button button-outline',
   text: 'button-text',
@@ -99,6 +103,16 @@ const autoRel = (target === '_blank' ? 'noopener noreferrer' : undefined)
   .button-text:hover {
     color: #0071e3;
     text-decoration: underline;
+  }
+
+  .button-chip {
+    color: rgba(29, 29, 31, 0.6);
+    background-color: var(--badge-background);
+  }
+  .button-chip:hover,
+  .button-chip:focus-visible {
+    color: rgba(29, 29, 31, 0.7);
+    background-color: #e8e8ed;
   }
 
   .button-icon {
