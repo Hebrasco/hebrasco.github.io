@@ -1,6 +1,6 @@
-import { APPLICATIONS } from './applications'
-import { FRAMEWORKS } from './frameworks'
-import { LANGUAGES } from './languages'
+import { APPLICATIONS } from 'data/profile/applications'
+import { FRAMEWORKS } from 'data/profile/frameworks'
+import { LANGUAGES } from 'data/profile/languages'
 import type { Skill, SkillCollection } from 'types'
 
 const SKILLS_LANGUAGES: readonly Skill[] = [

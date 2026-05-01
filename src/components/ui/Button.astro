@@ -1,0 +1,170 @@
+---
+type Variant = 'primary' | 'outline' | 'text' | 'email' | 'chip'
+
+interface Props {
+  variant?: Variant
+  href?: string
+  download?: boolean | string
+  target?: string
+  rel?: string
+  type?: 'button' | 'submit' | 'reset'
+  icon?: boolean
+}
+
+const {
+  variant = 'primary',
+  href,
+  download,
+  target,
+  rel,
+  type = 'button',
+  icon = false,
+} = Astro.props
+
+const variantClass: Record<Variant, string> = {
+  chip: 'button-chip',
+  email: 'button-email',
+  outline: 'button-outline',
+  primary: 'button',
+  text: 'button-text',
+}
+
+const classes = [variantClass[variant], icon ? 'button-icon' : ''].filter(Boolean).join(' ')
+const autoRel = rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined)
+---
+{href ? (
+  <a
+    class={classes}
+    download={download || undefined}
+    href={href}
+    rel={autoRel}
+    target={target}
+  >
+    <slot />
+  </a>
+) : (
+  <button class={classes} type={type}>
+    <slot />
+  </button>
+)}
+
+<style>
+  /* Primary — filled black pill */
+  .button {
+    display: inline-block;
+    padding: 0.6875rem 1.375rem;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    color: var(--primary-color);
+    letter-spacing: var(--letter-spacing-ui);
+    text-decoration: none;
+    background-color: var(--primary-text-color);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-base), transform var(--transition-fast);
+  }
+
+  .button:hover,
+  .button:active,
+  .button:focus-visible {
+    color: var(--primary-color);
+    text-decoration: none;
+    background-color: var(--button-primary-hover);
+  }
+
+  .button:focus-visible {
+    outline: 0.125rem solid var(--interactive-color);
+    outline-offset: 0.125rem;
+  }
+
+  .button:active {
+    transform: translateY(1px);
+  }
+
+  /* Outline — ghost pill */
+  .button-outline {
+    display: inline-block;
+    padding: 0.6875rem 1.375rem;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-ui);
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid var(--outline-button-border);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-base);
+  }
+
+  .button-outline:hover,
+  .button-outline:focus-visible {
+    text-decoration: none;
+    background-color: var(--accent-color);
+  }
+
+  /* Text — blue link with trailing arrow */
+  .button-text {
+    font-size: var(--font-size-small);
+    color: var(--interactive-color);
+    letter-spacing: var(--letter-spacing-ui);
+    text-decoration: none;
+  }
+
+  .button-text::after {
+    content: ' →';
+  }
+
+  .button-text:hover {
+    color: var(--interactive-color);
+    text-decoration: underline;
+  }
+
+  /* Email — blue bordered link, larger font */
+  .button-email {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-medium);
+    color: var(--interactive-color);
+    letter-spacing: var(--letter-spacing-ui);
+    text-decoration: none;
+    border: 1px solid var(--interactive-border);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-base);
+  }
+
+  .button-email:hover,
+  .button-email:focus-visible {
+    color: var(--interactive-color);
+    text-decoration: none;
+    background: var(--interactive-subtle);
+  }
+
+  /* Chip — filled surface pill for secondary links */
+  .button-chip {
+    display: inline-block;
+    padding: 0.5rem 0.875rem;
+    font-size: var(--font-size-extra-small);
+    font-weight: var(--font-weight-medium);
+    color: var(--signature);
+    text-decoration: none;
+    background: var(--primary-background-color);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-base), color var(--transition-base);
+  }
+
+  .button-chip:hover,
+  .button-chip:focus-visible {
+    color: var(--text-hover-color);
+    text-decoration: none;
+    background: var(--hover-surface-color);
+  }
+
+  /* Icon modifier — inline-flex layout for icon + label */
+  .button-icon {
+    display: inline-flex;
+    gap: 0.4375rem;
+    align-items: center;
+  }
+</style>

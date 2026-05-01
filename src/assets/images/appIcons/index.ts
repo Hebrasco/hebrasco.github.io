@@ -1,4 +1,4 @@
-export { default as BlankAppIcon } from './app-icon-blank.webp'
-export * as BloomAppIcons from './bloom'
-export * as InstersAppIcons from './insters'
-export * as InvestCalcAppIcons from './investCalc'
+export { default as BlankAppIcon } from 'assets/images/appIcons/app-icon-blank.webp'
+export * as BloomAppIcons from 'assets/images/appIcons/bloom'
+export * as InstersAppIcons from 'assets/images/appIcons/insters'
+export * as InvestCalcAppIcons from 'assets/images/appIcons/investCalc'

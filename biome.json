@@ -40,7 +40,7 @@
       "attributePosition": "auto",
       "bracketSameLine": false,
       "bracketSpacing": true,
-      "jsxQuoteStyle": "double",
+      "jsxQuoteStyle": "single",
       "quoteProperties": "asNeeded",
       "quoteStyle": "single",
       "semicolons": "asNeeded",
@@ -70,6 +70,16 @@
           }
         }
       }
+    },
+    {
+      "assist": {
+        "actions": {
+          "source": {
+            "useSortedProperties": "off"
+          }
+        }
+      },
+      "includes": ["src/assets/styles/colors.css"]
     }
   ],
   "vcs": { "clientKind": "git", "enabled": false, "useIgnoreFile": false }

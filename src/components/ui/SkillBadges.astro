@@ -8,8 +8,14 @@ interface Props {
 
 const { skills } = Astro.props
 ---
-<ul class="list-unstyled d-flex flex-wrap gap-2">
-  {skills.map((({ name}) => (
-    <Badge label={name} />
-  )))}
-</ul>
+<div class="skill-tags">
+  {skills.map((({ name}) => <Badge label={name} />))}
+</div>
+
+<style>
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+</style>

@@ -1,49 +1,74 @@
 ---
-import Column from 'components/layout/Column.astro'
-import Row from 'components/layout/Row.astro'
-import ButtonLink from 'components/ui/buttons/ButtonLink.astro'
-import { ButtonVariants } from 'components/ui/buttons/constants/ButtonVariants'
-import KeyInfoTitle from 'components/ui/KeyInfoTitle.astro'
-import Badge from 'components/ui/Badge.astro'
+import Button from 'components/ui/Button.astro'
+import InfoBlock from 'components/ui/InfoBlock.astro'
 import Section from 'components/ui/Section.astro'
 import SectionHeader from 'components/ui/SectionHeader.astro'
-import { CONFIG, PROFILE, ROUTES } from 'data'
 import SkillBadges from 'components/ui/SkillBadges.astro'
-
-const { profile } = CONFIG
+import { CONFIG, PROFILE } from 'data'
 ---
-<Section anchor={ROUTES.aboutMe} lg>
-  <SectionHeader eyebrow='About'>Building apps<br />people actually use.</SectionHeader>
-  <Row  gap={2.25}>
-    <Column md={5} sm={10} xs={12}>
-      <p>
-        I've been building for the web for over ten years, not because I fell into it, but because I actually love the work.
-        I care about alle the little details and write code I'm not embarrassed to look at later. I've shipped production apps used by hundreds
-        of thousands of users and I keep a growing collection of personal project going on the side, mostly because I can't stop
-        coming up with things to build.
-      </p>
-    </Column>
-    <Column class="d-flex align-items-center gap-3" xs={12}>
-      <ButtonLink variant={ButtonVariants.filled} href={"/daniel_bedrich_resume.pdf"} download>Download Resume</ButtonLink>
-      <ButtonLink variant={ButtonVariants.outline} href={`mailto:${profile.email}`}>Let's Talk</ButtonLink>
-    </Column>
-      <Column class="skills-column" md={4} xs={12}>
-        <KeyInfoTitle title="Languages" />
+<Section id="about-me">
+  <div class="about-inner">
+    <SectionHeader eyebrow="About">Building apps<br>people actually love.</SectionHeader>
+    <p class="about-body">
+      I'm an {CONFIG.profile.jobTitle} with over ten years of experience turning ideas into products people love to use. I think about structure and long-term decisions early, so the projects I build can grow without needing to be rebuilt. The apps I've built have reached hundreds of thousands of users, and I'm proud of every one of them.
+    </p>
+    <div class="about-actions">
+      <Button href={`mailto:${CONFIG.profile.email}`}>Get in touch</Button>
+      <Button variant="outline" href={'/daniel_bedrich_resume.pdf'} download>Download Resume</Button>
+    </div>
+    <div class="skills-grid">
+      <InfoBlock label="Languages">
         <SkillBadges skills={PROFILE.skills.languages} />
-      </Column>
-      <Column class="skills-column" md={4} xs={12}>
-        <KeyInfoTitle title="Frameworks" />
+      </InfoBlock>
+      <InfoBlock label="Frameworks">
         <SkillBadges skills={PROFILE.skills.frameworks} />
-      </Column>
-      <Column class="skills-column" md={4} xs={12}>
-        <KeyInfoTitle title="Applications" />
+      </InfoBlock>
+      <InfoBlock label="Applications">
         <SkillBadges skills={PROFILE.skills.applications} />
-      </Column>
-  </Row>
+      </InfoBlock>
+    </div>
+  </div>
 </Section>
 
 <style>
-  .skills-column > :global(div) {
-    width: 100%;
+  .about-inner {
+    padding: 5rem var(--inset);
+    margin: 0 auto;
+  }
+
+  .about-body {
+    max-width: 40rem;
+    margin-top: 1.375rem;
+    margin-bottom: 2rem;
+    font-size: var(--font-size-extra-large);
+    line-height: var(--line-height-text);
+    color: var(--body-text-color);
+  }
+
+  .about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    .about-inner {
+      padding: var(--section-padding-vertical-mobile) var(--content-padding-mobile);
+    }
+
+    .about-body {
+      font-size: var(--font-size-large);
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

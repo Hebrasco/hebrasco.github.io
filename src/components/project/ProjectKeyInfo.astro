@@ -1,11 +1,7 @@
 ---
-import Column from 'components/layout/Column.astro'
-import Row from 'components/layout/Row.astro'
-import Badge from 'components/ui/Badge.astro'
-import KeyInfoTitle from 'components/ui/KeyInfoTitle.astro'
+import InfoBlock from 'components/ui/InfoBlock.astro'
 import Section from 'components/ui/Section.astro'
 import SkillBadges from 'components/ui/SkillBadges.astro'
-import { PROJECT_STATUS } from 'data'
 import type { Project } from 'types'
 
 interface Props {
@@ -13,27 +9,51 @@ interface Props {
 }
 const { project } = Astro.props
 
-const statusLabel =
-  project.status.type === PROJECT_STATUS.comingSoon ? PROJECT_STATUS.launched : project.status.type
-const statusDate = project.status.date?.toLocaleDateString() ?? project.status.type
+const statusLabel = project.status.type
+const statusDate = project.status.date?.toLocaleString() ?? '-'
 ---
-<Section md>
-  <Row class="gap-4">
-    <Column md={3} xs={6}>
-      <KeyInfoTitle title="Frameworks" />
+<Section>
+  <div class="key-info">
+    <InfoBlock label="Frameworks">
       <SkillBadges skills={project.frameworks} />
-    </Column>
-    <Column md={3} xs={6}>
-      <KeyInfoTitle title="Languages" />
+    </InfoBlock>
+    <InfoBlock label="Languages">
       <SkillBadges skills={project.languages} />
-    </Column>
-    <Column md={3} xs={6}>
-      <KeyInfoTitle title="Platforms" />
-      <p>{project.platforms.join(', ')}</p>
-    </Column>
-    <Column md={3} xs={6}>
-      <KeyInfoTitle title={statusLabel} />
-      <p>{statusDate}</p>
-    </Column>
-  </Row>
+    </InfoBlock>
+    <InfoBlock label="Platforms">
+      <p class="info-value">{project.platforms.join(', ')}</p>
+    </InfoBlock>
+    <InfoBlock label={statusLabel}>
+      <p class="info-value">{statusDate}</p>
+    </InfoBlock>
+  </div>
 </Section>
+
+<style>
+  .key-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2.5rem var(--inset);
+  }
+
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .info-value {
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-body);
+    color: var(--primary-text-color);
+  }
+
+  @media (max-width: 600px) {
+    .key-info {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+</style>

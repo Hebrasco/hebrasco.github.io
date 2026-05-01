@@ -1,1 +1,1 @@
-export { default as IssueDetails } from './issue-details.webp'
+export { default as IssueDetails } from 'assets/images/screenshots/umbrella/ipad/dark/issue-details.webp'

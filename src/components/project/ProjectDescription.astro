@@ -1,5 +1,4 @@
 ---
-
 import Section from 'components/ui/Section.astro'
 import SectionHeader from 'components/ui/SectionHeader.astro'
 import type { Project } from 'types'
@@ -7,9 +6,38 @@ import type { Project } from 'types'
 interface Props {
   project: Project
 }
+
 const { project } = Astro.props
 ---
-<Section lg>
-  <SectionHeader eyebrow='Summary'>{project.summaryHeading}</SectionHeader>
-  <p>{project.description}</p>
+<Section>
+  <div class="description">
+    <div class="description-inner">
+      <SectionHeader eyebrow="Summary" size="medium">{project.summaryHeading}</SectionHeader>
+      <p class="body-text">{project.description}</p>
+    </div>
+  </div>
 </Section>
+
+<style>
+  .description {
+    padding: 4rem var(--inset);
+  }
+
+  .description-inner {
+    max-width: 40rem;
+  }
+
+  .body-text {
+    margin-top: 1.125rem;
+    margin-bottom: 0;
+    font-size: var(--font-size-extra-large);
+    line-height: var(--line-height-text);
+    color: var(--body-text-color);
+  }
+
+  @media (max-width: 600px) {
+    .body-text {
+      font-size: var(--font-size-large);
+    }
+  }
+</style>

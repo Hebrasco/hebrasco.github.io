@@ -3,9 +3,10 @@ import AboutMe from 'components/home/AboutMe.astro'
 import Contact from 'components/home/Contact.astro'
 import Hero from 'components/home/Hero.astro'
 import Projects from 'components/home/Projects.astro'
+import { CONFIG } from 'data'
 import Layout from 'layouts/Layout.astro'
 ---
-<Layout>
+<Layout title={`${CONFIG.profile.name}`} description='View my work and get in touch with me.'>
   <Hero />
   <AboutMe />
   <Projects />

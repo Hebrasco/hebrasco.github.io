@@ -1,62 +1,63 @@
 ---
+import { getImage } from 'astro:assets'
 import { BlankAppIcon } from 'assets/images/appIcons'
+import Button from 'components/ui/Button.astro'
 import Section from 'components/ui/Section.astro'
-import ButtonLink from 'components/ui/buttons/ButtonLink.astro'
+import { IMAGE_PIXEL_RATIO } from 'data/imagePixelRatio'
+import { IMAGE_QUALITY } from 'data/imageQuality'
 import type { Project } from 'types'
 
 interface Props {
   project: Project
 }
+
 const { project } = Astro.props
 
-const appIconSrc = project.appIcon?.light.src ?? BlankAppIcon.src
-const appIconDarkSrc = project.appIcon?.dark.src
+const appIconLight = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: (project.appIcon?.light ?? BlankAppIcon), width: 72 * IMAGE_PIXEL_RATIO })
+const appIconDark = project.appIcon?.dark ? await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: project.appIcon.dark, width: 72 * IMAGE_PIXEL_RATIO }) : undefined
 const preview = project.titleImage
-const previewLight = preview?.light
-const previewDark = preview?.dark
+const previewLight = await getImage({ format: 'webp', height: 280 * IMAGE_PIXEL_RATIO, quality: IMAGE_QUALITY, src: preview.light })
+const previewDark = await getImage({ format: 'webp', height: 280 * IMAGE_PIXEL_RATIO, quality: IMAGE_QUALITY, src: preview.dark })
+
 const platforms = project.platforms.join(' · ')
 ---
-<Section accent class='pt-6'>
+<Section background="secondary">
   <div class="detail-hero">
     <div class="hero-left">
       <div class="hero-app-icon">
         <picture>
-          {appIconDarkSrc && (
-            <source media="(prefers-color-scheme: dark)" srcset={appIconDarkSrc} />
+          {appIconDark && (
+            <source media="(prefers-color-scheme: dark)" srcset={appIconDark.src} />
           )}
-          <img alt={`${project.name} icon`} height="72" src={appIconSrc} width="72" />
+          <img alt={`${project.name} icon`} height="72" src={appIconLight.src} fetchpriority='high' width="72" />
         </picture>
       </div>
-      <h1>{project.name}</h1>
-      <p class="text-muted mb-4">{platforms}</p>
+      <h1 class="hero-app-name">{project.name}</h1>
+      <p class="hero-app-tagline">{platforms}</p>
       <div class="hero-call-to-actions">
         {project.onlineURL && (
-          <ButtonLink href={project.onlineURL} icon target="_blank" >
-            <svg aria-hidden="true" fill="currentColor" height="13" viewBox="0 0 24 24" width="13" >
+          <Button href={project.onlineURL} icon target="_blank" >
+            <svg aria-hidden="true"fill="currentColor" height="13" viewBox="0 0 24 24" width="13" >
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
             App Store
-          </ButtonLink>
+          </Button>
         )}
         {project.sourceURL && (
-          <ButtonLink href={project.sourceURL} target="_blank"variant="text" >Source Code</ButtonLink>
+          <Button href={project.sourceURL} target="_blank" variant="outline" >Source Code</Button>
         )}
       </div>
     </div>
     <div class="hero-right">
-      {preview && (
-        <picture>
-          {previewDark && (
-            <source media="(prefers-color-scheme: dark)" srcset={previewDark.src} />
-          )}
-          <img
-            alt={preview.altText}
-            class="hero-title-image"
-            loading="eager"
-            src={previewLight.src}
-          />
-        </picture>
-      )}
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset={previewDark.src} />
+        <img
+          alt={preview.altText}
+          class="hero-title-image"
+          fetchpriority='high'
+          src={previewLight.src}
+        />
+      </picture>
     </div>
   </div>
 </Section>
@@ -95,6 +96,22 @@ const platforms = project.platforms.join(' · ')
     object-fit: cover;
   }
 
+  .hero-app-name {
+    margin-bottom: 0.5rem;
+    font-size: var(--font-size-7extra-large);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-display);
+  }
+
+  .hero-app-tagline {
+    margin-bottom: 1.75rem;
+    font-size: var(--font-size-extra-large);
+    line-height: var(--line-height-normal);
+    color: var(--sub-text-color);
+  }
+
   .hero-call-to-actions {
     display: flex;
     flex-wrap: wrap;
@@ -111,13 +128,12 @@ const platforms = project.platforms.join(' · ')
 
   .hero-title-image {
     display: block;
-    width: auto;
     height: 17.5rem;
     object-fit: contain;
     object-position: bottom center;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     .detail-hero {
       gap: 24px;
     }

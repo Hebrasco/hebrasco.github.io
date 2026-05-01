@@ -1,22 +1,21 @@
 ---
-
-import ButtonLink from 'components/ui/buttons/ButtonLink.astro'
-import { ButtonVariants } from 'components/ui/buttons/constants/ButtonVariants'
+import Button from 'components/ui/Button.astro'
+import Section from 'components/ui/Section.astro'
 import { CONFIG, ROUTES } from 'data'
 
-const nameParts = CONFIG.profile.name.split(' ')
-const firstName = nameParts[0]
-const lastName = nameParts[1]
+const name = CONFIG.profile.name.replace(' ', '<br/>')
 ---
-<section class="hero" id="home">
-  <p class="eyebrow">{CONFIG.profile.jobTitle} — {CONFIG.profile.city}, Germany</p>
-  <h1 class="hero-name">{firstName}<br />{lastName}</h1>
-  <p class="hero-role">iOS · Android · Web</p>
-  <div class="hero-ctas">
-    <ButtonLink variant={ButtonVariants.filled} href={ROUTES.projects}>View Projects</ButtonLink>
-    <ButtonLink variant={ButtonVariants.text} href={ROUTES.projects} href={ROUTES.aboutMe}>About me</ButtonLink>
+<Section id="home">
+  <div class="hero">
+    <p class="eyebrow">{CONFIG.profile.jobTitle} — Limburg-Weilburg Area, Germany</p>
+    <h1 class="hero-name" set:html={name} />
+    <p class="hero-role">iOS · Android · Web</p>
+    <div class="hero-call-to-actions">
+      <Button href={ROUTES.projects}>View Projects</Button>
+      <Button variant="outline" href={ROUTES.aboutMe}>About me</Button>
+    </div>
   </div>
-</section>
+</Section>
 
 <style>
   .hero {
@@ -25,29 +24,37 @@ const lastName = nameParts[1]
     align-items: center;
     padding: 6rem 2rem 5.5rem;
     text-align: center;
-    border-bottom: 1px solid var(--divider-color);
+  }
+
+  .eyebrow {
+    margin-bottom: 1.25rem;
+    font-size: var(--font-size-extra-small);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    color: var(--caption-text-color);
+    letter-spacing: var(--letter-spacing-wide);
   }
 
   .hero-name {
-    margin-bottom: 0.875rem;
-    font-size: clamp(52px, 10vw, 80px);
-    font-weight: 700;
-    line-height: 1;
-    color: #1d1d1f;
-    letter-spacing: -0.045em;
+    margin-bottom: 1.125rem;
+    font-size: var(--hero-title-size);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-hero);
   }
 
   .hero-role {
-    margin-bottom: 1.5rem;
-    font-size: 1.1875rem;
-    line-height: 1;
-    color: var(--eyebrow-color);
-    letter-spacing: -0.015em;
+    margin-bottom: 2.125rem;
+    font-size: var(--font-size-extra-large);
+    line-height: var(--line-height-tight);
+    color: var(--signature);
+    letter-spacing: var(--letter-spacing-subtitle);
   }
 
-  .hero-ctas {
+  .hero-call-to-actions {
     display: flex;
-    gap: 1.25rem;
+    gap: 0.75rem;
     align-items: center;
   }
 </style>

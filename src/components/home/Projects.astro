@@ -1,160 +1,206 @@
 ---
+import { getImage } from 'astro:assets'
 import { BlankAppIcon } from 'assets/images/appIcons'
-import Column from 'components/layout/Column.astro'
-import Row from 'components/layout/Row.astro'
-import HorizontalList from 'components/ui/HorizontalList.astro'
-import ListContainer from 'components/ui/ListContainer.astro'
+import Badge from 'components/ui/Badge.astro'
+import HScroll from 'components/ui/HScroll.astro'
 import Section from 'components/ui/Section.astro'
 import SectionHeader from 'components/ui/SectionHeader.astro'
-import SkillBadges from 'components/ui/SkillBadges.astro'
-import { PROJECTS, ROUTES } from 'data'
-import type { Project } from 'types'
+import { PROJECTS } from 'data'
+import { IMAGE_PIXEL_RATIO } from 'data/imagePixelRatio'
+import { IMAGE_QUALITY } from 'data/imageQuality'
 
-function getTagline(project: Project): string {
+function getTagline(project: typeof PROJECTS[0]): string {
   return project.platforms.join(' · ')
 }
 ---
-<Section anchor={ROUTES.projects} accent lg fullWidth>
-  <SectionHeader fullWidth={false} eyebrow='My Work'>Projects</SectionHeader>
-  <HorizontalList>
-    {PROJECTS.map((project) => {
-      const previewImageLight = project.previewImage.light.src
-      const previewImageDark = project.previewImage.dark.src
+<Section background="secondary" id="projects">
+  <div class="projects-body">
+    <div class="projects-header">
+      <SectionHeader eyebrow="My Work">Projects</SectionHeader>
+    </div>
+    <HScroll>
+      {PROJECTS.map(async (project) => {
+        const appIconLight = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: (project.appIcon?.light ?? BlankAppIcon), width: 48 * IMAGE_PIXEL_RATIO })
+        const appIconDark = project.appIcon?.dark
+          ? await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: project.appIcon.dark, width: 48 * IMAGE_PIXEL_RATIO })
+          : appIconLight
+        const screenshot = project.previewImage
+        const screenshotLight = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.light, width: 130 * IMAGE_PIXEL_RATIO })
+        const screenshotDark = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.dark, width: 130 * IMAGE_PIXEL_RATIO })
 
-      const appIconLight = project.appIcon?.light.src ?? BlankAppIcon.src
-      const appIconDark = project.appIcon?.dark?.src
-
-      return (
-        <ListContainer class="primary-bg rounded" enableScaling>
-          <a
-            class="preview-link rounded"
-            href={`/projects/${project.id}`}
-          >
-            <div class="preview-container">
-              <div class="mb-auto">
-                <Row>
-                  <Column class="d-flex align-items-center preview-content-header-container">
-                    <div class="preview-content-app-icon me-3">
-                      <picture>
-                        {appIconDark && (
-                          <source
-                            media="(prefers-color-scheme: dark)"
-                            srcset={appIconDark}
-                          />
-                        )}
-                        <img
-                          alt={`App icon of ${project.id}`}
-                          height="100%"
-                          loading='lazy'
-                          src={appIconLight}
-                          width="100%"
-                        />
-                      </picture>
-                    </div>
-                    <i class="bi bi-chevron-right ms-auto"></i>
-                  </Column>
-                  <Column>
-                    <span class="display-4 fw-bold m-0">{project.name}</span>
-                    <p class="tagline mb-3">{getTagline(project)}</p>
-                  </Column>
-                </Row>
-              </div>
-              <div>
-                <SkillBadges skills={[...project.languages, ...project.frameworks]} />
-              </div>
-              <div class="d-flex justify-content-center preview-image-container">
-                <picture class="preview-image">
-                  {previewImageDark && (
-                    <source
-                      media="(prefers-color-scheme: dark)"
-                      srcset={previewImageDark}
+        return (
+          <a class="project-card" href={`/projects/${project.id}`}>
+            <div class="project-info">
+              <div class="project-icon-container">
+                <div class="project-icon">
+                  <picture>
+                    {appIconDark && (
+                      <source media="(prefers-color-scheme: dark)" srcset={appIconDark.src} />
+                    )}
+                    <img
+                      alt={`${project.name} icon`}
+                      height={48}
+                      loading="lazy"
+                      src={appIconLight.src}
+                      width={48}
                     />
-                  )}
-                <img
-                    alt={project.previewImage.altText}
-                    height="100%"
-                    loading="lazy"
-                    src={previewImageLight}
-                    width="100%"
-                  />
-                </picture>
+                  </picture>
+                </div>
+                <span class="project-arrow">›</span>
+              </div>
+              <h3 class="project-name">{project.name}</h3>
+              <p class="project-tagline">{getTagline(project)}</p>
+              <div class="project-badges">
+                {[...project.languages, ...project.frameworks].map((s) => (
+                  <Badge label={s.name} />
+                ))}
               </div>
             </div>
+            <div class="project-screenshot">
+              <picture>
+                <source media="(prefers-color-scheme: dark)" srcset={screenshotDark.src} />
+                <img
+                  alt={screenshot.altText}
+                  class="screenshot"
+                  loading="lazy"
+                  src={screenshotLight.src}
+                />
+              </picture>
+            </div>
           </a>
-        </ListContainer>
-      )
-    })}
-  </HorizontalList>
+        )
+      })}
+    </HScroll>
+  </div>
 </Section>
 
 <style>
-  .preview-link {
-    display: block;
-    width: 280px;
-    height: 380px;
+  .projects-body {
+    padding: 5rem 0;
   }
 
-  .preview-link:hover {
+  .projects-header {
+    padding: 0 var(--inset);
+    margin-bottom: 1.75rem;
+  }
+
+  .project-card {
+    position: relative;
+    display: flex;
+    flex: 0 0 17.5rem;
+    flex-direction: column;
+    height: 23.75rem;
+    overflow: hidden;
     text-decoration: none;
     cursor: pointer;
+    scroll-snap-align: start;
+    background: var(--primary-color);
+    border-radius: 1.125rem;
+    box-shadow: var(--shadow-color-medium) 2px 4px 12px;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
   }
 
-  .tagline {
-    font-size: 0.75em;
+  @media (hover: hover) {
+    .project-card:hover {
+      text-decoration: none;
+      box-shadow: var(--shadow-color-large) 2px 4px 16px;
+      transform: scale(1.02);
+    }
   }
 
-  .preview-container {
-    padding: var(--list-item-padding);
+  .project-arrow {
+    font-size: 1.5em;
+    line-height: var(--line-height-tight);
+    color: var(--faint-text-color);
   }
-  .preview-content-header-container {
-    height: 4rem;
+
+  .project-info {
+    flex-shrink: 0;
+    padding: 1.25rem 1.25rem 1rem;
   }
-  .preview-content-app-icon {
-    --app-icon-size: 3rem;
-    width: var(--app-icon-size);
-    min-width: var(--app-icon-size);
-    max-width: var(--app-icon-size);
-    height: var(--app-icon-size);
-    min-height: var(--app-icon-size);
-    max-height: var(--app-icon-size);
+
+  .project-icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-icon {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
     overflow: hidden;
-    border: 1px solid var(--app-icon-border-color);
-    border-radius: 14px;
+    background: var(--primary-background-color);
+    border: 1px solid var(--divider-color);
+    border-radius: 0.6875rem;
   }
-  .preview-content-app-icon > picture {
+
+  .project-icon img {
     display: block;
     width: 100%;
     height: 100%;
-  }
-  .preview-content-app-icon img {
-    width: 100%;
     object-fit: cover;
   }
-  @media (prefers-color-scheme: dark) {
-    .preview-content-app-icon {
-      background: linear-gradient(180deg, rgba(28, 28, 28, 1) 20%, rgba(15, 15, 15, 1) 80%);
-    }
+
+  .project-name {
+    margin-bottom: 0.1875rem;
+    font-size: var(--font-size-extra-large);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-title);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-subheading);
   }
-  .preview-image-container {
-    margin-top: 3rem;
+
+  .project-tagline {
+    margin-bottom: 0.625rem;
+    font-size: var(--font-size-2extra-small);
+    line-height: var(--line-height-compact);
+    color: var(--signature);
   }
-  .preview-image {
-    display: block;
-    width: 100%;
+
+  .project-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
   }
-  .preview-image img {
+
+  .project-screenshot {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 1.25rem;
+    overflow: hidden;
+    background: var(--primary-color);
+  }
+
+  .screenshot {
     display: block;
     flex-shrink: 0;
-    width: 130px;
-    height: 230px;
-    margin: auto;
+    width: 8.125rem;
     object-fit: cover;
     object-position: top;
-    /* border: 0.5px solid rgba(0,0,0,0.06);
-    border-radius: 16px;
-    box-shadow:
-      0 2px 4px rgba(0,0,0,0.06),
-      0 10px 20px rgba(0,0,0,0.07),
-      0 32px 56px rgba(0,0,0,0.09); */
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card {
+      transition: none;
+    }
+
+    .project-card:hover {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .projects-body {
+      padding: var(--section-padding-vertical-mobile) 0;
+    }
+
+    .project-card {
+      scroll-snap-align: center;
+    }
   }
 </style>
