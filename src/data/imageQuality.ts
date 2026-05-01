@@ -1,0 +1,3 @@
+const IMAGE_QUALITY = 100
+
+export { IMAGE_QUALITY }

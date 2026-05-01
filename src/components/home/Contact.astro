@@ -1,19 +1,66 @@
 ---
-import Column from 'components/layout/Column.astro'
-import Row from 'components/layout/Row.astro'
-import Email from 'components/ui/Email.astro'
+import Button from 'components/ui/Button.astro'
 import Section from 'components/ui/Section.astro'
-import { ROUTES } from 'data'
+import { CONFIG } from 'data'
 ---
-<div class='container'>
-  <Section anchor={ROUTES.contact} md title="Contact">
-    <Row>
-      <Column>
-        <p>New projects, freelance inquiry or even a coffee.</p>
-      </Column>
-      <Column>
-        <Email />
-      </Column>
-    </Row>
-  </Section>
-</div>
+<Section id="contact">
+  <div class="contact-inner">
+    <h2 class="contact-title">Get in touch.</h2>
+    <p class="contact-sub">Interested in working together or just want to say hello?</p>
+    <Button variant="email" href={`mailto:${CONFIG.profile.email}`}>
+      {CONFIG.profile.email}
+    </Button>
+    <div class="contact-socials">
+      <Button variant="chip" href={CONFIG.references.gitHubUrl} target="_blank">GitHub</Button>
+      <Button variant="chip" href={CONFIG.references.appStoreUrl} target="_blank">App Store</Button>
+      <Button variant="chip" href={'/daniel_bedrich_resume.pdf'} download>Resume ↓</Button>
+    </div>
+  </div>
+</Section>
+
+<style>
+  .contact-inner {
+    max-width: 37.5rem;
+    padding: 5rem var(--content-padding);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-title {
+    margin-bottom: 0.875rem;
+    font-size: var(--font-size-6extra-large);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-headings);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-heading);
+  }
+
+  .contact-sub {
+    margin-bottom: 2rem;
+    font-size: var(--font-size-extra-large);
+    line-height: var(--line-height-body-large);
+    color: var(--sub-text-color);
+  }
+
+  .contact-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+
+  @media (max-width: 600px) {
+    .contact-inner {
+      padding: var(--section-padding-vertical-mobile) var(--content-padding-mobile);
+    }
+
+    .contact-title {
+      font-size: var(--font-size-4extra-large);
+    }
+
+    .contact-sub {
+      font-size: var(--font-size-large);
+    }
+  }
+</style>

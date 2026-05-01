@@ -1,46 +1,54 @@
 ---
-import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'assets/styles/colors.css'
 import 'assets/styles/typography.css'
-import 'assets/styles/spacings.css'
-import 'assets/styles/globals.css'
-import { Font } from 'astro:assets'
+import 'assets/styles/reset.css'
 import Footer from 'components/layout/Footer.astro'
 import NavBar from 'components/layout/NavBar.astro'
+import { CONFIG } from 'data'
 
 interface Props {
-  title?: string
+  title: string
+  description: string
+  image?: string
 }
-const { title = 'Daniel Bedrich - Mobile Developer' } = Astro.props
+
+const {
+  title,
+  description,
+  image = `${Astro.url.origin}/icon512.png`
+} = Astro.props
 ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="View my work and get in touch with me." />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content={description} />
     <meta name="application-name" content="Daniel Bedrich" />
     <meta name="keywords" content="engineer, developer, coder, coding, programmer, front end, app, mobile, portfolio, ui, ux, design, ios, apple, react, swift, javascript, typescript, github" />
+    <meta property="og:site_name" content={`${CONFIG.profile.name} - ${CONFIG.profile.jobTitle}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={Astro.url} />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <Font cssVariable="--font-varela" preload />
     <title>{title}</title>
   </head>
   <body>
     <NavBar />
     <slot />
     <Footer />
-    <script is:inline>
-      console.log(
-        '%c Daniel Bedrich — iOS & macOS Developer ',
-        'background: #1d1d1f; color: #f5f5f7; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 6px; letter-spacing: 0.02em;'
-      )
-      console.log('%c Swift · SwiftUI · React · TypeScript', 'color: #86868b; font-size: 11px; padding: 2px 14px;')
-      console.log('%c github.com/Hebrasco', 'color: #0066cc; font-size: 11px; padding: 2px 14px;')
-    </script>
   </body>
 </html>
+
+<style>
+  body {
+    padding-top: 3rem;
+  }
+</style>

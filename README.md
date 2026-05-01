@@ -6,18 +6,19 @@ Checkout my skills, recent and favorite projects and get in touch with me!
 
 - About me
 - My Projects
+- Project details
 - Contact
 - Imprint
 - Privacy Policy
 - Download resume
-- Custom styles (Bootstrap used as foundation)
+- Custom styles
 - Light and dark mode support (automatic)
 - Custom icon when saved as app (Android & iOS)
+- Share link preview
 
 ## Folder Structure
 
 - assets
-  - files
   - fonts
   - icons
   - images

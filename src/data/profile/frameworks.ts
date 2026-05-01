@@ -21,9 +21,6 @@ const FRAMEWORKS: FrameworkCollection = {
     ci: { name: 'CI/CD' },
   },
   web: {
-    angular: { name: 'Angular' },
-    bootstrap: { name: 'Bootstrap' },
-    dotNet: { name: '.Net' },
     materialUI: { name: 'MaterialUI' },
     react: { name: 'React' },
     reactRedux: { name: 'React Redux' },

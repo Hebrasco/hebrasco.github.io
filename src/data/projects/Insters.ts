@@ -11,9 +11,9 @@ import { PLATFORM } from 'data/platform'
 import type { Project } from 'types'
 
 const INSTERS: Project = {
-appIcon: {
-  light: InstersAppIcons.light,
-  dark: InstersAppIcons.light,
+  appIcon: {
+    dark: InstersAppIcons.light,
+    light: InstersAppIcons.light,
   },
   description:
     'Insters is a photo filter app. You can import photos from your photo library and choose from a variety of color filters to apply to your photo. If one of the filters is applied, you can export the photo back to your library.',
@@ -46,30 +46,30 @@ appIcon: {
   platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
     altText: 'Preview screenshot of Insters',
-    light: ScreenshotsIphoneLight.EditImage,
     dark: ScreenshotsIphoneDark.EditImage,
+    light: ScreenshotsIphoneLight.EditImage,
   },
   screenshots: {
-    ipad:  [
-        {
-          altText: 'Screenshot of ipad app of the edit image screen',
-          light: ScreenshotsIpadLight.EditImage,
-          dark: ScreenshotsIpadDark.EditImage,
-        },
-      ],
+    ipad: [
+      {
+        altText: 'Screenshot of ipad app of the edit image screen',
+        dark: ScreenshotsIpadDark.EditImage,
+        light: ScreenshotsIpadLight.EditImage,
+      },
+    ],
     iphone: [
-        {
-          altText: 'Screenshot of iphone app of the edit image screen',
-          light: ScreenshotsIphoneLight.EditImage,
-          dark: ScreenshotsIphoneDark.EditImage,
-        },
-      ],
+      {
+        altText: 'Screenshot of iphone app of the edit image screen',
+        dark: ScreenshotsIphoneDark.EditImage,
+        light: ScreenshotsIphoneLight.EditImage,
+      },
+    ],
   },
-  sourceURL: undefined,
   status: {
     date: new Date('2022-04-06'),
     type: PROJECT_STATUS.launched,
   },
+  summaryHeading: 'Color your memories.',
   tasks: [
     'Conception and development',
     'User interface development',
@@ -77,9 +77,9 @@ appIcon: {
     'Color adjustment algorithms',
   ],
   titleImage: {
-      altText: 'Title image',
-      light: InstersPreviews.titleLight,
-      dark: InstersPreviews.titleDark,
+    altText: 'Title image',
+    dark: InstersPreviews.titleDark,
+    light: InstersPreviews.titleLight,
   },
 } as const
 

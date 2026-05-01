@@ -1,4 +1,4 @@
-import type { Skill } from './Skill'
+import type { Skill } from 'types/Skill'
 
 type SkillCollection = {
   applications: readonly Skill[]

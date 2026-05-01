@@ -1,1 +1,1 @@
-export { default as titleLight } from './title-light.webp'
+export { default as titleLight } from 'assets/images/previews/recipes/title-light.webp'

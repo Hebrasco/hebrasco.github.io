@@ -1,0 +1,40 @@
+---
+interface Props {
+  id?: string
+}
+
+const { id } = Astro.props
+---
+<div class="hscroll" id={id}>
+  <slot />
+</div>
+
+<style>
+  .hscroll {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    padding: 1.25rem var(--content-padding) 2.25rem var(--inset);
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--inset);
+    scrollbar-width: none;
+  }
+
+  .hscroll::-webkit-scrollbar { display: none; }
+
+  .hscroll::after {
+    display: block;
+    flex-shrink: 0;
+    min-width: var(--content-padding);
+    content: '';
+  }
+
+  @media (max-width: 600px) {
+    .hscroll {
+      scroll-padding-left: 0;
+    }
+  }
+</style>

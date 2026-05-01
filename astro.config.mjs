@@ -1,23 +1,9 @@
-import { defineConfig, fontProviders } from 'astro/config'
+import { defineConfig, sharpImageService } from 'astro/config'
 
 export default defineConfig({
-  fonts: [
-    {
-      cssVariable: '--font-varela',
-      fallbacks: ['sans serif'],
-      name: 'Varela',
-      options: {
-        variants: [
-          {
-            src: ['./src/assets/fonts/VarelaRound-Regular.ttf'],
-            style: 'normal',
-            weight: 'regular',
-          },
-        ],
-      },
-      provider: fontProviders.local(),
-    },
-  ],
+  image: {
+    service: sharpImageService(),
+  },
   output: 'static',
   site: 'https://hebrasco.github.io',
 })

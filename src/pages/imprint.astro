@@ -1,108 +1,228 @@
 ---
-import Column from 'components/layout/Column.astro'
-import Row from 'components/layout/Row.astro'
-import Email from 'components/ui/Email.astro'
-import Section from 'components/ui/Section.astro'
-import { CONFIG, ROUTES } from 'data'
+import { CONFIG } from 'data'
 import Layout from 'layouts/Layout.astro'
-
-const anchorReplace = '/imprint#'
 ---
-<Layout title="Imprint – Daniel Bedrich">
-  <div class="container navbar-spacer imprint">
-    <Row>
-      <Column>
-        <Section anchor={ROUTES.imprintHash} anchorReplace={anchorReplace} lg title="Impressum">
-          <p><b>Inhaber der Seite</b></p>
-          <ul class="list-unstyled">
-            <li>{CONFIG.profile.name}</li>
-            <li>{CONFIG.profile.street}</li>
-            <li>{CONFIG.profile.zip} {CONFIG.profile.city}</li>
-          </ul>
-          <p><b>Kontakt</b></p>
-          <ul class="list-unstyled">
-            <li><Email /></li>
-          </ul>
-        </Section>
+<Layout title={`Imprint - ${CONFIG.profile.name}`} description='Imprint and privacy policy of daniel-bedrich.dev and apps.'>
+  <div class="imprint-hero">
+    <p class="page-label">Legal</p>
+    <h1>Impressum &amp;<br>Datenschutz</h1>
+  </div>
 
-        <Section anchor={ROUTES.privacyPolicyHash} anchorReplace={anchorReplace} lg title="Datenschutz">
-          <p>
-            Personenbezogene Daten (nachfolgend zumeist nur „Daten" genannt) werden von uns nur im
-            Rahmen der Erforderlichkeit sowie zum Zwecke der Bereitstellung eines funktionsfähigen
-            und nutzerfreundlichen Internetauftritts, inklusive seiner Inhalte und der dort
-            angebotenen Leistungen, verarbeitet.
-          </p>
-          <p>
-            Gemäß Art. 4 Ziffer 1. der Verordnung (EU) 2016/679, also der
-            Datenschutz-Grundverordnung (nachfolgend nur „DSGVO" genannt), gilt als „Verarbeitung"
-            jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführter Vorgang oder jede
-            solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten, wie das Erheben, das
-            Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder
-            Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch
-            Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder
-            die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.
-          </p>
-          <p>
-            Mit der nachfolgenden Datenschutzerklärung informieren wir Sie insbesondere über Art,
-            Umfang, Zweck, Dauer und Rechtsgrundlage der Verarbeitung personenbezogener Daten,
-            soweit wir entweder allein oder gemeinsam mit anderen über die Zwecke und Mittel der
-            Verarbeitung entscheiden. Zudem informieren wir Sie nachfolgend über die von uns zu
-            Optimierungszwecken sowie zur Steigerung der Nutzungsqualität eingesetzten
-            Fremdkomponenten, soweit hierdurch Dritte Daten in wiederum eigener Verantwortung
-            verarbeiten.
-          </p>
-          <p>Unsere Datenschutzerklärung ist wie folgt gegliedert:</p>
-          <p>
-            I. Informationen über uns als Verantwortliche<br />
-            II. Rechte der Nutzer und Betroffenen<br />
-            III. Informationen zur Datenverarbeitung
-          </p>
-        </Section>
+  <div class="imprint-body">
+    <div class="imprint-content">
 
-        <Section md title="I. Informationen über uns als Verantwortliche">
-          <p>Verantwortlicher Anbieter dieses Internetauftritts im datenschutzrechtlichen Sinne ist:</p>
-          <ul class="list-unstyled">
-            <li>{CONFIG.profile.name}</li>
-            <li>{CONFIG.profile.street}</li>
-            <li>{CONFIG.profile.zip} {CONFIG.profile.city}</li>
-          </ul>
-          <p><b>Kontakt</b></p>
-          <ul class="list-unstyled">
-            <li><Email /></li>
-          </ul>
-        </Section>
+      <div class="legal-section">
+        <h2>Impressum</h2>
+        <p><strong>Inhaber der Seite</strong></p>
+        <div class="contact-block">
+          <p>{CONFIG.profile.name}</p>
+          <p>{CONFIG.profile.street}</p>
+          <p>{CONFIG.profile.zip} {CONFIG.profile.city}</p>
+        </div>
+        <h3>Kontakt</h3>
+        <div class="contact-block">
+          <p><a href={`mailto:${CONFIG.profile.email}`}>{CONFIG.profile.email}</a></p>
+        </div>
+      </div>
 
-        <Section md title="II. Rechte der Nutzer und Betroffenen">
-          <p>Mit Blick auf die nachfolgend noch näher beschriebene Datenverarbeitung haben die Nutzer und Betroffenen das Recht</p>
-          <ul>
-            <li>auf Bestätigung, ob sie betreffende Daten verarbeitet werden, auf Auskunft über die verarbeiteten Daten, auf weitere Informationen über die Datenverarbeitung sowie auf Kopien der Daten (vgl. auch Art. 15 DSGVO);</li>
-            <li>auf Berichtigung oder Vervollständigung unrichtiger bzw. unvollständiger Daten (vgl. auch Art. 16 DSGVO);</li>
-            <li>auf unverzügliche Löschung der sie betreffenden Daten (vgl. auch Art. 17 DSGVO), oder, alternativ, soweit eine weitere Verarbeitung gemäß Art. 17 Abs. 3 DSGVO erforderlich ist, auf Einschränkung der Verarbeitung nach Maßgabe von Art. 18 DSGVO;</li>
-            <li>auf Erhalt der sie betreffenden und von ihnen bereitgestellten Daten und auf Übermittlung dieser Daten an andere Anbieter/Verantwortliche (vgl. auch Art. 20 DSGVO);</li>
-            <li>auf Beschwerde gegenüber der Aufsichtsbehörde, sofern sie der Ansicht sind, dass die sie betreffenden Daten durch den Anbieter unter Verstoß gegen datenschutzrechtliche Bestimmungen verarbeitet werden (vgl. auch Art. 77 DSGVO).</li>
-          </ul>
-          <p>Darüber hinaus ist der Anbieter dazu verpflichtet, alle Empfänger, denen gegenüber Daten durch den Anbieter offengelegt worden sind, über jedwede Berichtigung oder Löschung von Daten oder die Einschränkung der Verarbeitung, die aufgrund der Artikel 16, 17 Abs. 1, 18 DSGVO erfolgt, zu unterrichten.</p>
-          <p><b>Ebenfalls haben die Nutzer und Betroffenen nach Art. 21 DSGVO das Recht auf Widerspruch gegen die künftige Verarbeitung der sie betreffenden Daten, sofern die Daten durch den Anbieter nach Maßgabe von Art. 6 Abs. 1 lit. f) DSGVO verarbeitet werden. Insbesondere ist ein Widerspruch gegen die Datenverarbeitung zum Zwecke der Direktwerbung statthaft.</b></p>
-        </Section>
+      <div class="legal-section">
+        <h2>Datenschutz</h2>
+        <p>
+          Personenbezogene Daten (nachfolgend zumeist nur „Daten" genannt) werden von uns nur im
+          Rahmen der Erforderlichkeit sowie zum Zwecke der Bereitstellung eines funktionsfähigen
+          und nutzerfreundlichen Internetauftritts, inklusive seiner Inhalte und der dort
+          angebotenen Leistungen, verarbeitet.
+        </p>
+        <p>
+          Gemäß Art. 4 Ziffer 1. der Verordnung (EU) 2016/679, also der
+          Datenschutz-Grundverordnung (nachfolgend nur „DSGVO" genannt), gilt als „Verarbeitung"
+          jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführter Vorgang oder jede
+          solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten, wie das Erheben, das
+          Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder
+          Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch
+          Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder
+          die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.
+        </p>
+        <p>
+          Mit der nachfolgenden Datenschutzerklärung informieren wir Sie insbesondere über Art,
+          Umfang, Zweck, Dauer und Rechtsgrundlage der Verarbeitung personenbezogener Daten,
+          soweit wir entweder allein oder gemeinsam mit anderen über die Zwecke und Mittel der
+          Verarbeitung entscheiden. Zudem informieren wir Sie nachfolgend über die von uns zu
+          Optimierungszwecken sowie zur Steigerung der Nutzungsqualität eingesetzten
+          Fremdkomponenten, soweit hierdurch Dritte Daten in wiederum eigener Verantwortung
+          verarbeiten.
+        </p>
+      </div>
 
-        <Section md title="III. Informationen zur Datenverarbeitung">
-          <p>Ihre bei Nutzung unseres Internetauftritts verarbeiteten Daten werden gelöscht oder gesperrt, sobald der Zweck der Speicherung entfällt, der Löschung der Daten keine gesetzlichen Aufbewahrungspflichten entgegenstehen und nachfolgend keine anderslautenden Angaben zu einzelnen Verarbeitungsverfahren gemacht werden.</p>
-          <Section sm title="Cookies">
-            <p>Wir verwenden mit unserem Internetauftritt <u>keine</u> sog. Cookies.</p>
-          </Section>
-          <Section sm title="Kontaktanfragen / Kontaktmöglichkeit">
-            <p>Sofern Sie per Kontaktformular oder E-Mail mit uns in Kontakt treten, werden die dabei von Ihnen angegebenen Daten zur Bearbeitung Ihrer Anfrage genutzt. Die Angabe der Daten ist zur Bearbeitung und Beantwortung Ihre Anfrage erforderlich - ohne deren Bereitstellung können wir Ihre Anfrage nicht oder allenfalls eingeschränkt beantworten.</p>
-            <p>Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b) DSGVO.</p>
-            <p>Ihre Daten werden gelöscht, sofern Ihre Anfrage abschließend beantwortet worden ist und der Löschung keine gesetzlichen Aufbewahrungspflichten entgegenstehen, wie bspw. bei einer sich etwaig anschließenden Vertragsabwicklung.</p>
-          </Section>
-        </Section>
-      </Column>
-    </Row>
+      <div class="legal-section">
+        <h2>I. Informationen über uns als Verantwortliche</h2>
+        <p>Verantwortlicher Anbieter dieses Internetauftritts im datenschutzrechtlichen Sinne ist:</p>
+        <div class="contact-block">
+          <p>{CONFIG.profile.name}</p>
+          <p>{CONFIG.profile.street}</p>
+          <p>{CONFIG.profile.zip} {CONFIG.profile.city}</p>
+          <p><a href={`mailto:${CONFIG.profile.email}`}>{CONFIG.profile.email}</a></p>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <h2>II. Rechte der Nutzer und Betroffenen</h2>
+        <p>Mit Blick auf die nachfolgend noch näher beschriebene Datenverarbeitung haben die Nutzer und Betroffenen das Recht</p>
+        <ul>
+          <li>auf Bestätigung, ob sie betreffende Daten verarbeitet werden, auf Auskunft über die verarbeiteten Daten, auf weitere Informationen über die Datenverarbeitung sowie auf Kopien der Daten (vgl. auch Art. 15 DSGVO);</li>
+          <li>auf Berichtigung oder Vervollständigung unrichtiger bzw. unvollständiger Daten (vgl. auch Art. 16 DSGVO);</li>
+          <li>auf unverzügliche Löschung der sie betreffenden Daten (vgl. auch Art. 17 DSGVO), oder, alternativ, soweit eine weitere Verarbeitung gemäß Art. 17 Abs. 3 DSGVO erforderlich ist, auf Einschränkung der Verarbeitung nach Maßgabe von Art. 18 DSGVO;</li>
+          <li>auf Erhalt der sie betreffenden und von ihnen bereitgestellten Daten und auf Übermittlung dieser Daten an andere Anbieter/Verantwortliche (vgl. auch Art. 20 DSGVO);</li>
+          <li>auf Beschwerde gegenüber der Aufsichtsbehörde, sofern sie der Ansicht sind, dass die sie betreffenden Daten durch den Anbieter unter Verstoß gegen datenschutzrechtliche Bestimmungen verarbeitet werden (vgl. auch Art. 77 DSGVO).</li>
+        </ul>
+        <p>Darüber hinaus ist der Anbieter dazu verpflichtet, alle Empfänger, denen gegenüber Daten durch den Anbieter offengelegt worden sind, über jedwede Berichtigung oder Löschung von Daten oder die Einschränkung der Verarbeitung, die aufgrund der Artikel 16, 17 Abs. 1, 18 DSGVO erfolgt, zu unterrichten.</p>
+        <p><strong>Ebenfalls haben die Nutzer und Betroffenen nach Art. 21 DSGVO das Recht auf Widerspruch gegen die künftige Verarbeitung der sie betreffenden Daten, sofern die Daten durch den Anbieter nach Maßgabe von Art. 6 Abs. 1 lit. f) DSGVO verarbeitet werden. Insbesondere ist ein Widerspruch gegen die Datenverarbeitung zum Zwecke der Direktwerbung statthaft.</strong></p>
+      </div>
+
+      <div class="legal-section">
+        <h2>III. Informationen zur Datenverarbeitung</h2>
+        <p>Ihre bei Nutzung unseres Internetauftritts verarbeiteten Daten werden gelöscht oder gesperrt, sobald der Zweck der Speicherung entfällt, der Löschung der Daten keine gesetzlichen Aufbewahrungspflichten entgegenstehen und nachfolgend keine anderslautenden Angaben zu einzelnen Verarbeitungsverfahren gemacht werden.</p>
+
+        <h3>Cookies</h3>
+        <p>Wir verwenden mit unserem Internetauftritt <u>keine</u> sog. Cookies.</p>
+
+        <h3>Kontaktanfragen / Kontaktmöglichkeit</h3>
+        <p>Sofern Sie per Kontaktformular oder E-Mail mit uns in Kontakt treten, werden die dabei von Ihnen angegebenen Daten zur Bearbeitung Ihrer Anfrage genutzt. Die Angabe der Daten ist zur Bearbeitung und Beantwortung Ihre Anfrage erforderlich – ohne deren Bereitstellung können wir Ihre Anfrage nicht oder allenfalls eingeschränkt beantworten.</p>
+        <p>Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b) DSGVO.</p>
+        <p>Ihre Daten werden gelöscht, sofern Ihre Anfrage abschließend beantwortet worden ist und der Löschung keine gesetzlichen Aufbewahrungspflichten entgegenstehen, wie bspw. bei einer sich etwaig anschließenden Vertragsabwicklung.</p>
+      </div>
+
+    </div>
   </div>
 </Layout>
 
 <style>
-  .imprint :global(p) {
-    margin-bottom: var(--spacings-3);
+  .imprint-hero {
+    padding: 4.5rem var(--inset) 3.5rem;
+    background: var(--primary-color);
+    border-bottom: 1px solid var(--divider-color);
+  }
+
+  .imprint-hero .page-label {
+    margin-bottom: 0.75rem;
+    font-size: var(--font-size-2extra-small);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--label-text-color);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-label);
+  }
+
+  .imprint-hero h1 {
+    margin: 0;
+    font-size: var(--font-size-7extra-large);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-display);
+  }
+
+  .imprint-body {
+    padding: 0 var(--inset) 5rem;
+    background: var(--primary-color);
+  }
+
+  .imprint-content {
+    max-width: 42.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .legal-section {
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--divider-color);
+  }
+
+  .legal-section:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  .legal-section h2 {
+    margin-bottom: 1.25rem;
+    font-size: var(--font-size-2extra-large);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-subheading);
+  }
+
+  .legal-section h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.625rem;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-ui);
+  }
+
+  .legal-section p {
+    margin-bottom: 0.875rem;
+    font-size: var(--font-size-medium);
+    line-height: var(--line-height-relaxed);
+    color: var(--body-text-color);
+  }
+
+  .legal-section p:last-child { margin-bottom: 0; }
+
+  .legal-section ul {
+    padding-left: 1.125rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .legal-section ul li {
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+    font-size: var(--font-size-medium);
+    line-height: var(--line-height-relaxed);
+    color: var(--body-text-color);
+  }
+
+  .legal-section ul li:last-child { margin-bottom: 0; }
+
+  .legal-section strong {
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-text-color);
+  }
+
+  .contact-block {
+    display: inline-block;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    background: var(--primary-background-color);
+    border-radius: 0.75rem;
+  }
+
+  .contact-block p {
+    margin-bottom: 0.25rem;
+    font-size: var(--font-size-small);
+    color: var(--body-text-color);
+  }
+
+  .contact-block p:last-child { margin-bottom: 0; }
+
+  .contact-block a {
+    color: var(--interactive-color);
+    text-decoration: none;
+  }
+
+  .contact-block a:hover {
+    color: var(--interactive-color);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .imprint-hero h1 {
+      font-size: var(--font-size-5extra-large);
+    }
+    .legal-section h2 {
+      font-size: var(--font-size-extra-large);
+    }
   }
 </style>

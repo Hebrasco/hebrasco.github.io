@@ -1,8 +1,10 @@
 ---
-import HorizontalList from 'components/ui/HorizontalList.astro'
-import ListContainer from 'components/ui/ListContainer.astro'
+import { getImage } from 'astro:assets'
+import HScroll from 'components/ui/HScroll.astro'
 import Section from 'components/ui/Section.astro'
-import { SCREENSHOT_CONTAINER_SIZE } from 'data/containerSizes'
+import SectionHeader from 'components/ui/SectionHeader.astro'
+import { IMAGE_PIXEL_RATIO } from 'data/imagePixelRatio'
+import { IMAGE_QUALITY } from 'data/imageQuality'
 import { PLATFORM } from 'data/platform'
 import type { Project } from 'types'
 
@@ -17,185 +19,193 @@ if (!project.screenshots || !Object.values(project.screenshots).some(Boolean)) {
 }
 
 type PlatformKey = keyof typeof PLATFORM
-const platforms = (Object.keys(project.screenshots) as PlatformKey[]).sort((a) =>
-  a === 'iphone' ? -1 : 1
-)
-const hasMultiplePlatforms = platforms.length > 1
----
-<Section fluidContainer lg title="Screenshots" hasAction={hasMultiplePlatforms}>
-  {hasMultiplePlatforms && (
-    <div class="select-container" id="screenshot-select"slot="action" >
-      <button class="dropdown-button" id="select-btn" type="button">
-        {PLATFORM[platforms[0]!]}
-        <i class="bi bi-chevron-down ms-1" id="select-chevron"></i>
-      </button>
-      <div class="select-menu" hidden id="select-menu" >
-        <div class="select-menu-arrow"></div>
-        <p class="text-muted">Platforms</p>
-        {platforms.map((platform, index) => (
-          <button
-            class="select-item"
-            data-label={PLATFORM[platform]}
-            data-platform={platform}
-            type="button"
-          >
-            <i class="bi bi-check-circle-fill" style={index === 0 ? '' : 'visibility:hidden'}></i>
-            {PLATFORM[platform]}
-          </button>
-        ))}
-      </div>
-    </div>
-  )}
-  {platforms.map((platform, index) => {
-    const sizes = SCREENSHOT_CONTAINER_SIZE[platform]
-    const screenshots = project.screenshots?.[platform] ?? []
 
-    return (
-      <div
-        data-platform-group={platform}
-        hidden={index !== 0}
-      >
-        <HorizontalList>
-          {screenshots.map((screenshot) => (
-            <ListContainer>
-              <picture>
-                {project.appIcon?.dark && (
-                  <source
-                    media="(prefers-color-scheme: dark)"
-                    srcset={screenshot.dark.src}
-                  />
-                )}
-                <img
-                alt={screenshot.altText}
-                class="screenshot-img"
-                height={sizes.md.height}
-                src={screenshot.light.src}
-                style={`--w-md:${sizes.md.width}px;--h-md:${sizes.md.height}px;--w-xs:${sizes.xs.width}px;--h-xs:${sizes.xs.height}px`}
-                width={sizes.md.width}
-              />
-              </picture>
-            </ListContainer>
+const platforms = (Object.keys(project.screenshots) as PlatformKey[]).sort((a, b) =>
+  a === 'iphone' ? -1 : b === 'iphone' ? 1 : 0
+)
+
+const hasMultiplePlatforms = platforms.length > 1
+const projectScrollId = `screenshots-scroll-${project.id}`
+
+function getPlatformScreenshotWidth(platform: PlatformKey): number {
+  switch (platform) {
+    case 'iphone':
+      return 261 * IMAGE_PIXEL_RATIO
+    case 'ipad':
+      return 296 * IMAGE_PIXEL_RATIO
+    case 'mac':
+    case 'web':
+      return 312 * IMAGE_PIXEL_RATIO
+  }
+}
+---
+<Section>
+  <div class="screenshots-section">
+    <div class="screenshots-header">
+      <SectionHeader eyebrow="Screenshots" size="medium">See it in action.</SectionHeader>
+      {hasMultiplePlatforms && (
+        <div class="platform-pills" id="platform-pills">
+          {platforms.map((p, i) => (
+            <button
+              class={`pill ${i === 0 ? 'active' : 'inactive'}`}
+              data-platform={p}
+              type="button"
+            >
+              {PLATFORM[p]}
+            </button>
           ))}
-        </HorizontalList>
-      </div>
-    )
-  })}
+        </div>
+      )}
+    </div>
+    <div class='screenshots-container'>
+      {platforms.map((platform, i) => {
+        const screenshots = project.screenshots[platform] ?? []
+
+        return (
+          <div
+            class="platform-panel"
+            data-platform-panel={platform}
+            style={i !== 0 ? 'display:none' : ''}
+          >
+            <HScroll id={`${projectScrollId}-${platform}`}>
+              {screenshots.map(async (screenshot) => {
+                const size = getPlatformScreenshotWidth(platform)
+                const screenshotLight = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.light, width: size.width })
+                const screenshotDark = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.dark, width: size.width })
+
+                return (
+                  <picture data-platform-shot={platform}>
+                    <source media="(prefers-color-scheme: dark)" srcset={screenshotDark.src} />
+                    <img
+                      alt={screenshot.altText}
+                      class="screenshot-image"
+                      loading='lazy'
+                      src={screenshotLight.src}
+                    />
+                  </picture>
+                )
+              })}
+            </HScroll>
+          </div>
+        )
+      })}
+    </div>
+  </div>
 </Section>
 
 <style>
-  .select-container {
-    position: relative;
+  .screenshots-section {
+    padding: 4rem 0;
   }
-  .dropdown-button {
-    all: unset;
-    cursor: pointer;
-  }
-  .dropdown-button > .bi-chevron-down::before {
-    transition: transform 250ms ease-in-out;
-  }
-  .dropdown-button.open > .bi-chevron-down::before {
-    transform: rotate(180deg);
-  }
-  .select-menu {
-    --select-item-padding: 1rem;
-    --select-item-icon-font-size: 1em;
-    --select-item-icon-margin: 0.5rem;
-    position: absolute;
-    top: 125%;
-    right: -1.25rem;
-    z-index: 100;
+
+  .screenshots-header {
     display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
-    background-color: var(--primary-color);
-    border: 2px solid var(--accent-color);
-    border-radius: 22px;
+    gap: 1rem;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 var(--inset);
+    margin-bottom: 1.5rem;
   }
-  .select-menu[hidden] {
-    display: none;
-  }
-  .select-menu-arrow {
-    position: absolute;
-    top: -1.25rem;
-    right: 1rem;
-    z-index: -100;
-    border-top: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid var(--accent-color);
-    border-left: 10px solid transparent;
-  }
-  .select-menu > p,
-  .select-item {
-    padding: calc(var(--select-item-padding) / 2) var(--select-item-padding);
-  }
-  .select-item {
-    all: unset;
+
+  .platform-pills {
     display: flex;
-    padding: calc(var(--select-item-padding) / 2) var(--select-item-padding);
-    padding-right: calc(var(--select-item-padding) + var(--select-item-icon-font-size) + var(--select-item-icon-margin));
+    flex-shrink: 0;
+    gap: 0.375rem;
+  }
+
+  .pill {
+    all: unset;
+    padding: 0.375rem 0.75rem;
+    font-size: var(--font-size-2extra-small);
+    font-weight: var(--font-weight-semibold);
     cursor: pointer;
-    border-radius: 0.75rem;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-base);
   }
-  .select-item:hover,
-  .select-item:focus-visible {
-    background-color: var(--accent-color);
+
+  .pill.active {
+    color: var(--primary-color);
+    background: var(--primary-text-color);
   }
-  .select-item > i {
-    margin-right: var(--select-item-icon-margin);
-    font-size: var(--select-item-icon-font-size);
+
+  .pill.inactive {
+    color: var(--sub-text-color);
+    background: var(--primary-background-color);
   }
-  .screenshot-img {
-    width: var(--w-xs);
-    height: var(--h-xs);
+
+  .pill.inactive:hover {
+    background: var(--hover-surface-color);
   }
-  @media (min-width: 576px) {
-    .screenshot-img {
-      width: var(--w-md);
-      height: var(--h-md);
+
+  .screenshots-container, .screenshot-image {
+    height: 30rem;
+  }
+
+  .screenshot-image {
+    display: block;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    object-fit: contain;
+    object-position: top;
+  }
+
+  @media (max-width: 600px) {
+    .screenshots-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .screenshots-container, .screenshot-image {
+      height: 33.875rem;
+    }
+
+    .screenshot-image {
+      scroll-snap-align: center;
+    }
+
+    picture[data-platform-shot="iphone"] .screenshot-image {
+      width: 16.3125rem;
+    }
+    picture[data-platform-shot="ipad"] .screenshot-image {
+      width: 18.5rem;
+    }
+    picture[data-platform-shot="mac"] .screenshot-image {
+      width: 19.5rem;
     }
   }
 </style>
 
 <script>
-  const selectButton = document.getElementById('select-btn')
-  const selectMenu = document.getElementById('select-menu')
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      document.querySelectorAll<HTMLElement>('[data-platform-panel]').forEach((panel) => {
+        const hscroll = panel.querySelector<HTMLElement>('.hscroll')
+        if (hscroll) hscroll.scrollLeft = 0
+      })
+    }
+  })
 
-  if (selectButton && selectMenu) {
-    selectButton.addEventListener('click', () => {
-      const isOpen = !selectMenu.hidden
-      selectMenu.hidden = isOpen
-      selectButton.classList.toggle('open', !isOpen)
-    })
+  const platformPills = document.querySelector('#platform-pills')
 
-    document.addEventListener('click', (event) => {
-      const container = document.getElementById('screenshot-select')
-      if (!container?.contains(event.target as Node)) {
-        selectMenu.hidden = true
-        selectButton.classList.remove('open')
-      }
-    })
+  if (platformPills) {
+    const pills = platformPills.querySelectorAll<HTMLElement>('.pill')
 
-    selectMenu.querySelectorAll<HTMLElement>('[data-platform]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const platform = button.dataset.platform
-        const label = button.dataset.label
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const platform = pill.dataset.platform
 
-        document.querySelectorAll<HTMLElement>('[data-platform-group]').forEach((group) => {
-          (group as HTMLElement).hidden = group.dataset.platformGroup !== platform
+        pills.forEach((p) => {
+          p.classList.toggle('active', p.dataset.platform === platform)
+          p.classList.toggle('inactive', p.dataset.platform !== platform)
         })
 
-        const span = selectButton.childNodes[0]
-        if (span) span.textContent = label ?? null
+        document.querySelectorAll<HTMLElement>('[data-platform-panel]').forEach((panel) => {
+          panel.style.display = panel.dataset.platformPanel === platform ? '' : 'none'
 
-        selectMenu.querySelectorAll<HTMLElement>('[data-platform] i').forEach((icon) => {
-          icon.style.visibility = 'hidden'
+          const hscroll = panel.querySelector<HTMLElement>('.hscroll')
+
+          if (hscroll) hscroll.scrollLeft = 0
         })
-
-        const icon = button.querySelector('i')
-        if (icon) icon.style.visibility = 'visible'
-
-        selectMenu.hidden = true
-        selectButton.classList.remove('open')
       })
     })
   }
