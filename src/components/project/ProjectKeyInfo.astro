@@ -10,7 +10,7 @@ interface Props {
 const { project } = Astro.props
 
 const statusLabel = project.status.type
-const statusDate = project.status.date?.toLocaleString() ?? '-'
+const statusDate = project.status.date?.toLocaleDateString() ?? '-'
 ---
 <Section>
   <div class="key-info">
