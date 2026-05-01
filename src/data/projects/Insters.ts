@@ -6,8 +6,9 @@ import {
   ScreenshotsIphoneDark,
   ScreenshotsIphoneLight,
 } from 'assets/images/screenshots/insters'
-import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
+import * as PROFILE from 'data/profile'
+import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
 const INSTERS: Project = {
@@ -77,7 +78,7 @@ const INSTERS: Project = {
     'Color adjustment algorithms',
   ],
   titleImage: {
-    altText: 'Title image',
+    altText: 'Preview collection of screenshots',
     dark: InstersPreviews.titleDark,
     light: InstersPreviews.titleLight,
   },
