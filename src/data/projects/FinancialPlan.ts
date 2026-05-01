@@ -41,7 +41,7 @@ const FINANCIAL_PLAN: Project = {
     },
     {
       description: 'Summaries of income and expenses on accounts and across accounts.',
-      icon: 'bi bi-pie-chart',
+      icon: 'bi bi-123',
       title: 'Accounts Summaries',
     },
     {
