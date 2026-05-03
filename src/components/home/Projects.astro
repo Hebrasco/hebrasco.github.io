@@ -31,7 +31,7 @@ function getTagline(project: typeof PROJECTS[0]): string {
         const screenshotDark = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.dark, width: 130 * IMAGE_PIXEL_RATIO })
 
         return (
-          <HorizontalListItem>
+          <HorizontalListItem enableScaling>
             <a class="project-card" href={`/projects/${project.id}`}>
               <div class="project-info">
                 <div class="project-icon-container">
@@ -98,7 +98,6 @@ function getTagline(project: typeof PROJECTS[0]): string {
     text-decoration: none;
     cursor: pointer;
     background: var(--primary-color);
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
   }
 
   @media (hover: hover) {
@@ -181,16 +180,6 @@ function getTagline(project: typeof PROJECTS[0]): string {
     width: 8.125rem;
     object-fit: cover;
     object-position: top;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .project-card {
-      transition: none;
-    }
-
-    .project-card:hover {
-      transform: none;
-    }
   }
 
   @media (max-width: 600px) {

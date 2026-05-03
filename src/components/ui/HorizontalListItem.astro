@@ -18,6 +18,7 @@ const { enableScaling = false, disableShadow =false } = Astro.props
     scroll-snap-align: start;
     border-radius: 1.125rem;
     box-shadow: var(--shadow-color-medium) 2px 4px 12px;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
   }
 
   .list-item-container.no-shadow {
@@ -34,6 +35,16 @@ const { enableScaling = false, disableShadow =false } = Astro.props
   @media (max-width: 600px) {
     .list-item-container {
       scroll-snap-align: center;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .list-item-container {
+      transition: none;
+    }
+
+    .list-item-container.scaling:hover {
+      transform: none;
     }
   }
 </style>
