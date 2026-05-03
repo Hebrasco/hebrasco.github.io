@@ -1,9 +1,11 @@
 ---
-import HScroll from 'components/ui/HScroll.astro'
+
+import HorizontalList from 'components/ui/HorizontalList.astro'
 import Section from 'components/ui/Section.astro'
 import SectionHeader from 'components/ui/SectionHeader.astro'
 import type { Project } from 'types'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import HorizontalListItem from 'components/ui/HorizontalListItem.astro'
 
 interface Props {
   project: Project
@@ -16,17 +18,19 @@ const { project } = Astro.props
     <div class="features-header">
       <SectionHeader eyebrow="Features" size="medium">What it does.</SectionHeader>
     </div>
-    <HScroll>
+    <HorizontalList>
       {project.features.map((feature) => (
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class={feature.icon}></i>
+        <HorizontalListItem>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class={feature.icon}></i>
+            </div>
+            <h3 class="feature-title">{feature.title}</h3>
+            <p class="feature-description">{feature.description}</p>
           </div>
-          <h3 class="feature-title">{feature.title}</h3>
-          <p class="feature-description">{feature.description}</p>
-        </div>
+        </HorizontalListItem>
       ))}
-    </HScroll>
+    </HorizontalList>
   </div>
 </Section>
 
@@ -41,12 +45,10 @@ const { project } = Astro.props
   }
 
   .feature-card {
-    flex: 0 0 13.75rem;
+    width: 13.75rem;
+    height: 100%;
     padding: 1.375rem;
-    scroll-snap-align: start;
     background: var(--primary-color);
-    border-radius: 1rem;
-    box-shadow: var(--shadow-color-medium) 2px 4px 12px;
   }
 
   .feature-icon {
@@ -76,11 +78,5 @@ const { project } = Astro.props
     font-size: var(--font-size-small);
     line-height: var(--line-height-body-medium);
     color: var(--sub-text-color);
-  }
-
-  @media (max-width: 600px) {
-    .feature-card {
-      scroll-snap-align: center;
-    }
   }
 </style>

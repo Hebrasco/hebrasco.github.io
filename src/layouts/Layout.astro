@@ -52,3 +52,14 @@ const {
     padding-top: 3rem;
   }
 </style>
+
+<!--
+Fix for deprecated hash urls of pre v4.0.0 portfolio
+Still used as privacy policy urls for App Store
+Remove once all apps have received updates
+-->
+<script>
+  if (window.location.hash === '#/imprint') {
+    window.location.replace('/imprint');
+  }
+</script>

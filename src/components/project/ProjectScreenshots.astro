@@ -1,6 +1,7 @@
 ---
 import { getImage } from 'astro:assets'
-import HScroll from 'components/ui/HScroll.astro'
+import HorizontalList from 'components/ui/HorizontalList.astro'
+import HorizontalListItem from 'components/ui/HorizontalListItem.astro'
 import Section from 'components/ui/Section.astro'
 import SectionHeader from 'components/ui/SectionHeader.astro'
 import { IMAGE_PIXEL_RATIO } from 'data/imagePixelRatio'
@@ -25,7 +26,6 @@ const platforms = (Object.keys(project.screenshots) as PlatformKey[]).sort((a, b
 )
 
 const hasMultiplePlatforms = platforms.length > 1
-const projectScrollId = `screenshots-scroll-${project.id}`
 
 function getPlatformScreenshotWidth(platform: PlatformKey): number {
   switch (platform) {
@@ -67,25 +67,27 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
             data-platform-panel={platform}
             style={i !== 0 ? 'display:none' : ''}
           >
-            <HScroll id={`${projectScrollId}-${platform}`}>
+            <HorizontalList>
               {screenshots.map(async (screenshot) => {
                 const size = getPlatformScreenshotWidth(platform)
-                const screenshotLight = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.light, width: size.width })
-                const screenshotDark = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.dark, width: size.width })
+                const screenshotLight = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.light, width: size })
+                const screenshotDark = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.dark, width: size })
 
                 return (
-                  <picture data-platform-shot={platform}>
-                    <source media="(prefers-color-scheme: dark)" srcset={screenshotDark.src} />
-                    <img
-                      alt={screenshot.altText}
-                      class="screenshot-image"
-                      loading='lazy'
-                      src={screenshotLight.src}
-                    />
-                  </picture>
+                  <HorizontalListItem disableShadow>
+                    <picture data-platform-screenshot={platform}>
+                      <source media="(prefers-color-scheme: dark)" srcset={screenshotDark.src} />
+                      <img
+                        alt={screenshot.altText}
+                        class="screenshot-image"
+                        loading='lazy'
+                        src={screenshotLight.src}
+                      />
+                    </picture>
+                  </HorizontalListItem>
                 )
               })}
-            </HScroll>
+            </HorizontalList>
           </div>
         )
       })}
@@ -125,28 +127,31 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
 
   .pill.active {
     color: var(--primary-color);
-    background: var(--primary-text-color);
+    background-color: var(--primary-text-color);
   }
 
   .pill.inactive {
     color: var(--sub-text-color);
-    background: var(--primary-background-color);
+    background-color: var(--primary-background-color);
   }
 
   .pill.inactive:hover {
-    background: var(--hover-surface-color);
+    background-color: var(--hover-surface-color);
   }
 
-  .screenshots-container, .screenshot-image {
+  picture[data-platform-screenshot="iphone"] .screenshot-image {
+    width: 14.4375rem;
     height: 30rem;
   }
 
-  .screenshot-image {
-    display: block;
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    object-fit: contain;
-    object-position: top;
+  picture[data-platform-screenshot="ipad"] .screenshot-image {
+    width: 23rem;
+    height: 30rem;
+  }
+
+  picture[data-platform-screenshot="mac"] .screenshot-image {
+    width: 44.8125rem;
+    height: 30rem;
   }
 
   @media (max-width: 600px) {
@@ -155,21 +160,17 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
       align-items: flex-start;
     }
 
-    .screenshots-container, .screenshot-image {
+    picture[data-platform-screenshot="iphone"] .screenshot-image {
+      width: 16.3125rem;
       height: 33.875rem;
     }
 
-    .screenshot-image {
-      scroll-snap-align: center;
+    picture[data-platform-screenshot="ipad"] .screenshot-image {
+      width: 18.5rem;
+      height: 24.125rem;
     }
 
-    picture[data-platform-shot="iphone"] .screenshot-image {
-      width: 16.3125rem;
-    }
-    picture[data-platform-shot="ipad"] .screenshot-image {
-      width: 18.5rem;
-    }
-    picture[data-platform-shot="mac"] .screenshot-image {
+    picture[data-platform-screenshot="mac"] .screenshot-image {
       width: 19.5rem;
     }
   }
