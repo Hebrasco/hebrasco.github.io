@@ -7,8 +7,9 @@ import {
   ScreenshotsMacDark,
   ScreenshotsMacLight,
 } from 'assets/images/screenshots/umbrella'
-import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
+import * as PROFILE from 'data/profile'
+import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
 const UMBRELLA: Project = {
@@ -102,7 +103,7 @@ const UMBRELLA: Project = {
     'Synchronizing data with iCloud',
   ],
   titleImage: {
-    altText: 'Title image',
+    altText: 'Preview collection of screenshots',
     dark: UmbrellaPreviews.titleDark,
     light: UmbrellaPreviews.titleLight,
   },

@@ -6,8 +6,9 @@ import {
   ScreenshotsIphoneDark,
   ScreenshotsIphoneLight,
 } from 'assets/images/screenshots/investCalc'
-import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
+import * as PROFILE from 'data/profile'
+import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
 const INVEST_CALC: Project = {
@@ -54,6 +55,11 @@ const INVEST_CALC: Project = {
       description: 'The contribution for each year can be changed.',
       icon: 'bi bi-pencil',
       title: 'Flexible Contributions',
+    },
+    {
+      description: 'No collection of any kind of data.',
+      icon: 'bi bi-lock',
+      title: 'Privacy first',
     },
     {
       description: 'All calculations are synced with iCloud.',
@@ -143,7 +149,7 @@ const INVEST_CALC: Project = {
   summaryHeading: 'Simulate your financial future.',
   tasks: [],
   titleImage: {
-    altText: 'Title image',
+    altText: 'Preview collection of screenshots',
     dark: InvestCalcPreviews.titleDark,
     light: InvestCalcPreviews.titleLight,
   },

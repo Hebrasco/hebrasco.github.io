@@ -6,8 +6,9 @@ import {
   ScreenshotsIphoneDark,
   ScreenshotsIphoneLight,
 } from 'assets/images/screenshots/bloom'
-import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
+import * as PROFILE from 'data/profile'
+import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
 const BLOOM: Project = {
@@ -151,7 +152,7 @@ const BLOOM: Project = {
     'Implementation of widgets',
   ],
   titleImage: {
-    altText: 'Title image',
+    altText: 'Preview collection of screenshots',
     dark: BloomPreviews.titleDark,
     light: BloomPreviews.titleLight,
   },

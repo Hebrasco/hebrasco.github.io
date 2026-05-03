@@ -1,7 +1,8 @@
 import { RecipesPreviews } from 'assets/images/previews'
 import { ScreenshotsIpadLight, ScreenshotsIphoneLight } from 'assets/images/screenshots/recipes'
-import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
+import * as PROFILE from 'data/profile'
+import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
 const RECIPES: Project = {
@@ -80,7 +81,7 @@ const RECIPES: Project = {
     'Persisting data with Core Data',
   ],
   titleImage: {
-    altText: 'Title image',
+    altText: 'Preview collection of screenshots',
     dark: RecipesPreviews.titleLight,
     light: RecipesPreviews.titleLight,
   },
