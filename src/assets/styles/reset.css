@@ -1,8 +1,7 @@
 :root {
   --border-radius: 61.25rem;
-  --content-max-width: 80rem;
+  --content-max-width: 100rem;
   --content-padding: 2rem;
-  /* inset = content padding at narrow viewports; centers to max-width at wide ones */
   --inset: max(
     var(--content-padding),
     calc((100vw - var(--content-max-width)) / 2 + var(--content-padding))
