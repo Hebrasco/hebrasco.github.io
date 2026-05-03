@@ -1,0 +1,39 @@
+---
+interface Props {
+  enableScaling?: boolean
+  disableShadow?: boolean
+}
+
+const { enableScaling = false, disableShadow =false } = Astro.props
+---
+<li class:list={['list-item-container', enableScaling ? ' scaling' : '',disableShadow ? 'no-shadow' : '']}>
+  <slot />
+</li>
+
+<style>
+  .list-item-container {
+    align-items: stretch;
+    margin: 0;
+    overflow: clip;
+    scroll-snap-align: start;
+    border-radius: 1.125rem;
+    box-shadow: var(--shadow-color-medium) 2px 4px 12px;
+  }
+
+  .list-item-container.no-shadow {
+    box-shadow: none;
+  }
+
+  @media (hover: hover) {
+    .list-item-container.scaling:hover {
+      box-shadow: var(--shadow-color-large) 2px 4px 16px;
+      transform: scale(1.02);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .list-item-container {
+      scroll-snap-align: center;
+    }
+  }
+</style>

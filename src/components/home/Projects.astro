@@ -1,8 +1,10 @@
 ---
+
 import { getImage } from 'astro:assets'
 import { BlankAppIcon } from 'assets/images/appIcons'
 import Badge from 'components/ui/Badge.astro'
-import HScroll from 'components/ui/HScroll.astro'
+import HorizontalList from 'components/ui/HorizontalList.astro'
+import HorizontalListItem from 'components/ui/HorizontalListItem.astro'
 import Section from 'components/ui/Section.astro'
 import SectionHeader from 'components/ui/SectionHeader.astro'
 import { PROJECTS } from 'data'
@@ -18,7 +20,7 @@ function getTagline(project: typeof PROJECTS[0]): string {
     <div class="projects-header">
       <SectionHeader eyebrow="My Work">Projects</SectionHeader>
     </div>
-    <HScroll>
+    <HorizontalList>
       {PROJECTS.map(async (project) => {
         const appIconLight = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: (project.appIcon?.light ?? BlankAppIcon), width: 48 * IMAGE_PIXEL_RATIO })
         const appIconDark = project.appIcon?.dark
@@ -29,48 +31,50 @@ function getTagline(project: typeof PROJECTS[0]): string {
         const screenshotDark = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.dark, width: 130 * IMAGE_PIXEL_RATIO })
 
         return (
-          <a class="project-card" href={`/projects/${project.id}`}>
-            <div class="project-info">
-              <div class="project-icon-container">
-                <div class="project-icon">
-                  <picture>
-                    {appIconDark && (
-                      <source media="(prefers-color-scheme: dark)" srcset={appIconDark.src} />
-                    )}
-                    <img
-                      alt={`${project.name} icon`}
-                      height={48}
-                      loading="lazy"
-                      src={appIconLight.src}
-                      width={48}
-                    />
-                  </picture>
+          <HorizontalListItem>
+            <a class="project-card" href={`/projects/${project.id}`}>
+              <div class="project-info">
+                <div class="project-icon-container">
+                  <div class="project-icon">
+                    <picture>
+                      {appIconDark && (
+                        <source media="(prefers-color-scheme: dark)" srcset={appIconDark.src} />
+                      )}
+                      <img
+                        alt={`${project.name} icon`}
+                        height={48}
+                        loading="lazy"
+                        src={appIconLight.src}
+                        width={48}
+                      />
+                    </picture>
+                  </div>
+                  <span class="project-arrow">›</span>
                 </div>
-                <span class="project-arrow">›</span>
+                <h3 class="project-name">{project.name}</h3>
+                <p class="project-tagline">{getTagline(project)}</p>
+                <div class="project-badges">
+                  {[...project.languages, ...project.frameworks].map((s) => (
+                    <Badge label={s.name} />
+                  ))}
+                </div>
               </div>
-              <h3 class="project-name">{project.name}</h3>
-              <p class="project-tagline">{getTagline(project)}</p>
-              <div class="project-badges">
-                {[...project.languages, ...project.frameworks].map((s) => (
-                  <Badge label={s.name} />
-                ))}
+              <div class="project-screenshot">
+                <picture>
+                  <source media="(prefers-color-scheme: dark)" srcset={screenshotDark.src} />
+                  <img
+                    alt={screenshot.altText}
+                    class="screenshot"
+                    loading="lazy"
+                    src={screenshotLight.src}
+                  />
+                </picture>
               </div>
-            </div>
-            <div class="project-screenshot">
-              <picture>
-                <source media="(prefers-color-scheme: dark)" srcset={screenshotDark.src} />
-                <img
-                  alt={screenshot.altText}
-                  class="screenshot"
-                  loading="lazy"
-                  src={screenshotLight.src}
-                />
-              </picture>
-            </div>
-          </a>
+            </a>
+          </HorizontalListItem>
         )
       })}
-    </HScroll>
+    </HorizontalList>
   </div>
 </Section>
 
@@ -87,24 +91,19 @@ function getTagline(project: typeof PROJECTS[0]): string {
   .project-card {
     position: relative;
     display: flex;
-    flex: 0 0 17.5rem;
     flex-direction: column;
+    width: 17.5rem;
     height: 23.75rem;
     overflow: hidden;
     text-decoration: none;
     cursor: pointer;
-    scroll-snap-align: start;
     background: var(--primary-color);
-    border-radius: 1.125rem;
-    box-shadow: var(--shadow-color-medium) 2px 4px 12px;
     transition: transform var(--transition-base), box-shadow var(--transition-base);
   }
 
   @media (hover: hover) {
     .project-card:hover {
       text-decoration: none;
-      box-shadow: var(--shadow-color-large) 2px 4px 16px;
-      transform: scale(1.02);
     }
   }
 
@@ -197,10 +196,6 @@ function getTagline(project: typeof PROJECTS[0]): string {
   @media (max-width: 600px) {
     .projects-body {
       padding: var(--section-padding-vertical-mobile) 0;
-    }
-
-    .project-card {
-      scroll-snap-align: center;
     }
   }
 </style>
