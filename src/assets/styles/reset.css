@@ -61,17 +61,3 @@ button {
   all: unset;
   -webkit-tap-highlight-color: transparent;
 }
-
-.screen-reader-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  w: hidden;
-  pace: nowrap;
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  -clip-path: inset(50%);
-  clip-path: inset(50%);
-}
