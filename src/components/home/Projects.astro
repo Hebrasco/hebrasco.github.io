@@ -1,0 +1,190 @@
+---
+
+import { getImage } from 'astro:assets'
+import { BlankAppIcon } from 'assets/images/appIcons'
+import Badge from 'components/ui/Badge.astro'
+import HorizontalList from 'components/ui/HorizontalList.astro'
+import HorizontalListItem from 'components/ui/HorizontalListItem.astro'
+import Section from 'components/ui/Section.astro'
+import SectionHeader from 'components/ui/SectionHeader.astro'
+import { PROJECTS } from 'data'
+import { IMAGE_PIXEL_RATIO } from 'data/imagePixelRatio'
+import { IMAGE_QUALITY } from 'data/imageQuality'
+
+function getTagline(project: typeof PROJECTS[0]): string {
+  return project.platforms.join(' · ')
+}
+---
+<Section background="secondary" id="projects">
+  <div class="projects-body">
+    <div class="projects-header">
+      <SectionHeader eyebrow="My Work">Projects</SectionHeader>
+    </div>
+    <HorizontalList>
+      {PROJECTS.map(async (project) => {
+        const appIconLight = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: (project.appIcon?.light ?? BlankAppIcon), width: 48 * IMAGE_PIXEL_RATIO })
+        const appIconDark = project.appIcon?.dark
+          ? await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: project.appIcon.dark, width: 48 * IMAGE_PIXEL_RATIO })
+          : appIconLight
+        const screenshot = project.previewImage
+        const screenshotLight = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.light, width: 130 * IMAGE_PIXEL_RATIO })
+        const screenshotDark = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: screenshot.dark, width: 130 * IMAGE_PIXEL_RATIO })
+
+        return (
+          <HorizontalListItem enableScaling>
+            <a class="project-card" href={`/projects/${project.id}`}>
+              <div class="project-info">
+                <div class="project-icon-container">
+                  <div class="project-icon">
+                    <picture>
+                      {appIconDark && (
+                        <source media="(prefers-color-scheme: dark)" srcset={appIconDark.src} />
+                      )}
+                      <img
+                        alt={`${project.name} icon`}
+                        height={48}
+                        loading="lazy"
+                        src={appIconLight.src}
+                        width={48}
+                      />
+                    </picture>
+                  </div>
+                  <span class="project-arrow">›</span>
+                </div>
+                <h3 class="project-name">{project.name}</h3>
+                <p class="project-tagline">{getTagline(project)}</p>
+                <div class="project-badges">
+                  {[...project.languages, ...project.frameworks].map((s) => (
+                    <Badge label={s.name} />
+                  ))}
+                </div>
+              </div>
+              <div class="project-screenshot">
+                <picture>
+                  <source media="(prefers-color-scheme: dark)" srcset={screenshotDark.src} />
+                  <img
+                    alt={screenshot.altText}
+                    class="screenshot"
+                    loading="lazy"
+                    src={screenshotLight.src}
+                  />
+                </picture>
+              </div>
+            </a>
+          </HorizontalListItem>
+        )
+      })}
+    </HorizontalList>
+  </div>
+</Section>
+
+<style>
+  .projects-body {
+    padding: 5rem 0;
+  }
+
+  .projects-header {
+    padding: 0 var(--inset);
+    margin-bottom: 1.75rem;
+  }
+
+  .project-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 17.5rem;
+    height: 23.75rem;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    background: var(--primary-color);
+  }
+
+  @media (hover: hover) {
+    .project-card:hover {
+      text-decoration: none;
+    }
+  }
+
+  .project-arrow {
+    font-size: 1.5em;
+    line-height: var(--line-height-tight);
+    color: var(--faint-text-color);
+  }
+
+  .project-info {
+    flex-shrink: 0;
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .project-icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-icon {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    background: var(--primary-background-color);
+    border: 1px solid var(--divider-color);
+    border-radius: 0.8rem;
+  }
+
+  .project-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-name {
+    margin-bottom: 0.1875rem;
+    font-size: var(--font-size-extra-large);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-title);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-subheading);
+  }
+
+  .project-tagline {
+    margin-bottom: 0.625rem;
+    font-size: var(--font-size-2extra-small);
+    line-height: var(--line-height-compact);
+    color: var(--signature);
+  }
+
+  .project-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .project-screenshot {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 1.25rem;
+    overflow: hidden;
+    background: var(--primary-color);
+  }
+
+  .screenshot {
+    display: block;
+    flex-shrink: 0;
+    width: 8.125rem;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  @media (max-width: 600px) {
+    .projects-body {
+      padding: var(--section-padding-vertical-mobile) 0;
+    }
+  }
+</style>

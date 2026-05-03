@@ -6,45 +6,47 @@ Checkout my skills, recent and favorite projects and get in touch with me!
 
 - About me
 - My Projects
+- Project details
 - Contact
 - Imprint
 - Privacy Policy
 - Download resume
-- Custom styles (Bootstrap used as foundation)
+- Custom styles
 - Light and dark mode support (automatic)
 - Custom icon when saved as app (Android & iOS)
+- Share link preview
 
 ## Folder Structure
 
 - assets
+  - fonts
   - icons
   - images
   - styles
 - components
+  - home
   - layout
+  - project
   - ui
 - data
   - misc
   - profile
   - projects
-- hooks
-  - home
-  - imprint
+- layouts
 - pages
-- routes
 - types
-- utils
 
 ## Tech Stack
 
-- React
+- Astro
 - Typescript
-- Bootstrap
+- HTML
+- CSS
 
 ## Development Environment
 
 - VS Code
-  - Prettier
+  - Biome
 - Git
 - GitHub
 - GitHub Actions

@@ -1,1 +1,1 @@
-export { default as EditImage } from './edit-image.webp'
+export { default as EditImage } from 'assets/images/screenshots/insters/iphone/light/edit-image.webp'

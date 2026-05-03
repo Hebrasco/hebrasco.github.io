@@ -1,0 +1,27 @@
+---
+interface Props {
+  label: string
+}
+
+const { label } = Astro.props
+---
+<dl class="info-block">
+  <dt class="info-block-label">{label}</dt>
+  <dd><slot /></dd>
+</dl>
+
+<style>
+  dd {
+    margin: 0;
+  }
+
+  .info-block-label {
+    margin-bottom: 0.5rem;
+    font-size: var(--font-size-2extra-small);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--label-text-color);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-label);
+  }
+</style>

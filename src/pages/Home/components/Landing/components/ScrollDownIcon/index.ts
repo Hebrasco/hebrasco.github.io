@@ -1,1 +1,0 @@
-export { ScrollDownIcon } from './ScrollDownIcon'

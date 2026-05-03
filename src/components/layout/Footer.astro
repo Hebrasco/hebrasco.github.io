@@ -1,0 +1,43 @@
+---
+import { CONFIG, ROUTES } from 'data'
+---
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© {new Date().getFullYear()} {CONFIG.profile.name}</p>
+    <a class="footer-link" href={ROUTES.imprint}>Imprint</a>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--primary-background-color);
+    border-top: 1px solid var(--glass-border);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--content-max-width);
+    padding: 1.75rem var(--content-padding);
+    margin: 0 auto;
+  }
+
+  .footer p {
+    margin: 0;
+    font-size: var(--font-size-2extra-small);
+    line-height: var(--line-height-tight);
+    color: var(--label-text-color);
+  }
+
+  .footer-link {
+    font-size: var(--font-size-2extra-small);
+    color: var(--label-text-color);
+    text-decoration: none;
+  }
+
+  .footer-link:hover {
+    color: var(--text-hover-color);
+    text-decoration: none;
+  }
+</style>

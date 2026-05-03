@@ -1,0 +1,59 @@
+---
+import InfoBlock from 'components/ui/InfoBlock.astro'
+import Section from 'components/ui/Section.astro'
+import SkillBadges from 'components/ui/SkillBadges.astro'
+import type { Project } from 'types'
+
+interface Props {
+  project: Project
+}
+const { project } = Astro.props
+
+const statusLabel = project.status.type
+const statusDate = project.status.date?.toLocaleDateString() ?? '-'
+---
+<Section>
+  <div class="key-info">
+    <InfoBlock label="Frameworks">
+      <SkillBadges skills={project.frameworks} />
+    </InfoBlock>
+    <InfoBlock label="Languages">
+      <SkillBadges skills={project.languages} />
+    </InfoBlock>
+    <InfoBlock label="Platforms">
+      <p class="info-value">{project.platforms.join(', ')}</p>
+    </InfoBlock>
+    <InfoBlock label={statusLabel}>
+      <p class="info-value">{statusDate}</p>
+    </InfoBlock>
+  </div>
+</Section>
+
+<style>
+  .key-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2.5rem var(--inset);
+  }
+
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .info-value {
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-body);
+    color: var(--primary-text-color);
+  }
+
+  @media (max-width: 600px) {
+    .key-info {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+</style>

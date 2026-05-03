@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.12/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -31,14 +31,16 @@
     "lineWidth": 100,
     "useEditorconfig": true
   },
-  "html": { "formatter": { "selfCloseVoidElements": "always" } },
+  "html": {
+    "experimentalFullSupportEnabled": true
+  },
   "javascript": {
     "formatter": {
       "arrowParentheses": "always",
       "attributePosition": "auto",
       "bracketSameLine": false,
       "bracketSpacing": true,
-      "jsxQuoteStyle": "double",
+      "jsxQuoteStyle": "single",
       "quoteProperties": "asNeeded",
       "quoteStyle": "single",
       "semicolons": "asNeeded",
@@ -48,9 +50,37 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "nursery": { "noImportCycles": "error" },
-      "recommended": true
+      "nursery": {},
+      "recommended": true,
+      "suspicious": { "noImportCycles": "error" }
     }
   },
+  "overrides": [
+    {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off"
+          },
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          }
+        }
+      }
+    },
+    {
+      "assist": {
+        "actions": {
+          "source": {
+            "useSortedProperties": "off"
+          }
+        }
+      },
+      "includes": ["src/assets/styles/colors.css"]
+    }
+  ],
   "vcs": { "clientKind": "git", "enabled": false, "useIgnoreFile": false }
 }

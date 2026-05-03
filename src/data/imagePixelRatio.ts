@@ -1,0 +1,3 @@
+const IMAGE_PIXEL_RATIO = 3
+
+export { IMAGE_PIXEL_RATIO }

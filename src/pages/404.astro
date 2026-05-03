@@ -1,0 +1,42 @@
+---
+import Button from 'components/ui/Button.astro'
+import { CONFIG } from 'data'
+import Layout from 'layouts/Layout.astro'
+---
+<Layout title={`Page Not Found — ${CONFIG.profile.name}`} description='Oops... Looks like this page was not found.'>
+  <div class="not-found">
+    <p class="code">404</p>
+    <h1 class="heading">Page not found.</h1>
+    <Button href="/">Go home</Button>
+  </div>
+</Layout>
+
+<style>
+  .not-found {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: var(--inset);
+    text-align: center;
+  }
+
+  .code {
+    margin-bottom: 0;
+    font-size: var(--font-size-2extra-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--label-text-color);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-label);
+  }
+
+  .heading {
+    font-size: var(--font-size-6extra-large);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-headings);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-heading);
+  }
+</style>

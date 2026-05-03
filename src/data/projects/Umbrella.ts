@@ -7,8 +7,9 @@ import {
   ScreenshotsMacDark,
   ScreenshotsMacLight,
 } from 'assets/images/screenshots/umbrella'
-import { PROFILE, PROJECT_STATUS } from 'data'
 import { PLATFORM } from 'data/platform'
+import * as PROFILE from 'data/profile'
+import { PROJECT_STATUS } from 'data/projectStatus'
 import type { Project } from 'types'
 
 const UMBRELLA: Project = {
@@ -17,7 +18,7 @@ const UMBRELLA: Project = {
   features: [
     {
       description:
-        'Tasks can managed in a backlog. A task has various settings and attributes that can be set.',
+        'Tasks can be managed in a backlog. A task has various settings and attributes that can be set.',
       icon: 'bi bi-list-task',
       title: 'Tasks',
     },
@@ -52,82 +53,49 @@ const UMBRELLA: Project = {
   id: 'umbrella',
   languages: [PROFILE.languages.swift],
   name: 'Umbrella',
-  onlineURL: undefined,
   platforms: [PLATFORM.iphone, PLATFORM.ipad, PLATFORM.mac],
   previewImage: {
-    dark: {
-      altText: 'Preview screenshot of Umbrella in dark mode',
-      src: ScreenshotsIphoneDark.Backlog,
-    },
-    light: {
-      altText: 'Preview screenshot of Umbrella in light mode',
-      src: ScreenshotsIphoneLight.Backlog,
-    },
+    altText: 'Preview screenshot of Umbrella',
+    dark: ScreenshotsIphoneDark.Backlog,
+    light: ScreenshotsIphoneLight.Backlog,
   },
   screenshots: {
-    ipad: {
-      dark: [
-        {
-          altText: 'Screenshot of ipad app in dark mode of the issue detail screen',
-          src: ScreenshotsIpadDark.IssueDetails,
-        },
-      ],
-      light: [
-        {
-          altText: 'Screenshot of ipad app in light mode of the issue detail screen',
-          src: ScreenshotsIpadLight.IssueDetails,
-        },
-      ],
-    },
-    iphone: {
-      dark: [
-        {
-          altText: 'Screenshot of iphone app in dark mode of the issue backlog screen',
-          src: ScreenshotsIphoneDark.Backlog,
-        },
-        {
-          altText: 'Screenshot of iphone app in dark mode of the issue detail screen',
-          src: ScreenshotsIphoneDark.IssueDetails,
-        },
-      ],
-      light: [
-        {
-          altText: 'Screenshot of iphone app in light mode of the issue backlog screen',
-          src: ScreenshotsIphoneLight.Backlog,
-        },
-        {
-          altText: 'Screenshot of iphone app in light mode of the issue detail screen',
-          src: ScreenshotsIphoneLight.IssueDetails,
-        },
-      ],
-    },
-    mac: {
-      dark: [
-        {
-          altText: 'Screenshot of iphone app in dark mode of the board screen',
-          src: ScreenshotsMacDark.Board,
-        },
-        {
-          altText: 'Screenshot of iphone app in dark mode of the issue detail screen',
-          src: ScreenshotsMacDark.IssueDetails,
-        },
-      ],
-      light: [
-        {
-          altText: 'Screenshot of iphone app in light mode of the board screen',
-          src: ScreenshotsMacLight.Board,
-        },
-        {
-          altText: 'Screenshot of iphone app in light mode of the issue detail screen',
-          src: ScreenshotsMacLight.IssueDetails,
-        },
-      ],
-    },
+    ipad: [
+      {
+        altText: 'Screenshot of ipad app of the issue detail screen',
+        dark: ScreenshotsIpadDark.IssueDetails,
+        light: ScreenshotsIpadLight.IssueDetails,
+      },
+    ],
+    iphone: [
+      {
+        altText: 'Screenshot of iphone app of the issue backlog screen',
+        dark: ScreenshotsIphoneDark.Backlog,
+        light: ScreenshotsIphoneLight.Backlog,
+      },
+      {
+        altText: 'Screenshot of iphone app of the issue detail screen',
+        dark: ScreenshotsIphoneDark.IssueDetails,
+        light: ScreenshotsIphoneLight.IssueDetails,
+      },
+    ],
+    mac: [
+      {
+        altText: 'Screenshot of mac app of the board screen',
+        dark: ScreenshotsMacDark.Board,
+        light: ScreenshotsMacLight.Board,
+      },
+      {
+        altText: 'Screenshot of mac app of the issue detail screen',
+        dark: ScreenshotsMacDark.IssueDetails,
+        light: ScreenshotsMacLight.IssueDetails,
+      },
+    ],
   },
-  sourceURL: undefined,
   status: {
     type: PROJECT_STATUS.comingSoon,
   },
+  summaryHeading: 'Your projects, structured.',
   tasks: [
     'Conception and development',
     'User interface development',
@@ -135,14 +103,9 @@ const UMBRELLA: Project = {
     'Synchronizing data with iCloud',
   ],
   titleImage: {
-    dark: {
-      altText: 'Title image in dark mode',
-      src: UmbrellaPreviews.titleDark,
-    },
-    light: {
-      altText: 'Title image in light mode',
-      src: UmbrellaPreviews.titleLight,
-    },
+    altText: 'Preview collection of screenshots',
+    dark: UmbrellaPreviews.titleDark,
+    light: UmbrellaPreviews.titleLight,
   },
 } as const
 

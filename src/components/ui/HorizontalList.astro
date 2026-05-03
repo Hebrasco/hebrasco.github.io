@@ -1,0 +1,27 @@
+---
+---
+<ul class="horizontal-list">
+  <slot />
+</ul>
+
+<style>
+  .horizontal-list {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    padding: 1.25rem var(--content-padding) 2.25rem var(--inset);
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    overflow-x: scroll;
+    list-style: none;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--inset);
+    scrollbar-width: none;
+  }
+
+  @media (max-width: 600px) {
+    .horizontal-list {
+      scroll-padding-left: 0;
+    }
+  }
+</style>

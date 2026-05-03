@@ -19,11 +19,8 @@ type CrossPlatformFrameworkCollection = {
 }
 
 type WebFrameworkCollection = {
-  bootstrap: Skill
   react: Skill
   reactRedux: Skill
-  dotNet: Skill
-  angular: Skill
   materialUI: Skill
 }
 

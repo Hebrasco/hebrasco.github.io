@@ -1,0 +1,150 @@
+---
+import { getImage } from 'astro:assets'
+import { BlankAppIcon } from 'assets/images/appIcons'
+import Button from 'components/ui/Button.astro'
+import Section from 'components/ui/Section.astro'
+import { IMAGE_PIXEL_RATIO } from 'data/imagePixelRatio'
+import { IMAGE_QUALITY } from 'data/imageQuality'
+import type { Project } from 'types'
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+
+const appIconLight = await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: (project.appIcon?.light ?? BlankAppIcon), width: 72 * IMAGE_PIXEL_RATIO })
+const appIconDark = project.appIcon?.dark ? await getImage({ format: 'webp', quality: IMAGE_QUALITY, src: project.appIcon.dark, width: 72 * IMAGE_PIXEL_RATIO }) : undefined
+const preview = project.titleImage
+const previewLight = await getImage({ format: 'webp', height: 280 * IMAGE_PIXEL_RATIO, quality: IMAGE_QUALITY, src: preview.light })
+const previewDark = await getImage({ format: 'webp', height: 280 * IMAGE_PIXEL_RATIO, quality: IMAGE_QUALITY, src: preview.dark })
+
+const platforms = project.platforms.join(' · ')
+---
+<Section background="secondary">
+  <div class="detail-hero">
+    <div class="hero-left">
+      <div class="hero-app-icon">
+        <picture>
+          {appIconDark && (
+            <source media="(prefers-color-scheme: dark)" srcset={appIconDark.src} />
+          )}
+          <img alt={`${project.name} icon`} height="72" src={appIconLight.src} fetchpriority='high' width="72" />
+        </picture>
+      </div>
+      <h1 class="hero-app-name">{project.name}</h1>
+      <p class="hero-app-tagline">{platforms}</p>
+      <div class="hero-call-to-actions">
+        {project.onlineURL && (
+          <Button href={project.onlineURL} icon target="_blank" >
+            <svg aria-hidden="true"fill="currentColor" height="13" viewBox="0 0 24 24" width="13" >
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            App Store
+          </Button>
+        )}
+        {project.sourceURL && (
+          <Button href={project.sourceURL} target="_blank" variant="outline" >Source Code</Button>
+        )}
+      </div>
+    </div>
+    <div class="hero-right">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset={previewDark.src} />
+        <img
+          alt={preview.altText}
+          class="hero-title-image"
+          fetchpriority='high'
+          src={previewLight.src}
+        />
+      </picture>
+    </div>
+  </div>
+</Section>
+
+<style>
+  .detail-hero {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-end;
+    max-width: 100%;
+    min-height: 18.75rem;
+    padding: 4rem var(--inset) 0;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 3rem;
+  }
+
+  .hero-app-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    background: var(--hover-surface-color);
+    border: 1px solid var(--glass-border);
+    border-radius: 1.2rem;
+  }
+
+  .hero-app-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-app-name {
+    margin-bottom: 0.5rem;
+    font-size: var(--font-size-7extra-large);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--primary-text-color);
+    letter-spacing: var(--letter-spacing-display);
+  }
+
+  .hero-app-tagline {
+    margin-bottom: 1.75rem;
+    font-size: var(--font-size-extra-large);
+    line-height: var(--line-height-normal);
+    color: var(--sub-text-color);
+  }
+
+  .hero-call-to-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    align-items: center;
+  }
+
+  .hero-right {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.75rem;
+    align-items: flex-end;
+  }
+
+  .hero-title-image {
+    display: block;
+    height: 17.5rem;
+    object-fit: contain;
+    object-position: bottom center;
+  }
+
+  @media (max-width: 600px) {
+    .detail-hero {
+      gap: 24px;
+    }
+    .hero-app-name {
+      font-size: var(--font-size-5extra-large);
+    }
+    .hero-right {
+      display: none;
+    }
+    .hero-left {
+      padding-bottom: 40px;
+    }
+  }
+</style>

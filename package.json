@@ -1,34 +1,21 @@
 {
-  "browserslist": {
-    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"],
-    "production": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
-  },
   "dependencies": {
-    "@types/jest": "^30.0.0",
-    "@types/node": "^24.0.7",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@types/react-router-dom": "^5.3.3",
-    "bootstrap-icons": "^1.13.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.3",
-    "react-scripts": "5.0.1"
+    "astro": "6.1.8",
+    "bootstrap-icons": "1.13.1",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.6",
-    "typescript": "^5.8.3"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "@biomejs/biome": "2.4.12",
+    "typescript": "6.0.3"
   },
   "name": "hebrasco.github.io",
+  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
   "private": true,
   "scripts": {
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "start": "react-scripts start",
-    "test": "react-scripts test"
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
   },
-  "version": "2.0.0"
+  "type": "module",
+  "version": "3.0.0"
 }

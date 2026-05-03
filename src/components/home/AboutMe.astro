@@ -1,0 +1,74 @@
+---
+import Button from 'components/ui/Button.astro'
+import InfoBlock from 'components/ui/InfoBlock.astro'
+import Section from 'components/ui/Section.astro'
+import SectionHeader from 'components/ui/SectionHeader.astro'
+import SkillBadges from 'components/ui/SkillBadges.astro'
+import { CONFIG, PROFILE } from 'data'
+---
+<Section id="about-me">
+  <div class="about-inner">
+    <SectionHeader eyebrow="About">Building apps<br>people actually love.</SectionHeader>
+    <p class="about-body">
+      I'm an {CONFIG.profile.jobTitle} with over ten years of experience turning ideas into products people love to use. I think about structure and long-term decisions early, so the projects I build can grow without needing to be rebuilt. The apps I've built have reached hundreds of thousands of users, and I'm proud of every one of them.
+    </p>
+    <div class="about-actions">
+      <Button href={`mailto:${CONFIG.profile.email}`}>Get in touch</Button>
+      <Button variant="outline" href={'/daniel_bedrich_resume.pdf'} download>Download Resume</Button>
+    </div>
+    <div class="skills-grid">
+      <InfoBlock label="Languages">
+        <SkillBadges skills={PROFILE.skills.languages} />
+      </InfoBlock>
+      <InfoBlock label="Frameworks">
+        <SkillBadges skills={PROFILE.skills.frameworks} />
+      </InfoBlock>
+      <InfoBlock label="Applications">
+        <SkillBadges skills={PROFILE.skills.applications} />
+      </InfoBlock>
+    </div>
+  </div>
+</Section>
+
+<style>
+  .about-inner {
+    padding: 5rem var(--inset);
+    margin: 0 auto;
+  }
+
+  .about-body {
+    max-width: 40rem;
+    margin-top: 1.375rem;
+    margin-bottom: 2rem;
+    font-size: var(--font-size-extra-large);
+    line-height: var(--line-height-text);
+    color: var(--body-text-color);
+  }
+
+  .about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    .about-inner {
+      padding: var(--section-padding-vertical-mobile) var(--content-padding-mobile);
+    }
+
+    .about-body {
+      font-size: var(--font-size-large);
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

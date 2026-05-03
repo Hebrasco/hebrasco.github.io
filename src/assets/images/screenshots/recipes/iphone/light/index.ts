@@ -1,1 +1,1 @@
-export { default as RecipeDetails } from './recipe-details.webp'
+export { default as RecipeDetails } from 'assets/images/screenshots/recipes/iphone/light/recipe-details.webp'

@@ -1,0 +1,65 @@
+---
+import 'assets/styles/colors.css'
+import 'assets/styles/typography.css'
+import 'assets/styles/reset.css'
+import Footer from 'components/layout/Footer.astro'
+import NavBar from 'components/layout/NavBar.astro'
+import { CONFIG } from 'data'
+
+interface Props {
+  title: string
+  description: string
+  image?: string
+}
+
+const {
+  title,
+  description,
+  image = `${Astro.url.origin}/icon512.png`
+} = Astro.props
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="application-name" content="Daniel Bedrich" />
+    <meta name="keywords" content="engineer, developer, coder, coding, programmer, front end, app, mobile, portfolio, ui, ux, design, ios, apple, react, swift, javascript, typescript, github" />
+    <meta property="og:site_name" content={`${CONFIG.profile.name} - ${CONFIG.profile.jobTitle}`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={Astro.url} />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <NavBar />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body {
+    padding-top: 3rem;
+  }
+</style>
+
+<!--
+Fix for deprecated hash urls of pre v4.0.0 portfolio
+Still used as privacy policy urls for App Store
+Remove once all apps have received updates
+-->
+<script>
+  if (window.location.hash === '#/imprint') {
+    window.location.replace('/imprint');
+  }
+</script>
