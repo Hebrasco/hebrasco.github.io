@@ -3,7 +3,7 @@ import Button from 'components/ui/Button.astro'
 import { CONFIG } from 'data'
 import Layout from 'layouts/Layout.astro'
 ---
-<Layout title={`Page Not Found — ${CONFIG.profile.name}`} description='Oops... Looks like this page was not found.'>
+<Layout title={`Page Not Found — ${CONFIG.profile.name}`} description='Oops... Looks like this page was not found.' indexable={false}>
   <div class="not-found">
     <p class="code">404</p>
     <h1 class="heading">Page not found.</h1>

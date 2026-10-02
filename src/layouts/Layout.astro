@@ -10,13 +10,19 @@ interface Props {
   title: string
   description: string
   image?: string
+  indexable?: boolean
 }
 
 const {
   title,
   description,
-  image = `${Astro.url.origin}/icon512.png`
+  image = '/icon-512.png',
+  indexable = true
 } = Astro.props
+
+const imageUrl = new URL(image, Astro.site).href
+const canonicalPath = Astro.url.pathname.replace(/(index)?\.html$/, '')
+const canonicalUrl = new URL(canonicalPath, Astro.site).href
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +36,9 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:url" content={canonicalUrl} />
+    {indexable ? <link href={canonicalUrl} rel="canonical" /> : <meta content="noindex" name="robots" />}
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
