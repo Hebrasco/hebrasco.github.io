@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
-    "astro": "6.1.8",
+    "astro": "7.3.5",
     "bootstrap-icons": "1.13.1",
-    "sharp": "^0.34.5"
+    "sharp": "0.35.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.12",
-    "typescript": "6.0.3"
+    "@biomejs/biome": "2.5.15",
+    "typescript": "7.0.2"
   },
   "name": "hebrasco.github.io",
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
