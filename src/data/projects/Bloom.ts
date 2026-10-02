@@ -94,6 +94,8 @@ const BLOOM: Project = {
   ],
   id: 'bloom',
   languages: [PROFILE.languages.swift],
+  metaDescription:
+    'Bloom is a private couples app for iPhone and iPad: answer a daily question together, share memories, love notes, a journal and a bucket list.',
   name: 'Bloom - Couples App',
   onlineURL: 'https://apps.apple.com/app/bloom-couples-app/id1533246365',
   platforms: [PLATFORM.iphone, PLATFORM.ipad],

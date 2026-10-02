@@ -31,7 +31,6 @@ const canonicalUrl = new URL(canonicalPath, Astro.site).href
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="application-name" content="Daniel Bedrich" />
-    <meta name="keywords" content="engineer, developer, coder, coding, programmer, front end, app, mobile, portfolio, ui, ux, design, ios, apple, react, swift, javascript, typescript, github" />
     <meta property="og:site_name" content={`${CONFIG.profile.name} - ${CONFIG.profile.jobTitle}`} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -46,6 +45,7 @@ const canonicalUrl = new URL(canonicalPath, Astro.site).href
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
     <title>{title}</title>
+    <slot name="head" />
   </head>
   <body>
     <NavBar />

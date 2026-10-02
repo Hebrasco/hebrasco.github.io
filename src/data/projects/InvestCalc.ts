@@ -74,6 +74,8 @@ const INVEST_CALC: Project = {
   ],
   id: 'invest-calc',
   languages: [PROFILE.languages.swift],
+  metaDescription:
+    'Invest. Calc is an investment growth calculator for iPhone and iPad with custom contributions, yearly charts, goal tracking and iCloud sync.',
   name: 'Invest. Calc',
   onlineURL: 'https://apps.apple.com/app/id6746040739',
   platforms: [PLATFORM.iphone, PLATFORM.ipad],

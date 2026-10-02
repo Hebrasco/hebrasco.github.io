@@ -10,6 +10,7 @@ type Project = {
   id: string
   name: string
   description: string
+  metaDescription: string
   summaryHeading: string
   tasks: readonly string[]
   languages: readonly Skill[]

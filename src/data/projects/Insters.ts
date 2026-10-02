@@ -42,6 +42,8 @@ const INSTERS: Project = {
   ],
   id: 'insters',
   languages: [PROFILE.languages.swift, PROFILE.languages.metal],
+  metaDescription:
+    'Insters is a photo filter app for iPhone and iPad. Import photos from your library, apply color filters and export them back.',
   name: 'Insters',
   onlineURL: 'https://apps.apple.com/app/insters/id1561338805',
   platforms: [PLATFORM.iphone, PLATFORM.ipad],

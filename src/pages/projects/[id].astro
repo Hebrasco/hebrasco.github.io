@@ -16,7 +16,7 @@ export function getStaticPaths() {
 
 const { project } = Astro.props
 ---
-<Layout title={`${project.name} - ${CONFIG.profile.name}`} description={project.description} image={project.titleImage.light.src}>
+<Layout title={`${project.name} - ${CONFIG.profile.name}`} description={project.metaDescription} image={project.titleImage.light.src}>
   <ProjectHero project={project} />
   <ProjectKeyInfo project={project} />
   <ProjectDescription project={project} />

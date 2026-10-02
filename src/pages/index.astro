@@ -5,8 +5,24 @@ import Hero from 'components/home/Hero.astro'
 import Projects from 'components/home/Projects.astro'
 import { CONFIG } from 'data'
 import Layout from 'layouts/Layout.astro'
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  jobTitle: CONFIG.profile.jobTitle,
+  name: CONFIG.profile.name,
+  sameAs: [
+    CONFIG.references.gitHubUrl,
+    CONFIG.references.appStoreUrl.split('?')[0],
+  ],
+  url: Astro.site?.href,
+}
 ---
-<Layout title={`${CONFIG.profile.name}`} description='View my work and get in touch with me.'>
+<Layout
+  description='Daniel Bedrich is an app developer from Germany building iOS apps like Bloom, Financial Plan and Invest. Calc. View projects and get in touch.'
+  title={`${CONFIG.profile.name} - ${CONFIG.profile.jobTitle}`}
+>
+  <script slot='head' type='application/ld+json' set:html={JSON.stringify(person)} />
   <Hero />
   <AboutMe />
   <Projects />
