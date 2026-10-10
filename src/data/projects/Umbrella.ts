@@ -52,6 +52,8 @@ const UMBRELLA: Project = {
   ],
   id: 'umbrella',
   languages: [PROFILE.languages.swift],
+  metaDescription:
+    'Umbrella is a task management app for iPhone, iPad and Mac with boards, sprints, milestones, labels, priorities and time tracking.',
   name: 'Umbrella',
   platforms: [PLATFORM.iphone, PLATFORM.ipad, PLATFORM.mac],
   previewImage: {

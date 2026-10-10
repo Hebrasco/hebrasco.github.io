@@ -74,6 +74,8 @@ const FINANCIAL_PLAN: Project = {
   ],
   id: 'finance-plan',
   languages: [PROFILE.languages.swift],
+  metaDescription:
+    'Financial Plan is a budget planner for iPhone and iPad that focuses on planning ahead with recurring income, expenses, budgets and cashflow reports.',
   name: 'Financial Plan',
   onlineURL: 'https://apps.apple.com/app/budget-planner-money-plan/id6757672766',
   platforms: [PLATFORM.iphone, PLATFORM.ipad],

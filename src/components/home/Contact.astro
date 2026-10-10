@@ -7,13 +7,13 @@ import { CONFIG } from 'data'
   <div class="contact-inner">
     <h2 class="contact-title">Get in touch.</h2>
     <p class="contact-sub">Interested in working together or just want to say hello?</p>
-    <Button variant="email" href={`mailto:${CONFIG.profile.email}`}>
+    <Button href={`mailto:${CONFIG.profile.email}`} variant="email" >
       {CONFIG.profile.email}
     </Button>
     <div class="contact-socials">
-      <Button variant="chip" href={CONFIG.references.gitHubUrl} target="_blank">GitHub</Button>
-      <Button variant="chip" href={CONFIG.references.appStoreUrl} target="_blank">App Store</Button>
-      <Button variant="chip" href={'/daniel_bedrich_resume.pdf'} download>Resume ↓</Button>
+      <Button href={CONFIG.references.gitHubUrl} target="_blank" variant="chip" >GitHub</Button>
+      <Button href={CONFIG.references.appStoreUrl} target="_blank" variant="chip" >App Store</Button>
+      <Button download href={'/daniel_bedrich_resume.pdf'} variant="chip" >Resume ↓</Button>
     </div>
   </div>
 </Section>

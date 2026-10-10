@@ -10,35 +10,42 @@ interface Props {
   title: string
   description: string
   image?: string
+  indexable?: boolean
 }
 
 const {
   title,
   description,
-  image = `${Astro.url.origin}/icon512.png`
+  image = '/icon-512.png',
+  indexable = true
 } = Astro.props
+
+const imageUrl = new URL(image, Astro.site).href
+const canonicalPath = Astro.url.pathname.replace(/(index)?\.html$/, '')
+const canonicalUrl = new URL(canonicalPath, Astro.site).href
 ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    <meta name="application-name" content="Daniel Bedrich" />
-    <meta name="keywords" content="engineer, developer, coder, coding, programmer, front end, app, mobile, portfolio, ui, ux, design, ios, apple, react, swift, javascript, typescript, github" />
-    <meta property="og:site_name" content={`${CONFIG.profile.name} - ${CONFIG.profile.jobTitle}`} />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={Astro.url} />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content={description} name="description" />
+    <meta content="Daniel Bedrich" name="application-name" />
+    <meta content={`${CONFIG.profile.name} - ${CONFIG.profile.jobTitle}`} property="og:site_name" />
+    <meta content="website" property="og:type" />
+    <meta content={title} property="og:title" />
+    <meta content={description} property="og:description" />
+    <meta content={imageUrl} property="og:image" />
+    <meta content={canonicalUrl} property="og:url" />
+    {indexable ? <link href={canonicalUrl} rel="canonical" /> : <meta content="noindex" name="robots" />}
+    <meta content="light dark" name="color-scheme" />
+    <meta content="#ffffff" media="(prefers-color-scheme: light)" name="theme-color" />
+    <meta content="#000000" media="(prefers-color-scheme: dark)" name="theme-color" />
+    <link href="/favicon.ico" rel="icon" />
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="/manifest.json" rel="manifest" />
     <title>{title}</title>
+    <slot name="head" />
   </head>
   <body>
     <NavBar />
@@ -52,14 +59,3 @@ const {
     padding-top: 3rem;
   }
 </style>
-
-<!--
-Fix for deprecated hash urls of pre v4.0.0 portfolio
-Still used as privacy policy urls for App Store
-Remove once all apps have received updates
--->
-<script>
-  if (window.location.hash === '#/imprint') {
-    window.location.replace('/imprint');
-  }
-</script>

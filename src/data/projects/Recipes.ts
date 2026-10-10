@@ -45,6 +45,8 @@ const RECIPES: Project = {
   frameworks: [PROFILE.frameworks.apple.swiftUI, PROFILE.frameworks.apple.coreData],
   id: 'recipes',
   languages: [PROFILE.languages.swift, PROFILE.languages.json],
+  metaDescription:
+    'Recipes is a meal planning app with built-in recipes, ingredient amounts scaled to the number of people and a built-in shopping list.',
   name: 'Recipes',
   platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {

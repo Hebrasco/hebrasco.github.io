@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.12/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -51,7 +51,7 @@
     "enabled": true,
     "rules": {
       "nursery": {},
-      "recommended": true,
+      "preset": "recommended",
       "suspicious": { "noImportCycles": "error" }
     }
   },
@@ -60,6 +60,9 @@
       "includes": ["**/*.astro"],
       "linter": {
         "rules": {
+          "a11y": {
+            "useHeadingContent": "off"
+          },
           "correctness": {
             "noUnusedImports": "off",
             "noUnusedVariables": "off"
