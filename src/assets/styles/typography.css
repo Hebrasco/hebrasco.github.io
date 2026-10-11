@@ -1,9 +1,8 @@
 :root {
   --text-caption: 0.75rem;
-  --text-footnote: 0.8125rem;
-  --text-subheadline: 0.9375rem;
+  --text-callout: 0.875rem;
   --text-body: 1.0625rem;
-  --text-title: 1.375rem;
+  --text-title: 1.3125rem;
   --text-title-1: 1.75rem;
   --text-large-title: 2.125rem;
   --text-section: 2.5rem;
@@ -12,12 +11,10 @@
 
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
-  --font-weight-bold: 700;
 
-  --letter-spacing-hero: -0.045em;
-  --letter-spacing-display: -0.04em;
-  --letter-spacing-heading: -0.03em;
-  --letter-spacing-subheading: -0.02em;
+  --letter-spacing-hero: -0.02em;
+  --letter-spacing-heading: -0.015em;
+  --letter-spacing-subheading: -0.01em;
   --letter-spacing-label: 0.06em;
 
   --line-height-tight: 1.05;
@@ -38,7 +35,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-heading);
 }
 
