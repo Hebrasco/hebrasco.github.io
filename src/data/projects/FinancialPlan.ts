@@ -17,44 +17,55 @@ const FINANCIAL_PLAN: Project = {
     light: FinancePlanAppIcons.light,
   },
   description:
-    'A budget planner that focuses on planning ahead, not tracking past transactions. Users define recurring income and expenses, set budgets by week, month, or year, and get a clear cashflow overview at a glance through reports.',
+    'A budget planner that focuses on planning ahead, not tracking past transactions. Users set up their accounts, add recurring income and expenses from weekly to annually, and plan transfers between accounts. Every amount keeps a price history, so the reports show which costs went up, which changes are coming next and how each category develops over time. Income, expenses and surplus can be viewed per week, month, year or any other interval. Everything syncs through iCloud. The app is free to use, and a one-time purchase unlocks Premium.',
   features: [
     {
-      description: 'Creation of multiple accounts to organize transactions and split reports.',
+      description: 'Multiple accounts, each with its own income, expense and balance summary.',
       icon: 'bi bi-bank',
       title: 'Accounts',
     },
     {
-      description: 'Weekly, monthly, and yearly budget planning in one app.',
-      icon: 'bi bi-calendar-date',
-      title: 'Planning Periods',
-    },
-    {
-      description: 'Bills and regular payments can be managed with minimal setup.',
-      icon: 'bi bi-currency-euro',
+      description:
+        'Income and expenses that repeat weekly up to annually, with an optional end date.',
+      icon: 'bi bi-arrow-repeat',
       title: 'Recurring Transactions',
     },
     {
-      description: 'Transactions can be organized using predefined categories and subcategories.',
+      description:
+        'Regular payments from one account to another, like a monthly amount moved to savings.',
+      icon: 'bi bi-arrow-left-right',
+      title: 'Transfers',
+    },
+    {
+      description: 'Every amount keeps its history, and price changes can be scheduled ahead.',
+      icon: 'bi bi-clock-history',
+      title: 'Price History',
+    },
+    {
+      description: 'Transactions are organized in predefined categories and subcategories.',
       icon: 'bi bi-tag',
-      title: 'Category Organization',
+      title: 'Categories',
     },
     {
-      description: 'Summaries of income and expenses on accounts and across accounts.',
-      icon: 'bi bi-123',
-      title: 'Accounts Summaries',
-    },
-    {
-      description:
-        'Visualized reports transactions and price trends over time via bar and pie charts.',
+      description: 'Income, expenses and surplus as charts, plus the savings rate.',
       icon: 'bi bi-pie-chart',
-      title: 'Visual Reports',
+      title: 'Reports',
     },
     {
-      description:
-        'Visualized reports spending in absolute and relative values based on categories and accounts.',
+      description: 'Spending per category and subcategory, across all accounts or per account.',
       icon: 'bi bi-percent',
       title: 'Category Reports',
+    },
+    {
+      description:
+        'A list of the costs that went up recently and the changes that are coming next.',
+      icon: 'bi bi-graph-up-arrow',
+      title: 'Price Changes',
+    },
+    {
+      description: 'Bar charts that show how each category develops over time.',
+      icon: 'bi bi-bar-chart',
+      title: 'Category Trends',
     },
     {
       description: 'No collection of any kind of data.',
@@ -62,27 +73,34 @@ const FINANCIAL_PLAN: Project = {
       title: 'Privacy first',
     },
     {
-      description: 'All calculations are synced with iCloud.',
+      description: 'All accounts and transactions are synced with iCloud.',
       icon: 'bi bi-cloud',
       title: 'Cloud Sync',
+    },
+    {
+      description: 'A one-time purchase that unlocks unlimited accounts, transfers and trends.',
+      icon: 'bi bi-gem',
+      title: 'Premium',
     },
   ],
   frameworks: [
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.swiftCharts,
     PROFILE.frameworks.apple.swiftData,
+    PROFILE.frameworks.apple.cloudKit,
+    PROFILE.frameworks.apple.storeKit,
   ],
   id: 'finance-plan',
   languages: [PROFILE.languages.swift],
   metaDescription:
-    'Financial Plan is a budget planner for iPhone and iPad that focuses on planning ahead with recurring income, expenses, budgets and cashflow reports.',
+    'Financial Plan is a budget planner for iPhone and iPad with recurring income and expenses, transfers, price history and cashflow reports.',
   name: 'Financial Plan',
   onlineURL: 'https://apps.apple.com/app/budget-planner-money-plan/id6757672766',
   platforms: [PLATFORM.iphone, PLATFORM.ipad],
   previewImage: {
     altText: 'Preview screenshot of Financial Plan',
-    dark: ScreenshotsIphoneDark.Transactions,
-    light: ScreenshotsIphoneLight.Transactions,
+    dark: ScreenshotsIphoneDark.AccountDetails,
+    light: ScreenshotsIphoneLight.AccountDetails,
   },
   screenshots: {
     ipad: [
@@ -97,96 +115,76 @@ const FINANCIAL_PLAN: Project = {
         light: ScreenshotsIpadLight.AccountDetails,
       },
       {
-        altText: 'Screenshot of ipad app of transactions screen',
-        dark: ScreenshotsIpadDark.Transactions,
-        light: ScreenshotsIpadLight.Transactions,
+        altText: 'Screenshot of ipad app of edit transaction screen with price history',
+        dark: ScreenshotsIpadDark.EditTransaction,
+        light: ScreenshotsIpadLight.EditTransaction,
       },
       {
-        altText: 'Screenshot of ipad app of reports screen',
+        altText: 'Screenshot of ipad app of edit transfer screen',
+        dark: ScreenshotsIpadDark.EditTransfer,
+        light: ScreenshotsIpadLight.EditTransfer,
+      },
+      {
+        altText: 'Screenshot of ipad app of reports overview screen',
         dark: ScreenshotsIpadDark.Reports,
         light: ScreenshotsIpadLight.Reports,
       },
       {
-        altText: 'Screenshot of ipad app of reports screen showing category reports',
-        dark: ScreenshotsIpadDark.ReportsCategories,
-        light: ScreenshotsIpadLight.ReportsCategories,
+        altText: 'Screenshot of ipad app of category report screen',
+        dark: ScreenshotsIpadDark.ReportsCategory,
+        light: ScreenshotsIpadLight.ReportsCategory,
       },
       {
-        altText: 'Screenshot of ipad app of reports category reports screen',
-        dark: ScreenshotsIpadDark.ReportsCategoryDetails,
-        light: ScreenshotsIpadLight.ReportsCategoryDetails,
+        altText: 'Screenshot of ipad app of reports screen showing price changes',
+        dark: ScreenshotsIpadDark.ReportsPriceChanges,
+        light: ScreenshotsIpadLight.ReportsPriceChanges,
       },
       {
-        altText: 'Screenshot of ipad app of reports screen showing category charts',
-        dark: ScreenshotsIpadDark.ReportsCharts,
-        light: ScreenshotsIpadLight.ReportsCharts,
-      },
-      {
-        altText: 'Screenshot of ipad app of reports screen showing frequency options',
-        dark: ScreenshotsIpadDark.ReportsOptionsFrequency,
-        light: ScreenshotsIpadLight.ReportsOptionsFrequency,
-      },
-      {
-        altText: 'Screenshot of ipad app of reports screen showing category options',
-        dark: ScreenshotsIpadDark.ReportsOptionsCategories,
-        light: ScreenshotsIpadLight.ReportsOptionsCategories,
-      },
-      {
-        altText: 'Screenshot of ipad app of reports screen showing chart options',
-        dark: ScreenshotsIpadDark.ReportsOptionsChart,
-        light: ScreenshotsIpadLight.ReportsOptionsChart,
+        altText: 'Screenshot of ipad app of reports screen showing trends',
+        dark: ScreenshotsIpadDark.ReportsTrends,
+        light: ScreenshotsIpadLight.ReportsTrends,
       },
     ],
     iphone: [
       {
-        altText: 'Screenshot of ipad app of accounts screen',
+        altText: 'Screenshot of iphone app of accounts screen',
         dark: ScreenshotsIphoneDark.Accounts,
         light: ScreenshotsIphoneLight.Accounts,
       },
       {
-        altText: 'Screenshot of ipad app of account detail screen',
+        altText: 'Screenshot of iphone app of account detail screen',
         dark: ScreenshotsIphoneDark.AccountDetails,
         light: ScreenshotsIphoneLight.AccountDetails,
       },
       {
-        altText: 'Screenshot of ipad app of transactions screen',
-        dark: ScreenshotsIphoneDark.Transactions,
-        light: ScreenshotsIphoneLight.Transactions,
+        altText: 'Screenshot of iphone app of edit transaction screen with price history',
+        dark: ScreenshotsIphoneDark.EditTransaction,
+        light: ScreenshotsIphoneLight.EditTransaction,
       },
       {
-        altText: 'Screenshot of ipad app of reports screen',
+        altText: 'Screenshot of iphone app of edit transfer screen',
+        dark: ScreenshotsIphoneDark.EditTransfer,
+        light: ScreenshotsIphoneLight.EditTransfer,
+      },
+      {
+        altText: 'Screenshot of iphone app of reports overview screen',
         dark: ScreenshotsIphoneDark.Reports,
         light: ScreenshotsIphoneLight.Reports,
       },
       {
-        altText: 'Screenshot of ipad app of reports screen showing category reports',
-        dark: ScreenshotsIphoneDark.ReportsCategories,
-        light: ScreenshotsIphoneLight.ReportsCategories,
+        altText: 'Screenshot of iphone app of category report screen',
+        dark: ScreenshotsIphoneDark.ReportsCategory,
+        light: ScreenshotsIphoneLight.ReportsCategory,
       },
       {
-        altText: 'Screenshot of ipad app of reports category reports screen',
-        dark: ScreenshotsIphoneDark.ReportsCategoryDetails,
-        light: ScreenshotsIphoneLight.ReportsCategoryDetails,
+        altText: 'Screenshot of iphone app of reports screen showing price changes',
+        dark: ScreenshotsIphoneDark.ReportsPriceChanges,
+        light: ScreenshotsIphoneLight.ReportsPriceChanges,
       },
       {
-        altText: 'Screenshot of ipad app of reports screen showing category charts',
-        dark: ScreenshotsIphoneDark.ReportsCharts,
-        light: ScreenshotsIphoneLight.ReportsCharts,
-      },
-      {
-        altText: 'Screenshot of ipad app of reports screen showing frequency options',
-        dark: ScreenshotsIphoneDark.ReportsOptionsFrequency,
-        light: ScreenshotsIphoneLight.ReportsOptionsFrequency,
-      },
-      {
-        altText: 'Screenshot of ipad app of reports screen showing category options',
-        dark: ScreenshotsIphoneDark.ReportsOptionsCategories,
-        light: ScreenshotsIphoneLight.ReportsOptionsCategories,
-      },
-      {
-        altText: 'Screenshot of ipad app of reports screen showing chart options',
-        dark: ScreenshotsIphoneDark.ReportsOptionsChart,
-        light: ScreenshotsIphoneLight.ReportsOptionsChart,
+        altText: 'Screenshot of iphone app of reports screen showing trends',
+        dark: ScreenshotsIphoneDark.ReportsTrends,
+        light: ScreenshotsIphoneLight.ReportsTrends,
       },
     ],
   },
