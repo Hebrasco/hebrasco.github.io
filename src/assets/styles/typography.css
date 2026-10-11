@@ -1,118 +1,48 @@
 :root {
-  /* — Font size scale — */
+  --text-caption: 0.75rem;
+  --text-footnote: 0.8125rem;
+  --text-subheadline: 0.9375rem;
+  --text-body: 1.0625rem;
+  --text-title: 1.375rem;
+  --text-title-1: 1.75rem;
+  --text-large-title: 2.125rem;
+  --text-section: 2.5rem;
+  --text-display: 3rem;
+  --text-hero: clamp(3.25rem, 2rem + 6vw, 5rem);
 
-  /* Heading tokens — rem-based, used by base h-tag styles below */
-  --font-size-h1: 2.5rem;
-  --font-size-h2: clamp(1.75rem, 3.5vw, 2.5rem);
-  --font-size-h3: 1.375rem;
-  --font-size-h4: 1.0625rem;
-  --font-size-h5: 0.875rem;
-
-  /* Component type scale — em-based (scales with context), except --font-size-small */
-  --font-size-extra-small: 0.75em; /* 12px — labels, badges, eyebrows, footer, nav links    */
-  --font-size-small: 0.8125rem; /* 13px — buttons, nav brand (rem: UI-consistent)        */
-  --font-size-medium: 0.875em; /* 14px — legal body text, mobile nav links              */
-  --font-size-large: 0.9375em; /* 15px — feature descriptions, contact email            */
-  --font-size-extra-large: 1.0625em; /* 17px — main body copy, subtitles, project/feature names */
-  --font-size-2extra-large: 1.375em; /* 22px — section subheading                            */
-  --font-size-3extra-large: 1.625em; /* 26px — responsive section title                      */
-  --font-size-4extra-large: 2em; /* 32px — section title                                 */
-  --font-size-5extra-large: 2.25em; /* 36px — large title / responsive display              */
-  --font-size-6extra-large: 2.5em; /* 40px — page heading                                  */
-  --font-size-7extra-large: 3em; /* 48px — display: page hero title                      */
-
-  /* Display tokens (responsive, used by hero) */
-  --hero-title-size: clamp(52px, 10vw, 80px);
-
-  /* — Font weights — */
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* — Letter spacing — */
-  --letter-spacing-hero: -0.045em; /* hero title (tightest)          */
-  --letter-spacing-display: -0.04em; /* large display text             */
-  --letter-spacing-heading: -0.03em; /* standard section headings      */
-  --letter-spacing-subheading: -0.02em; /* subheadings, card titles       */
-  --letter-spacing-subtitle: -0.015em; /* subtitles, secondary headings  */
-  --letter-spacing-ui: -0.01em; /* UI elements, buttons, links    */
-  --letter-spacing-wide: 0.02em; /* eyebrow (loose)                */
-  --letter-spacing-label: 0.06em; /* uppercase labels (widest)      */
+  --letter-spacing-hero: -0.045em;
+  --letter-spacing-display: -0.04em;
+  --letter-spacing-heading: -0.03em;
+  --letter-spacing-subheading: -0.02em;
+  --letter-spacing-label: 0.06em;
 
-  /* — Line heights — */
-  --line-height-tight: 1; /* labels, tight headings, one-liners  */
-  --line-height-headings: 1.05; /* standard headings                   */
-  --line-height-title: 1.2; /* card titles, legal headings         */
-  --line-height-compact: 1.3; /* taglines, feature titles            */
-  --line-height-normal: 1.4; /* badges, secondary taglines          */
-  --line-height-body: 1.5; /* info values                         */
-  --line-height-body-medium: 1.55; /* feature descriptions                */
-  --line-height-body-large: 1.6; /* contact sub, form text              */
-  --line-height-text: 1.65; /* main body copy                      */
-  --line-height-relaxed: 1.7; /* legal / long-form text              */
-
-  /* — Heading margin bottoms — */
-  --margin-bottom-h1: 1rem;
-  --margin-bottom-h2: 0.875rem;
-  --margin-bottom-h3: 0.75rem;
-  --margin-bottom-h4: 0.5rem;
-  --margin-bottom-h5: 0.5rem;
+  --line-height-tight: 1.05;
+  --line-height-heading: 1.2;
+  --line-height-ui: 1.4;
+  --line-height-body: 1.6;
 }
 
 body {
   font-family:
-    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  line-height: var(--line-height-ui);
 }
 
 h1,
 h2,
 h3,
 h4,
-h5,
-.font-weight-bold {
+h5 {
   font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-heading);
+  line-height: var(--line-height-heading);
 }
 
-a,
 p,
-span,
 li {
-  line-height: var(--line-height-text);
-}
-
-h1,
-.display-1 {
-  margin-bottom: var(--margin-bottom-h1);
-  font-size: var(--font-size-h1);
-  line-height: var(--line-height-headings);
-}
-
-h2,
-.display-2 {
-  margin-bottom: var(--margin-bottom-h2);
-  font-size: var(--font-size-h2);
-  line-height: var(--line-height-headings);
-}
-
-h3,
-.display-3 {
-  margin-bottom: var(--margin-bottom-h3);
-  font-size: var(--font-size-h3);
-  line-height: var(--line-height-headings);
-}
-
-h4,
-.display-4 {
-  margin-bottom: var(--margin-bottom-h4);
-  font-size: var(--font-size-h4);
-  line-height: var(--line-height-headings);
-}
-
-h5,
-.display-5 {
-  margin-bottom: var(--margin-bottom-h5);
-  font-size: var(--font-size-h5);
-  line-height: var(--line-height-headings);
+  line-height: var(--line-height-body);
 }

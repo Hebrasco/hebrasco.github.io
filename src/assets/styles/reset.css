@@ -11,7 +11,6 @@
 
   --transition-fast: 100ms ease;
   --transition-base: 150ms ease;
-  --transition-slow: 200ms ease;
 }
 
 * {

@@ -4,25 +4,18 @@
   /* Surfaces */
   --primary-color: light-dark(#ffffff, #000000);
   --primary-background-color: light-dark(#f5f5f7, #1c1c1e);
-  --secondary-background-color: light-dark(rgba(0, 0, 0, 0.03), rgba(255, 255, 255, 0.06));
   --hover-surface-color: light-dark(#e8e8ed, #2c2c2e);
 
   /* Text */
   --primary-text-color: light-dark(#1d1d1f, #f5f5f7);
-  --body-text-color: light-dark(rgba(29, 29, 31, 0.6), rgba(235, 235, 245, 0.6));
-  --sub-text-color: light-dark(rgba(29, 29, 31, 0.6), rgba(235, 235, 245, 0.6));
-  --signature: light-dark(rgba(29, 29, 31, 0.6), rgba(235, 235, 245, 0.6));
-  --caption-text-color: light-dark(rgba(29, 29, 31, 0.55), rgba(235, 235, 245, 0.55));
-  --label-text-color: light-dark(rgba(29, 29, 31, 0.55), rgba(235, 235, 245, 0.55));
+  --secondary-text-color: light-dark(rgba(29, 29, 31, 0.68), rgba(235, 235, 245, 0.6));
+  --label-text-color: light-dark(rgba(29, 29, 31, 0.65), rgba(235, 235, 245, 0.55));
   --faint-text-color: light-dark(rgba(29, 29, 31, 0.2), rgba(235, 235, 245, 0.2));
   --link-text-color: light-dark(rgba(29, 29, 31, 0.8), rgba(235, 235, 245, 0.8));
-  --meta-text-color: light-dark(rgba(29, 29, 31, 0.65), rgba(235, 235, 245, 0.65));
-  --text-hover-color: light-dark(rgba(29, 29, 31, 0.7), rgba(235, 235, 245, 0.7));
 
   /* Borders & dividers */
   --divider-color: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.1));
   --outline-button-border: light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
-  --ghost-border: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.12));
 
   /* Shadows */
   --accent-color: light-dark(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.25));
@@ -35,7 +28,6 @@
   --interactive-subtle: light-dark(rgba(0, 113, 227, 0.06), rgba(10, 132, 255, 0.1));
 
   /* Buttons */
-  --primary-button-hover-background: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.1));
   --button-primary-hover: light-dark(#3a3a3c, #e5e5ea);
 
   /* Glass nav */

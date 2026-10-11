@@ -52,11 +52,10 @@ const autoRel = rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined)
   /* Primary — filled black pill */
   .button {
     display: inline-block;
-    padding: 0.6875rem 1.375rem;
-    font-size: var(--font-size-small);
+    padding: 0.8125rem 1.375rem;
+    font-size: var(--text-footnote);
     font-weight: var(--font-weight-medium);
     color: var(--primary-color);
-    letter-spacing: var(--letter-spacing-ui);
     text-decoration: none;
     background-color: var(--primary-text-color);
     border-radius: var(--border-radius);
@@ -83,11 +82,10 @@ const autoRel = rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined)
   /* Outline — ghost pill */
   .button-outline {
     display: inline-block;
-    padding: 0.6875rem 1.375rem;
-    font-size: var(--font-size-small);
+    padding: calc(0.8125rem - 1px) calc(1.375rem - 1px);
+    font-size: var(--text-footnote);
     font-weight: var(--font-weight-medium);
     color: var(--primary-text-color);
-    letter-spacing: var(--letter-spacing-ui);
     text-decoration: none;
     background-color: transparent;
     border: 1px solid var(--outline-button-border);
@@ -103,9 +101,8 @@ const autoRel = rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined)
 
   /* Text — blue link with trailing arrow */
   .button-text {
-    font-size: var(--font-size-small);
+    font-size: var(--text-footnote);
     color: var(--interactive-color);
-    letter-spacing: var(--letter-spacing-ui);
     text-decoration: none;
   }
 
@@ -124,10 +121,9 @@ const autoRel = rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined)
     gap: 0.5rem;
     align-items: center;
     padding: 0.75rem 1.5rem;
-    font-size: var(--font-size-large);
+    font-size: var(--text-subheadline);
     font-weight: var(--font-weight-medium);
     color: var(--interactive-color);
-    letter-spacing: var(--letter-spacing-ui);
     text-decoration: none;
     border: 1px solid var(--interactive-border);
     border-radius: var(--border-radius);
@@ -144,10 +140,10 @@ const autoRel = rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined)
   /* Chip — filled surface pill for secondary links */
   .button-chip {
     display: inline-block;
-    padding: 0.5rem 0.875rem;
-    font-size: var(--font-size-extra-small);
+    padding: 0.625rem 0.875rem;
+    font-size: var(--text-footnote);
     font-weight: var(--font-weight-medium);
-    color: var(--signature);
+    color: var(--secondary-text-color);
     text-decoration: none;
     background: var(--primary-background-color);
     border-radius: var(--border-radius);
@@ -156,7 +152,7 @@ const autoRel = rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined)
 
   .button-chip:hover,
   .button-chip:focus-visible {
-    color: var(--text-hover-color);
+    color: var(--primary-text-color);
     text-decoration: none;
     background: var(--hover-surface-color);
   }
