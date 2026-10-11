@@ -50,7 +50,7 @@ import { CONFIG, ROUTES } from 'data'
   }
 
   .brand {
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-large);
     font-weight: var(--font-weight-semibold);
     color: var(--primary-text-color);
     letter-spacing: var(--letter-spacing-ui);
@@ -111,12 +111,6 @@ import { CONFIG, ROUTES } from 'data'
   .menu-icon.open > span:nth-child(1) { transform: rotate(-45deg); }
   .menu-icon.open > span:nth-child(2) { transform: rotate(45deg); }
 
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-  }
-
   .navbar-brand-container {
     display: flex;
     align-items: center;
@@ -134,8 +128,8 @@ import { CONFIG, ROUTES } from 'data'
   }
 
   .nav-item {
-    font-size: var(--font-size-extra-small);
-    color: var(--muted-text-color);
+    font-size: var(--font-size-small);
+    color: var(--link-text-color);
     text-decoration: none;
     transition: color var(--transition-base);
   }
@@ -169,7 +163,7 @@ import { CONFIG, ROUTES } from 'data'
     .nav-item {
       width: 100%;
       padding: 10px 0;
-      font-size: var(--font-size-medium);
+      font-size: var(--font-size-extra-large);
     }
 
     .navbar-items-collapse:not(.expanded) {

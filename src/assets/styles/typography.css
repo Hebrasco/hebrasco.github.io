@@ -9,12 +9,11 @@
   --font-size-h5: 0.875rem;
 
   /* Component type scale — em-based (scales with context), except --font-size-small */
-  --font-size-2extra-small: 0.6875em; /* 11px — labels, badges, eyebrows, tags, footer, pills  */
-  --font-size-extra-small: 0.75em; /* 12px — nav links, social pills                        */
+  --font-size-extra-small: 0.75em; /* 12px — labels, badges, eyebrows, footer, nav links    */
   --font-size-small: 0.8125rem; /* 13px — buttons, nav brand (rem: UI-consistent)        */
   --font-size-medium: 0.875em; /* 14px — legal body text, mobile nav links              */
-  --font-size-large: 0.9375em; /* 15px — feature titles, contact email, mobile body     */
-  --font-size-extra-large: 1.0625em; /* 17px — main body copy, subtitles, project names       */
+  --font-size-large: 0.9375em; /* 15px — feature descriptions, contact email            */
+  --font-size-extra-large: 1.0625em; /* 17px — main body copy, subtitles, project/feature names */
   --font-size-2extra-large: 1.375em; /* 22px — section subheading                            */
   --font-size-3extra-large: 1.625em; /* 26px — responsive section title                      */
   --font-size-4extra-large: 2em; /* 32px — section title                                 */
