@@ -37,8 +37,8 @@ const INSTERS: Project = {
   ],
   frameworks: [
     PROFILE.frameworks.apple.swiftUI,
-    PROFILE.frameworks.apple.storeKit,
     PROFILE.frameworks.apple.coreImage,
+    PROFILE.frameworks.apple.storeKit,
   ],
   id: 'insters',
   languages: [PROFILE.languages.swift, PROFILE.languages.metal],
