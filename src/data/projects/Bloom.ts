@@ -95,6 +95,7 @@ const BLOOM: Project = {
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.widgetKit,
     PROFILE.frameworks.apple.cloudKit,
+    PROFILE.frameworks.apple.mapKit,
     PROFILE.frameworks.apple.storeKit,
     PROFILE.frameworks.apple.notifications,
   ],

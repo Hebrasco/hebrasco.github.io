@@ -87,6 +87,8 @@ const FINANCIAL_PLAN: Project = {
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.swiftCharts,
     PROFILE.frameworks.apple.swiftData,
+    PROFILE.frameworks.apple.cloudKit,
+    PROFILE.frameworks.apple.storeKit,
   ],
   id: 'finance-plan',
   languages: [PROFILE.languages.swift],

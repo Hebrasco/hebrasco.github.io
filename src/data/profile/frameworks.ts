@@ -5,6 +5,7 @@ const FRAMEWORKS: FrameworkCollection = {
     cloudKit: { name: 'CloudKit' },
     coreData: { name: 'Core Data' },
     coreImage: { name: 'Core Image' },
+    mapKit: { name: 'MapKit' },
     metal: { name: 'Metal' },
     notifications: { name: 'Notifications' },
     storeKit: { name: 'StoreKit' },

@@ -12,6 +12,7 @@ type AppleFrameworkCollection = {
   metal: Skill
   coreImage: Skill
   cloudKit: Skill
+  mapKit: Skill
 }
 
 type CrossPlatformFrameworkCollection = {
