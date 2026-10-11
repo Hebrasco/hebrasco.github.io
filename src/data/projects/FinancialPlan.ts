@@ -20,14 +20,13 @@ const FINANCIAL_PLAN: Project = {
     'A budget planner that focuses on planning ahead, not tracking past transactions. Users set up their accounts, add recurring income and expenses from weekly to annually, and plan transfers between accounts. Every amount keeps a price history, so the reports show which costs went up, which changes are coming next and how each category develops over time. Income, expenses and surplus can be viewed per week, month, year or any other interval. Everything syncs through iCloud. The app is free to use, and a one-time purchase unlocks Premium.',
   features: [
     {
-      description:
-        'Multiple accounts to organize transactions, each with its own income, expense and balance summary.',
+      description: 'Multiple accounts, each with its own income, expense and balance summary.',
       icon: 'bi bi-bank',
       title: 'Accounts',
     },
     {
       description:
-        'Income and expenses repeat weekly, biweekly, monthly, bimonthly, quarterly, semiannually or annually, with an optional end date.',
+        'Income and expenses that repeat weekly up to annually, with an optional end date.',
       icon: 'bi bi-arrow-repeat',
       title: 'Recurring Transactions',
     },
@@ -38,8 +37,7 @@ const FINANCIAL_PLAN: Project = {
       title: 'Transfers',
     },
     {
-      description:
-        'Each transaction keeps a history of its amounts. Price changes can be scheduled ahead, like a subscription getting more expensive next month.',
+      description: 'Every amount keeps its history, and price changes can be scheduled ahead.',
       icon: 'bi bi-clock-history',
       title: 'Price History',
     },
@@ -49,14 +47,12 @@ const FINANCIAL_PLAN: Project = {
       title: 'Categories',
     },
     {
-      description:
-        'Income, expenses and surplus as pie or bar charts, plus the savings rate and the smallest and biggest expense.',
+      description: 'Income, expenses and surplus as charts, plus the savings rate.',
       icon: 'bi bi-pie-chart',
       title: 'Reports',
     },
     {
-      description:
-        'Spending per category and subcategory in absolute and relative values, across all accounts or per account.',
+      description: 'Spending per category and subcategory, across all accounts or per account.',
       icon: 'bi bi-percent',
       title: 'Category Reports',
     },
@@ -82,8 +78,7 @@ const FINANCIAL_PLAN: Project = {
       title: 'Cloud Sync',
     },
     {
-      description:
-        'A one-time purchase, no subscription. It unlocks unlimited accounts with transfers, price changes and category trends.',
+      description: 'A one-time purchase that unlocks unlimited accounts, transfers and trends.',
       icon: 'bi bi-gem',
       title: 'Premium',
     },

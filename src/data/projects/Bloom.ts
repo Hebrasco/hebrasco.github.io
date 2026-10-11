@@ -20,79 +20,73 @@ const BLOOM: Project = {
     "Bloom is a quiet, private space for a couple. Both partners answer the same small question every day, then see what the other wrote. They keep their favourite photos as shared memories, see every place they've been together on a map, send quick love notes, write a journal together, plan a shared bucket list, and count down to the dates that matter. Everything syncs privately through the couple's own iCloud account, with no feed and no audience. Home and Lock Screen widgets, a monthly recap, relationship stats, nineteen colour themes, and a Premium subscription that covers both partners round it out.",
   features: [
     {
-      description:
-        "Each day brings one shared question from a set of 366, in a new order every year. Both partners answer on their own, then see each other's response, building an archive of honest answers you can search and filter. An evening reminder makes sure the day's question doesn't slip by.",
+      description: 'One shared question a day. Both answer, then see what the other wrote.',
       icon: 'bi bi-patch-question',
       title: 'Daily Questions',
     },
     {
-      description:
-        'Keep your favourite photos together in one place, and revisit a photo from this same day a year ago.',
+      description: 'Keep your favourite photos together and see what you did a year ago today.',
       icon: 'bi bi-images',
       title: 'Shared Memories',
     },
     {
-      description:
-        "Bloom reads where each photo was taken and puts it on one map of every place you've been together.",
+      description: "Every place you've been together on one map, taken from your photos.",
       icon: 'bi bi-geo-alt',
       title: 'Places',
     },
     {
-      description:
-        'Look back on any month: its photos, places and milestones, plus how many questions you answered, journal entries you wrote and bucket list items you checked off.',
+      description: "A look back at each month's photos, places and milestones.",
       icon: 'bi bi-calendar3',
       title: 'Monthly Recap',
     },
     {
-      description:
-        "Send a note, an emoji or a quick 'thinking of you' with a single tap. Your partner receives it instantly.",
+      description: "Send a note, an emoji or a quick 'thinking of you' with a single tap.",
       icon: 'bi bi-envelope-heart',
       title: 'Love Notes',
     },
     {
-      description:
-        "Write in one journal together. Both partners' entries sit side by side in the same place.",
+      description: 'One journal for both of you, with your entries side by side.',
       icon: 'bi bi-journal-text',
       title: 'Shared Journal',
     },
     {
-      description:
-        "Add things you want to do together and check them off, building a record of everything you've done.",
+      description: 'Collect things to do together and check them off.',
       icon: 'bi bi-check2-square',
       title: 'Bucket List',
     },
     {
-      description:
-        'Count down to your anniversary, birthdays and every milestone that matters, and choose which date the home counter shows.',
+      description: 'Count down to anniversaries, birthdays and every milestone that matters.',
       icon: 'bi bi-calendar-heart',
       title: 'Anniversary Countdown',
     },
     {
-      description:
-        'Put your countdown, couple photo and memories right on the Home Screen and Lock Screen, each counting from the date you pick.',
+      description: 'Your countdown, couple photo and memories on the Home and Lock Screen.',
       icon: 'bi bi-grid-1x2',
       title: 'Widgets',
     },
     {
       description:
-        'A single page that sums it all up: days together, questions answered, places visited and milestones reached.',
+        'Reminders for the daily question and your dates, and a ping for every love note.',
+      icon: 'bi bi-bell',
+      title: 'Notifications',
+    },
+    {
+      description: 'Days together, questions answered, places visited and milestones reached.',
       icon: 'bi bi-graph-up',
       title: 'Relationship Stats',
     },
     {
-      description: 'Nineteen colour themes, from Rose to Ink, to make the app your own.',
+      description: 'Nineteen colour themes to make the app your own.',
       icon: 'bi bi-palette',
       title: 'Themes',
     },
     {
-      description:
-        "Syncs through the couple's own iCloud account, so there is no extra sign-in, no email or password to remember, no feed and no audience.",
+      description: 'Syncs through your own iCloud account. No sign-in, no feed, no audience.',
       icon: 'bi bi-cloud-check',
       title: 'Private by Design',
     },
     {
-      description:
-        'One subscription covers both partners, unlocking unlimited memories, the places map, the full question history, the journal, custom milestones, stats, all widgets and every theme.',
+      description: 'One subscription covers both partners and unlocks everything.',
       icon: 'bi bi-gem',
       title: 'Premium',
     },
@@ -107,7 +101,7 @@ const BLOOM: Project = {
   id: 'bloom',
   languages: [PROFILE.languages.swift],
   metaDescription:
-    'Bloom is a private couples app for iPhone and iPad: answer a daily question together, share memories, love notes, a journal and a bucket list.',
+    'Bloom is a private couples app for iPhone and iPad: answer a daily question together, share memories and a map of your places, love notes, a journal and a bucket list.',
   name: 'Bloom - Couples App',
   onlineURL: 'https://apps.apple.com/app/bloom-couples-app/id1533246365',
   platforms: [PLATFORM.iphone, PLATFORM.ipad],
