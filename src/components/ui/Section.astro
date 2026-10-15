@@ -2,21 +2,26 @@
 interface Props {
   background?: 'primary' | 'secondary'
   id?: string
+  class?: string
 }
 
-const { background = 'primary', id} = Astro.props
+const { background = 'primary', id, class: className } = Astro.props
 ---
-<section id={id} class:list={['section', background === 'secondary' && 'section-secondary']}>
+<section id={id} class:list={['section', background === 'secondary' && 'section-secondary', className]} >
   <slot />
 </section>
 
 <style>
   .section {
-    background: var(--primary-color);
-    border-bottom: 1px solid var(--divider-color);
+    padding: var(--space-section) 0;
+    background: var(--color-background);
   }
 
   .section-secondary {
-    background: var(--primary-background-color);
+    background: var(--color-background-secondary);
+  }
+
+  .section-flush-top {
+    padding-top: 0;
   }
 </style>

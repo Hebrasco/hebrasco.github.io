@@ -1,41 +1,49 @@
 :root {
   color-scheme: light dark;
 
-  /* Surfaces */
-  --primary-color: light-dark(#ffffff, #000000);
-  --primary-background-color: light-dark(#f5f5f7, #1c1c1e);
-  --hover-surface-color: light-dark(#e8e8ed, #2c2c2e);
+  --color-background: light-dark(#ffffff, #000000);
+  --color-background-secondary: light-dark(#f5f5f7, #161617);
+  --color-text: light-dark(#1d1d1f, #f5f5f7);
 
-  /* Text */
-  --primary-text-color: light-dark(#1d1d1f, #f5f5f7);
-  --secondary-text-color: light-dark(rgba(29, 29, 31, 0.65), rgba(235, 235, 245, 0.6));
-  --faint-text-color: light-dark(rgba(29, 29, 31, 0.2), rgba(235, 235, 245, 0.2));
-  --link-text-color: light-dark(rgba(29, 29, 31, 0.8), rgba(235, 235, 245, 0.8));
+  --color-text-secondary-alpha-light: 65%;
+  --color-text-secondary-alpha-dark: 60%;
 
-  /* Borders & dividers */
-  --divider-color: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.1));
-  --outline-button-border: light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+  --color-link-text: color-mix(in srgb, var(--color-text) 80%, transparent);
 
-  /* Shadows */
-  --accent-color: light-dark(rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.25));
-  --shadow-color-medium: light-dark(rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.4));
-  --shadow-color-large: light-dark(rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.5));
+  --color-accent: light-dark(#0071e3, #0a84ff);
+  --color-on-accent: #ffffff;
+  --color-accent-text: light-dark(#0066cc, #2997ff);
 
-  /* Interactive / blue */
-  --interactive-color: light-dark(#0071e3, #0a84ff);
-  --interactive-border: light-dark(rgba(0, 113, 227, 0.25), rgba(10, 132, 255, 0.35));
-  --interactive-subtle: light-dark(rgba(0, 113, 227, 0.06), rgba(10, 132, 255, 0.1));
+  --color-pill-surface: light-dark(#ffffff, #2c2c2e);
+  --color-pill-surface-hover: light-dark(#e8e8ed, #3a3a3c);
 
-  /* Buttons */
-  --button-primary-hover: light-dark(#3a3a3c, #e5e5ea);
+  --color-card-shadow: light-dark(rgb(0 0 0 / 0.08), transparent);
+  --color-card-shadow-hover: light-dark(rgb(0 0 0 / 0.14), transparent);
+}
 
-  /* Glass nav */
-  --glass-background: light-dark(rgba(255, 255, 255, 0.85), rgba(28, 28, 30, 0.85));
-  --glass-border: light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.1));
-  --glass-blur: 20px;
+:root,
+.theme {
+  --color-text-secondary: light-dark(
+    color-mix(in srgb, var(--color-text) var(--color-text-secondary-alpha-light), transparent),
+    color-mix(in srgb, var(--color-text) var(--color-text-secondary-alpha-dark), transparent)
+  );
+  --color-hairline: light-dark(
+    color-mix(in srgb, var(--color-text) 10%, transparent),
+    color-mix(in srgb, var(--color-text) 14%, transparent)
+  );
 }
 
 body {
-  color: var(--primary-text-color);
-  background-color: var(--primary-color);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+.stage {
+  background:
+    radial-gradient(
+      90% 75% at 50% 100%,
+      light-dark(rgb(255 255 255 / 0.55), rgb(255 255 255 / 0.09)) 0%,
+      transparent 72%
+    ),
+    var(--color-background-secondary);
 }

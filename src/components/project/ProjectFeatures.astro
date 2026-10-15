@@ -1,81 +1,68 @@
 ---
-
 import HorizontalList from 'components/ui/HorizontalList.astro'
+import HorizontalListItem from 'components/ui/HorizontalListItem.astro'
 import Section from 'components/ui/Section.astro'
 import SectionHeader from 'components/ui/SectionHeader.astro'
+import { getThemeClass } from 'utils/theme'
 import type { Project } from 'types'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import HorizontalListItem from 'components/ui/HorizontalListItem.astro'
 
 interface Props {
   project: Project
 }
 
 const { project } = Astro.props
+
+const highlighted = new Set((project.highlights ?? []).map(({ feature }) => feature))
+const features = project.features.filter(({ title }) => !highlighted.has(title))
+
+if (features.length === 0) {
+  return
+}
+
+const subtitle = `${features.length} ${features.length === 1 ? 'more thing' : 'more things'} it does.`
 ---
-<Section background="secondary">
-  <div class="features">
-    <div class="features-header">
-      <SectionHeader eyebrow="Features" size="medium">What it does.</SectionHeader>
-    </div>
-    <HorizontalList>
-      {project.features.map((feature) => (
-        <HorizontalListItem>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class={feature.icon}></i>
-            </div>
-            <h3 class="feature-title">{feature.title}</h3>
-            <p class="feature-description">{feature.description}</p>
-          </div>
-        </HorizontalListItem>
-      ))}
-    </HorizontalList>
+<Section class="section-flush-top">
+  <div class="wrap">
+    <SectionHeader subtitle={subtitle} title={highlighted.size > 0 ? 'More features.' : 'Features.'} />
   </div>
+  <HorizontalList id="features-list" label="Features">
+    {features.map((feature) => (
+      <HorizontalListItem>
+        <div class={`feature ${getThemeClass(project)}`}>
+          <i aria-hidden="true" class={feature.icon}></i>
+          <h3>{feature.title}</h3>
+          <p>{feature.description}</p>
+        </div>
+      </HorizontalListItem>
+    ))}
+  </HorizontalList>
 </Section>
 
 <style>
-  .features {
-    padding: 4rem 0;
-  }
-
-  .features-header {
-    padding: 0 var(--inset);
-    margin-bottom: 1.5rem;
-  }
-
-  .feature-card {
-    width: 13.75rem;
-    height: 100%;
-    padding: 1.375rem;
-    background: var(--primary-color);
-  }
-
-  .feature-icon {
+  .feature {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    margin-bottom: 0.875rem;
-    font-size: 1rem;
-    color: var(--primary-text-color);
-    background: var(--primary-background-color);
-    border-radius: 0.5rem;
-
+    flex-direction: column;
+    width: min(80vw, 20rem);
+    padding: var(--space-xl);
+    color: var(--color-text);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-card);
   }
 
-  .feature-title {
-    margin-bottom: 0.375rem;
-    font-size: var(--text-body);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-heading);
-    color: var(--primary-text-color);
+  i {
+    font-size: 1.75rem;
+    color: var(--color-accent-text);
   }
 
-  .feature-description {
-    font-size: var(--text-callout);
-    line-height: var(--line-height-body);
-    color: var(--secondary-text-color);
+  h3 {
+    margin-top: var(--space-xl);
+    font-size: var(--text-title);
+    line-height: 1.15;
+  }
+
+  p {
+    margin-top: var(--space-xs);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
   }
 </style>

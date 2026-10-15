@@ -43,6 +43,16 @@ const RECIPES: Project = {
     },
   ],
   frameworks: [PROFILE.frameworks.apple.swiftUI, PROFILE.frameworks.apple.coreData],
+  highlights: [
+    {
+      feature: 'Calculate Ingredients',
+      screenshot: {
+        altText: 'Recipe with ingredients calculated for the portions',
+        dark: ScreenshotsIphoneLight.RecipeDetails,
+        light: ScreenshotsIphoneLight.RecipeDetails,
+      },
+    },
+  ],
   id: 'recipes',
   languages: [PROFILE.languages.swift, PROFILE.languages.json],
   metaDescription:
@@ -82,6 +92,14 @@ const RECIPES: Project = {
     'Parsing a JSON file',
     'Persisting data with Core Data',
   ],
+  theme: {
+    accent: { dark: '#3ab0ae', light: '#098281' },
+    accentText: { dark: '#45b9b7', light: '#0e7b7a' },
+    background: { dark: '#112221', light: '#f3fcfc' },
+    backgroundSecondary: { dark: '#122625', light: '#def6f5' },
+    onAccent: { dark: '#001615', light: '#ffffff' },
+    text: { dark: '#ebf4f4', light: '#162524' },
+  },
   titleImage: {
     altText: 'Preview collection of screenshots',
     dark: RecipesPreviews.titleLight,

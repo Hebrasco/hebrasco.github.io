@@ -1,6 +1,6 @@
 ---
 import Section from 'components/ui/Section.astro'
-import SectionHeader from 'components/ui/SectionHeader.astro'
+import { splitLeadSentence } from 'utils/project'
 import type { Project } from 'types'
 
 interface Props {
@@ -8,30 +8,38 @@ interface Props {
 }
 
 const { project } = Astro.props
+const { lead, rest } = splitLeadSentence(project.description)
 ---
 <Section>
-  <div class="description">
-    <div class="description-inner">
-      <SectionHeader eyebrow="Summary" size="medium">{project.summaryHeading}</SectionHeader>
-      <p class="body-text">{project.description}</p>
-    </div>
+  <div class="wrap statement">
+    <h2>{project.summaryHeading}</h2>
+    <p><strong>{lead}</strong> {rest}</p>
   </div>
 </Section>
 
 <style>
-  .description {
-    padding: 4rem var(--inset);
+  .statement {
+    text-align: center;
   }
 
-  .description-inner {
+  h2 {
+    max-width: 16ch;
+    margin: 0 auto;
+    font-size: var(--text-display);
+    line-height: 1.04;
+    letter-spacing: var(--letter-spacing-hero);
+  }
+
+  p {
     max-width: 40rem;
+    margin: var(--space-lg) auto 0;
+    font-size: var(--text-title);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
   }
 
-  .body-text {
-    margin-top: 1.125rem;
-    margin-bottom: 0;
-    font-size: var(--text-body);
-    line-height: var(--line-height-body);
-    color: var(--secondary-text-color);
+  strong {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
   }
 </style>

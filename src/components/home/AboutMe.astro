@@ -1,69 +1,92 @@
 ---
 import Button from 'components/ui/Button.astro'
-import InfoBlock from 'components/ui/InfoBlock.astro'
 import Section from 'components/ui/Section.astro'
-import SectionHeader from 'components/ui/SectionHeader.astro'
 import SkillBadges from 'components/ui/SkillBadges.astro'
 import { CONFIG, PROFILE } from 'data'
+
+const skillGroups = [
+  { skills: PROFILE.skills.languages, title: 'Languages' },
+  { skills: PROFILE.skills.frameworks, title: 'Frameworks' },
+  { skills: PROFILE.skills.applications, title: 'Tools' },
+]
 ---
 <Section id="about-me">
-  <div class="about-inner">
-    <SectionHeader eyebrow="About">Building apps<br>people actually love.</SectionHeader>
-    <p class="about-body">
-      I'm an {CONFIG.profile.jobTitle} with over ten years of experience turning ideas into products people love to use. I think about structure and long-term decisions early, so the projects I build can grow without needing to be rebuilt. The apps I've built have reached hundreds of thousands of users, and I'm proud of every one of them.
-    </p>
-    <div class="about-actions">
-      <Button href={`mailto:${CONFIG.profile.email}`}>Get in touch</Button>
-      <Button download href={'/daniel_bedrich_resume.pdf'} variant="outline" >Download Resume</Button>
+  <div class="wrap about-grid">
+    <div class="about-text">
+      <h2>About me. <span>Building apps people actually love.</span></h2>
+      <p>
+        I'm an {CONFIG.profile.jobTitle} with <strong>over ten years of experience</strong> turning ideas into products people love to use. I think about structure and long-term decisions early, so the projects I build can grow without needing to be rebuilt. The apps I've built have reached <strong>hundreds of thousands of users</strong>, and I'm proud of every one of them.
+      </p>
+      <div class="actions">
+        <Button download href="/daniel_bedrich_resume.pdf" icon="bi-download" variant="soft">Download resume</Button>
+      </div>
     </div>
-    <div class="skills-grid">
-      <InfoBlock label="Languages">
-        <SkillBadges skills={PROFILE.skills.languages} />
-      </InfoBlock>
-      <InfoBlock label="Frameworks">
-        <SkillBadges skills={PROFILE.skills.frameworks} />
-      </InfoBlock>
-      <InfoBlock label="Applications">
-        <SkillBadges skills={PROFILE.skills.applications} />
-      </InfoBlock>
+    <div class="skill-groups">
+      {skillGroups.map(({ title, skills }) => (
+        <div>
+          <h3>{title}</h3>
+          <SkillBadges skills={skills} />
+        </div>
+      ))}
     </div>
   </div>
 </Section>
 
 <style>
-  .about-inner {
-    padding: 5rem var(--inset);
-    margin: 0 auto;
-  }
-
-  .about-body {
-    max-width: 40rem;
-    margin-top: 1.375rem;
-    margin-bottom: 2rem;
-    font-size: var(--text-body);
-    line-height: var(--line-height-body);
-    color: var(--secondary-text-color);
-  }
-
-  .about-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 2.25rem;
-  }
-
-  .skills-grid {
+  .about-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-3xl);
+    align-items: start;
   }
 
-  @media (max-width: 600px) {
-    .about-inner {
-      padding: var(--section-padding-vertical-mobile) var(--content-padding-mobile);
-    }
+  h2 {
+    margin-bottom: var(--space-md);
+    font-size: var(--text-section);
+    line-height: var(--line-height-tight);
+  }
 
-    .skills-grid {
+  h2 span {
+    color: var(--color-text-secondary);
+  }
+
+  .about-text p {
+    font-size: var(--text-title);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+  }
+
+  .about-text strong {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+  }
+
+  .actions {
+    margin-top: var(--space-xl);
+  }
+
+  .skill-groups {
+    display: grid;
+    gap: var(--space-xl);
+    padding-top: 0.4rem;
+  }
+
+  h3 {
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-body);
+  }
+
+  .skill-groups :global(.badge) {
+    padding: 0.35rem 0.75rem;
+    font-size: var(--text-callout);
+  }
+
+  .skill-groups :global(.skill-badges) {
+    --color-badge-background: var(--color-background-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .about-grid {
       grid-template-columns: 1fr;
     }
   }

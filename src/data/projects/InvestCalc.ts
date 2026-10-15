@@ -1,4 +1,5 @@
 import { InvestCalcAppIcons } from 'assets/images/appIcons'
+import { InvestCalcHeaders } from 'assets/images/headers'
 import { InvestCalcPreviews } from 'assets/images/previews'
 import {
   ScreenshotsIpadDark,
@@ -71,6 +72,37 @@ const INVEST_CALC: Project = {
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.swiftCharts,
     PROFILE.frameworks.apple.swiftData,
+  ],
+  headerImage: {
+    altText:
+      'Invest. Calc cards for investment results, yearly balances, goals, plan comparison and inflation floating over a green background',
+    image: InvestCalcHeaders.header,
+  },
+  highlights: [
+    {
+      feature: 'Chart',
+      screenshot: {
+        altText: 'Calculation details with a chart of each year',
+        dark: ScreenshotsIphoneDark.CalculationDetails,
+        light: ScreenshotsIphoneLight.CalculationDetails,
+      },
+    },
+    {
+      feature: 'Year Details',
+      screenshot: {
+        altText: 'Details of a single calculation year',
+        dark: ScreenshotsIphoneDark.CalculationYearDetail,
+        light: ScreenshotsIphoneLight.CalculationYearDetail,
+      },
+    },
+    {
+      feature: 'Goal Tracking',
+      screenshot: {
+        altText: 'List of years with an achieved or missed status',
+        dark: ScreenshotsIphoneDark.CalculationYearlyGoals,
+        light: ScreenshotsIphoneLight.CalculationYearlyGoals,
+      },
+    },
   ],
   id: 'invest-calc',
   languages: [PROFILE.languages.swift],
@@ -150,6 +182,14 @@ const INVEST_CALC: Project = {
   },
   summaryHeading: 'Simulate your financial future.',
   tasks: [],
+  theme: {
+    accent: { dark: '#04c883', light: '#028758' },
+    accentText: { dark: '#04c883', light: '#027d52' },
+    background: { dark: '#112317', light: '#f4fdf6' },
+    backgroundSecondary: { dark: '#14271a', light: '#e2f6e7' },
+    onAccent: { dark: '#06150b', light: '#ffffff' },
+    text: { dark: '#edf4ef', light: '#1a251d' },
+  },
   titleImage: {
     altText: 'Preview collection of screenshots',
     dark: InvestCalcPreviews.titleDark,

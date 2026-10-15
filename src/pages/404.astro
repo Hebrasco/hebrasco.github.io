@@ -5,39 +5,31 @@ import Layout from 'layouts/Layout.astro'
 ---
 <Layout description='Oops... Looks like this page was not found.' indexable={false} title={`Page Not Found — ${CONFIG.profile.name}`} >
   <div class="not-found">
-    <p class="code">404</p>
-    <h1 class="heading">Page not found.</h1>
+    <h1>Page not found.</h1>
+    <p>This page doesn't exist, but the apps do.</p>
     <Button href="/">Go home</Button>
   </div>
 </Layout>
 
 <style>
   .not-found {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    gap: var(--space-lg);
+    place-content: center;
+    justify-items: center;
     min-height: 60vh;
-    padding: var(--inset);
+    padding: var(--space-section) var(--gutter);
     text-align: center;
   }
 
-  .code {
-    margin-bottom: 0;
-    font-size: var(--text-caption);
-    font-weight: var(--font-weight-semibold);
-    color: var(--secondary-text-color);
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-label);
+  h1 {
+    font-size: var(--text-display);
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-hero);
   }
 
-  .heading {
-    margin-bottom: 1rem;
-    font-size: var(--text-section);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    color: var(--primary-text-color);
-    letter-spacing: var(--letter-spacing-heading);
+  p {
+    font-size: var(--text-title);
+    color: var(--color-text-secondary);
   }
 </style>

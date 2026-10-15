@@ -1,5 +1,5 @@
 ---
-type Variant = 'primary' | 'outline' | 'text' | 'email' | 'chip'
+type Variant = 'primary' | 'soft' | 'neutral'
 
 interface Props {
   variant?: Variant
@@ -8,7 +8,8 @@ interface Props {
   target?: string
   rel?: string
   type?: 'button' | 'submit' | 'reset'
-  icon?: boolean
+  icon?: string
+  class?: string
 }
 
 const {
@@ -18,149 +19,91 @@ const {
   target,
   rel,
   type = 'button',
-  icon = false,
+  icon,
+  class: className,
 } = Astro.props
 
-const variantClass: Record<Variant, string> = {
-  chip: 'button-chip',
-  email: 'button-email',
-  outline: 'button-outline',
-  primary: 'button',
-  text: 'button-text',
-}
-
-const classes = [variantClass[variant], icon ? 'button-icon' : ''].filter(Boolean).join(' ')
+const classes = ['button', `button-${variant}`, className]
 const autoRel = rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined)
 ---
 {href ? (
   <a
-    class={classes}
+    class:list={classes}
     download={download || undefined}
     href={href}
     rel={autoRel}
     target={target}
   >
+    {icon && <i aria-hidden="true" class={`bi ${icon}`}></i>}
     <slot />
   </a>
 ) : (
-  <button class={classes} type={type}>
+  <button class:list={classes} type={type}>
+    {icon && <i aria-hidden="true" class={`bi ${icon}`}></i>}
     <slot />
   </button>
 )}
 
 <style>
-  /* Primary — filled black pill */
   .button {
-    display: inline-block;
-    padding: 0.8125rem 1.375rem;
-    font-size: var(--text-callout);
-    font-weight: var(--font-weight-medium);
-    color: var(--primary-color);
-    text-decoration: none;
-    background-color: var(--primary-text-color);
-    border-radius: var(--border-radius);
-    transition: background-color var(--transition-base), transform var(--transition-fast);
-  }
-
-  .button:hover,
-  .button:active,
-  .button:focus-visible {
-    color: var(--primary-color);
-    text-decoration: none;
-    background-color: var(--button-primary-hover);
-  }
-
-  .button:focus-visible {
-    outline: 0.125rem solid var(--interactive-color);
-    outline-offset: 0.125rem;
-  }
-
-  .button:active {
-    transform: translateY(1px);
-  }
-
-  /* Outline — ghost pill */
-  .button-outline {
-    display: inline-block;
-    padding: calc(0.8125rem - 1px) calc(1.375rem - 1px);
-    font-size: var(--text-callout);
-    font-weight: var(--font-weight-medium);
-    color: var(--primary-text-color);
-    text-decoration: none;
-    background-color: transparent;
-    border: 1px solid var(--outline-button-border);
-    border-radius: var(--border-radius);
-    transition: background-color var(--transition-base);
-  }
-
-  .button-outline:hover,
-  .button-outline:focus-visible {
-    text-decoration: none;
-    background-color: var(--accent-color);
-  }
-
-  /* Text — blue link with trailing arrow */
-  .button-text {
-    font-size: var(--text-callout);
-    color: var(--interactive-color);
-    text-decoration: none;
-  }
-
-  .button-text::after {
-    content: ' →';
-  }
-
-  .button-text:hover {
-    color: var(--interactive-color);
-    text-decoration: underline;
-  }
-
-  /* Email — blue bordered link, larger font */
-  .button-email {
     display: inline-flex;
     gap: 0.5rem;
     align-items: center;
-    padding: 0.75rem 1.5rem;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0 1.25rem;
     font-size: var(--text-body);
-    font-weight: var(--font-weight-medium);
-    color: var(--interactive-color);
-    text-decoration: none;
-    border: 1px solid var(--interactive-border);
-    border-radius: var(--border-radius);
-    transition: background-color var(--transition-base);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-ui);
+    cursor: pointer;
+    border-radius: var(--radius-pill);
+    transition: background-color var(--transition-base), transform 120ms ease;
   }
 
-  .button-email:hover,
-  .button-email:focus-visible {
-    color: var(--interactive-color);
-    text-decoration: none;
-    background: var(--interactive-subtle);
-  }
-
-  /* Chip — filled surface pill for secondary links */
-  .button-chip {
-    display: inline-block;
-    padding: 0.625rem 0.875rem;
-    font-size: var(--text-callout);
-    font-weight: var(--font-weight-medium);
-    color: var(--secondary-text-color);
-    text-decoration: none;
-    background: var(--primary-background-color);
-    border-radius: var(--border-radius);
-    transition: background-color var(--transition-base), color var(--transition-base);
-  }
-
-  .button-chip:hover,
-  .button-chip:focus-visible {
-    color: var(--primary-text-color);
-    text-decoration: none;
-    background: var(--hover-surface-color);
-  }
-
-  /* Icon modifier — inline-flex layout for icon + label */
-  .button-icon {
+  .button i {
     display: inline-flex;
-    gap: 0.4375rem;
-    align-items: center;
+    line-height: 1;
+  }
+
+  .button i::before {
+    vertical-align: 0;
+  }
+
+  .button:active {
+    transform: scale(0.97);
+  }
+
+  .button-primary {
+    color: var(--color-on-accent);
+    background: var(--color-accent);
+  }
+
+  .button-primary:hover {
+    background: color-mix(in oklab, var(--color-accent), #000000 8%);
+  }
+
+  .button-soft {
+    color: var(--color-accent-text);
+    background: color-mix(in oklab, var(--color-accent) 11%, transparent);
+  }
+
+  .button-soft:hover {
+    background: color-mix(in oklab, var(--color-accent) 17%, transparent);
+  }
+
+  .button-neutral {
+    min-height: 2.75rem;
+    padding: 0 1.125rem;
+    font-size: var(--text-callout);
+    color: var(--color-text);
+    background: var(--color-pill-surface);
+  }
+
+  .button-neutral:hover {
+    background: var(--color-pill-surface-hover);
+  }
+
+  .button-neutral i {
+    color: var(--color-text-secondary);
   }
 </style>

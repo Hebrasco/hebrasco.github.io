@@ -1,0 +1,113 @@
+---
+import { getImage } from 'astro:assets'
+import HorizontalList from 'components/ui/HorizontalList.astro'
+import HorizontalListItem from 'components/ui/HorizontalListItem.astro'
+import Section from 'components/ui/Section.astro'
+import SectionHeader from 'components/ui/SectionHeader.astro'
+import { IMAGE_DENSITIES } from 'data/imageDensities'
+import { IMAGE_QUALITY } from 'data/imageQuality'
+import { getThemeClass } from 'utils/theme'
+import type { Project } from 'types'
+
+interface Props {
+  project: Project
+}
+
+const { project } = Astro.props
+
+const highlights = (project.highlights ?? []).flatMap((highlight) => {
+  const feature = project.features.find(({ title }) => title === highlight.feature)
+
+  return feature ? [{ feature, screenshot: highlight.screenshot }] : []
+})
+
+if (highlights.length === 0) {
+  return
+}
+---
+<Section class="section-flush-top">
+  <div class="wrap">
+    <SectionHeader title="Highlights." />
+  </div>
+  <HorizontalList gap="large" id="highlights-list" label="Highlights">
+    {highlights.map(async ({ feature, screenshot }) => {
+      const light = await getImage({ densities: IMAGE_DENSITIES, quality: IMAGE_QUALITY, src: screenshot.light, width: 272 })
+      const dark = await getImage({ densities: IMAGE_DENSITIES, quality: IMAGE_QUALITY, src: screenshot.dark, width: 272 })
+
+      return (
+        <HorizontalListItem>
+          <article class={`highlight stage ${getThemeClass(project)}`}>
+            <div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset={dark.srcSet.attribute} />
+              <img alt={screenshot.altText} class="shot" loading="lazy" src={light.src} srcset={light.srcSet.attribute} />
+            </picture>
+          </article>
+        </HorizontalListItem>
+      )
+    })}
+  </HorizontalList>
+</Section>
+
+<style>
+  .highlight {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+    width: min(80vw, 52rem);
+    height: clamp(28rem, 20rem + 18vw, 36rem);
+    padding: 0 var(--space-3xl);
+    overflow: hidden;
+    color: var(--color-text);
+    border-radius: var(--radius-tile);
+  }
+
+  h3 {
+    font-size: var(--text-title-1);
+    line-height: 1.1;
+  }
+
+  p {
+    max-width: 24rem;
+    margin-top: var(--space-sm);
+    font-size: var(--text-title);
+    line-height: var(--line-height-ui);
+    color: var(--color-text-secondary);
+  }
+
+  picture {
+    align-self: end;
+    justify-self: center;
+    width: min(100%, 17rem);
+    margin-bottom: -3rem;
+  }
+
+  .shot {
+    width: 100%;
+    filter: var(--filter-drop-shadow);
+    transform: rotate(-3deg);
+    will-change: filter;
+  }
+
+  :global(.horizontal-list-item:nth-child(even)) .shot {
+    transform: rotate(3deg);
+  }
+
+  @media (max-width: 900px) {
+    .highlight {
+      grid-template-columns: 1fr;
+      align-content: space-between;
+      width: min(80vw, 20rem);
+      padding: var(--space-xl) var(--space-xl) 0;
+    }
+
+    picture {
+      width: min(70%, 15rem);
+    }
+  }
+</style>

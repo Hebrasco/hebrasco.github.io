@@ -1,4 +1,5 @@
 import { FinancePlanAppIcons } from 'assets/images/appIcons'
+import { FinancePlanHeaders } from 'assets/images/headers'
 import { FinancePlanPreviews } from 'assets/images/previews'
 import {
   ScreenshotsIpadDark,
@@ -89,6 +90,37 @@ const FINANCIAL_PLAN: Project = {
     PROFILE.frameworks.apple.swiftData,
     PROFILE.frameworks.apple.cloudKit,
     PROFILE.frameworks.apple.storeKit,
+  ],
+  headerImage: {
+    altText:
+      'Financial Plan widgets for income, outgoing and price changes floating over a green background',
+    image: FinancePlanHeaders.header,
+  },
+  highlights: [
+    {
+      feature: 'Accounts',
+      screenshot: {
+        altText: 'Accounts screen with balances per account',
+        dark: ScreenshotsIphoneDark.Accounts,
+        light: ScreenshotsIphoneLight.Accounts,
+      },
+    },
+    {
+      feature: 'Price History',
+      screenshot: {
+        altText: 'Editing a transaction with its price history',
+        dark: ScreenshotsIphoneDark.EditTransaction,
+        light: ScreenshotsIphoneLight.EditTransaction,
+      },
+    },
+    {
+      feature: 'Price Changes',
+      screenshot: {
+        altText: 'Report showing recent and upcoming price changes',
+        dark: ScreenshotsIphoneDark.ReportsPriceChanges,
+        light: ScreenshotsIphoneLight.ReportsPriceChanges,
+      },
+    },
   ],
   id: 'finance-plan',
   languages: [PROFILE.languages.swift],
@@ -194,6 +226,14 @@ const FINANCIAL_PLAN: Project = {
   },
   summaryHeading: 'Get a clear cashflow overview.',
   tasks: ['Conception and development', 'User interface development'],
+  theme: {
+    accent: { dark: '#60ac72', light: '#37844c' },
+    accentText: { dark: '#6cb97e', light: '#2d7b44' },
+    background: { dark: '#152218', light: '#f5fcf6' },
+    backgroundSecondary: { dark: '#17261a', light: '#e3f6e6' },
+    onAccent: { dark: '#07150a', light: '#ffffff' },
+    text: { dark: '#edf4ee', light: '#1b241d' },
+  },
   titleImage: {
     altText: 'Preview collection of screenshots',
     dark: FinancePlanPreviews.titleDark,

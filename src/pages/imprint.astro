@@ -98,127 +98,84 @@ import Layout from 'layouts/Layout.astro'
 
 <style>
   .imprint-hero {
-    padding: 4.5rem var(--inset) 3.5rem;
-    background: var(--primary-color);
-    border-bottom: 1px solid var(--divider-color);
+    padding: var(--space-section) var(--inset) var(--space-2xl);
   }
 
-  .imprint-hero .page-label {
-    margin-bottom: 0.75rem;
-    font-size: var(--text-caption);
+  .page-label {
     font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    color: var(--secondary-text-color);
-    text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-label);
+    color: var(--color-text-secondary);
   }
 
   .imprint-hero h1 {
-    margin: 0;
+    margin-top: var(--space-sm);
     font-size: var(--text-display);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    color: var(--primary-text-color);
-    letter-spacing: var(--letter-spacing-heading);
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-hero);
   }
 
   .imprint-body {
-    padding: 0 var(--inset) 5rem;
-    background: var(--primary-color);
+    padding: 0 var(--inset) var(--space-section);
   }
 
   .imprint-content {
     max-width: 65ch;
-    padding-top: 2.5rem;
   }
 
   .legal-section {
-    padding-bottom: 3rem;
-    margin-bottom: 3rem;
-    border-bottom: 1px solid var(--divider-color);
+    margin-bottom: var(--space-3xl);
   }
 
   .legal-section:last-child {
-    padding-bottom: 0;
     margin-bottom: 0;
-    border-bottom: none;
   }
 
   .legal-section h2 {
-    margin-bottom: 1.25rem;
-    font-size: var(--text-title);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-heading);
-    color: var(--primary-text-color);
-    letter-spacing: var(--letter-spacing-subheading);
+    margin-bottom: var(--space-md);
+    font-size: var(--text-title-1);
+    line-height: 1.15;
   }
 
   .legal-section h3 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.625rem;
+    margin: var(--space-lg) 0 var(--space-xs);
     font-size: var(--text-body);
-    font-weight: var(--font-weight-semibold);
-    color: var(--primary-text-color);
+    letter-spacing: 0;
   }
 
-  .legal-section p {
-    margin-bottom: 0.875rem;
-    font-size: var(--text-body);
-    line-height: var(--line-height-body);
-    color: var(--secondary-text-color);
+  .legal-section p,
+  .legal-section li {
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
   }
-
-  .legal-section p:last-child { margin-bottom: 0; }
 
   .legal-section ul {
-    padding-left: 1.125rem;
-    margin-bottom: 0.875rem;
+    padding-left: 1.25rem;
+    list-style: disc;
   }
-
-  .legal-section ul li {
-    margin-bottom: 0.5rem;
-    margin-left: 0;
-    font-size: var(--text-body);
-    line-height: var(--line-height-body);
-    color: var(--secondary-text-color);
-  }
-
-  .legal-section ul li:last-child { margin-bottom: 0; }
 
   .legal-section strong {
     font-weight: var(--font-weight-semibold);
-    color: var(--primary-text-color);
+    color: var(--color-text);
   }
 
   .contact-block {
     display: inline-block;
-    padding: 1rem 1.25rem;
-    margin-top: 1rem;
-    border: 1px solid var(--divider-color);
-    border-radius: 0.75rem;
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-xs) 0 var(--space-md);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-sm);
   }
 
   .contact-block p {
-    margin-bottom: 0.25rem;
-    font-size: var(--text-body);
-    color: var(--secondary-text-color);
+    margin: 0;
+    color: var(--color-text);
   }
 
-  .contact-block p:last-child { margin-bottom: 0; }
-
   .contact-block a {
-    color: var(--interactive-color);
-    text-decoration: none;
+    color: var(--color-accent-text);
   }
 
   .contact-block a:hover {
-    color: var(--interactive-color);
     text-decoration: underline;
-  }
-
-  @media (max-width: 600px) {
-    .imprint-hero h1 {
-      font-size: var(--text-large-title);
-    }
   }
 </style>

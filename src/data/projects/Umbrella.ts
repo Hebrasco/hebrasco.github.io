@@ -50,6 +50,16 @@ const UMBRELLA: Project = {
     PROFILE.frameworks.apple.coreData,
     PROFILE.frameworks.apple.cloudKit,
   ],
+  highlights: [
+    {
+      feature: 'Tasks',
+      screenshot: {
+        altText: 'Task details with priority, labels and time tracking',
+        dark: ScreenshotsIphoneDark.IssueDetails,
+        light: ScreenshotsIphoneLight.IssueDetails,
+      },
+    },
+  ],
   id: 'umbrella',
   languages: [PROFILE.languages.swift],
   metaDescription:
@@ -104,6 +114,14 @@ const UMBRELLA: Project = {
     'Persisting data with Core Data',
     'Synchronizing data with iCloud',
   ],
+  theme: {
+    accent: { dark: '#838afb', light: '#5856d6' },
+    accentText: { dark: '#919afb', light: '#5856d6' },
+    background: { dark: '#1b1d2d', light: '#f9faff' },
+    backgroundSecondary: { dark: '#1e2032', light: '#ecefff' },
+    onAccent: { dark: '#0f101f', light: '#ffffff' },
+    text: { dark: '#f0f1f9', light: '#1f212b' },
+  },
   titleImage: {
     altText: 'Preview collection of screenshots',
     dark: UmbrellaPreviews.titleDark,

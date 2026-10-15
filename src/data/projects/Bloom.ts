@@ -1,4 +1,5 @@
 import { BloomAppIcons } from 'assets/images/appIcons'
+import { BloomHeaders } from 'assets/images/headers'
 import { BloomPreviews } from 'assets/images/previews'
 import {
   ScreenshotsIpadDark,
@@ -98,6 +99,37 @@ const BLOOM: Project = {
     PROFILE.frameworks.apple.storeKit,
     PROFILE.frameworks.apple.mapKit,
     PROFILE.frameworks.apple.notifications,
+  ],
+  headerImage: {
+    altText:
+      'Bloom cards for anniversaries, bucket list and journal floating over a deep red background',
+    image: BloomHeaders.header,
+  },
+  highlights: [
+    {
+      feature: 'Daily Questions',
+      screenshot: {
+        altText: "Home feed with the day's question",
+        dark: ScreenshotsIphoneDark.Screenshot02,
+        light: ScreenshotsIphoneLight.Screenshot02,
+      },
+    },
+    {
+      feature: 'Love Notes',
+      screenshot: {
+        altText: 'Writing a love note',
+        dark: ScreenshotsIphoneDark.Screenshot05,
+        light: ScreenshotsIphoneLight.Screenshot05,
+      },
+    },
+    {
+      feature: 'Shared Memories',
+      screenshot: {
+        altText: 'Shared memories gallery',
+        dark: ScreenshotsIphoneDark.Screenshot06,
+        light: ScreenshotsIphoneLight.Screenshot06,
+      },
+    },
   ],
   id: 'bloom',
   languages: [PROFILE.languages.swift],
@@ -401,6 +433,15 @@ const BLOOM: Project = {
     'Local notifications',
     'Localization into 19 languages',
   ],
+  theme: {
+    accent: { dark: '#c44040', light: '#8b1a1a' },
+    accentText: { dark: '#e58a80', light: '#8b1a1a' },
+    background: { dark: '#251a13', light: '#f7f1e6' },
+    backgroundSecondary: { dark: '#2a1e16', light: '#efe4d2' },
+    onAccent: { dark: '#ffffff', light: '#fdfaf5' },
+    text: { dark: '#ede5d8', light: '#221c16' },
+    textSecondaryAlpha: { dark: '62%', light: '68%' },
+  },
   titleImage: {
     altText: 'Preview collection of screenshots',
     dark: BloomPreviews.titleDark,

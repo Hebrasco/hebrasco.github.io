@@ -1,0 +1,27 @@
+:root {
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-section: clamp(4rem, 3rem + 4vw, 7rem);
+
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --content-max-width: 70rem;
+  --inset: max(var(--gutter), calc((100vw - var(--content-max-width)) / 2));
+
+  --nav-height: 3.5rem;
+}
+
+html {
+  scroll-padding-top: var(--nav-height);
+}
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--content-max-width) + 2 * var(--gutter));
+  padding: 0 var(--gutter);
+  margin: 0 auto;
+}

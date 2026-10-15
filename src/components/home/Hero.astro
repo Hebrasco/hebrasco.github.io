@@ -1,58 +1,161 @@
 ---
+import { getImage } from 'astro:assets'
 import Button from 'components/ui/Button.astro'
-import Section from 'components/ui/Section.astro'
-import { CONFIG, ROUTES } from 'data'
+import { CONFIG, PROJECTS, ROUTES } from 'data'
+import { IMAGE_DENSITIES } from 'data/imageDensities'
+import { IMAGE_QUALITY } from 'data/imageQuality'
 
-const name = CONFIG.profile.name.replace(' ', '<br/>')
+const FLOATING_ICONS = [
+  { delay: '0s', id: 'bloom', rotation: '-10deg', size: '20%', x: '4%', y: '22%' },
+  { delay: '-2s', id: 'finance-plan', rotation: '6deg', size: '23%', x: '28%', y: '0%' },
+  { delay: '-4s', id: 'invest-calc', rotation: '-5deg', size: '21%', x: '53%', y: '18%' },
+  { delay: '-1s', id: 'insters', rotation: '8deg', size: '19%', x: '77%', y: '4%' },
+]
+
+const icons = await Promise.all(
+  FLOATING_ICONS.map(async (item) => {
+    const project = PROJECTS.find(({ id }) => id === item.id)
+
+    if (!project?.appIcon) return null
+
+    const image = await getImage({ densities: IMAGE_DENSITIES, quality: IMAGE_QUALITY, src: project.appIcon.light, width: 180 })
+
+    return { ...item, image, name: project.name, url: ROUTES.project.replace(':projectId', project.id) }
+  })
+)
 ---
-<Section id="home">
-  <div class="hero">
-    <p class="eyebrow">{CONFIG.profile.jobTitle} — Limburg-Weilburg Area, Germany</p>
-    <h1 class="hero-name" set:html={name} />
-    <p class="hero-role">iOS · Android · Web</p>
-    <div class="hero-call-to-actions">
-      <Button href={ROUTES.projects}>View Projects</Button>
-      <Button href={ROUTES.aboutMe} variant="outline" >About me</Button>
+<section class="hero" id="home">
+  <div class="wrap">
+    <p class="role">{CONFIG.profile.jobTitle} · Limburg-Weilburg, Germany</p>
+    <h1>{CONFIG.profile.name}</h1>
+    <p class="intro">Native iOS apps in <strong>Swift and SwiftUI</strong>, plus Android and Web with <strong>React Native</strong>.</p>
+    <div class="actions">
+      <Button href={ROUTES.projects}>See my work</Button>
+      <Button download href="/daniel_bedrich_resume.pdf" icon="bi-download" variant="soft">Download resume</Button>
+    </div>
+    <div class="cluster">
+      {icons.map((icon) => icon && (
+        <a
+          href={icon.url}
+          style={`--x:${icon.x};--y:${icon.y};--s:${icon.size};--r:${icon.rotation};--d:${icon.delay}`}
+        >
+          <img alt={icon.name} height="180" src={icon.image.src} srcset={icon.image.srcSet.attribute} width="180" />
+          <span aria-hidden="true" class="label">{icon.name}</span>
+        </a>
+      ))}
     </div>
   </div>
-</Section>
+</section>
 
 <style>
   .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 6rem 2rem 5.5rem;
+    padding: var(--space-section) 0 var(--space-3xl);
+    overflow-x: clip;
     text-align: center;
   }
 
-  .eyebrow {
-    margin-bottom: 1.25rem;
-    font-size: var(--text-caption);
+  .role {
+    margin-bottom: var(--space-sm);
     font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    color: var(--secondary-text-color);
+    color: var(--color-text-secondary);
   }
 
-  .hero-name {
-    margin-bottom: 1.125rem;
+  h1 {
+    margin: 0 auto;
     font-size: var(--text-hero);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    color: var(--primary-text-color);
+    line-height: 1.02;
     letter-spacing: var(--letter-spacing-hero);
   }
 
-  .hero-role {
-    margin-bottom: 2.125rem;
-    font-size: var(--text-body);
+  .intro {
+    max-width: 32rem;
+    margin: var(--space-md) auto var(--space-xl);
+    font-size: var(--text-title);
     line-height: var(--line-height-ui);
-    color: var(--secondary-text-color);
+    color: var(--color-text-secondary);
   }
 
-  .hero-call-to-actions {
+  .intro strong {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+  }
+
+  .actions {
     display: flex;
-    gap: 0.75rem;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+  }
+
+  .cluster {
+    position: relative;
+    width: min(100%, 48rem);
+    aspect-ratio: 3.2 / 1;
+    margin: var(--space-3xl) auto 0;
+  }
+
+  .cluster a {
+    --pad: 4rem;
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    box-sizing: content-box;
+    width: var(--s);
+    padding: var(--pad);
+    margin: calc(-1 * var(--pad));
+    transform: rotate(var(--r));
+    transition: transform 500ms var(--ease);
+    animation: float 7s ease-in-out infinite;
+    animation-delay: var(--d);
+  }
+
+  .cluster a:hover {
+    z-index: 2;
+    transform: rotate(0deg) scale(1.06);
+  }
+
+  .cluster img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-app-icon);
+    filter: var(--filter-drop-shadow);
+    will-change: filter;
+  }
+
+  .label {
+    position: absolute;
+    bottom: calc(var(--pad) - 1.75rem);
+    left: 50%;
+    font-size: var(--text-caption);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-50%) rotate(calc(-1 * var(--r)));
+    transition: opacity 250ms ease, transform 500ms var(--ease);
+  }
+
+  .cluster a:hover .label {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cluster a {
+      animation: none;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+
+    50% {
+      translate: 0 -8px;
+    }
   }
 </style>

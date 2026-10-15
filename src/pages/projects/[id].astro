@@ -2,6 +2,7 @@
 import ProjectDescription from 'components/project/ProjectDescription.astro'
 import ProjectFeatures from 'components/project/ProjectFeatures.astro'
 import ProjectHero from 'components/project/ProjectHero.astro'
+import ProjectHighlights from 'components/project/ProjectHighlights.astro'
 import ProjectKeyInfo from 'components/project/ProjectKeyInfo.astro'
 import ProjectScreenshots from 'components/project/ProjectScreenshots.astro'
 import { CONFIG, PROJECTS } from 'data'
@@ -18,8 +19,9 @@ const { project } = Astro.props
 ---
 <Layout description={project.metaDescription} image={project.titleImage.light.src} title={`${project.name} - ${CONFIG.profile.name}`} >
   <ProjectHero project={project} />
-  <ProjectKeyInfo project={project} />
   <ProjectDescription project={project} />
+  <ProjectHighlights project={project} />
   <ProjectFeatures project={project} />
   <ProjectScreenshots project={project} />
+  <ProjectKeyInfo project={project} />
 </Layout>

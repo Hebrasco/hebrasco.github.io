@@ -1,27 +1,148 @@
 ---
+interface Props {
+  id: string
+  label: string
+  gap?: 'regular' | 'large'
+}
+
+const { id, label, gap = 'regular' } = Astro.props
 ---
-<ul class="horizontal-list">
-  <slot />
-</ul>
+<div class="horizontal-list">
+  <ul aria-label={label} id={id} class:list={['shelf', gap === 'large' && 'shelf-large']} >
+    <slot />
+  </ul>
+  <div class="paddles" hidden>
+    <button aria-controls={id} aria-label="Scroll back" class="paddle" data-direction="-1" type="button">
+      <i aria-hidden="true" class="bi bi-chevron-left"></i>
+    </button>
+    <button aria-controls={id} aria-label="Scroll forward" class="paddle" data-direction="1" type="button">
+      <i aria-hidden="true" class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</div>
 
 <style>
-  .horizontal-list {
+  .shelf {
     display: flex;
-    gap: 1rem;
-    align-items: stretch;
-    padding: 1.25rem var(--content-padding) 2.25rem var(--inset);
-    margin-top: -1rem;
-    margin-bottom: -1rem;
-    overflow-x: scroll;
-    list-style: none;
+    gap: var(--space-md);
+    padding: var(--space-2xl) var(--inset);
+    margin: calc(var(--space-xs) - var(--space-2xl)) 0 calc(var(--space-lg) - var(--space-2xl));
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     scroll-padding-left: var(--inset);
     scrollbar-width: none;
   }
 
+  .shelf::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 901px) {
+    .shelf-large {
+      gap: var(--space-lg);
+    }
+  }
+
   @media (max-width: 600px) {
-    .horizontal-list {
+    .shelf {
       scroll-padding-left: 0;
     }
   }
+
+
+  .paddles {
+    display: flex;
+    gap: var(--space-xs);
+    justify-content: flex-end;
+    max-width: calc(var(--content-max-width) + 2 * var(--gutter));
+    padding: 0 var(--gutter);
+    margin: var(--space-md) auto 0;
+  }
+
+  .paddles[hidden] {
+    display: none;
+  }
+
+  .paddle {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    cursor: pointer;
+    background: var(--color-background-secondary);
+    border-radius: 50%;
+    transition: background-color 200ms ease, opacity 200ms ease;
+  }
+
+  :global(.section-secondary) .paddle {
+    background: var(--color-background);
+  }
+
+  @media (hover: hover) {
+    .paddle:hover:not(:disabled) {
+      background: color-mix(in oklab, var(--color-accent) 14%, var(--color-background-secondary));
+    }
+
+    :global(.section-secondary) .paddle:hover:not(:disabled) {
+      background: color-mix(in oklab, var(--color-accent) 10%, var(--color-background));
+    }
+  }
+
+  .paddle:disabled {
+    cursor: default;
+    opacity: 0.35;
+  }
 </style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.horizontal-list').forEach((list) => {
+    const shelf = list.querySelector<HTMLElement>('.shelf')
+    const paddles = list.querySelector<HTMLElement>('.paddles')
+    const buttons = list.querySelectorAll<HTMLButtonElement>('.paddle')
+
+    if (!shelf || !paddles || buttons.length !== 2) return
+
+    const [back, forward] = buttons
+
+    const update = () => {
+      paddles.hidden = shelf.scrollWidth <= shelf.clientWidth + 4
+      if (back) back.disabled = shelf.scrollLeft <= 4
+      if (forward) forward.disabled = shelf.scrollLeft + shelf.clientWidth >= shelf.scrollWidth - 4
+    }
+
+    const snapPositions = () => {
+      const shelfRect = shelf.getBoundingClientRect()
+      const paddingLeft = parseFloat(getComputedStyle(shelf).scrollPaddingLeft) || 0
+      const maxScroll = shelf.scrollWidth - shelf.clientWidth
+
+      return Array.from(shelf.children).map((item) => {
+        const rect = item.getBoundingClientRect()
+        const left = rect.left - shelfRect.left + shelf.scrollLeft
+        const align = getComputedStyle(item).scrollSnapAlign
+        const target = align.includes('center')
+          ? left + rect.width / 2 - shelf.clientWidth / 2
+          : left - paddingLeft
+
+        return Math.min(Math.max(target, 0), maxScroll)
+      })
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const positions = snapPositions()
+        const current = shelf.scrollLeft
+        const target =
+          Number(button.dataset.direction) > 0
+            ? positions.find((position) => position > current + 1)
+            : positions.findLast((position) => position < current - 1)
+
+        if (target !== undefined) shelf.scrollTo({ behavior: 'smooth', left: target })
+      })
+    })
+
+    shelf.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+    update()
+  })
+</script>

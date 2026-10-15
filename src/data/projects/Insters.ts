@@ -40,6 +40,16 @@ const INSTERS: Project = {
     PROFILE.frameworks.apple.coreImage,
     PROFILE.frameworks.apple.storeKit,
   ],
+  highlights: [
+    {
+      feature: 'Image Filters',
+      screenshot: {
+        altText: 'Photo with color filters to choose from',
+        dark: ScreenshotsIphoneDark.EditImage,
+        light: ScreenshotsIphoneLight.EditImage,
+      },
+    },
+  ],
   id: 'insters',
   languages: [PROFILE.languages.swift, PROFILE.languages.metal],
   metaDescription:
@@ -79,6 +89,14 @@ const INSTERS: Project = {
     'Implementation of in-app purchases',
     'Color adjustment algorithms',
   ],
+  theme: {
+    accent: { dark: '#c467f4', light: '#a548d4' },
+    accentText: { dark: '#cf78fe', light: '#9b3cc8' },
+    background: { dark: '#231a29', light: '#fcf8ff' },
+    backgroundSecondary: { dark: '#271d2e', light: '#f7ebfe' },
+    onAccent: { dark: '#160e1b', light: '#ffffff' },
+    text: { dark: '#f4f0f7', light: '#251f29' },
+  },
   titleImage: {
     altText: 'Preview collection of screenshots',
     dark: InstersPreviews.titleDark,

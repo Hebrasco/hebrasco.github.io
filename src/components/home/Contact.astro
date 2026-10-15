@@ -3,60 +3,41 @@ import Button from 'components/ui/Button.astro'
 import Section from 'components/ui/Section.astro'
 import { CONFIG } from 'data'
 ---
-<Section id="contact">
-  <div class="contact-inner">
-    <h2 class="contact-title">Get in touch.</h2>
-    <p class="contact-sub">Interested in working together or just want to say hello?</p>
-    <Button href={`mailto:${CONFIG.profile.email}`} variant="email" >
-      {CONFIG.profile.email}
-    </Button>
-    <div class="contact-socials">
-      <Button href={CONFIG.references.gitHubUrl} target="_blank" variant="chip" >GitHub</Button>
-      <Button href={CONFIG.references.appStoreUrl} target="_blank" variant="chip" >App Store</Button>
-      <Button download href={'/daniel_bedrich_resume.pdf'} variant="chip" >Resume ↓</Button>
+<Section background="secondary" id="contact">
+  <div class="wrap contact">
+    <h2>Get in touch.</h2>
+    <p>Interested in working together or just want to say hello?</p>
+    <Button href={`mailto:${CONFIG.profile.email}`} icon="bi-envelope">{CONFIG.profile.email}</Button>
+    <div class="links">
+      <Button href={CONFIG.references.gitHubUrl} icon="bi-github" target="_blank" variant="neutral">GitHub</Button>
+      <Button href={CONFIG.references.appStoreUrl} icon="bi-app-indicator" target="_blank" variant="neutral">App Store</Button>
+      <Button download href="/daniel_bedrich_resume.pdf" icon="bi-file-earmark-text" variant="neutral">Resume</Button>
     </div>
   </div>
 </Section>
 
 <style>
-  .contact-inner {
-    max-width: 37.5rem;
-    padding: 5rem var(--content-padding);
-    margin: 0 auto;
+  .contact {
     text-align: center;
   }
 
-  .contact-title {
-    margin-bottom: 0.875rem;
+  h2 {
     font-size: var(--text-section);
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
-    color: var(--primary-text-color);
-    letter-spacing: var(--letter-spacing-heading);
+    line-height: 1.1;
   }
 
-  .contact-sub {
-    margin-bottom: 2rem;
-    font-size: var(--text-body);
-    line-height: var(--line-height-body);
-    color: var(--secondary-text-color);
+  p {
+    max-width: 30rem;
+    margin: var(--space-sm) auto var(--space-xl);
+    font-size: var(--text-title);
+    color: var(--color-text-secondary);
   }
 
-  .contact-socials {
+  .links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: var(--space-sm);
     justify-content: center;
-    margin-top: 1.25rem;
-  }
-
-  @media (max-width: 600px) {
-    .contact-inner {
-      padding: var(--section-padding-vertical-mobile) var(--content-padding-mobile);
-    }
-
-    .contact-title {
-      font-size: var(--text-large-title);
-    }
+    margin-top: var(--space-lg);
   }
 </style>

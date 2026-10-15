@@ -1,59 +1,77 @@
 ---
-import InfoBlock from 'components/ui/InfoBlock.astro'
 import Section from 'components/ui/Section.astro'
+import SectionHeader from 'components/ui/SectionHeader.astro'
 import SkillBadges from 'components/ui/SkillBadges.astro'
+import { getStatusDetail } from 'utils/project'
+import { getThemeClass } from 'utils/theme'
 import type { Project } from 'types'
 
 interface Props {
   project: Project
 }
-const { project } = Astro.props
 
-const statusLabel = project.status.type
-const statusDate = project.status.date?.toLocaleDateString() ?? '-'
+const { project } = Astro.props
 ---
-<Section>
-  <div class="key-info">
-    <InfoBlock label="Frameworks">
-      <SkillBadges skills={project.frameworks} />
-    </InfoBlock>
-    <InfoBlock label="Languages">
-      <SkillBadges skills={project.languages} />
-    </InfoBlock>
-    <InfoBlock label="Platforms">
-      <p class="info-value">{project.platforms.join(', ')}</p>
-    </InfoBlock>
-    <InfoBlock label={statusLabel}>
-      <p class="info-value">{statusDate}</p>
-    </InfoBlock>
+<Section class="section-flush-top">
+  <div class="wrap">
+    <SectionHeader title="Details." />
+    <dl class={`details ${getThemeClass(project)}`}>
+      <div>
+        <dt>Platforms</dt>
+        <dd>{project.platforms.join(', ')}</dd>
+      </div>
+      <div>
+        <dt>Status</dt>
+        <dd>{getStatusDetail(project)}</dd>
+      </div>
+      <div>
+        <dt>Languages</dt>
+        <dd><SkillBadges skills={project.languages} /></dd>
+      </div>
+      <div>
+        <dt>Frameworks</dt>
+        <dd><SkillBadges skills={project.frameworks} /></dd>
+      </div>
+    </dl>
   </div>
 </Section>
 
 <style>
-  .key-info {
+  .details {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 2.5rem var(--inset);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-xl);
+    color: var(--color-text);
+    background: none;
   }
 
-  .badge-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
+  .details > div {
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-hairline);
   }
 
-  .info-value {
+  dt {
+    margin-bottom: var(--space-sm);
     font-size: var(--text-callout);
-    line-height: var(--line-height-ui);
-    color: var(--primary-text-color);
+    color: var(--color-text-secondary);
   }
 
-  @media (max-width: 600px) {
-    .key-info {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+  dd {
+    font-size: var(--text-title);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.35;
+    letter-spacing: var(--letter-spacing-subheading);
+  }
+
+  dd :global(.badge) {
+    padding: 0.3rem 0.7rem;
+    font-size: var(--text-callout);
+    letter-spacing: 0;
+  }
+
+  @media (max-width: 900px) {
+    .details {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-
 </style>
