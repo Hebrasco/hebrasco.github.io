@@ -56,9 +56,21 @@ import { getThemeClass } from 'utils/theme'
     transition: transform 450ms var(--ease), box-shadow 450ms var(--ease);
   }
 
-  .project-card:hover {
-    box-shadow: 2px 8px 24px var(--color-card-shadow-hover);
-    transform: translateY(-4px);
+  @media (hover: hover) {
+    .project-card:hover {
+      box-shadow: 2px 8px 24px var(--color-card-shadow-hover);
+      transform: scale(1.02);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card {
+      transition: box-shadow 450ms var(--ease);
+    }
+
+    .project-card:hover {
+      transform: none;
+    }
   }
 
   .project-text {
