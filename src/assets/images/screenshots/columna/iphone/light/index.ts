@@ -1,0 +1,7 @@
+export { default as Board } from 'assets/images/screenshots/columna/iphone/light/board.webp'
+export { default as Feature } from 'assets/images/screenshots/columna/iphone/light/feature.webp'
+export { default as IssueDetails } from 'assets/images/screenshots/columna/iphone/light/issue-details.webp'
+export { default as Issues } from 'assets/images/screenshots/columna/iphone/light/issues.webp'
+export { default as Labels } from 'assets/images/screenshots/columna/iphone/light/labels.webp'
+export { default as Overview } from 'assets/images/screenshots/columna/iphone/light/overview.webp'
+export { default as Release } from 'assets/images/screenshots/columna/iphone/light/release.webp'

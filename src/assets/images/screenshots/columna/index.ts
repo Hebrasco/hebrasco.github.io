@@ -1,0 +1,6 @@
+export * as ScreenshotsIpadDark from 'assets/images/screenshots/columna/ipad/dark'
+export * as ScreenshotsIpadLight from 'assets/images/screenshots/columna/ipad/light'
+export * as ScreenshotsIphoneDark from 'assets/images/screenshots/columna/iphone/dark'
+export * as ScreenshotsIphoneLight from 'assets/images/screenshots/columna/iphone/light'
+export * as ScreenshotsMacDark from 'assets/images/screenshots/columna/mac/dark'
+export * as ScreenshotsMacLight from 'assets/images/screenshots/columna/mac/light'

@@ -1,0 +1,7 @@
+export { default as Board } from 'assets/images/screenshots/columna/mac/light/board.webp'
+export { default as Feature } from 'assets/images/screenshots/columna/mac/light/feature.webp'
+export { default as IssueDetails } from 'assets/images/screenshots/columna/mac/light/issue-details.webp'
+export { default as Issues } from 'assets/images/screenshots/columna/mac/light/issues.webp'
+export { default as Labels } from 'assets/images/screenshots/columna/mac/light/labels.webp'
+export { default as Overview } from 'assets/images/screenshots/columna/mac/light/overview.webp'
+export { default as Release } from 'assets/images/screenshots/columna/mac/light/release.webp'
