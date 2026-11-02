@@ -1,4 +1,5 @@
 import { ColumnaAppIcons } from 'assets/images/appIcons'
+import { ColumnaHeaders } from 'assets/images/headers'
 import { ColumnaPreviews } from 'assets/images/previews'
 import {
   ScreenshotsIpadDark,
@@ -88,6 +89,11 @@ const COLUMNA: Project = {
     PROFILE.frameworks.apple.coreData,
     PROFILE.frameworks.apple.cloudKit,
   ],
+  headerImage: {
+    altText:
+      'Columna cards for labels, an issue board, issue details and releases floating over a Pompeian red background',
+    image: ColumnaHeaders.header,
+  },
   highlights: [
     {
       feature: 'Board',
