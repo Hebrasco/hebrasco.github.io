@@ -17,15 +17,11 @@ const { project } = Astro.props
 
 type PlatformKey = keyof typeof PLATFORM
 
-const highlightedScreenshots = new Set((project.highlights ?? []).map(({ screenshot }) => screenshot.light.src))
-
 const panels = (Object.keys(project.screenshots) as PlatformKey[])
   .sort((a, b) => (a === 'iphone' ? -1 : b === 'iphone' ? 1 : 0))
   .map((platform) => ({
     platform,
-    screenshots: (project.screenshots[platform] ?? []).filter(
-      ({ light }) => platform !== 'iphone' || !highlightedScreenshots.has(light.src)
-    ),
+    screenshots: project.screenshots[platform] ?? [],
   }))
   .filter(({ screenshots }) => screenshots.length > 0)
 
