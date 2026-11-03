@@ -45,7 +45,7 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
   <div class="wrap">
     <SectionHeader title="Screens.">
       {panels.length > 1 && (
-        <div aria-label="Platform" class="platform-pills" id="platform-pills" role="tablist">
+        <div aria-label="Platform" class="platform-pills" id="platform-pills" role="tablist" style={`--count: ${panels.length}`}>
           {panels.map(({ platform }, index) => (
             <button
               aria-controls={`screens-panel-${platform}`}
@@ -93,27 +93,66 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
 
 <style>
   .platform-pills {
-    display: flex;
-    gap: var(--space-xs);
+    --segment-inset: 0.1875rem;
+    position: relative;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    padding: var(--segment-inset);
+    background: var(--color-background-secondary);
+    border-radius: var(--radius-pill);
+    isolation: isolate;
+  }
+
+  .platform-pills::before {
+    position: absolute;
+    top: var(--segment-inset);
+    bottom: var(--segment-inset);
+    left: var(--segment-inset);
+    z-index: -1;
+    width: calc((100% - 2 * var(--segment-inset)) / var(--count));
+    content: "";
+    background: light-dark(#ffffff, #3a3a3c);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 1px 4px light-dark(rgb(0 0 0 / 0.12), transparent);
+    transition: translate 350ms var(--ease);
+  }
+
+  .platform-pills:has(.pill:nth-child(2)[aria-selected="true"])::before {
+    translate: 100% 0;
+  }
+
+  .platform-pills:has(.pill:nth-child(3)[aria-selected="true"])::before {
+    translate: 200% 0;
+  }
+
+  .platform-pills:has(.pill:nth-child(4)[aria-selected="true"])::before {
+    translate: 300% 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .platform-pills::before {
+      transition: none;
+    }
   }
 
   .pill {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     min-height: 2.75rem;
     padding: 0 1.125rem;
     font-size: var(--text-callout);
     font-weight: var(--font-weight-semibold);
     color: var(--color-text-secondary);
     cursor: pointer;
-    background: var(--color-background-secondary);
     border-radius: var(--radius-pill);
-    transition: background-color var(--transition-base), color var(--transition-base), transform 120ms ease;
+    transition: color var(--transition-base), transform 120ms ease;
   }
 
   @media (hover: hover) {
     .pill:hover {
-      background: var(--color-pill-surface-hover);
+      color: var(--color-text);
     }
   }
 
@@ -122,8 +161,7 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
   }
 
   .pill[aria-selected="true"] {
-    color: var(--color-background);
-    background: var(--color-text);
+    color: var(--color-text);
   }
 
   .screenshot {
