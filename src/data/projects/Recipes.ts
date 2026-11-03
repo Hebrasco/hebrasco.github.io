@@ -67,14 +67,14 @@ const RECIPES: Project = {
   screenshots: {
     ipad: [
       {
-        altText: 'Screenshot of ipad app of the recipe detail screen',
+        altText: 'Recipe details, iPad',
         dark: ScreenshotsIpadLight.RecipeDetails,
         light: ScreenshotsIpadLight.RecipeDetails,
       },
     ],
     iphone: [
       {
-        altText: 'Screenshot of iphone app of the recipe detail screen',
+        altText: 'Recipe details, iPhone',
         dark: ScreenshotsIphoneLight.RecipeDetails,
         light: ScreenshotsIphoneLight.RecipeDetails,
       },
@@ -94,7 +94,7 @@ const RECIPES: Project = {
   ],
   theme: {
     accent: { dark: '#3ab0ae', light: '#098281' },
-    accentText: { dark: '#45b9b7', light: '#0e7b7a' },
+    accentText: { dark: '#45b9b7', light: '#0c7271' },
     background: { dark: '#112221', light: '#f3fcfc' },
     backgroundSecondary: { dark: '#122625', light: '#def6f5' },
     onAccent: { dark: '#001615', light: '#ffffff' },

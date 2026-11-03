@@ -10,7 +10,7 @@
 
   --color-link-text: color-mix(in srgb, var(--color-text) 80%, transparent);
 
-  --color-accent: light-dark(#0071e3, #0a84ff);
+  --color-accent: #0071e3;
   --color-on-accent: #ffffff;
   --color-accent-text: light-dark(#0066cc, #2997ff);
 

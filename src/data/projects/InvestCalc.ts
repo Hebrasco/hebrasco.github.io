@@ -60,7 +60,7 @@ const INVEST_CALC: Project = {
     {
       description: 'No collection of any kind of data.',
       icon: 'bi bi-lock',
-      title: 'Privacy first',
+      title: 'Privacy First',
     },
     {
       description: 'All calculations are synced with iCloud.',
@@ -119,58 +119,54 @@ const INVEST_CALC: Project = {
   screenshots: {
     ipad: [
       {
-        altText: 'Screenshot of ipad app showing all saved calculations',
+        altText: 'All saved calculations, iPad',
         dark: ScreenshotsIpadDark.Calculations,
         light: ScreenshotsIpadLight.Calculations,
       },
       {
-        altText: 'Screenshot of ipad app showing the create calculation modal',
+        altText: 'New calculation sheet, iPad',
         dark: ScreenshotsIpadDark.CreateCalculation,
         light: ScreenshotsIpadLight.CreateCalculation,
       },
       {
-        altText:
-          'Screenshot of ipad app showing calculation details with a chart and list of each year',
+        altText: 'Calculation details with a chart and a list of each year, iPad',
         dark: ScreenshotsIpadDark.CalculationDetails,
         light: ScreenshotsIpadLight.CalculationDetails,
       },
       {
-        altText:
-          'Screenshot of ipad app showing the list of years and the possibility to assign a status to them',
+        altText: 'List of years, each with an assignable status, iPad',
         dark: ScreenshotsIpadDark.CalculationYearlyGoals,
         light: ScreenshotsIpadLight.CalculationYearlyGoals,
       },
       {
-        altText: 'Screenshot of ipad app showing the edit calculation year modal',
+        altText: 'Edit calculation year sheet, iPad',
         dark: ScreenshotsIpadDark.EditCalculationYear,
         light: ScreenshotsIpadLight.EditCalculationYear,
       },
     ],
     iphone: [
       {
-        altText: 'Screenshot of iphone app showing all saved calculations',
+        altText: 'All saved calculations, iPhone',
         dark: ScreenshotsIphoneDark.Calculations,
         light: ScreenshotsIphoneLight.Calculations,
       },
       {
-        altText: 'Screenshot of iphone app showing the create calculation modal',
+        altText: 'New calculation sheet, iPhone',
         dark: ScreenshotsIphoneDark.CreateCalculation,
         light: ScreenshotsIphoneLight.CreateCalculation,
       },
       {
-        altText:
-          'Screenshot of iphone app showing calculation details with a chart and list of each year',
+        altText: 'Calculation details with a chart and a list of each year, iPhone',
         dark: ScreenshotsIphoneDark.CalculationDetails,
         light: ScreenshotsIphoneLight.CalculationDetails,
       },
       {
-        altText:
-          'Screenshot of iphone app showing the list of years and the possibility to assign a status to them',
+        altText: 'List of years, each with an assignable status, iPhone',
         dark: ScreenshotsIphoneDark.CalculationYearlyGoals,
         light: ScreenshotsIphoneLight.CalculationYearlyGoals,
       },
       {
-        altText: 'Screenshot of iphone app showing the edit calculation year modal',
+        altText: 'Edit calculation year sheet, iPhone',
         dark: ScreenshotsIphoneDark.EditCalculationYear,
         light: ScreenshotsIphoneLight.EditCalculationYear,
       },

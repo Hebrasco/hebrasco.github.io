@@ -81,7 +81,7 @@ const COLUMNA: Project = {
     {
       description: 'No collection of any kind of data.',
       icon: 'bi bi-lock',
-      title: 'Privacy first',
+      title: 'Privacy First',
     },
   ],
   frameworks: [
@@ -134,111 +134,111 @@ const COLUMNA: Project = {
   screenshots: {
     ipad: [
       {
-        altText: 'Screenshot of ipad app of the board screen',
+        altText: 'Board, iPad',
         dark: ScreenshotsIpadDark.Board,
         light: ScreenshotsIpadLight.Board,
       },
       {
-        altText: 'Screenshot of ipad app of the board with the issue inspector',
+        altText: 'Board with the issue inspector, iPad',
         dark: ScreenshotsIpadDark.IssueDetails,
         light: ScreenshotsIpadLight.IssueDetails,
       },
       {
-        altText: 'Screenshot of ipad app of the issue table',
+        altText: 'Issue table, iPad',
         dark: ScreenshotsIpadDark.Issues,
         light: ScreenshotsIpadLight.Issues,
       },
       {
-        altText: 'Screenshot of ipad app of the project overview',
+        altText: 'Project overview, iPad',
         dark: ScreenshotsIpadDark.Overview,
         light: ScreenshotsIpadLight.Overview,
       },
       {
-        altText: 'Screenshot of ipad app of a release with its issues',
+        altText: 'Release with its issues, iPad',
         dark: ScreenshotsIpadDark.Release,
         light: ScreenshotsIpadLight.Release,
       },
       {
-        altText: 'Screenshot of ipad app of a feature with its issues',
+        altText: 'Feature with its issues, iPad',
         dark: ScreenshotsIpadDark.Feature,
         light: ScreenshotsIpadLight.Feature,
       },
       {
-        altText: 'Screenshot of ipad app of the labels screen',
+        altText: 'Labels, iPad',
         dark: ScreenshotsIpadDark.Labels,
         light: ScreenshotsIpadLight.Labels,
       },
     ],
     iphone: [
       {
-        altText: 'Screenshot of iphone app of the board screen',
+        altText: 'Board, iPhone',
         dark: ScreenshotsIphoneDark.Board,
         light: ScreenshotsIphoneLight.Board,
       },
       {
-        altText: 'Screenshot of iphone app of the issue detail screen',
+        altText: 'Issue details, iPhone',
         dark: ScreenshotsIphoneDark.IssueDetails,
         light: ScreenshotsIphoneLight.IssueDetails,
       },
       {
-        altText: 'Screenshot of iphone app of the issue list',
+        altText: 'Issue list, iPhone',
         dark: ScreenshotsIphoneDark.Issues,
         light: ScreenshotsIphoneLight.Issues,
       },
       {
-        altText: 'Screenshot of iphone app of the project overview',
+        altText: 'Project overview, iPhone',
         dark: ScreenshotsIphoneDark.Overview,
         light: ScreenshotsIphoneLight.Overview,
       },
       {
-        altText: 'Screenshot of iphone app of a release with its issues',
+        altText: 'Release with its issues, iPhone',
         dark: ScreenshotsIphoneDark.Release,
         light: ScreenshotsIphoneLight.Release,
       },
       {
-        altText: 'Screenshot of iphone app of a feature with its issues',
+        altText: 'Feature with its issues, iPhone',
         dark: ScreenshotsIphoneDark.Feature,
         light: ScreenshotsIphoneLight.Feature,
       },
       {
-        altText: 'Screenshot of iphone app of the labels screen',
+        altText: 'Labels, iPhone',
         dark: ScreenshotsIphoneDark.Labels,
         light: ScreenshotsIphoneLight.Labels,
       },
     ],
     mac: [
       {
-        altText: 'Screenshot of mac app of the board screen',
+        altText: 'Board, Mac',
         dark: ScreenshotsMacDark.Board,
         light: ScreenshotsMacLight.Board,
       },
       {
-        altText: 'Screenshot of mac app of the board with the issue inspector',
+        altText: 'Board with the issue inspector, Mac',
         dark: ScreenshotsMacDark.IssueDetails,
         light: ScreenshotsMacLight.IssueDetails,
       },
       {
-        altText: 'Screenshot of mac app of the issue table',
+        altText: 'Issue table, Mac',
         dark: ScreenshotsMacDark.Issues,
         light: ScreenshotsMacLight.Issues,
       },
       {
-        altText: 'Screenshot of mac app of the project overview',
+        altText: 'Project overview, Mac',
         dark: ScreenshotsMacDark.Overview,
         light: ScreenshotsMacLight.Overview,
       },
       {
-        altText: 'Screenshot of mac app of a release with its issues',
+        altText: 'Release with its issues, Mac',
         dark: ScreenshotsMacDark.Release,
         light: ScreenshotsMacLight.Release,
       },
       {
-        altText: 'Screenshot of mac app of a feature with its issues',
+        altText: 'Feature with its issues, Mac',
         dark: ScreenshotsMacDark.Feature,
         light: ScreenshotsMacLight.Feature,
       },
       {
-        altText: 'Screenshot of mac app of the labels screen',
+        altText: 'Labels, Mac',
         dark: ScreenshotsMacDark.Labels,
         light: ScreenshotsMacLight.Labels,
       },

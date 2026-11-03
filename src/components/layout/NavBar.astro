@@ -38,6 +38,14 @@ import { CONFIG, ROUTES } from 'data'
     backdrop-filter: saturate(160%) blur(18px);
   }
 
+  @media (prefers-reduced-transparency: reduce) {
+    .nav {
+      background: var(--color-background);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+
   .nav-inner {
     display: flex;
     align-items: center;
@@ -121,6 +129,8 @@ import { CONFIG, ROUTES } from 'data'
   }
 
   .nav-item {
+    padding: 0.75rem 0;
+    margin: -0.75rem 0;
     font-size: var(--text-callout);
     color: var(--color-link-text);
     transition: color var(--transition-base);
@@ -148,6 +158,7 @@ import { CONFIG, ROUTES } from 'data'
     .nav-item {
       width: 100%;
       padding: 0.6875rem 0;
+      margin: 0;
       font-size: var(--text-body);
     }
 
@@ -241,6 +252,14 @@ import { CONFIG, ROUTES } from 'data'
 
         handleClose()
         btn.classList.remove('open')
+        btn.setAttribute('aria-expanded', 'false')
+      })
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape' || !btn.classList.contains('open')) return
+
+        btn.click()
+        btn.focus()
       })
   }
 </script>

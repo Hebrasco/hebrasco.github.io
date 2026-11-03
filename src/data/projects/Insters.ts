@@ -65,14 +65,14 @@ const INSTERS: Project = {
   screenshots: {
     ipad: [
       {
-        altText: 'Screenshot of ipad app of the edit image screen',
+        altText: 'Image editor, iPad',
         dark: ScreenshotsIpadDark.EditImage,
         light: ScreenshotsIpadLight.EditImage,
       },
     ],
     iphone: [
       {
-        altText: 'Screenshot of iphone app of the edit image screen',
+        altText: 'Image editor, iPhone',
         dark: ScreenshotsIphoneDark.EditImage,
         light: ScreenshotsIphoneLight.EditImage,
       },

@@ -71,7 +71,7 @@ const FINANCIAL_PLAN: Project = {
     {
       description: 'No collection of any kind of data.',
       icon: 'bi bi-lock',
-      title: 'Privacy first',
+      title: 'Privacy First',
     },
     {
       description: 'All accounts and transactions are synced with iCloud.',
@@ -137,84 +137,84 @@ const FINANCIAL_PLAN: Project = {
   screenshots: {
     ipad: [
       {
-        altText: 'Screenshot of ipad app of accounts screen',
+        altText: 'Accounts, iPad',
         dark: ScreenshotsIpadDark.Accounts,
         light: ScreenshotsIpadLight.Accounts,
       },
       {
-        altText: 'Screenshot of ipad app of account detail screen',
+        altText: 'Account details, iPad',
         dark: ScreenshotsIpadDark.AccountDetails,
         light: ScreenshotsIpadLight.AccountDetails,
       },
       {
-        altText: 'Screenshot of ipad app of edit transaction screen with price history',
+        altText: 'Edit transaction with price history, iPad',
         dark: ScreenshotsIpadDark.EditTransaction,
         light: ScreenshotsIpadLight.EditTransaction,
       },
       {
-        altText: 'Screenshot of ipad app of edit transfer screen',
+        altText: 'Edit transfer, iPad',
         dark: ScreenshotsIpadDark.EditTransfer,
         light: ScreenshotsIpadLight.EditTransfer,
       },
       {
-        altText: 'Screenshot of ipad app of reports overview screen',
+        altText: 'Reports overview, iPad',
         dark: ScreenshotsIpadDark.Reports,
         light: ScreenshotsIpadLight.Reports,
       },
       {
-        altText: 'Screenshot of ipad app of category report screen',
+        altText: 'Category report, iPad',
         dark: ScreenshotsIpadDark.ReportsCategory,
         light: ScreenshotsIpadLight.ReportsCategory,
       },
       {
-        altText: 'Screenshot of ipad app of reports screen showing price changes',
+        altText: 'Price changes report, iPad',
         dark: ScreenshotsIpadDark.ReportsPriceChanges,
         light: ScreenshotsIpadLight.ReportsPriceChanges,
       },
       {
-        altText: 'Screenshot of ipad app of reports screen showing trends',
+        altText: 'Category trends report, iPad',
         dark: ScreenshotsIpadDark.ReportsTrends,
         light: ScreenshotsIpadLight.ReportsTrends,
       },
     ],
     iphone: [
       {
-        altText: 'Screenshot of iphone app of accounts screen',
+        altText: 'Accounts, iPhone',
         dark: ScreenshotsIphoneDark.Accounts,
         light: ScreenshotsIphoneLight.Accounts,
       },
       {
-        altText: 'Screenshot of iphone app of account detail screen',
+        altText: 'Account details, iPhone',
         dark: ScreenshotsIphoneDark.AccountDetails,
         light: ScreenshotsIphoneLight.AccountDetails,
       },
       {
-        altText: 'Screenshot of iphone app of edit transaction screen with price history',
+        altText: 'Edit transaction with price history, iPhone',
         dark: ScreenshotsIphoneDark.EditTransaction,
         light: ScreenshotsIphoneLight.EditTransaction,
       },
       {
-        altText: 'Screenshot of iphone app of edit transfer screen',
+        altText: 'Edit transfer, iPhone',
         dark: ScreenshotsIphoneDark.EditTransfer,
         light: ScreenshotsIphoneLight.EditTransfer,
       },
       {
-        altText: 'Screenshot of iphone app of reports overview screen',
+        altText: 'Reports overview, iPhone',
         dark: ScreenshotsIphoneDark.Reports,
         light: ScreenshotsIphoneLight.Reports,
       },
       {
-        altText: 'Screenshot of iphone app of category report screen',
+        altText: 'Category report, iPhone',
         dark: ScreenshotsIphoneDark.ReportsCategory,
         light: ScreenshotsIphoneLight.ReportsCategory,
       },
       {
-        altText: 'Screenshot of iphone app of reports screen showing price changes',
+        altText: 'Price changes report, iPhone',
         dark: ScreenshotsIphoneDark.ReportsPriceChanges,
         light: ScreenshotsIphoneLight.ReportsPriceChanges,
       },
       {
-        altText: 'Screenshot of iphone app of reports screen showing trends',
+        altText: 'Category trends report, iPhone',
         dark: ScreenshotsIphoneDark.ReportsTrends,
         light: ScreenshotsIphoneLight.ReportsTrends,
       },

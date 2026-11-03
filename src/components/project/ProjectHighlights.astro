@@ -59,7 +59,7 @@ if (highlights.length === 0) {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-xl);
     align-items: center;
-    width: min(80vw, 52rem);
+    width: min(80vw, var(--content-max-width));
     height: clamp(28rem, 20rem + 18vw, 36rem);
     padding: 0 var(--space-3xl);
     overflow: hidden;
@@ -85,6 +85,13 @@ if (highlights.length === 0) {
     justify-self: center;
     width: min(100%, 17rem);
     margin-bottom: -3rem;
+  }
+
+  @media (min-width: 1400px) {
+    picture {
+      width: min(100%, 20rem);
+      margin-bottom: -8rem;
+    }
   }
 
   .shot {

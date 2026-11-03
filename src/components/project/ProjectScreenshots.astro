@@ -49,9 +49,18 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
   <div class="wrap">
     <SectionHeader title="Screens.">
       {panels.length > 1 && (
-        <div class="platform-pills" id="platform-pills">
+        <div aria-label="Platform" class="platform-pills" id="platform-pills" role="tablist">
           {panels.map(({ platform }, index) => (
-            <button aria-pressed={index === 0 ? 'true' : 'false'} class="pill" data-platform={platform} type="button">
+            <button
+              aria-controls={`screens-panel-${platform}`}
+              aria-selected={index === 0 ? 'true' : 'false'}
+              class="pill"
+              data-platform={platform}
+              id={`screens-tab-${platform}`}
+              role="tab"
+              tabindex={index === 0 ? '0' : '-1'}
+              type="button"
+            >
               {PLATFORM[platform]}
             </button>
           ))}
@@ -60,7 +69,12 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
     </SectionHeader>
   </div>
   {panels.map(({ platform, screenshots }, index) => (
-    <div data-platform-panel={platform} style={index !== 0 ? 'display:none' : ''}>
+    <div
+      data-platform-panel={platform}
+      hidden={index !== 0}
+      id={`screens-panel-${platform}`}
+      {...(panels.length > 1 ? { 'aria-labelledby': `screens-tab-${platform}`, role: 'tabpanel' } : {})}
+    >
       <HorizontalList id={`screens-${platform}`} label={`${PLATFORM[platform]} screens`}>
         {screenshots.map(async (screenshot) => {
           const width = getPlatformScreenshotWidth(platform)
@@ -88,7 +102,10 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
   }
 
   .pill {
-    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 1.125rem;
     font-size: var(--text-callout);
     font-weight: var(--font-weight-semibold);
     color: var(--color-text-secondary);
@@ -108,9 +125,14 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
     transform: scale(0.97);
   }
 
-  .pill[aria-pressed="true"] {
+  .pill[aria-selected="true"] {
     color: var(--color-background);
     background: var(--color-text);
+  }
+
+  .screenshot {
+    filter: var(--filter-drop-shadow);
+    will-change: filter;
   }
 
   picture[data-platform-screenshot="iphone"] .screenshot {
@@ -152,23 +174,49 @@ function getPlatformScreenshotWidth(platform: PlatformKey): number {
   const platformPills = document.querySelector('#platform-pills')
 
   if (platformPills) {
-    const pills = platformPills.querySelectorAll<HTMLElement>('.pill')
+    const pills = Array.from(platformPills.querySelectorAll<HTMLElement>('.pill'))
 
-    pills.forEach((pill) => {
-      pill.addEventListener('click', () => {
-        const platform = pill.dataset.platform
+    const select = (pill: HTMLElement) => {
+      const platform = pill.dataset.platform
 
-        pills.forEach((p) => {
-          p.setAttribute('aria-pressed', String(p.dataset.platform === platform))
-        })
+      pills.forEach((p) => {
+        const isSelected = p === pill
 
-        document.querySelectorAll<HTMLElement>('[data-platform-panel]').forEach((panel) => {
-          const isVisible = panel.dataset.platformPanel === platform
+        p.setAttribute('aria-selected', String(isSelected))
+        p.tabIndex = isSelected ? 0 : -1
+      })
 
-          panel.style.display = isVisible ? '' : 'none'
+      document.querySelectorAll<HTMLElement>('[data-platform-panel]').forEach((panel) => {
+        const isVisible = panel.dataset.platformPanel === platform
 
-          if (isVisible) panel.querySelector('.shelf')?.dispatchEvent(new Event('scroll'))
-        })
+        panel.hidden = !isVisible
+
+        if (isVisible) panel.querySelector('.shelf')?.dispatchEvent(new Event('scroll'))
+      })
+    }
+
+    pills.forEach((pill, index) => {
+      pill.addEventListener('click', () => select(pill))
+
+      pill.addEventListener('keydown', (event) => {
+        const offsets: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1 }
+        const targets: Record<string, number> = { End: pills.length - 1, Home: 0 }
+        const key = event.key
+        const next =
+          key in offsets
+            ? (index + (offsets[key] ?? 0) + pills.length) % pills.length
+            : targets[key]
+
+        if (next === undefined) return
+
+        event.preventDefault()
+
+        const target = pills[next]
+
+        if (!target) return
+
+        select(target)
+        target.focus()
       })
     })
   }

@@ -1,5 +1,4 @@
 ---
-import Button from 'components/ui/Button.astro'
 import Section from 'components/ui/Section.astro'
 import SkillBadges from 'components/ui/SkillBadges.astro'
 import { CONFIG, PROFILE } from 'data'
@@ -17,9 +16,6 @@ const skillGroups = [
       <p>
         I'm an {CONFIG.profile.jobTitle} with <strong>over ten years of experience</strong> turning ideas into products people love to use. I think about structure and long-term decisions early, so the projects I build can grow without needing to be rebuilt. The apps I've built have reached <strong>hundreds of thousands of users</strong>, and I'm proud of every one of them.
       </p>
-      <div class="actions">
-        <Button download href="/daniel_bedrich_resume.pdf" icon="bi-download" variant="soft">Download resume</Button>
-      </div>
     </div>
     <div class="skill-groups">
       {skillGroups.map(({ title, skills }) => (
@@ -59,10 +55,6 @@ const skillGroups = [
   .about-text strong {
     font-weight: var(--font-weight-semibold);
     color: var(--color-text);
-  }
-
-  .actions {
-    margin-top: var(--space-xl);
   }
 
   .skill-groups {
