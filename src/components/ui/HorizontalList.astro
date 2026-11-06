@@ -23,10 +23,12 @@ const { id, label, gap = 'regular' } = Astro.props
 
 <style>
   .shelf {
+    --shelf-bleed: var(--space-3xl);
+
     display: flex;
     gap: var(--space-md);
-    padding: var(--space-2xl) var(--inset);
-    margin: calc(var(--space-xs) - var(--space-2xl)) 0 calc(var(--space-lg) - var(--space-2xl));
+    padding: var(--shelf-bleed) var(--inset);
+    margin: calc(var(--space-xs) - var(--shelf-bleed)) 0 calc(var(--space-lg) - var(--shelf-bleed));
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
