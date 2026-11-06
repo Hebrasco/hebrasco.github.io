@@ -1,4 +1,5 @@
 export * as BloomHeaders from 'assets/images/headers/bloom'
 export * as ColumnaHeaders from 'assets/images/headers/columna'
 export * as FinancePlanHeaders from 'assets/images/headers/financialPlan'
+export * as InstersHeaders from 'assets/images/headers/insters'
 export * as InvestCalcHeaders from 'assets/images/headers/investCalc'
