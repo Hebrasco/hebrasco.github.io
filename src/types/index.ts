@@ -1,8 +1,6 @@
 export type { ApplicationCollection } from 'types/ApplicationCollection'
 export type { FrameworkCollection } from 'types/FrameworkCollection'
 export type { LanguageCollection } from 'types/LanguageCollection'
-export type { PreviewImage } from 'types/PreviewImage'
 export type { Project } from 'types/Project'
 export type { Skill } from 'types/Skill'
 export type { SkillCollection } from 'types/SkillCollection'
-export type { TitleImage } from 'types/TitleImage'

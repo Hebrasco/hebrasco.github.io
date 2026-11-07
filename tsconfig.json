@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
     "forceConsistentCasingInFileNames": true,
+    "paths": { "*": ["./src/*"] },
     "resolveJsonModule": true
   },
   "extends": "astro/tsconfigs/strictest"
