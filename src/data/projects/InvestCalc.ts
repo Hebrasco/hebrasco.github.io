@@ -1,4 +1,5 @@
 import { InvestCalcAppIcons } from 'assets/images/appIcons'
+import { InvestCalcHeaders } from 'assets/images/headers'
 import { InvestCalcPreviews } from 'assets/images/previews'
 import {
   ScreenshotsIpadDark,
@@ -59,7 +60,7 @@ const INVEST_CALC: Project = {
     {
       description: 'No collection of any kind of data.',
       icon: 'bi bi-lock',
-      title: 'Privacy first',
+      title: 'Privacy First',
     },
     {
       description: 'All calculations are synced with iCloud.',
@@ -71,6 +72,37 @@ const INVEST_CALC: Project = {
     PROFILE.frameworks.apple.swiftUI,
     PROFILE.frameworks.apple.swiftCharts,
     PROFILE.frameworks.apple.swiftData,
+  ],
+  headerImage: {
+    altText:
+      'Invest. Calc cards for investment results, yearly balances, goals, plan comparison and inflation floating over a green background',
+    image: InvestCalcHeaders.header,
+  },
+  highlights: [
+    {
+      feature: 'Chart',
+      screenshot: {
+        altText: 'Calculation details with a chart of each year',
+        dark: ScreenshotsIphoneDark.CalculationDetails,
+        light: ScreenshotsIphoneLight.CalculationDetails,
+      },
+    },
+    {
+      feature: 'Year Details',
+      screenshot: {
+        altText: 'Details of a single calculation year',
+        dark: ScreenshotsIphoneDark.CalculationYearDetail,
+        light: ScreenshotsIphoneLight.CalculationYearDetail,
+      },
+    },
+    {
+      feature: 'Goal Tracking',
+      screenshot: {
+        altText: 'List of years with an achieved or missed status',
+        dark: ScreenshotsIphoneDark.CalculationYearlyGoals,
+        light: ScreenshotsIphoneLight.CalculationYearlyGoals,
+      },
+    },
   ],
   id: 'invest-calc',
   languages: [PROFILE.languages.swift],
@@ -87,58 +119,54 @@ const INVEST_CALC: Project = {
   screenshots: {
     ipad: [
       {
-        altText: 'Screenshot of ipad app showing all saved calculations',
+        altText: 'All saved calculations, iPad',
         dark: ScreenshotsIpadDark.Calculations,
         light: ScreenshotsIpadLight.Calculations,
       },
       {
-        altText: 'Screenshot of ipad app showing the create calculation modal',
+        altText: 'New calculation sheet, iPad',
         dark: ScreenshotsIpadDark.CreateCalculation,
         light: ScreenshotsIpadLight.CreateCalculation,
       },
       {
-        altText:
-          'Screenshot of ipad app showing calculation details with a chart and list of each year',
+        altText: 'Calculation details with a chart and a list of each year, iPad',
         dark: ScreenshotsIpadDark.CalculationDetails,
         light: ScreenshotsIpadLight.CalculationDetails,
       },
       {
-        altText:
-          'Screenshot of ipad app showing the list of years and the possibility to assign a status to them',
+        altText: 'List of years, each with an assignable status, iPad',
         dark: ScreenshotsIpadDark.CalculationYearlyGoals,
         light: ScreenshotsIpadLight.CalculationYearlyGoals,
       },
       {
-        altText: 'Screenshot of ipad app showing the edit calculation year modal',
+        altText: 'Edit calculation year sheet, iPad',
         dark: ScreenshotsIpadDark.EditCalculationYear,
         light: ScreenshotsIpadLight.EditCalculationYear,
       },
     ],
     iphone: [
       {
-        altText: 'Screenshot of iphone app showing all saved calculations',
+        altText: 'All saved calculations, iPhone',
         dark: ScreenshotsIphoneDark.Calculations,
         light: ScreenshotsIphoneLight.Calculations,
       },
       {
-        altText: 'Screenshot of iphone app showing the create calculation modal',
+        altText: 'New calculation sheet, iPhone',
         dark: ScreenshotsIphoneDark.CreateCalculation,
         light: ScreenshotsIphoneLight.CreateCalculation,
       },
       {
-        altText:
-          'Screenshot of iphone app showing calculation details with a chart and list of each year',
+        altText: 'Calculation details with a chart and a list of each year, iPhone',
         dark: ScreenshotsIphoneDark.CalculationDetails,
         light: ScreenshotsIphoneLight.CalculationDetails,
       },
       {
-        altText:
-          'Screenshot of iphone app showing the list of years and the possibility to assign a status to them',
+        altText: 'List of years, each with an assignable status, iPhone',
         dark: ScreenshotsIphoneDark.CalculationYearlyGoals,
         light: ScreenshotsIphoneLight.CalculationYearlyGoals,
       },
       {
-        altText: 'Screenshot of iphone app showing the edit calculation year modal',
+        altText: 'Edit calculation year sheet, iPhone',
         dark: ScreenshotsIphoneDark.EditCalculationYear,
         light: ScreenshotsIphoneLight.EditCalculationYear,
       },
@@ -150,6 +178,14 @@ const INVEST_CALC: Project = {
   },
   summaryHeading: 'Simulate your financial future.',
   tasks: [],
+  theme: {
+    accent: { dark: '#04c883', light: '#028758' },
+    accentText: { dark: '#04c883', light: '#027d52' },
+    background: { dark: '#112317', light: '#f4fdf6' },
+    backgroundSecondary: { dark: '#14271a', light: '#e2f6e7' },
+    onAccent: { dark: '#06150b', light: '#ffffff' },
+    text: { dark: '#edf4ef', light: '#1a251d' },
+  },
   titleImage: {
     altText: 'Preview collection of screenshots',
     dark: InvestCalcPreviews.titleDark,

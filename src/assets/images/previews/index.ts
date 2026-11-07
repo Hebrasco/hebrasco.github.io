@@ -1,6 +1,6 @@
 export * as BloomPreviews from 'assets/images/previews/bloom'
+export * as ColumnaPreviews from 'assets/images/previews/columna'
 export * as FinancePlanPreviews from 'assets/images/previews/financialPlan'
 export * as InstersPreviews from 'assets/images/previews/insters'
 export * as InvestCalcPreviews from 'assets/images/previews/investCalc'
 export * as RecipesPreviews from 'assets/images/previews/recipes'
-export * as UmbrellaPreviews from 'assets/images/previews/umbrella'

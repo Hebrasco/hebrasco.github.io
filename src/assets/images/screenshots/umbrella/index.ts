@@ -1,6 +1,0 @@
-export * as ScreenshotsIpadDark from 'assets/images/screenshots/umbrella/ipad/dark'
-export * as ScreenshotsIpadLight from 'assets/images/screenshots/umbrella/ipad/light'
-export * as ScreenshotsIphoneDark from 'assets/images/screenshots/umbrella/iphone/dark'
-export * as ScreenshotsIphoneLight from 'assets/images/screenshots/umbrella/iphone/light'
-export * as ScreenshotsMacDark from 'assets/images/screenshots/umbrella/mac/dark'
-export * as ScreenshotsMacLight from 'assets/images/screenshots/umbrella/mac/light'

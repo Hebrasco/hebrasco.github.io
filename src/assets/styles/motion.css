@@ -1,0 +1,14 @@
+:root {
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-base: 150ms ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

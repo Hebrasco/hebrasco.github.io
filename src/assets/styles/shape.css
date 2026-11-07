@@ -1,0 +1,9 @@
+:root {
+  --radius-pill: 980px;
+  --radius-sm: 0.75rem;
+  --radius-card: 1.75rem;
+  --radius-tile: 2.25rem;
+  --radius-app-icon: 26.2%;
+
+  --filter-drop-shadow: drop-shadow(3px 5px 30px rgb(0 0 0 / 0.22));
+}

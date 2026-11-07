@@ -1,4 +1,5 @@
 import { FinancePlanAppIcons } from 'assets/images/appIcons'
+import { FinancePlanHeaders } from 'assets/images/headers'
 import { FinancePlanPreviews } from 'assets/images/previews'
 import {
   ScreenshotsIpadDark,
@@ -70,7 +71,7 @@ const FINANCIAL_PLAN: Project = {
     {
       description: 'No collection of any kind of data.',
       icon: 'bi bi-lock',
-      title: 'Privacy first',
+      title: 'Privacy First',
     },
     {
       description: 'All accounts and transactions are synced with iCloud.',
@@ -90,6 +91,37 @@ const FINANCIAL_PLAN: Project = {
     PROFILE.frameworks.apple.cloudKit,
     PROFILE.frameworks.apple.storeKit,
   ],
+  headerImage: {
+    altText:
+      'Financial Plan widgets for income, outgoing and price changes floating over a green background',
+    image: FinancePlanHeaders.header,
+  },
+  highlights: [
+    {
+      feature: 'Accounts',
+      screenshot: {
+        altText: 'Accounts screen with balances per account',
+        dark: ScreenshotsIphoneDark.Accounts,
+        light: ScreenshotsIphoneLight.Accounts,
+      },
+    },
+    {
+      feature: 'Price History',
+      screenshot: {
+        altText: 'Editing a transaction with its price history',
+        dark: ScreenshotsIphoneDark.EditTransaction,
+        light: ScreenshotsIphoneLight.EditTransaction,
+      },
+    },
+    {
+      feature: 'Price Changes',
+      screenshot: {
+        altText: 'Report showing recent and upcoming price changes',
+        dark: ScreenshotsIphoneDark.ReportsPriceChanges,
+        light: ScreenshotsIphoneLight.ReportsPriceChanges,
+      },
+    },
+  ],
   id: 'finance-plan',
   languages: [PROFILE.languages.swift],
   metaDescription:
@@ -105,84 +137,84 @@ const FINANCIAL_PLAN: Project = {
   screenshots: {
     ipad: [
       {
-        altText: 'Screenshot of ipad app of accounts screen',
+        altText: 'Accounts, iPad',
         dark: ScreenshotsIpadDark.Accounts,
         light: ScreenshotsIpadLight.Accounts,
       },
       {
-        altText: 'Screenshot of ipad app of account detail screen',
+        altText: 'Account details, iPad',
         dark: ScreenshotsIpadDark.AccountDetails,
         light: ScreenshotsIpadLight.AccountDetails,
       },
       {
-        altText: 'Screenshot of ipad app of edit transaction screen with price history',
+        altText: 'Edit transaction with price history, iPad',
         dark: ScreenshotsIpadDark.EditTransaction,
         light: ScreenshotsIpadLight.EditTransaction,
       },
       {
-        altText: 'Screenshot of ipad app of edit transfer screen',
+        altText: 'Edit transfer, iPad',
         dark: ScreenshotsIpadDark.EditTransfer,
         light: ScreenshotsIpadLight.EditTransfer,
       },
       {
-        altText: 'Screenshot of ipad app of reports overview screen',
+        altText: 'Reports overview, iPad',
         dark: ScreenshotsIpadDark.Reports,
         light: ScreenshotsIpadLight.Reports,
       },
       {
-        altText: 'Screenshot of ipad app of category report screen',
+        altText: 'Category report, iPad',
         dark: ScreenshotsIpadDark.ReportsCategory,
         light: ScreenshotsIpadLight.ReportsCategory,
       },
       {
-        altText: 'Screenshot of ipad app of reports screen showing price changes',
+        altText: 'Price changes report, iPad',
         dark: ScreenshotsIpadDark.ReportsPriceChanges,
         light: ScreenshotsIpadLight.ReportsPriceChanges,
       },
       {
-        altText: 'Screenshot of ipad app of reports screen showing trends',
+        altText: 'Category trends report, iPad',
         dark: ScreenshotsIpadDark.ReportsTrends,
         light: ScreenshotsIpadLight.ReportsTrends,
       },
     ],
     iphone: [
       {
-        altText: 'Screenshot of iphone app of accounts screen',
+        altText: 'Accounts, iPhone',
         dark: ScreenshotsIphoneDark.Accounts,
         light: ScreenshotsIphoneLight.Accounts,
       },
       {
-        altText: 'Screenshot of iphone app of account detail screen',
+        altText: 'Account details, iPhone',
         dark: ScreenshotsIphoneDark.AccountDetails,
         light: ScreenshotsIphoneLight.AccountDetails,
       },
       {
-        altText: 'Screenshot of iphone app of edit transaction screen with price history',
+        altText: 'Edit transaction with price history, iPhone',
         dark: ScreenshotsIphoneDark.EditTransaction,
         light: ScreenshotsIphoneLight.EditTransaction,
       },
       {
-        altText: 'Screenshot of iphone app of edit transfer screen',
+        altText: 'Edit transfer, iPhone',
         dark: ScreenshotsIphoneDark.EditTransfer,
         light: ScreenshotsIphoneLight.EditTransfer,
       },
       {
-        altText: 'Screenshot of iphone app of reports overview screen',
+        altText: 'Reports overview, iPhone',
         dark: ScreenshotsIphoneDark.Reports,
         light: ScreenshotsIphoneLight.Reports,
       },
       {
-        altText: 'Screenshot of iphone app of category report screen',
+        altText: 'Category report, iPhone',
         dark: ScreenshotsIphoneDark.ReportsCategory,
         light: ScreenshotsIphoneLight.ReportsCategory,
       },
       {
-        altText: 'Screenshot of iphone app of reports screen showing price changes',
+        altText: 'Price changes report, iPhone',
         dark: ScreenshotsIphoneDark.ReportsPriceChanges,
         light: ScreenshotsIphoneLight.ReportsPriceChanges,
       },
       {
-        altText: 'Screenshot of iphone app of reports screen showing trends',
+        altText: 'Category trends report, iPhone',
         dark: ScreenshotsIphoneDark.ReportsTrends,
         light: ScreenshotsIphoneLight.ReportsTrends,
       },
@@ -194,6 +226,14 @@ const FINANCIAL_PLAN: Project = {
   },
   summaryHeading: 'Get a clear cashflow overview.',
   tasks: ['Conception and development', 'User interface development'],
+  theme: {
+    accent: { dark: '#60ac72', light: '#37844c' },
+    accentText: { dark: '#6cb97e', light: '#2d7b44' },
+    background: { dark: '#152218', light: '#f5fcf6' },
+    backgroundSecondary: { dark: '#17261a', light: '#e3f6e6' },
+    onAccent: { dark: '#07150a', light: '#ffffff' },
+    text: { dark: '#edf4ee', light: '#1b241d' },
+  },
   titleImage: {
     altText: 'Preview collection of screenshots',
     dark: FinancePlanPreviews.titleDark,

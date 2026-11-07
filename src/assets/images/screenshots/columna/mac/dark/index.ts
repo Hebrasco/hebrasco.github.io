@@ -1,0 +1,7 @@
+export { default as Board } from 'assets/images/screenshots/columna/mac/dark/board.webp'
+export { default as Feature } from 'assets/images/screenshots/columna/mac/dark/feature.webp'
+export { default as IssueDetails } from 'assets/images/screenshots/columna/mac/dark/issue-details.webp'
+export { default as Issues } from 'assets/images/screenshots/columna/mac/dark/issues.webp'
+export { default as Labels } from 'assets/images/screenshots/columna/mac/dark/labels.webp'
+export { default as Overview } from 'assets/images/screenshots/columna/mac/dark/overview.webp'
+export { default as Release } from 'assets/images/screenshots/columna/mac/dark/release.webp'

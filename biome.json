@@ -16,7 +16,7 @@
     },
     "enabled": true
   },
-  "files": { "ignoreUnknown": false },
+  "files": { "ignoreUnknown": false, "includes": ["**", "!**/.astro", "!**/dist"] },
   "formatter": {
     "attributePosition": "auto",
     "bracketSameLine": false,

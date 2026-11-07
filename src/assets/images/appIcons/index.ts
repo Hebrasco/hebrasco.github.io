@@ -1,5 +1,6 @@
 export { default as BlankAppIcon } from 'assets/images/appIcons/app-icon-blank.webp'
 export * as BloomAppIcons from 'assets/images/appIcons/bloom'
+export * as ColumnaAppIcons from 'assets/images/appIcons/columna'
 export * as FinancePlanAppIcons from 'assets/images/appIcons/financialPlan'
 export * as InstersAppIcons from 'assets/images/appIcons/insters'
 export * as InvestCalcAppIcons from 'assets/images/appIcons/investCalc'
