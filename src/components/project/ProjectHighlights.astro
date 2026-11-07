@@ -31,8 +31,8 @@ if (highlights.length === 0) {
   </div>
   <HorizontalList gap="large" id="highlights-list" label="Highlights">
     {highlights.map(async ({ feature, screenshot }) => {
-      const light = await getImage({ densities: IMAGE_DENSITIES, quality: IMAGE_QUALITY, src: screenshot.light, width: 272 })
-      const dark = await getImage({ densities: IMAGE_DENSITIES, quality: IMAGE_QUALITY, src: screenshot.dark, width: 272 })
+      const light = await getImage({ densities: IMAGE_DENSITIES, quality: IMAGE_QUALITY, src: screenshot.light, width: 320 })
+      const dark = await getImage({ densities: IMAGE_DENSITIES, quality: IMAGE_QUALITY, src: screenshot.dark, width: 320 })
 
       return (
         <HorizontalListItem>
